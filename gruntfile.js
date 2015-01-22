@@ -9,7 +9,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', ['dev']);
 
-  grunt.registerTask('dev', ['connect', 'compass', 'newer:autoprefixer', 'watch']);
+  grunt.registerTask('dev', ['newer:processhtml:dev', 'connect', 'compass', 'autoprefixer', 'watch']);
   grunt.registerTask('build', []);
   grunt.registerTask('docs', []);
 

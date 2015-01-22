@@ -16,7 +16,8 @@ module.exports = {
     options: { livereload: true}
   },
   html: {
-    files: ['src/**/*.html'],
+    files: ['src/templates/*.html'],
+    tasks: ['newer:processhtml:dev'],
     options: { livereload: true}
   }
 };
