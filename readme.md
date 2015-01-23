@@ -6,6 +6,13 @@ This repository holds the design patterns used on the [University of York's webs
 
 You will need to have NodeJS (including NPM), Git, Ruby (including RubyGems) and Compass installed on your machine. On Windows, the easiest way to do this is with [Chocolatey](https://chocolatey.org/) and on Mac you can use [Homebrew](http://brew.sh/).
 
+You'll also need a global install of Grunt (a task runner) and Bower (a package manager), which you can do by typing:
+
+```bash
+npm install -g grunt-cli
+npm install -g bower
+```
+
 ## Getting ready
 
 After cloning this repository, you will need to run:
@@ -13,10 +20,13 @@ After cloning this repository, you will need to run:
 ```bash
 gem install hologram
 npm install
-bower install
 ```
 
 This will load all the necessary modules for you to continue development.
+
+Next, run `grunt bower`. This will load all the third-party JS libraries that we need from Bower into the `src/js/vendor` directory, ready to use later on.
+
+You're now ready to start making stuff!
 
 ## Active development
 

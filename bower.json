@@ -1,0 +1,9 @@
+{
+  "name": "UoYDesignPatterns",
+  "version": "0.0.0",
+  "devDependencies": {
+    "jquery": "~1.11.2",
+    "modernizr": "~2.8.3",
+    "requirejs": "~2.1.15"
+  }
+}

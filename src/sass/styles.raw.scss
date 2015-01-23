@@ -1,10 +1,8 @@
 // Base SCSS file
 body {
-  background-color:#eee;
-  color:#00a;
+  background-color:#999;
+  color:#000;
   transition:all 0.2s ease-out;
-  &:hover {
-    background-color:#333;
-    color:#fefefe;
-  }
 }
+
+@import "components/buttons";

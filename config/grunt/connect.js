@@ -1,5 +1,5 @@
 module.exports = {
-  server: {
+  dev: {
     options: {
       hostname: 'localhost',
       port: 3000,

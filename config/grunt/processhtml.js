@@ -3,9 +3,10 @@ module.exports = {
     files: [
       {
         expand: true,
-        src: 'src/templates/*.html',
+        cwd: 'src/templates/',
+        src: '*.html',
         dest: 'src/'
-      },
+      }
     ]
   },
   build: {}

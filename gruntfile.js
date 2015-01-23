@@ -9,8 +9,8 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', ['dev']);
 
-  grunt.registerTask('dev', ['newer:processhtml:dev', 'connect', 'compass', 'autoprefixer', 'watch']);
-  grunt.registerTask('build', []);
-  grunt.registerTask('docs', []);
+  grunt.registerTask('dev', ['hologram:dev', 'connect', 'compass', 'autoprefixer', 'watch']);
+  grunt.registerTask('build', ['modernizr']);
+  grunt.registerTask('docs', ['hologram:build']);
 
 }
