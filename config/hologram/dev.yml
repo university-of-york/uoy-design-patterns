@@ -1,15 +1,7 @@
-# Hologram config
+source: ../../src
 
-# The directory containing the source files to parse
-source: ../../src/sass
+destination: ../../dev
 
-# The directory that hologram will build to
-destination: ../../src
-
-# The assets needed to build the docs (includes header.html, footer.html, etc)
 documentation_assets: ../../src/includes
 
-# To additionally output navigation for top level sections, set the value to
-# 'section'. To output navigation for sub-sections,
-# set the value to `all`
 nav_level: all

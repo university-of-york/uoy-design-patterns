@@ -4,23 +4,24 @@ module.exports = {
     tasks: ['compass:dev']
   },
   autoprefix: {
-    files: ['src/css/styles.raw.css'],
+    files: ['dev/css/styles.raw.css'],
     tasks: ['autoprefixer']
   },
   templates: {
-    files: ['src/templates/*.html'],
-    tasks: ['newer:processhtml:dev']
+    files: ['src/**/*.md'],
+    tasks: ['hologram:dev']
   },
   css: {
-    files: ['src/css/styles.css'],
+    files: ['dev/css/styles.css'],
     options: { livereload: true, spawn:false }
   },
   js: {
     files: ['src/js/**/*.js'],
+    tasks: ['newer:copy:dev'],
     options: { livereload: true, spawn:false }
   },
   html: {
-    files: ['src/*.html'],
+    files: ['dev/*.html'],
     options: { livereload: true, spawn:false }
   }
 };

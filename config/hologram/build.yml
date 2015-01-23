@@ -1,0 +1,10 @@
+source: ../../src/sass
+
+destination: ../../docs
+
+documentation_assets: ../../src/includes
+
+dependencies:
+  - ../../build
+
+nav_level: all

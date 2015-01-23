@@ -30,3 +30,25 @@
   <!-- /build -->
 
 </head>
+
+<body>
+
+<h2>Categories</h2>
+<ul>
+  <li><a href="templates">Templates</a></li>
+<% @categories.each do |category| %>
+  <li><a href="<%= category[1] %>"><%= category[0] %></a></li>
+<% end %>
+</ul>
+
+<hr>
+
+<h3>Blocks in this section</h3>
+<ul>
+<% @blocks.each do |block| %>
+  <li><a href="#<%= block[:name] %>"><%= block[:title] %></a></li>
+<% end %>
+</ul>
+
+<hr>
+

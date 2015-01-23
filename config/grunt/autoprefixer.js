@@ -1,6 +1,6 @@
 module.exports = {
   single_file: {
-    src: 'src/css/styles.raw.css',
-    dest: 'src/css/styles.css'
+    src: 'dev/css/styles.raw.css',
+    dest: 'dev/css/styles.css'
   }
 };

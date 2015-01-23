@@ -1,11 +1,9 @@
 .sass-cache
 bower_components
 build
+dev
 docs
 node_modules
-src/js/vendor
-src/css
-src/*.html
 
 **/*.zip
 secret.json

@@ -1,7 +1,7 @@
 module.exports = {
   install: {
     options: {
-      targetDir: 'src/js/vendor',
+      targetDir: 'dev/js/vendor',
       cleanup: true
     }
   }
