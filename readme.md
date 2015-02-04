@@ -18,7 +18,6 @@ npm install -g bower
 After cloning this repository, you will need to run:
 
 ```bash
-gem install hologram
 npm install
 ```
 
@@ -40,7 +39,7 @@ Running a `grunt build` task will create a `build` directory, which will contain
 
 ## Building the style guide
 
-To redeploy the style guide, run `grunt docs`. It will run a build process and then recreate the documentation using [Hologram](http://trulia.github.io/hologram/).
+To redeploy the style guide, run `grunt docs`. It will run a build process and then create the documentation .
 
 **TODO:** Get the `docs` task to upload the style guide to a server.
 

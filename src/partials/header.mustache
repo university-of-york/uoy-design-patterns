@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>University of York Design Patterns</title>
+  <title>{{title}} :: Design Patterns</title>
   <meta name="description" content="University of York Design Patterns">
   <meta name="author" content="University of York">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,37 +18,22 @@
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="canonical" href="">
-  <!-- build:css:build css/styles.min.css -->
-  <link rel="stylesheet" href="css/styles.css">
-  <!-- /build -->
 
-  <!-- build:js:build js/modernizr.min.js -->
+  {{#build}}
+  <link rel="stylesheet" href="css/styles.min.css">
+  <link rel="stylesheet" href="css/docs.min.css">
+
+  <script src="js/modernizr.min.js"></script>
+  <script src="js/app.min.js"></script>
+  {{/build}}
+  {{^build}}
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/docs.css">
+
   <script src="js/vendor/modernizr/modernizr.js"></script>
-  <!-- /build -->
-  <!-- build:js:build js/app.min.js -->
   <script src="js/vendor/requirejs/require.js" data-main="js/app"></script>
-  <!-- /build -->
+  {{/build}}
 
 </head>
 
-<body>
-
-<h2>Categories</h2>
-<ul>
-  <li><a href="templates">Templates</a></li>
-<% @categories.each do |category| %>
-  <li><a href="<%= category[1] %>"><%= category[0] %></a></li>
-<% end %>
-</ul>
-
-<hr>
-
-<h3>Blocks in this section</h3>
-<ul>
-<% @blocks.each do |block| %>
-  <li><a href="#<%= block[:name] %>"><%= block[:title] %></a></li>
-<% end %>
-</ul>
-
-<hr>
-
+<body id="{{id}}">

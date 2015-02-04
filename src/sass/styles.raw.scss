@@ -1,8 +1,10 @@
 // Base SCSS file
 body {
-  background-color:#999;
+  background-color:#ddd;
   color:#000;
-  transition:all 0.2s ease-out;
+  margin:0;
+  padding:0;
+  font-family:'Calibri';
 }
 
 @import "components/buttons";

@@ -2,15 +2,15 @@ module.exports = function (grunt) {
 
   var path = require('path');
 
-  // Load all the tasks from config/grunt
+  // Load all the tasks from config/
   require('load-grunt-config')(grunt, {
-    configPath: path.join(process.cwd(), 'config/grunt')
+    configPath: path.join(process.cwd(), 'config')
   });
 
-  grunt.registerTask('default', ['dev']);
+  grunt.registerTask('default', ['bower']);
 
-  grunt.registerTask('dev', ['hologram:dev', 'copy:dev', 'compass', 'autoprefixer', 'connect', 'watch']);
-  grunt.registerTask('build', ['modernizr', 'cssmin', 'newer:copy:build']);
-  grunt.registerTask('docs', ['build', 'hologram:build']);
+  grunt.registerTask('dev', ['makedocs:dev', 'jshint:dev', 'copy:dev', 'compass:dev', 'autoprefixer:dev', 'connect', 'watch', 'clean:dev']);
+  grunt.registerTask('build', ['makedocs:build', 'compass:build', 'modernizr', 'cssmin', 'imagemin', 'require', 'jshint:dev', 'clean:build']);
+  grunt.registerTask('docs', ['build']);
 
 }

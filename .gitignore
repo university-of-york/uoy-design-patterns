@@ -2,8 +2,6 @@
 bower_components
 build
 dev
-docs
 node_modules
 
 **/*.zip
-secret.json

@@ -3,7 +3,7 @@ module.exports = {
     options: {
       banner: '<%= banner.compact %>'
     },
-    src: 'dev/css/styles.css',
+    src: 'build/css/styles.css',
     dest: 'build/css/styles.min.css'
   }
 };

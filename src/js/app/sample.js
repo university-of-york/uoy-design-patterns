@@ -3,7 +3,7 @@
 ---
 title: Sample Module
 name: sample-module
-category: Base JS
+category: Javascript
 ---
 
 We use [RequireJS](http://requirejs.com) as an AMD loader for our scripts. This means we can separate JS functionality into separate files. This sample module contains a starting point for new modules, with some tips as to how to structure the module.
@@ -83,11 +83,11 @@ define(['jquery', 'app/color'], function ($, COLOR) {
   // "Private" variables (only available inside the module)
 
   // Define defaults for the class
-  var default = {
+  var Default = {
     width: 250,
     easing: 'ease-in',
     isCompatible: true
-  }
+  };
 
   // Define other variables for use throughout
   var topSpeed = 1000,
@@ -97,16 +97,16 @@ define(['jquery', 'app/color'], function ($, COLOR) {
   // "Private" functions (only available inside this file)
   var colorSwap = function(a, b) {
     // Remember to return something
-  }
+  };
 
 
   // Define your 'class'
   // Better to pass an options object instead of multiple arguments
   var SAMPLE = function(options) {
     // Get the options or their defaults
-    this.width = options.width || default.width;
-    this.easing = options.easing || default.easing;
-    this.isCompatible = options.isCompatible || default.isCompatible;
+    this.width = options.width || Default.width;
+    this.easing = options.easing || Default.easing;
+    this.isCompatible = options.isCompatible || Default.isCompatible;
     // Do some setup stuff
     // Return true or false (or something else)
   };
@@ -121,11 +121,11 @@ define(['jquery', 'app/color'], function ($, COLOR) {
 
   SAMPLE.setColor = function(val) {
     // Always return true or false from setters
-  }
+  };
 
   SAMPLE.getColor = function() {
     // Return the value
-  }
+  };
 
   return SAMPLE;
 
