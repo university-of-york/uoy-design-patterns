@@ -23,7 +23,7 @@ npm install
 
 This will load all the necessary modules for you to continue development.
 
-Next, run `grunt bower`. This will load all the third-party JS libraries that we need from Bower into the `src/js/vendor` directory, ready to use later on.
+Next, run `grunt bower`. This will load all the third-party JS libraries that we need from Bower into the `dev/js/vendor` directory, ready to use later on.
 
 You're now ready to start making stuff!
 
@@ -31,17 +31,14 @@ You're now ready to start making stuff!
 
 To work on the front-end designs, run `grunt dev` in the terminal. This will create the active templates and start a local server, which will live reload as you code.
 
-If you amend the markup for a component, you must update the documentation comment in the SCSS. This will keep the style guide up-to-date.
+## Building the documentation
 
-## Building for deployment
+Running a `grunt build` task will create a `build` directory, which will contain the minified CSS, the uglified JS, the optimised images and the HTML pages ready to deploy to a server.
 
-Running a `grunt build` task will create a `build` directory, which will contain the minified CSS, the uglified JS and the optimised images ready to deploy to a server.
+**TODO: in development**
+## Building for live deployment
 
-## Building the style guide
-
-To redeploy the style guide, run `grunt docs`. It will run a build process and then create the documentation .
-
-**TODO:** Get the `docs` task to upload the style guide to a server.
+To build for live deployment, run `grunt live`. It will run a build process juyst with the CSS, JS and images, but no HTML.
 
 ## A note about development
 
