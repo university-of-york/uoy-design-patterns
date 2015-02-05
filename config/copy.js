@@ -2,9 +2,17 @@ module.exports = {
   dev: {
     files: [{
       expand: true,
-      cwd: 'src',
+      cwd: 'src/',
       src: ['js/**', 'img/**', 'fonts/**', 'media/**'],
-      dest: 'dev'
+      dest: 'dev/'
+    }]
+  },
+  build: {
+    files: [{
+      expand: true,
+      cwd: 'src/',
+      src: ['fonts/**'],
+      dest: 'build/'
     }]
   }
 };

@@ -1,9 +1,9 @@
 module.exports = {
-  compact: '/*! <%= pkg.name %> <%= pkg.version %> <%= grunt.template.today("dd-mm-yyyy hh:MM:ss") %>*/',
+  compact: '/*! <%= package.name %> <%= package.version %> <%= grunt.template.today("dd-mm-yyyy hh:MM:ss") %>*/',
   full: '/*!\n' +
-        ' * <%= pkg.name %> v<%= pkg.version %>\n' +
-        ' * Copyright (c) <%= pkg.author =%>\n' +
+        ' * <%= package.name %> v<%= package.version %>\n' +
+        ' * Copyright <%= grunt.template.today("yyyy") %> <%= package.author.name %>\n' +
         ' *\n' +
-        ' * This was developed and built by <%= _.pluck(pkg.contributors, "name").join(", ") %>\n' +
+        ' * Developed and built by <%= _.pluck(package.contributors, "name").join(", ") %>\n' +
         ' */'
-}
+};

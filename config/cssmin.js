@@ -3,7 +3,12 @@ module.exports = {
     options: {
       banner: '<%= banner.compact %>'
     },
-    src: 'build/css/styles.css',
-    dest: 'build/css/styles.min.css'
+    files: [{
+      expand: true,
+      cwd: 'build/css/',
+      src: ['*.css'],
+      dest: 'build/css/',
+      ext: '.min.css'
+    }]
   }
 };

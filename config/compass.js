@@ -10,8 +10,7 @@ module.exports = {
     options: {
       sassDir: 'src/sass',
       cssDir: 'build/css',
-      sourcemap: true,
-      outputStyle: 'compressed'
+      outputStyle: 'expanded'
     }
   }
 };

@@ -1,5 +1,5 @@
 define(['jquery'], function ($) {
 
-  console.log('Got here 2');
+  console.log('Got here');
 
 });

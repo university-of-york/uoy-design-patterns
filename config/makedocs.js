@@ -1,27 +1,30 @@
 module.exports = {
   options: {
-    layoutsDir: 'src/layouts',
-    partialsDir: 'src/partials',
-    componentsDir: 'src/components'
+    layoutsDir: 'src/layouts/',
+    partialsDir: 'src/partials/',
+    componentsDir: 'src/components/'
   },
   dev: {
     files: [
       {
         expand: true,
-        cwd: 'src/pages',
+        cwd: 'src/pages/',
         src: ['*.md'],
-        dest: 'dev',
+        dest: 'dev/',
         ext: '.html'
       }
     ]
   },
   build: {
+    options: {
+      build: true
+    },
     files: [
       {
         expand: true,
-        cwd: 'src/pages',
+        cwd: 'src/pages/',
         src: ['*.md'],
-        dest: 'build',
+        dest: 'build/',
         ext: '.html'
       }
     ]

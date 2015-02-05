@@ -10,7 +10,8 @@ module.exports = function (grunt) {
   grunt.registerTask('default', ['bower']);
 
   grunt.registerTask('dev', ['makedocs:dev', 'jshint:dev', 'copy:dev', 'compass:dev', 'autoprefixer:dev', 'connect', 'watch', 'clean:dev']);
-  grunt.registerTask('build', ['makedocs:build', 'compass:build', 'modernizr', 'cssmin', 'imagemin', 'require', 'jshint:dev', 'clean:build']);
+  grunt.registerTask('build', ['clean:build', 'makedocs:build', 'compass:build', 'autoprefixer:build', 'modernizr', 'cssmin', 'newer:imagemin', 'requirejs', 'jshint:dev', 'clean:postbuild']);
   grunt.registerTask('docs', ['build']);
+  grunt.registerTask('live', ['build', 'clean:live']);
 
 }

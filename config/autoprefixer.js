@@ -1,10 +1,20 @@
 module.exports = {
   dev: {
-    src: 'dev/css/styles.raw.css',
-    dest: 'dev/css/styles.css'
+    files: [{
+      expand: true,
+      cwd: 'dev/css/',
+      src: ['*.raw.css'],
+      dest: 'dev/css',
+      ext: '.css'
+    }]
   },
   build: {
-    src: 'build/css/styles.raw.css',
-    dest: 'build/css/styles.css'
+    files: [{
+      expand: true,
+      cwd: 'build/css/',
+      src: ['*.raw.css'],
+      dest: 'build/css',
+      ext: '.css'
+    }]
   }
 };

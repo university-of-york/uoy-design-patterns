@@ -38,7 +38,7 @@ Running a `grunt build` task will create a `build` directory, which will contain
 **TODO: in development**
 ## Building for live deployment
 
-To build for live deployment, run `grunt live`. It will run a build process juyst with the CSS, JS and images, but no HTML.
+To build for live deployment, run `grunt live`. It will run a build process just with the CSS, JS and images, but no HTML.
 
 ## A note about development
 
