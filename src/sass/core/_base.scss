@@ -1,0 +1,89 @@
+//
+// BASE
+// This Sass file contains all the styles for the basic elements
+//
+body,h1,h2,h3,h4,h5,h6,strong,b,select,textarea,input {
+  font-family: 'Oxygen', sans-serif;
+}
+// Base SCSS file
+body {
+  background-color:#ddd;
+  color:#000;
+  margin:0;
+  padding:0;
+  line-height: 1.5;
+}
+a {
+  color:#444;
+  text-decoration: none;
+  &,
+  &:hover,
+  &:active,
+  &:visited {
+    outline: 0px;
+  }
+  &:hover {
+    color: #555;
+  }
+  img {
+    border:0;
+  }
+}
+img {
+  outline: 0;
+  border: 0;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-weight:300;
+  margin:0 0 1.2em;
+}
+h1 {
+  font-size: 32px;
+}
+h2 {
+  font-size: 26px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 20px;
+}
+h5 {
+  font-size: 18px;
+}
+h6 {
+  font-size: 16px;
+}
+p {
+  margin:0 0 1.2em;
+  white-space: break-word;
+}
+ul,
+ol {
+  margin:0 0 1.2em;
+  padding: 0 0 0 1.8em;
+  // No margins in sub lists!
+  ul,
+  ol {
+    margin:0;
+  }
+}
+ul {
+  list-style:disc;
+}
+ol {
+  list-style:decimal;
+}
+code {
+  font-family:monospace;
+  padding:0 0.25em;
+}
+hr {
+  background:#ccc;
+  border:none;
+  color:#ccc;
+  margin:1.6em 0;
+  height:1px;
+  clear:both;
+}

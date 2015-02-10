@@ -1,0 +1,51 @@
+//
+// MIXINS
+//
+
+//
+// Get color from color map
+//
+@function color($color, $tone: 'base') {
+    @return map-get(map-get($colors, $color), $tone);
+}
+
+//
+// rem fallback mixin
+// Converts rems to pixels (assumes 16px font-size)
+//
+@mixin rem($property, $values...) {
+
+  $pxValues: '';
+  $remValues: '';
+  $font-size:16px;
+
+  @each $value in $values {
+    $pxValue: $value;
+    $remValue: $value;
+    @if $value * 0 != 0% and $value != 0 {
+      $value: strip-unit($value);
+      $pxValue: $value*$font-size;
+      $remValue: #{$value}rem;
+    }
+    $pxValues: #{$pxValues + $pxValue + " "};
+    $remValues: #{$remValues + $remValue + " "};
+  }
+
+  #{$property}: $pxValues;
+  #{$property}: $remValues;
+}
+
+@function strip-unit($num) {
+  @return $num/($num * 0 + 1);
+}
+
+//
+// Default transition time and easing, defaults to 'all'
+//
+@mixin transition($property: "all") {
+
+  $duration: "0.25s";
+  $easing: "ease-out";
+
+  transition: #{$property} #{$duration} #{$easing};
+}
