@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 module.exports = function (grunt, options) {
+=======
+module.exports = function (grunt) {
+>>>>>>> ea6fa91a21ac282f163b533ba4befc5753a64017
 
   var path = require('path');
 
@@ -21,7 +25,8 @@ module.exports = function (grunt, options) {
             categories[page.category].push(page);
           }
           if (i === pages.length - 1) {
-            var output = '<nav>\n<ul>\n';
+            var output = '<nav>\n';
+            output+= '<ul>\n';
             for (var c in categories) {
               // Top level pages have a 'false' category value
               if (categories[c].category === false) {
@@ -39,7 +44,8 @@ module.exports = function (grunt, options) {
                 output+= '  </li>\n';
               }
             }
-            output+= '</ul>\n</nav>\n';
+            output+= '</ul>\n';
+            output+= '</nav>\n';
             grunt.file.write(navPage, output);
 
           }

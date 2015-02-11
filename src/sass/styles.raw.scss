@@ -1,13 +1,43 @@
-// Base SCSS file
-body {
-  background-color:#ddd;
-  color:#000;
-  margin:0;
-  padding:0;
-  font-family: 'Oxygen', sans-serif;
-  line-height: 1.5;
-  letter-spacing: 0.01rem;
-  text-rendering: optimizeLegibility;
-}
+//CORE
+@import "core/fonts";
+@import "core/variables";
+@import "core/extends";
+@import "core/mixins";
+@import "core/reset";
+@import "core/base";
 
+//LAYOUT
+@import "layout/structure";
+@import "layout/grids";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/navigation";
+
+//COMPONENTS
+@import "components/atoz";
+@import "components/banner";
+@import "components/breadcrumb";
 @import "components/buttons";
+@import "components/forms";
+@import "components/icons";
+@import "components/lists";
+@import "components/media";
+@import "components/overlay";
+@import "components/pagination";
+@import "components/tables";
+@import "components/tabs";
+@import "components/well";
+
+// TEMPLATES
+@import "templates/404";
+
+// MEDIA QUERIES
+@import "media/huge";
+@import "media/large";
+@import "media/medium";
+@import "media/small";
+@import "media/tiny";
+
+// MISCELLANEOUS
+@import "overrides";
+@import "print";
