@@ -5,29 +5,18 @@ module.exports = {
   },
   templates: {
     files: ['src/**/*.mustache'],
-    tasks: ['makedocs:dev'],
-    options: { livereload: true, spawn:false }
+    tasks: ['makedocs:dev']
   },
   pages: {
     files: ['src/pages/*.md'],
-    tasks: ['newer:makedocs:dev'],
-    options: { livereload: true, spawn:false }
+    tasks: ['newer:makedocs:dev']
   },
   js: {
     files: ['src/js/**/*.js'],
-    tasks: ['newer:copy:dev'],
-    options: { livereload: true, spawn:false }
+    tasks: ['newer:copy:dev']
   },
   autoprefix: {
     files: ['dev/css/*.raw.css'],
     tasks: ['autoprefixer:dev']
-  },
-  css: {
-    files: ['dev/css/*.css'],
-    options: { livereload: true, spawn:false }
-  },
-  html: {
-    files: ['dev/*.html'],
-    options: { livereload: true, spawn:false }
   }
 };

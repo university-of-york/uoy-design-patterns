@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-module.exports = function (grunt, options) {
-=======
 module.exports = function (grunt) {
->>>>>>> ea6fa91a21ac282f163b533ba4befc5753a64017
 
   var path = require('path');
 
