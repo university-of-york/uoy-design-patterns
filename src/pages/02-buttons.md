@@ -8,7 +8,7 @@ id: buttons-page
 
 ---
 
-##  Buttons
+## Buttons
 
 Buttons come in four different types and three different sizes. Usually a `button` element should be used, although an `a`, an `input[type=button]`, an `input[type=reset]` or an `input[type=submit]` could be used.
 
@@ -93,6 +93,6 @@ component("button-group", { atoms: [
 
 * **type**: one of _default_ (default), _cancel_, _primary_ and _highlight_
 * **size**: one of _tiny_, _small_, _medium_ (default), _large_ or _huge_
-* **icon-before**: the type of [icon](icons) to appear at the front of the button (doesn't work with input[type=submit] or input[type=button])
-* **icon-after**: the type of [icon](icons) to appear at the end of the button (doesn't work with input[type=submit] or input[type=button])
+* **icon-before**: the type of [icon](icons.html) to appear at the front of the button (doesn't work with input[type=submit] or input[type=button])
+* **icon-after**: the type of [icon](icons.html) to appear at the end of the button (doesn't work with input[type=submit] or input[type=button])
 * **href**: the URL to visit when clicked (only for button-link, defaults to "#")
