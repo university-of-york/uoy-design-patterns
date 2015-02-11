@@ -1,0 +1,8 @@
+<form action="{{#action}}{{this}}{{/action}}{{^action}}#{{/action}}" method="{{method}}" id="{{id}}">
+  <fieldset>{{#legend}}
+    <legend>{{this}}</legend>{{/legend}}
+  {{#atoms}}
+  {{this}}
+  {{/atoms}}
+  </fieldset>
+</form>

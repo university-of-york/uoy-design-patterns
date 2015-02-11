@@ -53,7 +53,7 @@ module.exports = function (grunt) {
         {
           expand: true,
           cwd: 'src/pages/',
-          src: ['*.md'],
+          src: ['*.md', '!sample.md'],
           dest: 'dev/',
           ext: '.html'
         }

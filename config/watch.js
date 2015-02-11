@@ -8,7 +8,7 @@ module.exports = {
     tasks: ['makedocs:dev']
   },
   pages: {
-    files: ['src/pages/*.md'],
+    files: ['src/pages/*.md', '!src/pages/sample.md'],
     tasks: ['newer:makedocs:dev']
   },
   js: {
