@@ -2,7 +2,7 @@
 
 title: Homepage
 name: index
-category: Components
+category: false
 layout: default
 id: homepage
 

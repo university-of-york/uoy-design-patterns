@@ -19,7 +19,7 @@ module.exports = {
     options: { livereload: true, spawn:false }
   },
   autoprefix: {
-    files: ['dev/css/styles.raw.css'],
+    files: ['dev/css/*.raw.css'],
     tasks: ['autoprefixer:dev']
   },
   css: {

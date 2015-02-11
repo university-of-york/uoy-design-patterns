@@ -8,7 +8,7 @@ id: buttons-page
 
 ---
 
-# Lots of Buttons
+##  Buttons
 
 Buttons come in four different types and three different sizes. Usually a `button` element should be used, although an `a`, an `input[type=button]`, an `input[type=reset]` or an `input[type=submit]` could be used.
 
