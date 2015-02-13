@@ -79,20 +79,14 @@ component("button-group", { atoms: [
 * button-link
 * button-input
 * button-submit
-
-##### Options
-  
-* **text**: the text on the button **(required)**
-* **type**: one of _default_ (default), _cancel_, _primary_ and _highlight_
-* **size**: one of _tiny_, _small_, _medium_ (default), _large_ or _huge_
-* **icon-before**: the type of [icon](icons.html) to appear at the front of the button (doesn't work with input[type=submit] or input[type=button])
-* **icon-after**: the type of [icon](icons.html) to appear at the end of the button (doesn't work with input[type=submit] or input[type=button])
-* **href**: the URL to visit when clicked (only for button-link, defaults to "#")
+  * **text**: the text on the button **(required)**
+  * **type**: one of _default_ (default), _cancel_, _primary_ and _highlight_
+  * **size**: one of _tiny_, _small_, _medium_ (default), _large_ or _huge_
+  * **icon-before**: the type of [icon](icons.html) to appear at the front of the button (doesn't work with input[type=submit] or input[type=button])
+  * **icon-after**: the type of [icon](icons.html) to appear at the end of the button (doesn't work with input[type=submit] or input[type=button])
+  * **href**: the URL to visit when clicked (only for button-link, defaults to "#")
 
 #### Molecules
 
 * button-group
-
-##### Options
-  
-* **atoms**: an array of `buttons`
+  * **atoms**: an array of `buttons`

@@ -53,7 +53,7 @@ component("button-group", { atoms: [
 ]});
 </script>
 ```
-
+<!--
 Alternatively, the atoms array can be an object with a `"component"` key and an `"options"` key. This can be useful if you need to pass through several different types of component:
 
 ```js
@@ -76,7 +76,7 @@ component("button-group", { atoms: [
 ```
 
 Both these examples would render the same code:
-
+-->
 <div class="btn-group">
 	<button class="btn">Back</button>
 	<button class="btn btn-warning">Help <i class="icon icon-help"></i></button>

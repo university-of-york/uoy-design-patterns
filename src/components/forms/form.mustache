@@ -1,8 +1,8 @@
-<form action="{{#action}}{{this}}{{/action}}{{^action}}#{{/action}}" method="{{method}}" id="{{id}}">
+<form action="{{#action}}{{this}}{{/action}}{{^action}}#{{/action}}" method="{{#method}}{{this}}{{/method}}{{^method}}post{{/method}}"{{#id}} id="{{this}}"{{/id}} class="form-{{#type}}{{this}}{{/type}}{{^type}}stacked{{/type}}">
   <fieldset>{{#legend}}
     <legend>{{this}}</legend>{{/legend}}
-  {{#atoms}}
-  {{this}}
-  {{/atoms}}
+    {{#atoms}}
+    {{this}}
+    {{/atoms}}
   </fieldset>
 </form>
