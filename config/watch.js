@@ -3,8 +3,8 @@ module.exports = {
     files: ['src/sass/**/*.{scss,sass}'],
     tasks: ['compass:dev']
   },
-  templates: {
-    files: ['src/**/*.mustache'],
+  components: {
+    files: ['src/components/**/*.mustache'],
     tasks: ['makedocs:dev']
   },
   pages: {

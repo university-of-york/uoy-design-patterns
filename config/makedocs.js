@@ -6,47 +6,7 @@ module.exports = function (grunt) {
     options: {
       layoutsDir: 'src/layouts/',
       partialsDir: 'src/partials/',
-      componentsDir: 'src/components/',
-      nav: function(pages) {
-        var navPage = "src/partials/nav.mustache";
-        var categories = {};
-        pages.forEach(function(page, i) {
-          if (page.category === false) {
-            // Top level page
-            categories[page.name] = page;
-          } else {
-            if (typeof categories[page.category] === 'undefined') {
-              categories[page.category] = [];
-            }
-            categories[page.category].push(page);
-          }
-          if (i === pages.length - 1) {
-            var output = '<nav>\n';
-            output+= '<ul>\n';
-            for (var c in categories) {
-              // Top level pages have a 'false' category value
-              if (categories[c].category === false) {
-                output+= '  <li><a href="'+path.basename(categories[c].dest)+'">'+categories[c].title+'</a></li>\n';
-              } else {
-                output+= '  <li>\n';
-                output+= '    <a href="#">'+c+'</a>\n';
-                output+= '    <ul>\n';
-                // Loop through category pages
-                categories[c].forEach(function(j, p) {
-                  var thisPage = categories[c][p];
-                  output+= '      <li><a href="'+path.basename(thisPage.dest)+'">'+thisPage.title+'</a></li>\n';
-                });
-                output+= '    </ul>\n';
-                output+= '  </li>\n';
-              }
-            }
-            output+= '</ul>\n';
-            output+= '</nav>\n';
-            grunt.file.write(navPage, output);
-
-          }
-        });
-      }
+      componentsDir: 'src/components/'
     },
     dev: {
       files: [
@@ -55,6 +15,10 @@ module.exports = function (grunt) {
           cwd: 'src/pages/',
           src: ['*.md', '!sample.md'],
           dest: 'dev/',
+          rename: function(dest, src) {
+            // remove numbers from start
+            return dest + src.replace(/\d+\-/, '');
+          },
           ext: '.html'
         }
       ]
@@ -69,6 +33,10 @@ module.exports = function (grunt) {
           cwd: 'src/pages/',
           src: ['*.md'],
           dest: 'build/',
+          rename: function(dest, src) {
+            // remove numbers from start
+            return dest + src.replace(/\d+\-/, '');
+          },
           ext: '.html'
         }
       ]

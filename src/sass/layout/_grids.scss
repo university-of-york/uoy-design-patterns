@@ -1,3 +1,49 @@
 //
 // GRID SYSTEM
 //
+.g-container {
+
+}
+.g-row {
+  font-size:0;
+  /* Clearfix */
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+%g-box {
+  font-size:16px;
+  font-size:1rem;
+  vertical-align:top;
+  display:inline-block;
+  /* Fix for IE6/7 inline-block */
+  zoom:1;
+  *display:inline;
+}
+.g-full {
+  @extend %g-box;
+  width:100%;
+}
+.g-twothirds {
+  @extend %g-box;
+  width:66.666%;
+}
+.g-half {
+  @extend %g-box;
+  width:50%;
+}
+.g-third {
+  @extend %g-box;
+  width:33.333%;
+}
+.g-quarter {
+  @extend %g-box;
+  width:25%;
+}
+.g-threequarters {
+  @extend %g-box;
+  width:75%;
+}

@@ -66,6 +66,59 @@
     column-span:all;
   }
 }
+#grid-page {
+  .g-full,
+  .g-twothirds,
+  .g-half,
+  .g-third,
+  .g-threequarters,
+  .g-quarter {
+    min-height:40px;
+    line-height:40px;
+    border-top:1px solid #666;
+    border-left:1px solid #666;
+    &:last-child {
+      border-right:1px solid #666;
+    }
+  }
+  .g-row {
+    margin:0 0 20px;
+    border-bottom:1px solid #666;
+  }
+  .g-row .g-row {
+    margin:0;
+    border:0;
+  }
+  .g-row:last-child {
+    .g-full,
+    .g-twothirds,
+    .g-half,
+    .g-third,
+    .g-threequarters,
+    .g-quarter {
+    }
+  }
+  @media only screen and (max-width: 839px) {
+    // Right borders on end of rows
+    .g-half,
+    .g-threequarters,
+    .g-quarter + .g-quarter,
+    .g-quarter + .g-quarter + .g-quarter + .g-quarter,
+    .g-quarter:first-child:nth-last-child(2) {
+      border-right:1px solid #666;
+    }
+    // Remove border from third quarter in row
+    .g-quarter + .g-quarter + .g-quarter {
+      border-right:0
+    }
+  }
+  @media only screen and (max-width: 639px) {
+    .g-third,
+    .g-twothirds {
+      border-right:1px solid #666;
+    }
+  }
+}
 
 /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */
 /**
