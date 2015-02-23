@@ -1,70 +1,5 @@
 /* ADDITIONAL DOCUMENTATION STYLES */
 .docs {
-  header {
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:72px;
-    background:#090;
-    color:#fff;
-    h1 {
-      line-height:72px;
-      font-size:36px;
-      max-width: 960px;
-      margin:0 auto;
-    }
-  }
-  .wrapper {
-    max-width:960px;
-    margin:0 auto;
-    background:#fff;
-    padding:128px 20px 20px;
-  }
-  nav {
-    position:fixed;
-    top:72px;
-    left:0;
-    height:36px;
-    width:100%;
-    background:#090;
-    ul {
-      max-width:960px;
-      margin:0 auto;
-      padding:0;
-      overflow:hidden;
-      li {
-        float:left;
-        line-height:36px;
-        font-size:18px;
-        list-style:none;
-        a {
-          display:block;
-          padding:0 12px;
-          color:#fff;
-          text-decoration:none;
-          &:hover {
-            background:#3c3;
-          }
-        }
-        &:hover {
-          ul {
-            display:block;
-          }
-        }
-        ul {
-          display: none;
-          background:#060;
-          li {
-            width:100%;
-          }
-        }
-      }
-    }
-  }
-  h2, h3 {
-    column-span:all;
-  }
 }
 #grid-page {
   .g-full,
@@ -75,27 +10,39 @@
   .g-quarter {
     min-height:40px;
     line-height:40px;
-    border-top:1px solid #666;
-    border-left:1px solid #666;
+    *background:#eee; // For IE7
+    &:nth-child(n) {
+      border-top:1px solid #666;
+      border-left:1px solid #666;
+    }
     &:last-child {
       border-right:1px solid #666;
     }
   }
   .g-row {
     margin:0 0 20px;
-    border-bottom:1px solid #666;
+    &:nth-child(n) {
+      border-bottom:1px solid #666;
+    }
   }
   .g-row .g-row {
     margin:0;
-    border:0;
-  }
-  .g-row:last-child {
     .g-full,
     .g-twothirds,
     .g-half,
     .g-third,
     .g-threequarters,
     .g-quarter {
+      border-top:0;
+      &:first-child {
+        border-left:0;
+      }
+      &:last-child {
+        border-right:0;
+      }
+    }
+    &:last-child {
+      border-bottom:0;
     }
   }
   @media only screen and (max-width: 839px) {
@@ -172,7 +119,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 /* Code blocks */
 pre[class*="language-"] {
   padding: 1em;
-  margin: .5em 0;
+  margin: 22px 0;
   overflow: auto;
 }
 

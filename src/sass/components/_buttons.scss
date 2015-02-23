@@ -2,15 +2,16 @@
 // BUTTONS
 //
 .btn {
-  font-family: 'Oxygen', sans-serif;
+  font-family: $font-default;
   text-decoration: none;
   display: inline-block;
   border: 1px solid #333;
   border-radius: 3px;
   background: #fefefe;
-  padding: 0 12px;
+  padding: 0 1em;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 2.4;
+  height: 2.4em;
   color: #333;
   cursor: pointer;
   transition: all 0.2s ease-out;
@@ -42,8 +43,8 @@
     background: #000077;
   }
   &:focus {
-    color: #fff;
     outline: none;
+    color: #fff;
     background: #000066;
   }
 }
@@ -59,8 +60,8 @@
     background: #770000;
   }
   &:focus {
-    color: #fff;
     outline: none;
+    color: #fff;
     background: #660000;
   }
 }
@@ -76,38 +77,32 @@
     background: #007700;
   }
   &:focus {
-    color: #fff;
     outline: none;
+    color: #fff;
     background: #006600;
   }
 }
 // Button sizes
 .btn-tiny {
   border-radius: 2px;
-  padding: 0 6px;
   font-size: 8px;
-  line-height: 12px;
 }
 .btn-small {
   border-radius: 2px;
-  padding: 0 9px;
   font-size: 12px;
-  line-height: 18px;
 }
 .btn-medium {
   // Default size - inherits from .btn
+  // border-radius: 3px;
+  // font-size: 16px;
 }
 .btn-large {
   border-radius: 4px;
-  padding: 0 18px;
   font-size: 24px;
-  line-height: 36px;
 }
 .btn-huge {
   border-radius: 6px;
-  padding: 0 24px;
   font-size: 32px;
-  line-height: 48px;
 }
 // Button groups
 .btn-group {
@@ -129,6 +124,9 @@
         border-bottom-left-radius: 2px;
       }
       &.btn-medium {
+        // Default size - inherits from .btn
+        // border-top-left-radius: 3px;
+        // border-bottom-left-radius: 3px;
       }
       &.btn-large {
         border-top-left-radius: 4px;
@@ -151,6 +149,9 @@
         border-bottom-right-radius: 2px;
       }
       &.btn-medium {
+        // Default size - inherits from .btn
+        // border-top-right-radius: 3px;
+        // border-bottom-right-radius: 3px;
       }
       &.btn-large {
         border-top-right-radius: 4px;

@@ -5,14 +5,8 @@
 
 }
 .g-row {
+  @extend %clearfix;
   font-size:0;
-  /* Clearfix */
-  &:before,
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
 }
 %g-box {
   font-size:16px;

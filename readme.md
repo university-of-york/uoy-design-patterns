@@ -35,7 +35,6 @@ To work on the front-end designs, run `grunt dev` in the terminal. This will cre
 
 Running a `grunt build` task will create a `build` directory, which will contain the minified CSS, the uglified JS, the optimised images and the HTML pages ready to deploy to a server.
 
-**TODO: in development**
 ## Building for live deployment
 
 To build for live deployment, run `grunt live`. It will run a build process just with the CSS, JS and images, but no HTML.

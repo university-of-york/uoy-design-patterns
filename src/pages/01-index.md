@@ -12,13 +12,13 @@ id: homepage
 
 ### What is a design pattern?
 
-When we&#39;re building the website, we can reuse a lot of the code and styling across the site. Components such as buttons, forms and tables can and should look the same to give the site a unified feel.
+When we're building the website, we can reuse a lot of the code and styling across the site. Components such as buttons, forms and tables can and should look the same to give the site a unified feel.
 
 The design pattern library is our way of documenting the different components that we use on the site, so that existing pages and new sites can be created without losing the visual identity we've created.
 
 ### How can I use it?
 
-**Designers** can use it to help plan any new page templates, layouts or features. If we have already implemented the thing you&#39;re looking to do, you can reuse it!
+**Designers** can use it to help plan any new page templates, layouts or features. If we have already implemented the thing you're looking to do, you can reuse it!
 
 **Front-end Developers** will need to do less work to build new templates, and will have an easily-accessible library of components to look through. It saves duplication of work and makes it easy to make functional prototypes. Trouble-shooting CSS and JS should be much easier too.
 

@@ -2,19 +2,18 @@
 // BASE
 // This Sass file contains all the styles for the basic elements
 //
-body,h1,h2,h3,h4,h5,h6,strong,b,select,textarea,input {
-  font-family: 'Oxygen', sans-serif;
+body,strong,b,select,textarea,input {
+  font-family: $font-default;
 }
 // Base SCSS file
 body {
-  background-color:#ddd;
-  color:#000;
+  color:#333233;
   margin:0;
   padding:0;
-  line-height: 1.5;
+  line-height: 1.626; // 26px on 16px font
 }
 a {
-  color:#444;
+  color:#666566;
   text-decoration: none;
   &,
   &:hover,
@@ -23,7 +22,7 @@ a {
     outline: 0px;
   }
   &:hover {
-    color: #555;
+    color: #999899;
   }
   img {
     border:0;
@@ -34,8 +33,12 @@ img {
   border: 0;
 }
 h1,h2,h3,h4,h5,h6 {
+  font-family: $font-title;
   font-weight:300;
-  margin:0 0 1.2em;
+  margin:22px 0;
+  &:first-child {
+    margin-top:0;
+  }
 }
 h1 {
   font-size: 32px;
@@ -56,8 +59,11 @@ h6 {
   font-size: 16px;
 }
 p {
-  margin:0 0 1.2em;
+  margin:22px 0;
   white-space: break-word;
+  &:first-child {
+    margin-top:0;
+  }
 }
 ul,
 ol {

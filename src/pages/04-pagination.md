@@ -36,7 +36,9 @@ component("pagination", { "atoms": [
 ]});
 </script>
 
+
 ### Options
+
 
 #### Atoms
 

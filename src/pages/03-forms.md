@@ -14,7 +14,7 @@ Building up a form takes time, but should be a simple case of combining all the 
 
 The basic unit in forms is the _form-element_. This is a _molecule_, made up of one or more _atoms_. The atoms can be an `input`, a `textarea`, a number of `checkbox` or `radio` buttons, or a `select` dropdown. It combines a label with these form elements and boxes them all up in a handy-sized `div`.
 
-Firstly, a few different input types (note the three different ways to call _atoms_ , and the `hidden` type at the end):
+Firstly, a few different input types (note the `hidden` type at the end):
 
 <script>
 component("form-element", { "label": "Name", "name": "a", "atoms": { "input": { "placeholder":"Enter your name" } } });

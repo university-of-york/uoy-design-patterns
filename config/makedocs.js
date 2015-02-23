@@ -21,7 +21,7 @@ module.exports = function (grunt) {
             categories[page.category].push(page);
           }
           if (i === pages.length - 1) {
-            var output = '<nav>\n';
+            var output = '<nav id="main-menu" class="main-menu">\n';
             output+= '<ul>\n';
             for (var c in categories) {
               // Top level pages have a 'false' category value

@@ -9,7 +9,8 @@ module.exports = {
   },
   pages: {
     files: ['src/pages/*.md', '!src/pages/sample.md'],
-    tasks: ['newer:makedocs:dev']
+    // tasks: ['newer:makedocs:dev'] // Recreates nav with single, changed file.
+    tasks: ['makedocs:dev']
   },
   js: {
     files: ['src/js/**/*.js'],

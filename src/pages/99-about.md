@@ -12,7 +12,7 @@ This is a meta-page about how the documentation is built, with examples of how y
 
 You can include an atomic component like so:
 
-```js
+```markup
 <script>
 component("button");
 </script>
@@ -22,13 +22,13 @@ And it will render both the HTML markup and the code to produce it, taken straig
 
 <button class="btn">Click</button>
 
-```html
+```markup
 <button class="btn">Click</button>
 ```
 
 To add additional information, pass parameters to the component call:
 
-```js
+```markup
 <script>
 component("button", { "type": "warning", "text": "Help" });
 </script>
@@ -38,13 +38,13 @@ This would render:
 
 <button class="btn btn-warning">Help</button>
 
-```html
+```markup
 <button class="btn btn-warning">Help</button>
 ```
 
 More complex components (molecules) which combine atoms, will be pre-rendered from passed-through `atoms` array. The atoms can be an array of simple objects with `"component-name": "options-object"`.
 
-```js
+```markup
 <script>
 component("button-group", { atoms: [
 	{ "button": { "text": "Back" } },
@@ -55,7 +55,7 @@ component("button-group", { atoms: [
 ```
 Alternatively, the atoms array can be an object with a `"component"` key and an `"options"` key. This can be useful if you need to pass through several different types of component:
 
-```js
+```markup
 <script>
 component("button-group", { atoms: [
 	{
@@ -82,7 +82,7 @@ Both these examples would render the same code:
 	<button class="btn">Next</button>
 </div>
 
-```html
+```markup
 <div class="btn-group">
 	<button class="btn">Back</button>
 	<button class="btn btn-warning">Help <i class="icon icon-help"></i></button>
