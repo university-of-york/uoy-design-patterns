@@ -1,7 +1,12 @@
 // Mid sized mobiles and phablets and lower
 @media only screen and (max-width: 639px) {
+  .desktop-only,
+  .tablet-only,
   .mobile-hidden {
     display:none;
+  }
+  .mobile-only {
+    display:block;
   }
   // Grid updates
   .g-half,

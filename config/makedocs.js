@@ -21,8 +21,7 @@ module.exports = function (grunt) {
             categories[page.category].push(page);
           }
           if (i === pages.length - 1) {
-            var output = '<nav id="main-menu" class="main-menu">\n';
-            output+= '<ul>\n';
+            var output = '<ul>\n';
             for (var c in categories) {
               // Top level pages have a 'false' category value
               if (categories[c].category === false) {
@@ -41,9 +40,7 @@ module.exports = function (grunt) {
               }
             }
             output+= '</ul>\n';
-            output+= '</nav>\n';
             grunt.file.write(navPage, output);
-
           }
         });
       }

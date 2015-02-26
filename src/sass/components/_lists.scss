@@ -7,17 +7,4 @@
   margin:0;
   padding:0;
   list-style:none;
-  li:before {
-    content:'';
-    display:none;
-  }
-}
-
-// Bullet list
-ul.bullet-list {
-  list-style:disc !important;
-  li:before {
-    content:'';
-    display:none;
-  }
 }

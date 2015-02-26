@@ -4,6 +4,9 @@ build
 dev
 node_modules
 src/js/vendor
+src/icons/**/*
+!src/icons/source/**/*
+src/sass/icons
 
 **/*.zip
 **/.DS_Store

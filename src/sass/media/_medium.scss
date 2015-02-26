@@ -3,8 +3,13 @@
 }
 // This size only
 @media only screen and (min-width: 640px) and (max-width: 839px) {
+  .desktop-only,
+  .mobile-only,
   .tablet-hidden {
     display:none;
+  }
+  .tablet-only {
+    display:block;
   }
   // Update grid
   .g-half,

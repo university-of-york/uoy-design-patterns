@@ -9,11 +9,15 @@ module.exports = {
   },
   pages: {
     files: ['src/pages/*.md', '!src/pages/sample.md'],
-    // tasks: ['newer:makedocs:dev'] // Recreates nav with single, changed file.
+    // tasks: ['newer:makedocs:dev'] // Recreates nav with single, changed file :(
     tasks: ['makedocs:dev']
   },
   js: {
     files: ['src/js/**/*.js'],
+    tasks: ['newer:copy:dev']
+  },
+  img: {
+    files: ['src/img/**/*.{png,jpg,svg,gif}'],
     tasks: ['newer:copy:dev']
   },
   autoprefix: {

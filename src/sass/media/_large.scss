@@ -3,4 +3,12 @@
 }
 // This size only
 @media only screen and (min-width: 840px) and (max-width: 1023px) {
+  .desktop-only,
+  .mobile-only,
+  .tablet-hidden {
+    display:none;
+  }
+  .tablet-only {
+    display:block;
+  }
 }

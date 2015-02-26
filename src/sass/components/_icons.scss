@@ -1,3 +1,34 @@
 //
 // ICONS
 //
+[class^=icon] {
+  display:inline-block;
+  background-size:100%;
+  vertical-align:middle;
+  // Give them medium size as default
+  $m:map-get($icons, medium);
+  width:$m;
+  height:$m;
+}
+@each $name, $size in $icons {
+  .btn-#{$name} [class^=icon],
+  .icon-#{$name} {
+    width: $size;
+    height: $size;
+  }
+}
+.icon-before {
+  margin-right:12px;
+}
+.icon-after {
+  margin-left:12px;
+}
+
+// Body class based on browser support
+@import "icons/svg-icons";
+.icons-datapng {
+  @import "icons/png-icons";
+}
+.icons-png {
+  @import "icons/png-urls";
+}

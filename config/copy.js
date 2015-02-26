@@ -1,4 +1,28 @@
 module.exports = {
+  darkicons: {
+    files: [{
+      expand: true,
+      cwd: 'src/icons/source/',
+      src: '*.svg',
+      dest: 'src/icons/svg/',
+      rename: function(dest, src) {
+        var parts = src.split('.')
+        return dest + parts[0]+'.colors-dark.'+parts[1];
+      }
+    }]
+  },
+  lighticons: {
+    files: [{
+      expand: true,
+      cwd: 'src/icons/source/',
+      src: '*.svg',
+      dest: 'src/icons/svg/',
+      rename: function(dest, src) {
+        var parts = src.split('.')
+        return dest + parts[0]+'.colors-light.'+parts[1];
+      }
+    }]
+  },
   dev: {
     files: [{
       expand: true,

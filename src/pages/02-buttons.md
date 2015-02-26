@@ -43,15 +43,15 @@ component("button", { "text": "Huge button", "size": "huge" });
 It's also easy to add an icon to a button, either at the front, the end, or both (which doesn't look good, so don't do it).
 
 <script>
-component("button", { "text": "Help", "icon-before": "help" });
-component("button", { "text": "Info", "icon-after": "info" });
-component("button", { "text": "Please don't", "icon-before": "mobile", "icon-after": "tick" });
+component("button", { "text": "Like", "icon-before": "heart" });
+component("button", { "text": "Play", "icon-after": "media-play" });
+component("button", { "text": "Please don't do this", "icon-before": "musical-note", "icon-after": "person" });
 </script>
 
 You can join this all together to make a monster button:
 
 <script>
-component("button", { "text": "Look at me!", "icon-after": "tick", "size": "large", "type": "primary" });
+component("button", { "text": "Look at me!", "icon-after": "thumb-up", "size": "large", "type": "primary" });
 </script>
 
 ## Button groups
@@ -61,12 +61,12 @@ You can combine buttons together in a `btn-group`. This will join the buttons to
 <script>
 component("button-group", { atoms: [
   { "button": { "text": "Back" } },
-  { "button": { "type": "warning", "text": "Help", "icon-after": "help" } },
+  { "button": { "type": "warning", "text": "Help", "icon-after": "shield" } },
   { "button": { "text": "Next" } }
 ]});
 component("button-group", { atoms: [
   { "button": { "text": "Back", "size": "large" } },
-  { "button": { "type": "cancel", "text": "Help", "icon-after": "help", "size": "large" } },
+  { "button": { "type": "cancel", "text": "Help", "icon-after": "command", "size": "large" } },
   { "button": { "type": "highlight", "text": "Next", "size": "large" } }
 ]});
 </script>

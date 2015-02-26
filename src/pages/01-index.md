@@ -38,6 +38,6 @@ We intend to release version 1 of the design patterns for use on the new site in
 
 ### I've spotted a mistake, who do I tell?
 
-Send an email to [the Digital Team](mailto:digital-marketing@york.ac.uk) letting us know what page you were looking at, what browser (Internet Explorer, Firefox, Chrome etc.) you were using and which device you were on (desktop computer, tablet, mobile).
+Send an email to [the Digital Team](mailto:digital-marketing@york.ac.uk) letting us know what page you were looking at, what browser (Internet Explorer, Firefox, Chrome etc.) you were using and which device you were on (desktop computer, tablet, mobile). If you don't know this information, you can [go to this page](http://uoy.yourbrowser.is/?send=true) and it will forward this information on to us
 
 ~CM

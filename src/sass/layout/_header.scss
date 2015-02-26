@@ -7,16 +7,20 @@
   top:0;
   left:0;
   width:100%;
-  height:78px;
+  height:auto;
 }
 .main-header {
   color:#333233;
   background:#fff;
   padding:0 20px;
   h1 {
-    line-height:78px;
+    line-height:41px;
     font-size:24px;
     max-width:$container-width;
     margin:0 auto;
+    padding:19px 0 18px;
+    img {
+      vertical-align:middle;
+    }
   }
 }
