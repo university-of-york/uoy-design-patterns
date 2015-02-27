@@ -7,7 +7,7 @@ body,strong,b,select,textarea,input {
 }
 // Base SCSS file
 body {
-  color:#333233;
+  color:$dark;
   margin:0;
   padding:0;
   line-height: 1.626; // 26px on 16px font

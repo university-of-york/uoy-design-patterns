@@ -5,6 +5,7 @@
   display:inline-block;
   background-size:100%;
   vertical-align:middle;
+  box-sizing:padding-box;
   // Give them medium size as default
   $m:map-get($icons, medium);
   width:$m;

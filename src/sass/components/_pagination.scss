@@ -16,10 +16,10 @@
     width:2rem;
     height:2rem;
     line-height:2rem;
-    border:1px solid #333;
+    border:1px solid $dark;
     text-align:center;
     background-color:#fff;
-    color:#333;
+    color:$dark;
     margin-right:0.25rem;
     transition:all 0.2s ease-out;
     &:hover {
@@ -30,7 +30,7 @@
     &:not([href]) {
       &:hover {
         background-color:#fff;
-        color:#333;
+        color:$dark;
         cursor:default;
       }
     }
@@ -61,7 +61,7 @@
     &.pagination-current {
       background-color:#aaa;
       &:hover {
-        background-color:#333;
+        background-color:$dark;
       }
     }
   }

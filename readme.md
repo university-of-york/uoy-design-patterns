@@ -27,6 +27,10 @@ Next, run `grunt bower`. This will load all the third-party JS libraries that we
 
 You're now ready to start making stuff!
 
+## Icon creation
+
+There is a task that creates light and dark versions of SVG icons, plus backup PNGs, for use in the site. Run `grunt icons` from the command line and they will be created. You only need to do this once (unless we decide to switch out the icon set).
+
 ## Active development
 
 To work on the front-end designs, run `grunt dev` in the terminal. This will create the active templates and start a local server, which will live reload as you code.

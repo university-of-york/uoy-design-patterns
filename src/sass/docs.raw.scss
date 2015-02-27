@@ -1,4 +1,6 @@
 /* ADDITIONAL DOCUMENTATION STYLES */
+@import "core/variables";
+
 .docs {
 }
 #grid-page {
@@ -66,7 +68,40 @@
     }
   }
 }
-
+#icons-page {
+  [class^=icon] {
+    border-top:6px solid #fff;
+    border-bottom:6px solid #fff;
+    width:32%;
+    background-size:auto 100%;
+    background-position:4px center;
+    line-height:16px;
+    &:after {
+      content: attr(class) " ";
+      margin-left:26px;
+      white-space:nowrap;
+    }
+    @each $name, $size in $icons {
+      &.icon-#{$name} {
+        line-height:$size;
+        &:after {
+          margin-left:$size + 12;
+        }
+      }
+    }
+    @media only screen and (max-width: 839px) {
+      width:49%;
+    }
+    @media only screen and (max-width: 529px) {
+      width:100%;
+    }
+  }
+  .icon-light {
+    background-color:#333233;
+    border-color:#333233;
+    color:#fff;
+  }
+}
 /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
