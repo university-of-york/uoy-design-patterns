@@ -13,6 +13,15 @@ $font-title: 'Pollen Regular', Georgia, 'Times New Roman', Times, serif;
 
 // Measurements
 $container-width: 960px;
+// Our breakpoints - specified in 16px-based ems
+// // http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/
+$width: (
+  tiny:   30em,
+  small:  40em,
+  medium: 52.5em,
+  large:  64em,
+  huge:   77.5em
+);
 // Image sizes
 
 // Icon sizes

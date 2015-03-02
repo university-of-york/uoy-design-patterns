@@ -2,7 +2,7 @@
 
 title: Pagination
 name: pagination
-category: Components
+category: components
 layout: default
 id: pagination-page
 

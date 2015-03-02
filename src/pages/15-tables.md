@@ -2,7 +2,7 @@
 
 title: Tables
 name: tables
-category: Components
+category: components
 layout: default
 id: tables-page
 

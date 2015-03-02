@@ -1,4 +1,4 @@
-<div class="form-element{{#size}} form-{{this}}{{/size}}">{{#label}}
+<div class="form-element{{#select}} form-select{{/select}}{{#size}} g-{{this}}{{/size}}{{^size}} g-full{{/size}}">{{#label}}
   <label for="{{@root.name}}">{{this}}</label>{{/label}}{{#select}}
   <select name="{{name}}" id="{{name}}">{{/select}}
   {{#atoms}}

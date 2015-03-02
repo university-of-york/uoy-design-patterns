@@ -2,7 +2,7 @@
 
 title: Grid
 name: grid
-category: Layout
+category: layout
 layout: default
 id: grid-page
 

@@ -1,5 +1,7 @@
+$max: map-get($width, small) - 0.0625em;
+$min: map-get($width, tiny);
 // Mid sized mobiles and phablets and lower
-@media only screen and (max-width: 639px) {
+@media only screen and (max-width: $max) {
   .desktop-only,
   .tablet-only,
   .mobile-hidden {
@@ -7,6 +9,14 @@
   }
   .mobile-only {
     display:block;
+  }
+  .main-header {
+    h1 {
+      img {
+        width:132px;
+        height:20px;
+      }
+    }
   }
   // Grid updates
   .g-half,
@@ -16,7 +26,15 @@
   .g-twothirds {
     width:100%;
   }
+  form {
+    .g-row {
+      margin:0;
+    }
+  }
+  .form-element {
+    margin:0 0 11px;
+  }
 }
 // Just this size
-@media only screen and (min-width: 480px) and (max-width: 639px) {
+@media only screen and (min-width: $min) and (max-width: $max) {
 }

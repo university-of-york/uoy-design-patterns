@@ -2,7 +2,7 @@
 
 title: Forms
 name: forms
-category: Components
+category: components
 layout: default
 id: forms-page
 
@@ -56,37 +56,96 @@ component("form-element", { "label": "Do you know the way to San Jose?", "name":
 ]});
 </script>
 
-You can put these together in a `form-row`: three `thirds`, two `halves`, a `half` and two `quarters`, and so on.
+You can put these together in the usual grid system: a `form-row` can be `form-elements` that are three `g-third`s, two `g-half`s, a `g-half` and two `g-quarter`s, and so on.
 
 <script>
-component("form-row", { atoms: [
+component("form-row", { "atoms": [
 	{ "form-element": { "label": "Bippity", "name": "l", "size": "half" } },
 	{ "form-element": { "label": "Boppity", "name": "m", "size": "quarter" } },
 	{ "form-element": { "label": "Boo", "name": "n", "size": "quarter" } },
 ]});
 </script>
 
-And finally, the `form` organism: a load of `form-row`s.
+And finally, the `form` organism: a load of `form-row`s. The default style is `form-stacked`.
 
 <script>
-component("form", { type:"stacked", method:"get", legend: "Fill in this form", atoms: [
+component("form", { "type":"stacked", "method":"get", "legend": "Fill in this form", "atoms": [
 
-	{ "form-row": { atoms: [
-		{ "form-element": { "label": "Bippity", "name": "o", "size": "half" } },
-		{ "form-element": { "label": "Boppity", "name": "p", "size": "quarter" } },
-		{ "form-element": { "label": "Boo", "name": "q", "size": "quarter" } },
-	]}},
-	{ "form-row": { atoms: [
-		{ "form-element": { "label": "Hickory", "name": "r", "size": "third" } },
-		{ "form-element": { "label": "Dickory", "name": "s", "size": "third" } },
-		{ "form-element": { "label": "Dock", "name": "t", "size": "third" } },
-	]}},
-	{ "form-row": { atoms: [
-		{ "button": { "text": "Submit" } }
-	]}}
+  { "form-row": { "atoms": [
+    { "form-element": { "label": "Text input", "name": "sa", "size": "third", "atoms": { "input": { "type":"text" } } } },
+    { "form-element": { "label": "File input", "name": "sb", "size": "third", "atoms": { "input": { "type":"file" } } } },
+    { "form-element": { "label": "Password", "name": "sc", "size": "third", "atoms": { "input": { "type":"password" } } } },
+  ]}},
+
+  { "form-row": { "atoms": [
+    { "form-element": { "label": "Email", "name": "sd", "size": "third", "atoms": { "input": { "type":"email" } } } },
+    { "form-element": { "label": "URL", "name": "se", "size": "third", "atoms": { "input": { "type":"url" } } } },
+    { "form-element": { "label": "Telephone", "name": "sf", "size": "third", "atoms": { "input": { "type":"tel" } } } },
+  ]}},
+
+  { "form-row": { "atoms": [
+    { "form-element": { "label": "Select", "select": true, "size": "third", "name": "sg", "atoms":[
+      { "option": { "label": "Red", "value": "red" } },
+      { "option": { "label": "Blue", "value": "blue" } },
+      { "option": { "label": "Green", "value": "green" } },
+      { "option": { "label": "Yellow", "value": "yellow" } }
+    ]} },
+    { "form-element": { "label": "Radio", "name": "sh", "size": "third", "atoms":[
+      { "radio": { "label": "Yes", "value": "yes" } },
+      { "radio": { "label": "No", "value": "no" } },
+      { "radio": { "label": "Not sure", "value": "unsure" } }
+    ] } },
+    { "form-element": { "label": "Checkbox", "name": "si", "size": "third", "atoms":[
+      { "checkbox": { "label": "Ukulele", "value": "ukulele" } },
+      { "checkbox": { "label": "Mandolin", "value": "mandolin" } },
+      { "checkbox": { "label": "Banjo", "value": "banjo", "checked": true } }
+    ] } },
+  ]}},
+
+  { "form-row": { "atoms": [
+    { "form-element": { "label": "Textarea", "name": "sj", "size": "full", "atoms": { "textarea": { } } } },
+  ]}},
+
+  { "form-row": { "atoms": [
+    { "button": { "text": "Submit" } }
+  ]}}
 
 ]});
 </script>
+
+Inline forms have the label and the input on the same line. By default, the label is 25% of the width of the row, and the input is the remaining 75%. Because of this it's not recommended to put inline forms into quarter- or third=width grid boxes. Here is the same form as above but as a `form-inline` version.
+
+<script>
+component("form", { "type":"inline", "method":"get", "legend": "Fill in this form", "atoms": [
+
+  { "form-row": { "atoms": { "form-element": { "label": "Text input", "name": "ia", "atoms": { "input": { "type":"text" } } } } } },
+  { "form-row": { "atoms": { "form-element": { "label": "File input", "name": "ib", "atoms": { "input": { "type":"file" } } } } } },
+  { "form-row": { "atoms": { "form-element": { "label": "Password", "name": "ic", "atoms": { "input": { "type":"password" } } } } } },
+  { "form-row": { "atoms": { "form-element": { "label": "Email", "name": "id", "atoms": { "input": { "type":"email" } } } } } },
+  { "form-row": { "atoms": { "form-element": { "label": "URL", "name": "ie", "atoms": { "input": { "type":"url" } } } } } },
+  { "form-row": { "atoms": { "form-element": { "label": "Telephone", "name": "if", "atoms": { "input": { "type":"tel" } } } } } },
+  { "form-row": { "atoms": { "form-element": { "label": "Select", "select": true, "name": "ig", "atoms":[
+    { "option": { "label": "Red", "value": "red" } },
+    { "option": { "label": "Blue", "value": "blue" } },
+    { "option": { "label": "Green", "value": "green" } },
+    { "option": { "label": "Yellow", "value": "yellow" } }
+  ]} } } },
+  { "form-row": { "atoms": { "form-element": { "label": "Radio", "name": "ih", "atoms":[
+    { "radio": { "label": "Yes", "value": "yes" } },
+    { "radio": { "label": "No", "value": "no" } },
+    { "radio": { "label": "Not sure", "value": "unsure" } }
+  ] } } } },
+  { "form-row": { "atoms": { "form-element": { "label": "Checkbox", "name": "ii", "atoms":[
+    { "checkbox": { "label": "Ukulele", "value": "ukulele" } },
+    { "checkbox": { "label": "Mandolin", "value": "mandolin" } },
+    { "checkbox": { "label": "Banjo", "value": "banjo", "checked": true } }
+  ] } } } },
+  { "form-row": { "atoms": { "form-element": { "label": "Textarea", "name": "ij", "atoms": { "textarea": { } } } } } },
+  { "form-row": { "atoms": { "button": { "text": "Submit" } } } }
+
+]});
+</script>
+
 
 ### Options
 
@@ -145,3 +204,5 @@ component("form", { type:"stacked", method:"get", legend: "Fill in this form", a
 ###TODO
 
 * Add validation options?
+* Fancy select boxes?
+* Fancy file input?

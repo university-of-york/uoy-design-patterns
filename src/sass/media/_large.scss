@@ -1,8 +1,10 @@
+$max: map-get($width, large) - 0.0625em;
+$min: map-get($width, medium);
 // Large tablets and small screens
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: $max) {
 }
 // This size only
-@media only screen and (min-width: 840px) and (max-width: 1023px) {
+@media only screen and (min-width: $min) and (max-width: $max) {
   .desktop-only,
   .mobile-only,
   .tablet-hidden {

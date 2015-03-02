@@ -47,6 +47,9 @@
     color: #fff;
     background: #000066;
   }
+  [class^=icon] {
+    @extend .icon-light;
+  }
 }
 .btn-primary {
   background: #990000;
@@ -64,6 +67,9 @@
     color: #fff;
     background: #660000;
   }
+  [class^=icon] {
+    @extend .icon-light;
+  }
 }
 .btn-highlight {
   background: #009900;
@@ -80,6 +86,9 @@
     outline: none;
     color: #fff;
     background: #006600;
+  }
+  [class^=icon] {
+    @extend .icon-light;
   }
 }
 // Button sizes

@@ -12,32 +12,39 @@ module.exports = function (grunt) {
         var categories = {};
         pages.forEach(function(page, i) {
           if (page.category === false) {
+            if (typeof categories[page.name] === 'undefined') {
+              categories[page.name] = {};
+            }
             // Top level page
-            categories[page.name] = page;
+            categories[page.name].page = page;
           } else {
             if (typeof categories[page.category] === 'undefined') {
-              categories[page.category] = [];
+              categories[page.category] = {};
+              var catTitle = page.category.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+              categories[page.category].page = { dest:'#', title:catTitle };
             }
-            categories[page.category].push(page);
+            if (typeof categories[page.category]['children'] === 'undefined') {
+              categories[page.category]['children'] = [];
+            }
+            categories[page.category]['children'].push(page);
           }
           if (i === pages.length - 1) {
             var output = '<ul>\n';
             for (var c in categories) {
-              // Top level pages have a 'false' category value
-              if (categories[c].category === false) {
-                output+= '  <li><a href="'+path.basename(categories[c].dest)+'">'+categories[c].title+'</a></li>\n';
-              } else {
-                output+= '  <li>\n';
-                output+= '    <a href="#">'+c+'</a>\n';
+              var cat = categories[c];
+              var dest = cat.page.dest || '#';
+              var title = cat.page.title || '#';
+              output+= '  <li>\n';
+              output+= '    <a href="'+path.basename(cat.page.dest)+'">'+cat.page.title+'</a>\n';
+              if (typeof cat['children'] !== 'undefined') {
                 output+= '    <ul>\n';
                 // Loop through category pages
-                categories[c].forEach(function(j, p) {
-                  var thisPage = categories[c][p];
-                  output+= '      <li><a href="'+path.basename(thisPage.dest)+'">'+thisPage.title+'</a></li>\n';
+                cat['children'].forEach(function(p, j) {
+                  output+= '      <li><a href="'+path.basename(p.dest)+'">'+p.title+'</a></li>\n';
                 });
                 output+= '    </ul>\n';
-                output+= '  </li>\n';
               }
+              output+= '  </li>\n';
             }
             output+= '</ul>\n';
             grunt.file.write(navPage, output);

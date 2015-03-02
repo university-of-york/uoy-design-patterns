@@ -2,7 +2,7 @@
 
 title: Icons
 name: icons
-category: Components
+category: components
 layout: default
 id: icons-page
 

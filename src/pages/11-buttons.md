@@ -2,7 +2,7 @@
 
 title: Buttons
 name: buttons
-category: Components
+category: components
 layout: default
 id: buttons-page
 
