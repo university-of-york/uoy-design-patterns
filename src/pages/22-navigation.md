@@ -115,12 +115,162 @@ In general, navigation is kept up at the top of the page, so we can use the whol
 
 &nbsp;
 
-## Mega menu <small>(when clicking on &lsquo;See more&rsquo;)</small>
+## Mega menu
+
+<small>(when clicking on &lsquo;See more&rsquo;)</small>
 
 <nav class="main-menu mobile-hidden">
+<ul class="menu-lv1">
+  <li>
+    <a href="#">Research</a>
+  </li>
+  <li class="active">
+    <a href="#">Study</a>
+    <ul class="menu-lv2 megamenu">
+      <li class="active">
+        <a href="#">Undergraduate</a>
+        <ul class="menu-lv3">
+          <li>
+            <a href="#">Courses</a>
+            <ul class="menu-lv4">
+              <li><a href="#">Choosing a course</a></li>
+              <li><a href="#">Combined courses</a></li>
+              <li><a href="#">Teaching &amp; learning</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Open days &amp; visits</a>
+            <ul class="menu-lv4">
+              <li><a href="#">Post offer visit days</a></li>
+              <li><a href="#">UCAS conventions</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Accommodation</a>
+            <ul class="menu-lv4">
+              <li><a href="#">Application information</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Fees &amp; funding</a>
+            <ul class="menu-lv4">
+              <li><a href="#">Home &amp; EU students</a></li>
+              <li><a href="#">International students</a></li>
+              <li><a href="#">Visiting students</a></li>
+              <li><a href="#">Continuing students</a></li>
+              <li><a href="#">Additional academic support</a></li>
+              <li><a href="#">Fee status</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Applying</a>
+            <ul class="menu-lv4">
+              <li><a href="#">Entry requirements</a></li>
+              <li><a href="#">Policies &amp; guidance</a></li>
+              <li><a href="#">University of York access scheme</a></li>
+              <li><a href="#">Mature students</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Student life</a>
+            <ul class="menu-lv4">
+              <li><a href="#">Life on campus</a></li>
+              <li><a href="#">Sport</a></li>
+              <li><a href="#">York study environment</a></li>
+              <li><a href="#">Support services</a></li>
+              <li><a href="#">Meet our students</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">The city of York</a>
+            <ul class="menu-lv4">
+              <li><a href="#">Culture &amp; heritage</a></li>
+              <li><a href="#">Eating &amp; drinking</a></li>
+              <li><a href="#">Nightlife &amp; entertainment</a></li>
+              <li><a href="#">Shopping</a></li>
+              <li><a href="#">Further afield</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Careers &amp; skills</a>
+            <ul class="menu-lv4">
+              <li><a href="#">Your career</a></li>
+              <li><a href="#">Enterprise</a></li>
+              <li><a href="#">York Award</a></li>
+              <li><a href="#">Volunteering</a></li>
+              <li><a href="#">Study abroad</a></li>
+              <li><a href="#">Learn a language</a></li>
+              <li><a href="#">After graduation</a></li>
+              <li><a href="#">What do York graduates do?</a></li>
+            </ul>
+          </li>
+          <!-- TOO MUCH! -->
+          <!--li>
+            <a href="#">Services for schools &amp; colleges</a>
+            <ul class="menu-lv4">
+              <li><a href="#">Years 8-11</a></li>
+              <li><a href="#">Post-16</a></li>
+              <li><a href="#">Green Apples</a></li>
+              <li><a href="#">Shine</a></li>
+              <li><a href="#">Next Step York</a></li>
+              <li><a href="#">York Experience Summer School</a></li>
+              <li><a href="#">Subject taster days</a></li>
+              <li><a href="#">Schools &amp; Colleges Network</a></li>
+              <li><a href="#">The Excellence Hub for Yorkshire &amp; Humber</a></li>
+              <li><a href="#">Realising Opportunities</a></li>
+              <li><a href="#">Academic skills</a></li>
+              <li><a href="#">Headstart</a></li>
+              <li><a href="#">York Science Outreach Centre</a></li>
+            </ul>
+          </li-->
+          <li>
+            <a href="#">Parents &amp; carers</a>
+          </li>
+          <li>
+            <a href="#">Request a prospectus</a>
+          </li>
+          <li>
+            <a href="#">Contacts</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#">Business</a>
+  </li>
+  <li>
+    <a href="#">Departments</a>
+  </li>
+</ul>
 </nav>
 
 &nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
 
 ## Level 4
 
@@ -155,6 +305,60 @@ In general, navigation is kept up at the top of the page, so we can use the whol
   </li>
 </ul>
 </nav>
+
+&nbsp;
+
+## Level 5
+
+<nav class="main-menu mobile-hidden">
+<ul class="menu-lv1">
+  <li>
+    <a href="#">Research</a>
+  </li>
+  <li class="active">
+    <a href="#">Study</a>
+    <ul class="menu-lv2">
+      <li class="active">
+        <a href="#">Undergraduate</a>
+        <ul class="menu-lv3">
+          <li class="active">
+            <a href="#">Courses</a>
+              <ul class="menu-lv4">
+                <li class="active">
+                  <a href="#">Choosing a course</a>
+                  <ul class="menu-lv5">
+                    <li><a href="#">Course type A</a></li>
+                    <li><a href="#">Course type B</a></li>
+                  </ul>
+                </li>
+              </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#">Business</a>
+  </li>
+  <li>
+    <a href="#">Departments</a>
+  </li>
+</ul>
+</nav>
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
 
 &nbsp;
 

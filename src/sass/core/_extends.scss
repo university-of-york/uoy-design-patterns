@@ -12,6 +12,34 @@
 %default-transition {
   transition:0.2s all ease-out;
 }
+// adds an arrow after the active LI in the nav
+%active-nav {
+  &:after {
+    @extend %default-transition;
+    content:'';
+    display:block;
+    width:0;
+    border-width:22px;
+    border-right-width:0;
+    border-left-width:9px;
+    border-style: solid;
+    border-color: transparent;
+    position: absolute;
+    right: -9px;
+    top: 0;
+  }
+}
+%last-nav {
+  &:after {
+    content:'';
+    width: 960px;
+    height: 44px;
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 100%;
+  }
+}
 // Inline block lists
 // Removes space from between inline-block elements
 %ib-container {

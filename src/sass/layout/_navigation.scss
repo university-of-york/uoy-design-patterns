@@ -5,11 +5,11 @@
   position:fixed;
   top:78px;
   left:0;
+  z-index:24;
 }
 .main-menu {
   height:47px;
   width:100%;
-  z-index:8;
   background:$dark;
   border-top: 3px solid $blue;
   margin-bottom:47px;
@@ -24,6 +24,7 @@
   li {
     @extend %ib-element;
     line-height:44px;
+    height:44px;
     list-style:none;
   }
   a {
@@ -46,7 +47,7 @@
       > a {
         background:$blue;
         &:hover {
-          background:none;
+          background:$blue;
         }
       }
       .menu-lv2 {
@@ -68,6 +69,52 @@
   left:0;
   top:100%;
   width:100%;
+  overflow:hidden;
+  &.megamenu {
+    overflow:visible;
+    height:auto;
+    z-index:10;
+    li {
+      height:auto;
+    }
+    .menu-lv3 {
+      width:100%;
+      height:auto;
+      padding:20px;
+      li {
+        width:25%;
+        line-height:1.626;
+        vertical-align:top;
+        &:first-child {
+          a {
+            padding-left:12px;
+          }
+        }
+      }
+      a {
+        background:none;
+      }
+    }
+    .menu-lv4 {
+      @extend %ib-element;
+      display:block;
+      width:100%;
+      height:auto;
+      padding-left:2em;
+      margin:0 0 1em;
+      list-style:disc;
+      li {
+        width:100%;
+        padding:4px 0;
+        line-height:1.126;
+        &:last-child {
+          &:after {
+            display:none;
+          }
+        }
+      }
+    }
+  }
   li {
     border:0;
     &:first-child {
@@ -78,9 +125,10 @@
       width:100%;
       > a {
         @extend %ib-element;
+        @extend %active-nav;
         background:darken($blue, 20);
-        padding-right:26px;
         position:relative;
+        z-index:6;
         &:hover {
           background:darken($blue, 30);
           &:after {
@@ -88,19 +136,7 @@
           }
         }
         &:after {
-          @extend %default-transition;
-          content:'';
-          display:block;
-          width:0;
-          border-width:22px;
-          border-right-width:9px;
-          border-left-width:9px;
-          border-style: solid;
-          border-color: $blue;
           border-left-color: darken($blue, 20);
-          position: absolute;
-          right: 0;
-          top: 0;
         }
       }
       .menu-lv3 {
@@ -112,7 +148,14 @@
 // Level 3
 .menu-lv3 {
   display:none;
+  position:relative;
+  z-index:5;
   li {
+    &:first-child {
+      a {
+        padding-left:21px;
+      }
+    }
     &.active {
       > a {
         background:$blue;
@@ -123,8 +166,8 @@
           }
         }
         &:after {
-          border-color: lighten($blue,10);
-          border-left-color:$blue;
+          border-color: transparent;
+          border-left-color: $blue;
         }
       }
       .menu-lv4 {
@@ -137,28 +180,72 @@
         background:none;
       }
     }
-  }
-  a {
+    > a {
+      background:$blue;
+      &:hover {
+        background:darken($blue,10);
+      }
+    }
   }
 }
 // Level 4
 .menu-lv4 {
   display:none;
-  background:lighten($blue,10);
+  position:relative;
+  z-index:4;
+  li {
+    position:relative;
+    &.active {
+      > a {
+        background:lighten($blue, 10);
+        &:hover {
+          background:$blue;
+          &:after {
+            border-left-color:$blue;
+          }
+        }
+        &:after {
+          border-left-color: lighten($blue, 10);
+        }
+      }
+      .menu-lv5 {
+        display:inline-block;
+      }
+    }
+    // To overlay the lighter background
+    &:last-child {
+      @extend %last-nav;
+      &:after {
+        background:lighten($blue,10);
+      }
+    }
+    > a {
+      background:lighten($blue, 10);
+      &:hover {
+        background:lighten($blue, 5);
+      }
+    }
+  }
+}
+
+// Level 5
+.menu-lv5 {
+  display:none;
+  position:relative;
+  z-index:3;
   li {
     position:relative;
     // To overlay the lighter background
-    &:last-child:after {
-      content:'';
-      background:#f00;
-      // background:lighten($blue,10);
-      width: 960px;
-      height: 44px;
-      position: absolute;
-      display: inline-block;
-      top: 0;
-      left: 100%;
-
+    &:last-child {
+      &:after {
+        background:lighten($blue,20);
+      }
+    }
+    > a {
+      background:lighten($blue, 20);
+      &:hover {
+        background:lighten($blue,15);
+      }
     }
   }
 }
