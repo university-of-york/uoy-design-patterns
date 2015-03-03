@@ -10,9 +10,11 @@ $blue:#00b3eb;
 // Fonts
 $font-default: 'Trebuchet MS', Helvetica, Arial, sans-serif;
 $font-title: 'Pollen Regular', Georgia, 'Times New Roman', Times, serif;
+$font-size:16px;
 
 // Measurements
 $container-width: 960px;
+
 // Our breakpoints - specified in 16px-based ems
 // // http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/
 $width: (
@@ -22,6 +24,7 @@ $width: (
   large:  64em,
   huge:   77.5em
 );
+
 // Image sizes
 
 // Icon sizes

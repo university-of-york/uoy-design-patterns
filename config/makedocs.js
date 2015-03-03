@@ -29,7 +29,7 @@ module.exports = function (grunt) {
             categories[page.category]['children'].push(page);
           }
           if (i === pages.length - 1) {
-            var output = '<ul>\n';
+            var output = '<ul class="menu-lv1">\n';
             for (var c in categories) {
               var cat = categories[c];
               var dest = cat.page.dest || '#';

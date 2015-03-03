@@ -8,3 +8,7 @@
   background:#fff;
   padding:144px 20px 0;
 }
+// On wide pages with no .main-wrapper
+body > .g-container {
+  padding:144px 0 0;
+}

@@ -5,71 +5,174 @@
   position:fixed;
   top:78px;
   left:0;
-  height:46px;
-  width:100%;
-  z-index:8;
 }
 .main-menu {
+  height:47px;
+  width:100%;
+  z-index:8;
   background:$dark;
   border-top: 3px solid $blue;
+  margin-bottom:47px;
   ul {
     @extend %clearfix;
+    @extend %ib-container;
     max-width:$container-width;
     margin:0 auto;
     padding:0;
-    li {
-      float:left;
-      line-height:43px;
-      font-size:16px;
-      list-style:none;
-      border-right:1px solid #949394;
-      position:relative;
-      &:first-child {
-        border-left:1px solid #949394;
-      }
-      a {
-        display:block;
-        padding:0 12px;
-        color:#fff;
-        text-decoration:none;
+    height:44px;
+  }
+  li {
+    @extend %ib-element;
+    line-height:44px;
+    list-style:none;
+  }
+  a {
+    @extend %default-transition;
+    display:block;
+    padding:0 12px;
+    text-decoration:none;
+    vertical-align:top;
+    color:#fff;
+  }
+}
+.menu-lv1 {
+  position:relative;
+  li {
+    border-right:1px solid #949394;
+    &:first-child {
+      border-left:1px solid #949394;
+    }
+    &.active {
+      > a {
+        background:$blue;
         &:hover {
-          background:$blue;
+          background:none;
         }
       }
+      .menu-lv2 {
+        display:block;
+      }
+    }
+    a {
       &:hover {
-        ul {
-          display:block;
-        }
-      }
-      ul {
-        display:none;
-        position:absolute;
-        top:100%;
-        background:#999;
-        min-width:180px;
-        li {
-          width:100%;
-          border:0;
-          border-top:1px solid #fff;
-          &:first-child {
-            border:0;
-          }
-        }
+        background:darken($blue, 20);
       }
     }
   }
 }
+// Level 2
+.menu-lv2 {
+  display:none;
+  background:$blue;
+  position:absolute;
+  left:0;
+  top:100%;
+  width:100%;
+  li {
+    border:0;
+    &:first-child {
+      border-left:0;
+    }
+    &.active {
+      @extend %ib-container;
+      width:100%;
+      > a {
+        @extend %ib-element;
+        background:darken($blue, 20);
+        padding-right:26px;
+        position:relative;
+        &:hover {
+          background:darken($blue, 30);
+          &:after {
+            border-left-color: darken($blue, 30);
+          }
+        }
+        &:after {
+          @extend %default-transition;
+          content:'';
+          display:block;
+          width:0;
+          border-width:22px;
+          border-right-width:9px;
+          border-left-width:9px;
+          border-style: solid;
+          border-color: $blue;
+          border-left-color: darken($blue, 20);
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+      }
+      .menu-lv3 {
+        display:inline-block;
+      }
+    }
+  }
+}
+// Level 3
+.menu-lv3 {
+  display:none;
+  li {
+    &.active {
+      > a {
+        background:$blue;
+        &:hover {
+          background:darken($blue, 10);
+          &:after {
+            border-left-color: darken($blue, 10);
+          }
+        }
+        &:after {
+          border-color: lighten($blue,10);
+          border-left-color:$blue;
+        }
+      }
+      .menu-lv4 {
+        display:inline-block;
+      }
+
+    }
+    &.more {
+      &:hover {
+        background:none;
+      }
+    }
+  }
+  a {
+  }
+}
+// Level 4
+.menu-lv4 {
+  display:none;
+  background:lighten($blue,10);
+  li {
+    position:relative;
+    // To overlay the lighter background
+    &:last-child:after {
+      content:'';
+      background:#f00;
+      // background:lighten($blue,10);
+      width: 960px;
+      height: 44px;
+      position: absolute;
+      display: inline-block;
+      top: 0;
+      left: 100%;
+
+    }
+  }
+}
+
 #mobile-menu-buttons {
+  @extend %ib-container;
   position:fixed;
   z-index:10;
   top:0;
   right:0;
-  font-size:0;
   a {
-    display:inline-block;
+    @extend %ib-element;
     height:78px;
     width:78px;
-    font-size:16px;
     background:$dark;
     color:$light;
     border-left:1px solid $light;
@@ -89,13 +192,13 @@
     left:0;
   }
   ul {
+    @extend %ib-container;
     list-style:none;
     margin:0;
     padding:0;
-    font-size:0;
     height:100%;
     li {
-      display:inline-block;
+      @extend %ib-element;
       width:33.333%;
       height:33.333%;
       &:nth-of-type(3n+3) a {
@@ -107,7 +210,6 @@
     }
     a {
       display:block;
-      font-size:16px;
       border-right:1px solid $light;
       border-bottom:1px solid $light;
       width:100%;
