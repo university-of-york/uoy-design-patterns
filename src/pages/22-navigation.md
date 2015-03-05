@@ -12,6 +12,8 @@ id: navigation-page
 
 In general, navigation is kept up at the top of the page, so we can use the whole width of the page for content. The sub-navigation (levels 3+) acts as a breadcrumb when needed.
 
+The deepest level I can find in the site audit is six levels deep (e.g. /study/study-abroad/outgoing/europe/partners/music/)
+
 ## Level 1
 
 <nav class="main-menu mobile-hidden">
@@ -99,9 +101,9 @@ In general, navigation is kept up at the top of the page, so we can use the whol
           <li><a href="#">Open days &amp; visits</a></li>
           <li><a href="#">Accommodation</a></li>
           <li><a href="#">Fees &amp; funding</a></li>
-          <li class="more"><a href="#">See more <small>&#9660;</small></a></li>
         </ul>
       </li>
+      <li class="more"><a href="#">See more <small>&#9660;</small></a></li>
     </ul>
   </li>
   <li>
@@ -234,6 +236,9 @@ In general, navigation is kept up at the top of the page, so we can use the whol
           </li>
         </ul>
       </li>
+      <li class="more">
+        <a href="#">See less <small>&#9650;</small></a>
+      </li>
     </ul>
   </li>
   <li>
@@ -287,11 +292,11 @@ In general, navigation is kept up at the top of the page, so we can use the whol
         <ul class="menu-lv3">
           <li class="active">
             <a href="#">Courses</a>
-              <ul class="menu-lv4">
-                <li><a href="#">Choosing a course</a></li>
-                <li><a href="#">Combined courses</a></li>
-                <li><a href="#">Teaching &amp; learning</a></li>
-              </ul>
+            <ul class="menu-lv4">
+              <li><a href="#">Choosing a course</a></li>
+              <li><a href="#">Combined courses</a></li>
+              <li><a href="#">Teaching &amp; learning</a></li>
+            </ul>
           </li>
         </ul>
       </li>
@@ -323,15 +328,15 @@ In general, navigation is kept up at the top of the page, so we can use the whol
         <ul class="menu-lv3">
           <li class="active">
             <a href="#">Courses</a>
-              <ul class="menu-lv4">
-                <li class="active">
-                  <a href="#">Choosing a course</a>
-                  <ul class="menu-lv5">
-                    <li><a href="#">Course type A</a></li>
-                    <li><a href="#">Course type B</a></li>
-                  </ul>
-                </li>
-              </ul>
+            <ul class="menu-lv4">
+              <li class="active">
+                <a href="#">Choosing a course</a>
+                <ul class="menu-lv5">
+                  <li><a href="#">Course type A</a></li>
+                  <li><a href="#">Course type B</a></li>
+                </ul>
+              </li>
+            </ul>
           </li>
         </ul>
       </li>
@@ -348,6 +353,111 @@ In general, navigation is kept up at the top of the page, so we can use the whol
 
 &nbsp;
 
+## Level 6
+
+<nav class="main-menu mobile-hidden">
+<ul class="menu-lv1">
+  <li>
+    <a href="#">Research</a>
+  </li>
+  <li class="active">
+    <a href="#">Study</a>
+    <ul class="menu-lv2">
+      <li class="active">
+        <a href="#">Undergraduate</a>
+        <ul class="menu-lv3">
+          <li class="active">
+            <a href="#">Courses</a>
+            <ul class="menu-lv4">
+              <li class="active">
+                <a href="#">Choosing a course</a>
+                <ul class="menu-lv5">
+                  <li class="active">
+                    <a href="#">Course type A</a>
+                      <ul class="menu-lv6">
+                        <li><a href="#">Option 1</a></li>
+                        <li><a href="#">The second option</a></li>
+                      </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="more">
+        <a href="#">See more <small>&#9660;</small></a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#">Business</a>
+  </li>
+  <li>
+    <a href="#">Departments</a>
+  </li>
+</ul>
+</nav>
+
+&nbsp;
+
+## Level 6 megamenu
+
+In case there are too many options to fit on a line, the megamenu can be used at any level.
+
+<nav class="main-menu mobile-hidden">
+<ul class="menu-lv1">
+  <li>
+    <a href="#">Research</a>
+  </li>
+  <li class="active">
+    <a href="#">Study</a>
+    <ul class="menu-lv2">
+      <li class="active">
+        <a href="#">Undergraduate</a>
+        <ul class="menu-lv3">
+          <li class="active">
+            <a href="#">Courses</a>
+            <ul class="menu-lv4">
+              <li class="active">
+                <a href="#">Choosing a course</a>
+                <ul class="menu-lv5 megamenu">
+                  <li class="active">
+                    <a href="#">Course type A</a>
+                    <ul class="menu-lv6">
+                      <li><a href="#">The first option</a></li>
+                      <li><a href="#">Option 2</a></li>
+                      <li><a href="#">Richard III</a></li>
+                      <li><a href="#">Born on the Fourth of July</a></li>
+                      <li><a href="#">The Fifth Element</a></li>
+                      <li><a href="#">Sixth Sense</a></li>
+                      <li><a href="#">Se7en</a></li>
+                      <li><a href="#">8</a></li>
+                      <li><a href="#">A really long ninth option that probably wouldn't exist</a></li>
+                      <li><a href="#">Ten (10)</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="more">
+        <a href="#">See less <small>&#9650;</small></a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#">Business</a>
+  </li>
+  <li>
+    <a href="#">Departments</a>
+  </li>
+</ul>
+</nav>
+
+&nbsp;
 &nbsp;
 
 &nbsp;

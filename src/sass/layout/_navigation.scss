@@ -15,17 +15,16 @@
   margin-bottom:47px;
   ul {
     @extend %clearfix;
-    @extend %ib-container;
     max-width:$container-width;
     margin:0 auto;
     padding:0;
-    height:44px;
+    min-height:44px;
+    list-style:none;
   }
   li {
-    @extend %ib-element;
     line-height:44px;
-    height:44px;
-    list-style:none;
+    min-height:44px;
+    float:left;
   }
   a {
     @extend %default-transition;
@@ -38,7 +37,7 @@
 }
 .menu-lv1 {
   position:relative;
-  li {
+  > li {
     border-right:1px solid #949394;
     &:first-child {
       border-left:1px solid #949394;
@@ -54,7 +53,7 @@
         display:block;
       }
     }
-    a {
+    > a {
       &:hover {
         background:darken($blue, 20);
       }
@@ -64,71 +63,54 @@
 // Level 2
 .menu-lv2 {
   display:none;
-  background:$blue;
+  background:darken($blue, 20);
   position:absolute;
   left:0;
   top:100%;
   width:100%;
   overflow:hidden;
-  &.megamenu {
-    overflow:visible;
-    height:auto;
-    z-index:10;
-    li {
-      height:auto;
-    }
-    .menu-lv3 {
-      width:100%;
-      height:auto;
-      padding:20px;
-      li {
-        width:25%;
-        line-height:1.626;
-        vertical-align:top;
-        &:first-child {
-          a {
-            padding-left:12px;
-          }
-        }
+  ul {
+    position:relative;
+    float:left;
+  }
+  li {
+    position:relative;
+    &:first-child {
+      a {
+        padding-left:21px;
       }
+    }
+    &:last-child {
+      @extend %nav-overlay;
+      &:after {
+        background:$blue;
+      }
+    }
+    &.active {
+      width:100%;
+      > a {
+        @extend %active-nav;
+        position:relative;
+        float:left;
+      }
+    }
+    &.more {
+      position:absolute;
+      top: 0;
+      right: 0;
+      text-align: right;
+      line-height: 44px;
+      z-index: 20;
       a {
         background:none;
       }
     }
-    .menu-lv4 {
-      @extend %ib-element;
-      display:block;
-      width:100%;
-      height:auto;
-      padding-left:2em;
-      margin:0 0 1em;
-      list-style:disc;
-      li {
-        width:100%;
-        padding:4px 0;
-        line-height:1.126;
-        &:last-child {
-          &:after {
-            display:none;
-          }
-        }
-      }
-    }
   }
-  li {
-    border:0;
-    &:first-child {
-      border-left:0;
-    }
+  > li {
     &.active {
-      @extend %ib-container;
-      width:100%;
       > a {
-        @extend %ib-element;
-        @extend %active-nav;
         background:darken($blue, 20);
-        position:relative;
-        z-index:6;
+        z-index:18;
         &:hover {
           background:darken($blue, 30);
           &:after {
@@ -144,111 +126,114 @@
       }
     }
   }
+  a {
+    background:$blue;
+  }
 }
-// Level 3
-.menu-lv3 {
-  display:none;
-  position:relative;
-  z-index:5;
+
+// This loop sets the section colors for the sub menus.
+// It's built in so we can tweak the colors/contrast
+@for $n from 3 through 8 {
+  $t: 3; // $t is the level at which the default color starts
+  $defaultColor: $blue;
+  $thisColor: $defaultColor;
+  @if $n < $t {
+    $thisColor: darken($defaultColor, ($t - $n) * 10);
+  // } @else if $n == $t {
+  //   $thisColor: $defaultColor;
+  } @else if $n > $t {
+    $thisColor: lighten($defaultColor, ($n - $t) * 10);
+  }
+  $thisHover: darken($thisColor, 5);
+  // Level #{$n}
+  .menu-lv#{$n} {
+    display:none;
+    background:$thisColor;
+    > li {
+      // To overlay the lighter background
+      &:last-child {
+        &:after {
+          background:$thisColor;
+          z-index:#{$n};
+        }
+      }
+      &.active {
+        .menu-lv#{$n + 1} {
+          display:block;
+        }
+      }
+      > a {
+        background:$thisColor;
+        z-index:20 - $n;
+        &:after {
+          border-left-color: $thisColor;
+        }
+        &:hover {
+          background:$thisHover;
+          &:after {
+            border-left-color:$thisHover;
+          }
+        }
+      }
+    }
+  }
+}
+
+// MEGAMENU
+.megamenu {
+  overflow:visible;
+  height:auto;
+  z-index:10;
   li {
+    height:auto;
     &:first-child {
-      a {
-        padding-left:21px;
+      li a {
+        padding-left:0;
       }
     }
-    &.active {
-      > a {
-        background:$blue;
-        &:hover {
-          background:darken($blue, 10);
-          &:after {
-            border-left-color: darken($blue, 10);
-          }
-        }
-        &:after {
-          border-color: transparent;
-          border-left-color: $blue;
-        }
-      }
-      .menu-lv4 {
-        display:inline-block;
-      }
-
+    &:last-child:after {
+      display:none;
     }
-    &.more {
-      &:hover {
+  }
+  ul {
+    width:100%;
+    height:auto;
+    padding:20px;
+    > li {
+      width:25%;
+      line-height:1.626;
+      vertical-align:top;
+    }
+    li {
+      min-height:0;
+      ul {
+        display:block;
+        width:100%;
+        padding:0 0 0 1.626em;
+        margin:0 0 1em;
+        color: #fff;
+        list-style: disc;
         background:none;
-      }
-    }
-    > a {
-      background:$blue;
-      &:hover {
-        background:darken($blue,10);
-      }
-    }
-  }
-}
-// Level 4
-.menu-lv4 {
-  display:none;
-  position:relative;
-  z-index:4;
-  li {
-    position:relative;
-    &.active {
-      > a {
-        background:lighten($blue, 10);
-        &:hover {
-          background:$blue;
-          &:after {
-            border-left-color:$blue;
+        li {
+          width:100%;
+          padding:4px 0;
+          line-height:1.126;
+          a {
+            padding:0;
           }
         }
-        &:after {
-          border-left-color: lighten($blue, 10);
-        }
-      }
-      .menu-lv5 {
-        display:inline-block;
       }
     }
-    // To overlay the lighter background
-    &:last-child {
-      @extend %last-nav;
+    a {
+      background:none;
+      padding:0;
       &:after {
-        background:lighten($blue,10);
-      }
-    }
-    > a {
-      background:lighten($blue, 10);
-      &:hover {
-        background:lighten($blue, 5);
+        display:none;
       }
     }
   }
 }
 
-// Level 5
-.menu-lv5 {
-  display:none;
-  position:relative;
-  z-index:3;
-  li {
-    position:relative;
-    // To overlay the lighter background
-    &:last-child {
-      &:after {
-        background:lighten($blue,20);
-      }
-    }
-    > a {
-      background:lighten($blue, 20);
-      &:hover {
-        background:lighten($blue,15);
-      }
-    }
-  }
-}
 
 #mobile-menu-buttons {
   @extend %ib-container;
