@@ -75,7 +75,7 @@ module.exports = function (grunt) {
         {
           expand: true,
           cwd: 'src/pages/',
-          src: ['*.md'],
+          src: ['*.md', '!sample.md'],
           dest: 'build/',
           rename: function(dest, src) {
             // remove numbers from start

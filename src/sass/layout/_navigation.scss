@@ -9,21 +9,23 @@
 }
 .main-menu {
   height:47px;
+  height:calc(2.75em + 3px);
   width:100%;
-  background:$dark;
+  background-color:$dark;
   border-top: 3px solid $blue;
   margin-bottom:47px;
+  margin-bottom:calc(2.75em + 3px);
   ul {
-    @extend %clearfix;
+    // @extend %clearfix;
     max-width:$container-width;
     margin:0 auto;
     padding:0;
-    min-height:44px;
+    min-height:2.75em;
     list-style:none;
   }
   li {
-    line-height:44px;
-    min-height:44px;
+    line-height:2.75em;
+    min-height:2.75em;
     float:left;
   }
   a {
@@ -33,6 +35,9 @@
     text-decoration:none;
     vertical-align:top;
     color:#fff;
+  }
+  .nav-hidden {
+    display:none;
   }
 }
 .menu-lv1 {
@@ -44,9 +49,9 @@
     }
     &.active {
       > a {
-        background:$blue;
+        background-color:$blue;
         &:hover {
-          background:$blue;
+          background-color:$blue;
         }
       }
       .menu-lv2 {
@@ -55,7 +60,7 @@
     }
     > a {
       &:hover {
-        background:darken($blue, 20);
+        background-color:darken($blue, 20);
       }
     }
   }
@@ -63,27 +68,27 @@
 // Level 2
 .menu-lv2 {
   display:none;
-  background:darken($blue, 20);
+  background-color:darken($blue, 20);
   position:absolute;
   left:0;
   top:100%;
   width:100%;
   overflow:hidden;
   ul {
+    @extend %nav-overlay;
     position:relative;
     float:left;
+  }
+  > ul {
+    &:after {
+      background-color:$blue;
+    }
   }
   li {
     position:relative;
     &:first-child {
       a {
         padding-left:21px;
-      }
-    }
-    &:last-child {
-      @extend %nav-overlay;
-      &:after {
-        background:$blue;
       }
     }
     &.active {
@@ -99,20 +104,29 @@
       top: 0;
       right: 0;
       text-align: right;
-      line-height: 44px;
+      line-height: 2.75em;
       z-index: 20;
+      &:after {
+        display:none;
+      }
       a {
-        background:none;
+        background-color:transparent;
       }
     }
   }
   > li {
+    &:last-child {
+      @extend %nav-overlay;
+      &:after {
+        background-color:$blue;
+      }
+    }
     &.active {
       > a {
-        background:darken($blue, 20);
+        background-color:darken($blue, 20);
         z-index:18;
         &:hover {
-          background:darken($blue, 30);
+          background-color:darken($blue, 30);
           &:after {
             border-left-color: darken($blue, 30);
           }
@@ -127,7 +141,10 @@
     }
   }
   a {
-    background:$blue;
+    background-color:$blue;
+    &:hover {
+      background-color:darken($blue, 5);
+    }
   }
 }
 
@@ -148,13 +165,15 @@
   // Level #{$n}
   .menu-lv#{$n} {
     display:none;
-    background:$thisColor;
+    background-color:$thisColor;
+    // To overlay the lighter background
+    &:after {
+      background-color:$thisColor;
+      z-index:#{$n};
+    }
     > li {
-      // To overlay the lighter background
       &:last-child {
         &:after {
-          background:$thisColor;
-          z-index:#{$n};
         }
       }
       &.active {
@@ -163,13 +182,13 @@
         }
       }
       > a {
-        background:$thisColor;
+        background-color:$thisColor;
         z-index:20 - $n;
         &:after {
           border-left-color: $thisColor;
         }
         &:hover {
-          background:$thisHover;
+          background-color:$thisHover;
           &:after {
             border-left-color:$thisHover;
           }
@@ -191,14 +210,14 @@
         padding-left:0;
       }
     }
-    &:last-child:after {
-      display:none;
-    }
   }
   ul {
     width:100%;
     height:auto;
     padding:20px;
+    &:after {
+      display:none;
+    }
     > li {
       width:25%;
       line-height:1.626;
@@ -206,18 +225,18 @@
     }
     li {
       min-height:0;
+      padding:0.25em 0;
+      line-height:1.126;
       ul {
         display:block;
         width:100%;
         padding:0 0 0 1.626em;
-        margin:0 0 1em;
+        margin:0.25em 0 1em;
         color: #fff;
         list-style: disc;
-        background:none;
+        background-color:transparent;
         li {
           width:100%;
-          padding:4px 0;
-          line-height:1.126;
           a {
             padding:0;
           }
@@ -225,12 +244,15 @@
       }
     }
     a {
-      background:none;
+      background-color:transparent;
       padding:0;
       &:after {
         display:none;
       }
     }
+  }
+  .nav-hidden {
+    display:block;
   }
 }
 
@@ -245,7 +267,7 @@
     @extend %ib-element;
     height:78px;
     width:78px;
-    background:$dark;
+    background-color:$dark;
     color:$light;
     border-left:1px solid $light;
   }
@@ -257,7 +279,7 @@
   bottom:0;
   left:100%;
   width:100%;
-  background:$dark;
+  background-color:$dark;
   color:$light;
   transition:0.2s all ease-out;
   &.show {

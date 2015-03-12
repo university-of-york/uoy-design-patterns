@@ -60,9 +60,9 @@ You can put these together in the usual grid system: a `form-row` can be `form-e
 
 <script>
 component("form-row", { "atoms": [
-	{ "form-element": { "label": "Bippity", "name": "l", "size": "half" } },
-	{ "form-element": { "label": "Boppity", "name": "m", "size": "quarter" } },
-	{ "form-element": { "label": "Boo", "name": "n", "size": "quarter" } },
+	{ "form-element": { "label": "Bippity", "name": "l", "size": "third" } },
+	{ "form-element": { "label": "Boppity", "name": "m", "size": "third" } },
+	{ "form-element": { "label": "Boo", "name": "n", "size": "third" } },
 ]});
 </script>
 
@@ -113,7 +113,7 @@ component("form", { "type":"stacked", "method":"get", "legend": "Fill in this fo
 ]});
 </script>
 
-Inline forms have the label and the input on the same line. By default, the label is 25% of the width of the row, and the input is the remaining 75%. Because of this it's not recommended to put inline forms into quarter- or third=width grid boxes. Here is the same form as above but as a `form-inline` version.
+Inline forms have the label and the input on the same line. By default, the label is 25% of the width of the row, and the input is the remaining 75%. Because of this it's not recommended to put inline forms into quarter- or third-width grid boxes. Here is the same form as above but as a `form-inline` version.
 
 <script>
 component("form", { "type":"inline", "method":"get", "legend": "Fill in this form", "atoms": [

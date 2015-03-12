@@ -373,4 +373,4 @@ component("icon", { "type": "zoom-out", "style": "light" } );
 * icon
   * **type**: the type of option you want **(required)**
   * **size**: can be _tiny_, _small_, _medium_, _large_ or _huge_. Default is _medium_
-  * **style**: **TODO**
+  * **style**: can be _dark_ (default) or _light_

@@ -1,0 +1,28 @@
+<div class="media{{#if type}} media-{{type}}{{else}} media-horizontal{{/if}}">
+  {{#picture}}
+  <div class="media-image">
+    {{#if this.content}}
+     {{this.content}}
+    {{else}}
+     <img src="{{this.image}}" alt style="width: {{this.size}}; height: {{this.size}};">{{#this.caption}}
+     <h6>{{this}}</h6>{{/this.caption}}
+    {{/if}}
+  </div>
+  {{/picture}}
+  <div class="media-body">
+  {{#body}}
+     {{#if this.title}}
+      <h4>{{#if this.button}}<a href="{{this.button.link}}">{{/if}}{{this.title}}{{#if this.button}}</a>{{/if}}</h4>
+    {{/if}}
+    {{#if this.subtitle}}
+      <h5>{{this.subtitle}}</h5>
+    {{/if}}
+    {{#if this.content}}
+      {{this.content}}
+    {{/if}}
+    {{#this.button}}
+      <a href="{{this.link}}" class="btn">{{this.text}}</a>
+    {{/this.button}}
+  {{/body}}
+  </div>
+</div>
