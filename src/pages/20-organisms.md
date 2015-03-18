@@ -10,4 +10,4 @@ id: organisms-page
 
 ## Organisms
 
-Organisms are groups of components which are grouped together in a certain way. For example, media objects in a gertain layout makes a _gallery_.
+Organisms are groups of components which are grouped together in a certain way. For example, media objects in a certain layout makes a _gallery_.

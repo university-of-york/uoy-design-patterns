@@ -2,6 +2,64 @@
 // MIXINS
 //
 
+
+//
+// Default transition
+// You can pass a comma-separated list of properties here if you like
+//
+@mixin transition($property:'all') {
+  transition-property: #{$property};
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+}
+
+@mixin submenu($color:$blue) {
+  // This loop sets the section colors for the sub menus.
+  // It's built in so we can tweak the colors/contrast
+  @for $n from 3 through 8 {
+    $t: 4; // $t is the level at which the default color starts
+    $defaultColor: $color;
+    $thisColor: $defaultColor;
+    @if $n < $t {
+      $thisColor: darken($defaultColor, ($t - $n) * 10);
+    } @else if $n > $t {
+      $thisColor: lighten($defaultColor, ($n - $t) * 10);
+    }
+    $thisHover: darken($thisColor, 5);
+    // Level #{$n}
+    .menu-lv#{$n} {
+      background-color:$thisColor;
+      // To overlay the lighter background
+      &:after {
+        background-color:$thisColor;
+      }
+      > li {
+        > a {
+          background-color:$thisColor;
+          &:after {
+            border-left-color: $thisColor;
+          }
+          &:hover {
+            background-color:$thisHover;
+            &:after {
+              border-left-color:$thisHover;
+            }
+          }
+        }
+      }
+    }
+    .megamenu .menu-lv#{$n} ul,
+    .megamenu .menu-lv#{$n} ul a {
+      background-color: transparent;
+    }
+  }
+}
+
+
+
+
+
+
 //
 // Get color from color map
 //
@@ -37,15 +95,4 @@
 
 @function strip-unit($num) {
   @return $num/($num * 0 + 1);
-}
-
-//
-// Default transition time and easing, defaults to 'all'
-//
-@mixin transition($property: "all") {
-
-  $duration: "0.25s";
-  $easing: "ease-out";
-
-  transition: #{$property} #{$duration} #{$easing};
 }

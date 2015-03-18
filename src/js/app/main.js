@@ -1,4 +1,6 @@
-define(['jquery', 'picturefill', 'app/grunticon'], function ($, picturefill, grunticon) {
+define(['jquery', 'picturefill', 'app/utils', 'app/grunticon'], function ($, PICTUREFILL, UTILS, GRUNTICON) {
+
+  var $window = $(window);
 
   if (typeof window.console === 'undefined') {
     console = {};
@@ -6,5 +8,12 @@ define(['jquery', 'picturefill', 'app/grunticon'], function ($, picturefill, gru
   }
 
   console.log('Got here');
+
+  // Sample use of UTILS.debounce
+  var resizeFn = UTILS.debounce(function() {
+    console.log('Window resized');
+  }, 250);
+
+  $window.on('resize', resizeFn);
 
 });

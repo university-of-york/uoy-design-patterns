@@ -10,22 +10,6 @@
         display:block;
       }
     }
-    ul {
-      display:none;
-      position:absolute;
-      top:100%;
-      background:#999;
-      min-width:180px;
-      li {
-        position:relative;
-        width:100%;
-        border:0;
-        border-top:1px solid #fff;
-        &:first-child {
-          border:0;
-        }
-      }
-    }
   }
 }
 #grid-page {

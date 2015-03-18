@@ -9,13 +9,10 @@
     clear: both;
   }
 }
-%default-transition {
-  transition:0.2s all ease-out;
-}
 // adds an arrow after the active LI in the nav
 %active-nav {
   &:after {
-    @extend %default-transition;
+    @include transition();
     content:'';
     display:block;
     width:0;

@@ -16,11 +16,10 @@ The deepest level I can find in the site audit is six levels deep (e.g. /study/s
 
 ## Level 1
 
+<small>(on home page)</small>
+
 <nav class="main-menu mobile-hidden">
 <ul class="menu-lv1">
-  <li>
-    <a href="#">Research</a>
-  </li>
   <li>
     <a href="#">Study</a>
     <ul class="menu-lv2">
@@ -40,6 +39,9 @@ The deepest level I can find in the site audit is six levels deep (e.g. /study/s
     </ul>
   </li>
   <li>
+    <a href="#">Research</a>
+  </li>
+  <li>
     <a href="#">Business</a>
   </li>
   <li>
@@ -50,11 +52,10 @@ The deepest level I can find in the site audit is six levels deep (e.g. /study/s
 
 ## Level 2
 
+<small>(on /study)</small>
+
 <nav class="main-menu mobile-hidden">
 <ul class="menu-lv1">
-  <li>
-    <a href="#">Research</a>
-  </li>
   <li class="active">
     <a href="#">Study</a>
     <ul class="menu-lv2">
@@ -74,6 +75,9 @@ The deepest level I can find in the site audit is six levels deep (e.g. /study/s
     </ul>
   </li>
   <li>
+    <a href="#">Research</a>
+  </li>
+  <li>
     <a href="#">Business</a>
   </li>
   <li>
@@ -86,11 +90,10 @@ The deepest level I can find in the site audit is six levels deep (e.g. /study/s
 
 ## Level 3
 
+<small>(on /study/undergraduate)</small>
+
 <nav class="main-menu mobile-hidden">
 <ul class="menu-lv1">
-  <li>
-    <a href="#">Research</a>
-  </li>
   <li class="active">
     <a href="#">Study</a>
     <ul class="menu-lv2">
@@ -189,6 +192,9 @@ The deepest level I can find in the site audit is six levels deep (e.g. /study/s
     </ul>
   </li>
   <li>
+    <a href="#">Research</a>
+  </li>
+  <li>
     <a href="#">Business</a>
   </li>
   <li>
@@ -205,9 +211,6 @@ The deepest level I can find in the site audit is six levels deep (e.g. /study/s
 
 <nav class="main-menu mobile-hidden">
 <ul class="menu-lv1">
-  <li>
-    <a href="#">Research</a>
-  </li>
   <li class="active">
     <a href="#">Study</a>
     <ul class="menu-lv2 megamenu">
@@ -308,6 +311,9 @@ The deepest level I can find in the site audit is six levels deep (e.g. /study/s
     </ul>
   </li>
   <li>
+    <a href="#">Research</a>
+  </li>
+  <li>
     <a href="#">Business</a>
   </li>
   <li>
@@ -345,11 +351,10 @@ The deepest level I can find in the site audit is six levels deep (e.g. /study/s
 
 ## Level 4
 
+<small>(on /study/undergraduate/courses)</small>
+
 <nav class="main-menu mobile-hidden">
 <ul class="menu-lv1">
-  <li>
-    <a href="#">Research</a>
-  </li>
   <li class="active">
     <a href="#">Study</a>
     <ul class="menu-lv2">
@@ -369,6 +374,9 @@ The deepest level I can find in the site audit is six levels deep (e.g. /study/s
     </ul>
   </li>
   <li>
+    <a href="#">Research</a>
+  </li>
+  <li>
     <a href="#">Business</a>
   </li>
   <li>
@@ -381,11 +389,10 @@ The deepest level I can find in the site audit is six levels deep (e.g. /study/s
 
 ## Level 5
 
+<small>(on /study/undergraduate/courses/choosing-a-course)</small>
+
 <nav class="main-menu mobile-hidden">
 <ul class="menu-lv1">
-  <li>
-    <a href="#">Research</a>
-  </li>
   <li class="active">
     <a href="#">Study</a>
     <ul class="menu-lv2">
@@ -409,6 +416,9 @@ The deepest level I can find in the site audit is six levels deep (e.g. /study/s
     </ul>
   </li>
   <li>
+    <a href="#">Research</a>
+  </li>
+  <li>
     <a href="#">Business</a>
   </li>
   <li>
@@ -421,11 +431,10 @@ The deepest level I can find in the site audit is six levels deep (e.g. /study/s
 
 ## Level 6
 
+<small>(on /study/undergraduate/courses/choosing-a-course/course-type-a)</small>
+
 <nav class="main-menu mobile-hidden">
 <ul class="menu-lv1">
-  <li>
-    <a href="#">Research</a>
-  </li>
   <li class="active">
     <a href="#">Study</a>
     <ul class="menu-lv2">
@@ -440,10 +449,18 @@ The deepest level I can find in the site audit is six levels deep (e.g. /study/s
                 <ul class="menu-lv5">
                   <li class="active">
                     <a href="#">Course type A</a>
-                      <ul class="menu-lv6">
-                        <li><a href="#">Option 1</a></li>
-                        <li><a href="#">The second option</a></li>
-                      </ul>
+                    <ul class="menu-lv6">
+                      <li><a href="#">Option 1</a></li>
+                      <li><a href="#">The second option</a></li>
+                      <li class="nav-hidden"><a href="#">Richard III</a></li>
+                      <li class="nav-hidden"><a href="#">Born on the Fourth of July</a></li>
+                      <li class="nav-hidden"><a href="#">The Fifth Element</a></li>
+                      <li class="nav-hidden"><a href="#">Sixth Sense</a></li>
+                      <li class="nav-hidden"><a href="#">Se7en</a></li>
+                      <li class="nav-hidden"><a href="#">8</a></li>
+                      <li class="nav-hidden"><a href="#">A really long ninth option that probably wouldn't exist</a></li>
+                      <li class="nav-hidden"><a href="#">Ten (10)</a></li>
+                    </ul>
                   </li>
                 </ul>
               </li>
@@ -455,6 +472,9 @@ The deepest level I can find in the site audit is six levels deep (e.g. /study/s
         <a href="#">See more <small>&#9660;</small></a>
       </li>
     </ul>
+  </li>
+  <li>
+    <a href="#">Research</a>
   </li>
   <li>
     <a href="#">Business</a>
@@ -473,9 +493,6 @@ In case there are too many options to fit on a line, the megamenu can be used at
 
 <nav class="main-menu mobile-hidden">
 <ul class="menu-lv1">
-  <li>
-    <a href="#">Research</a>
-  </li>
   <li class="active">
     <a href="#">Study</a>
     <ul class="menu-lv2">
@@ -513,6 +530,9 @@ In case there are too many options to fit on a line, the megamenu can be used at
         <a href="#">See less <small>&#9650;</small></a>
       </li>
     </ul>
+  </li>
+  <li>
+    <a href="#">Research</a>
   </li>
   <li>
     <a href="#">Business</a>

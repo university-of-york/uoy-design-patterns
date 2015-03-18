@@ -16,7 +16,6 @@
   margin-bottom:47px;
   margin-bottom:calc(2.75em + 3px);
   ul {
-    // @extend %clearfix;
     max-width:$container-width;
     margin:0 auto;
     padding:0;
@@ -24,12 +23,13 @@
     list-style:none;
   }
   li {
+    @include transition('background-color');
     line-height:2.75em;
     min-height:2.75em;
     float:left;
   }
   a {
-    @extend %default-transition;
+    @include transition('background-color, color');
     display:block;
     padding:0 12px;
     text-decoration:none;
@@ -87,7 +87,7 @@
   li {
     position:relative;
     &:first-child {
-      a {
+      > a {
         padding-left:21px;
       }
     }
@@ -126,9 +126,9 @@
         background-color:darken($blue, 20);
         z-index:18;
         &:hover {
-          background-color:darken($blue, 30);
+          background-color:darken($blue, 25);
           &:after {
-            border-left-color: darken($blue, 30);
+            border-left-color: darken($blue, 25);
           }
         }
         &:after {
@@ -148,51 +148,27 @@
   }
 }
 
-// This loop sets the section colors for the sub menus.
-// It's built in so we can tweak the colors/contrast
+// Set default styles for subnav
+@include submenu($blue);
+
+// z-indexes and display settings for sub(sub(sub))navs
 @for $n from 3 through 8 {
-  $t: 3; // $t is the level at which the default color starts
-  $defaultColor: $blue;
-  $thisColor: $defaultColor;
-  @if $n < $t {
-    $thisColor: darken($defaultColor, ($t - $n) * 10);
-  // } @else if $n == $t {
-  //   $thisColor: $defaultColor;
-  } @else if $n > $t {
-    $thisColor: lighten($defaultColor, ($n - $t) * 10);
-  }
-  $thisHover: darken($thisColor, 5);
+  $t: 4; // $t is the level at which the default color starts
   // Level #{$n}
   .menu-lv#{$n} {
     display:none;
-    background-color:$thisColor;
     // To overlay the lighter background
     &:after {
-      background-color:$thisColor;
       z-index:#{$n};
     }
     > li {
-      &:last-child {
-        &:after {
-        }
-      }
       &.active {
         .menu-lv#{$n + 1} {
           display:block;
         }
       }
       > a {
-        background-color:$thisColor;
         z-index:20 - $n;
-        &:after {
-          border-left-color: $thisColor;
-        }
-        &:hover {
-          background-color:$thisHover;
-          &:after {
-            border-left-color:$thisHover;
-          }
-        }
       }
     }
   }

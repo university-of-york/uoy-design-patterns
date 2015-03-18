@@ -2,13 +2,15 @@
 // STRUCTURE
 //
 
-.main-wrapper {
-  max-width:$container-width;
+.main-wrapper,
+.wide-wrapper {
   margin:0 auto;
   background:#fff;
   padding:144px 20px 0;
 }
-// On wide pages with no .main-wrapper
-body > .g-container {
-  padding:144px 0 0;
+.main-wrapper {
+  max-width:$container-width;
+}
+.wide-wrapper {
+  max-width:100%;
 }

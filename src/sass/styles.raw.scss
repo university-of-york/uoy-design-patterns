@@ -1,8 +1,8 @@
 //CORE
 @import "core/fonts";
 @import "core/variables";
-@import "core/extends";
 @import "core/mixins";
+@import "core/extends";
 @import "core/reset";
 @import "core/base";
 
@@ -12,6 +12,7 @@
 @import "layout/header";
 @import "layout/footer";
 @import "layout/navigation";
+@import "layout/themes";
 
 //COMPONENTS
 @import "components/atoz";
