@@ -21,11 +21,12 @@ component("icon", { "type": "heart" } );
 There are five different sizes:
 
 <script>
-component("icon", { "type": "heart", "size": "tiny" } );
-component("icon", { "type": "heart", "size": "small" } );
-component("icon", { "type": "heart", "size": "medium" } );
-component("icon", { "type": "heart", "size": "large" } );
-component("icon", { "type": "heart", "size": "huge" } );
+component("icon", { "type": "heart", "size": "tiny" } )
++component("icon", { "type": "heart", "size": "small" } )
++component("icon", { "type": "heart", "size": "medium" } )
++component("icon", { "type": "heart", "size": "large" } )
++component("icon", { "type": "heart", "size": "huge" } );
+
 </script>
 
 (Did you notice how the icon sizes match the button sizes? Hmmm....)

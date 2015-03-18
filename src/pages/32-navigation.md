@@ -10,478 +10,325 @@ id: navigation-page
 
 # Navigation
 
-In general, navigation is kept up at the top of the page, so we can use the whole width of the page for content. The sub-navigation (levels 3+) acts as a breadcrumb when needed.
+In general, navigation is kept up at the top of the page, so we can use the whole width of the page for content. The sub-navigation (levels 4+) acts as a breadcrumb when needed.
 
-The deepest level I can find in the site audit is six levels deep (e.g. /study/study-abroad/outgoing/europe/partners/music/)
+### Structural navigation
 
-## Level 1
+The top-level **structural navigation** (Study, Research, Business) is kept at the top of every page as a way to navigate back to any section of the site.
 
-<small>(on home page)</small>
+The selected level 2 title will appear in larger text (this will be something like _Postgraduate Study_, or _Chemistry_). This means that the other Level 2 navigation won't be immediately clickable, which is intentional: if you've gone to Undergraduate study, you're unlikely to need Postgraduate study as well, if you're looking at Chemistry you're unlikely to need Archaeology as well.
 
-<nav class="main-menu mobile-hidden">
+### Associative navigation
+
+**Associative navigation** are links to pages that are (usually) siblings of the current page - directly relevant links to pages in the same section. It also includes direct parents and grandparents of the current page (i.e. the breadcrumb).
+
+The major (alpha) associative navigation is made up of level 3 options (e.g. _Courses_, _Open Days &amp; Visits_, _Accommodation_ for **Undergraduate Study**, _About the department_, _About staff_, _Research_ for **Chemistry**). This can overflow, with a **More &#9660;** option at the end.
+
+The minor (beta) associative navigation starts as level 4 navigation and then becomes the breadcrumb for all subsequent levels. This can overflow for the level 4 options, and will accordion up when used as a breadcrumb.
+
+Finally, the lowest (gamma) level of associative navigation is the subnavigation for whichever level is below the current page. This can overflow when needed.
+
+The deepest level I can find in the site audit is six levels deep (e.g. /study/study-abroad/outgoing/europe/partners/music/), but, as the content is user-generated, we need to make allowances for large numbers of option per level and almost endless levels.
+
+### Utility navigation
+
+**Utility navigation** is links that aren't directly related to page content, but are important for general site navigation. This includes _Jobs_, _Staff_, _Current students_ and the _Search_ functionality. These are kept in a sitewide top banner.
+
+### Homepage navigation
+
+The homepage navigation won't match the rest of the site. The structural navigation will move down to the position of the level 2 title (much as it is on the current site and on these pages). This is to ensure the homepage content can be displayed higher up the page.
+
+## Utility navigation
+
+<nav class="utility-nav">
+  <ul class="utility-links">
+    <li><a href="#">Jobs</a></li>
+    <li><a href="#">Visitors</a></li>
+    <li><a href="#">Alumni</a></li>
+    <li><a href="#">Current students</a></li>
+    <li><a href="#">Staff</a></li>
+    <li><a href="#">News</a></li>
+    <li><a href="#">Events</a></li>
+    <li><a href="#">Contact us</a></li>
+  </ul>
+  <div class="utility-search">
+    <form action="" method="get">
+      <input type="text" placeholder="Enter your search">
+      <button class="btn"><i class="icon-search"></i></button>
+    </form>
+  </div>
+</nav>
+
+## Homepage navigation
+
+<nav class="main-menu">
 <ul class="menu-lv1">
-  <li>
-    <a href="#">Study</a>
-    <ul class="menu-lv2">
-      <li>
-        <a href="#">Undergraduate</a>
-        <ul class="menu-lv3">
-          <li><a href="#">Courses</a></li>
-          <li><a href="#">Open days &amp; visits</a></li>
-          <li><a href="#">Accommodation</a></li>
-          <li><a href="#">Fees &amp; funding</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Postgraduate</a></li>
-      <li><a href="#">International students</a></li>
-      <li><a href="#">Icons</a></li>
-      <li><a href="#">Tables</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="#">Research</a>
-  </li>
-  <li>
-    <a href="#">Business</a>
-  </li>
-  <li>
-    <a href="#">Departments</a>
-  </li>
+  <li><a href="#">Study</a></li>
+  <li><a href="#">Research</a></li>
+  <li><a href="#">Business</a></li>
+  <li><a href="#">Departments</a></li>
+  <li><a href="#">International</a></li>
+  <li><a href="#">News</a></li>
+  <li><a href="#">Events</a></li>
+  <li><a href="#">Contact</a></li>
 </ul>
 </nav>
 
-## Level 2
+## Structural navigation
 
-<small>(on /study)</small>
+<nav class="structural-nav">
+  <ul>
+    <li><a href="#">Study</a></li>
+    <li><a href="#">Research</a></li>
+    <li><a href="#">Business</a></li>
+    <li><a href="#">Departments</a></li>
+    <li><a href="#">International</a></li>
+  </ul>
+</nav>
+
+
+## Associative navigation - level 1 <small>(e.g. on /study)</small>
+
+<nav class="main-menu">
+<div class="main-menu-title">
+  <h1><a href="#">Study</a></h1>
+</div>
+<ul class="menu-lv1">
+  <li><a href="#">Undergraduate</a></li>
+  <li><a href="#">Postgraduate</a></li>
+  <li><a href="#">International students</a></li>
+  <li><a href="#">Distance learning</a></li>
+  <li><a href="#">Student life</a></li>
+</ul>
+</nav>
+
+## Associative navigation - level 2 <small>(e.g. /study/undergraduate)</small>
+
+<nav class="main-menu">
+<div class="main-menu-title">
+  <h1><a href="#">Undergraduate study</a></h1>
+</div>
+<ul class="menu-lv1">
+  <li><a href="#">Courses</a></li>
+  <li><a href="#">Open days &amp; visits</a></li>
+  <li><a href="#">Accommodation</a></li>
+  <li><a href="#">Fees &amp; funding</a></li>
+  <li><a href="#">Applying</a></li>
+  <li><a href="#">Student life</a></li>
+  <li class="nav-hidden"><a href="#">The city of York</a></li>
+  <li class="nav-hidden"><a href="#">Careers &amp; skills</a></li>
+  <li class="nav-hidden"><a href="#">Services for schools &amp; colleges</a></li>
+  <li class="nav-hidden"><a href="#">Parents &amp; carers</a></li>
+  <li class="nav-hidden"><a href="#">Request a prospectus</a></li>
+  <li class="nav-hidden"><a href="#">Contacts</a></li>
+  <li class="more"><a href="#">See more <small>&#9660;</small></a></li>
+</ul>
+</nav>
+
+## Associative navigation - level 2 expanded <small>(when clicking on &ldquo;See more&rdquo;)</small>
+
+<nav class="main-menu">
+<div class="main-menu-title">
+  <h1><a href="#">Undergraduate study</a></h1>
+</div>
+<ul class="menu-lv1 open">
+  <li><a href="#">Courses</a></li>
+  <li><a href="#">Open days &amp; visits</a></li>
+  <li><a href="#">Accommodation</a></li>
+  <li><a href="#">Fees &amp; funding</a></li>
+  <li><a href="#">Applying</a></li>
+  <li><a href="#">Student life</a></li>
+  <li><a href="#">The city of York</a></li>
+  <li><a href="#">Careers &amp; skills</a></li>
+  <li><a href="#">Services for schools &amp; colleges</a></li>
+  <li><a href="#">Parents &amp; carers</a></li>
+  <li><a href="#">Request a prospectus</a></li>
+  <li><a href="#">Contacts</a></li>
+  <li class="more"><a href="#">See less <small>&#9650;</small></a></li>
+</ul>
+</nav>
+
+## Associative navigation - level 3 <small>(e.g. /study/undergraduate/courses)</small>
 
 <nav class="main-menu mobile-hidden">
+<div class="main-menu-title">
+  <h1><a href="#">Undergraduate study</a></h1>
+</div>
 <ul class="menu-lv1">
   <li class="active">
-    <a href="#">Study</a>
+    <a href="#">Courses</a>
     <ul class="menu-lv2">
-      <li>
-        <a href="#">Undergraduate</a>
-        <ul class="menu-lv3">
-          <li><a href="#">Courses</a></li>
-          <li><a href="#">Open days &amp; visits</a></li>
-          <li><a href="#">Accommodation</a></li>
-          <li><a href="#">Fees &amp; funding</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Postgraduate</a></li>
-      <li><a href="#">International students</a></li>
-      <li><a href="#">Distance learning</a></li>
-      <li><a href="#">Student life</a></li>
+      <li><a href="#">Choosing a course</a></li>
+      <li><a href="#">Combined courses</a></li>
+      <li><a href="#">Teaching &amp; learning</a></li>
+      <li><a href="#">Other course info</a></li>
+      <li><a href="#">How to choose</a></li>
+      <li class="nav-hidden"><a href="#">Another thing</a></li>
+      <li class="nav-hidden"><a href="#">More course stuff</a></li>
+      <li class="nav-hidden"><a href="#">Courses for you</a></li>
+      <li class="more"><a href="#">See more <small>&#9660;</small></a></li>
     </ul>
   </li>
-  <li>
-    <a href="#">Research</a>
-  </li>
-  <li>
-    <a href="#">Business</a>
-  </li>
-  <li>
-    <a href="#">Departments</a>
-  </li>
+  <li><a href="#">Open days &amp; visits</a></li>
+  <li><a href="#">Accommodation</a></li>
+  <li><a href="#">Fees &amp; funding</a></li>
+  <li><a href="#">Applying</a></li>
+  <li><a href="#">Student life</a></li>
 </ul>
 </nav>
 
 &nbsp;
 
-## Level 3
+## Associative navigation - level 3 expanded <small>(e.g. /study/undergraduate/courses)</small>
 
-<small>(on /study/undergraduate)</small>
+<nav class="main-menu mobile-hidden">
+<div class="main-menu-title">
+  <h1><a href="#">Undergraduate study</a></h1>
+</div>
+<ul class="menu-lv1">
+  <li class="active">
+    <a href="#">Courses</a>
+    <ul class="menu-lv2 open">
+      <li><a href="#">Choosing a course</a></li>
+      <li><a href="#">Combined courses</a></li>
+      <li><a href="#">Teaching &amp; learning</a></li>
+      <li><a href="#">Other course info</a></li>
+      <li><a href="#">How to choose</a></li>
+      <li><a href="#">Another thing</a></li>
+      <li><a href="#">More course stuff</a></li>
+      <li><a href="#">Courses for you</a></li>
+      <li class="more"><a href="#">See less <small>&#9650;</small></a></li>
+    </ul>
+  </li>
+  <li><a href="#">Open days &amp; visits</a></li>
+  <li><a href="#">Accommodation</a></li>
+  <li><a href="#">Fees &amp; funding</a></li>
+  <li><a href="#">Applying</a></li>
+  <li><a href="#">Student life</a></li>
+</ul>
+</nav>
+
+&nbsp;
+
+&nbsp;
+
+## Associative navigation - level 4 <small>(e.g. /study/undergraduate/courses/choosing-a-course)</small>
+
+<nav class="main-menu mobile-hidden">
+<div class="main-menu-title">
+  <h1><a href="#">Undergraduate study</a></h1>
+</div>
+<ul class="menu-lv1">
+  <li class="active">
+    <a href="#">Courses</a>
+    <ul class="menu-lv2">
+      <li class="active">
+        <a href="#">Choosing a course</a>
+        <ul class="menu-lv3">
+          <li><a href="#">Course type A</a></li>
+          <li><a href="#">Course type B</a></li>
+          <li><a href="#">Course type C</a></li>
+          <li><a href="#">Course type D</a></li>
+          <li><a href="#">Course type E</a></li>
+          <li class="nav-hidden"><a href="#">Course type F</a></li>
+          <li class="nav-hidden"><a href="#">Course type G</a></li>
+          <li class="nav-hidden"><a href="#">Course type H</a></li>
+          <li class="nav-hidden"><a href="#">Course type I</a></li>
+          <li class="nav-hidden"><a href="#">Course type J</a></li>
+          <li class="more"><a href="#">See more <small>&#9660;</small></a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#">Open days &amp; visits</a></li>
+  <li><a href="#">Accommodation</a></li>
+  <li><a href="#">Fees &amp; funding</a></li>
+  <li><a href="#">Applying</a></li>
+  <li><a href="#">Student life</a></li>
+</ul>
+</nav>
+
+&nbsp;
+
+&nbsp;
+
+## Associative navigation - level 4 expanded <small>(e.g. /study/undergraduate/courses/choosing-a-course)</small>
+
+<nav class="main-menu mobile-hidden">
+<div class="main-menu-title">
+  <h1><a href="#">Undergraduate study</a></h1>
+</div>
+<ul class="menu-lv1">
+  <li class="active">
+    <a href="#">Courses</a>
+    <ul class="menu-lv2">
+      <li class="active">
+        <a href="#">Choosing a course</a>
+        <ul class="menu-lv3 open">
+          <li><a href="#">Course type A</a></li>
+          <li><a href="#">Course type B</a></li>
+          <li><a href="#">Course type C</a></li>
+          <li><a href="#">Course type D</a></li>
+          <li><a href="#">Course type E</a></li>
+          <li><a href="#">Course type F</a></li>
+          <li><a href="#">Course type G</a></li>
+          <li><a href="#">Course type H</a></li>
+          <li><a href="#">Course type I</a></li>
+          <li><a href="#">Course type J</a></li>
+          <li class="more"><a href="#">See less <small>&#9650;</small></a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#">Open days &amp; visits</a></li>
+  <li><a href="#">Accommodation</a></li>
+  <li><a href="#">Fees &amp; funding</a></li>
+  <li><a href="#">Applying</a></li>
+  <li><a href="#">Student life</a></li>
+</nav>
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+## Associative navigation - level 5 <small>(e.g. /study/undergraduate/courses/choosing-a-course/course-type-a)</small>
 
 <nav class="main-menu mobile-hidden">
 <ul class="menu-lv1">
   <li class="active">
-    <a href="#">Study</a>
+    <a href="#">Courses</a>
     <ul class="menu-lv2">
       <li class="active">
-        <a href="#">Undergraduate</a>
+        <a href="#">Choosing a course</a>
         <ul class="menu-lv3">
-          <li>
-            <a href="#">Courses</a>
+          <li class="active">
+            <a href="#">Course type A</a>
             <ul class="menu-lv4">
-              <li><a href="#">Choosing a course</a></li>
-              <li><a href="#">Combined courses</a></li>
-              <li><a href="#">Teaching &amp; learning</a></li>
+              <li><a href="#">Option 1</a></li>
+              <li><a href="#">The second option</a></li>
+              <li class="nav-hidden"><a href="#">Richard III</a></li>
+              <li class="nav-hidden"><a href="#">Born on the Fourth of July</a></li>
+              <li class="nav-hidden"><a href="#">The Fifth Element</a></li>
+              <li class="nav-hidden"><a href="#">Sixth Sense</a></li>
+              <li class="nav-hidden"><a href="#">Se7en</a></li>
+              <li class="nav-hidden"><a href="#">8</a></li>
+              <li class="nav-hidden"><a href="#">A really long ninth option that probably wouldn't exist</a></li>
+              <li class="nav-hidden"><a href="#">Ten (10)</a></li>
             </ul>
-          </li>
-          <li>
-            <a href="#">Open days &amp; visits</a>
-            <ul class="menu-lv4">
-              <li><a href="#">Post offer visit days</a></li>
-              <li><a href="#">UCAS conventions</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Accommodation</a>
-            <ul class="menu-lv4">
-              <li><a href="#">Application information</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Fees &amp; funding</a>
-            <ul class="menu-lv4">
-              <li><a href="#">Home &amp; EU students</a></li>
-              <li><a href="#">International students</a></li>
-              <li><a href="#">Visiting students</a></li>
-              <li><a href="#">Continuing students</a></li>
-              <li><a href="#">Additional academic support</a></li>
-              <li><a href="#">Fee status</a></li>
-            </ul>
-          </li>
-          <li class="nav-hidden">
-            <a href="#">Applying</a>
-            <ul class="menu-lv4">
-              <li><a href="#">Entry requirements</a></li>
-              <li><a href="#">Policies &amp; guidance</a></li>
-              <li><a href="#">University of York access scheme</a></li>
-              <li><a href="#">Mature students</a></li>
-            </ul>
-          </li>
-          <li class="nav-hidden">
-            <a href="#">Student life</a>
-            <ul class="menu-lv4">
-              <li><a href="#">Life on campus</a></li>
-              <li><a href="#">Sport</a></li>
-              <li><a href="#">York study environment</a></li>
-              <li><a href="#">Support services</a></li>
-              <li><a href="#">Meet our students</a></li>
-            </ul>
-          </li>
-          <li class="nav-hidden">
-            <a href="#">The city of York</a>
-            <ul class="menu-lv4">
-              <li><a href="#">Culture &amp; heritage</a></li>
-              <li><a href="#">Eating &amp; drinking</a></li>
-              <li><a href="#">Nightlife &amp; entertainment</a></li>
-              <li><a href="#">Shopping</a></li>
-              <li><a href="#">Further afield</a></li>
-            </ul>
-          </li>
-          <li class="nav-hidden">
-            <a href="#">Careers &amp; skills</a>
-            <ul class="menu-lv4">
-              <li><a href="#">Your career</a></li>
-              <li><a href="#">Enterprise</a></li>
-              <li><a href="#">York Award</a></li>
-              <li><a href="#">Volunteering</a></li>
-              <li><a href="#">Study abroad</a></li>
-              <li><a href="#">Learn a language</a></li>
-              <li><a href="#">After graduation</a></li>
-              <li><a href="#">What do York graduates do?</a></li>
-            </ul>
-          </li>
-          <li class="nav-hidden">
-            <a href="#">Services for schools &amp; colleges</a>
-          </li>
-          <li class="nav-hidden">
-            <a href="#">Parents &amp; carers</a>
-          </li>
-          <li class="nav-hidden">
-            <a href="#">Request a prospectus</a>
-          </li>
-          <li class="nav-hidden">
-            <a href="#">Contacts</a>
           </li>
         </ul>
       </li>
       <li class="more"><a href="#">See more <small>&#9660;</small></a></li>
     </ul>
   </li>
-  <li>
-    <a href="#">Research</a>
-  </li>
-  <li>
-    <a href="#">Business</a>
-  </li>
-  <li>
-    <a href="#">Departments</a>
-  </li>
-</ul>
-</nav>
+  <li><a href="#">Open days &amp; visits</a></li>
+  <li><a href="#">Accommodation</a></li>
+  <li><a href="#">Fees &amp; funding</a></li>
+  <li><a href="#">Applying</a></li>
+  <li><a href="#">Student life</a></li>
 
-&nbsp;
-
-## Mega menu
-
-<small>(when clicking on &lsquo;See more&rsquo;)</small>
-
-<nav class="main-menu mobile-hidden">
-<ul class="menu-lv1">
-  <li class="active">
-    <a href="#">Study</a>
-    <ul class="menu-lv2 megamenu">
-      <li class="active">
-        <a href="#">Undergraduate</a>
-        <ul class="menu-lv3">
-          <li>
-            <a href="#">Courses</a>
-            <ul class="menu-lv4">
-              <li><a href="#">Choosing a course</a></li>
-              <li><a href="#">Combined courses</a></li>
-              <li><a href="#">Teaching &amp; learning</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Open days &amp; visits</a>
-            <ul class="menu-lv4">
-              <li><a href="#">Post offer visit days</a></li>
-              <li><a href="#">UCAS conventions</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Accommodation</a>
-            <ul class="menu-lv4">
-              <li><a href="#">Application information</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Fees &amp; funding</a>
-            <ul class="menu-lv4">
-              <li><a href="#">Home &amp; EU students</a></li>
-              <li><a href="#">International students</a></li>
-              <li><a href="#">Visiting students</a></li>
-              <li><a href="#">Continuing students</a></li>
-              <li><a href="#">Additional academic support</a></li>
-              <li><a href="#">Fee status</a></li>
-            </ul>
-          </li>
-          <li class="nav-hidden">
-            <a href="#">Applying</a>
-            <ul class="menu-lv4">
-              <li><a href="#">Entry requirements</a></li>
-              <li><a href="#">Policies &amp; guidance</a></li>
-              <li><a href="#">University of York access scheme</a></li>
-              <li><a href="#">Mature students</a></li>
-            </ul>
-          </li>
-          <li class="nav-hidden">
-            <a href="#">Student life</a>
-            <ul class="menu-lv4">
-              <li><a href="#">Life on campus</a></li>
-              <li><a href="#">Sport</a></li>
-              <li><a href="#">York study environment</a></li>
-              <li><a href="#">Support services</a></li>
-              <li><a href="#">Meet our students</a></li>
-            </ul>
-          </li>
-          <li class="nav-hidden">
-            <a href="#">The city of York</a>
-            <ul class="menu-lv4">
-              <li><a href="#">Culture &amp; heritage</a></li>
-              <li><a href="#">Eating &amp; drinking</a></li>
-              <li><a href="#">Nightlife &amp; entertainment</a></li>
-              <li><a href="#">Shopping</a></li>
-              <li><a href="#">Further afield</a></li>
-            </ul>
-          </li>
-          <li class="nav-hidden">
-            <a href="#">Careers &amp; skills</a>
-            <ul class="menu-lv4">
-              <li><a href="#">Your career</a></li>
-              <li><a href="#">Enterprise</a></li>
-              <li><a href="#">York Award</a></li>
-              <li><a href="#">Volunteering</a></li>
-              <li><a href="#">Study abroad</a></li>
-              <li><a href="#">Learn a language</a></li>
-              <li><a href="#">After graduation</a></li>
-              <li><a href="#">What do York graduates do?</a></li>
-            </ul>
-          </li>
-          <li class="nav-hidden">
-            <a href="#">Services for schools &amp; colleges</a>
-          </li>
-          <li class="nav-hidden">
-            <a href="#">Parents &amp; carers</a>
-          </li>
-          <li class="nav-hidden">
-            <a href="#">Request a prospectus</a>
-          </li>
-          <li class="nav-hidden">
-            <a href="#">Contacts</a>
-          </li>
-        </ul>
-      </li>
-      <li class="more">
-        <a href="#">See less <small>&#9650;</small></a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a href="#">Research</a>
-  </li>
-  <li>
-    <a href="#">Business</a>
-  </li>
-  <li>
-    <a href="#">Departments</a>
-  </li>
-</ul>
-</nav>
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-
-## Level 4
-
-<small>(on /study/undergraduate/courses)</small>
-
-<nav class="main-menu mobile-hidden">
-<ul class="menu-lv1">
-  <li class="active">
-    <a href="#">Study</a>
-    <ul class="menu-lv2">
-      <li class="active">
-        <a href="#">Undergraduate</a>
-        <ul class="menu-lv3">
-          <li class="active">
-            <a href="#">Courses</a>
-            <ul class="menu-lv4">
-              <li><a href="#">Choosing a course</a></li>
-              <li><a href="#">Combined courses</a></li>
-              <li><a href="#">Teaching &amp; learning</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a href="#">Research</a>
-  </li>
-  <li>
-    <a href="#">Business</a>
-  </li>
-  <li>
-    <a href="#">Departments</a>
-  </li>
-</ul>
-</nav>
-
-&nbsp;
-
-## Level 5
-
-<small>(on /study/undergraduate/courses/choosing-a-course)</small>
-
-<nav class="main-menu mobile-hidden">
-<ul class="menu-lv1">
-  <li class="active">
-    <a href="#">Study</a>
-    <ul class="menu-lv2">
-      <li class="active">
-        <a href="#">Undergraduate</a>
-        <ul class="menu-lv3">
-          <li class="active">
-            <a href="#">Courses</a>
-            <ul class="menu-lv4">
-              <li class="active">
-                <a href="#">Choosing a course</a>
-                <ul class="menu-lv5">
-                  <li><a href="#">Course type A</a></li>
-                  <li><a href="#">Course type B</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a href="#">Research</a>
-  </li>
-  <li>
-    <a href="#">Business</a>
-  </li>
-  <li>
-    <a href="#">Departments</a>
-  </li>
-</ul>
-</nav>
-
-&nbsp;
-
-## Level 6
-
-<small>(on /study/undergraduate/courses/choosing-a-course/course-type-a)</small>
-
-<nav class="main-menu mobile-hidden">
-<ul class="menu-lv1">
-  <li class="active">
-    <a href="#">Study</a>
-    <ul class="menu-lv2">
-      <li class="active">
-        <a href="#">Undergraduate</a>
-        <ul class="menu-lv3">
-          <li class="active">
-            <a href="#">Courses</a>
-            <ul class="menu-lv4">
-              <li class="active">
-                <a href="#">Choosing a course</a>
-                <ul class="menu-lv5">
-                  <li class="active">
-                    <a href="#">Course type A</a>
-                    <ul class="menu-lv6">
-                      <li><a href="#">Option 1</a></li>
-                      <li><a href="#">The second option</a></li>
-                      <li class="nav-hidden"><a href="#">Richard III</a></li>
-                      <li class="nav-hidden"><a href="#">Born on the Fourth of July</a></li>
-                      <li class="nav-hidden"><a href="#">The Fifth Element</a></li>
-                      <li class="nav-hidden"><a href="#">Sixth Sense</a></li>
-                      <li class="nav-hidden"><a href="#">Se7en</a></li>
-                      <li class="nav-hidden"><a href="#">8</a></li>
-                      <li class="nav-hidden"><a href="#">A really long ninth option that probably wouldn't exist</a></li>
-                      <li class="nav-hidden"><a href="#">Ten (10)</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li class="more">
-        <a href="#">See more <small>&#9660;</small></a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a href="#">Research</a>
-  </li>
-  <li>
-    <a href="#">Business</a>
-  </li>
-  <li>
-    <a href="#">Departments</a>
-  </li>
 </ul>
 </nav>
 
@@ -531,15 +378,9 @@ In case there are too many options to fit on a line, the megamenu can be used at
       </li>
     </ul>
   </li>
-  <li>
-    <a href="#">Research</a>
-  </li>
-  <li>
-    <a href="#">Business</a>
-  </li>
-  <li>
-    <a href="#">Departments</a>
-  </li>
+  <li><a href="#">Research</a></li>
+  <li><a href="#">Business</a></li>
+  <li><a href="#">Departments</a></li>
 </ul>
 </nav>
 

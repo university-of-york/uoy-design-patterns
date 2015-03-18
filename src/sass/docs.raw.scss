@@ -2,9 +2,33 @@
 @import "core/variables";
 
 .docs {
+  h2 small {
+    display:block;
+    font-size:0.45em;
+    line-height:1;
+  }
+  .wide-wrapper {
+    max-width:100%;
+    // Give some padding to documentation
+    // Expensive selectors but OK for documentation pages ;)
+    > .g-row > .g-full {
+      > h1,
+      > h2,
+      > h3,
+      > h4,
+      > h5,
+      > p {
+        padding-left:20px;
+        padding-right:20px;
+      }
+    }
+  }
 }
 #main-menu {
   li {
+    ul {
+      display:none;
+    }
     &:hover {
       ul {
         display:block;

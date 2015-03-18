@@ -15,37 +15,37 @@ Buttons come in four different types and three different sizes. Usually a `butto
 The simplest is just a plain button:
 
 <script>
-component("button", { "text": "Click me" });
-component("button-link", { "text": "Go here", "href": "http://google.com" });
-component("button-input", { "text": "Send" });
-component("button-reset", { "text": "Reset" });
-component("button-submit", { "text": "Submit" });
+component("button", { "text": "Click me" })
++component("button-link", { "text": "Go here", "href": "http://google.com" })
++component("button-input", { "text": "Send" })
++component("button-reset", { "text": "Reset" })
++component("button-submit", { "text": "Submit" });
 </script>
 
 Other types are _cancel_, _primary_ and _highlight_:
 
 <script>
-component("button", { "text": "Cancel", "type": "cancel" });
-component("button", { "text": "Click this!", "type": "primary" });
-component("button", { "text": "Or this", "type": "highlight" });
+component("button", { "text": "Cancel", "type": "cancel" })
++component("button", { "text": "Click this!", "type": "primary" })
++component("button", { "text": "Or this", "type": "highlight" });
 </script>
 
 You can define the size of the button too:
 
 <script>
-component("button", { "text": "Tiny button", "size": "tiny" });
-component("button", { "text": "Small button", "size": "small" });
-component("button", { "text": "Medium button", "size": "medium" });
-component("button", { "text": "Large button", "size": "large" });
-component("button", { "text": "Huge button", "size": "huge" });
+component("button", { "text": "Tiny button", "size": "tiny" })
++component("button", { "text": "Small button", "size": "small" })
++component("button", { "text": "Medium button", "size": "medium" })
++component("button", { "text": "Large button", "size": "large" })
++component("button", { "text": "Huge button", "size": "huge" });
 </script>
 
 It's also easy to add an icon to a button, either at the front, the end, or both (which doesn't look good, so don't do it).
 
 <script>
-component("button", { "text": "Like", "icon-before": "heart" });
-component("button", { "text": "Play", "icon-after": "media-play" });
-component("button", { "text": "Please don't do this", "icon-before": "musical-note", "icon-after": "person" });
+component("button", { "text": "Like", "icon-before": "heart" })
++component("button", { "text": "Play", "icon-after": "media-play" })
++component("button", { "text": "Please don't do this", "icon-before": "musical-note", "icon-after": "person" });
 </script>
 
 You can join this all together to make a monster button:
@@ -63,8 +63,8 @@ component("button-group", { atoms: [
   { "button": { "text": "Back" } },
   { "button": { "type": "warning", "text": "Help", "icon-after": "shield" } },
   { "button": { "text": "Next" } }
-]});
-component("button-group", { atoms: [
+]})
++component("button-group", { atoms: [
   { "button": { "text": "Back", "size": "large" } },
   { "button": { "type": "cancel", "text": "Help", "icon-after": "command", "size": "large" } },
   { "button": { "type": "highlight", "text": "Next", "size": "large" } }

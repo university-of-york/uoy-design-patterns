@@ -17,21 +17,21 @@ The basic unit in forms is the _form-element_. This is a _molecule_, made up of 
 Firstly, a few different input types (note the `hidden` type at the end):
 
 <script>
-component("form-element", { "label": "Name", "name": "a", "atoms": { "input": { "placeholder":"Enter your name" } } });
-component("form-element", { "label": "Email", "name": "b", "atoms": [
+component("form-element", { "label": "Name", "name": "a", "atoms": { "input": { "placeholder":"Enter your name" } } })
++component("form-element", { "label": "Email", "name": "b", "atoms": [
   { "input": { "type": "email" } }
-]});
-component("form-element", { "label": "Image", "name": "c", "atoms": [
+]})
++component("form-element", { "label": "Image", "name": "c", "atoms": [
   {
     "component": "input",
     "options": { "type": "file" }
   }
-]});
-component("form-element", { "label": "Password", "name": "d", "atoms": { "input": { "type": "password" } } });
-component("form-element", { "label": "Website", "name": "e", "atoms": { "input": { "type": "url", "value":"http://" } } });
-component("form-element", { "label": "Phone", "name": "f", "atoms": { "input": { "type": "phone" } } });
-component("form-element", { "label": "Your Comment", "name": "g", "atoms": { "textarea": { "placeholder": "Please add a well-written, grammatically correct comment" } } });
-component("form-element", { "label": false, "name": "h", "atoms": { "input": { "type": "hidden", "value": "this is a secret value" } } });
+]})
++component("form-element", { "label": "Password", "name": "d", "atoms": { "input": { "type": "password" } } })
++component("form-element", { "label": "Website", "name": "e", "atoms": { "input": { "type": "url", "value":"http://" } } })
++component("form-element", { "label": "Phone", "name": "f", "atoms": { "input": { "type": "phone" } } })
++component("form-element", { "label": "Your Comment", "name": "g", "atoms": { "textarea": { "placeholder": "Please add a well-written, grammatically correct comment" } } })
++component("form-element", { "label": false, "name": "h", "atoms": { "input": { "type": "hidden", "value": "this is a secret value" } } });
 </script>
 
 Of course, you're not just going to need `input`s and `textarea`s. Checkbox lists, `select` dropdowns and radio lists are _molecules_, made up of an array of `checkbox`, `option` or `radio` atoms.
@@ -42,14 +42,14 @@ component("form-element", { "label": "What is your favourite colour?", "select":
 	{ "option": { "label": "Blue", "value": "blue" } },
 	{ "option": { "label": "Green", "value": "green" } },
 	{ "option": { "label": "Yellow", "value": "yellow" } }
-]});
-component("form-element", { "label": "What instruments do you play?", "name": "j", "atoms":[
+]})
++component("form-element", { "label": "What instruments do you play?", "name": "j", "atoms":[
 	{ "checkbox": { "label": "Ukulele", "value": "ukulele" } },
 	{ "checkbox": { "label": "Mandolin", "value": "mandolin" } },
 	{ "checkbox": { "label": "Banjo", "value": "banjo", "checked": true } },
 	{ "checkbox": { "label": "Guitar", "value": "guitar" } }
-]});
-component("form-element", { "label": "Do you know the way to San Jose?", "name": "k", "atoms":[
+]})
++component("form-element", { "label": "Do you know the way to San Jose?", "name": "k", "atoms":[
 	{ "radio": { "label": "Yes", "value": "yes" } },
 	{ "radio": { "label": "No", "value": "no" } },
 	{ "radio": { "label": "Not sure", "value": "unsure" } }
