@@ -24,6 +24,17 @@
     }
   }
 }
+// Show the breadcrumb effect without using JS
+.docs-nav {
+  .active-item > a {
+    width:79px;
+  }
+  .menu-lv1 > .active-item > a,
+  .menu-lv2 > .active-item > a,
+  .menu-lv10 > .active-item > a {
+    width:auto;
+  }
+}
 #main-menu {
   li {
     ul {

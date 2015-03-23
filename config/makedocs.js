@@ -37,7 +37,7 @@ module.exports = function (grunt) {
               output+= '  <li>\n';
               output+= '    <a href="'+path.basename(cat.page.dest)+'">'+cat.page.title+'</a>\n';
               if (typeof cat['children'] !== 'undefined') {
-                output+= '    <ul class="menu-lv2">>\n';
+                output+= '    <ul class="menu-lv2">\n';
                 // Loop through category pages
                 cat['children'].forEach(function(p, j) {
                   output+= '      <li><a href="'+path.basename(p.dest)+'">'+p.title+'</a></li>\n';

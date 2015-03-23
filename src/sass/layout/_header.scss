@@ -14,7 +14,8 @@
   color:$dark;
   background:#fff;
   padding:0 20px;
-  h1 {
+  h2 {
+    display:inline-block;
     line-height:41px;
     font-size:24px;
     max-width:$container-width;
@@ -23,5 +24,11 @@
     img {
       vertical-align:middle;
     }
+  }
+  .structural-nav {
+    display:inline-block;
+    float:right;
+    clear:right;
+    padding:1.625em 0;
   }
 }

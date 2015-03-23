@@ -115,12 +115,16 @@ The homepage navigation won't match the rest of the site. The structural navigat
   <li><a href="#">Fees &amp; funding</a></li>
   <li><a href="#">Applying</a></li>
   <li><a href="#">Student life</a></li>
-  <li class="nav-hidden"><a href="#">The city of York</a></li>
-  <li class="nav-hidden"><a href="#">Careers &amp; skills</a></li>
-  <li class="nav-hidden"><a href="#">Services for schools &amp; colleges</a></li>
-  <li class="nav-hidden"><a href="#">Parents &amp; carers</a></li>
-  <li class="nav-hidden"><a href="#">Request a prospectus</a></li>
-  <li class="nav-hidden"><a href="#">Contacts</a></li>
+  <li class="nav-additional">
+    <ul>
+      <li><a href="#">The city of York</a></li>
+      <li><a href="#">Careers &amp; skills</a></li>
+      <li><a href="#">Services for schools &amp; colleges</a></li>
+      <li><a href="#">Parents &amp; carers</a></li>
+      <li><a href="#">Request a prospectus</a></li>
+      <li><a href="#">Contacts</a></li>
+    </ul>
+  </li>
   <li class="more"><a href="#">See more <small>&#9660;</small></a></li>
 </ul>
 </nav>
@@ -138,12 +142,16 @@ The homepage navigation won't match the rest of the site. The structural navigat
   <li><a href="#">Fees &amp; funding</a></li>
   <li><a href="#">Applying</a></li>
   <li><a href="#">Student life</a></li>
-  <li><a href="#">The city of York</a></li>
-  <li><a href="#">Careers &amp; skills</a></li>
-  <li><a href="#">Services for schools &amp; colleges</a></li>
-  <li><a href="#">Parents &amp; carers</a></li>
-  <li><a href="#">Request a prospectus</a></li>
-  <li><a href="#">Contacts</a></li>
+  <li class="nav-additional">
+    <ul>
+      <li><a href="#">The city of York</a></li>
+      <li><a href="#">Careers &amp; skills</a></li>
+      <li><a href="#">Services for schools &amp; colleges</a></li>
+      <li><a href="#">Parents &amp; carers</a></li>
+      <li><a href="#">Request a prospectus</a></li>
+      <li><a href="#">Contacts</a></li>
+    </ul>
+  </li>
   <li class="more"><a href="#">See less <small>&#9650;</small></a></li>
 </ul>
 </nav>
@@ -155,17 +163,21 @@ The homepage navigation won't match the rest of the site. The structural navigat
   <h1><a href="#">Undergraduate study</a></h1>
 </div>
 <ul class="menu-lv1">
-  <li class="active">
+  <li class="active-item">
     <a href="#">Courses</a>
-    <ul class="menu-lv2">
+    <ul class="menu-lv2 active-nav">
       <li><a href="#">Choosing a course</a></li>
       <li><a href="#">Combined courses</a></li>
       <li><a href="#">Teaching &amp; learning</a></li>
       <li><a href="#">Other course info</a></li>
       <li><a href="#">How to choose</a></li>
-      <li class="nav-hidden"><a href="#">Another thing</a></li>
-      <li class="nav-hidden"><a href="#">More course stuff</a></li>
-      <li class="nav-hidden"><a href="#">Courses for you</a></li>
+      <li class="nav-additional">
+        <ul>
+          <li><a href="#">Another thing</a></li>
+          <li><a href="#">More course stuff</a></li>
+          <li><a href="#">Courses for you</a></li>
+        </ul>
+      </li>
       <li class="more"><a href="#">See more <small>&#9660;</small></a></li>
     </ul>
   </li>
@@ -186,17 +198,21 @@ The homepage navigation won't match the rest of the site. The structural navigat
   <h1><a href="#">Undergraduate study</a></h1>
 </div>
 <ul class="menu-lv1">
-  <li class="active">
+  <li class="active-item">
     <a href="#">Courses</a>
-    <ul class="menu-lv2 open">
+    <ul class="menu-lv2 active-nav open">
       <li><a href="#">Choosing a course</a></li>
       <li><a href="#">Combined courses</a></li>
       <li><a href="#">Teaching &amp; learning</a></li>
       <li><a href="#">Other course info</a></li>
       <li><a href="#">How to choose</a></li>
-      <li><a href="#">Another thing</a></li>
-      <li><a href="#">More course stuff</a></li>
-      <li><a href="#">Courses for you</a></li>
+      <li class="nav-additional">
+        <ul>
+          <li><a href="#">Another thing</a></li>
+          <li><a href="#">More course stuff</a></li>
+          <li><a href="#">Courses for you</a></li>
+        </ul>
+      </li>
       <li class="more"><a href="#">See less <small>&#9650;</small></a></li>
     </ul>
   </li>
@@ -219,22 +235,25 @@ The homepage navigation won't match the rest of the site. The structural navigat
   <h1><a href="#">Undergraduate study</a></h1>
 </div>
 <ul class="menu-lv1">
-  <li class="active">
+  <li class="active-item">
     <a href="#">Courses</a>
     <ul class="menu-lv2">
-      <li class="active">
+      <li class="active-item">
         <a href="#">Choosing a course</a>
-        <ul class="menu-lv3">
-          <li><a href="#">Course type A</a></li>
-          <li><a href="#">Course type B</a></li>
-          <li><a href="#">Course type C</a></li>
-          <li><a href="#">Course type D</a></li>
-          <li><a href="#">Course type E</a></li>
-          <li class="nav-hidden"><a href="#">Course type F</a></li>
-          <li class="nav-hidden"><a href="#">Course type G</a></li>
-          <li class="nav-hidden"><a href="#">Course type H</a></li>
-          <li class="nav-hidden"><a href="#">Course type I</a></li>
-          <li class="nav-hidden"><a href="#">Course type J</a></li>
+        <ul class="menu-lv3 active-nav">
+          <li><a href="#">Full time</a></li>
+          <li><a href="#">Part time</a></li>
+          <li><a href="#">Long distance courses</a></li>
+          <li><a href="#">Online courses</a></li>
+          <li><a href="#">All courses</a></li>
+          <li class="nav-additional">
+            <ul>
+              <li><a href="#">Another course option</a></li>
+              <li><a href="#">Why not try this?</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Contact us</a></li>
+            </ul>
+          </li>
           <li class="more"><a href="#">See more <small>&#9660;</small></a></li>
         </ul>
       </li>
@@ -259,22 +278,25 @@ The homepage navigation won't match the rest of the site. The structural navigat
   <h1><a href="#">Undergraduate study</a></h1>
 </div>
 <ul class="menu-lv1">
-  <li class="active">
+  <li class="active-item">
     <a href="#">Courses</a>
     <ul class="menu-lv2">
-      <li class="active">
+      <li class="active-item">
         <a href="#">Choosing a course</a>
-        <ul class="menu-lv3 open">
-          <li><a href="#">Course type A</a></li>
-          <li><a href="#">Course type B</a></li>
-          <li><a href="#">Course type C</a></li>
-          <li><a href="#">Course type D</a></li>
-          <li><a href="#">Course type E</a></li>
-          <li><a href="#">Course type F</a></li>
-          <li><a href="#">Course type G</a></li>
-          <li><a href="#">Course type H</a></li>
-          <li><a href="#">Course type I</a></li>
-          <li><a href="#">Course type J</a></li>
+        <ul class="menu-lv3 active-nav open">
+          <li><a href="#">Full time</a></li>
+          <li><a href="#">Part time</a></li>
+          <li><a href="#">Long distance courses</a></li>
+          <li><a href="#">Online courses</a></li>
+          <li><a href="#">All courses</a></li>
+          <li class="nav-additional">
+            <ul>
+              <li><a href="#">Another course option</a></li>
+              <li><a href="#">Why not try this?</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Contact us</a></li>
+            </ul>
+          </li>
           <li class="more"><a href="#">See less <small>&#9650;</small></a></li>
         </ul>
       </li>
@@ -293,34 +315,41 @@ The homepage navigation won't match the rest of the site. The structural navigat
 
 &nbsp;
 
-## Associative navigation - level 5 <small>(e.g. /study/undergraduate/courses/choosing-a-course/course-type-a)</small>
+## Associative navigation - level 5 <small>(e.g. /study/undergraduate/courses/choosing-a-course/full-time)</small>
 
 <nav class="main-menu mobile-hidden">
+<div class="main-menu-title">
+  <h1><a href="#">Undergraduate study</a></h1>
+</div>
 <ul class="menu-lv1">
-  <li class="active">
+  <li class="active-item">
     <a href="#">Courses</a>
     <ul class="menu-lv2">
-      <li class="active">
+      <li class="active-item">
         <a href="#">Choosing a course</a>
         <ul class="menu-lv3">
-          <li class="active">
-            <a href="#">Course type A</a>
-            <ul class="menu-lv4">
-              <li><a href="#">Option 1</a></li>
+          <li class="active-item">
+            <a href="#">Full time</a>
+            <ul class="menu-lv4 active-nav">
+              <li><a href="#">Further options</a></li>
               <li><a href="#">The second option</a></li>
-              <li class="nav-hidden"><a href="#">Richard III</a></li>
-              <li class="nav-hidden"><a href="#">Born on the Fourth of July</a></li>
-              <li class="nav-hidden"><a href="#">The Fifth Element</a></li>
-              <li class="nav-hidden"><a href="#">Sixth Sense</a></li>
-              <li class="nav-hidden"><a href="#">Se7en</a></li>
-              <li class="nav-hidden"><a href="#">8</a></li>
-              <li class="nav-hidden"><a href="#">A really long ninth option that probably wouldn't exist</a></li>
-              <li class="nav-hidden"><a href="#">Ten (10)</a></li>
+              <li><a href="#">Richard III</a></li>
+              <li><a href="#">Born on the Fourth of July</a></li>
+              <li class="nav-additional">
+                <ul>
+                  <li><a href="#">The Fifth Element</a></li>
+                  <li><a href="#">Sixth Sense</a></li>
+                  <li><a href="#">Se7en</a></li>
+                  <li><a href="#">8</a></li>
+                  <li><a href="#">A really long ninth option that probably wouldn't exist</a></li>
+                  <li><a href="#">Ten (10)</a></li>
+                </ul>
+              </li>
+              <li class="more"><a href="#">See more <small>&#9660;</small></a></li>
             </ul>
           </li>
         </ul>
       </li>
-      <li class="more"><a href="#">See more <small>&#9660;</small></a></li>
     </ul>
   </li>
   <li><a href="#">Open days &amp; visits</a></li>
@@ -328,43 +357,64 @@ The homepage navigation won't match the rest of the site. The structural navigat
   <li><a href="#">Fees &amp; funding</a></li>
   <li><a href="#">Applying</a></li>
   <li><a href="#">Student life</a></li>
-
 </ul>
 </nav>
 
 &nbsp;
 
-## Level 6 megamenu
+## Level 6 - 600
 
-In case there are too many options to fit on a line, the megamenu can be used at any level.
+As you go deeper into the site structure, the secondary associative navigation becomes a breadcrumb, with the tertiary menu always on one line (until &ldquo;See more&rdquo; is clicked).
 
-<nav class="main-menu mobile-hidden">
+<nav class="main-menu mobile-hidden docs-nav">
+<div class="main-menu-title">
+  <h1><a href="#">Undergraduate study</a></h1>
+</div>
 <ul class="menu-lv1">
-  <li class="active">
-    <a href="#">Study</a>
+  <li class="active-item">
+    <a href="#">Courses</a>
     <ul class="menu-lv2">
-      <li class="active">
-        <a href="#">Undergraduate</a>
+      <li class="active-item">
+        <a href="#">Choosing a course</a>
         <ul class="menu-lv3">
-          <li class="active">
-            <a href="#">Courses</a>
+          <li class="active-item">
+            <a href="#">Full time</a>
             <ul class="menu-lv4">
-              <li class="active">
-                <a href="#">Choosing a course</a>
-                <ul class="menu-lv5 megamenu">
-                  <li class="active">
-                    <a href="#">Course type A</a>
+              <li class="active-item">
+                <a href="#">Further options</a>
+                <ul class="menu-lv5">
+                  <li class="active-item">
+                    <a href="#">Still more</a>
                     <ul class="menu-lv6">
-                      <li><a href="#">The first option</a></li>
-                      <li><a href="#">Option 2</a></li>
-                      <li><a href="#">Richard III</a></li>
-                      <li><a href="#">Born on the Fourth of July</a></li>
-                      <li><a href="#">The Fifth Element</a></li>
-                      <li><a href="#">Sixth Sense</a></li>
-                      <li><a href="#">Se7en</a></li>
-                      <li><a href="#">8</a></li>
-                      <li><a href="#">A really long ninth option that probably wouldn't exist</a></li>
-                      <li><a href="#">Ten (10)</a></li>
+                      <li class="active-item">
+                        <a href="#">Further options</a>
+                        <ul class="menu-lv7">
+                          <li class="active-item">
+                            <a href="#">Deeper and deeper</a>
+                            <ul class="menu-lv8">
+                              <li class="active-item">
+                                <a href="#">Down the rabbit hole</a>
+                                <ul class="menu-lv9">
+                                  <li class="active-item">
+                                    <a href="#">Almost at the bottom now</a>
+                                    <ul class="menu-lv10">
+                                      <li class="active-item">
+                                        <a href="#">Can you see me down here?</a>
+                                        <ul class="menu-lv11 active-nav">
+                                          <li><a href="#">If you can read this</a></li>
+                                          <li><a href="#">You've come too far</a></li>
+                                          <li><a href="#">Turn back now</a></li>
+                                          <li><a href="#">While you still can</a></li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
                     </ul>
                   </li>
                 </ul>
@@ -373,29 +423,66 @@ In case there are too many options to fit on a line, the megamenu can be used at
           </li>
         </ul>
       </li>
-      <li class="more">
-        <a href="#">See less <small>&#9650;</small></a>
-      </li>
     </ul>
   </li>
-  <li><a href="#">Research</a></li>
-  <li><a href="#">Business</a></li>
-  <li><a href="#">Departments</a></li>
+  <li><a href="#">Open days &amp; visits</a></li>
+  <li><a href="#">Accommodation</a></li>
+  <li><a href="#">Fees &amp; funding</a></li>
+  <li><a href="#">Applying</a></li>
+  <li><a href="#">Student life</a></li>
 </ul>
 </nav>
 
 &nbsp;
-&nbsp;
 
 &nbsp;
 
-&nbsp;
+## Putting it all together
 
-&nbsp;
+<nav class="utility-nav">
+  <ul class="utility-links">
+    <li><a href="#">Jobs</a></li>
+    <li><a href="#">Visitors</a></li>
+    <li><a href="#">Alumni</a></li>
+    <li><a href="#">Current students</a></li>
+    <li><a href="#">Staff</a></li>
+    <li><a href="#">News</a></li>
+    <li><a href="#">Events</a></li>
+    <li><a href="#">Contact us</a></li>
+  </ul>
+  <div class="utility-search">
+    <form action="" method="get">
+      <input type="text" placeholder="Enter your search">
+      <button class="btn btn-small">Search</button>
+    </form>
+  </div>
+</nav>
 
-&nbsp;
+<header class="main-header" role="banner">
+  <h2><img src="img/logo.jpg" alt="University of York logo" width="264" height="41"></h2>
+  <nav class="structural-nav">
+    <ul>
+      <li><a href="#">Study</a></li>
+      <li><a href="#">Research</a></li>
+      <li><a href="#">Business</a></li>
+      <li><a href="#">Departments</a></li>
+      <li><a href="#">International</a></li>
+    </ul>
+  </nav>
+</header>
 
-&nbsp;
+<nav class="main-menu">
+<div class="main-menu-title">
+  <h1><a href="#">Study</a></h1>
+</div>
+<ul class="menu-lv1">
+  <li><a href="#">Undergraduate</a></li>
+  <li><a href="#">Postgraduate</a></li>
+  <li><a href="#">International students</a></li>
+  <li><a href="#">Distance learning</a></li>
+  <li><a href="#">Student life</a></li>
+</ul>
+</nav>
 
-&nbsp;
+
 

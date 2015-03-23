@@ -11,10 +11,10 @@ body {
   color:$dark;
   margin:0;
   padding:0;
-  line-height: 1.626; // 26px on 16px font
+  line-height: 1.625; // 26px on 16px font
 }
 a {
-  color:#666566;
+  color:lighten($dark, 10);
   text-decoration: none;
   &,
   &:hover,
@@ -23,7 +23,7 @@ a {
     outline: 0px;
   }
   &:hover {
-    color: #999899;
+    color:lighten($dark, 20);
   }
   img {
     border:0;
@@ -38,6 +38,7 @@ h1,h2,h3,h4,h5,h6 {
   font-family: $font-title;
   font-weight:300;
   margin:22px 0;
+  line-height: 1.375;
   &:first-child {
     margin-top:0;
   }

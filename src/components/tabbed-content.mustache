@@ -1,0 +1,14 @@
+<div class="tabs">
+  <ul class="tabs-nav">
+    {{#tabs}}
+      <li{{#if @first}} class="tab-active"{{/if}}><a href="#{{this.id}}">{{this.title}}</a></li>
+    {{/tabs}}
+  </ul>
+  <div class="tabs-content-container">
+    {{#tabs}}
+      <div class="tabs-content{{#if @first}} tab-active{{/if}}" id="{{this.id}}">
+      {{this.content}}
+      </div>
+    {{/tabs}}
+  </div>
+</div>

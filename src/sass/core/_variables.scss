@@ -9,7 +9,7 @@ $blue:#00b3eb;
 
 // Fonts
 $font-default: 'Trebuchet MS', Helvetica, Arial, sans-serif;
-$font-title: 'Pollen Regular', Georgia, 'Times New Roman', Times, serif;
+$font-title: Georgia, 'Times New Roman', Times, serif;
 $font-size:16px;
 
 // Measurements
@@ -43,3 +43,9 @@ $twitter:#63c0dd;
 $facebook:#527cb6;
 $youtube:#ff674e;
 $instagram:#666;
+
+
+// Loop variables (used in _navigation and _mixins)
+$nav_deepest_level:13;
+
+

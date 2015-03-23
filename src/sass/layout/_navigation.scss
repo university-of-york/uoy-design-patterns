@@ -32,8 +32,8 @@
   @extend .inline-links;
   float:left;
   li {
-    margin-top:0.25em;
-    margin-bottom:0.25em;
+    margin-top:0.1em;
+    margin-bottom:0.1em;
   }
   li ~ li {
     border-left-color:$light;
@@ -47,9 +47,11 @@
   input[type=text] {
     border:0;
     background-color:$light;
+    font-size:12px;
+    padding:0.125em 8px;
   }
   .btn {
-    vertical-align:top;
+    vertical-align:bottom;
     border-width: 0;
     line-height: 2;
     height: 2em;
@@ -92,11 +94,13 @@
     list-style:none;
     &.open {
       padding-right:7em;
+      .nav-additional {
+        display:block;
+      }
     }
   }
   li {
     @include transition('background-color');
-    line-height:2.75em;
     min-height:2.75em;
     float:left;
     &.more {
@@ -104,9 +108,9 @@
       top: 0;
       right: 0;
       text-align: right;
-      line-height: 2.75em;
       z-index: 20;
       border:0;
+      width:auto;
       &:after {
         display:none;
       }
@@ -118,15 +122,45 @@
   a {
     @include transition('background-color, color');
     display:block;
-    padding:0 20px;
+    padding:0.75em 20px;
+    line-height:1.25em;
     text-decoration:none;
     vertical-align:top;
     color:#fff;
   }
-  .nav-hidden {
+  .nav-additional {
     display:none;
+    border:0;
+    width:100%;
+    ul {
+    }
+    li {
+      border:0;
+    }
+    a {
+    }
   }
 }
+.active-item {
+  width:100%;
+  > a {
+    @extend %active-nav;
+    position:relative;
+    float:left;
+    white-space: nowrap;
+  }
+  > ul {
+    float:left;
+    clear:right;
+  }
+}
+.active-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width:100%;
+}
+
 .main-menu-title {
   background-color:$blue;
   h1 {
@@ -136,27 +170,38 @@
     color:$light;
     font-size:2em;
     line-height:1.625em;
+    a {
+      padding:0;
+      line-height:1.625;
+    }
   }
 }
+
 .menu-lv1 {
   position:relative;
   &.open {
     overflow:hidden;
   }
   > li {
+    border-right:1px solid #949394;
     border-left:1px solid #949394;
-    &:last-child {
-      border-right:1px solid #949394;
+    + li {
+      border-left:0;
     }
-    &.active {
+    &.active-item {
+      width:auto;
       > a {
         background-color:$blue;
+        &:after {
+          display:none;
+        }
         &:hover {
           background-color:$blue;
         }
       }
     }
-    > a {
+    > a,
+    &.nav-additional a {
       &:hover {
         background-color:darken($blue, 20);
       }
@@ -166,17 +211,17 @@
 // Level 2
 .menu-lv2 {
   display:block;
-  background-color:darken($blue, 20);
+  background-color:darken($blue, 10);
   position:absolute;
   left:0;
   top:100%;
   width:100%;
-  overflow:hidden;
+  // overflow:hidden;
   ul {
-    @extend %nav-overlay;
-    position:relative;
-    clear:both;
-    overflow:hidden
+    // @extend %nav-overlay;
+    // position:relative;
+    // clear:both;
+    // overflow:hidden
   }
   > ul {
     &:after {
@@ -184,35 +229,27 @@
     }
   }
   li {
-    position:relative;
-    &.active {
-      width:100%;
-      > a {
-        @extend %active-nav;
-        position:relative;
-        float:left;
-      }
-    }
+    // position:relative;
   }
   > li {
     &:last-child {
-      @extend %nav-overlay;
+      // @extend %nav-overlay;
       &:after {
         background-color:$blue;
       }
     }
-    &.active {
+    &.active-item {
       > a {
-        background-color:darken($blue, 20);
+        background-color:darken($blue, 10);
         z-index:18;
         &:hover {
-          background-color:darken($blue, 25);
+          background-color:darken($blue, 15);
           &:after {
-            border-left-color: darken($blue, 25);
+            border-left-color: darken($blue, 15);
           }
         }
         &:after {
-          border-left-color: darken($blue, 20);
+          border-left-color: darken($blue, 10);
         }
       }
     }
@@ -228,81 +265,15 @@
 @include submenu($blue);
 
 // z-indexes and display settings for sub(sub(sub))navs
-@for $n from 3 through 8 {
-  $t: 4; // $t is the level at which the default color starts
+@for $n from 3 through $nav_deepest_level {
   // Level #{$n}
   .menu-lv#{$n} {
     display:block;
-    // To overlay the lighter background
-    &:after {
-      z-index:#{$n};
-    }
-    > li {
-      > a {
-        z-index:20 - $n;
-      }
+    > li > a:after {
+      z-index:20 - $n;
     }
   }
 }
-
-// MEGAMENU
-.megamenu {
-  overflow:visible;
-  height:auto;
-  z-index:10;
-  li {
-    height:auto;
-    &:first-child {
-      li a {
-        padding-left:0;
-      }
-    }
-  }
-  ul {
-    width:100%;
-    height:auto;
-    padding:20px;
-    &:after {
-      display:none;
-    }
-    > li {
-      width:25%;
-      line-height:1.626;
-      vertical-align:top;
-    }
-    li {
-      min-height:0;
-      padding:0.25em 0;
-      line-height:1.126;
-      ul {
-        display:block;
-        width:100%;
-        padding:0 0 0 1.626em;
-        margin:0.25em 0 1em;
-        color: #fff;
-        list-style: disc;
-        background-color:transparent;
-        li {
-          width:100%;
-          a {
-            padding:0;
-          }
-        }
-      }
-    }
-    a {
-      background-color:transparent;
-      padding:0;
-      &:after {
-        display:none;
-      }
-    }
-  }
-  .nav-hidden {
-    display:block;
-  }
-}
-
 
 #mobile-menu-buttons {
   @extend %ib-container;

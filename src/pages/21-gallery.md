@@ -10,7 +10,7 @@ id: gallery-page
 
 ## Galleries
 
-Galleries use the (media object)[media.html] to create a two-, three- or four-column layout. Simply wrap a `<div class="gallery">` around the group of rows of media objects.
+Galleries use the [media object](media.html) to create a two-, three- or four-column layout. Simply wrap a `<div class="gallery">` around the group of rows of media objects.
 
 <script>
 var g1 = { "size": "third", "atoms": {
