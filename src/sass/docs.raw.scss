@@ -48,6 +48,10 @@
   }
 }
 #grid-page {
+  .main-wrapper > .g-row > .g-full {
+    border:0;
+    line-height:1.626;
+  }
   .g-full,
   .g-twothirds,
   .g-half,
@@ -71,7 +75,7 @@
       border-bottom:1px solid #666;
     }
   }
-  .g-row .g-row {
+  .g-row .g-row .g-row {
     margin:0;
     .g-full,
     .g-twothirds,
@@ -114,8 +118,8 @@
 }
 #icons-page {
   [class^=icon] {
-    border-top:6px solid #fff;
-    border-bottom:6px solid #fff;
+    border-top:6px solid $light;
+    border-bottom:6px solid $light;
     width:32%;
     background-size:auto 100%;
     background-position:4px center;
@@ -141,9 +145,9 @@
     }
   }
   .icon-light {
-    background-color:#333233;
-    border-color:#333233;
-    color:#fff;
+    background-color:$dark;
+    border-color:$dark;
+    color:$light;
   }
 }
 /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */

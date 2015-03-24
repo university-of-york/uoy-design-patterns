@@ -27,7 +27,7 @@ So how does the grid respond on smaller screens?
 
 All grid boxes (any bit of code at all, in fact) can be given a `.mobile-hidden` and/or `.tablet-hidden` class, which will hide that box on mobile and/or tablet. This can cause layout issues if you aren't careful.
 
-**N.B. There is normally no margin between grid rows, and no border on grid boxes. The are just there for the documentation.**
+**N.B. There is normally no border on grid boxes. It is just there for the documentation.**
 
 The default is to have a box that takes up the whole width:
 

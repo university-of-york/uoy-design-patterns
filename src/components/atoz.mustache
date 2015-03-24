@@ -8,12 +8,12 @@
 <div class="atoz-container">
   <ul>
   {{#letters}}
-    <li>
-      <h5 id="{{this.letter}}">{{this.letter}}</h5>
+    <li id="{{this.letter}}" class="atoz-letter">
+      <h5>{{this.letter}}</h5>
       <div class="atoz-content">
         <ul>
         {{#this.pages}}
-          <li>
+          <li class="atoz-page">
             <a href="{{this.link}}">
               <h6>{{this.title}}</h6>
               {{#this.content}}{{this}}{{/this.content}}
@@ -22,7 +22,7 @@
         {{/this.pages}}
         </ul>
       </div>
-
+    </li>
   {{/letters}}
   </ul>
 </div>

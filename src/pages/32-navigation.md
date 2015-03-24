@@ -54,7 +54,7 @@ The homepage navigation won't match the rest of the site. The structural navigat
   <div class="utility-search">
     <form action="" method="get">
       <input type="text" placeholder="Enter your search">
-      <button class="btn"><i class="icon-search"></i></button>
+      <button class="btn btn-small"><i class="icon-magnifying-glass"></i></button>
     </form>
   </div>
 </nav>
@@ -453,7 +453,7 @@ As you go deeper into the site structure, the secondary associative navigation b
   <div class="utility-search">
     <form action="" method="get">
       <input type="text" placeholder="Enter your search">
-      <button class="btn btn-small">Search</button>
+      <button class="btn btn-small"><i class="icon-magnifying-glass"></i></button>
     </form>
   </div>
 </nav>
