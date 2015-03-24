@@ -1,0 +1,29 @@
+//
+// EVENTS LISTS
+//
+.events-listing {
+  ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+  }
+  li {
+    &:last-of-type {
+      .event {
+        border-bottom:0;
+      }
+    }
+  }
+}
+.event {
+  padding:1.25em 20px;
+  border-bottom:1px solid $dark;
+}
+.event-time {
+  width:15%;
+}
+.event-details {
+  :last-of-type {
+    margin-bottom:0;
+  }
+}

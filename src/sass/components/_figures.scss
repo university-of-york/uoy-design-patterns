@@ -1,0 +1,48 @@
+//
+// FIGURES & CAPTIONS
+//
+figure {
+  position:relative;
+  display:inline-block;
+  margin:0;
+  img {
+    display:block;
+  }
+}
+.caption {
+  background:$dark;
+  color:$light;
+  line-height:1.25;
+  padding:0.25em 8px;
+  display:inline;
+  position:absolute;
+  :first-child {
+    margin-top:8px;
+  }
+  :last-child {
+    margin-bottom:8px;
+  }
+  h1,h2,h3,h4,h5,h6,p {
+    margin:8px 0;
+  }
+}
+.caption-bottom-left {
+  bottom:1em;
+  left:0;
+  margin-right:25%;
+}
+.caption-top-left {
+  top:1em;
+  left:0;
+  margin-right:25%;
+}
+.caption-top-right {
+  top:1em;
+  right:0;
+  margin-left:25%;
+}
+.caption-bottom-right {
+  bottom:1em;
+  right:0;
+  margin-left:25%;
+}
