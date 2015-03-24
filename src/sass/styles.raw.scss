@@ -18,7 +18,7 @@
 @import "components/atoz";
 @import "components/banner";
 @import "components/buttons";
-@import "components/forms";
+@import "components/figures";
 @import "components/icons";
 @import "components/lists";
 @import "components/media";
@@ -27,7 +27,9 @@
 @import "components/tables";
 @import "components/tabs";
 
-//ORGANSIMS
+//ORGANISMS
+@import "organisms/events";
+@import "organisms/forms";
 @import "organisms/gallery";
 
 // TEMPLATES

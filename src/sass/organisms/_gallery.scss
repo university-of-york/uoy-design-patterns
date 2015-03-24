@@ -8,6 +8,11 @@
     border:1px solid $dark;
     border-radius:3px;
   }
+  .media-image {
+    img {
+      width:100%;
+    }
+  }
   // .g-half:nth-of-type(odd) .media {
   //   margin-left:0
   // }

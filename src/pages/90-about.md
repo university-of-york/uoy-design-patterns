@@ -64,7 +64,7 @@ component("button-group", { atoms: [
 	},
 	{
 		"component": "button",
-		"options": { "type": "warning", "text": "Help", "icon-after": "help" }
+		"options": { "type": "warning", "text": "Help", "icon-after": "star" }
 	},
 	{
 		"component": "button",
@@ -78,14 +78,14 @@ Both these examples would render the same code:
 
 <div class="btn-group">
 	<button class="btn">Back</button>
-	<button class="btn btn-warning">Help <i class="icon icon-help"></i></button>
+	<button class="btn btn-warning">Help <i class="icon icon-star"></i></button>
 	<button class="btn">Next</button>
 </div>
 
 ```markup
 <div class="btn-group">
 	<button class="btn">Back</button>
-	<button class="btn btn-warning">Help <i class="icon icon-help"></i></button>
+	<button class="btn btn-warning">Help <i class="icon icon-star"></i></button>
 	<button class="btn">Next</button>
 </div>
 ```
