@@ -10,7 +10,7 @@ id: pagination-page
 
 ## Pagination
 
-For when we need to show pagination, for news articles, events listings, search results, and so on.
+<p class="lead">For when we need to show pagination, for news articles, events listings, search results, and so on.</p>
 
 Each `page` link is an _atom_:
 

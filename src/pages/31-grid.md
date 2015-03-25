@@ -10,7 +10,7 @@ id: grid-page
 
 # Grid Layout
 
-We use a flexible grid system that can be used at all screen resolutions. It's percentage-based, so is flexible enough to fit any container. This means is possible (but not necessarily advisable) to nest a grid within a grid.
+<p class="lead">We use a flexible grid system that can be used at all screen resolutions. It's percentage-based, so is flexible enough to fit any container. This means is possible (but not necessarily advisable) to nest a grid within a grid.</p>
 
 Note that the grid is used for layout only, and holds no details as to the contents of the grid box. Other components should be included within the grid boxes.
 
@@ -153,19 +153,19 @@ component("grid", { "atoms":[
 
 #### Atoms
 
-* grid-box
+* **grid-box**
   * **size**: one of _full_ (default), _half_, _quarter_, _threequarters_, _third_ and _twothirds_
   * **atoms**: an array of components (atoms, molecules, organisms)
 
 
 #### Molecules
 
-* grid-row
+* **grid-row**
   * **atoms**: an array of `grid-box`es. The sizes of the `grid-box`es should add up to one. Duh.
 
 
 #### Organisms
 
-* grid
+* **grid**
   * **atoms**: an array of `grid-row`s.
 

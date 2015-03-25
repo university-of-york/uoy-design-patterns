@@ -10,7 +10,7 @@ id: buttons-page
 
 ## Buttons
 
-Buttons come in four different types and three different sizes. Usually a `button` element should be used, although an `a`, an `input[type=button]`, an `input[type=reset]` or an `input[type=submit]` could be used.
+<p class="lead">Buttons come in four different types and three different sizes. Usually a `button` element should be used, although an `a`, an `input[type=button]`, an `input[type=reset]` or an `input[type=submit]` could be used.</p>
 
 The simplest is just a plain button:
 
@@ -22,12 +22,12 @@ component("button", { "text": "Click me" })
 +component("button-submit", { "text": "Submit" });
 </script>
 
-Other types are _cancel_, _primary_ and _highlight_:
+Other types are _cancel_, _primary_ and _danger_:
 
 <script>
-component("button", { "text": "Cancel", "type": "cancel" })
-+component("button", { "text": "Click this!", "type": "primary" })
-+component("button", { "text": "Or this", "type": "highlight" });
+component("button", { "text": "Click this!", "type": "primary" })
++component("button", { "text": "Cancel", "type": "cancel" })
++component("button", { "text": "Careful", "type": "danger" });
 </script>
 
 You can define the size of the button too:
@@ -61,15 +61,17 @@ You can combine buttons together in a `btn-group`. This will join the buttons to
 <script>
 component("button-group", { atoms: [
   { "button": { "text": "Back" } },
-  { "button": { "type": "warning", "text": "Help", "icon-after": "shield" } },
+  { "button": { "type": "danger", "text": "Help", "icon-after": "shield" } },
   { "button": { "text": "Next" } }
 ]})
 +component("button-group", { atoms: [
   { "button": { "text": "Back", "size": "large" } },
   { "button": { "type": "cancel", "text": "Help", "icon-after": "command", "size": "large" } },
-  { "button": { "type": "highlight", "text": "Next", "size": "large" } }
+  { "button": { "type": "primary", "text": "Next", "size": "large" } }
 ]});
 </script>
+
+## TODO: Block buttons
 
 ### Options
 

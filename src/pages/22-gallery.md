@@ -17,7 +17,7 @@ var g1 = { "size": "third", "atoms": {
   "media": {
     "type": "vertical",
     "picture": {
-      "image": "http://lorempixel.com/200/100/people/1",
+      "image": "http://lorempixel.com/244/122/people/1",
       "size": "100%"
     },
     "body": {
@@ -29,7 +29,7 @@ var g2 = { "size": "third", "atoms": {
   "media": {
     "type": "vertical",
     "picture": {
-      "image": "http://lorempixel.com/200/100/people/2",
+      "image": "http://lorempixel.com/244/122/people/2",
       "size": "100%"
     },
     "body": {
@@ -41,7 +41,7 @@ var g3 = { "size": "third", "atoms": {
   "media": {
     "type": "vertical",
     "picture": {
-      "image": "http://lorempixel.com/200/100/people/3",
+      "image": "http://lorempixel.com/244/122/people/3",
       "size": "100%"
     },
     "body": {
@@ -75,5 +75,5 @@ component("gallery", { "atoms": [
 #### Molecules
 
 
-* gallery
+* **gallery**
   * **atoms**: an array of grid-row molecules

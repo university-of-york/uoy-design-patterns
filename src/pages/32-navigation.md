@@ -10,7 +10,7 @@ id: navigation-page
 
 # Navigation
 
-In general, navigation is kept up at the top of the page, so we can use the whole width of the page for content. The sub-navigation (levels 4+) acts as a breadcrumb when needed.
+<p class="lead">In general, navigation is kept up at the top of the page, so we can use the whole width of the page for content. The sub-navigation (levels 4+) acts as a breadcrumb when needed.</p>
 
 ### Structural navigation
 
@@ -22,11 +22,11 @@ The selected level 2 title will appear in larger text (this will be something li
 
 **Associative navigation** are links to pages that are (usually) siblings of the current page - directly relevant links to pages in the same section. It also includes direct parents and grandparents of the current page (i.e. the breadcrumb).
 
-The major (alpha) associative navigation is made up of level 3 options (e.g. _Courses_, _Open Days &amp; Visits_, _Accommodation_ for **Undergraduate Study**, _About the department_, _About staff_, _Research_ for **Chemistry**). This can overflow, with a **More &#9660;** option at the end.
+The major associative navigation is made up of level 3 options (e.g. _Courses_, _Open Days &amp; Visits_, _Accommodation_ for **Undergraduate Study**, _About the department_, _About staff_, _Research_ for **Chemistry**). This can overflow, with a **More &#9660;** option at the end.
 
-The minor (beta) associative navigation starts as level 4 navigation and then becomes the breadcrumb for all subsequent levels. This can overflow for the level 4 options, and will accordion up when used as a breadcrumb.
+The minor associative navigation starts as level 4 navigation and then becomes the breadcrumb for all subsequent levels. This can overflow for the level 4 options, and will accordion up when used as a breadcrumb.
 
-Finally, the lowest (gamma) level of associative navigation is the subnavigation for whichever level is below the current page. This can overflow when needed.
+Finally, the lowest level of associative navigation is the subnavigation for whichever level is below the current page. This can overflow when needed.
 
 The deepest level I can find in the site audit is six levels deep (e.g. /study/study-abroad/outgoing/europe/partners/music/), but, as the content is user-generated, we need to make allowances for large numbers of option per level and almost endless levels.
 

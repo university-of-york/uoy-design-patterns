@@ -10,7 +10,7 @@ id: captions-page
 
 ## Figures
 
-You can add text to an image by using a `figure` component with a `figcaption`.
+<p class="lead">You can add text to an image by using a `figure` component with a `figcaption`.</p>
 
 <script>
 component("figure", { "image": "http://lorempixel.com/200/200/people/7", "caption": "What's this then?"});

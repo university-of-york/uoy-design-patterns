@@ -80,9 +80,15 @@ ol {
 }
 ul {
   list-style:disc;
+  ul {
+    list-style:circle;
+  }
 }
 ol {
   list-style:decimal;
+  ol {
+    list-style:lower-roman;
+  }
 }
 code {
   font-family:monospace;
@@ -95,4 +101,23 @@ hr {
   margin:22px 0;
   height:1px;
   clear:both;
+}
+small {
+  font-size:0.625em;
+}
+em, i {
+  font-style: italic;
+}
+strong,b {
+  font-weight:700;
+}
+mark {
+  background: #fefe99;
+  color: #000;
+}
+s, strike, del {
+  text-decoration: line-through;
+}
+u, ins {
+  text-decoration: underline;
 }

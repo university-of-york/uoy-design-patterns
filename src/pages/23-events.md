@@ -14,11 +14,7 @@ Each event in a list is made up of an `event` atom (which uses the [media object
 
 <script>
 component("event", {
-  "datetime":"2015-04-07 19:00",
-  "day":"Tuesday",
-  "date":"7",
-  "month": "April",
-  "year": "2015",
+  "datetime":"2015-03-31 18:30",
   "title": "The energy crisis: Is nuclear fusion a solution?",
   "details": "<p>This year's Science Discovery event will focus on nuclear fusion.</p>"
 });
@@ -57,17 +53,11 @@ component("events-listing", { "atoms": [
 #### Atoms
 
 * **event**
-    * **datetime**:
-    * **day**:
-    * **date**:
-    * **month**:
-    * **datetime**:
-    * **datetime**:
-    * **datetime**:
-    * **datetime**:
+  * **datetime**: The date and time of the event, in _yyy-mm-dd hh:mm_ format
+  * **title**: The title of the event
+  * **details**: HTML string to go in the event details
 
 #### Molecules
 
-
-* gallery
-  * **atoms**: an array of grid-row molecules
+* **events-listing**
+  * **atoms**: an array of _event_ atoms

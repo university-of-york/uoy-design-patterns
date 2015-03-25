@@ -10,7 +10,7 @@ id: media-page
 
 ## Media Object
 
-The media object is a multi-purpose object that can be used in a variety of different location. It's basic use is to float an image to the left, with some text next to it (see [this blog post](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/). The basic set-up of the _media_object is:
+<p class="lead">The media object is a multi-purpose object that can be used in a variety of different location. It's basic use is to float an image to the left, with some text next to it (see [this blog post](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/). The basic set-up of the _media_object is:</p>
 
 * A picture (with optional caption) on the left
 * A _body_ on the right, which can either contain a title, subtitle, content and a link button fixed to the bottom of the container

@@ -10,6 +10,7 @@ $blue:#00b3eb;
 // Fonts
 $font-default: 'Trebuchet MS', Helvetica, Arial, sans-serif;
 $font-title: Georgia, 'Times New Roman', Times, serif;
+$font-monospace: Consolas, Monaco, 'Andale Mono', monospace;
 $font-size:16px;
 
 // Measurements
@@ -34,6 +35,13 @@ $icons: (
   medium: 16px,
   large:  36px,
   huge:   48px
+);
+
+// Button types
+$buttons: (
+  primary: #60b044,
+  danger: #b04460,
+  cancel: #4460b0
 );
 
 // Site sections

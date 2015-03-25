@@ -7,7 +7,8 @@
   display: inline-block;
   border: 1px solid $dark;
   border-radius: 3px;
-  background: #fefefe;
+  background-color: $light;
+  background-repeat: repeat-y;
   padding: 0 1em;
   font-size: 16px;
   line-height: 2.4;
@@ -17,78 +18,41 @@
   transition: all 0.2s ease-out;
   vertical-align: top;
   &:hover {
-    background: #dcdcdc;
+    background: darken($light, 5);
     color: #222;
   }
   &:active {
-    background: #cbcbcb;
+    background: darken($light, 10);
     color: #222;
   }
   &:focus {
     outline: none;
-    background: #bababa;
+    background: darken($light, 15);
     color: #111;
   }
 }
 // Button types
-.btn-cancel {
-  background: #000099;
-  color: #fff;
-  &:hover {
+@each $name, $color in $buttons {
+  .btn-#{$name} {
+    background-color: $color;
+    background-image: linear-gradient(darken($color, 10), $color);
     color: #fff;
-    background: #000088;
-  }
-  &:active {
-    color: #fff;
-    background: #000077;
-  }
-  &:focus {
-    outline: none;
-    color: #fff;
-    background: #000066;
-  }
-  [class^=icon] {
-    @extend .icon-light;
-  }
-}
-.btn-primary {
-  background: #990000;
-  color: #fff;
-  &:hover {
-    color: #fff;
-    background: #880000;
-  }
-  &:active {
-    color: #fff;
-    background: #770000;
-  }
-  &:focus {
-    outline: none;
-    color: #fff;
-    background: #660000;
-  }
-  [class^=icon] {
-    @extend .icon-light;
-  }
-}
-.btn-highlight {
-  background: #009900;
-  color: #fff;
-  &:hover {
-    color: #fff;
-    background: #008800;
-  }
-  &:active {
-    color: #fff;
-    background: #007700;
-  }
-  &:focus {
-    outline: none;
-    color: #fff;
-    background: #006600;
-  }
-  [class^=icon] {
-    @extend .icon-light;
+    &:hover {
+      color: #fff;
+      background: lighten($color, 10);
+    }
+    &:active {
+      color: #fff;
+      background: lighten($color, 20);
+    }
+    &:focus {
+      outline: none;
+      color: #fff;
+      background: lighten($color, 30);
+    }
+    [class^=icon] {
+      @extend .icon-light;
+    }
   }
 }
 // Button sizes

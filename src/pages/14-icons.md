@@ -10,7 +10,7 @@ id: icons-page
 
 ## Icons
 
-We're currently using [Iconic Open](https://useiconic.com/open) as an icon set, but this is easy to replace. All icons are held in an `i` element, as it has no semantic meaning and is very concise (i.e. it's one letter!).
+<p class="lead">We're currently using [Iconic Open](https://useiconic.com/open) as an icon set, but this is easy to replace. All icons are held in an `i` element, as it has no semantic meaning and is very concise (i.e. it's one letter!).</p>
 
 By default we use SVG icons, but there is a fallback to PNG if background SVGs are not supported.
 
