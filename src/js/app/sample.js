@@ -1,4 +1,4 @@
-/*doc
+/*
 
 ---
 title: Sample Module
