@@ -3,14 +3,12 @@
 title: Events
 name: events
 category: organisms
-layout: default
+layout: q+tq
 id: events-page
 
 ---
 
-## Events
-
-Each event in a list is made up of an `event` atom (which uses the [media object](media.html) markup).
+<p class="lead">Each event in a list is made up of an `event` atom (which uses the [media object](media.html) markup).</p>
 
 <script>
 component("event", {

@@ -2,13 +2,11 @@
 
 title: Icons
 name: icons
-category: components
-layout: default
+category: atoms
+layout: q+tq
 id: icons-page
 
 ---
-
-## Icons
 
 <p class="lead">We're currently using [Iconic Open](https://useiconic.com/open) as an icon set, but this is easy to replace. All icons are held in an `i` element, as it has no semantic meaning and is very concise (i.e. it's one letter!).</p>
 

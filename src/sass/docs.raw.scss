@@ -1,11 +1,22 @@
 /* ADDITIONAL DOCUMENTATION STYLES */
 @import "core/variables";
+@import "core/mixins";
+@import "core/extends";
 
 .docs {
   h2 small {
     display:block;
     font-size:0.45em;
     line-height:1;
+  }
+  .main-header {
+    h2 {
+      display:block;
+      line-height: 41px;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 17px 0 17px;
+    }
   }
   .wide-wrapper {
     max-width:100%;
@@ -150,13 +161,77 @@
     color:$light;
   }
 }
+#figures-page {
+  .figure-w400 {
+    width:400px;
+  }
+  .figure-h400 {
+    height:400px;
+  }
+  figure {
+    &[class*="figure-w"] {
+      @extend %set-width-figure;
+    }
+    &[class*="figure-h"] {
+      @extend %set-height-figure;
+    }
+    &[class*="figure-w"][class*="figure-h"] {
+      @extend %centered-image;
+    }
+  }
+}
+// Show hide appropriate submenu
+.submenu {
+  display:none;
+}
+#atoms-page,
+.category-atoms {
+  .submenu.category-atoms {
+    display:block;
+  }
+}
+#molecules-page,
+.category-molecules {
+  .submenu.category-molecules {
+    display:block;
+  }
+}
+#organisms-page,
+.category-organisms {
+  .submenu.category-organisms {
+    display:block;
+  }
+}
+#layout-page,
+.category-layout {
+  .submenu.category-layout {
+    display:block;
+  }
+}
+#buttons-page {
+  .btn-block {
+    margin-bottom:8px;
+  }
+}
+#panels-page {
+  .panel {
+    min-width:240px;
+    width:50%;
+  }
+}
+
 /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
  * @author Lea Verou
  */
-
+// Even inline <code>s need some styling
+code {
+  color: black;
+  background-color:#f5f2f0;
+  padding:4px 2px;
+}
 code[class*="language-"],
 pre[class*="language-"] {
   color: black;

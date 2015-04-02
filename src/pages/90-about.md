@@ -3,12 +3,12 @@
 title: About
 name: about
 category: false
-layout: default
+layout: q+tq
 id: about
 
 ---
 
-This is a meta-page about how the documentation is built, with examples of how you can call new component templates into pages.
+<p class="lead">This is a meta-page about how the documentation is built, with examples of how you can call new component templates into pages.</p>
 
 You can include an atomic component like so:
 

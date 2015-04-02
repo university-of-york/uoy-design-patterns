@@ -2,13 +2,11 @@
 
 title: A to Z
 name: atoz
-category: components
-layout: default
+category: molecules
+layout: q+tq
 id: atoz-page
 
 ---
-
-## A to Z
 
 When we need an alphabetical list, for example on course pages.
 

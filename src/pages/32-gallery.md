@@ -3,14 +3,12 @@
 title: Gallery
 name: gallery
 category: organisms
-layout: default
+layout: q+tq
 id: gallery-page
 
 ---
 
-## Galleries
-
-Galleries use the [media object](media.html) to create a two-, three- or four-column layout. Simply wrap a `<div class="gallery">` around the group of rows of media objects.
+<p class="lead">Galleries use the [media object](media.html) to create a two-, three- or four-column layout. Simply wrap a `<div class="gallery">` around the group of rows of media objects.</p>
 
 <script>
 var g1 = { "size": "third", "atoms": {
@@ -29,7 +27,7 @@ var g2 = { "size": "third", "atoms": {
   "media": {
     "type": "vertical",
     "picture": {
-      "image": "http://lorempixel.com/244/122/people/2",
+      "image": "http://lorempixel.com/244/122/people/4",
       "size": "100%"
     },
     "body": {
@@ -41,7 +39,7 @@ var g3 = { "size": "third", "atoms": {
   "media": {
     "type": "vertical",
     "picture": {
-      "image": "http://lorempixel.com/244/122/people/3",
+      "image": "http://lorempixel.com/244/122/people/7",
       "size": "100%"
     },
     "body": {

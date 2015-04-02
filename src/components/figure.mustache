@@ -1,4 +1,4 @@
-<figure>
-  <img src="{{image}}">
-  <figcaption class="caption caption-{{#position}}{{this}}{{/position}}{{^position}}bottom-left{{/position}}">{{caption}}</figcaption>
+<figure{{#type}} class="figure-{{this}}"{{/type}}>
+  <img src="{{image}}">{{#caption}}
+  <figcaption class="caption caption-{{#if @root/position}}{{@root/position}}{{else}}bottom-left{{/if}}">{{this}}</figcaption>{{/caption}}
 </figure>

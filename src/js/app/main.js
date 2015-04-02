@@ -9,6 +9,12 @@ define(['jquery', 'picturefill', 'app/utils', 'app/grunticon'], function ($, PIC
 
   console.log('Got here');
 
+  // Disable buttons
+  $('.btn-disabled').click(function(e) {
+    e.preventDefault();
+    return false;
+  });
+
   // Sample use of UTILS.debounce
   var resizeFn = UTILS.debounce(function() {
     console.log('Window resized');

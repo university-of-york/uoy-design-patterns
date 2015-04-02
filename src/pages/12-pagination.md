@@ -2,13 +2,11 @@
 
 title: Pagination
 name: pagination
-category: components
-layout: default
+category: atoms
+layout: q+tq
 id: pagination-page
 
 ---
-
-## Pagination
 
 <p class="lead">For when we need to show pagination, for news articles, events listings, search results, and so on.</p>
 

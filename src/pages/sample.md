@@ -3,22 +3,18 @@
 title: Sample Page Title
 name: pagename
 category: Page Category
-layout: default
+layout: q+tq
 id: sample-page
 
 ---
 
-## Sample
+<p class="lead">Sample text</p>
 
 <script>
 component("sample", { "text": "Sample text", "type": "sample-type" });
 </script>
 
 ## Complete options
-
-### Component names
-
-* sample
 
 ### Options
 

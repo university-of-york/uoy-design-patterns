@@ -2,15 +2,15 @@
 
 title: Buttons
 name: buttons
-category: components
-layout: default
+category: atoms
+layout: q+tq
 id: buttons-page
 
 ---
 
-## Buttons
+<p class="lead">Buttons come in four different types and three different sizes.</p>
 
-<p class="lead">Buttons come in four different types and three different sizes. Usually a `button` element should be used, although an `a`, an `input[type=button]`, an `input[type=reset]` or an `input[type=submit]` could be used.</p>
+Usually a `button` element should be used, although an `a`, an `input[type=button]`, an `input[type=reset]` or an `input[type=submit]` could be used.
 
 The simplest is just a plain button:
 
@@ -30,22 +30,30 @@ component("button", { "text": "Click this!", "type": "primary" })
 +component("button", { "text": "Careful", "type": "danger" });
 </script>
 
+A button can also be _disabled_:
+
+<script>
+component("button", { "text": "Don't click this!", "type": "disabled" });
+</script>
+
 You can define the size of the button too:
 
 <script>
-component("button", { "text": "Tiny button", "size": "tiny" })
-+component("button", { "text": "Small button", "size": "small" })
-+component("button", { "text": "Medium button", "size": "medium" })
+component("button", { "text": "Huge button", "size": "huge" })
 +component("button", { "text": "Large button", "size": "large" })
-+component("button", { "text": "Huge button", "size": "huge" });
++component("button", { "text": "Medium button", "size": "medium" })
++component("button", { "text": "Small button", "size": "small" })
++component("button", { "text": "Tiny button", "size": "tiny" });
 </script>
 
-It's also easy to add an icon to a button, either at the front, the end, or both (which doesn't look good, so don't do it).
+It's also easy to add an icon to a button, either at the front, the end, (or both (which doesn't look good, so don't do it)), above the text or on its own.
 
 <script>
-component("button", { "text": "Like", "icon-before": "heart" })
+component("button", { "text": "Stop", "icon-before": "media-stop" })
 +component("button", { "text": "Play", "icon-after": "media-play" })
-+component("button", { "text": "Please don't do this", "icon-before": "musical-note", "icon-after": "person" });
++component("button", { "text": "Please don't do this", "icon-before": "media-skip-backward", "icon-after": "media-skip-forward" })
++component("button", { "text":"Like", "icon-above": "heart" })
++component("button", { "icon": "heart" });
 </script>
 
 You can join this all together to make a monster button:
@@ -54,41 +62,36 @@ You can join this all together to make a monster button:
 component("button", { "text": "Look at me!", "icon-after": "thumb-up", "size": "large", "type": "primary" });
 </script>
 
-## Button groups
-
-You can combine buttons together in a `btn-group`. This will join the buttons together seamlessly (as long as they're all the same size. Otherwise, results can be unpredictable.).
+And, just for testing, here's a button with text on multiple lines:
 
 <script>
-component("button-group", { atoms: [
-  { "button": { "text": "Back" } },
-  { "button": { "type": "danger", "text": "Help", "icon-after": "shield" } },
-  { "button": { "text": "Next" } }
-]})
-+component("button-group", { atoms: [
-  { "button": { "text": "Back", "size": "large" } },
-  { "button": { "type": "cancel", "text": "Help", "icon-after": "command", "size": "large" } },
-  { "button": { "type": "primary", "text": "Next", "size": "large" } }
-]});
+component("button", { "text": "Bippitty<br>Boppity<br>Boo" });
 </script>
 
-## TODO: Block buttons
+## Block buttons
+
+A block button takes 100% of the width of the containing element. They're useful for finishing off a form, when there's only one option.
+
+<script>
+component("button", { "block": true, size: "huge", "text": "Head", "icon-after": "person" })
++component("button", { "block": true, size: "large", "text": "Shoulders", "type": "primary", "icon-before": "people" })
++component("button", { "block": true, size: "medium", "text": "Knees", "type": "cancel" })
++component("button", { "block": true, size: "small", "text": "Toes", "type": "danger" })
++component("button", { "block": true, size: "tiny", "text": "If you can read this you're too close" });
+</script>
 
 ### Options
 
-#### Atoms
-
-* button
-* button-link
-* button-input
-* button-submit
+* **button**
+* **button-link**
+* **button-input**
+* **button-submit**
+* **button-reset**
   * **text**: the text on the button **(required)**
   * **type**: one of _default_ (default), _cancel_, _primary_ and _highlight_
   * **size**: one of _tiny_, _small_, _medium_ (default), _large_ or _huge_
-  * **icon-before**: the type of [icon](icons.html) to appear at the front of the button (doesn't work with input[type=submit] or input[type=button])
-  * **icon-after**: the type of [icon](icons.html) to appear at the end of the button (doesn't work with input[type=submit] or input[type=button])
+  * **icon-above**: the type of [icon](icons.html) to go above the text (or replace it if there is no text) (doesn't work with input[type=submit], input[type=reset] or input[type=button])
+  * **icon-before**: the type of [icon](icons.html) to appear at the front of the button (doesn't work with input[type=submit], input[type=reset] or input[type=button])
+  * **icon-after**: the type of [icon](icons.html) to appear at the end of the button (doesn't work with input[type=submit], input[type=reset] or input[type=button])
   * **href**: the URL to visit when clicked (only for button-link, defaults to "#")
-
-#### Molecules
-
-* button-group
-  * **atoms**: an array of `buttons`
+  * **block**: (Boolean) defaults to false

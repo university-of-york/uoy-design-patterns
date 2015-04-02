@@ -1,0 +1,35 @@
+//
+// PANELS
+//
+.panel {
+  border:1px solid $dark;
+  border-radius:3px;
+}
+.panel-content {
+  padding:1em 20px;
+  :first-child {
+    margin-top:0;
+  }
+  :last-child {
+    margin-bottom:0;
+  }
+}
+.panel-header,
+.panel-subheader,
+.panel-footer {
+  padding:0.4em 20px;
+  background:$dark;
+  color:$light;
+  :first-child {
+    margin-top:0;
+  }
+  :last-child {
+    margin-bottom:0;
+  }
+}
+.panel-image {
+  img {
+    display:block;
+    width:100%;
+  }
+}

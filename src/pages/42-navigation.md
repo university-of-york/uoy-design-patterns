@@ -8,8 +8,6 @@ id: navigation-page
 
 ---
 
-# Navigation
-
 <p class="lead">In general, navigation is kept up at the top of the page, so we can use the whole width of the page for content. The sub-navigation (levels 4+) acts as a breadcrumb when needed.</p>
 
 ### Structural navigation

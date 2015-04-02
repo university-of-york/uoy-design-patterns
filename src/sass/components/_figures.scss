@@ -5,10 +5,21 @@ figure {
   position:relative;
   display:inline-block;
   margin:0;
+  overflow:hidden;
   img {
     display:block;
+    // min-width:100%;
+    // min-height:100%;
   }
+
+  // Use when there is just a set height
+  // @extend %set-height-figure;
+
+  // Use when there's a set height and width
+  // @extend %centered-image;
+
 }
+
 .caption {
   background:$dark;
   color:$light;
@@ -22,7 +33,7 @@ figure {
   :last-child {
     margin-bottom:8px;
   }
-  h1,h2,h3,h4,h5,h6,p {
+  h1,h2,h3,h4,h5,h6,p,ul,ul,ol {
     margin:8px 0;
   }
 }

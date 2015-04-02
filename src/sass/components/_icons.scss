@@ -19,10 +19,14 @@
   }
 }
 .icon-before {
-  margin-right:12px;
+  margin-right:0.6em;
 }
 .icon-after {
-  margin-left:12px;
+  margin-left:0.6em;
+}
+.icon-above {
+  display: block;
+  margin: 0.4em auto 0;
 }
 
 // Body class based on browser support

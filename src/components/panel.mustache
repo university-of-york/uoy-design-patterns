@@ -1,0 +1,17 @@
+<div class="panel {{#type}}panel-{{this}}{{/type}}">{{#header}}
+  <div class="panel-header">
+    {{this}}
+  </div>{{/header}}{{#image}}
+  <div class="panel-image">
+    <img src="{{this}}" alt="{{#if header}}{{header}}{{else}}{{#subheader}}{{this}}{{/subheader}}{{/if}}">
+  </div>{{/image}}{{#subheader}}
+  <div class="panel-subheader">
+    {{this}}
+  </div>{{/subheader}}
+  <div class="panel-content">
+    {{content}}
+  </div>{{#footer}}
+  <div class="panel-footer">
+    {{this}}
+  </div>{{/footer}}
+</div>

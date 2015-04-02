@@ -3,12 +3,10 @@
 title: Forms
 name: forms
 category: organisms
-layout: default
+layout: q+tq
 id: forms-page
 
 ---
-
-## Forms
 
 <p class="lead">Building up a form takes time, but should be a simple case of combining all the elements here in a sensible way.</p>
 

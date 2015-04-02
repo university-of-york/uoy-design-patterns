@@ -3,12 +3,10 @@
 title: Grid
 name: grid
 category: layout
-layout: default
+layout: q+tq
 id: grid-page
 
 ---
-
-# Grid Layout
 
 <p class="lead">We use a flexible grid system that can be used at all screen resolutions. It's percentage-based, so is flexible enough to fit any container. This means is possible (but not necessarily advisable) to nest a grid within a grid.</p>
 

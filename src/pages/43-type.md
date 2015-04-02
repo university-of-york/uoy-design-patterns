@@ -3,12 +3,10 @@
 title: Type
 name: type
 category: layout
-layout: default
+layout: q+tq
 id: type-page
 
 ---
-
-# Type
 
 <p class="lead">Here you can find documentation about default typography used on the site. The usual `line-height` is 1.625, which gives a 26px line-height for 16px font sizes. A margin of 22px (1.375em) is the default spacing between elements. In general, _ems_ are used for vertical spacing, and _pixels_ for horizontal spacing.</p>
 

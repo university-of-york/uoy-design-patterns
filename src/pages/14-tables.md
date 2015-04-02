@@ -2,13 +2,11 @@
 
 title: Tables
 name: tables
-category: components
-layout: default
+category: atoms
+layout: q+tq
 id: tables-page
 
 ---
-
-## Tables (in progress)
 
 <script>
 component("table", { "atoms":[

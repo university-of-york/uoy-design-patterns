@@ -4,8 +4,8 @@
     {{#if this.content}}
      {{this.content}}
     {{else}}
-     <img src="{{this.image}}" alt style="width: {{this.size}}; height: {{this.size}};">{{#this.caption}}
-     <figcaption><h6>{{this}}</h6></figcaption>{{/this.caption}}
+     <img src="{{this.image}}" alt="{{#this.caption}}{{this}}{{/this.caption}}" style="width: {{this.size}}; height: {{this.size}};">{{#this.caption}}
+     <figcaption>{{this}}</figcaption>{{/this.caption}}
     {{/if}}
   </figure>
   {{/picture}}

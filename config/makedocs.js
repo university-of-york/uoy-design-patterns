@@ -9,6 +9,7 @@ module.exports = function (grunt) {
       componentsDir: 'src/components/',
       nav: function(pages) {
         var navPage = "src/partials/nav.mustache";
+        var subNavPage = "src/partials/subnav.mustache";
         var categories = {};
         pages.forEach(function(page, i) {
           if (page.category === false) {
@@ -29,7 +30,8 @@ module.exports = function (grunt) {
             categories[page.category]['children'].push(page);
           }
           if (i === pages.length - 1) {
-            var output = '<ul class="menu-lv1">\n';
+            var output = '<ul class="menu-lv1">\n',
+                suboutput = '';
             for (var c in categories) {
               var cat = categories[c];
               var dest = cat.page.dest || '#';
@@ -37,17 +39,21 @@ module.exports = function (grunt) {
               output+= '  <li>\n';
               output+= '    <a href="'+path.basename(cat.page.dest)+'">'+cat.page.title+'</a>\n';
               if (typeof cat['children'] !== 'undefined') {
-                output+= '    <ul class="menu-lv2">\n';
+                suboutput+= '    <ul class="submenu category-'+cat.page.name+'">\n';
+                suboutput+= '      <li class="submenu-title"><a>'+cat.page.title+'</a></li>\n';
                 // Loop through category pages
                 cat['children'].forEach(function(p, j) {
-                  output+= '      <li><a href="'+path.basename(p.dest)+'">'+p.title+'</a></li>\n';
+                  suboutput+= '      <li><a href="'+path.basename(p.dest)+'">'+p.title+'</a></li>\n';
                 });
-                output+= '    </ul>\n';
+                suboutput+= '    </ul>\n';
               }
               output+= '  </li>\n';
             }
             output+= '</ul>\n';
             grunt.file.write(navPage, output);
+            grunt.log.ok("Wrote file to " + navPage);
+            grunt.file.write(subNavPage, suboutput);
+            grunt.log.ok("Wrote file to " + subNavPage);
           }
         });
       }

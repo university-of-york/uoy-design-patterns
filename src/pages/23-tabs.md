@@ -2,15 +2,13 @@
 
 title: Tabs
 name: tabs
-category: components
-layout: default
+category: molecules
+layout: q+tq
 id: tabs-page
 
 ---
 
-## Tabs
-
-Tabs are an easy way to fit lots of related content on a page without overwhelming the page with content.
+<p class="lead">Tabs are an easy way to fit lots of related content on a page without overwhelming the page with content.</p>
 
 Individual tabs can be referenced by the page hash.
 
