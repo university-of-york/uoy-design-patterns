@@ -3,7 +3,7 @@
 title: Grid
 name: grid
 category: layout
-layout: q+tq
+layout: default
 id: grid-page
 
 ---
