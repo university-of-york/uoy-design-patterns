@@ -12,22 +12,25 @@
 @import "layout/header";
 @import "layout/footer";
 @import "layout/navigation";
+@import "layout/overlay";
 @import "layout/subnavigation";
 @import "layout/themes";
 
-//COMPONENTS
-@import "components/atoz";
-@import "components/banner";
-@import "components/buttons";
-@import "components/figures";
-@import "components/icons";
-@import "components/lists";
-@import "components/media";
-@import "components/overlay";
-@import "components/pagination";
-@import "components/panels";
-@import "components/tables";
-@import "components/tabs";
+//ATOMS
+@import "atoms/alerts";
+@import "atoms/buttons";
+@import "atoms/icons";
+@import "atoms/pagination";
+@import "atoms/tables";
+
+//MOLECULES
+@import "molecules/atoz";
+@import "molecules/banner";
+@import "molecules/figures";
+@import "molecules/lists";
+@import "molecules/media";
+@import "molecules/panels";
+@import "molecules/tabs";
 
 //ORGANISMS
 @import "organisms/events";

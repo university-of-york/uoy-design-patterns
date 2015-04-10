@@ -9,7 +9,10 @@ id: alerts-page
 ---
 
 <script>
-component("alert", { "type": "success", "content": "<strong>Congratulations!</strong> You have successfully completed a thing."} );
+component("alert", { "type": "success", "content": "<strong>Congratulations!</strong> You have successfully completed a thing."} )
++component("alert", { "type": "info", "content": "<strong>FYI.</strong> You need to know this thing."} )
++component("alert", { "type": "warning", "content": "<strong>Attention!</strong> Don't forget to do a thing."} )
++component("alert", { "type": "danger", "content": "<strong>Danger!</strong> You have forgotten to do a thing."} );
 </script>
 
 ### Options
