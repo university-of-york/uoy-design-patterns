@@ -2,7 +2,7 @@
 
 title: Pagination
 name: pagination
-category: atoms
+category: molecules
 layout: q+tq
 id: pagination-page
 

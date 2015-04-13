@@ -1,11 +1,11 @@
 //
-// PANELS
+// c-panelS
 //
-.panel {
+.c-panel {
   border:1px solid $dark;
   border-radius:3px;
 }
-.panel-content {
+.c-panel__content {
   padding:1em 20px;
   :first-child {
     margin-top:0;
@@ -14,9 +14,9 @@
     margin-bottom:0;
   }
 }
-.panel-header,
-.panel-subheader,
-.panel-footer {
+.c-panel__header,
+.c-panel__subheader,
+.c-panel__footer {
   padding:0.4em 20px;
   background:$dark;
   color:$light;
@@ -27,7 +27,7 @@
     margin-bottom:0;
   }
 }
-.panel-image {
+.c-panel__image {
   img {
     display:block;
     width:100%;

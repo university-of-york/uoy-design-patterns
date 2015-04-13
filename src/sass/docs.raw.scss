@@ -128,10 +128,10 @@
   }
 }
 #icons-page {
-  [class^=icon] {
+  .c-icon {
     border-top:6px solid $light;
     border-bottom:6px solid $light;
-    width:32%;
+    width:100%;
     background-size:auto 100%;
     background-position:4px center;
     line-height:16px;
@@ -141,21 +141,15 @@
       white-space:nowrap;
     }
     @each $name, $size in $icons {
-      &.icon-#{$name} {
+      &.c-icon--#{$name} {
         line-height:$size;
         &:after {
-          margin-left:$size + 12;
+          margin-left:$size + 16px;
         }
       }
     }
-    @media only screen and (max-width: 839px) {
-      width:49%;
-    }
-    @media only screen and (max-width: 529px) {
-      width:100%;
-    }
   }
-  .icon-light {
+  .c-icon--light {
     background-color:$dark;
     border-color:$dark;
     color:$light;
@@ -209,14 +203,8 @@
   }
 }
 #buttons-page {
-  .btn-block {
+  .c-btn--block {
     margin-bottom:8px;
-  }
-}
-#panels-page {
-  .panel {
-    min-width:240px;
-    width:50%;
   }
 }
 

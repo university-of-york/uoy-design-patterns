@@ -15,7 +15,7 @@ module.exports = {
       dest: 'src/icons/svg/',
       rename: function(dest, src) {
         var parts = src.split('.')
-        return dest + parts[0]+'.icon.colors-light.'+parts[1];
+        return dest + parts[0]+'.c-icon-.colors-light.'+parts[1];
       }
     }]
   },

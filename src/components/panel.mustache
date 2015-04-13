@@ -1,17 +1,17 @@
-<div class="panel {{#type}}panel-{{this}}{{/type}}">{{#header}}
-  <div class="panel-header">
+<div class="c-panel {{#type}}c-panel--{{this}}{{/type}}">{{#header}}
+  <div class="c-panel__header">
     {{this}}
   </div>{{/header}}{{#image}}
-  <div class="panel-image">
+  <div class="c-panel__image">
     <img src="{{this}}" alt="{{#if header}}{{header}}{{else}}{{#subheader}}{{this}}{{/subheader}}{{/if}}">
   </div>{{/image}}{{#subheader}}
-  <div class="panel-subheader">
+  <div class="c-panel__subheader">
     {{this}}
   </div>{{/subheader}}
-  <div class="panel-content">
+  <div class="c-panel__content">
     {{content}}
   </div>{{#footer}}
-  <div class="panel-footer">
+  <div class="c-panel__footer">
     {{this}}
   </div>{{/footer}}
 </div>

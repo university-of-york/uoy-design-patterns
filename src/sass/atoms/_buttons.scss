@@ -4,18 +4,16 @@
 $hoverColor:darken($light, 10);
 $activeColor:darken($light, 20);
 $focusColor:darken($light, 30);
-.btn {
+.c-btn {
   @include transition();
   font-family: $font-default;
   text-decoration: none;
   display: inline-block;
   border: 1px solid $dark;
-  border-radius: 3px;
   background-color: $light;
-  background: linear-gradient(darken($light, 10), $light);
+  background-image: linear-gradient(darken($light, 10), $light);
   background-repeat: repeat-y;
   padding: 0.3em 0.8em;
-  font-size: 16px;
   line-height: 1.8em;
   min-height: 2.4em;
   color: $dark;
@@ -44,7 +42,7 @@ $focusColor:darken($light, 30);
   $hoverColor:lighten($color, 10);
   $activeColor:lighten($color, 20);
   $focusColor:lighten($color, 30);
-  .btn-#{$name} {
+  .c-btn--#{$name} {
     color: #fff;
     background-color: $color;
     background-image: linear-gradient(darken($color, 10), $color);
@@ -64,12 +62,14 @@ $focusColor:darken($light, 30);
       background-color: $focusColor;
       background: linear-gradient(darken($focusColor, 10), $focusColor);
     }
-    [class^=icon] {
-      @extend .icon-light;
+    // Keep this in here for now, but make sure
+    // the icon itself has a .c-icon--light
+    .c-icon {
+      @extend .c-icon--light;
     }
   }
 }
-.btn-disabled {
+.c-btn--disabled {
   opacity: 0.65;
   cursor: not-allowed;
   color: #ccc;
@@ -86,29 +86,29 @@ $focusColor:darken($light, 30);
   }
 }
 // Button sizes
-.btn-tiny {
+.c-btn--tiny {
   border-radius: 2px;
   font-size: 8px;
 }
-.btn-small {
+.c-btn--small {
   border-radius: 2px;
   font-size: 12px;
 }
-.btn-medium {
-  // Default size - inherits from .btn
-  // border-radius: 3px;
-  // font-size: 16px;
+.c-btn--medium {
+  // Default size
+  border-radius: 3px;
+  font-size: 16px;
 }
-.btn-large {
+.c-btn--large {
   border-radius: 4px;
   font-size: 24px;
 }
-.btn-huge {
+.c-btn--huge {
   border-radius: 6px;
   font-size: 32px;
 }
 // Block buttons
-.btn-block {
+.c-btn--block {
   display:block;
   width:100%;
   text-align:left;
@@ -117,34 +117,34 @@ $focusColor:darken($light, 30);
   }
 }
 // Button groups
-.btn-group {
+.c-btn-group {
   font-size: 0;
   margin: 0 0 16px;
-  .btn {
+  .c-btn {
     border-left-width: 0;
     border-radius: 0;
     &:first-child {
       border-left-width: 1px;
       border-top-left-radius: 3px;
       border-bottom-left-radius: 3px;
-      &.btn-tiny {
+      &.c-btn--tiny {
         border-top-left-radius: 2px;
         border-bottom-left-radius: 2px;
       }
-      &.btn-small {
+      &.c-btn--small {
         border-top-left-radius: 2px;
         border-bottom-left-radius: 2px;
       }
-      &.btn-medium {
-        // Default size - inherits from .btn
-        // border-top-left-radius: 3px;
-        // border-bottom-left-radius: 3px;
+      &.c-btn--medium {
+        // Default size - inherits from .c-btn-
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
       }
-      &.btn-large {
+      &.c-btn--large {
         border-top-left-radius: 4px;
         border-bottom-left-radius: 4px;
       }
-      &.btn-huge {
+      &.c-btn--huge {
         border-top-left-radius: 6px;
         border-bottom-left-radius: 6px;
       }
@@ -152,42 +152,49 @@ $focusColor:darken($light, 30);
     &:last-child {
       border-top-right-radius: 3px;
       border-bottom-right-radius: 3px;
-      &.btn-tiny {
+      &.c-btn--tiny {
         border-top-right-radius: 2px;
         border-bottom-right-radius: 2px;
       }
-      &.btn-small {
+      &.c-btn--small {
         border-top-right-radius: 2px;
         border-bottom-right-radius: 2px;
       }
-      &.btn-medium {
-        // Default size - inherits from .btn
-        // border-top-right-radius: 3px;
-        // border-bottom-right-radius: 3px;
+      &.c-btn--medium {
+        // Default size - inherits from .c-btn-
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
       }
-      &.btn-large {
+      &.c-btn--large {
         border-top-right-radius: 4px;
         border-bottom-right-radius: 4px;
       }
-      &.btn-huge {
+      &.c-btn--huge {
         border-top-right-radius: 6px;
         border-bottom-right-radius: 6px;
       }
     }
   }
 }
-.btn-group-block {
-  display:block;
-  $max: 8;
-  @for $i from 2 through $max {
-    .btn {
-      $paddingVal:1em/($i - 1);
-      padding-left:$paddingVal;
-      padding-right:$paddingVal;
-    }
-    .btn:first-child:nth-last-child(#{$i}),
-    .btn:first-child:nth-last-child(#{$i}) ~ .btn {
-      width: 100% / $i;
-    }
+.c-btn-group--block {
+  display:table;
+  table-layout:fixed;
+  .c-btn {
+      display:table-cell;
+      text-align:center;
+      padding-left:0;
+      padding-right:0;
   }
+  // $max: 8;
+  // @for $i from 2 through $max {
+  //   .c-btn {
+  //     $paddingVal:1em/($i - 1);
+  //     padding-left:$paddingVal;
+  //     padding-right:$paddingVal;
+  //   }
+  //   .c-btn:first-child:nth-last-child(#{$i}),
+  //   .c-btn:first-child:nth-last-child(#{$i}) ~ .c-btn- {
+  //     width: 100% / $i;
+  //   }
+  // }
 }

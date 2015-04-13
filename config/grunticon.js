@@ -13,7 +13,7 @@ module.exports = {
       loadersnippet: 'icons/loader.js',
       pngfolder: 'img/icons/',
       pngpath: '../img/icons/',
-      cssprefix: '.icon-',
+      cssprefix: '.c-icon--',
       defaultWidth: '100px',
       defaultHeight: '100px',
       previewhtml: 'icons/preview.html',
