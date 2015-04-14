@@ -17,15 +17,10 @@
 .c-panel__header,
 .c-panel__subheader,
 .c-panel__footer {
+  @include demarginalise();
   padding:0.4em 20px;
   background:$dark;
   color:$light;
-  :first-child {
-    margin-top:0;
-  }
-  :last-child {
-    margin-bottom:0;
-  }
 }
 .c-panel__image {
   img {

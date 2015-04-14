@@ -1,14 +1,6 @@
 //
 // EXTENDS
 //
-%clearfix {
-  &:before,
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
 // adds an arrow after the active LI in the nav
 %active-nav {
   &:after {

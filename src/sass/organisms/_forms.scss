@@ -1,6 +1,8 @@
 //
 // FORMS
 //
+
+// Should these next ones go in _base.scss?
 form {
 }
 fieldset {
@@ -11,7 +13,7 @@ fieldset {
 legend {
   padding:0 8px;
 }
-%text-input {
+.c-form__input {
   line-height:1.626;
   height:2em;
   border:1px solid $dark;
@@ -19,24 +21,14 @@ legend {
   border-radius:3px;
   background:transparent;
   -webkit-appearance:none;
+  width:100%;
 }
-input[type=text],
-input[type=password],
-input[type=email],
-input[type=url],
-input[type=tel] {
-  @extend %text-input;
-}
-textarea {
-  @extend %text-input;
+.c-form__input--textarea {
   min-height:5.878em; // Three lines of text + 1em for padding
 }
-select {
-  @extend %text-input;
+.c-form__select {
   padding-right:40px;
   padding-right:calc(2em + 8px);
-}
-.form-select {
   &:after {
     content:'\25bc';
     display:block;
@@ -55,51 +47,51 @@ select {
     pointer-events:none;
   }
 }
-input[type=file] {
+.c-form__input--file {
   height:2em;
   padding:0.187em 0; // regular line height (1.626) plus padding = 2
+  border:0;
 }
-input[type=radio],
-input[type=checkbox] {
+.c-form__radio,
+.c-form__checkbox {
 
 }
-.form-element {
+.c-form__element {
   position:relative;
-  padding-right:20px;
   font-size:0;
   * {
     font-size:16px;
   }
 }
-.form-stacked {
-  .g-row {
-    margin:0 0 20px;
+.c-form--stacked {
+  .o-grid__row {
+    margin-bottom:20px;
   }
-  label {
+  .c-form__label {
     display:block;
-    & ~ label {
-      display:inline; // Only first label is block-level
+    & ~ .c-form__label {
+      display:inline; // Only first .c-form__label is block-level
     }
   }
   %text-input {
     width:100%;
   }
-  .form-select {
+  .c-form__select {
     &:after {
     }
   }
 }
-.form-inline {
-  .g-row {
+.c-form--inline {
+  .o-grid__row {
     margin:0 0 10px;
   }
-  label {
+  .c-form__label {
     display:inline-block;
     width:25%;
     vertical-align:top;
     min-height:2em;
     padding:0.187em 0; // regular line height (1.626) plus padding = 2
-    & ~ label {
+    & ~ .c-form__label {
       width:auto;
       padding:0;
     }

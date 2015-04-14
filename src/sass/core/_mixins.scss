@@ -2,6 +2,31 @@
 // MIXINS
 //
 
+//
+// Demarginalise:
+// Remove top margin from first child and last margin from bottom child
+// Use on padded components
+@mixin demarginalise() {
+  :first-child {
+    margin-top:0;
+  }
+  :last-child {
+    margin-bottom:0;
+  }
+}
+
+//
+//Clearfix
+//
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
 
 //
 // Default transition

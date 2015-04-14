@@ -20,7 +20,7 @@
 
 // Utility navigation
 .utility-nav {
-  @extend %clearfix;
+  @include clearfix();
   background:$dark;
   color:$light;
   padding:0.25em;

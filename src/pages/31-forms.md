@@ -105,7 +105,9 @@ component("form", { "type":"stacked", "method":"get", "legend": "Fill in this fo
   ]}},
 
   { "form-row": { "atoms": [
-    { "button": { "text": "Submit" } }
+    { "grid-box": { "size": "full", "atoms": [
+      { "button": { "text": "Submit" } }
+    ] } }
   ]}}
 
 ]});

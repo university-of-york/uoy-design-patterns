@@ -1,43 +1,41 @@
 //
 // GRID SYSTEM
 //
-.g-container {
+$box-margin: 20px;
+$box-font-size: 16px;
+
+.o-grid {
 
 }
-.g-row {
-  @extend %clearfix;
+
+.o-grid__row {
+  @include clearfix();
   font-size:0;
+  margin-left:-$box-margin;
 }
-%g-box {
-  font-size:16px;
-  font-size:1rem;
-  vertical-align:top;
+
+.o-grid__box {
   display:inline-block;
-  /* Fix for IE6/7 inline-block */
-  zoom:1;
-  *display:inline;
+  vertical-align:top;
+  padding-left:$box-margin;
+  font-size: $box-font-size;
 }
-.g-full {
-  @extend %g-box;
+
+.o-grid__box--full {
   width:100%;
 }
-.g-twothirds {
-  @extend %g-box;
+.o-grid__box--twothirds {
   width:66.666%;
 }
-.g-half {
-  @extend %g-box;
+.o-grid__box--half {
   width:50%;
 }
-.g-third {
-  @extend %g-box;
+.o-grid__box--third {
   width:33.333%;
 }
-.g-quarter {
-  @extend %g-box;
+.o-grid__box--quarter {
   width:25%;
 }
-.g-threequarters {
-  @extend %g-box;
+.o-grid__box--threequarters {
   width:75%;
 }

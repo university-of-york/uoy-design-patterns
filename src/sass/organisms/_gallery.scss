@@ -1,25 +1,16 @@
 //
 // GALLERY
 //
-.gallery {
-  .media {
-    padding:1.25em 20px;
-    margin:0 10px 1.25em 10px;
-    border:1px solid $dark;
-    border-radius:3px;
-  }
-  .media-image {
-    img {
-      width:100%;
-    }
-  }
-  // .g-half:nth-of-type(odd) .media {
-  //   margin-left:0
-  // }
-  // .g-third:nth-of-type(3n+1) .media {
-  //   margin-left:0
-  // }
-  // .g-quarter:nth-of-type(4n+1) .media {
-  //   margin-left:0
-  // }
+.o-gallery-item {
+  border:1px solid $dark;
+  border-radius:3px;
+  margin-bottom:20px;
+}
+.o-gallery-item__picture {
+  width:100%;
+}
+
+.o-gallery-item__body {
+  @include demarginalise();
+  padding:1em 20px;
 }

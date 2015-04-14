@@ -1,0 +1,27 @@
+<div class="o-gallery-item{{#type}} o-gallery-item--{{this}}{{/type}}">
+  {{#picture}}
+  <figure class="o-gallery-item__picture">
+    {{#if this.content}}
+     {{this.content}}
+    {{else}}
+     <img class="o-gallery-item__image" src="{{this.image}}" alt="{{#this.caption}}{{this}}{{/this.caption}}" width="{{this.width}}">{{#this.caption}}
+     <figcaption class="o-gallery-item__caption">{{this}}</figcaption>{{/this.caption}}
+    {{/if}}
+  </figure>
+  {{/picture}}{{#body}}
+  <div class="o-gallery-item__body">
+     {{#if this.title}}
+      <h4 class="o-gallery-item__title">{{#if this.button}}<a href="{{this.button.link}}">{{/if}}{{this.title}}{{#if this.button}}</a>{{/if}}</h4>
+    {{/if}}
+    {{#if this.subtitle}}
+      <h5 class="o-gallery-item__subtitle">{{this.subtitle}}</h5>
+    {{/if}}
+    {{#if this.content}}
+      {{this.content}}
+    {{/if}}
+    {{#this.button}}
+      <a href="{{this.link}}" class="c-btn o-gallery-item__button">{{this.text}}</a>
+    {{/this.button}}
+  </div>
+  {{/body}}
+</div>

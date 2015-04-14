@@ -17,11 +17,11 @@ Here's an example with all the bits filled in:
 
 <script>
 component("media", {
-  "type": "horizontal",
+  "type": "top",
   "picture": {
     "image": "http://lorempixel.com/200/200/people/1",
     "caption": "A caption for the image",
-    "size": "200px"
+    "width": "200px"
   },
   "body": {
     "title": "Investing in our campus",
@@ -35,15 +35,34 @@ component("media", {
 });
 </script>
 
-You can also stack them up vertically:
+The `picture` can be vertically-aligned top the top, middle or bottom:
 
 <script>
 component("media", {
-  "type": "vertical",
+  "type": "middle",
   "picture": {
     "image": "http://lorempixel.com/200/200/people/2",
     "caption": "A caption for the image",
-    "size": "200px"
+    "width": "200px"
+  },
+  "body": {
+    "title": "Investing in our campus",
+    "subtitle": "Vision for a 21st-century campus",
+    "content": "<p>The University is in the middle of an unprecedented period of expansion and renewal. Since 2000, we have invested in 20 new buildings on the original Heslington West campus and have completed the first and second phases of a £750m campus expansion at Heslington East.</p><p>Our investment in new colleges, teaching and learning space, laboratories, research facilities and a new sport village mean it has never been a better time to join our student body or research groups at York.</p>",
+    "button": {
+      "text":"See how campus is changing",
+      "link":"#"
+    }
+  }
+});
+</script>
+<script>
+component("media", {
+  "type": "bottom",
+  "picture": {
+    "image": "http://lorempixel.com/200/200/people/3",
+    "caption": "A caption for the image",
+    "width": "200px"
   },
   "body": {
     "title": "Investing in our campus",
@@ -57,11 +76,10 @@ component("media", {
 });
 </script>
 
-The media image and body can contain any arbitrary content:
+The media image and body _can_ contain any arbitrary content (but the `figure` element used to hold the media picture should be used for images:
 
 <script>
 component("media", {
-  "type": "horizontal",
   "picture": { "content": "<img src=\"http://lorempixel.com/400/300/people\">" },
   "body": { "content": "<p>Ah, look, some <abbr>HTML</abbr> content.</p>" }
 });

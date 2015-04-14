@@ -1,28 +1,28 @@
-<div class="media{{#if type}} media-{{type}}{{else}} media-horizontal{{/if}}">
+<div class="o-media{{#type}} o-media--{{this}}{{/type}}">
   {{#picture}}
-  <figure class="media-image">
+  <figure class="o-media__picture">
     {{#if this.content}}
      {{this.content}}
     {{else}}
-     <img src="{{this.image}}" alt="{{#this.caption}}{{this}}{{/this.caption}}" style="width: {{this.size}}; height: {{this.size}};">{{#this.caption}}
-     <figcaption>{{this}}</figcaption>{{/this.caption}}
+     <img class="o-media__image" src="{{this.image}}" alt="{{#this.caption}}{{this}}{{/this.caption}}" width="{{this.width}}">{{#this.caption}}
+     <figcaption class="o-media__caption">{{this}}</figcaption>{{/this.caption}}
     {{/if}}
   </figure>
   {{/picture}}
-  <div class="media-body">
   {{#body}}
+  <div class="o-media__body">
      {{#if this.title}}
-      <h4>{{#if this.button}}<a href="{{this.button.link}}">{{/if}}{{this.title}}{{#if this.button}}</a>{{/if}}</h4>
+      <h4 class="o-media__title">{{#if this.button}}<a href="{{this.button.link}}">{{/if}}{{this.title}}{{#if this.button}}</a>{{/if}}</h4>
     {{/if}}
     {{#if this.subtitle}}
-      <h5>{{this.subtitle}}</h5>
+      <h5 class="o-media__subtitle">{{this.subtitle}}</h5>
     {{/if}}
     {{#if this.content}}
       {{this.content}}
     {{/if}}
     {{#this.button}}
-      <a href="{{this.link}}" class="btn">{{this.text}}</a>
+      <a href="{{this.link}}" class="c-btn o-media__button">{{this.text}}</a>
     {{/this.button}}
-  {{/body}}
   </div>
+  {{/body}}
 </div>

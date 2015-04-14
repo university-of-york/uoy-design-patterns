@@ -1,8 +1,10 @@
-<form action="{{#action}}{{this}}{{/action}}{{^action}}#{{/action}}" method="{{#method}}{{this}}{{/method}}{{^method}}post{{/method}}"{{#id}} id="{{this}}"{{/id}} class="form-{{#type}}{{this}}{{/type}}{{^type}}stacked{{/type}} g-container">
+<form action="{{#action}}{{this}}{{/action}}{{^action}}#{{/action}}" method="{{#method}}{{this}}{{/method}}{{^method}}post{{/method}}"{{#id}} id="{{this}}"{{/id}} class="c-form c-form--{{#type}}{{this}}{{/type}}{{^type}}stacked{{/type}}">
   <fieldset>{{#legend}}
     <legend>{{this}}</legend>{{/legend}}
-    {{#atoms}}
-    {{this}}
-    {{/atoms}}
+    <div class="o-grid">
+      {{#atoms}}
+      {{this}}
+      {{/atoms}}
+    </div>
   </fieldset>
 </form>

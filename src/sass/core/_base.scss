@@ -34,8 +34,8 @@ img {
   border: 0;
   max-width:100%;
   // If a `width` and/or `height` attribute have been explicitly defined, let’s not make the image fluid.
-  [width],
-  [height] {
+  &[width],
+  &[height] {
       max-width: none;
   }
 }
@@ -44,9 +44,6 @@ h1,h2,h3,h4,h5,h6 {
   font-weight:300;
   margin:22px 0;
   line-height: 1.375;
-  &:first-child {
-    margin-top:0;
-  }
 }
 h1 {
   font-size: 48px;
@@ -69,9 +66,6 @@ h6 {
 p {
   margin:1.375em 0;
   white-space: break-word;
-  &:first-child {
-    margin-top:0;
-  }
 }
 ul,
 ol {
