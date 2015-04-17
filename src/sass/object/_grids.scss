@@ -1,0 +1,143 @@
+//
+// GRID SYSTEM
+//
+$box-margin: $base-spacing;
+
+// This size only
+// $max: map-get($width, medium) - 0.0625em;
+// $min: map-get($width, small);
+// @media only screen and (min-width: $min) and (max-width: $max) {
+//   // Update grid
+//   // Stops stepped display of q+h+q
+//   .o-grid__box--quarter + .o-grid__box--half {
+//     float: left;
+//   }
+//   // Stops the above fix also affecting q+q+h
+//   .o-grid__box--quarter + .o-grid__box--quarter + .o-grid__box--half {
+//     float: none;
+//   }
+//   // Fixes tq+q
+//   .o-grid__box--threequarters + .o-grid__box--quarter {
+//     width:100%;
+//   }
+//   // Wow I can't believe I'm doing it this way
+//   // If .quarter first child is also 2nd to last child then it must be q+tq
+//   .o-grid__box--quarter:first-child:nth-last-child(2) {
+//     width:100%;
+//   }
+// }
+
+.o-grid {
+
+}
+
+.o-grid__row {
+  @include clearfix;
+  font-size:0;
+  margin-left:-$box-margin;
+}
+
+.o-grid__box {
+  @include font-size;
+  display:inline-block;
+  vertical-align:top;
+  padding-left:$box-margin;
+}
+
+// Used once on the page for the main content, please!
+.o-grid__box--main {
+  @include demarginalise;
+}
+
+.o-grid__box--full {
+  width:100%;
+}
+.o-grid__box--half {
+  width:50%;
+  @include mq(medium, '-') {
+    width:100%;
+  }
+}
+.o-grid__box--third {
+  width:33.333%;
+  @include mq(small, '-') {
+    width:100%;
+  }
+}
+.o-grid__box--twothirds {
+  width:66.666%;
+  @include mq(small, '-') {
+    width:100%;
+  }
+}
+.o-grid__box--quarter {
+  width:25%;
+  @include mq(medium) {
+    width:50%;
+  }
+  @include mq(small, '-') {
+    width:100%;
+  }
+}
+.o-grid__box--threequarters {
+  width:75%;
+  @include mq(medium, '-') {
+    width:100%;
+  }
+}
+
+@include mq(medium) {
+  // Stops stepped display of q+h+q
+  .o-grid__box--quarter + .o-grid__box--half {
+    float: left;
+  }
+  // Stops the above fix also affecting q+q+h
+  .o-grid__box--quarter + .o-grid__box--quarter + .o-grid__box--half {
+    float: none;
+  }
+  // Fixes tq+q
+  .o-grid__box--threequarters + .o-grid__box--quarter {
+    width:100%;
+  }
+  // Wow I can't believe I'm doing it this way
+  // If .quarter first child is also 2nd to last child then it must be q+tq
+  .o-grid__box--quarter:first-child:nth-last-child(2) {
+    width:100%;
+  }
+}
+
+//
+// @ classes allow you to override the default response on specific screen sizes
+// e.g. .o-grid__box--third@small will stay at 33.333% width even on small screens
+// (where it would normally go to 100%)
+//
+@each $size, $measurement in $width {
+
+  @include mq(#{$size}, '-') {
+    // Two classes to override specificity of usual grid boxes
+    .o-grid__box {
+      // No need to do full width
+      // .o-grid__box--full {
+      //   width:100%;
+      // }
+      &.o-grid__box--half\@#{$size} {
+        width:50%;
+      }
+      &.o-grid__box--third\@#{$size} {
+        width:33.333%;
+      }
+      &.o-grid__box--twothirds\@#{$size} {
+        width:66.666%;
+      }
+      &.o-grid__box--quarter\@#{$size} {
+        width:25%;
+      }
+      &.o-grid__box--threequarters\@#{$size} {
+        width:75%;
+      }
+
+    }
+  }
+}
+
+

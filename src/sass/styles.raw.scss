@@ -1,52 +1,119 @@
+/*------------------------------------*\
+    #MAIN
+\*------------------------------------*/
+
+/**
+ * CONTENTS
+ *
+ * CORE
+ * Fonts...................@font-face declarations (current empty).
+ * Variables...............Variable setup: colours, fonts, measurements etc. Also mapping generic variable names to specific variables
+ * Mixins..................Globally available mixins.
+ * Extends.................[deprecated] we're trying to remove extends as they cause specificity  issues. DO NOT USE.
+ * Normalize...............Levelling the playing field.
+ * Reset...................Resetting a few default styles.
+ * Base....................Base element styles.
+ *
+ * GENERIC
+ * Typography...............Some typographic styles (un-namespaced).
+ *
+ * OBJECTS
+ * Structure...............Wrappers and site-wide structure.
+ * Grids...................Grid system.
+ * Media object............The media object
+ *
+ * COMPONENTS
+ * Header..................Header styles, containing logo etc.
+ * Footer..................Footer styles.
+ * Navigation..............Page navigation.
+ * Subnavigation...........Subnavigation list.
+ * Modal...................Modal window for lightboxes, popups etc.
+ *
+ * - Atoms
+ * Alerts..................Alert box
+ * Buttons.................All button styles
+ * Icons...................Iconography (imports icons/*.scss)
+ * Pagination..............For navigating multiple pages
+ *
+ * - Molecules
+ * Tables..................Tabular data
+ * A to Z..................Alphabetical listing
+ * Figures.................Displaying images and captions
+ * Lists...................Different lists
+ * Panels..................a.k.a. boxout
+ * Tabs....................Tabbed data
+ *
+ * - Organisms
+ * Events..................Event listings
+ * Forms...................Form layout
+ * Gallery.................Gallery layout
+ *
+ * THEMES
+ * 404.....................[sample] styles for different themes
+ *
+ * MISCELLANEOUS
+ * Overrides...............overriding styles using !important
+ * IE7.....................specific IE7 styles
+ * IE8.....................specific IE8 styles
+ * Print...................print-friendly pages
+ *
+ **/
+
+
 //CORE
 @import "core/fonts";
 @import "core/variables";
 @import "core/mixins";
 @import "core/extends";
+@import "core/normalize";
 @import "core/reset";
 @import "core/base";
 
-//LAYOUT
-@import "layout/structure";
-@import "layout/grids";
-@import "layout/header";
-@import "layout/footer";
-@import "layout/navigation";
-@import "layout/overlay";
-@import "layout/subnavigation";
-@import "layout/themes";
+//???
+@import "generic/typography";
 
-//ATOMS
-@import "atoms/alerts";
-@import "atoms/buttons";
-@import "atoms/icons";
-@import "atoms/pagination";
-@import "atoms/tables";
+//OBJECTS
+@import "object/structure";
+@import "object/grids";
+@import "object/media";
 
-//MOLECULES
-@import "molecules/atoz";
-@import "molecules/banner";
-@import "molecules/figures";
-@import "molecules/lists";
-@import "molecules/media";
-@import "molecules/panels";
-@import "molecules/tabs";
+//COMPONENTS
+@import "component/header";
+@import "component/footer";
 
-//ORGANISMS
-@import "organisms/events";
-@import "organisms/forms";
-@import "organisms/gallery";
+@import "component/navigation";
+@import "component/subnavigation";
+@import "component/utility-nav";
+@import "component/structural-nav";
 
-// TEMPLATES
-@import "templates/404";
+@import "component/modal";
+@import "component/alerts";
+@import "component/buttons";
+@import "component/icons";
+@import "component/pagination";
+@import "component/tables";
+@import "component/atoz";
+@import "component/banner";
+@import "component/figures";
+@import "component/lists";
+@import "component/panels";
+@import "component/tabs";
+@import "component/events";
+@import "component/forms";
+@import "component/gallery";
+
+// THEMES
+@import "themes/404";
 
 // MEDIA QUERIES
-@import "media/huge";
-@import "media/large";
-@import "media/medium";
-@import "media/small";
-@import "media/tiny";
+// @import "media/huge";
+// @import "media/large";
+// @import "media/medium";
+// @import "media/small";
+// @import "media/tiny";
 
 // MISCELLANEOUS
-@import "overrides";
-@import "print";
+@import "misc/overrides";
+@import "misc/ie7";
+@import "misc/ie8";
+@import "misc/print";

@@ -54,12 +54,22 @@ component("figure", { "type":"h400", "image": "http://lorempixel.com/800/400/peo
 
 Putting an `img` into a `figure` element also has the following benefit: the image will be vertically and horizontally centered, even if it overlaps. **This only works when the figure has a defined height and width.**
 
+_The following image is 800px wide and 400px high_
+
 <script>
-component("figure", { "type":"w400 figure-h400", "image": "http://lorempixel.com/800/400/people/9"});
+component("figure", { "type":"w400 c-figure--h400", "image": "http://lorempixel.com/800/400/people/9"});
 </script>
-<script>component("figure", { "type":"w400 figure-h400", "image": "http://lorempixel.com/400/800/people/9"});
+
+_The following image is 400px wide and 800px high_
+
+<script>
+component("figure", { "type":"w400 c-figure--h400", "image": "http://lorempixel.com/400/800/people/9"});
 </script>
-<script>component("figure", { "type":"w400 figure-h400", "image": "http://lorempixel.com/800/800/people/10"});
+
+_The following image is 800px wide and 800px high_
+
+<script>
+component("figure", { "type":"w400 c-figure--h400", "image": "http://lorempixel.com/800/800/people/10"});
 </script>
 
 
@@ -67,7 +77,8 @@ component("figure", { "type":"w400 figure-h400", "image": "http://lorempixel.com
 
 #### Atoms
 
-* figure
+* **figure**
   * **image**: the URL of an image **(required)**
   * **caption**: the text to appear in the caption
+  * **position**: the position of the caption
   * **type**: the type of figure

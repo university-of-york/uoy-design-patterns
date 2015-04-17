@@ -1,0 +1,12 @@
+//
+// TYPOGRAPHY
+//
+.lead {
+  @include font-size(20px);
+}
+
+.subtitle {
+  @include font-size(18px, 1);
+  display:block;
+  margin:0;
+}

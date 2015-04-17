@@ -2,9 +2,6 @@
 // EVENTS LISTS
 //
 .c-events-listing {
-
-}
-.c-events-listing__list {
   margin:0;
   padding:0;
   list-style:none;
@@ -24,6 +21,6 @@
   width:15%;
 }
 .c-event__content {
-  @include demarginalise();
+  @include demarginalise;
   width:85%;
 }

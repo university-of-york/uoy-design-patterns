@@ -1,0 +1,82 @@
+//
+// FORMS
+//
+
+.c-form__legend {
+  padding:0;
+  margin-bottom:20px;
+  font-family:$font-title;
+  font-size:24px;
+}
+.c-form__label {
+  display:block;
+  ~ .c-form__label {
+    display:inline; // Only first .c-form__label is block-level
+  }
+}
+.c-form__input {
+  width:100%;
+  line-height:1.626;
+  height:2em;
+  border:1px solid $dark;
+  padding:0.187em 8px;
+  border-radius:3px;
+  background:transparent;
+  -webkit-appearance:none;
+}
+.c-form__input--textarea {
+  min-height:5.878em; // Three lines of text + 1em for padding
+}
+.c-form__input--file {
+  height:2em;
+  padding:0.187em 0; // regular line height (1.626) plus padding = 2
+  border:0;
+}
+.c-form__radio,
+.c-form__checkbox {
+
+}
+.c-form__element {
+  position:relative;
+  margin-bottom:10px;
+}
+.c-form__element--select {
+  &:after {
+    @include font-size($line-height:2em);
+    content:'\25bc';
+    display:block;
+    position:absolute;
+    right:0;
+    bottom:0;
+    border-top-right-radius:3px;
+    border-bottom-right-radius:3px;
+    height:2em;
+    width:2em;
+    text-align:center;
+    color:$light;
+    background-color:$dark;
+    pointer-events:none;
+  }
+}
+.c-form--stacked {
+}
+.c-form--inline {
+  .c-form__element {
+    display:table;
+    width:100%;
+  }
+  .c-form__label {
+    display:table-cell;
+    width:25%;
+    vertical-align:top;
+    min-height:2em;
+    padding:0.187em 0; // regular line height (1.626) plus padding = 2
+    & ~ .c-form__label {
+      width:auto;
+      padding:0;
+    }
+  }
+  .c-form__input {
+    display:table-cell;
+  }
+}

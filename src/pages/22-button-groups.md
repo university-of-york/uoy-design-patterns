@@ -48,13 +48,13 @@ Use these advisedly: consider adding in an `icon-above` in addition to, or repla
 
 <script>
 component("button-group", { "block": true, "atoms": [
-  { "button": { "text": "1" } },
-  { "button": { "text": "2" } }
+  { "button": { "text": "1", "size": "huge" } },
+  { "button": { "text": "2", "size": "huge" } }
 ]})
 +component("button-group", { "block": true, "atoms": [
-  { "button": { "text": "1" } },
-  { "button": { "text": "2" } },
-  { "button": { "text": "3" } }
+  { "button": { "text": "1", "size": "large" } },
+  { "button": { "text": "2", "size": "large" } },
+  { "button": { "text": "3", "size": "large" } }
 ]})
 +component("button-group", { "block": true, "atoms": [
   { "button": { "text": "1" } },
@@ -63,19 +63,19 @@ component("button-group", { "block": true, "atoms": [
   { "button": { "text": "4" } }
 ]})
 +component("button-group", { "block": true, "atoms": [
-  { "button": { "text": "1" } },
-  { "button": { "text": "2" } },
-  { "button": { "text": "3" } },
-  { "button": { "text": "4" } },
-  { "button": { "text": "5" } }
+  { "button": { "text": "1", "size": "small" } },
+  { "button": { "text": "2", "size": "small" } },
+  { "button": { "text": "3", "size": "small" } },
+  { "button": { "text": "4", "size": "small" } },
+  { "button": { "text": "5", "size": "small" } }
 ]})
 +component("button-group", { "block": true, "atoms": [
-  { "button": { "text": "1" } },
-  { "button": { "text": "2" } },
-  { "button": { "text": "3" } },
-  { "button": { "text": "4" } },
-  { "button": { "text": "5" } },
-  { "button": { "text": "6" } }
+  { "button": { "text": "1", "size": "tiny" } },
+  { "button": { "text": "2", "size": "tiny" } },
+  { "button": { "text": "3", "size": "tiny" } },
+  { "button": { "text": "4", "size": "tiny" } },
+  { "button": { "text": "5", "size": "tiny" } },
+  { "button": { "text": "6", "size": "tiny" } }
 ]})
 +component("button-group", { "block": true, "atoms": [
   { "button": { "icon": "action-undo" } },

@@ -22,12 +22,12 @@ component("button", { "text": "Click me" })
 +component("button-submit", { "text": "Submit" });
 </script>
 
-Other types are _cancel_, _primary_ and _danger_:
+Other types are _primary_, _cancel_ and _danger_:
 
 <script>
 component("button", { "text": "Click this!", "type": "primary" })
 +component("button", { "text": "Cancel", "type": "cancel" })
-+component("button", { "text": "Careful", "type": "danger" });
++component("button", { "text": "Delete", "type": "danger" });
 </script>
 
 A button can also be _disabled_:
@@ -59,7 +59,7 @@ component("button", { "text": "Stop", "icon-before": "media-stop" })
 You can join this all together to make a monster button:
 
 <script>
-component("button", { "text": "Look at me!", "icon-after": "thumb-up", "size": "large", "type": "primary" });
+component("button", { "text": "Delete this thing", "icon-after": "trash", "size": "large", "type": "danger" });
 </script>
 
 And, just for testing, here's a button with text on multiple lines:

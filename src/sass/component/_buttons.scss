@@ -1,11 +1,11 @@
 //
 // BUTTONS
 //
-$hoverColor:darken($light, 10);
-$activeColor:darken($light, 20);
-$focusColor:darken($light, 30);
+$hoverColor:darken($light, 5);
+$activeColor:darken($light, 10);
+$focusColor:darken($light, 15);
 .c-btn {
-  @include transition();
+  @include transition;
   font-family: $font-default;
   text-decoration: none;
   display: inline-block;
@@ -23,44 +23,44 @@ $focusColor:darken($light, 30);
   &:hover {
     color: #222;
     background-color: $hoverColor;
-    background-image: linear-gradient(darken($hoverColor, 30), $hoverColor);
+    background-image: linear-gradient(darken($hoverColor, 5), $hoverColor);
   }
   &:active {
     color: #222;
     background-color: $activeColor;
-    background: linear-gradient(darken($activeColor, 30), $activeColor);
+    background: linear-gradient(darken($activeColor, 5), $activeColor);
   }
   &:focus {
     outline: none;
     color: #111;
     background-color: $focusColor;
-    background: linear-gradient(darken($focusColor, 30), $focusColor);
+    background: linear-gradient(darken($focusColor, 5), $focusColor);
   }
 }
 // Button types
 @each $name, $color in $buttons {
-  $hoverColor:lighten($color, 10);
-  $activeColor:lighten($color, 20);
-  $focusColor:lighten($color, 30);
+  $hoverColor:lighten($color, 5);
+  $activeColor:lighten($color, 10);
+  $focusColor:lighten($color, 15);
   .c-btn--#{$name} {
     color: #fff;
     background-color: $color;
-    background-image: linear-gradient(darken($color, 10), $color);
+    background-image: linear-gradient(darken($color, 5), $color);
     &:hover {
       color: #fff;
       background-color: $hoverColor;
-      background-image: linear-gradient(darken($hoverColor, 10), $hoverColor);
+      background-image: linear-gradient(darken($hoverColor, 5), $hoverColor);
     }
     &:active {
       color: #fff;
       background-color: $activeColor;
-      background: linear-gradient(darken($activeColor, 10), $activeColor);
+      background: linear-gradient(darken($activeColor, 5), $activeColor);
     }
     &:focus {
       outline: none;
       color: #fff;
       background-color: $focusColor;
-      background: linear-gradient(darken($focusColor, 10), $focusColor);
+      background: linear-gradient(darken($focusColor, 5), $focusColor);
     }
     // Keep this in here for now, but make sure
     // the icon itself has a .c-icon--light
@@ -87,25 +87,25 @@ $focusColor:darken($light, 30);
 }
 // Button sizes
 .c-btn--tiny {
+  @include font-size(8px,inherit);
   border-radius: 2px;
-  font-size: 8px;
 }
 .c-btn--small {
+  @include font-size(12px,inherit);
   border-radius: 2px;
-  font-size: 12px;
 }
 .c-btn--medium {
   // Default size
+  @include font-size($line-height:inherit);
   border-radius: 3px;
-  font-size: 16px;
 }
 .c-btn--large {
+  @include font-size(24px,inherit);
   border-radius: 4px;
-  font-size: 24px;
 }
 .c-btn--huge {
+  @include font-size(32px,inherit);
   border-radius: 6px;
-  font-size: 32px;
 }
 // Block buttons
 .c-btn--block {
@@ -118,15 +118,14 @@ $focusColor:darken($light, 30);
 }
 // Button groups
 .c-btn-group {
-  font-size: 0;
-  margin: 0 0 16px;
+  display:table;
+  margin:$base-spacing 0;
   .c-btn {
+    display:table-cell;
     border-left-width: 0;
     border-radius: 0;
     &:first-child {
       border-left-width: 1px;
-      border-top-left-radius: 3px;
-      border-bottom-left-radius: 3px;
       &.c-btn--tiny {
         border-top-left-radius: 2px;
         border-bottom-left-radius: 2px;
@@ -136,7 +135,6 @@ $focusColor:darken($light, 30);
         border-bottom-left-radius: 2px;
       }
       &.c-btn--medium {
-        // Default size - inherits from .c-btn-
         border-top-left-radius: 3px;
         border-bottom-left-radius: 3px;
       }
@@ -150,8 +148,6 @@ $focusColor:darken($light, 30);
       }
     }
     &:last-child {
-      border-top-right-radius: 3px;
-      border-bottom-right-radius: 3px;
       &.c-btn--tiny {
         border-top-right-radius: 2px;
         border-bottom-right-radius: 2px;
@@ -161,7 +157,6 @@ $focusColor:darken($light, 30);
         border-bottom-right-radius: 2px;
       }
       &.c-btn--medium {
-        // Default size - inherits from .c-btn-
         border-top-right-radius: 3px;
         border-bottom-right-radius: 3px;
       }
@@ -177,24 +172,17 @@ $focusColor:darken($light, 30);
   }
 }
 .c-btn-group--block {
-  display:table;
   table-layout:fixed;
+  width:100%;
   .c-btn {
-      display:table-cell;
-      text-align:center;
-      padding-left:0;
-      padding-right:0;
+    text-align:center;
+    @for $i from 1 through 10 {
+      &:first-child:nth-last-child(#{$i}),
+      &:first-child:nth-last-child(#{$i}) ~ .c-btn {
+        width:100%/$i;
+        padding-left:0;
+        padding-right:0;
+      }
+    }
   }
-  // $max: 8;
-  // @for $i from 2 through $max {
-  //   .c-btn {
-  //     $paddingVal:1em/($i - 1);
-  //     padding-left:$paddingVal;
-  //     padding-right:$paddingVal;
-  //   }
-  //   .c-btn:first-child:nth-last-child(#{$i}),
-  //   .c-btn:first-child:nth-last-child(#{$i}) ~ .c-btn- {
-  //     width: 100% / $i;
-  //   }
-  // }
 }

@@ -1,13 +1,15 @@
 <div class="o-media{{#type}} o-media--{{this}}{{/type}}">
   {{#picture}}
-  <figure class="o-media__picture">
+  <div class="o-media__picture">
     {{#if this.content}}
      {{this.content}}
     {{else}}
-     <img class="o-media__image" src="{{this.image}}" alt="{{#this.caption}}{{this}}{{/this.caption}}" width="{{this.width}}">{{#this.caption}}
-     <figcaption class="o-media__caption">{{this}}</figcaption>{{/this.caption}}
+    <figure class="c-figure">
+       <img class="c-figure__image" src="{{this.image}}" alt="{{#this.caption}}{{this}}{{/this.caption}}" width="{{this.width}}">{{#this.caption}}
+       <figcaption class="c-figure__caption c-figure__caption--bottom-left">{{this}}</figcaption>{{/this.caption}}
+    </figure>
     {{/if}}
-  </figure>
+  </div>
   {{/picture}}
   {{#body}}
   <div class="o-media__body">
@@ -15,14 +17,11 @@
       <h4 class="o-media__title">{{#if this.button}}<a href="{{this.button.link}}">{{/if}}{{this.title}}{{#if this.button}}</a>{{/if}}</h4>
     {{/if}}
     {{#if this.subtitle}}
-      <h5 class="o-media__subtitle">{{this.subtitle}}</h5>
+      <h5 class="subtitle">{{this.subtitle}}</h5>
     {{/if}}
     {{#if this.content}}
       {{this.content}}
     {{/if}}
-    {{#this.button}}
-      <a href="{{this.link}}" class="c-btn o-media__button">{{this.text}}</a>
-    {{/this.button}}
   </div>
   {{/body}}
 </div>

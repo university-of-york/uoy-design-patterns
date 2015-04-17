@@ -14,17 +14,15 @@ You can include an atomic component like so:
 
 ```markup
 <script>
-component("button");
+component("button", { "text": "Click me" });
 </script>
 ```
 
 And it will render both the HTML markup and the code to produce it, taken straight from the _components/button.mustache_ source.
 
-<button class="btn">Click</button>
-
-```markup
-<button class="btn">Click</button>
-```
+<script>
+component("button", { "text": "Click me" });
+</script>
 
 To add additional information, pass parameters to the component call:
 
@@ -36,21 +34,19 @@ component("button", { "type": "warning", "text": "Help" });
 
 This would render:
 
-<button class="btn btn-warning">Help</button>
-
-```markup
-<button class="btn btn-warning">Help</button>
-```
+<script>
+component("button", { "type": "warning", "text": "Help" });
+</script>
 
 More complex components (molecules) which combine atoms, will be pre-rendered from passed-through `atoms` array. The atoms can be an array of simple objects with `"component-name": "options-object"`.
 
 ```markup
 <script>
-component("button-group", { atoms: [
-	{ "button": { "text": "Back" } },
-	{ "button": { "type": "warning", "text": "Help", "icon-after": "help" } },
-	{ "button": { "text": "Next" } }
-]});
+component("button-group", { "atoms": [
+  { "button": { "text": "Back", "size": "medium", "icon-before": "chevron-left" } },
+  { "button": { "text": "Help", "size": "medium" } },
+  { "button": { "text": "Next", "size": "medium", "icon-after": "chevron-right" } }
+]})
 </script>
 ```
 Alternatively, the atoms array can be an object with a `"component"` key and an `"options"` key. This can be useful if you need to pass through several different types of component:
@@ -60,15 +56,15 @@ Alternatively, the atoms array can be an object with a `"component"` key and an 
 component("button-group", { atoms: [
 	{
 		"component": "button",
-		"options": { "text": "Back" }
+		"options": { "text": "Back", "size": "medium", "icon-before": "chevron-left" }
 	},
 	{
 		"component": "button",
-		"options": { "type": "warning", "text": "Help", "icon-after": "star" }
+		"options": { "text": "Help", "size": "medium" }
 	},
 	{
 		"component": "button",
-		"options": { "text": "Next" }
+		"options": { "text": "Next", "size": "medium", "icon-after": "chevron-right" }
 	}
 ]});
 </script>
@@ -76,16 +72,10 @@ component("button-group", { atoms: [
 
 Both these examples would render the same code:
 
-<div class="btn-group">
-	<button class="btn">Back</button>
-	<button class="btn btn-warning">Help <i class="icon icon-star"></i></button>
-	<button class="btn">Next</button>
-</div>
-
-```markup
-<div class="btn-group">
-	<button class="btn">Back</button>
-	<button class="btn btn-warning">Help <i class="icon icon-star"></i></button>
-	<button class="btn">Next</button>
-</div>
-```
+<script>
+component("button-group", { "atoms": [
+  { "button": { "text": "Back", "size": "medium", "icon-before": "chevron-left" } },
+  { "button": { "text": "Help", "size": "medium" } },
+  { "button": { "text": "Next", "size": "medium", "icon-after": "chevron-right" } }
+]})
+</script>

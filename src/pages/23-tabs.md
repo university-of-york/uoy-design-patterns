@@ -12,6 +12,8 @@ id: tabs-page
 
 Individual tabs can be referenced by the page hash.
 
+Tabs will automatically expand to fit to 100% of the width of the container.
+
 <script>
 component("tabbed-content", { "tabs": [
   {
@@ -36,12 +38,12 @@ component("tabbed-content", { "tabs": [
 
 #### Atoms
 
-* tabs
+* **tabs**
   * **id**: the _id_ of the tab - used for identifying the tab content and updating the URL hash **(required)**
   * **title**: the text to appear in the tab nav **(required)**
   * **content**: A string of HTML to appear in the tab content **(required)** **TODO:** can be a collection of _components_
 
 #### Molecules
 
-* tabbed-content
+* **tabbed-content**
   * **tabs**: an array of _tabs_

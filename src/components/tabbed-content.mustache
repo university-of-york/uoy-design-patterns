@@ -1,12 +1,12 @@
-<div class="tabs">
-  <ul class="tabs-nav">
+<div class="c-tabs">
+  <ul class="c-tabs__nav">
     {{#tabs}}
-      <li{{#if @first}} class="tab-active"{{/if}}><a href="#{{this.id}}">{{this.title}}</a></li>
+      <li class="c-tabs__tab{{#if @first}} is-active{{/if}}"><a class="c-tabs__link" href="#{{this.id}}">{{this.title}}</a></li>
     {{/tabs}}
   </ul>
-  <div class="tabs-content-container">
+  <div class="c-tabs__container">
     {{#tabs}}
-      <div class="tabs-content{{#if @first}} tab-active{{/if}}" id="{{this.id}}">
+      <div class="c-tabs__content{{#if @first}} is-active{{/if}}" id="{{this.id}}">
       {{this.content}}
       </div>
     {{/tabs}}

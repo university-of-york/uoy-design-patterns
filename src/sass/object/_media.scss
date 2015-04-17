@@ -18,20 +18,11 @@
     vertical-align:bottom;
   }
 }
-.o-media__caption {
-  margin-top:0.25em;
-  margin-bottom:0;
-  font-size:0.75em;
-}
 .o-media__body {
+  @include demarginalise;
   display:table-cell;
   vertical-align:top;
 }
 .o-media__title {
   margin-bottom:0;
-}
-.o-media__subtitle {
-  margin-top:0;
-  margin-bottom:0.5em;
-  font-size:1em;
 }

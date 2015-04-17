@@ -1,6 +1,6 @@
 <form action="{{#action}}{{this}}{{/action}}{{^action}}#{{/action}}" method="{{#method}}{{this}}{{/method}}{{^method}}post{{/method}}"{{#id}} id="{{this}}"{{/id}} class="c-form c-form--{{#type}}{{this}}{{/type}}{{^type}}stacked{{/type}}">
   <fieldset>{{#legend}}
-    <legend>{{this}}</legend>{{/legend}}
+    <legend class="c-form__legend">{{this}}</legend>{{/legend}}
     <div class="o-grid">
       {{#atoms}}
       {{this}}

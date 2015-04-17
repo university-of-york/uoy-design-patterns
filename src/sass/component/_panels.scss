@@ -17,7 +17,7 @@
 .c-panel__header,
 .c-panel__subheader,
 .c-panel__footer {
-  @include demarginalise();
+  @include demarginalise;
   padding:0.4em 20px;
   background:$dark;
   color:$light;

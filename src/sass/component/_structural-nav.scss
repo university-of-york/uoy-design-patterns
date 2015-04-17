@@ -1,0 +1,29 @@
+//
+// STRUCTURAL NAV
+//
+.c-structural-nav {
+  @include clearfix;
+  .c-main-header & {
+    display:inline-block;
+    float:right;
+    clear:right;
+    padding:1.625em 0;
+  }
+}
+.c-structural-nav__list {
+  @include inline-links;
+}
+.c-structural-nav__item {
+  ~ .c-structural-nav__item {
+    border-left:1px solid $dark;
+  }
+}
+.c-structural-nav__link {
+  @include transition;
+  height:100%;
+  display:block;
+  padding:0 0.75em;
+  &:hover {
+    background-color:#eee;
+  }
+}

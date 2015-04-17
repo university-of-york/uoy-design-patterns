@@ -3,15 +3,11 @@
 // This Sass file contains all the styles for the basic elements
 //
 body,select,textarea,input {
+  @include font-size;
   font-family: $font-default;
-  font-size:16px;
 }
-// Base SCSS file
 body {
   color:$dark;
-  margin:0;
-  padding:0;
-  line-height: 1.625; // 26px on 16px font
 }
 a {
   color:lighten($dark, 10);
@@ -33,7 +29,8 @@ img {
   outline: 0;
   border: 0;
   max-width:100%;
-  // If a `width` and/or `height` attribute have been explicitly defined, let’s not make the image fluid.
+  // If a `width` and/or `height` attribute have been
+  // explicitly defined, don't make the image fluid.
   &[width],
   &[height] {
       max-width: none;
@@ -42,52 +39,60 @@ img {
 h1,h2,h3,h4,h5,h6 {
   font-family: $font-title;
   font-weight:300;
-  margin:22px 0;
-  line-height: 1.375;
+  margin:$base-spacing 0;
 }
 h1 {
-  font-size: 48px;
+  @include font-size(48px);
 }
 h2 {
-  font-size: 40px;
+  @include font-size(40px);
 }
 h3 {
-  font-size: 32px;
+  @include font-size(32px);
 }
 h4 {
-  font-size: 24px;
+  @include font-size(24px);
 }
 h5 {
-  font-size: 20px;
+  @include font-size(20px);
 }
 h6 {
-  font-size: 18px;
+  @include font-size(18px);
 }
 p {
-  margin:1.375em 0;
+  margin:$base-spacing 0;
   white-space: break-word;
 }
 ul,
 ol {
-  margin:0 0 22px;
+  margin:$base-spacing 0;
   padding: 0 0 0 1.8em;
+}
+li > {
   // No margins in sub lists!
   ul,
   ol {
     margin:0;
   }
-}
-ul {
-  list-style:disc;
   ul {
     list-style:circle;
   }
-}
-ol {
-  list-style:decimal;
   ol {
     list-style:lower-roman;
   }
+}
+ul {
+  list-style:disc;
+}
+ol {
+  list-style:decimal;
+}
+form {
+}
+fieldset {
+  border:0;
+  margin:0;
+  padding:0;
 }
 code {
   font-family:monospace;
@@ -97,7 +102,7 @@ hr {
   background:#ccc;
   border:none;
   color:#ccc;
-  margin:22px 0;
+  margin:$base-spacing 0;
   height:1px;
   clear:both;
 }
@@ -107,7 +112,7 @@ small {
 em, i {
   font-style: italic;
 }
-strong,b {
+strong,b,dt {
   font-weight:700;
 }
 mark {

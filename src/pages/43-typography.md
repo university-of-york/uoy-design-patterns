@@ -1,10 +1,10 @@
 ---
 
-title: Type
-name: type
+title: Typography
+name: typography
 category: layout
 layout: q+tq
-id: type-page
+id: typography-page
 
 ---
 
@@ -45,6 +45,29 @@ There are six default heading sizes:
 <h4>Quaternary header</h4>
 <h5>Quinary header</h5>
 <h6>Senary header</h6>
+```
+
+Headers can contain a `<small.subtitle>` tag which will go on a new line under the header.
+
+# H1 Primary header <small class="subtitle">That means first</small>
+
+## H2 Secondary header <small class="subtitle">That means second</small>
+
+### H3 Tertiary header <small class="subtitle">That means third</small>
+
+#### H4 Quaternary header <small class="subtitle">That means fourth</small>
+
+##### H5 Quinary header <small class="subtitle">That means fifth</small>
+
+###### H6 Senary header <small class="subtitle">That means sixth</small>
+
+```markup
+<h1>Primary header <small class="subtitle">That means first</small></h1>
+<h2>Secondary header <small class="subtitle">That means second</small></h2>
+<h3>Tertiary header <small class="subtitle">That means third</small></h3>
+<h4>Quaternary header <small class="subtitle">That means fourth</small></h4>
+<h5>Quinary header <small class="subtitle">That means fifth</small></h5>
+<h6>Senary header <small class="subtitle">That means sixth</small></h6>
 ```
 
 ## Body text

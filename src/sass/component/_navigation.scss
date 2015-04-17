@@ -1,0 +1,140 @@
+//
+// NAVIGATION
+//
+
+//
+// MAIN MENU
+//
+.c-menu {
+  min-height:2.75em;
+  width:100%;
+}
+
+//
+// MENU TITLE
+//
+.c-menu-title {
+  background-color:$blue;
+}
+.c-menu-title__header {
+  @include font-size(32px, 1.625);
+  max-width:$container-width;
+  margin:0 auto;
+  padding:0 0 0 12px;
+}
+.c-menu-title__link {
+  color:$light;
+  padding:0;
+  line-height:1.625;
+}
+
+//
+// MENU NAVIGATION
+//
+.c-menu-nav {
+  background-color:$dark;
+  overflow:hidden;
+  // margin-bottom:$base-spacing;
+}
+.c-menu-nav__list {
+  position:relative;
+  max-width:$container-width;
+  margin:0 auto;
+  padding:0;
+  min-height:2.75em;
+  list-style:none;
+}
+.c-menu-nav__item {
+  @include transition('background-color');
+  min-height:2.75em;
+  float:left;
+  border-right:1px solid #949394;
+  border-left:1px solid #949394;
+  + .c-menu-nav__item {
+    border-left:0;
+  }
+  // &.has-more {
+  //   position:absolute;
+  //   top: 0;
+  //   right: 0;
+  //   text-align: right;
+  //   z-index: 20;
+  //   border:0;
+  //   width:auto;
+  //   &:after {
+  //     display:none;
+  //   }
+  // }
+}
+.c-menu-nav__link {
+  @include transition('background-color, color');
+  background-color:transparent;
+  display:block;
+  padding:0.75em 20px;
+  line-height:1.25em;
+  text-decoration:none;
+  vertical-align:top;
+  color:$light;
+  &:hover {
+    color:darken($light, 5);
+    background-color:darken($blue, 20);
+  }
+}
+
+// #mobile-menu-buttons {
+//   @extend %ib-container;
+//   position:fixed;
+//   z-index:10;
+//   top:0;
+//   right:0;
+//   a {
+//     @extend %ib-element;
+//     height:78px;
+//     width:78px;
+//     background-color:$dark;
+//     color:$light;
+//     border-left:1px solid $light;
+//   }
+// }
+// #mobile-menu {
+//   position:fixed;
+//   z-index:10;
+//   top:78px;
+//   bottom:0;
+//   left:100%;
+//   width:100%;
+//   background-color:$dark;
+//   color:$light;
+//   transition:0.2s all ease-out;
+//   &.show {
+//     left:0;
+//   }
+//   ul {
+//     @extend %ib-container;
+//     list-style:none;
+//     margin:0;
+//     padding:0;
+//     height:100%;
+//     li {
+//       @extend %ib-element;
+//       width:33.333%;
+//       height:33.333%;
+//       &:nth-of-type(3n+3) a {
+//         border-right:0;
+//       }
+//       &:nth-last-child(-n+3) a {
+//         border-bottom:0;
+//       }
+//     }
+//     a {
+//       display:block;
+//       border-right:1px solid $light;
+//       border-bottom:1px solid $light;
+//       width:100%;
+//       height:100%;
+//     }
+//     ul {
+//       display:none;
+//     }
+//   }
+// }

@@ -13,6 +13,7 @@
   padding-right:40px;
 }
 .c-alert__close {
+  @include font-size(20px, 20px);
   position:absolute;
   right:10px;
   top:14px;
@@ -23,8 +24,6 @@
   border:0;
   background-color:transparent;
   text-align:center;
-  line-height:20px;
-  font-size:20px;
   cursor:pointer;
   &:focus {
     outline:none;

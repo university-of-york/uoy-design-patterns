@@ -1,10 +1,4 @@
-$max: map-get($width, medium) - 0.0625em;
-$min: map-get($width, small);
-// Portrait tablets and lower
-@media only screen and (max-width: $max) {
-}
-// This size only
-@media only screen and (min-width: $min) and (max-width: $max) {
+@include mq(medium)
   .desktop-only,
   .mobile-only,
   .tablet-hidden {
@@ -12,30 +6,5 @@ $min: map-get($width, small);
   }
   .tablet-only {
     display:block;
-  }
-  // Update grid
-  .g-half,
-  .g-threequarters {
-    width:100%;
-  }
-  .g-quarter {
-    width:50%;
-  }
-  // Stops stepped display of q+h+q
-  .g-quarter + .g-half {
-    float: left;
-  }
-  // Stops the above fix also affecting q+q+h
-  .g-quarter + .g-quarter + .g-half {
-    float: none;
-  }
-  // Fixes tq+q
-  .g-threequarters + .g-quarter {
-    width:100%;
-  }
-  // Wow I can't believe I'm doing it this way
-  // If .quarter first child is also 2nd to last child then it must be q+tq
-  .g-quarter:first-child:nth-last-child(2) {
-    width:100%;
   }
 }

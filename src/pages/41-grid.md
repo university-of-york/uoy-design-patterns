@@ -14,18 +14,18 @@ Note that the grid is used for layout only, and holds no details as to the conte
 
 ### A note about the responsive grid
 
-**TODO: THIS NEEDS REWRITING DUE TO CHANGES IN GRID LAYOUT SYSTEM**
-
 So how does the grid respond on smaller screens?
 
 * **.o-grid__box--full**: stays full width always
-* **.o-grid__box--half**: goes to 100% width on tablet (approx <800px)
-* **.o-grid__box--threequarters**: go to 100% width on tablet
-* **.o-grid__box--quarter**: _It's complicated_. In general, it will go to 50% width on tablet, then 100% width on mobile  (approx <640px). On tablet, when you have a half between two quarters in a row (q+h+q), the last quarter is moved up above the half, as otherwise you'd have 50% + 100% + 50% width. When a quarter is in a row with a three-quarter (q+tq or tq+q), the quarter will become 100% on tablet too, to fit with the three-quarter
-* **.o-grid__box--third**: stays 33.333% of width until mobile, when it goes full-width
-* **.o-grid__box--twothirds**: stays 66.666% of width until mobile, when it goes full-width
+* **.o-grid__box--half**: goes to 100% width on medium (<840px)
+* **.o-grid__box--threequarters**: go to 100% width on medium
+* **.o-grid__box--quarter**: _It's complicated_. In general, it will go to 50% width on medium, then 100% width on small (<640px). On medium, when you have a half between two quarters in a row (q+h+q), the last quarter is moved up above the half, as otherwise you'd have 50% + 100% + 50% width. When a quarter is in a row with a three-quarter (q+tq or tq+q), the quarter will become 100% on medium too, to fit with the three-quarter
+* **.o-grid__box--third**: stays 33.333% of width until small, when it goes full-width
+* **.o-grid__box--twothirds**: stays 66.666% of width until small, when it goes full-width
 
 All grid boxes (any bit of code at all, in fact) can be given a `.mobile-hidden` and/or `.tablet-hidden` class, which will hide that box on mobile and/or tablet. This can cause layout issues if you aren't careful.
+
+You can also override grid sizes by adding a custom `@` class to a grid box: for example, `.o-grid__box--quarter@small` will go to quarter width on small (and lower) screens regardless of its usual class.
 
 **N.B. There is normally no background colour on grid boxes. It is just there for the documentation.**
 
@@ -145,8 +145,22 @@ component("grid", { "atoms":[
         ]}
       }
     } }
-  ] } },
+  ] } }
 ] });
+</script>
+
+### Responsive override classes
+
+As mentioned above, you can override the default response of the grid items by giving them an `@` class. So the following grid items would usually go from being a 33.333% wide at medium size to 100% width at small size, but the `.o-grid__box--third@small` class means they will stay a third wide even at small screen sizes.
+
+<script>
+component("grid", { "atoms":[
+  { "grid-row": { "atoms": [
+    { "grid-box": { "size": "third o-grid__box--third@small", "atoms": { "text": " .o-grid__box--third.o-grid__box--third@small" } } },
+    { "grid-box": { "size": "third o-grid__box--third@small", "atoms": { "text": " .o-grid__box--third.o-grid__box--third@small" } } },
+    { "grid-box": { "size": "third o-grid__box--third@small", "atoms": { "text": " .o-grid__box--third.o-grid__box--third@small" } } }
+  ] } }
+] } );
 </script>
 
 ### Options

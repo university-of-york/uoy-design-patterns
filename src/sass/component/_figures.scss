@@ -1,15 +1,12 @@
 //
 // FIGURES & CAPTIONS
 //
-figure {
+.c-figure {
   position:relative;
-  display:inline-block;
   margin:0;
   overflow:hidden;
-  img {
+  .c-figure__image {
     display:block;
-    // min-width:100%;
-    // min-height:100%;
   }
 
   // Use when there is just a set height
@@ -20,7 +17,7 @@ figure {
 
 }
 
-.caption {
+.c-figure__caption {
   background:$dark;
   color:$light;
   line-height:1.25;
@@ -37,22 +34,22 @@ figure {
     margin:8px 0;
   }
 }
-.caption-bottom-left {
+.c-figure__caption--bottom-left {
   bottom:1em;
   left:0;
   margin-right:25%;
 }
-.caption-top-left {
+.c-figure__caption--top-left {
   top:1em;
   left:0;
   margin-right:25%;
 }
-.caption-top-right {
+.c-figure__caption--top-right {
   top:1em;
   right:0;
   margin-left:25%;
 }
-.caption-bottom-right {
+.c-figure__caption--bottom-right {
   bottom:1em;
   right:0;
   margin-left:25%;

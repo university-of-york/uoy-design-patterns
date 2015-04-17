@@ -3,14 +3,68 @@
 //
 
 //
+// Media query mixin
+// Pass it a size (tiny, small, medium, large, huge)
+// And scope ('~' [1], '+' [2], '-' [3])
+// No need for mq with (tiny, '+') - it includes everything!
+@mixin mq($size, $scope:'~') {
+
+  // Max size is one pixel (1/16em) under $size
+  $max: map-get($width, $size) - 0.0625em;
+  $min: 0;
+
+  // Min size is next size down
+  @if $size == tiny {
+    $min: 0;
+  } @else if $size == small {
+    $min: map-get($width, tiny);
+  } @else if $size == medium {
+    $min: map-get($width, small);
+  } @else if $size == large {
+    $min: map-get($width, medium);
+  } @else if $size == huge {
+    $min: map-get($width, large);
+  }
+
+  @if $scope == '~' {
+    // [1] This size only
+    @media only screen and (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $scope == '+' {
+    // [2] This size and bigger
+    @media only screen and (min-width: $min) {
+      @content;
+    }
+  } @else if $scope == '-' {
+    // [3] This size and smaller
+    @media only screen and (max-width: $max) {
+      @content;
+    }
+  }
+
+}
+
+// Inline link layout (utility links etc.)
+@mixin inline-links() {
+  list-style:none;
+  margin-top:0;
+  margin-bottom:0;
+  padding:0;
+  li {
+    float:left;
+  }
+}
+
+//
 // Demarginalise:
 // Remove top margin from first child and last margin from bottom child
 // Use on padded components
 @mixin demarginalise() {
-  :first-child {
+  > :first-child {
     margin-top:0;
   }
-  :last-child {
+  > :last-child {
     margin-bottom:0;
   }
 }
@@ -27,6 +81,31 @@
   }
 }
 
+//
+// Generate a font-size and baseline-compatible line-height.
+//
+@mixin font-size($font-size: $base-font-size, $line-height: auto) {
+
+  font-size: $font-size;
+  font-size: ($font-size / $base-font-size) * 1rem;
+
+  @if $line-height == auto {
+    line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+  } @else {
+    @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+      line-height: $line-height;
+    } @elseif ($line-height != none and $line-height != false) {
+      @warn "D’oh! ‘#{$line-height}’ is not a valid value for `line-height`."
+    }
+  }
+}
+
+
+
+
+
+
+
 
 //
 // Default transition
@@ -37,46 +116,6 @@
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
 }
-
-@mixin submenu($color:$blue) {
-  // This loop sets the section colors for the sub menus.
-  // It's built in so we can tweak the colors/contrast
-  @for $n from 3 through $nav_deepest_level {
-    // Max darken level is 95%
-    $darkenVal: min(95, ($n - 1) * 6);
-    $thisColor: darken($color, $darkenVal);
-    $thisHover: darken($thisColor, 3);
-    // Level #{$n}
-    .menu-lv#{$n} {
-      background-color:$thisColor;
-      // To overlay the lighter background
-      &:after {
-        background-color:$thisColor;
-      }
-      > li {
-        > a {
-          background-color:$thisColor;
-          &:after {
-            border-left-color: $thisColor;
-          }
-          &:hover {
-            background-color:$thisHover;
-            &:after {
-              border-left-color:$thisHover;
-            }
-          }
-        }
-      }
-    }
-    .megamenu .menu-lv#{$n} ul,
-    .megamenu .menu-lv#{$n} ul a {
-      background-color: transparent;
-    }
-  }
-}
-
-
-
 
 
 
@@ -95,14 +134,14 @@
 
   $pxValues: '';
   $remValues: '';
-  $font-size:16px;
+  $base-font-size:16px;
 
   @each $value in $values {
     $pxValue: $value;
     $remValue: $value;
     @if $value * 0 != 0% and $value != 0 {
       $value: strip-unit($value);
-      $pxValue: $value*$font-size;
+      $pxValue: $value*$base-font-size;
       $remValue: #{$value}rem;
     }
     $pxValues: #{$pxValues + $pxValue + " "};

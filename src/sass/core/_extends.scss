@@ -1,43 +1,15 @@
 //
 // EXTENDS
 //
-// adds an arrow after the active LI in the nav
-%active-nav {
-  &:after {
-    @include transition();
-    content:'';
-    display:block;
-    width:0;
-    border-width:22px;
-    border-right-width:0;
-    border-left-width:9px;
-    border-style: solid;
-    border-top-color: transparent;
-    border-bottom-color: transparent;
-    position: absolute;
-    right: -9px;
-    top: 0;
-  }
-}
-%nav-overlay {
-  &:after {
-    content:'';
-    width: 960px;
-    height: 44px;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 100%;
-  }
-}
+
 // Inline block lists
 // Removes space from between inline-block elements
 %ib-container {
   font-size:0;
 }
 %ib-element {
+  @include font-size;
   display:inline-block;
-  font-size:$font-size;
 }
 // Horiz/vertical alignment of overflowing figures
 // Only when width and height are set

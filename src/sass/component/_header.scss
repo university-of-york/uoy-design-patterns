@@ -1,0 +1,38 @@
+//
+// HEADER
+//
+
+.c-main-header--fixed {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:auto;
+  z-index:24;
+}
+.c-main-header {
+  @include clearfix;
+  color:$dark;
+  background:#fff;
+  // max-width:$container-width;
+  margin:0 auto $base-spacing;
+}
+.c-main-header__title {
+  @include font-size(24px, 41px);
+  display:block;
+  float:left;
+  margin:17px 0;
+  padding-left:20px;
+  @include mq(small) {
+    // Change size of logo on small screens
+    @include font-size(16px, 20px);
+  }
+}
+.c-main-header__logo {
+  vertical-align:middle;
+  @include mq(small) {
+    // Change size of logo on small screens
+    width:132px;
+    height:20px;
+  }
+}

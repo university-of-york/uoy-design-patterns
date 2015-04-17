@@ -3,81 +3,23 @@
 @import "core/mixins";
 @import "core/extends";
 
-.docs {
-  h2 small {
-    display:block;
-    font-size:0.45em;
-    line-height:1;
-  }
-  .main-header {
-    h2 {
-      display:block;
-      line-height: 41px;
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 17px 0 17px;
-    }
-  }
-  .wide-wrapper {
-    max-width:100%;
-    // Give some padding to documentation
-    // Expensive selectors but OK for documentation pages ;)
-    > .o-grid__row > .o-grid__box--full {
-      > h1,
-      > h2,
-      > h3,
-      > h4,
-      > h5,
-      > p {
-        padding-left:20px;
-        padding-right:20px;
-      }
-    }
-  }
-}
-// Show the breadcrumb effect without using JS
-.docs-nav {
-  .active-item > a {
-    width:79px;
-  }
-  .menu-lv1 > .active-item > a,
-  .menu-lv2 > .active-item > a,
-  .menu-lv10 > .active-item > a {
-    width:auto;
-  }
-}
-#main-menu {
-  li {
-    ul {
-      display:none;
-    }
-    &:hover {
-      ul {
-        display:block;
-      }
-    }
-  }
-}
+// Style the grid examples
 #grid-page {
-  .main-wrapper > .o-grid__row > .o-grid__box--full {
-    border:0;
-    line-height:1.626;
-    background:none;
-  }
-  .o-grid__box--full,
-  .o-grid__box--twothirds,
-  .o-grid__box--half,
-  .o-grid__box--third,
-  .o-grid__box--threequarters,
-  .o-grid__box--quarter {
-    min-height:40px;
-    line-height:40px;
-    background-color:#eee;
-    background-color:rgba(180,180,180,0.5);
-    background-clip: content-box;
-    margin-bottom:20px;
+  .o-wrapper--main > .o-grid__row > .o-grid__box--full {
+    .o-grid__box {
+      min-height:240px;
+      background-color:#eee;
+      background-color:rgba(180,180,180,0.5);
+      background-clip: content-box;
+      margin-bottom:20px;
+      .o-grid__box {
+        min-height:40px;
+      }
+    }
   }
 }
+
+// Lay out the icons nicely
 #icons-page {
   .c-icon {
     border-top:6px solid $light;
@@ -106,56 +48,64 @@
     color:$light;
   }
 }
+
+// Show examples of horiz andvert centred images
 #figures-page {
-  .figure-w400 {
+  .c-figure--w400 {
     width:400px;
   }
-  .figure-h400 {
+  .c-figure--h400 {
     height:400px;
   }
-  figure {
-    &[class*="figure-w"] {
+  .c-figure {
+    &[class*="c-figure--w"] {
       @extend %set-width-figure;
     }
-    &[class*="figure-h"] {
+    &[class*="c-figure--h"] {
       @extend %set-height-figure;
     }
-    &[class*="figure-w"][class*="figure-h"] {
+    &[class*="c-figure--w"][class*="c-figure--h"] {
       @extend %centered-image;
     }
   }
 }
 // Show hide appropriate submenu
-.submenu {
+.c-subnav__list {
   display:none;
 }
 #atoms-page,
 .category-atoms {
-  .submenu.category-atoms {
+  .c-subnav__list.c-subnav--atoms {
     display:block;
   }
 }
 #molecules-page,
 .category-molecules {
-  .submenu.category-molecules {
+  .c-subnav__list.c-subnav--molecules {
     display:block;
   }
 }
 #organisms-page,
 .category-organisms {
-  .submenu.category-organisms {
+  .c-subnav__list.c-subnav--organisms {
     display:block;
   }
 }
 #layout-page,
 .category-layout {
-  .submenu.category-layout {
+  .c-subnav__list.c-subnav--layout {
     display:block;
   }
 }
-#buttons-page {
-  .c-btn--block {
-    margin-bottom:8px;
+#about,
+.category-about {
+  .c-subnav__list.c-subnav--about {
+    display:block;
+  }
+}
+#navigation-page {
+  .c-subnav__list {
+    display:block;
   }
 }
 

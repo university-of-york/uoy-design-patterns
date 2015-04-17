@@ -27,7 +27,7 @@ var g2 = {
       "image": "http://lorempixel.com/244/122/people/4"
     },
     "body": {
-      "content": "<p>Since 2000, we have invested in 20 new buildings on Heslington West.</p>"
+      "content": "<p>We have invested in 20 new buildings on Heslington West.</p>"
     }
   }
 };

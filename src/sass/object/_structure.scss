@@ -1,0 +1,21 @@
+//
+// STRUCTURE
+//
+
+.o-wrapper {
+  @include clearfix;
+  margin:0 auto;
+  background:#fff;
+  max-width:$container-width;
+}
+.o-wrapper--main,
+.o-wrapper--wide {
+  padding-top:196px;
+  @include mq(small, '-') {
+    padding-top: 175px;
+  }
+}
+.o-wrapper--wide {
+  max-width:100%;
+  margin:0 20px;
+}

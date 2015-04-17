@@ -30,20 +30,20 @@ module.exports = function (grunt) {
             categories[page.category]['children'].push(page);
           }
           if (i === pages.length - 1) {
-            var output = '<ul class="menu-lv1">\n',
+            var output = '<ul class="c-menu-nav__list">\n',
                 suboutput = '';
             for (var c in categories) {
               var cat = categories[c];
               var dest = cat.page.dest || '#';
               var title = cat.page.title || '#';
-              output+= '  <li>\n';
-              output+= '    <a href="'+path.basename(cat.page.dest)+'">'+cat.page.title+'</a>\n';
+              output+= '  <li class="c-menu-nav__item">\n';
+              output+= '    <a class="c-menu-nav__link" href="'+path.basename(cat.page.dest)+'">'+cat.page.title+'</a>\n';
               if (typeof cat['children'] !== 'undefined') {
-                suboutput+= '    <ul class="submenu category-'+cat.page.name+'">\n';
-                suboutput+= '      <li class="submenu-title"><a>'+cat.page.title+'</a></li>\n';
+                suboutput+= '    <ul class="c-subnav__list c-subnav--'+cat.page.name+'">\n';
+                suboutput+= '      <li class="c-subnav__item c-subnav__title"><a class="c-subnav__link">'+cat.page.title+'</a></li>\n';
                 // Loop through category pages
                 cat['children'].forEach(function(p, j) {
-                  suboutput+= '      <li><a href="'+path.basename(p.dest)+'">'+p.title+'</a></li>\n';
+                  suboutput+= '      <li class="c-subnav__item"><a class="c-subnav__link" href="'+path.basename(p.dest)+'">'+p.title+'</a></li>\n';
                 });
                 suboutput+= '    </ul>\n';
               }

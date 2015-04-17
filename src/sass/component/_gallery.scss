@@ -1,0 +1,18 @@
+//
+// GALLERY
+//
+.c-gallery-item {
+  border:1px solid $dark;
+  border-radius:3px;
+  margin-bottom:20px;
+}
+.c-gallery-item__picture {
+  width:100%;
+}
+.c-gallery-item__image {
+  display:block;
+}
+.c-gallery-item__body {
+  @include demarginalise;
+  padding:1em 20px;
+}

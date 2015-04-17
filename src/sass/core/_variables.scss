@@ -11,13 +11,17 @@ $blue:#00b3eb;
 $font-default: 'Trebuchet MS', Helvetica, Arial, sans-serif;
 $font-title: Georgia, 'Times New Roman', Times, serif;
 $font-monospace: Consolas, Monaco, 'Andale Mono', monospace;
-$font-size:16px;
+
+// Typography
+$base-font-size:    16px;
+$base-line-height:  26px;
+$base-spacing:      20px;
 
 // Measurements
 $container-width: 960px;
 
 // Our breakpoints - specified in 16px-based ems
-// // http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/
+// http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/
 $width: (
   tiny:   30em,
   small:  40em,
@@ -33,27 +37,13 @@ $icons: (
   tiny:   8px,
   small:  12px,
   medium: 16px,
-  large:  36px,
-  huge:   48px
+  large:  24px,
+  huge:   32px
 );
 
 // Button types
 $buttons: (
-  primary: #60b044,
-  danger: #b04460,
-  cancel: #4460b0
+  primary: #2E901F,
+  cancel: #2546EB,
+  danger: #D10B30
 );
-
-// Site sections
-
-// Social media
-$twitter:#63c0dd;
-$facebook:#527cb6;
-$youtube:#ff674e;
-$instagram:#666;
-
-
-// Loop variables (used in _navigation and _mixins)
-$nav_deepest_level:13;
-
-

@@ -15,10 +15,14 @@ The basic unit in forms is the _form-element_. This is a _molecule_, made up of 
 Firstly, a few different input types (note the `hidden` type at the end):
 
 <script>
+// Three different ways of calling a component:
+// 1. Single object as atoms value
 component("form-element", { "label": "Name", "name": "a", "atoms": { "input": { "placeholder":"Enter your name" } } })
+// 2. Atoms array with single object
 +component("form-element", { "label": "Email", "name": "b", "atoms": [
   { "input": { "type": "email" } }
 ]})
+// 3. Atoms array with component/options keys
 +component("form-element", { "label": "Image", "name": "c", "atoms": [
   {
     "component": "input",
@@ -54,61 +58,87 @@ component("form-element", { "label": "What is your favourite colour?", "select":
 ]});
 </script>
 
-You can put these together in the usual grid system: a `form-row` can be `form-elements` that are three `g-third`s, two `g-half`s, a `g-half` and two `g-quarter`s, and so on.
+You can put these together in the usual grid system: a `grid-row` can be `form-elements` that are three `third`s, two `half`s, a `half` and two `quarter`s, and so on.
 
 <script>
-component("form-row", { "atoms": [
-	{ "form-element": { "label": "Bippity", "name": "l", "size": "third" } },
-	{ "form-element": { "label": "Boppity", "name": "m", "size": "third" } },
-	{ "form-element": { "label": "Boo", "name": "n", "size": "third" } },
+component("grid-row", { "atoms": [
+  { "grid-box": { "size": "third", "atoms":
+	  { "form-element": { "label": "Bippity", "name": "l" } },
+  } },
+  { "grid-box": { "size": "third", "atoms":
+	  { "form-element": { "label": "Boppity", "name": "m" } },
+  } },
+  { "grid-box": { "size": "third", "atoms":
+	 { "form-element": { "label": "Boo", "name": "n" } },
+  } }
 ]});
 </script>
 
-And finally, the `form` organism: a load of `form-row`s. The default style is `form-stacked`.
+And finally, the `form` organism: a load of `grid-row`s. The default style is `form-stacked`.
 
 <script>
 component("form", { "type":"stacked", "method":"get", "legend": "Fill in this form", "atoms": [
 
-  { "form-row": { "atoms": [
-    { "form-element": { "label": "Text input", "name": "sa", "size": "third", "atoms": { "input": { "type":"text" } } } },
-    { "form-element": { "label": "File input", "name": "sb", "size": "third", "atoms": { "input": { "type":"file" } } } },
-    { "form-element": { "label": "Password", "name": "sc", "size": "third", "atoms": { "input": { "type":"password" } } } },
-  ]}},
+  { "grid-row": { "atoms": [
+    { "grid-box": { "size": "third", "atoms":
+      { "form-element": { "label": "Text input", "name": "sa", "atoms": { "input": { "type":"text" } } } },
+    } },
+    { "grid-box": { "size": "third", "atoms":
+      { "form-element": { "label": "File input", "name": "sb", "atoms": { "input": { "type":"file" } } } },
+    } },
+    { "grid-box": { "size": "third", "atoms":
+      { "form-element": { "label": "Password", "name": "sc", "atoms": { "input": { "type":"password" } } } }
+    } }
+  ] } },
 
-  { "form-row": { "atoms": [
-    { "form-element": { "label": "Email", "name": "sd", "size": "third", "atoms": { "input": { "type":"email" } } } },
-    { "form-element": { "label": "URL", "name": "se", "size": "third", "atoms": { "input": { "type":"url" } } } },
-    { "form-element": { "label": "Telephone", "name": "sf", "size": "third", "atoms": { "input": { "type":"tel" } } } },
-  ]}},
+  { "grid-row": { "atoms": [
+    { "grid-box": { "size": "third", "atoms":
+      { "form-element": { "label": "Email", "name": "sd", "atoms": { "input": { "type":"email" } } } },
+    } },
+    { "grid-box": { "size": "third", "atoms":
+      { "form-element": { "label": "URL", "name": "se", "atoms": { "input": { "type":"url" } } } },
+    } },
+    { "grid-box": { "size": "third", "atoms":
+      { "form-element": { "label": "Telephone", "name": "sf", "atoms": { "input": { "type":"tel" } } } }
+    } }
+  ] } },
 
-  { "form-row": { "atoms": [
-    { "form-element": { "label": "Select", "select": true, "size": "third", "name": "sg", "atoms":[
-      { "option": { "label": "Red", "value": "red" } },
-      { "option": { "label": "Blue", "value": "blue" } },
-      { "option": { "label": "Green", "value": "green" } },
-      { "option": { "label": "Yellow", "value": "yellow" } }
-    ]} },
-    { "form-element": { "label": "Radio", "name": "sh", "size": "third", "atoms":[
-      { "radio": { "label": "Yes", "value": "yes" } },
-      { "radio": { "label": "No", "value": "no" } },
-      { "radio": { "label": "Not sure", "value": "unsure" } }
-    ] } },
-    { "form-element": { "label": "Checkbox", "name": "si", "size": "third", "atoms":[
-      { "checkbox": { "label": "Ukulele", "value": "ukulele" } },
-      { "checkbox": { "label": "Mandolin", "value": "mandolin" } },
-      { "checkbox": { "label": "Banjo", "value": "banjo", "checked": true } }
-    ] } },
-  ]}},
+  { "grid-row": { "atoms": [
+    { "grid-box": { "size": "third", "atoms":
+      { "form-element": { "label": "Select", "select": true, "name": "sg", "atoms":[
+        { "option": { "label": "Red", "value": "red" } },
+        { "option": { "label": "Blue", "value": "blue" } },
+        { "option": { "label": "Green", "value": "green" } },
+        { "option": { "label": "Yellow", "value": "yellow" } }
+      ] } }
+    } },
+    { "grid-box": { "size": "third", "atoms":
+      { "form-element": { "label": "Radio", "name": "sh", "atoms":[
+        { "radio": { "label": "Yes", "value": "yes" } },
+        { "radio": { "label": "No", "value": "no" } },
+        { "radio": { "label": "Not sure", "value": "unsure" } }
+      ] } }
+    } },
+    { "grid-box": { "size": "third", "atoms":
+      { "form-element": { "label": "Checkbox", "name": "si", "atoms":[
+        { "checkbox": { "label": "Ukulele", "value": "ukulele" } },
+        { "checkbox": { "label": "Mandolin", "value": "mandolin" } },
+        { "checkbox": { "label": "Banjo", "value": "banjo", "checked": true } }
+      ] } }
+    } }
+  ] } },
 
-  { "form-row": { "atoms": [
-    { "form-element": { "label": "Textarea", "name": "sj", "size": "full", "atoms": { "textarea": { } } } },
-  ]}},
+  { "grid-row": { "atoms":
+    { "grid-box": { "size": "full", "atoms":
+      { "form-element": { "label": "Textarea", "name": "sj", "atoms": { "textarea": { } } } }
+    } }
+  } },
 
-  { "form-row": { "atoms": [
-    { "grid-box": { "size": "full", "atoms": [
+  { "grid-row": { "atoms":
+    { "grid-box": { "size": "full", "atoms":
       { "button": { "text": "Submit" } }
-    ] } }
-  ]}}
+    } }
+  } }
 
 ]});
 </script>
@@ -118,31 +148,52 @@ Inline forms have the label and the input on the same line. By default, the labe
 <script>
 component("form", { "type":"inline", "method":"get", "legend": "Fill in this form", "atoms": [
 
-  { "form-row": { "atoms": { "form-element": { "label": "Text input", "name": "ia", "atoms": { "input": { "type":"text" } } } } } },
-  { "form-row": { "atoms": { "form-element": { "label": "File input", "name": "ib", "atoms": { "input": { "type":"file" } } } } } },
-  { "form-row": { "atoms": { "form-element": { "label": "Password", "name": "ic", "atoms": { "input": { "type":"password" } } } } } },
-  { "form-row": { "atoms": { "form-element": { "label": "Email", "name": "id", "atoms": { "input": { "type":"email" } } } } } },
-  { "form-row": { "atoms": { "form-element": { "label": "URL", "name": "ie", "atoms": { "input": { "type":"url" } } } } } },
-  { "form-row": { "atoms": { "form-element": { "label": "Telephone", "name": "if", "atoms": { "input": { "type":"tel" } } } } } },
-  { "form-row": { "atoms": { "form-element": { "label": "Select", "select": true, "name": "ig", "atoms":[
-    { "option": { "label": "Red", "value": "red" } },
-    { "option": { "label": "Blue", "value": "blue" } },
-    { "option": { "label": "Green", "value": "green" } },
-    { "option": { "label": "Yellow", "value": "yellow" } }
-  ]} } } },
-  { "form-row": { "atoms": { "form-element": { "label": "Radio", "name": "ih", "atoms":[
-    { "radio": { "label": "Yes", "value": "yes" } },
-    { "radio": { "label": "No", "value": "no" } },
-    { "radio": { "label": "Not sure", "value": "unsure" } }
-  ] } } } },
-  { "form-row": { "atoms": { "form-element": { "label": "Checkbox", "name": "ii", "atoms":[
-    { "checkbox": { "label": "Ukulele", "value": "ukulele" } },
-    { "checkbox": { "label": "Mandolin", "value": "mandolin" } },
-    { "checkbox": { "label": "Banjo", "value": "banjo", "checked": true } }
-  ] } } } },
-  { "form-row": { "atoms": { "form-element": { "label": "Textarea", "name": "ij", "atoms": { "textarea": { } } } } } },
-  { "form-row": { "atoms": { "button": { "text": "Submit" } } } }
-
+  { "grid-row": { "atoms": { "grid-box": { "size": "full", "atoms":
+    { "form-element": { "label": "Text input", "name": "ia", "atoms": { "input": { "type":"text" } } } }
+  } } } },
+  { "grid-row": { "atoms": { "grid-box": { "size": "full", "atoms":
+    { "form-element": { "label": "File input", "name": "ib", "atoms": { "input": { "type":"file" } } } }
+  } } } },
+  { "grid-row": { "atoms": { "grid-box": { "size": "full", "atoms":
+    { "form-element": { "label": "Password", "name": "ic", "atoms": { "input": { "type":"password" } } } }
+  } } } },
+  { "grid-row": { "atoms": { "grid-box": { "size": "full", "atoms":
+    { "form-element": { "label": "Email", "name": "id", "atoms": { "input": { "type":"email" } } } }
+  } } } },
+  { "grid-row": { "atoms": { "grid-box": { "size": "full", "atoms":
+    { "form-element": { "label": "URL", "name": "ie", "atoms": { "input": { "type":"url" } } } }
+  } } } },
+  { "grid-row": { "atoms": { "grid-box": { "size": "full", "atoms":
+    { "form-element": { "label": "Telephone", "name": "if", "atoms": { "input": { "type":"tel" } } } }
+  } } } },
+  { "grid-row": { "atoms": { "grid-box": { "size": "full", "atoms":
+    { "form-element": { "label": "Select", "select": true, "name": "ig", "atoms":[
+        { "option": { "label": "Red", "value": "red" } },
+        { "option": { "label": "Blue", "value": "blue" } },
+        { "option": { "label": "Green", "value": "green" } },
+        { "option": { "label": "Yellow", "value": "yellow" } }
+      ]} }
+  } } } },
+  { "grid-row": { "atoms": { "grid-box": { "size": "full", "atoms":
+    { "form-element": { "label": "Radio", "name": "ih", "atoms":[
+        { "radio": { "label": "Yes", "value": "yes" } },
+        { "radio": { "label": "No", "value": "no" } },
+        { "radio": { "label": "Not sure", "value": "unsure" } }
+      ] } }
+  } } } },
+  { "grid-row": { "atoms": { "grid-box": { "size": "full", "atoms":
+    { "form-element": { "label": "Checkbox", "name": "ii", "atoms":[
+        { "checkbox": { "label": "Ukulele", "value": "ukulele" } },
+        { "checkbox": { "label": "Mandolin", "value": "mandolin" } },
+        { "checkbox": { "label": "Banjo", "value": "banjo", "checked": true } }
+      ] } }
+  } } } },
+  { "grid-row": { "atoms": { "grid-box": { "size": "full", "atoms":
+    { "form-element": { "label": "Textarea", "name": "ij", "atoms": { "textarea": { } } } }
+  } } } },
+  { "grid-row": { "atoms": { "grid-box": { "size": "full", "atoms":
+    { "button": { "text": "Submit" } }
+  } } } }
 ]});
 </script>
 
@@ -151,55 +202,43 @@ component("form", { "type":"inline", "method":"get", "legend": "Fill in this for
 
 #### Atoms
 
-* input
+* **input**
   * **type**: one of _text_ (default), _file_, _hidden_, _password_, _email_, _url_ and _tel_
   * **value**: the default `value` of the `input`
-  * **placeholder**: placeholder text (don't rely on this text being there - it's not supported in **<IE10**
+  * **placeholder**: placeholder text (don't rely on this text being there - it's not supported in **&lt;IE10**)
 
-
-* option
+* **option**
   * **label**: the text in the option field **(required)**
   * **value**: the `value` of the `option` **(required)**
 
-
-* checkbox
+* **checkbox**
   * **label**: the text in the accompanying label field **(required)**
   * **value**: the `value` of the `checkbox` **(required)**
   * **name**: the `name attribute (must be the same for all checkboxes/radios)  **(required)**
 
-
-* radio
+* **radio**
   * **label**: the text in the accompanying label field **(required)**
   * **value**: the `value` of the `radio` **(required)**
   * **name**: the `name attribute (must be the same for all checkboxes/radios)  **(required)**
 
-
 #### Molecules
 
-
-* form-element
+* **form-element**
   * **label**: the label attached to the form element **(required)**
   * **name**: the name of the form field **(required)**
   * **select**: true if this is a `select` dropdown
   * **size**: one of _half_, _quarter_ or _third_ (leaving blank will render full-width)
   * **atoms**: an array of atoms (multiple `options`, `checkboxes` or `radios`) or an atom object (i.e. one `input`). If this is missing a text `input` is added by default
 
-
-* form-row
-  * **atoms**: an array of `form-element` molecules. Use your judgement to make sure each `form-row` is filled with the correct number and size of elements. BUttons can be added as atoms to make sure they line up with the rest of the form
-
-
 #### Organisms
 
-
-* form
+* **form**
   * **type**: supported types are _stacked_ (default) or _inline_
   * **action**: URL to submit the form to. Can be absolute or relative. Defaults to "#"
   * **method**: either _post_ (default) or _get_
   * **id**: an _id_ to identify the form
   * **legend**: some text to go in the `legend` of the form. Default is to omit it altogether.
-  * **atoms**: an array of `form-row` molecules.
-
+  * **atoms**: an array of `grid-row` molecules.
 
 ###TODO
 

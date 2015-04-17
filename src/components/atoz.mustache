@@ -1,27 +1,23 @@
-<div class="atoz-nav">
-  <ul>
+<div class="c-atoz">
+  <ul class="c-atoz__nav-list">
   {{#letters}}
-    <li><a href="#{{this.letter}}">{{this.letter}}</a></li>
+    <li class="c-atoz__nav-item"><a class="c-atoz__nav-link" href="#{{this.letter}}">{{this.letter}}</a></li>
   {{/letters}}
   </ul>
-</div>
-<div class="atoz-container">
-  <ul>
+  <ul class="c-atoz__container">
   {{#letters}}
-    <li id="{{this.letter}}" class="atoz-letter">
-      <h5>{{this.letter}}</h5>
-      <div class="atoz-content">
-        <ul>
-        {{#this.pages}}
-          <li class="atoz-page">
-            <a href="{{this.link}}">
-              <h6>{{this.title}}</h6>
-              {{#this.content}}{{this}}{{/this.content}}
-            </a>
-          </li>
-        {{/this.pages}}
-        </ul>
-      </div>
+    <li id="{{this.letter}}" class="c-atoz__letter">
+      <h5 class="c-atoz__letter-title">{{this.letter}}</h5>
+      <ul class="c-atoz__content">
+      {{#this.pages}}
+        <li class="c-atoz__page">
+          <a class="c-atoz__link" href="{{this.link}}">
+            <h6 class="c-atoz__title">{{this.title}}</h6>
+            {{#this.content}}{{this}}{{/this.content}}
+          </a>
+        </li>
+      {{/this.pages}}
+      </ul>
     </li>
   {{/letters}}
   </ul>

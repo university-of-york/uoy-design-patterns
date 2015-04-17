@@ -1,16 +1,10 @@
-$max: map-get($width, large) - 0.0625em;
-$min: map-get($width, medium);
-// Large tablets and small screens
-@media only screen and (max-width: $max) {
-}
-// This size only
-@media only screen and (min-width: $min) and (max-width: $max) {
-  .desktop-only,
+@include mq(large, '+') {
+  .tablet-only,
   .mobile-only,
-  .tablet-hidden {
+  .desktop-hidden {
     display:none;
   }
-  .tablet-only {
+  .desktop-only {
     display:block;
   }
 }

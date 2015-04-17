@@ -1,0 +1,44 @@
+//
+// Utility navigation
+//
+.c-utility-nav {
+  @include clearfix;
+  background:$dark;
+  color:$light;
+  padding:0.25em;
+}
+.c-utility-nav__list {
+  @include inline-links;
+  float:left;
+}
+.c-utility-nav__item {
+  margin-top:0.1em;
+  margin-bottom:0.1em;
+  ~ .c-utility-nav__item {
+    border-left:1px solid $light;
+  }
+}
+.c-utility-nav__link {
+  padding:0 0.75em;
+  font-size:0.8em;
+  color:$light;
+}
+.c-utility-nav__search {
+  float:right;
+  .c-form__input--text {
+    @include font-size(12px,inherit);
+    width:auto;
+    border:0;
+    background-color:$light;
+    color:$dark;
+  }
+  .c-btn {
+    min-height:0;
+    border-width:0;
+    line-height:1;
+    height:2em;
+    padding-left:0.5em;
+    padding-right:0.5em;
+    vertical-align:baseline;
+  }
+}

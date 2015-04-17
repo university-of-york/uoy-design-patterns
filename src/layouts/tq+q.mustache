@@ -2,18 +2,18 @@
 
 {{>header}}
 
-{{>mainnav}}
-
-<div class="main-wrapper o-grid">
+<div class="o-wrapper o-wrapper--main o-grid">
 
   <div class="o-grid__row">
 
-    <div class="o-grid__box o-grid__box--threequarters" role="main">
+    <div class="o-grid__box o-grid__box--threequarters o-grid__box--main" role="main">
       {{content}}
     </div>
 
     <div class="o-grid__box o-grid__box--quarter" role="complementary">
-      {{>subnav}}
+      <nav class="c-subnav">
+        {{>subnav}}
+      </nav>
     </div>
 
   </div>
