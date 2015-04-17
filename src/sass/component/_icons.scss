@@ -27,9 +27,13 @@
 
 // Body class based on browser support
 @import "icons/svg-icons";
+
+// Adding these in really increases the size of the CSS (i.e. from 200KB to 900KB)
+// and makes it worse to compress (i.e. from 20KB to 450KB)
+// Only in IE-specific?
 .icons-datapng {
-  @import "icons/png-icons";
+  // @import "icons/png-icons";
 }
 .icons-png {
-  @import "icons/png-urls";
+  // @import "icons/png-urls";
 }

@@ -7,6 +7,7 @@ module.exports = {
     },
     src: ['build/']
   },
+  precssmin: ['build/css/*.raw.css'],
   postbuild: ['build/css/*', '!build/css/*.min.css'],
   live: ['build/*.html', 'build/css/docs.min.css']
 };
