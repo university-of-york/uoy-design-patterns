@@ -2,15 +2,6 @@
 // EXTENDS
 //
 
-// Inline block lists
-// Removes space from between inline-block elements
-%ib-container {
-  font-size:0;
-}
-%ib-element {
-  @include font-size;
-  display:inline-block;
-}
 // Horiz/vertical alignment of overflowing figures
 // Only when width and height are set
 %centered-image {

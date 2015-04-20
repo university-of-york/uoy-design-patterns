@@ -5,17 +5,21 @@
 .o-wrapper {
   @include clearfix;
   margin:0 auto;
-  background:#fff;
+  background:$light;
   max-width:$container-width;
 }
 .o-wrapper--main,
 .o-wrapper--wide {
-  padding-top:196px;
-  @include mq(small, '-') {
+  padding:196px $base-spacing 0;
+  // Smaller logo and font
+  @include mq(small) {
     padding-top: 175px;
+  }
+  // Mobile nav
+  @include mq(tiny) {
+    padding-top: 127px;
   }
 }
 .o-wrapper--wide {
   max-width:100%;
-  margin:0 20px;
 }

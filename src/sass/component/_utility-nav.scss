@@ -5,7 +5,7 @@
   @include clearfix;
   background:$dark;
   color:$light;
-  padding:0.25em;
+  padding:0.25em 6px;
 }
 .c-utility-nav__list {
   @include inline-links;
