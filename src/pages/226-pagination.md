@@ -2,7 +2,8 @@
 
 title: Pagination
 name: pagination
-category: molecules
+category: components
+subcategory: Molecules
 layout: q+tq
 id: pagination-page
 

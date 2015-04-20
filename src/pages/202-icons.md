@@ -2,7 +2,8 @@
 
 title: Icons
 name: icons
-category: atoms
+category: components
+subcategory: Atoms
 layout: q+tq
 id: icons-page
 

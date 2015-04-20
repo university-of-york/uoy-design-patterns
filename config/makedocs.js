@@ -39,10 +39,14 @@ module.exports = function (grunt) {
               output+= '  <li class="c-menu-nav__item">\n';
               output+= '    <a class="c-menu-nav__link" href="'+path.basename(cat.page.dest)+'">'+cat.page.title+'</a>\n';
               if (typeof cat['children'] !== 'undefined') {
+                var currentSubcategory = '';
                 suboutput+= '    <ul class="c-subnav__list c-subnav--'+cat.page.name+'">\n';
-                suboutput+= '      <li class="c-subnav__item c-subnav__title"><a class="c-subnav__link">'+cat.page.title+'</a></li>\n';
                 // Loop through category pages
                 cat['children'].forEach(function(p, j) {
+                  if (p.subcategory && p.subcategory !== currentSubcategory) {
+                    currentSubcategory = p.subcategory;
+                    suboutput+= '      <li class="c-subnav__item c-subnav__title"><a class="c-subnav__link">'+p.subcategory+'</a></li>\n';
+                  }
                   suboutput+= '      <li class="c-subnav__item"><a class="c-subnav__link" href="'+path.basename(p.dest)+'">'+p.title+'</a></li>\n';
                 });
                 suboutput+= '    </ul>\n';

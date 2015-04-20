@@ -2,7 +2,8 @@
 
 title: Button groups
 name: button-groups
-category: molecules
+category: components
+subcategory: Molecules
 layout: q+tq
 id: button-groups-page
 

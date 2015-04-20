@@ -2,7 +2,8 @@
 
 title: Forms
 name: forms
-category: organisms
+category: components
+subcategory: Organisms
 layout: q+tq
 id: forms-page
 

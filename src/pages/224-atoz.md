@@ -2,7 +2,8 @@
 
 title: A to Z
 name: atoz
-category: molecules
+category: components
+subcategory: Molecules
 layout: q+tq
 id: atoz-page
 

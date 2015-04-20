@@ -4,7 +4,7 @@ title: About
 name: about
 category: false
 layout: q+tq
-id: about
+id: about-page
 
 ---
 

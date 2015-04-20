@@ -2,7 +2,8 @@
 
 title: Gallery
 name: gallery
-category: molecules
+category: components
+subcategory: Molecules
 layout: q+tq
 id: gallery-page
 

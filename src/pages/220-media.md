@@ -2,7 +2,8 @@
 
 title: Media object
 name: media
-category: molecules
+category: components
+subcategory: Molecules
 layout: q+tq
 id: media-page
 

@@ -2,7 +2,8 @@
 
 title: Buttons
 name: buttons
-category: atoms
+category: components
+subcategory: Atoms
 layout: q+tq
 id: buttons-page
 

@@ -2,7 +2,8 @@
 
 title: Tables
 name: tables
-category: atoms
+category: components
+subcategory: Atoms
 layout: q+tq
 id: tables-page
 

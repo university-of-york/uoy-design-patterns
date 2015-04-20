@@ -54,6 +54,10 @@
   }
 }
 .c-subnav__title {
+  margin-top:$base-spacing;
+  &:first-child {
+    margin-top:0;
+  }
   .c-subnav__link {
     background-color:$dark;
     color:$light;

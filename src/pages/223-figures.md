@@ -2,7 +2,8 @@
 
 title: Figures
 name: figures
-category: molecules
+category: components
+subcategory: Molecules
 layout: q+tq
 id: figures-page
 

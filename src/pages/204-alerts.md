@@ -2,7 +2,8 @@
 
 title: Alerts
 name: alerts
-category: atoms
+category: components
+subcategory: Atoms
 layout: q+tq
 id: alerts-page
 

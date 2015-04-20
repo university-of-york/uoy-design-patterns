@@ -73,21 +73,9 @@
 .c-subnav__list {
   display:none;
 }
-#atoms-page,
-.category-atoms {
-  .c-subnav__list.c-subnav--atoms {
-    display:block;
-  }
-}
-#molecules-page,
-.category-molecules {
-  .c-subnav__list.c-subnav--molecules {
-    display:block;
-  }
-}
-#organisms-page,
-.category-organisms {
-  .c-subnav__list.c-subnav--organisms {
+#components-page,
+.category-components {
+  .c-subnav__list.c-subnav--components {
     display:block;
   }
 }
@@ -97,7 +85,7 @@
     display:block;
   }
 }
-#about,
+#about-page,
 .category-about {
   .c-subnav__list.c-subnav--about {
     display:block;
@@ -107,7 +95,7 @@
   .c-subnav__list {
     display:block;
   }
-  // Force navs to strecth to full width
+  // Force navs to stretch to full width
   .c-utility-nav,
   .c-menu-title,
   .c-menu-nav {

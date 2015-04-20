@@ -1,10 +1,10 @@
 ---
 
-title: Atoms
-name: atoms
+title: CSS Components
+name: components
 category: false
 layout: q+tq
-id: atoms-page
+id: components-page
 
 ---
 

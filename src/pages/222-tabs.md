@@ -2,7 +2,8 @@
 
 title: Tabs
 name: tabs
-category: molecules
+category: components
+subcategory: Molecules
 layout: q+tq
 id: tabs-page
 

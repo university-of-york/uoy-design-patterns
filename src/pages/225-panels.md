@@ -2,7 +2,8 @@
 
 title: Panels
 name: panels
-category: molecules
+category: components
+subcategory: Molecules
 layout: q+tq
 id: panels-page
 

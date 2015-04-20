@@ -2,7 +2,8 @@
 
 title: Events
 name: events
-category: organisms
+category: components
+subcategory: Organisms
 layout: q+tq
 id: events-page
 

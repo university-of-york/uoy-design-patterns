@@ -5,7 +5,6 @@
 .o-wrapper {
   @include clearfix;
   margin:0 auto;
-  background:$light;
   max-width:$container-width;
 }
 .o-wrapper--main,

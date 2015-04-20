@@ -1,3 +1,13 @@
 //
 // FOOTER
 //
+.c-footer-main {
+  margin:$base-spacing 0 0;
+  background-color:$dark;
+  color:$light;
+  border-top:2px solid $blue;
+  padding:$base-spacing;
+  a {
+    color:$light;
+  }
+}
