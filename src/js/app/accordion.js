@@ -51,7 +51,7 @@ define(['jquery'], function ($) {
 
     isToggling = false;
 
-  }
+  };
 
   // Open the content in item
   var toggleContent = function(item, close) {
@@ -83,7 +83,7 @@ define(['jquery'], function ($) {
   var ACCORDION = function(options) {
 
     // Get the options or their defaults
-    if (!options.container) return false
+    if (!options.container) return false;
     this.container = $(options.container);
     this.items = this.container.children('.c-accordion__item');
 

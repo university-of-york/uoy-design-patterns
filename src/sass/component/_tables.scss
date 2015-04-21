@@ -1,3 +1,23 @@
 //
 // TABLES
 //
+table {
+  border-collapse: collapse;
+  border:0;
+  width:100%;
+}
+th {
+  font-weight:bold;
+  text-align:center;
+  padding:16px 8px;
+  color:$blue;
+  border-bottom:2px solid $blue;
+  line-height:1.2;
+}
+td {
+  padding:12px;
+  border-bottom:1px solid $blue;
+}
+tr:last-child td {
+  border-bottom:0;
+}
