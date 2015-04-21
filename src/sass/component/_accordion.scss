@@ -3,5 +3,62 @@
 //
 
 .c-accordion {
-
+}
+.c-accordion__item {
+  position:relative;
+  border-left:1px solid $dark;
+  border-right:1px solid $dark;
+  border-bottom:1px solid $dark;
+  &:nth-of-type(even) .c-accordion__title {
+    background:lighten($dark, 20);
+  }
+}
+.c-accordion__title {
+  @include demarginalise;
+  display:block;
+  background:$dark;
+  color:$light;
+  padding:$base-spacing/2 $base-spacing;
+  position:relative;
+  &:hover {
+    color:darken($light, 5);
+  }
+}
+.c-accordion__icon {
+  @include transition(transform);
+  position:absolute;
+  top:50%;
+  right:$base-spacing;
+  transform:rotate(45deg);
+  @each $name, $size in $icons {
+    // Overwrite specificity of demarginalise above
+    &.c-icon--#{$name} {
+      margin-top: -$size/2;
+    }
+  }
+}
+.c-accordion__content {
+  // @include demarginalise;
+  @include transition;
+  padding:0 $base-spacing;
+  overflow:hidden;
+  position:static;
+  width: 100%;
+  .c-accordion__item.is-closed & {
+    // padding-top:0;
+    // padding-bottom:0;
+    height:0;
+  }
+  // Starting class - added by JS to hide the content but still be able to get the height
+  &.is-hidden {
+    visibility: hidden;
+    position: absolute;
+  }
+}
+.csstransforms {
+  .c-accordion__item.is-closed {
+    .c-accordion__icon {
+        transform:rotate(0deg);
+    }
+  }
 }

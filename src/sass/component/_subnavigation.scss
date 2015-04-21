@@ -13,18 +13,6 @@
       border-top:0;
     }
   }
-  &:first-child {
-    .c-subnav__link {
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
-    }
-  }
-  &:last-child {
-    .c-subnav__link {
-      border-bottom-left-radius: 3px;
-      border-bottom-right-radius: 3px;
-    }
-  }
   &.is-current {
     .c-subnav__link {
       background-color:$blue;

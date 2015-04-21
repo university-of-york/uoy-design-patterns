@@ -1,4 +1,4 @@
-define(['jquery', 'picturefill', 'app/utils', 'app/grunticon'], function ($, PICTUREFILL, UTILS, GRUNTICON) {
+define(['jquery', 'picturefill', 'app/utils', 'app/accordion', 'app/grunticon'], function ($, PICTUREFILL, UTILS, ACCORDION, GRUNTICON) {
 
   var $window = $(window);
 
@@ -14,6 +14,16 @@ define(['jquery', 'picturefill', 'app/utils', 'app/grunticon'], function ($, PIC
     e.preventDefault();
     return false;
   });
+
+  // Add accordion functionality
+  $accordions = $('.c-accordion');
+  if ($accordions.length) {
+    $accordions.each(function(i, accordion) {
+      var a = new ACCORDION({
+        container: accordion
+      });
+    });
+  }
 
   // Sample use of UTILS.debounce
   var resizeFn = UTILS.debounce(function() {
