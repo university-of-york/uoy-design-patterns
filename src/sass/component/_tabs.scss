@@ -24,13 +24,13 @@
   &.is-active {
     .c-tabs__link {
       background:$light;
-      color:$dark;
+      color:$charcoal;
       border-bottom:1px solid $light;
     }
   }
 }
 .c-tabs__link {
-  border:1px solid $dark;
+  border:1px solid $charcoal;
   background:#ccc;
   color:#999;
   display:block;
@@ -42,7 +42,7 @@
 .c-tabs__container {
   @include demarginalise;
   background:$light;
-  border:1px solid $dark;
+  border:1px solid $charcoal;
   padding:$base-spacing;
   clear:both;
   margin-top:-1px;

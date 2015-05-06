@@ -3,10 +3,18 @@
 //
 
 // Colors
-$dark:#333;
-$light:#fefefe;
+$charcoal:#333;
+$light:#f9f9f9;
 $blue:#00b3eb;
-$purple:#a23479;
+$pink:#a23479;
+$teal:#0f3d4c;
+$gold:#e4b53c;
+
+
+$s1:#caccb8;
+$s2:#f0f2e9;
+$s3:#f0f1f4;
+
 
 // Fonts
 $font-default: 'Trebuchet MS', Helvetica, Arial, sans-serif;
@@ -44,7 +52,7 @@ $icons: (
 
 // Button types
 $buttons: (
-  primary: $purple,
+  primary: $pink,
   cancel: $blue,
   danger: #D10B30
 );

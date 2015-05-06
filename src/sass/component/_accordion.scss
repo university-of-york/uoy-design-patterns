@@ -6,17 +6,17 @@
 }
 .c-accordion__item {
   position:relative;
-  border-left:1px solid $dark;
-  border-right:1px solid $dark;
-  border-bottom:1px solid $dark;
+  border-left:1px solid $charcoal;
+  border-right:1px solid $charcoal;
+  border-bottom:1px solid $charcoal;
   &:nth-of-type(even) .c-accordion__title {
-    background:lighten($dark, 20);
+    background:lighten($charcoal, 20);
   }
 }
 .c-accordion__title {
   @include demarginalise;
   display:block;
-  background:$dark;
+  background:$charcoal;
   color:$light;
   padding:$base-spacing/2 $base-spacing;
   position:relative;

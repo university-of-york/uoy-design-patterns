@@ -3,7 +3,7 @@
 //
 .c-utility-nav {
   @include clearfix;
-  background:$dark;
+  background:$charcoal;
   color:$light;
   padding:0.25em 6px;
 }
@@ -30,7 +30,7 @@
     width:auto;
     border:0;
     background-color:$light;
-    color:$dark;
+    color:$charcoal;
   }
   .c-btn {
     min-height:0;

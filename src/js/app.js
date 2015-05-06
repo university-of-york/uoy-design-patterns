@@ -3,7 +3,7 @@ requirejs.config({
   paths: {
     app: 'app',
     picturefill: 'vendor/picturefill/picturefill',
-    grunticon: 'vendor/grunticon',
+    es5shim: 'vendor/es5-shim/es5-shim',
     jquery: 'vendor/jquery/jquery'
   }
 });

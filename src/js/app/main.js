@@ -1,4 +1,6 @@
-define(['jquery', 'picturefill', 'app/utils', 'app/accordion', 'app/grunticon'], function ($, PICTUREFILL, UTILS, ACCORDION, GRUNTICON) {
+define(
+  ['jquery', 'es5shim', 'picturefill', 'app/utils', 'app/accordion', 'app/responsive-tables', 'app/grunticon'],
+  function ($, ES5SHIM, PICTUREFILL, UTILS, ACCORDION, TABLE, GRUNTICON) {
 
   var $window = $(window);
 
@@ -7,7 +9,7 @@ define(['jquery', 'picturefill', 'app/utils', 'app/accordion', 'app/grunticon'],
     console.log = function(a) { /*alert(a);*/ };
   }
 
-  console.log('Got here');
+  console.log('Javascript loaded');
 
   // Disable buttons
   $('.btn-disabled').click(function(e) {
@@ -16,14 +18,18 @@ define(['jquery', 'picturefill', 'app/utils', 'app/accordion', 'app/grunticon'],
   });
 
   // Add accordion functionality
-  $accordions = $('.c-accordion');
-  if ($accordions.length) {
-    $accordions.each(function(i, accordion) {
-      var a = new ACCORDION({
-        container: accordion
-      });
+  UTILS.eachIfExists('.js-accordion', function(i, accordion) {
+    var a = new ACCORDION({
+      container: accordion
     });
-  }
+  });
+
+  // Add accordion functionality
+  UTILS.eachIfExists('.js-responsive-table', function(i, table) {
+    var t = new TABLE({
+      container: table
+    });
+  });
 
   // Sample use of UTILS.debounce
   var resizeFn = UTILS.debounce(function() {

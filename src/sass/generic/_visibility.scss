@@ -1,0 +1,25 @@
+//
+// VISIBILITY CLASSES
+// State classes to show or hide things at a certain width
+//
+
+.is-visible {
+  display:block;
+}
+.is-hidden {
+  display:none;
+}
+
+@each $name, $size in $width {
+  .is-visible\@#{$name} {
+    display:none;
+  }
+  @include mq(#{$name}, '~') {
+    .is-hidden\@#{$name} {
+      display:none;
+    }
+    .is-visible\@#{$name} {
+      display:block;
+    }
+  }
+}

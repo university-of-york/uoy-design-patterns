@@ -22,7 +22,7 @@
   width:2em;
   height:2em;
   padding:0;
-  border:1px solid $dark;
+  border:1px solid $charcoal;
   border-radius:3px;
   text-align:center;
   background:$light;
@@ -40,7 +40,7 @@
   width:100%;
   padding-bottom:16px;
   margin-top:16px;
-  border-bottom:1px solid $dark;
+  border-bottom:1px solid $charcoal;
   &:before {
     height: 138px; // header height (122px) + 16px padding
     margin-top: -138px;

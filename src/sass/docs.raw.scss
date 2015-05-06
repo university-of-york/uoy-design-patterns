@@ -43,13 +43,13 @@
     }
   }
   .c-icon--light {
-    background-color:$dark;
-    border-color:$dark;
+    background-color:$charcoal;
+    border-color:$charcoal;
     color:$light;
   }
 }
 
-// Show examples of horiz andvert centred images
+// Show examples of horiz and vert centred images
 #figures-page {
   .c-figure--w400 {
     width:400px;
@@ -69,6 +69,53 @@
     }
   }
 }
+
+// Colour swatches
+#colours-page {
+  .c-swatch {
+    @include round;
+    width:100px;
+    height:100px;
+    line-height:100px;
+    margin:0 10px 10px 0;
+    display:inline-block;
+    color:$light;
+    text-align:center;
+    border:1px solid $charcoal;
+  }
+  .c-swatch--charcoal {
+    background-color:$charcoal;
+  }
+  .c-swatch--light {
+    background-color:$light;
+    color:$charcoal;
+  }
+  .c-swatch--blue {
+    background-color:$blue;
+  }
+  .c-swatch--pink {
+    background-color:$pink;
+  }
+  .c-swatch--teal {
+    background-color:$teal;
+  }
+  .c-swatch--gold {
+    background-color:$gold;
+  }
+  .c-swatch--s1 {
+    background-color:$s1;
+    color:$charcoal;
+  }
+  .c-swatch--s2 {
+    background-color:$s2;
+    color:$charcoal;
+  }
+  .c-swatch--s3 {
+    background-color:$s3;
+    color:$charcoal;
+  }
+}
+
 // Show hide appropriate submenu
 .c-subnav__list {
   display:none;

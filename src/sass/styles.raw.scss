@@ -15,7 +15,8 @@
  * Base....................Base element styles.
  *
  * GENERIC
- * Typography...............Some typographic styles (un-namespaced).
+ * Typography..............Some typographic styles (un-namespaced).
+ * Visibility..............Stateful styles for showing/hiding elements at certain sizes
  *
  * OBJECTS
  * Structure...............Wrappers and site-wide structure.
@@ -70,8 +71,9 @@
 @import "core/reset";
 @import "core/base";
 
-//???
+//GENERIC
 @import "generic/typography";
+@import "generic/visibility";
 
 //OBJECTS
 @import "object/structure";
@@ -108,13 +110,6 @@
 
 // THEMES
 @import "themes/404";
-
-// MEDIA QUERIES
-// @import "media/huge";
-// @import "media/large";
-// @import "media/medium";
-// @import "media/small";
-// @import "media/tiny";
 
 // MISCELLANEOUS
 @import "misc/overrides";

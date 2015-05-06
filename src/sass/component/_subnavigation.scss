@@ -23,7 +23,7 @@
 .c-subnav__link {
   @include transition('background-color');
   display:block;
-  border:1px solid $dark;
+  border:1px solid $charcoal;
   padding:0.4em 20px;
   background-color:$light;
   position:relative;
@@ -47,11 +47,11 @@
     margin-top:0;
   }
   .c-subnav__link {
-    background-color:$dark;
+    background-color:$charcoal;
     color:$light;
     font-size:24px;
     &:hover {
-      background-color:lighten($dark,10);
+      background-color:lighten($charcoal,10);
     }
   }
 }

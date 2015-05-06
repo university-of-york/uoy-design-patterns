@@ -7,10 +7,10 @@ body,select,textarea,input {
   font-family: $font-default;
 }
 body {
-  color:$dark;
+  color:$charcoal;
 }
 a {
-  color:lighten($dark, 10);
+  color:lighten($charcoal, 10);
   text-decoration: none;
   &,
   &:hover,
@@ -19,7 +19,7 @@ a {
     outline: 0px;
   }
   &:hover {
-    color:lighten($dark, 20);
+    color:lighten($charcoal, 20);
   }
   img {
     border:0;

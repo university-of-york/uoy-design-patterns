@@ -32,7 +32,7 @@
 // MENU NAVIGATION
 //
 .c-menu-nav {
-  background-color:$dark;
+  background-color:$charcoal;
   overflow:hidden;
   @include mq(small) {
     @include font-size(13px);
@@ -82,7 +82,7 @@
 //   a {
 //     height:78px;
 //     width:78px;
-//     background-color:$dark;
+//     background-color:$charcoal;
 //     color:$light;
 //     border-left:1px solid $light;
 //   }
@@ -94,7 +94,7 @@
 //   bottom:0;
 //   left:100%;
 //   width:100%;
-//   background-color:$dark;
+//   background-color:$charcoal;
 //   color:$light;
 //   transition:0.2s all ease-out;
 //   &.show {

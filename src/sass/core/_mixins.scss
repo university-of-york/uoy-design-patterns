@@ -56,6 +56,11 @@
   }
 }
 
+// Make it round
+@mixin round() {
+  border-radius:50%;
+}
+
 //
 // Demarginalise:
 // Remove top margin from first child and last margin from bottom child

@@ -5,6 +5,7 @@
     "jquery": "~1.11.2",
     "modernizr": "~2.8.3",
     "requirejs": "~2.1.15",
-    "picturefill":"~2.3.0"
+    "picturefill": "~2.3.0",
+    "es5-shim": "~4.1.1"
   }
 }

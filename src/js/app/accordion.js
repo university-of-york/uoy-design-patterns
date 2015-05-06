@@ -40,9 +40,9 @@ define(['jquery'], function ($) {
     toggleContent($item);
 
     // Close others if needed
-    console.log($item.parent().hasClass('c-accordion--no-collapse'));
+    // console.log($item.parent().hasClass('c-accordion--no-collapse'));
     if (!$item.parent().hasClass('c-accordion--no-collapse')) {
-      console.log('Collapse others');
+      // console.log('Collapse others');
       var $otherItems = $item.siblings('.c-accordion__item');
       $otherItems.each(function(i, otherItem) {
         toggleContent(otherItem, true);
