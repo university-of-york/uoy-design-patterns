@@ -1,0 +1,90 @@
+//
+// BLOCKQUOTES
+//
+$c-blockquote__image-size:120px;
+@mixin quote-block() {
+  content:'';
+  display:block;
+  width:0;
+  height:0;
+  border-top:$base-spacing*2 solid $c-blockquote--pull-quote-background-color;
+  position:absolute;
+  top:$c-blockquote__image-size/2;
+}
+.c-blockquote {
+  overflow:hidden;
+  margin:$base-spacing 0;
+}
+.c-blockquote--pull-quote {
+  .c-blockquote__content {
+    @include demarginalise;
+    background-color:$c-blockquote--pull-quote-background-color;
+    padding:$base-spacing;
+    color:$c-blockquote--pull-quote-color;
+  }
+}
+.c-blockquote__image {
+  @include round;
+  width:$c-blockquote__image-size;
+  height:$c-blockquote__image-size;
+}
+.c-blockquote__image--right {
+  float:right;
+  margin-left:$base-spacing*2.5;
+}
+.c-blockquote__image--left {
+  float:left;
+  margin-right:$base-spacing*2.5;
+}
+.c-blockquote__content {
+  position:relative;
+}
+// So that the background doesn't extend behind the image
+// And the citee doesn't float too far to the side
+.c-blockquote__image + .c-blockquote__content,
+.c-blockquote__image ~ .c-blockquote__cite {
+  width:calc(100% - #{$c-blockquote__image-size + ($base-spacing*2.5)})
+}
+.c-blockquote--pull-quote {
+  .c-blockquote__image + .c-blockquote__content {
+    //so that the quote-block fits...
+    min-height:($c-blockquote__image-size/2) + ($base-spacing*2);
+    &:after {
+      @include quote-block;
+    }
+  }
+}
+.c-blockquote__image--right + .c-blockquote__content {
+  margin-bottom:$base-spacing/2;
+  float:left;
+}
+.c-blockquote--pull-quote {
+  .c-blockquote__image--right + .c-blockquote__content:after {
+    left:100%;
+    border-right:$base-spacing*2 solid transparent;
+  }
+}
+.c-blockquote__image--left + .c-blockquote__content {
+  margin-bottom:$base-spacing/2;
+  float:right;
+}
+.c-blockquote--pull-quote {
+  .c-blockquote__image--left + .c-blockquote__content:after {
+    left:-$base-spacing*2;
+    border-left:$base-spacing*2 solid transparent;
+  }
+}
+.c-blockquote__cite {
+  display:block;
+  margin-top:$base-spacing/2;
+}
+.c-blockquote__image--right ~ .c-blockquote__cite {
+  text-align:right;
+  clear:left;
+}
+.c-blockquote__image--left ~ .c-blockquote__cite {
+  text-align:left;
+  clear:right;
+  float:right;
+}
+

@@ -35,7 +35,7 @@ define(['jquery'], function ($) {
   var getColClasses = function(onComplete) {
 
     $.each(columns, function(i, column) {
-      var $column = $(column)
+      var $column = $(column);
       var span = $column.attr('span') || 1;
       for (var j = 0; j < span; j++) {
         columnClasses.push(column.className);

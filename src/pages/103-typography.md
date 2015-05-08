@@ -97,17 +97,6 @@ Add `.lead` to a paragraph to highlight it. Usually only used on the first parag
 <p class="lead">Duis ut anim ut ex amet non in irure occaecat ullamco in tempor nostrud velit in incididunt in amet reprehenderit ea in ad adipisicing officia aliqua ad enim ut officia dolore dolor dolor aliqua dolor in reprehenderit sint consectetur cillum laborum ea adipisicing proident id irure laborum amet proident nostrud et ut amet minim</p>
 ```
 
-## Blockquotes
-
-A way to section of quoted speech. They come in a couple of different flavours (default and pull-quote) and the content can include HTML if needed. You can also declare who the quote is from, using `cite`.
-
-<script>
-component("blockquote", { "content": "Common sense is not so common."})
-+component("blockquote", { "type": "pull-quote", "content": "<p>Time is nature's way of keeping everything from happening at once.</p>"})
-+component("blockquote", { "content": "Common sense is not so common.", "cite": "Voltaire"})
-+component("blockquote", { "type": "pull-quote", "content": "<p>Time is nature's way of keeping everything from happening at once.</p>", "cite": "Woody Allen"})
-</script>
-
 ## Lists
 
 Unordered and ordered lists. Not much to see here, really. They can be nested.

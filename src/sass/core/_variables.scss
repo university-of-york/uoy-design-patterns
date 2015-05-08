@@ -50,15 +50,30 @@ $icons: (
   huge:   32px
 );
 
-// Button types
-$buttons: (
-  primary: $pink,
-  cancel: $blue,
-  danger: #D10B30
-);
-
 //
 // Literal variable names
 //
 
+// Buttons
+$c-btn: (
+  default: (
+    bg:$light,
+    text:$charcoal
+  ),
+  primary: (
+    bg:$pink,
+    text:$light
+  ),
+  cancel: (
+    bg:$blue,
+    text:$light
+  ),
+  danger: (
+    bg:$gold,
+    text:$light
+  )
+);
 
+// Blockquotes
+$c-blockquote--pull-quote-background-color: $blue;
+$c-blockquote--pull-quote-color: $light;

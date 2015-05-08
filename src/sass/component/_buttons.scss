@@ -1,71 +1,55 @@
 //
 // BUTTONS
 //
-$hoverColor:darken($light, 5);
-$activeColor:darken($light, 10);
-$focusColor:darken($light, 15);
 .c-btn {
   @include transition;
   font-family: $font-default;
   text-decoration: none;
   display: inline-block;
   border: 1px solid $charcoal;
-  background-color: $light;
-  background-image: linear-gradient(darken($light, 10), $light);
-  background-repeat: repeat-y;
   padding: 0.3em 0.8em;
   line-height: 1.8em;
   min-height: 2.4em;
-  color: $charcoal;
   cursor: pointer;
   transition: all 0.2s ease-out;
   vertical-align: top;
-  &:hover {
-    color: #222;
-    background-color: $hoverColor;
-    background-image: linear-gradient(darken($hoverColor, 5), $hoverColor);
-  }
-  &:active {
-    color: #222;
-    background-color: $activeColor;
-    background: linear-gradient(darken($activeColor, 5), $activeColor);
-  }
-  &:focus {
-    outline: none;
-    color: #111;
-    background-color: $focusColor;
-    background: linear-gradient(darken($focusColor, 5), $focusColor);
-  }
+  // Just some default colors
+  background-color:map-get(map-get($c-btn, default), bg);
+  color:map-get(map-get($c-btn, default), text);
 }
 // Button types
-@each $name, $color in $buttons {
-  $hoverColor:lighten($color, 5);
-  $activeColor:lighten($color, 10);
-  $focusColor:lighten($color, 15);
-  .c-btn--#{$name} {
-    color: #fff;
-    background-color: $color;
-    background-image: linear-gradient(darken($color, 5), $color);
+@each $name, $color in $c-btn {
+  $name: --#{$name};
+  @if $name == '--default' {
+    $name:'';
+  }
+  $bgColor:map-get($color, bg);
+  $bgHoverColor:lighten($bgColor, 5);
+  $bgActiveColor:lighten($bgColor, 10);
+  $bgFocusColor:lighten($bgColor, 15);
+  $textColor:map-get($color, text);
+  .c-btn#{$name} {
+    color: $textColor;
+    background-color: $bgColor;
     &:hover {
-      color: #fff;
-      background-color: $hoverColor;
-      background-image: linear-gradient(darken($hoverColor, 5), $hoverColor);
+      color: $textColor;
+      background-color: $bgHoverColor;
     }
     &:active {
-      color: #fff;
-      background-color: $activeColor;
-      background: linear-gradient(darken($activeColor, 5), $activeColor);
+      color: $textColor;
+      background-color: $bgActiveColor;
     }
     &:focus {
       outline: none;
-      color: #fff;
-      background-color: $focusColor;
-      background: linear-gradient(darken($focusColor, 5), $focusColor);
+      color: $textColor;
+      background-color: $bgFocusColor;
     }
     // Keep this in here for now, but make sure
     // the icon itself has a .c-icon--light
-    .c-icon {
-      @extend .c-icon--light;
+    @if $name != '' {
+      .c-icon {
+        @extend .c-icon--light;
+      }
     }
   }
 }

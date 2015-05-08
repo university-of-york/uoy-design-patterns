@@ -82,4 +82,4 @@ component("figure", { "type":"w400 c-figure--h400", "image": "http://lorempixel.
   * **image**: the URL of an image **(required)**
   * **caption**: the text to appear in the caption
   * **position**: the position of the caption
-  * **type**: the type of figure
+  * **type**: the type of figure (classname added to `.c-figure--xxx`)
