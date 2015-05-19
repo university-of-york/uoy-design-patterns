@@ -27,6 +27,7 @@
  * Header..................Header styles, containing logo etc.
  * Footer..................Footer styles.
  * Navigation..............Page navigation.
+ * Mobile navigation.......Page navigation, but fopr mobiles.
  * Subnavigation...........Subnavigation list.
  * Modal...................Modal window for lightboxes, popups etc.
  *
@@ -86,6 +87,7 @@
 @import "component/footer";
 
 @import "component/navigation";
+@import "component/navigation.mobile";
 @import "component/subnavigation";
 @import "component/utility-nav";
 @import "component/structural-nav";

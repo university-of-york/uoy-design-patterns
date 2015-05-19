@@ -15,7 +15,7 @@
   color:$charcoal;
   background:#fff;
   // max-width:$container-width;
-  margin:0 auto $base-spacing;
+  margin:0 auto;
 }
 .c-main-header__title {
   @include font-size(24px, 41px);
@@ -23,15 +23,15 @@
   float:left;
   margin:17px 0;
   padding-left:20px;
-  @include mq(small) {
-    // Change size of logo on small screens
-    @include font-size(16px, 20px);
+  @include mq(tiny) {
+    // Change size of logo on tiny screens
+    @include font-size(18px, 20px);
   }
 }
 .c-main-header__logo {
   vertical-align:middle;
-  @include mq(small) {
-    // Change size of logo on small screens
+  @include mq(tiny) {
+    // Change size of logo on tiny screens
     width:132px;
     height:20px;
   }

@@ -5,24 +5,25 @@
 //
 // MAIN MENU
 //
-.c-menu {
-  min-height:2.75em;
-  width:100%;
-}
+// .c-menu {
+//   min-height:2.75em;
+//   width:100%;
+// }
 
 //
 // MENU TITLE
 //
-.c-menu-title {
+.c-page-title {
   background-color:$blue;
+  min-height:2.75em;
 }
-.c-menu-title__header {
+.c-page-title__header {
   @include font-size(32px, 1.625);
   max-width:$container-width;
   margin:0 auto;
   padding:0 0 0 $base-spacing;
 }
-.c-menu-title__link {
+.c-page-title__link {
   color:$light;
   padding:0;
   line-height:1.625;
@@ -31,17 +32,20 @@
 //
 // MENU NAVIGATION
 //
-.c-menu-nav {
+.c-nav {
+  min-height:2.75em;
   background-color:$charcoal;
   overflow:hidden;
+}
+.c-nav--main {
   @include mq(small) {
     @include font-size(13px);
   }
-  @include mq(tiny) {
+  @include mq(small, '-') {
     display:none;
   }
 }
-.c-menu-nav__list {
+.c-nav__list {
   position:relative;
   max-width:$container-width;
   margin:0 auto;
@@ -49,17 +53,17 @@
   min-height:2.75em;
   list-style:none;
 }
-.c-menu-nav__item {
+.c-nav__item {
   @include transition('background-color');
   min-height:2.75em;
   float:left;
   border-right:1px solid #949394;
   border-left:1px solid #949394;
-  + .c-menu-nav__item {
+  + .c-nav__item {
     border-left:0;
   }
 }
-.c-menu-nav__link {
+.c-nav__link {
   @include transition('background-color, color');
   background-color:transparent;
   display:block;
@@ -73,57 +77,3 @@
     background-color:darken($blue, 20);
   }
 }
-
-// #mobile-menu-buttons {
-//   position:fixed;
-//   z-index:10;
-//   top:0;
-//   right:0;
-//   a {
-//     height:78px;
-//     width:78px;
-//     background-color:$charcoal;
-//     color:$light;
-//     border-left:1px solid $light;
-//   }
-// }
-// #mobile-menu {
-//   position:fixed;
-//   z-index:10;
-//   top:78px;
-//   bottom:0;
-//   left:100%;
-//   width:100%;
-//   background-color:$charcoal;
-//   color:$light;
-//   transition:0.2s all ease-out;
-//   &.show {
-//     left:0;
-//   }
-//   ul {
-//     list-style:none;
-//     margin:0;
-//     padding:0;
-//     height:100%;
-//     li {
-//       width:33.333%;
-//       height:33.333%;
-//       &:nth-of-type(3n+3) a {
-//         border-right:0;
-//       }
-//       &:nth-last-child(-n+3) a {
-//         border-bottom:0;
-//       }
-//     }
-//     a {
-//       display:block;
-//       border-right:1px solid $light;
-//       border-bottom:1px solid $light;
-//       width:100%;
-//       height:100%;
-//     }
-//     ul {
-//       display:none;
-//     }
-//   }
-// }

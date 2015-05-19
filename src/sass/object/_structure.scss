@@ -9,14 +9,15 @@
 }
 .o-wrapper--main,
 .o-wrapper--wide {
-  padding:196px $base-spacing 0;
+  padding:$base-spacing;
+  // padding:196px $base-spacing 0;
   // Smaller logo and font
   @include mq(small) {
-    padding-top: 175px;
+    // padding-top: 175px;
   }
   // Mobile nav
   @include mq(tiny) {
-    padding-top: 127px;
+    // padding-top: 127px;
   }
 }
 .o-wrapper--wide {

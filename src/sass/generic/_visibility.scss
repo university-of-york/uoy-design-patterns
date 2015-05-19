@@ -18,7 +18,8 @@
     .is-hidden\@#{$name} {
       display:none;
     }
-    .is-visible\@#{$name} {
+    // Double class name for better specificity
+    .is-visible\@#{$name}.is-visible\@#{$name} {
       display:block;
     }
   }

@@ -1,11 +1,29 @@
-<!--
-
-<div id="mobile-menu-buttons" class="mobile-menu mobile-only">
-  <a href="#mobile-search" class="mobile-search-button mobile-nav-button">Search</a>
-  <a href="#mobile-menu" class="mobile-menu-button mobile-nav-button">Menu</a>
+<div class="c-page-title">
+  <h1 class="c-page-title__header"><a class="c-page-title__link" href="#">{{title}}</a></h1>
 </div>
-<nav id="mobile-menu" class="mobile-menu mobile-only" role="navigation">
+
+<nav class="c-nav c-nav--main" role="navigation">
   {{>nav}}
 </nav>
 
--->
+<nav class="c-nav c-nav--mobile" role="navigation">
+  {{>nav}}
+</nav>
+
+<a href="#Mobile-Search" class="c-mobile-search-button"><i class="c-icon c-icon--magnifying-glass c-icon--large"></i></a>
+
+<form action="#" method="get" class="c-form c-form--inline c-form--mobile-search" id="Mobile-Search">
+  <fieldset>
+    <legend class="c-form__legend">Search york.ac.uk</legend>
+    <div class="o-grid">
+      <div class="o-grid__row">
+        <div class="o-grid__box o-grid__box--full">
+          <div class="c-form__element">
+            <input class="c-form__input c-form__input--text" type="text" id="Mobile-Search-Text" name="Mobile-Search-Text">
+            <div class="c-form__label"><button class="c-btn c-btn--medium">Search <i class="c-icon c-icon--after c-icon--magnifying-glass c-icon--medium"></i></button></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</form>
