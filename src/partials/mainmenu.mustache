@@ -2,17 +2,31 @@
   <h1 class="c-page-title__header"><a class="c-page-title__link" href="#">{{title}}</a></h1>
 </div>
 
-<nav class="c-nav c-nav--main" role="navigation">
+<div class="c-breadcrumb">
+  <a class="c-breadcrumb__link">Study</a>
+  <a class="c-breadcrumb__link">Undergraduate</a>
+  <a class="c-breadcrumb__link">Applying</a>
+</div>
+
+<nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation">
+  <h4 class="c-nav__header">In this section</h4>
   {{>nav}}
+  <h4 class="c-nav__header">Other sections</h4>
+  <ul class="c-nav__list c-nav__list--structural">
+    <li class="c-nav__item"><a class="c-nav__link" href="#">Courses</a></li>
+    <li class="c-nav__item"><a class="c-nav__link" href="#">Accommodation</a></li>
+    <li class="c-nav__item"><a class="c-nav__link" href="#">Open days</a></li>
+    <li class="c-nav__item"><a class="c-nav__link" href="#">Fees and funding</a></li>
+    <li class="c-nav__item"><a class="c-nav__link" href="#">Applying</a></li>
+    <li class="c-nav__item"><a class="c-nav__link" href="#">Why York?</a></li>
+    <li class="c-nav__item"><a class="c-nav__link" href="#">Prospectus</a></li>
+    <li class="c-nav__item"><a class="c-nav__link" href="#">Careers and skills</a></li>
+  </ul>
 </nav>
 
-<nav class="c-nav c-nav--mobile" role="navigation">
-  {{>nav}}
-</nav>
+<a href="#Mobile-Search" class="c-mobile-search-button js-toggle-button"><i class="c-icon c-icon--magnifying-glass c-icon--large"></i></a>
 
-<a href="#Mobile-Search" class="c-mobile-search-button"><i class="c-icon c-icon--magnifying-glass c-icon--large"></i></a>
-
-<form action="#" method="get" class="c-form c-form--inline c-form--mobile-search" id="Mobile-Search">
+<form action="#" method="get" class="c-form c-form--joined c-form--mobile-search" id="Mobile-Search">
   <fieldset>
     <legend class="c-form__legend">Search york.ac.uk</legend>
     <div class="o-grid">
@@ -20,7 +34,7 @@
         <div class="o-grid__box o-grid__box--full">
           <div class="c-form__element">
             <input class="c-form__input c-form__input--text" type="text" id="Mobile-Search-Text" name="Mobile-Search-Text">
-            <div class="c-form__label"><button class="c-btn c-btn--medium">Search <i class="c-icon c-icon--after c-icon--magnifying-glass c-icon--medium"></i></button></label>
+            <a class="c-btn c-btn--medium js-submit-form" href="#" role="button">Search<i class="c-icon c-icon--magnifying-glass c-icon--after"></i></a>
           </div>
         </div>
       </div>

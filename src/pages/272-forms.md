@@ -198,6 +198,20 @@ component("form", { "type":"inline", "method":"get", "legend": "Fill in this for
 ]});
 </script>
 
+A _joined_ form is a single-field form with the submit button joined to the end. It must be a text-style input that is joined to the button (or it won't fit). No label is required.
+
+<script>
+component("form", { "type":"joined", "method":"get", "legend": "A joined form and button", "atoms": [
+
+  { "grid-row": { "atoms": { "grid-box": { "size": "full", "atoms":
+    { "form-element": { "name": "ja", "atoms": [
+      { "input": { "type":"text", "placeholder": "Enter your search term here" } },
+      { "button-link": { "text": "Search", "size": "medium", "icon-after": "magnifying-glass" } }
+      ] } }
+  } } } }
+
+]});
+</script>
 
 ### Options
 
@@ -234,7 +248,7 @@ component("form", { "type":"inline", "method":"get", "legend": "Fill in this for
 #### Organisms
 
 * **form**
-  * **type**: supported types are _stacked_ (default) or _inline_
+  * **type**: supported types are _stacked_ (default), _joined_ or _inline_
   * **action**: URL to submit the form to. Can be absolute or relative. Defaults to "#"
   * **method**: either _post_ (default) or _get_
   * **id**: an _id_ to identify the form

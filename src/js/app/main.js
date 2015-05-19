@@ -1,6 +1,6 @@
 define(
-  ['jquery', 'es5shim', 'picturefill', 'app/utils', 'app/accordion', 'app/responsive-tables', 'app/grunticon'],
-  function ($, ES5SHIM, PICTUREFILL, UTILS, ACCORDION, TABLE, GRUNTICON) {
+  ['jquery', 'es5shim', 'picturefill', 'app/utils', 'app/accordion', 'app/responsive-tables', 'app/toggle', 'app/grunticon'],
+  function ($, ES5SHIM, PICTUREFILL, UTILS, ACCORDION, TABLE, TOGGLE, GRUNTICON) {
 
   var $window = $(window);
 
@@ -28,6 +28,27 @@ define(
   UTILS.eachIfExists('.js-responsive-table', function(i, table) {
     var t = new TABLE({
       container: table
+    });
+  });
+
+  // Add menu toggle functionality
+  UTILS.eachIfExists('.js-toggle-button', function(i, button) {
+    var $b = $(button);
+    var $c = $($b.attr('href'));
+    var t = new TOGGLE({
+      container: $c,
+      button: $b,
+      class:'is-open'
+    });
+  });
+
+  // Use anchors to submit forms
+  UTILS.eachIfExists('.js-submit-form', function(i, a) {
+    var $a = $(a);
+    $a.on('click', function(e) {
+      e.preventDefault();
+      var thisForm = $a.parents('form');
+      thisForm.submit();
     });
   });
 

@@ -14,13 +14,13 @@ id: moduless-page
 
 Firstly, define which other modules this module needs
 
-```js_example
+```javascript
 define(['jquery', 'app/color'], function ($, COLOR) {
 ```
 
 Next, declare any of the "private" variables. These will only be accessible inside the module. It's useful to keep these at the top in case you want to change them. These should be non-user-defined variables: remember, this module may be used in several places. Anything you want to be changeable you must pass through in the options object. You should also set default values for these user-defined values in case they aren't passed through.
 
-```js_example
+```javascript
 var default = {
   width: 250,
   easing: 'ease-in',
@@ -34,7 +34,7 @@ var topSpeed = 1000,
 
 The same is true for "private" functions: they will only exist within the module
 
-```js_example
+```javascript
 var colorSwap = function(a, b) {
   // Remember to return something
 }
@@ -42,7 +42,7 @@ var colorSwap = function(a, b) {
 
 Now you can define the module. Use UPPERCASE for complex objects like this. This is how you will instantiate the module in another file (`var s = new SAMPLE(options);`).
 
-```js_example
+```javascript
 var SAMPLE = function(options) {
   // Get the options or their defaults
   this.width = options.width || DEFAULT.width;
@@ -55,13 +55,13 @@ var SAMPLE = function(options) {
 
 Then you can define any "public" variables that need to be accessed outside of the module&hellip;
 
-```js_example
+```javascript
 SAMPLE.color = colorSwap('#fff', '#000');
 ```
 
 &hellip; and "public" functions&hellip;
 
-```js_example
+```javascript
 SAMPLE.setColor = function(val) {
   // Always return true or false from setters
 }
@@ -73,7 +73,7 @@ SAMPLE.getColor = function() {
 
 Lastly, return the module so that it's available to other modules that need to `define` it.
 
-```js_example
+```javascript
 return SAMPLE;
 ```
 

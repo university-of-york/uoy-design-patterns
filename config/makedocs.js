@@ -30,7 +30,7 @@ module.exports = function (grunt) {
             categories[page.category]['children'].push(page);
           }
           if (i === pages.length - 1) {
-            var output = '<ul class="c-nav__list">\n',
+            var output = '<ul class="c-nav__list c-nav__list--associative">\n',
                 suboutput = '';
             for (var c in categories) {
               var cat = categories[c];
@@ -53,6 +53,9 @@ module.exports = function (grunt) {
               }
               output+= '  </li>\n';
             }
+            output+= '  <li class="c-nav__item c-nav__item--more">\n';
+            output+= '    <a class="c-nav__link js-toggle-button" href="#Main-Navigation">More&hellip;</a>\n';
+            output+= '  </li>\n';
             output+= '</ul>\n';
             grunt.file.write(navPage, output);
             grunt.log.ok("Wrote file to " + navPage);

@@ -3,55 +3,34 @@
 //
 
 //
-// MAIN MENU
-//
-// .c-menu {
-//   min-height:2.75em;
-//   width:100%;
-// }
-
-//
-// MENU TITLE
-//
-.c-page-title {
-  background-color:$blue;
-  min-height:2.75em;
-}
-.c-page-title__header {
-  @include font-size(32px, 1.625);
-  max-width:$container-width;
-  margin:0 auto;
-  padding:0 0 0 $base-spacing;
-}
-.c-page-title__link {
-  color:$light;
-  padding:0;
-  line-height:1.625;
-}
-
-//
 // MENU NAVIGATION
 //
 .c-nav {
-  min-height:2.75em;
-  background-color:$charcoal;
+  height:2.75em;
+  background-color:$c-nav-background-color;
   overflow:hidden;
+  position:relative;
+  &.is-open {
+    height:auto;
+  }
 }
 .c-nav--main {
-  @include mq(small) {
-    @include font-size(13px);
-  }
   @include mq(small, '-') {
-    display:none;
+    @include font-size(13px);
   }
 }
 .c-nav__list {
-  position:relative;
   max-width:$container-width;
   margin:0 auto;
   padding:0;
   min-height:2.75em;
   list-style:none;
+  overflow:hidden;
+  .c-nav.is-open & {
+    list-style:disc;
+    padding:0 0 0 2em;
+    margin:1em 0;
+  }
 }
 .c-nav__item {
   @include transition('background-color');
@@ -62,18 +41,49 @@
   + .c-nav__item {
     border-left:0;
   }
+  .c-nav.is-open & {
+    border:0;
+    float:none;
+    min-height:0;
+  }
+}
+.c-nav__item--more {
+  position:absolute;
+  right:0;
+  top:0;
+  background-color:$c-nav-item__more-background-color;
+  .c-nav.is-open & {
+    list-style:none;
+    // override specificity of open nav
+    .c-nav__link {
+      padding:0.75em 20px;
+    }
+  }
 }
 .c-nav__link {
   @include transition('background-color, color');
-  background-color:transparent;
+  color:$c-nav__link-color;
+  background-color:$c-nav__link-background-color;
   display:block;
   padding:0.75em 20px;
   line-height:1.25em;
   text-decoration:none;
-  vertical-align:top;
-  color:$light;
   &:hover {
-    color:darken($light, 5);
-    background-color:darken($blue, 20);
+    color:$c-nav__link-hover-color;
+    background-color:$c-nav__link-hover-background-color;
+  }
+  .c-nav.is-open & {
+    padding:0;
+  }
+}
+.c-nav__header {
+  display:none;
+  max-width:$container-width;
+  margin-left:auto;
+  margin-right:auto;
+  color:$c-nav__header-color;
+  padding:0 $base-spacing;
+  .c-nav.is-open & {
+    display:block;
   }
 }
