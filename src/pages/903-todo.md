@@ -1,6 +1,6 @@
 ---
 
-title: To Do
+title: To do
 name: to-do
 category: about
 layout: q+tq

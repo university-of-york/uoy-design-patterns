@@ -35,6 +35,7 @@ define(
   UTILS.eachIfExists('.js-toggle-button', function(i, button) {
     var $b = $(button);
     var $c = $($b.attr('href'));
+    // console.log($b.attr('href'));
     var t = new TOGGLE({
       container: $c,
       button: $b,
