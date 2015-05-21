@@ -41,6 +41,11 @@
   + .c-nav__item {
     border-left:0;
   }
+  &.is-current {
+    .c-nav__link {
+      background-color:$c-nav__link-is-current-background-color;
+    }
+  }
   .c-nav.is-open & {
     border:0;
     float:none;
@@ -51,7 +56,7 @@
   position:absolute;
   right:0;
   top:0;
-  background-color:$c-nav-item__more-background-color;
+  background-color:$c-nav__item--more-background-color;
   .c-nav.is-open & {
     list-style:none;
     // override specificity of open nav
