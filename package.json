@@ -5,7 +5,7 @@
   "main": "gruntfile.js",
   "repository": {
     "type": "git",
-    "url": false
+    "url": "https://github.com/university-of-york/uoy-design-patterns"
   },
   "author": {
     "name": "University of York Digital Team",
@@ -15,10 +15,9 @@
     {
       "name": "Chris Marsh",
       "email": "chris.marsh@york.ac.uk",
-      "url": "http://chrismar.sh"
+      "url": "http://www-users.york.ac.uk/~cm1438/"
     }
   ],
-  "license": false,
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^2.2.0",
@@ -38,6 +37,7 @@
     "grunt-modernizr": "^0.6.0",
     "grunt-newer": "^1.1.0",
     "grunt-svgmin": "^2.0.1",
-    "load-grunt-config": "^0.16.0"
+    "load-grunt-config": "^0.16.0",
+    "time-grunt": "^1.2.1"
   }
 }

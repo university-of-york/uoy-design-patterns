@@ -29,12 +29,11 @@
   .c-nav.is-open & {
     list-style:disc;
     padding:0 0 0 2em;
-    margin:1em 0;
+    margin-top:1em;
+    margin-bottom:1em;
   }
 }
-.c-nav__item,
-// We can't add classes to 'a' tags in Site Manager
-.c-nav__list a {
+.c-nav__item {
   @include transition('background-color');
   min-height:2.75em;
   float:left;
@@ -67,7 +66,9 @@
     }
   }
 }
-.c-nav__link {
+.c-nav__link,
+// We can't add classes to 'a' tags in Site Manager
+.c-nav__item a {
   @include transition('background-color, color');
   color:$c-nav__link-color;
   background-color:$c-nav__link-background-color;
