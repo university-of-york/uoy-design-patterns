@@ -61,15 +61,15 @@ $c-btn: (
     text:$charcoal
   ),
   primary: (
-    bg:$pink,
-    text:$light
-  ),
-  cancel: (
     bg:$blue,
     text:$light
   ),
-  danger: (
+  cancel: (
     bg:$gold,
+    text:$light
+  ),
+  danger: (
+    bg:$pink,
     text:$light
   )
 );

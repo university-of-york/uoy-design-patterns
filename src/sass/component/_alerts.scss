@@ -4,13 +4,29 @@
 .c-alert {
   border:1px solid $charcoal;
   background-color:darken($light, 5);
-  border-radius:3px;
+  border-radius:4px;
   padding:0.8em 20px;
-  margin-bottom:10px;
+  margin-bottom:$base-spacing;
   position:relative;
 }
 .c-alert--dismissable {
   padding-right:40px;
+}
+.c-alert--success {
+  border-color:$blue;
+  background-color:lighten($blue, 30);
+}
+.c-alert--info {
+  border-color:darken($light,30);
+  background-color:darken($light, 5);
+}
+.c-alert--warning {
+  border-color:$gold;
+  background-color:lighten($gold, 30);
+}
+.c-alert--danger {
+  border-color:$pink;
+  background-color:lighten($pink, 30);
 }
 .c-alert__close {
   @include font-size(20px, 20px);

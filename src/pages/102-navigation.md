@@ -8,8 +8,9 @@ id: navigation-page
 
 ---
 
-<p class="lead">In general, navigation is kept up at the top of the page, so we can use the whole width of the page for content. The sub-navigation (levels 4+) acts as a breadcrumb when needed.</p>
+<p class="lead">In general, navigation is kept up at the top of the page, so we can use the whole width of the page for content.</p>
 
+<!--
 ## Structural navigation
 
 The top-level **structural navigation** (Study, Research, Business) is kept at the top of every page as a way to navigate back to any section of the site.
@@ -23,10 +24,11 @@ The top-level **structural navigation** (Study, Research, Business) is kept at t
     <li class="c-structural-nav__item"><a class="c-structural-nav__link" href="#">International</a></li>
   </ul>
 </nav>
+-->
 
 ## Utility navigation
 
-**Utility navigation** is links that aren't directly related to page content, but are important for general site navigation. This includes _Jobs_, _Staff_, _Current students_ and the _Search_ functionality. These are kept in a sitewide top banner.
+**Utility navigation** is links that aren't directly related to page content, but are important for general site navigation. This includes _Jobs_, _Staff_, _Current students_ and the _Search_ functionality. These are kept in a top banner on the homepage but hidden elsewhere. THey also appear in the footer.
 
 <nav class="c-utility-nav">
   <ul class="c-utility-nav__list">
@@ -57,75 +59,65 @@ The homepage navigation won't match the rest of the site. The structural navigat
 
 ### Menu title
 
-<div class="c-menu-title">
-  <h1 class="c-menu-title__header"><a class="c-menu-title__link" href="#">Study</a></h1>
+<div class="c-page-title">
+  <h1 class="c-page-title__header"><a class="c-page-title__link" href="#">Study</a></h1>
 </div>
 
 ### Menu navigation
 
-<nav class="c-menu-nav">
-<ul class="c-menu-nav__list">
-  <li class="c-menu-nav__item"><a class="c-menu-nav__link" href="#">Study</a></li>
-  <li class="c-menu-nav__item"><a class="c-menu-nav__link" href="#">Research</a></li>
-  <li class="c-menu-nav__item"><a class="c-menu-nav__link" href="#">Business</a></li>
-  <li class="c-menu-nav__item"><a class="c-menu-nav__link" href="#">Departments</a></li>
-  <li class="c-menu-nav__item"><a class="c-menu-nav__link" href="#">International</a></li>
-  <li class="c-menu-nav__item"><a class="c-menu-nav__link" href="#">News</a></li>
-  <li class="c-menu-nav__item"><a class="c-menu-nav__link" href="#">Events</a></li>
-  <li class="c-menu-nav__item"><a class="c-menu-nav__link" href="#">Contact</a></li>
-</ul>
+Unopened, the main navigation shows the pages currently in this section (children if available, siblings if not). Open it up and you can see the "In this section" and "Other sections".
+
+<nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation-2">
+  <h4 class="c-nav__header">In this section</h4>
+  <ul class="c-nav__list c-nav__list--associative">
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="choosing-a-course.html">Choosing a course</a>
+    </li>
+    <li class="c-nav__item is-current">
+      <a class="c-nav__link" href="combined-courses.html">Combined courses</a>
+    </li>
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="teaching-and-learning.html">Teaching and learning</a>
+    </li>
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="international-foundation.html">International foundation</a>
+    </li>
+    <li class="c-nav__item c-nav__item--more">
+      <a class="c-nav__link js-toggle-button" href="#Main-Navigation-2">More&hellip;</a>
+    </li>
+  </ul>
+  <h4 class="c-nav__header">Other sections</h4>
+  <ul class="c-nav__list c-nav__list--structural">
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="courses.html">Courses</a>
+    </li>
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="accommodation.html">Accommodation</a>
+    </li>
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="open-days.html">Open days</a>
+    </li>
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="fees-and-funding.html">Fees and funding</a>
+    </li>
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="applying.html">Applying</a>
+    </li>
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="why-york.html">Why York?</a>
+    </li>
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="prospectus.html">Prospectus</a>
+    </li>
+  </ul>
 </nav>
-
-## Associative navigation
-
-**Associative navigation** are links to pages that are (usually) siblings of the current page - directly relevant links to pages in the same section.
-
-We are using a `subnav` element in the left hand column to display the associative nav. Pretty standard really. There's no other way to keep track of the level of page you are in. The `subnav` contains as its first item a link to the parent page.
-
-The current item is given a class of `.is-current`. You can add a `.c-icon--before` or `.c-icon--after` to the sub nav elements.
-
-<!-- held in a grid to make it a bit easier to see -->
-<div class="o-grid">
-
-<div class="o-grid__row">
-
-  <div class="o-grid__box o-grid__box--third">
-  </div>
-
-  <div class="o-grid__box o-grid__box--third">
-    <nav class="c-subnav">
-      <ul class="c-subnav__list c-subnav--study">
-        <li class="c-subnav__item c-subnav__title"><a class="c-subnav__link" href="#"><i class="c-icon c-icon--light c-icon--large c-icon--book c-icon--before"></i> Study <i class="c-icon c-icon--light c-icon--medium c-icon--chevron-bottom c-icon--after"></i></a></li>
-        <li class="c-subnav__item"><a class="c-subnav__link" href="#">Undergraduate study <i class="c-icon c-icon--medium c-icon--chevron-right c-icon--after"></i></a></li>
-        <li class="c-subnav__item is-current"><a class="c-subnav__link" href="#">Postgraduate study <i class="c-icon c-icon--light c-icon--medium c-icon--chevron-right c-icon--after"></i></a></li>
-        <li class="c-subnav__item"><a class="c-subnav__link" href="#">International students <i class="c-icon c-icon--medium c-icon--chevron-right c-icon--after"></i></a></li>
-        <li class="c-subnav__item"><a class="c-subnav__link" href="#">Distance learning <i class="c-icon c-icon--medium c-icon--chevron-right c-icon--after"></i></a></li>
-        <li class="c-subnav__item"><a class="c-subnav__link" href="#">Student life <i class="c-icon c-icon--medium c-icon--chevron-right c-icon--after"></i></a></li>
-        <li class="c-subnav__item"><a class="c-subnav__link" href="#">Study, work and volunteer abroad <i class="c-icon c-icon--medium c-icon--chevron-right c-icon--after"></i></a></li>
-        <li class="c-subnav__item"><a class="c-subnav__link" href="#">Careers and skills <i class="c-icon c-icon--medium c-icon--chevron-right c-icon--after"></i></a></li>
-        <li class="c-subnav__item"><a class="c-subnav__link" href="#">Visit us <i class="c-icon c-icon--medium c-icon--chevron-right c-icon--after"></i></a></li>
-        <li class="c-subnav__item"><a class="c-subnav__link" href="#">A to Z <i class="c-icon c-icon--medium c-icon--chevron-right c-icon--after"></i></a></li>
-        <li class="c-subnav__item"><a class="c-subnav__link" href="#">Contacts <i class="c-icon c-icon--medium c-icon--chevron-right c-icon--after"></i></a></li>
-        <li class="c-subnav__item"><a class="c-subnav__link" href="#">Get a prospectus <i class="c-icon c-icon--medium c-icon--chevron-right c-icon--after"></i></a></li>
-      </ul>
-    </nav>
-  </div>
-
-  <div class="o-grid__box o-grid__box--third">
-  </div>
-
-</div>
-
-</div>
 
 ## Breadcrumb navigation
 
 <nav class="c-breadcrumb">
-  <ul class="c-breadcrumb__list">
-    <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="#">Home</a></li>
-    <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="#">Study</a></li>
-    <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="#">Postgraduate study</a></li>
-  </ul>
+  <a class="c-breadcrumb__link" href="#">Home</a>
+  <a class="c-breadcrumb__link" href="#">Study</a>
+  <a class="c-breadcrumb__link" href="#">Postgraduate study</a>
 </nav>
 
 ## Putting it all together
@@ -162,62 +154,59 @@ The current item is given a class of `.is-current`. You can add a `.c-icon--befo
       </ul>
     </nav>
   </div>
-  <div class="c-menu mobile-hidden" role="navigation">
-    <div class="c-menu-title">
-      <h1 class="c-menu-title__header"><a class="c-menu-title__link" href="#">Study</a></h1>
-    </div>
-    <nav class="c-menu-nav">
-      <ul class="c-menu-nav__list">
-        <li class="c-menu-nav__item">
-          <a class="c-menu-nav__link" href="#">Undergraduate</a>
-        </li>
-        <li class="c-menu-nav__item">
-          <a class="c-menu-nav__link" href="#">Postgraduate</a>
-        </li>
-        <li class="c-menu-nav__item">
-          <a class="c-menu-nav__link" href="#">International students</a>
-        </li>
-        <li class="c-menu-nav__item">
-          <a class="c-menu-nav__link" href="#">Distance learning</a>
-        </li>
-        <li class="c-menu-nav__item">
-          <a class="c-menu-nav__link" href="#">Student life</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
 </header>
 
-<div class="o-wrapper o-grid">
-
-<div class="o-grid__row">
-
-  <div class="o-grid__box o-grid__box--quarter">
-    <nav class="c-subnav">
-      <ul class="c-subnav__list c-subnav--study">
-        <li class="c-subnav__item c-subnav__title"><a class="c-subnav__link" href="#"><i class="c-icon c-icon--light c-icon--large c-icon--book c-icon--before"></i> Study <i class="c-icon c-icon--light c-icon--medium c-icon--chevron-bottom c-icon--after"></i></a></li>
-        <li class="c-subnav__item"><a class="c-subnav__link" href="#">Undergraduate study <i class="c-icon c-icon--medium c-icon--chevron-right c-icon--after"></i></a></li>
-        <li class="c-subnav__item is-current"><a class="c-subnav__link" href="#">Postgraduate study <i class="c-icon c-icon--light c-icon--medium c-icon--chevron-right c-icon--after"></i></a></li>
-        <li class="c-subnav__item"><a class="c-subnav__link" href="#">International students <i class="c-icon c-icon--medium c-icon--chevron-right c-icon--after"></i></a></li>
-        <li class="c-subnav__item"><a class="c-subnav__link" href="#">Distance learning <i class="c-icon c-icon--medium c-icon--chevron-right c-icon--after"></i></a></li>
-        <li class="c-subnav__item"><a class="c-subnav__link" href="#">Student life <i class="c-icon c-icon--medium c-icon--chevron-right c-icon--after"></i></a></li>
-        <li class="c-subnav__item"><a class="c-subnav__link" href="#">Study, work and volunteer abroad <i class="c-icon c-icon--medium c-icon--chevron-right c-icon--after"></i></a></li>
-        <li class="c-subnav__item"><a class="c-subnav__link" href="#">Careers and skills <i class="c-icon c-icon--medium c-icon--chevron-right c-icon--after"></i></a></li>
-        <li class="c-subnav__item"><a class="c-subnav__link" href="#">Visit us <i class="c-icon c-icon--medium c-icon--chevron-right c-icon--after"></i></a></li>
-        <li class="c-subnav__item"><a class="c-subnav__link" href="#">A to Z <i class="c-icon c-icon--medium c-icon--chevron-right c-icon--after"></i></a></li>
-        <li class="c-subnav__item"><a class="c-subnav__link" href="#">Contacts <i class="c-icon c-icon--medium c-icon--chevron-right c-icon--after"></i></a></li>
-        <li class="c-subnav__item"><a class="c-subnav__link" href="#">Get a prospectus <i class="c-icon c-icon--medium c-icon--chevron-right c-icon--after"></i></a></li>
-      </ul>
-    </nav>
-  </div>
-
-  <div class="o-grid__box o-grid__box--three-quarters">
-
-    <p>Your content goes here.</p>
-
-  </div>
-
+<div class="c-page-title">
+  <h1 class="c-page-title__header"><a class="c-page-title__link" href="#">Study</a></h1>
 </div>
 
+<div class="c-breadcrumb">
+  <a class="c-breadcrumb__link">Study</a>
+  <a class="c-breadcrumb__link">Undergraduate</a>
+  <a class="c-breadcrumb__link">Applying</a>
 </div>
 
+<nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation-3">
+  <h4 class="c-nav__header">In this section</h4>
+  <ul class="c-nav__list c-nav__list--associative">
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="choosing-a-course.html">Choosing a course</a>
+    </li>
+    <li class="c-nav__item is-current">
+      <a class="c-nav__link" href="combined-courses.html">Combined courses</a>
+    </li>
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="teaching-and-learning.html">Teaching and learning</a>
+    </li>
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="international-foundation.html">International foundation</a>
+    </li>
+    <li class="c-nav__item c-nav__item--more">
+      <a class="c-nav__link js-toggle-button" href="#Main-Navigation-3">More&hellip;</a>
+    </li>
+  </ul>
+  <h4 class="c-nav__header">Other sections</h4>
+  <ul class="c-nav__list c-nav__list--structural">
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="courses.html">Courses</a>
+    </li>
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="accommodation.html">Accommodation</a>
+    </li>
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="open-days.html">Open days</a>
+    </li>
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="fees-and-funding.html">Fees and funding</a>
+    </li>
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="applying.html">Applying</a>
+    </li>
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="why-york.html">Why York?</a>
+    </li>
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="prospectus.html">Prospectus</a>
+    </li>
+  </ul>
+</nav>

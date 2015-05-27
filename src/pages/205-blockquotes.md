@@ -11,7 +11,7 @@ id: blockquotes-page
 
 ## Blockquotes
 
-A way to section of quoted speech. They come in a couple of different flavours (default and pull-quote) and the content can include HTML if needed. You can also declare who the quote is from, using `cite`, and add an image to the quote too, floated righyty by default but to the left if you fancy it.
+A way to section of quoted speech. They come in a couple of different flavours (default and pull-quote) and the content can include HTML if needed. You can also declare who the quote is from, using `cite`, and add an image to the quote too, floated right by default but to the left if you fancy it.
 
 ### Default blockquotes
 

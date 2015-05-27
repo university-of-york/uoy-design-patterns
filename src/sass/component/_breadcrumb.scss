@@ -6,7 +6,9 @@
   max-width:$container-width;
   margin:0 auto;
 }
-.c-breadcrumb__link {
+.c-breadcrumb__link,
+// We can't add classes to 'a' tags in Site Manager
+.c-breadcrumb a {
   &:after {
     content:'>';
     padding:0 $base-spacing/2;

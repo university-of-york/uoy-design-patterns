@@ -32,7 +32,9 @@
     margin:1em 0;
   }
 }
-.c-nav__item {
+.c-nav__item,
+// We can't add classes to 'a' tags in Site Manager
+.c-nav__list a {
   @include transition('background-color');
   min-height:2.75em;
   float:left;
