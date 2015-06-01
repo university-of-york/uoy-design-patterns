@@ -4,53 +4,105 @@
 .c-figure {
   position:relative;
   margin:0;
+  display:block;
   overflow:hidden;
-  .c-figure__image {
-    display:block;
-  }
-
-  // Use when there is just a set height
-  // @extend %set-height-figure;
-
-  // Use when there's a set height and width
-  // @extend %centered-image;
-
 }
-
+.c-figure__image {
+  display:block;
+  width:100%;
+}
 .c-figure__caption {
-  background:$charcoal;
+  @include demarginalise;
+  background:transparentize($charcoal, 0.25);
   color:$light;
-  line-height:1.25;
-  padding:0.25em 8px;
+  padding:$base-spacing;
   display:inline;
   position:absolute;
-  :first-child {
-    margin-top:8px;
-  }
-  :last-child {
-    margin-bottom:8px;
-  }
-  h1,h2,h3,h4,h5,h6,p,ul,ul,ol {
-    margin:8px 0;
-  }
 }
+
+// Caption positions
 .c-figure__caption--bottom-left {
-  bottom:1em;
-  left:0;
+  bottom:$base-spacing;
+  left:$base-spacing;
   margin-right:25%;
+  @include mq('medium', '-') {
+    margin-right:20px;
+  }
 }
 .c-figure__caption--top-left {
-  top:1em;
-  left:0;
+  top:$base-spacing;
+  left:$base-spacing;
   margin-right:25%;
+  @include mq('medium', '-') {
+    margin-right:20px;
+  }
 }
 .c-figure__caption--top-right {
-  top:1em;
-  right:0;
+  top:$base-spacing;
+  right:$base-spacing;
   margin-left:25%;
+  @include mq('medium', '-') {
+    margin-left:20px;
+  }
 }
 .c-figure__caption--bottom-right {
-  bottom:1em;
-  right:0;
+  bottom:$base-spacing;
+  right:$base-spacing;
   margin-left:25%;
+  @include mq('medium', '-') {
+    margin-left:20px;
+  }
+}
+.c-figure__caption--right {
+  float:right;
+}
+// Caption colours
+.c-figure__caption--blue {
+  background-color:transparentize($blue, 0.25);
+}
+.c-figure__caption--pink {
+  background-color:transparentize($pink, 0.25);
+}
+.c-figure__caption--teal {
+  background-color:transparentize($teal, 0.25);
+}
+.c-figure__caption--gold {
+  background-color:transparentize($gold, 0.25);
+}
+.c-figure__caption--charcoal {
+  background-color:transparentize($charcoal, 0.25);
+}
+
+// BANNER
+.c-figure--banner {
+  @include center-image('y');
+  padding:$base-spacing;
+  .c-figure__image {
+    display:block;
+    position:absolute;
+    z-index:10;
+  }
+  .c-figure__caption {
+    position:relative;
+    display:inline-block;
+    z-index:12;
+    width:33.333%;
+    @include mq('medium', '~') {
+      width:50%;
+    }
+    @include mq('small', '-') {
+      width:100%;
+    }
+  }
+}
+
+// LINK
+.c-figure--link {
+  .c-figure__caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
 }

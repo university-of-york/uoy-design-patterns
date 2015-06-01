@@ -71,31 +71,31 @@
 }
 // Button sizes
 .c-btn--tiny {
-  @include font-size(8px,inherit);
+  @include font-size(8px,1.8);
   border-radius: 2px;
 }
 .c-btn--small {
-  @include font-size(12px,inherit);
+  @include font-size(12px,1.8);
   border-radius: 2px;
 }
 .c-btn--medium {
   // Default size
-  @include font-size($line-height:inherit);
+  @include font-size($line-height:1.8);
   border-radius: 3px;
 }
 .c-btn--large {
-  @include font-size(24px,inherit);
+  @include font-size(24px,1.8);
   border-radius: 4px;
 }
 .c-btn--huge {
-  @include font-size(32px,inherit);
+  @include font-size(32px,1.8);
   border-radius: 6px;
 }
 // Block buttons
 .c-btn--block {
   display:block;
   width:100%;
-  text-align:left;
+  text-align:center;
   .icon-after {
     float:right;
   }

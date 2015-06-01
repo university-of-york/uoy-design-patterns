@@ -87,6 +87,52 @@
 }
 
 //
+// Horiz/vertical alignment of overflowing figures
+// Only when width and height are set
+//
+@mixin center-image($axis: 'xy') {
+
+  $top:50%;
+  $left:50%;
+  $transform: translate(-50%, -50%);
+
+  @if $axis == 'x' {
+    $transform: translateX(-50%);
+    $top:0%
+  } @else if $axis == 'y' {
+    $transform: translateY(-50%);
+    $left:0%;
+  }
+
+  .csstransforms & {
+    position:relative;
+    img {
+      position:absolute;
+      max-width:none;
+      max-height:none;
+      top:$top;
+      left:$left;
+      transform:$transform;
+    }
+  }
+}
+// Must be overridden when there's a set height
+// otherwise it will stretch the image
+@mixin set-height-figure() {
+  img {
+    max-width:none;
+    width:auto;
+    max-height:100%;
+  }
+}
+// Same for width
+@mixin set-width-figure() {
+  img {
+    max-width:100%;
+    max-height:none;
+  }
+}
+//
 // Generate a font-size and baseline-compatible line-height.
 //
 @mixin font-size($font-size: $base-font-size, $line-height: auto) {
@@ -103,6 +149,7 @@
       @warn "D’oh! ‘#{$line-height}’ is not a valid value for `line-height`."
     }
   }
+
 }
 
 //

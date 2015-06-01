@@ -51,6 +51,9 @@
 
 // Show examples of horiz and vert centred images
 #figures-page {
+  .c-figure:not(:only-child) {
+    margin-bottom:$base-spacing;
+  }
   .c-figure--w400 {
     width:400px;
   }
@@ -59,13 +62,16 @@
   }
   .c-figure {
     &[class*="c-figure--w"] {
-      @extend %set-width-figure;
+      @include set-width-figure;
+      // @extend %set-width-figure;
     }
     &[class*="c-figure--h"] {
-      @extend %set-height-figure;
+      @include set-height-figure;
+      // @extend %set-height-figure;
     }
     &[class*="c-figure--w"][class*="c-figure--h"] {
-      @extend %centered-image;
+      @include center-image;
+      // @extend %centered-image;
     }
   }
 }
