@@ -34,6 +34,8 @@ component("form-element", { "label": "Name", "name": "a", "atoms": { "input": { 
 +component("form-element", { "label": "Website", "name": "e", "atoms": { "input": { "type": "url", "value":"http://" } } })
 +component("form-element", { "label": "Phone", "name": "f", "atoms": { "input": { "type": "tel" } } })
 +component("form-element", { "label": "Your Comment", "name": "g", "atoms": { "textarea": { "placeholder": "Please add a well-written, grammatically correct comment" } } })
++component("form-element", { "label": "Your Comment", "name": "g", "atoms": { "textarea": { "placeholder": "Please add a slightly longer well-written, grammatically correct comment", "size": "double" } } })
++component("form-element", { "label": "Your Comment", "name": "g", "atoms": { "textarea": { "placeholder": "Please add a very long well-written, grammatically correct comment", "size": "treble" } } })
 +component("form-element", { "label": false, "name": "h", "atoms": { "input": { "type": "hidden", "value": "this is a secret value" } } });
 </script>
 

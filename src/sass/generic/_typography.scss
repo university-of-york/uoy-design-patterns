@@ -2,7 +2,7 @@
 // TYPOGRAPHY
 //
 .lead {
-  @include font-size(20px);
+  @include font-size(20px, 1.5);
 }
 
 .subtitle {

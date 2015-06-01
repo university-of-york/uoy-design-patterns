@@ -17,7 +17,7 @@
 }
 .c-atoz__nav-link {
   @include transition('background-color');
-  @include font-size(18px, 2em);
+  @include font-size(18px, 2);
   display:block;
   width:2em;
   height:2em;

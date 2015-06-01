@@ -11,25 +11,33 @@
 .c-form__label {
   display:block;
   ~ .c-form__label {
-    display:inline; // Only first .c-form__label is block-level
+    display:inline-block; // Only first .c-form__label is block-level
+    margin-left:2px;
+    margin-right:4px;
   }
 }
 .c-form__input {
   width:100%;
-  line-height:1.626;
+  line-height:1.5;
   height:2em;
   border:1px solid $charcoal;
-  padding:0.187em 8px;
+  padding:0.25em 8px;
   border-radius:3px;
   background:transparent;
   -webkit-appearance:none;
 }
 .c-form__input--textarea {
-  min-height:5.878em; // Three lines of text + 1em for padding
+  min-height:5em; // Three lines of text + 0.5em for padding
+  &.c-form__input--textarea--double {
+    min-height:9.5em; // Six lines of text + 0.5em for padding
+  }
+  &.c-form__input--textarea--treble {
+    min-height:14em; // Nine lines of text + 0.5em for padding
+  }
 }
 .c-form__input--file {
   height:2em;
-  padding:0.187em 0; // regular line height (1.626) plus padding = 2
+  padding:0.25em 0; // regular line height (1.5) plus padding = 2
   border:0;
 }
 .c-form__radio,
@@ -42,7 +50,7 @@
 }
 .c-form__element--select {
   &:after {
-    @include font-size($line-height:2em);
+    @include font-size($line-height:2);
     content:'\25bc';
     display:block;
     position:absolute;
@@ -72,7 +80,7 @@
     width:25%;
     vertical-align:top;
     min-height:2em;
-    padding:0.187em 0; // regular line height (1.626) plus padding = 2
+    padding:0.25em 0; // regular line height (1.5) plus padding = 2
     & ~ .c-form__label {
       width:auto;
       padding:0;

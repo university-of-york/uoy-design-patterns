@@ -8,15 +8,15 @@ id: typography-page
 
 ---
 
-<p class="lead">Here you can find documentation about default typography used on the site. The usual `line-height` is 1.625, which gives a 26px line-height for 16px font sizes. A margin of 22px (1.375em) is the default spacing between elements. In general, _ems_ are used for vertical spacing, and _pixels_ for horizontal spacing.</p>
+<p class="lead">Here you can find documentation about default typography used on the site. The usual `line-height` is 1.5, which gives a 24px line-height for 16px font sizes. A margin of 22px (1.375em) is the default spacing between elements. In general, _ems_ are used for vertical spacing, and _pixels_ or _percent_ for horizontal spacing.</p>
 
-We restrict the fonts used on the site to just three (and, to be honest, not many pages have code samples on, except for this site):
+We restrict the fonts used on the site to just three (and, to be honest, not many pages have code samples on, except for this documentation):
 
-###### Georgia for headings (falls back to Times New Roman, Times, serif)
+###### **Georgia** for headings (falls back to Times New Roman, Times, serif)
 
 `Consolas for code samples and monospaced text (falls back to Monaco, 'Andale Mono', monospace)`
 
-Trebuchet MS for body text, buttons, inputs and everything else (falls back to Helvetica, Arial, sans-serif)
+**Trebuchet MS** for body text, buttons, inputs and everything else (falls back to Helvetica, Arial, sans-serif)
 
 You should never need to set a font-family yourself - the font is based on the role of the text in the page.
 
@@ -68,6 +68,29 @@ Headers can contain a `<small.subtitle>` tag which will go on a new line under t
 <h4>Quaternary header <small class="subtitle">That means fourth</small></h4>
 <h5>Quinary header <small class="subtitle">That means fifth</small></h5>
 <h6>Senary header <small class="subtitle">That means sixth</small></h6>
+```
+
+Here are some examples of two-line headers, to check line-heights.
+
+# H1 Primary header<br>that goes on to two lines
+
+## H2 Secondary header<br>that goes on to two lines
+
+### H3 Tertiary header<br>that goes on to two lines
+
+#### H4 Quaternary header<br>that goes on to two lines
+
+##### H5 Quinary header<br>that goes on to two lines
+
+###### H6 Senary header<br>that goes on to two lines
+
+```markup
+<h1>Primary header<br>that goes on to two lines
+<h2>Secondary header<br>that goes on to two lines
+<h3>Tertiary header<br>that goes on to two lines
+<h4>Quaternary header<br>that goes on to two lines
+<h5>Quinary header<br>that goes on to two lines
+<h6>Senary header<br>that goes on to two lines
 ```
 
 ## Body text
