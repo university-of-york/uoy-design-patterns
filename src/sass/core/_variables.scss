@@ -17,8 +17,8 @@ $s3:#f0f1f4;
 
 
 // Fonts
-$font-default: 'Trebuchet MS', Helvetica, Arial, sans-serif;
-$font-title: Georgia, 'Times New Roman', Times, serif;
+$font-default: 'museo-sans', Helvetica, Arial, sans-serif;
+$font-title: 'ff-tisa-web-pro', Georgia, 'Times New Roman', Times, serif;
 $font-monospace: Consolas, Monaco, 'Andale Mono', monospace;
 
 // Typography
@@ -94,7 +94,3 @@ $c-nav__link-background-color:transparent;
 $c-nav__link-is-current-background-color:$blue;
 $c-nav__link-hover-color:darken($light, 5);
 $c-nav__link-hover-background-color:darken($blue, 20);
-
-
-
-
