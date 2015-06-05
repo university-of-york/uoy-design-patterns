@@ -23,11 +23,11 @@ component("button", { "text": "Click me" })
 +component("button-submit", { "text": "Submit" });
 </script>
 
-Other types are _primary_, _cancel_ and _danger_:
+Other types are _secondary_, _success_ and _danger_:
 
 <script>
-component("button", { "text": "Click this!", "type": "primary" })
-+component("button", { "text": "Cancel", "type": "cancel" })
+component("button", { "text": "Secondary", "type": "secondary" })
++component("button", { "text": "Hooray!", "type": "success" })
 +component("button", { "text": "Delete", "type": "danger" });
 </script>
 

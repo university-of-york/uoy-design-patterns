@@ -2,7 +2,7 @@
 // VARIABLES
 //
 
-// Colors
+// Primary colours
 $charcoal:#333;
 $light:#f9f9f9;
 $blue:#00b3eb;
@@ -10,10 +10,14 @@ $pink:#a23479;
 $teal:#0f3d4c;
 $gold:#e4b53c;
 
-
+// Secondary colours
 $s1:#caccb8;
 $s2:#f0f2e9;
 $s3:#f0f1f4;
+
+//Utility colours - for warnings, errors, etc
+$red:#b62d2d;
+$green:#54b62d;
 
 
 // Fonts
@@ -57,19 +61,19 @@ $icons: (
 // Buttons
 $c-btn: (
   default: (
-    bg:$light,
-    text:$charcoal
-  ),
-  primary: (
-    bg:$blue,
+    bg:$pink,
     text:$light
   ),
-  cancel: (
-    bg:$gold,
+  secondary: (
+    bg:$s1,
+    text:$charcoal
+  ),
+  success: (
+    bg:$green,
     text:$light
   ),
   danger: (
-    bg:$pink,
+    bg:$red,
     text:$light
   )
 );

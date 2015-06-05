@@ -4,9 +4,10 @@
 .c-btn {
   @include transition;
   font-family: $font-default;
+  font-weight: bold;
   text-decoration: none;
   display: inline-block;
-  border: 1px solid $charcoal;
+  border: 1px solid $pink;
   padding: 0.3em 0.8em;
   line-height: 1.8em;
   min-height: 2.4em;
@@ -26,11 +27,13 @@
   $bgColor:map-get($color, bg);
   $bgHoverColor:lighten($bgColor, 5);
   $bgActiveColor:lighten($bgColor, 10);
-  $bgFocusColor:lighten($bgColor, 15);
+  $bgFocusColor:darken($bgColor, 10);
+  $borderColor:$bgColor;
   $textColor:map-get($color, text);
   .c-btn#{$name} {
     color: $textColor;
     background-color: $bgColor;
+    border-color:$borderColor;
     &:hover {
       color: $textColor;
       background-color: $bgHoverColor;
@@ -40,7 +43,6 @@
       background-color: $bgActiveColor;
     }
     &:focus {
-      outline: none;
       color: $textColor;
       background-color: $bgFocusColor;
     }
@@ -54,20 +56,11 @@
   }
 }
 .c-btn--disabled {
-  opacity: 0.65;
+  opacity: 0.5;
   cursor: not-allowed;
-  color: #ccc;
-  background-color: #999;
-  background-image: linear-gradient(darken(#999, 10), #999);
-  border-color:#666;
-  &:hover,
-  &:active,
-  &:focus {
-    outline: none;
-    color: #ccc;
-    background-color: #999;
-    background-image: linear-gradient(darken(#999, 10), #999);
-  }
+  background-color:map-get(map-get($c-btn, default), bg);
+  color:map-get(map-get($c-btn, default), text);
+  border-color:map-get(map-get($c-btn, default), bg);
 }
 // Button sizes
 .c-btn--tiny {
