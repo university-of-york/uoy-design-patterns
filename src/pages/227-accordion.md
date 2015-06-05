@@ -37,10 +37,10 @@ component("accordion", { "atoms": [
 ] } );
 </script>
 
-By default, the accordion will collapse so that only one item is on display. Passing `"no-collapse": true` as an option will stop that behaviour and allow you to open as many as you like.
+By default, the accordion will allow you to open as many as you like. Passing `"collapse": true` as an option will stop that behaviour and only allow one item to be open. If you want this behaviour you must contain them within a `.c-accordion` block.
 
 <script>
-component("accordion", { "no-collapse": true, "atoms": [
+component("accordion", { "collapse": true, "atoms": [
   { "accordion-item": {
     "title": "This accordion title",
     "content": "<p>First accordion content.</p>"
@@ -63,7 +63,7 @@ component("accordion", { "no-collapse": true, "atoms": [
 * **accordion-item**
   * **title**: string or HTML to go in the accordion title **(required)**
   * **content**: string or HTML to go in the accordion body **(required)**
-  * **no-collapse**: default _false_. Set to _true_ to allow multiple accordions to be open at once.
+  * **collapse**: default _false_. Set to _true_ to allow accordions to be open at once.
 
 #### Molecules
 

@@ -2,7 +2,7 @@
 
 title: Utilities
 name: utils
-category: false
+category: modules
 layout: q+tq
 id: utils-page
 

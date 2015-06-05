@@ -25,10 +25,16 @@ component("blockquote", { "content": "Lorem ipsum Excepteur proident ut esse Ut 
 ### Pull quote-style blockquotes
 
 <script>
-component("blockquote", { "type": "pull-quote", "content": "<p>Lorem ipsum excepteur proident ut esse sit ullamco voluptate commodo nostrud amet culpa sint ullamco cillum.</p><p>Mollit sit ut id culpa adipisicing voluptate ut veniam deserunt ad veniam ullamco quis.</p>"})
-+component("blockquote", { "type": "pull-quote", "content": "<p>Lorem ipsum excepteur proident ut esse sit ullamco voluptate commodo nostrud amet culpa sint ullamco cillum.</p><p>Mollit sit ut id culpa adipisicing voluptate ut veniam deserunt ad veniam ullamco quis.</p>", "cite": "Woody Allen"})
-+component("blockquote", { "type": "pull-quote", "content": "<p>Lorem ipsum excepteur proident ut esse sit ullamco voluptate commodo nostrud amet culpa sint ullamco cillum.</p><p>Mollit sit ut id culpa adipisicing voluptate ut veniam deserunt ad veniam ullamco quis.</p>", "cite": "Woody Allen", "image": "http://lorempixel.com/120/120/people/8"})
-+component("blockquote", { "type": "pull-quote", "content": "<p>Lorem ipsum excepteur proident ut esse sit ullamco voluptate commodo nostrud amet culpa sint ullamco cillum.</p><p>Mollit sit ut id culpa adipisicing voluptate ut veniam deserunt ad veniam ullamco quis.</p>", "cite": "Woody Allen", "image": "http://lorempixel.com/120/120/people/9", "imagefloat":"left"});
+component("blockquote", { "type": "pull-quote", "content": "Lorem ipsum excepteur proident ut esse sit ullamco voluptate commodo nostrud amet culpa sint ullamco cillum."});
+</script>
+
+### Image blockquotes
+
+<script>
+component("blockquote", { "type": "image-quote", "content": "<p>Lorem ipsum excepteur proident ut esse sit ullamco voluptate commodo nostrud amet culpa sint ullamco cillum.</p><p>Mollit sit ut id culpa adipisicing voluptate ut veniam deserunt ad veniam ullamco quis.</p>"})
++component("blockquote", { "type": "image-quote", "content": "<p>Lorem ipsum excepteur proident ut esse sit ullamco voluptate commodo nostrud amet culpa sint ullamco cillum.</p><p>Mollit sit ut id culpa adipisicing voluptate ut veniam deserunt ad veniam ullamco quis.</p>", "cite": "Woody Allen"})
++component("blockquote", { "type": "image-quote", "content": "<p>Lorem ipsum excepteur proident ut esse sit ullamco voluptate commodo nostrud amet culpa sint ullamco cillum.</p><p>Mollit sit ut id culpa adipisicing voluptate ut veniam deserunt ad veniam ullamco quis.</p>", "cite": "Woody Allen", "image": "http://lorempixel.com/120/120/people/8"})
++component("blockquote", { "type": "image-quote", "content": "<p>Lorem ipsum excepteur proident ut esse sit ullamco voluptate commodo nostrud amet culpa sint ullamco cillum.</p><p>Mollit sit ut id culpa adipisicing voluptate ut veniam deserunt ad veniam ullamco quis.</p>", "cite": "Woody Allen", "image": "http://lorempixel.com/120/120/people/9", "imagefloat":"left"});
 </script>
 
 

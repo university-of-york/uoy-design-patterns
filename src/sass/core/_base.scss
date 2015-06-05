@@ -60,7 +60,7 @@ h6 {
   @include font-size(18px,1.111);
 }
 p {
-  @include font-size(16px,1.5);
+  // @include font-size(16px,1.5);
   margin:$base-spacing 0;
   white-space: break-word;
 }

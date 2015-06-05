@@ -17,6 +17,11 @@
   .o-media--bottom & {
     vertical-align:bottom;
   }
+  // Override these since they screw up the table-cell layout
+  .c-figure__image {
+    width:auto;
+    max-width:none;
+  }
 }
 .o-media__body {
   @include demarginalise;

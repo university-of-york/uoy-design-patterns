@@ -135,32 +135,35 @@
 //
 // Generate a font-size and baseline-compatible line-height.
 //
-@mixin font-size($font-size: $base-font-size, $line-height: auto) {
+@mixin font-size($font-size: $base-font-size, $line-height: $base-line-height) {
 
   // rem with pixel fallback
   font-size: $font-size;
   font-size: ($font-size / $base-font-size) * 1rem;
-  $new-line-height:$line-height;
 
-  @if $line-height == auto {
-    $new-line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
-  } @else {
-    @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
-      $new-line-height: $line-height;
-    } @elseif ($line-height != none and $line-height != false) {
-      @warn "D’oh! ‘#{$line-height}’ is not a valid value for `line-height`."
-    }
+  @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+    line-height: $line-height;
+  } @elseif ($line-height != none and $line-height != false) {
+    $line-height: 0;
+    @warn "D’oh! ‘#{$line-height}’ is not a valid value for `line-height`.";
   }
 
-  line-height: $new-line-height;
 
-//  @debug $font-size * $new-line-height;
+  // @if unit($line-height) == "" {
+  //   // @debug round($font-size * $line-height), (($base-line-height * $base-font-size)/2), round($font-size * $line-height) % (($base-line-height * $base-font-size)/2);
 
-//  // pad the element to keep it compatible
-//  @if ($font-size * $new-line-height) % $base-line-height != 0 {
-//    color:red;
-//    what:($font-size * $new-line-height) % $base-line-height;
-//  }
+  //   $line-spacing: ($base-line-height * $base-font-size)/2;
+
+  //   $spacing: round($font-size * $line-height) % $line-spacing;
+
+  //   // pad the element to keep it compatible with half line-height :(
+  //   // @if $spacing != 0 {
+  //   //   color:red;
+  //   //   padding-top:($line-spacing - $spacing)/2;
+  //   //   padding-bottom:($line-spacing - $spacing)/2;
+  //   //   // border-left-color:round($font-size * $line-height) % (($base-line-height * $base-font-size)/2);
+  //   // }
+  // }
 
 }
 
@@ -181,32 +184,4 @@
     @return map-get(map-get($colors, $color), $tone);
 }
 
-//
-// rem fallback mixin
-// Converts rems to pixels (assumes 16px font-size)
-//
-@mixin rem($property, $values...) {
 
-  $pxValues: '';
-  $remValues: '';
-  $base-font-size:16px;
-
-  @each $value in $values {
-    $pxValue: $value;
-    $remValue: $value;
-    @if $value * 0 != 0% and $value != 0 {
-      $value: strip-unit($value);
-      $pxValue: $value*$base-font-size;
-      $remValue: #{$value}rem;
-    }
-    $pxValues: #{$pxValues + $pxValue + " "};
-    $remValues: #{$remValues + $remValue + " "};
-  }
-
-  #{$property}: $pxValues;
-  #{$property}: $remValues;
-}
-
-@function strip-unit($num) {
-  @return $num/($num * 0 + 1);
-}

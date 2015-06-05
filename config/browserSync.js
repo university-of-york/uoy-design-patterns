@@ -7,6 +7,7 @@ module.exports = {
       server: {
         baseDir: "dev/"
       },
+      port: 1723,
       watchTask: true
     }
   }

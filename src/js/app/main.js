@@ -18,7 +18,7 @@ define(
   });
 
   // Add accordion functionality
-  UTILS.eachIfExists('.js-accordion', function(i, accordion) {
+  UTILS.eachIfExists('.js-accordion__item', function(i, accordion) {
     var a = new ACCORDION({
       container: accordion
     });

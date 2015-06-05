@@ -7,7 +7,7 @@ $c-blockquote__image-size:120px;
   display:block;
   width:0;
   height:0;
-  border-top:$base-spacing*2 solid $c-blockquote--pull-quote-background-color;
+  border-top:$base-spacing*2 solid $c-blockquote--image-quote-background-color;
   position:absolute;
   top:$c-blockquote__image-size/2;
 }
@@ -15,12 +15,32 @@ $c-blockquote__image-size:120px;
   overflow:hidden;
   margin:$base-spacing 0;
 }
-.c-blockquote--pull-quote {
+.c-blockquote--image-quote {
   .c-blockquote__content {
     @include demarginalise;
-    background-color:$c-blockquote--pull-quote-background-color;
+    background-color:$c-blockquote--image-quote-background-color;
     padding:$base-spacing;
+    color:$c-blockquote--image-quote-color;
+  }
+}
+.c-blockquote--pull-quote {
+  overflow:visible;
+  padding-top:$base-spacing/2;
+  .c-blockquote__content {
+    @include font-size(18px);
     color:$c-blockquote--pull-quote-color;
+    font-family:$font-title;
+    padding:0 $base-spacing * 1.5;
+    &:before {
+      @include font-size(48px);
+      content: open-quote;
+      position:absolute;
+      top:-$base-spacing;
+      left:0;
+    }
+    &:after {
+      content: no-close-quote;
+    }
   }
 }
 .c-blockquote__image {
@@ -45,7 +65,7 @@ $c-blockquote__image-size:120px;
 .c-blockquote__image ~ .c-blockquote__cite {
   width:calc(100% - #{$c-blockquote__image-size + ($base-spacing*2.5)})
 }
-.c-blockquote--pull-quote {
+.c-blockquote--image-quote {
   .c-blockquote__image + .c-blockquote__content {
     //so that the quote-block fits...
     min-height:($c-blockquote__image-size/2) + ($base-spacing*2);
@@ -58,7 +78,7 @@ $c-blockquote__image-size:120px;
   margin-bottom:$base-spacing/2;
   float:left;
 }
-.c-blockquote--pull-quote {
+.c-blockquote--image-quote {
   .c-blockquote__image--right + .c-blockquote__content:after {
     left:100%;
     border-right:$base-spacing*2 solid transparent;
@@ -68,7 +88,7 @@ $c-blockquote__image-size:120px;
   margin-bottom:$base-spacing/2;
   float:right;
 }
-.c-blockquote--pull-quote {
+.c-blockquote--image-quote {
   .c-blockquote__image--left + .c-blockquote__content:after {
     left:-$base-spacing*2;
     border-left:$base-spacing*2 solid transparent;

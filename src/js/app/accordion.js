@@ -23,8 +23,6 @@ define(['jquery'], function ($) {
   var isToggling = false;
 
 
-  // "Private" functions (only available inside this file)
-
   // Toggle state of item
   var toggleState = function(e) {
 
@@ -40,9 +38,7 @@ define(['jquery'], function ($) {
     toggleContent($item);
 
     // Close others if needed
-    // console.log($item.parent().hasClass('c-accordion--no-collapse'));
-    if (!$item.parent().hasClass('c-accordion--no-collapse')) {
-      // console.log('Collapse others');
+    if ($item.parent().hasClass('c-accordion--collapse')) {
       var $otherItems = $item.siblings('.c-accordion__item');
       $otherItems.each(function(i, otherItem) {
         toggleContent(otherItem, true);
@@ -84,31 +80,25 @@ define(['jquery'], function ($) {
 
     // Get the options or their defaults
     if (!options.container) return false;
-    this.container = $(options.container);
-    this.items = this.container.children('.c-accordion__item');
 
-    this.items.each(function(i, item) {
-      $item = $(item);
-      $itemTitle = $item.children('.c-accordion__title');
-      $itemContent = $item.children('.c-accordion__content');
+    $item = $(options.container);
+    $itemTitle = $item.children('.c-accordion__title');
+    $itemContent = $item.children('.c-accordion__content');
 
-      // Hide content
-      $itemContent.addClass('is-hidden');
+    // Hide content
+    $itemContent.addClass('is-hidden');
 
-      // Get content height
-      var contentHeight = $itemContent.outerHeight();
-      $itemContent.attr('data-height', contentHeight);
+    // Get content height
+    var contentHeight = $itemContent.outerHeight();
+    $itemContent.attr('data-height', contentHeight);
 
-      // Collapse content
-      $item.addClass('is-closed');
-      $itemContent.removeClass('is-hidden');
+    // Collapse content
+    $item.addClass('is-closed');
+    $itemContent.removeClass('is-hidden');
 
-      // Add click event on title
-      $itemTitle.on('click', toggleState);
+    // Add click event on title
+    $itemTitle.on('click', toggleState);
 
-    });
-
-    // Return true or false (or something else)
 
   };
 

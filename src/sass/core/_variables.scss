@@ -23,7 +23,7 @@ $font-monospace: Consolas, Monaco, 'Andale Mono', monospace;
 
 // Typography
 $base-font-size:    16px;
-$base-line-height:  12px;
+$base-line-height:  1.5;
 $base-spacing:      20px;
 
 // Measurements
@@ -75,8 +75,9 @@ $c-btn: (
 );
 
 // Blockquotes
-$c-blockquote--pull-quote-background-color: $blue;
-$c-blockquote--pull-quote-color: $light;
+$c-blockquote--image-quote-background-color: $blue;
+$c-blockquote--image-quote-color: $light;
+$c-blockquote--pull-quote-color: $pink;
 
 // Mobile search
 $c-mobile-search-button-background-color:$light;
