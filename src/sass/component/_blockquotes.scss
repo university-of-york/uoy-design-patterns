@@ -21,6 +21,7 @@ $c-blockquote__image-size:120px;
     background-color:$c-blockquote--image-quote-background-color;
     padding:$base-spacing;
     color:$c-blockquote--image-quote-color;
+    font-family: $font-title;
   }
 }
 .c-blockquote--pull-quote {
@@ -107,4 +108,3 @@ $c-blockquote__image-size:120px;
   clear:right;
   float:right;
 }
-

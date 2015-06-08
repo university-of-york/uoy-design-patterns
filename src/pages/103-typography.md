@@ -12,11 +12,11 @@ id: typography-page
 
 We restrict the fonts used on the site to just three (and, to be honest, not many pages have code samples on, except for this documentation):
 
-###### **Georgia** for headings (falls back to Times New Roman, Times, serif)
+###### **FF Tisa Pro** for headings (falls back to Georgia, Times New Roman, Times, serif)
 
 `Consolas for code samples and monospaced text (falls back to Monaco, 'Andale Mono', monospace)`
 
-**Trebuchet MS** for body text, buttons, inputs and everything else (falls back to Helvetica, Arial, sans-serif)
+**Museo Sans** for body text, buttons, inputs and everything else (falls back to Helvetica, Arial, sans-serif)
 
 You should never need to set a font-family yourself - the font is based on the role of the text in the page.
 
@@ -164,5 +164,3 @@ Just for refence, here are some common inline elements. This will rarely be used
 * <b>This line rendered as bold text.</b>
 * <em>This line is emphasised by being rendered as italicised text.</em>
 * <i>This line rendered as italicised text.</i>
-
-

@@ -6,22 +6,25 @@
 }
 .c-accordion__item {
   position:relative;
-  border-left:1px solid $charcoal;
-  border-right:1px solid $charcoal;
-  border-bottom:1px solid $charcoal;
+  border-left:1px solid $s1;
+  border-right:1px solid $s1;
+  border-bottom:1px solid $s1;
   &:nth-of-type(even) .c-accordion__title {
-    background:lighten($charcoal, 20);
+  //  background:lighten($charcoal, 20);
   }
 }
 .c-accordion__title {
   @include demarginalise;
+  @include transition('background-color');
   display:block;
   background:$charcoal;
   color:$light;
+  font-weight: bold;
   padding:$base-spacing/2 $base-spacing;
   position:relative;
   &:hover {
-    color:darken($light, 5);
+    background-color:$blue;
+    color:$light;
   }
 }
 .c-accordion__icon {
