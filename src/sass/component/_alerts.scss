@@ -2,10 +2,10 @@
 // ALERTS
 //
 .c-alert {
-  border:1px solid $charcoal;
+  border-left:0.8em solid $charcoal;
   background-color:darken($light, 5);
   border-radius:4px;
-  padding:0.8em 20px;
+  padding:0.8em;
   margin-bottom:$base-spacing;
   position:relative;
 }
@@ -13,20 +13,20 @@
   padding-right:40px;
 }
 .c-alert--success {
-  border-color:$blue;
-  background-color:lighten($blue, 30);
+  border-color:$green;
+  background-color:lighten($green, 45);
 }
 .c-alert--info {
-  border-color:darken($light,30);
-  background-color:darken($light, 5);
+  border-color:$blue;
+  background-color:lighten($blue, 45);
 }
 .c-alert--warning {
   border-color:$gold;
   background-color:lighten($gold, 30);
 }
 .c-alert--danger {
-  border-color:$pink;
-  background-color:lighten($pink, 30);
+  border-color:$red;
+  background-color:lighten($red, 45);
 }
 .c-alert__close {
   @include font-size(20px, 1);
