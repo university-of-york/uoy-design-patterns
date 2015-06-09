@@ -6,26 +6,21 @@
 }
 .c-accordion__item {
   position:relative;
-  border-left:1px solid $s1;
-  border-right:1px solid $s1;
-  border-bottom:1px solid $s1;
+  border: 1px solid $s1;
   &:nth-of-type(even) .c-accordion__title {
   //  background:lighten($charcoal, 20);
   }
 }
 .c-accordion__title {
   @include demarginalise;
-  @include transition('background-color');
+  @include transition('color');
   display:block;
-  background:$charcoal;
-  color:$light;
   font-weight: bold;
   padding:$base-spacing/2 $base-spacing;
   position:relative;
   text-decoration: none;
   &:hover {
-    background-color:$blue;
-    color:$light;
+    color:$blue;
   }
 }
 .c-accordion__icon {
