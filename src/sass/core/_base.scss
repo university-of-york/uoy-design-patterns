@@ -10,8 +10,8 @@ body {
   color:$charcoal;
 }
 a {
-  color:lighten($charcoal, 10);
-  text-decoration: none;
+  color:$teal;
+  text-decoration: underline;
   &,
   &:hover,
   &:active,

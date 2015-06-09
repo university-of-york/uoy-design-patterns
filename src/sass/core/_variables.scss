@@ -90,6 +90,9 @@ $c-mobile-search-button-background-color:$light;
 $c-page-title-background-color:$blue;
 $c-page-title__link-color:$light;
 
+// Breadcrumbs
+$c-breadcrumb__link-color:$charcoal;
+
 // Navigation
 $c-nav-background-color:$charcoal;
 $c-nav__item--more-background-color:$blue;
@@ -99,3 +102,6 @@ $c-nav__link-background-color:transparent;
 $c-nav__link-is-current-background-color:$blue;
 $c-nav__link-hover-color:darken($light, 5);
 $c-nav__link-hover-background-color:darken($blue, 20);
+
+// Subnavigation
+$c-subnav__link-color:$charcoal;

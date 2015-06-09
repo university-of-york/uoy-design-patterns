@@ -9,6 +9,8 @@
 .c-breadcrumb__link,
 // We can't add classes to 'a' tags in Site Manager
 .c-breadcrumb a {
+  text-decoration: none;
+  color:$c-breadcrumb__link-color;
   &:after {
     content:'>';
     padding:0 $base-spacing/2;

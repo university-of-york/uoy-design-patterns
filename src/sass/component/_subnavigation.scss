@@ -22,11 +22,13 @@
 }
 .c-subnav__link {
   @include transition('background-color');
+  color:$c-subnav__link-color;
   display:block;
   border:1px solid $charcoal;
   padding:0.4em 20px;
   background-color:$light;
   position:relative;
+  text-decoration: none;
   &:hover {
     background-color:darken($light, 10);
   }
@@ -43,6 +45,7 @@
 }
 .c-subnav__title {
   margin-top:$base-spacing;
+  font-family: $font-title;
   &:first-child {
     margin-top:0;
   }
@@ -55,6 +58,3 @@
     }
   }
 }
-
-
-
