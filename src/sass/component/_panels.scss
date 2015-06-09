@@ -2,7 +2,7 @@
 // c-panelS
 //
 .c-panel {
-  border:1px solid $charcoal;
+  border:1px solid $s1;
   border-radius:3px;
   display:block;
 }
@@ -20,8 +20,8 @@
 .c-panel__footer {
   @include demarginalise;
   padding:0.4em 20px;
-  background:$charcoal;
-  color:$light;
+  background:$s2;
+  color:$charcoal;
 }
 .c-panel__image {
   img {
