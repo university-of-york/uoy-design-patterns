@@ -15,11 +15,11 @@ $box-margin: $base-spacing;
 
 .o-grid__box {
   @include font-size;
-  @include demarginalise;
+  //@include demarginalise;
   display:inline-block;
   vertical-align:top;
   padding-left:$box-margin;
-  padding-bottom:$box-margin;
+  //padding-bottom:$box-margin;
 }
 
 // Used once on the page for the main content, please!

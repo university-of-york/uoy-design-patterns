@@ -130,10 +130,11 @@
   img {
     max-width:100%;
     max-height:none;
+    height:auto;
   }
 }
 //
-// Generate a font-size and baseline-compatible line-height.
+// Generate a font-size and line-height.
 //
 @mixin font-size($font-size: $base-font-size, $line-height: $base-line-height) {
 
@@ -144,26 +145,8 @@
   @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
     line-height: $line-height;
   } @elseif ($line-height != none and $line-height != false) {
-    $line-height: 0;
     @warn "D’oh! ‘#{$line-height}’ is not a valid value for `line-height`.";
   }
-
-
-  // @if unit($line-height) == "" {
-  //   // @debug round($font-size * $line-height), (($base-line-height * $base-font-size)/2), round($font-size * $line-height) % (($base-line-height * $base-font-size)/2);
-
-  //   $line-spacing: ($base-line-height * $base-font-size)/2;
-
-  //   $spacing: round($font-size * $line-height) % $line-spacing;
-
-  //   // pad the element to keep it compatible with half line-height :(
-  //   // @if $spacing != 0 {
-  //   //   color:red;
-  //   //   padding-top:($line-spacing - $spacing)/2;
-  //   //   padding-bottom:($line-spacing - $spacing)/2;
-  //   //   // border-left-color:round($font-size * $line-height) % (($base-line-height * $base-font-size)/2);
-  //   // }
-  // }
 
 }
 

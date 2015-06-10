@@ -31,7 +31,7 @@ module.exports = {
     files: [{
       expand: true,
       cwd: 'src/',
-      src: ['fonts/**'],
+      src: ['fonts/**', 'js/prism.js'],
       dest: 'build/'
     }]
   }
