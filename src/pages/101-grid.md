@@ -163,6 +163,21 @@ component("grid", { "atoms":[
 ] } );
 </script>
 
+### Fancy alternative coloured rows
+
+You can make a whole row go blue or teal (including the space going off the screen on either side) by defining the row as `.o-grid__row--alt1` or `.o-grid__row--alt2`.
+
+<script>
+component("grid", { "atoms":[
+  { "grid-row": { "type": "alt1", "atoms": [
+    { "grid-box": { "size": "full", "atoms": { "text": " .o-grid__box--full" } } }
+  ] } },
+  { "grid-row": { "type": "alt2", "atoms": [
+    { "grid-box": { "size": "full", "atoms": { "text": " .o-grid__box--full" } } }
+  ] } }
+] } );
+</script>
+
 ### Options
 
 #### Atoms
@@ -176,7 +191,7 @@ component("grid", { "atoms":[
 
 * **grid-row**
   * **atoms**: an array of `grid-box`es. The sizes of the `grid-box`es should add up to one. Duh.
-
+  * **type**: either _alt1_ or _alt2_, for alternative styles of row
 
 #### Organisms
 

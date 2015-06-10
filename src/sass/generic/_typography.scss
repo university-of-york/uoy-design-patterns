@@ -10,3 +10,12 @@
   display:block;
   margin:0;
 }
+
+.right {
+  float:right;
+  margin-left:$base-spacing;
+}
+.left {
+  float:left;
+  margin-right:$base-spacing;
+}

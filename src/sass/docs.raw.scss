@@ -6,12 +6,14 @@
 // Style the grid examples
 #grid-page {
   .o-wrapper--main > .o-grid__row > .o-grid__box--full {
+    .o-grid__row {
+      margin-bottom:20px;
+    }
     .o-grid__box {
       min-height:240px;
       background-color:#eee;
       background-color:rgba(180,180,180,0.5);
       background-clip: content-box;
-      margin-bottom:20px;
       .o-grid__box {
         min-height:40px;
       }

@@ -10,9 +10,46 @@ $box-margin: $base-spacing;
 .o-grid__row {
   @include clearfix;
   font-size:0;
+  position:relative;
   margin-left:-$box-margin;
 }
-
+.o-grid__row--alt1,
+.o-grid__row--alt2 {
+  color:$light;
+  &:before,
+  &:after {
+    display:block;
+    content:'';
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+  }
+  &:before {
+    right:100%;
+  }
+  &:after {
+    left:100%;
+  }
+  hr {
+    background-color:$blue;
+    color:$blue;
+  }
+}
+.o-grid__row--alt1 {
+  background-color:$teal;
+  &:before,
+  &:after {
+    background-color:$teal;
+  }
+}
+.o-grid__row--alt2 {
+  background-color:darken($teal,10);
+  &:before,
+  &:after {
+    background-color:darken($teal,10);
+  }
+}
 .o-grid__box {
   @include font-size;
   //@include demarginalise;
