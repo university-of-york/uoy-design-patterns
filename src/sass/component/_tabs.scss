@@ -26,7 +26,7 @@
     }
     &.is-active {
       .c-tabs__link {
-        border-bottom:1px solid $light;
+        border-bottom:1px solid #fff;
       }
     }
   }
@@ -46,7 +46,7 @@
     }
     &.is-active {
       .c-tabs__link {
-        border-right:1px solid $light;
+        border-right:1px solid #fff;
       }
     }
   }
@@ -64,24 +64,26 @@
 .c-tabs__tab {
   &.is-active {
     .c-tabs__link {
-      background:$light;
+      background:#fff;
       color:$charcoal;
+      cursor:default;
     }
   }
 }
 .c-tabs__link {
-  border:1px solid $charcoal;
-  background:#ccc;
-  color:#999;
+  border:1px solid $s1;
+  background:darken($light, 5);
+  color:$teal;
   display:block;
+  font-weight: bold;
   padding: 0.75em 0;
   line-height: 1.25em;
   text-decoration: none;
   vertical-align: top;
 }
 .c-tabs__container {
-  background:$light;
-  border:1px solid $charcoal;
+  background:#fff;
+  border:1px solid $s1;
   padding:$base-spacing;
   clear:both;
   position:relative;
