@@ -44,10 +44,10 @@ $box-margin: $base-spacing;
   }
 }
 .o-grid__row--alt2 {
-  background-color:darken($teal,10);
+  background-color:darken($teal,5);
   &:before,
   &:after {
-    background-color:darken($teal,10);
+    background-color:darken($teal,5);
   }
 }
 .o-grid__box {

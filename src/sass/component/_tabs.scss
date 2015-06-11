@@ -21,6 +21,7 @@
   .c-tabs__tab {
     display:table-cell;
     text-align:center;
+    vertical-align:bottom;
     + .c-tabs__tab {
       padding-left:8px;
     }
