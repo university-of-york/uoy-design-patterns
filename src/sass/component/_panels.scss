@@ -29,3 +29,17 @@
     width:100%;
   }
 }
+.c-panel--kis-widget {
+
+}
+.c-panel--kis-widget__title {
+  width:100%;
+  .o-grid__box--full > .c-panel--kis-widget & {
+    @include mq(huge, '+') {
+      float:left;
+      width:545px;
+      width:calc(100% - 615px);
+      min-width:200px;
+    }
+  }
+}
