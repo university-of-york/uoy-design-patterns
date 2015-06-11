@@ -1,5 +1,5 @@
-<div class="c-tabs js-tabs">
-  <ul class="c-tabs__nav c-tabs__nav--{{#type}}{{this}}{{/type}}{{^type}}horizontal{{/type}}">
+<div class="c-tabs c-tabs--{{#type}}{{this}}{{/type}}{{^type}}horizontal{{/type}} js-tabs">
+  <ul class="c-tabs__nav">
     {{#tabs}}
       <li class="c-tabs__tab{{#if @first}} is-active{{/if}}"><a class="c-tabs__link" href="#{{this.id}}">{{this.title}}</a></li>
     {{/tabs}}
