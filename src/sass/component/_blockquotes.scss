@@ -48,6 +48,7 @@ $c-blockquote__image-size:120px;
   @include round;
   width:$c-blockquote__image-size;
   height:$c-blockquote__image-size;
+  margin-bottom:$base-spacing;
 }
 .c-blockquote__image--right {
   float:right;
@@ -62,9 +63,12 @@ $c-blockquote__image-size:120px;
 }
 // So that the background doesn't extend behind the image
 // And the citee doesn't float too far to the side
+// And is at least wide enough to fit in the column properly.
 .c-blockquote__image + .c-blockquote__content,
 .c-blockquote__image ~ .c-blockquote__cite {
-  width:calc(100% - #{$c-blockquote__image-size + ($base-spacing*2.5)})
+  width:80%;
+  width:calc(100% - #{$c-blockquote__image-size + ($base-spacing*2.5)});
+  min-width:70%;
 }
 .c-blockquote--image-quote {
   .c-blockquote__image + .c-blockquote__content {

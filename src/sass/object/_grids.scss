@@ -35,6 +35,9 @@ $box-margin: $base-spacing;
     background-color:$blue;
     color:$blue;
   }
+  a {
+    color:darken($light, 5);
+  }
 }
 .o-grid__row--alt1 {
   background-color:$teal;

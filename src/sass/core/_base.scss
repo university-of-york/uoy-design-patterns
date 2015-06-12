@@ -29,12 +29,13 @@ img {
   outline: 0;
   border: 0;
   max-width:100%;
-  // If a `width` and/or `height` attribute have been
-  // explicitly defined, don't make the image fluid.
-  &[width],
-  &[height] {
-      max-width: none;
-  }
+  height:auto;
+  // // If a `width` and/or `height` attribute have been
+  // // explicitly defined, don't make the image fluid.
+  // &[width],
+  // &[height] {
+  //     max-width: none;
+  // }
 }
 h1,h2,h3,h4,h5,h6 {
   font-family: $font-title;
