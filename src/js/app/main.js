@@ -1,6 +1,6 @@
 define(
-  ['jquery', 'es5shim', 'picturefill', 'app/utils', 'app/accordion', 'app/responsive-tables', 'app/toggle', 'app/grunticon'],
-  function ($, ES5SHIM, PICTUREFILL, UTILS, ACCORDION, TABLE, TOGGLE, GRUNTICON) {
+  ['jquery', 'es5shim', 'picturefill', 'app/utils', 'app/accordion', 'app/tabs', 'app/responsive-tables', 'app/toggle', 'app/grunticon'],
+  function ($, ES5SHIM, PICTUREFILL, UTILS, ACCORDION, TABS, TABLE, TOGGLE, GRUNTICON) {
 
   var $window = $(window);
 
@@ -28,6 +28,13 @@ define(
   UTILS.eachIfExists('.js-responsive-table', function(i, table) {
     var t = new TABLE({
       container: table
+    });
+  });
+
+  // Add tab functionality
+  UTILS.eachIfExists('.js-tabs', function(i, tabs) {
+    var t = new TABS({
+      container: tabs
     });
   });
 
