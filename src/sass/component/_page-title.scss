@@ -3,6 +3,7 @@
 //
 .c-page-title {
   background-color:$c-page-title-background-color;
+  border-bottom:3px solid $c-page-title-border-color;
   min-height:2.75em;
 }
 .c-page-title__header {
