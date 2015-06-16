@@ -2,7 +2,8 @@
 // c-panelS
 //
 .c-panel {
-  border:1px solid $s1;
+  border-left:0.8em solid $c-panel-border-color;
+  background-color: $c-panel-background-color;
   border-radius:3px;
   display:block;
 }
@@ -29,6 +30,13 @@
     width:100%;
   }
 }
+
+.c-panel--highlight {
+  background-color:$c-panel--highlight-background-color;
+  border-color:$c-panel--highlight-border-color;
+  color:$light;
+}
+
 .c-panel--kis-widget {
 
 }
