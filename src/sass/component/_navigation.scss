@@ -8,6 +8,7 @@
 .c-nav {
   height:2.75em;
   background-color:$c-nav-background-color;
+  border-top:3px solid $c-nav-border-color;
   overflow:hidden;
   position:relative;
   &.is-open {
