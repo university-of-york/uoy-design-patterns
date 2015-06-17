@@ -38,6 +38,9 @@ define(
     });
   });
 
+  // Go to tab if hash is set
+  UTILS.scrollToHash();
+
   // Add menu toggle functionality
   UTILS.eachIfExists('.js-toggle-button', function(i, button) {
     var $b = $(button);

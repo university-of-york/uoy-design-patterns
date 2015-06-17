@@ -3,6 +3,7 @@
 title: Utilities
 name: utils
 category: modules
+subcategory: General modules
 layout: q+tq
 id: utils-page
 
@@ -27,8 +28,16 @@ $window.on('resize', resizeFn);
 
 In this example, the function will only be fired _only once_, 250 milliseconds after it's last invocation. This could save the function being called hundreds of times and improve your code.
 
+###UTILS.scrollToHash()
+
+If a page is loaded with a hash in the URL (e.g. www.york.ac.uk/study**#postgraduate**) it may refer to a tab. If there is a tab on the page with that name then this function will fire a click event on the relevant tab and scroll to the top of the tab box.
+
+If it's not a tab, normal fragment behaviour is not affected.
+
 ###UTILS.eachIfExists(_selector_ string, _fn_ function)
 
 For many modules, we search through the DOM to find a certain _js-_prefixed class name and, if we find it, turn it in to a module, e.g. an accordion or a toggle switch.
 
 This method does that for you, looking for _selector_ and calling _fn_ with each one.
+
+-

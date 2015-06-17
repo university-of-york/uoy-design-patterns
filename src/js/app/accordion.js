@@ -14,12 +14,6 @@ define(['jquery'], function ($) {
 
   // "Private" variables (only available inside the module)
 
-  // Define defaults for the class
-  var Default = {
-    isCompatible: true
-  };
-
-  // Define other variables for use throughout
   var isToggling = false;
 
 
@@ -99,23 +93,6 @@ define(['jquery'], function ($) {
     // Add click event on title
     $itemTitle.on('click', toggleState);
 
-
-  };
-
-
-  // "Public" variables
-
-  // ACCORDION.color = openContent('aaa');
-
-
-  // "Public" functions (accessible outside this file)
-
-  ACCORDION.setColor = function(val) {
-    // Always return true or false from setters
-  };
-
-  ACCORDION.getColor = function() {
-    // Return the value
   };
 
   return ACCORDION;

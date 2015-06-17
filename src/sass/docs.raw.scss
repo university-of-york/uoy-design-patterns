@@ -140,6 +140,12 @@
     display:block;
   }
 }
+#modules-page,
+.category-modules {
+  .c-subnav__list.c-subnav--modules {
+    display:block;
+  }
+}
 #about-page,
 .category-about {
   .c-subnav__list.c-subnav--about {

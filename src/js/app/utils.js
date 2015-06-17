@@ -21,6 +21,18 @@
       };
     },
 
+    // If the page hash is set on load, scroll to and show the appropriate tab
+    scrollToHash: function() {
+      var hash = document.location.hash;
+      if (hash === '') return;
+      var tabContainer = $(hash).parents('.js-tabs');
+      if (tabContainer.length === 0) return;
+      var tabLink = $('a[href='+hash+']');
+      var tabOffset = tabContainer.offset();
+      tabLink.click();
+      document.body.scrollTop = tabOffset.top;
+    },
+
     // Checks to see if selector exists and, if it does, runs a function on it.
     // selector: selector string, or anything that can be wrapped in a jQuery object
     // fn: function with arguments (index, element)

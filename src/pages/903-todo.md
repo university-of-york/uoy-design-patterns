@@ -12,8 +12,7 @@ id: todo-page
 
 ### CSS Components
 
-* Classname documentation
-* Breadcrumb?
+* Breadcrumb styling
 * Tags
 * Modal
 * Tables
@@ -21,7 +20,6 @@ id: todo-page
 * Banners
 * Blockquote
 * Select boxes
-* Mobile nav
 
 ### JS Modules
 

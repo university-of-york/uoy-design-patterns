@@ -9,24 +9,6 @@ category: Javascript
  */
 define(['jquery'], function ($) {
 
-  // Define defaults for the class
-  var Default = {
-    width: 250,
-    easing: 'ease-in',
-    isCompatible: true
-  };
-
-  // Define other variables for use throughout
-  var topSpeed = 1000,
-      thankyouText = 'Thanks for your help',
-      canFlip = true;
-
-  // "Private" functions (only available inside this file)
-  var colorSwap = function(a, b) {
-    // Remember to return something
-  };
-
-
   // Define your 'class'
   // Better to pass an options object instead of multiple arguments
   var TABS = function(options) {
@@ -39,34 +21,44 @@ define(['jquery'], function ($) {
     var tabContainer = this.container.find('.c-tabs__container');
     var tabContent = this.container.find('.c-tabs__content');
 
-    console.log(tabLinks);
+    // Make vertical container at least as high as nav
+    console.log(this.container.hasClass('c-tabs--vertical'));
+    if (this.container.hasClass('c-tabs--vertical')) {
+      var navHeight = tabTabs.parent().height()+'px';
+      tabContainer.css('min-height', navHeight);
+    }
 
     tabLinks.on('click', function(e) {
       e.preventDefault();
       var $this = $(this);
-      console.log($this, $this.attr('href'));
+      var $thisTab = $this.parent();
+      var thisHref = $this.attr('href');
+      var $thisContainer = $(thisHref);
 
-    })
+      if ($thisTab.hasClass('is-active')) return false;
 
-    // Do some setup stuff
-    // Return true or false (or something else)
+      // Make current tab active
+      tabTabs.not($thisTab).removeClass('is-active');
+      $thisTab.addClass('is-active');
+      // Make tab content visible
+      tabContent.not($thisContainer).removeClass('is-active');
+      $thisContainer.addClass('is-active');
+      // Update the hash
+      if (Modernizr.hashchange === true) {
+        history.replaceState({}, "", thisHref);
+      } else {
+        // Provide a fallback
+        scrollV = document.body.scrollTop;
+        scrollH = document.body.scrollLeft;
+        location.hash = thisHref;
+        document.body.scrollTop = scrollV;
+        document.body.scrollLeft = scrollH;
+      }
 
-  };
+    });
 
+    return true;
 
-  // "Public" variables
-
-  TABS.color = colorSwap('#fff', '#000');
-
-
-  // "Public" functions (accessible outside this file)
-
-  TABS.setColor = function(val) {
-    // Always return true or false from setters
-  };
-
-  TABS.getColor = function() {
-    // Return the value
   };
 
   return TABS;
