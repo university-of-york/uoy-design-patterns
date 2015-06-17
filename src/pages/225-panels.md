@@ -19,6 +19,15 @@ component("panel", {
 });
 </script>
 
+A panel can have a highlight colour:
+
+<script>
+component("panel", {
+  "content": "<p>Atmospheric chemist Professor Alastair Lewis argues that clean air should be the engine of economic growth in China, rather than the brake.</p>",
+  "type":"highlight"
+});
+</script>
+
 You can have a _header_:
 
 <script>
