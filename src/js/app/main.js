@@ -1,6 +1,6 @@
 define(
-  ['jquery', 'es5shim', 'picturefill', 'app/utils', 'app/accordion', 'app/tabs', 'app/responsive-tables', 'app/toggle', 'app/grunticon'],
-  function ($, ES5SHIM, PICTUREFILL, UTILS, ACCORDION, TABS, TABLE, TOGGLE, GRUNTICON) {
+  ['jquery', 'es5shim', 'picturefill', 'app/utils', 'app/accordion', 'app/clearing-table', 'app/tabs', 'app/responsive-tables', 'app/toggle', 'app/grunticon'],
+  function ($, ES5SHIM, PICTUREFILL, UTILS, ACCORDION, CLEARINGTABLE, TABS, TABLE, TOGGLE, GRUNTICON) {
 
   var $window = $(window);
 
@@ -62,6 +62,23 @@ define(
       thisForm.submit();
     });
   });
+
+  // Clearing tables
+  UTILS.eachIfExists('#clearing-courses-uk-eu', function(i, a) {
+    var c = new CLEARINGTABLE({
+      type: 'Home/EU',
+      container: $(a)
+    });
+  });
+
+  UTILS.eachIfExists('#clearing-courses-international', function(i, a) {
+    var c = new CLEARINGTABLE({
+      type: 'International',
+      container: $(a)
+    });
+  });
+
+
 
   // Sample use of UTILS.debounce
   var resizeFn = UTILS.debounce(function() {
