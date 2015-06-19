@@ -47,11 +47,13 @@
     }
     &.is-active {
       .c-tabs__link {
-        border-right:1px solid #fff;
+        background-color: $blue;
+        color:$light;
       }
     }
   }
   .c-tabs__link {
+    border:none;
     padding-left:$base-spacing/2;
     padding-right:$base-spacing/2;
   }
@@ -60,6 +62,8 @@
     float:right;
     clear:right;
     left:-1px;
+    border:none;
+    padding:0 0 0 $base-spacing;
   }
 }
 .c-tabs__tab {
@@ -72,6 +76,7 @@
   }
 }
 .c-tabs__link {
+  @include transition('background-color');
   border:1px solid $s1;
   background:darken($light, 5);
   color:$teal;
@@ -81,6 +86,10 @@
   line-height: 1.25em;
   text-decoration: none;
   vertical-align: top;
+  &:hover{
+    background-color:darken($blue,20);
+    color:$light;
+  }
 }
 .c-tabs__container {
   background:#fff;
