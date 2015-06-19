@@ -23,13 +23,13 @@ var m = new MODAL({
   title: 'My modal window',
   frameless: false
 });
+
+MODAL.open()
 ```
 
 ### Options
 
- * **content** - a string of HTML which will be used to populate the modal window
- * **title** - the text
+ * **content** - a string of HTML, or URL of an image, which will be used to populate the modal window
+ * **title** - the title text
  * **frameless** - Boolean, default _false_. Use _true_ if you don't want the default frame styles on the modal window
 
-
--

@@ -24,5 +24,3 @@ var t = new TABLE({
 ### Options
 
  * **container** - the table element containing the responsive columns (required)
-
--

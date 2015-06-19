@@ -1,6 +1,6 @@
 define(
-  ['jquery', 'es5shim', 'picturefill', 'app/utils', 'app/accordion', 'app/clearing-table', 'app/tabs', 'app/responsive-tables', 'app/toggle', 'app/grunticon'],
-  function ($, ES5SHIM, PICTUREFILL, UTILS, ACCORDION, CLEARINGTABLE, TABS, TABLE, TOGGLE, GRUNTICON) {
+  ['jquery', 'es5shim', 'picturefill', 'app/utils', 'app/modal-link', 'app/accordion', 'app/clearing-table', 'app/tabs', 'app/responsive-tables', 'app/toggle', 'app/grunticon'],
+  function ($, ES5SHIM, PICTUREFILL, UTILS, MODALLINK, ACCORDION, CLEARINGTABLE, TABS, TABLE, TOGGLE, GRUNTICON) {
 
   var $window = $(window);
 
@@ -78,6 +78,12 @@ define(
     });
   });
 
+  // A button with class .js-modal will href modal content
+  UTILS.eachIfExists('.js-modal', function(i, a) {
+    var m = new MODALLINK({
+      link: $(a)
+    });
+  });
 
 
   // Sample use of UTILS.debounce

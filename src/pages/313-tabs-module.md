@@ -27,5 +27,3 @@ var t = new TABS({
 
  * **container** - the (usually `.js-tabs`) container element (required). THe module gets the component elements from within this one (required)
 
-
--

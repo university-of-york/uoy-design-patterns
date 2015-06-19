@@ -45,16 +45,16 @@ define(['jquery', 'app/color'], function ($, COLOR) {
 
   // "Public" variables
 
-  SAMPLE.color = colorSwap('#fff', '#000');
+  SAMPLE.prototype.color = colorSwap('#fff', '#000');
 
 
   // "Public" functions (accessible outside this file)
 
-  SAMPLE.setColor = function(val) {
+  SAMPLE.prototype.setColor = function(val) {
     // Always return true or false from setters
   };
 
-  SAMPLE.getColor = function() {
+  SAMPLE.prototype.getColor = function() {
     // Return the value
   };
 

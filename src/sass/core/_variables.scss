@@ -111,3 +111,11 @@ $c-panel-background-color:$s2;
 $c-panel-border-color:$s1;
 $c-panel--highlight-background-color:$teal;
 $c-panel--highlight-border-color:lighten($teal,10);
+
+// Modals
+$c-modal-background-color:$s2;
+$c-modal-border-color:$s1;
+$c-modal__close-background-color:$charcoal;
+$c-modal__close-color:$light;
+$c-modal__close-hover-background-color:lighten($charcoal, 10);
+$c-modal__close-hover-color:darken($light, 10);

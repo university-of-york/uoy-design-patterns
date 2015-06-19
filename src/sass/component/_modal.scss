@@ -1,3 +1,47 @@
 //
-// OVERLAY
+// MODAL
 //
+.c-modal {
+  display:block;
+  position:relative;
+}
+.c-modal--framed {
+  border-left:0.8em solid $c-modal-border-color;
+  background-color: $c-modal-background-color;
+  border-radius:3px;
+  .c-modal__content {
+    padding:1em 20px;
+  }
+}
+.c-modal--frameless {
+  // border:0;
+  // background-color:transparent;
+  // border-radius:0;
+}
+.c-modal__title {
+  padding:1em 20px 0.5em;
+  margin:0;
+}
+.c-modal__content {
+  @include demarginalise;
+}
+.c-modal__close {
+  position:absolute;
+  top:$base-spacing/2;
+  right:$base-spacing/2;
+  width:20px;
+  height:20px;
+  line-height:20px;
+  text-align:center;
+  color:$c-modal__close-color;
+  background-color:$c-modal__close-background-color;
+  border-radius:50%;
+  font-weight:bold;
+  text-decoration:none;
+  cursor:pointer;
+  &:hover {
+    text-decoration:none;
+    background-color:$c-modal__close-hover-background-color;
+    color:$c-modal__close-hover-color;
+  }
+}

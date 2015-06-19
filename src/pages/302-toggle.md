@@ -29,5 +29,3 @@ var t = new TOGGLE({
   * **container** - the element on which to toggle the class (required)
   * **button** - the element to listen for a click (required)
   * **class** - the class to toggle (optional - defaults to `is-open`)
-
--
