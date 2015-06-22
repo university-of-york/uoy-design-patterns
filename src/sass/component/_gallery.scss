@@ -5,14 +5,18 @@
   border:1px solid $charcoal;
   border-radius:3px;
   margin-bottom:20px;
+  text-decoration:none;
+  display:block;
+  color:$charcoal;
+  &:hover {
+    text-decoration:none;
+    color:$charcoal;
+  }
 }
-.c-gallery-item__picture {
-  width:100%;
-}
-.c-gallery-item__image {
+.c-gallery-item__thumbnail--image {
   display:block;
 }
-.c-gallery-item__body {
+.c-gallery-item__content {
   @include demarginalise;
   padding:1em 20px;
 }

@@ -1,16 +1,61 @@
 //
 // MODAL
 //
+.c-modal__wrapper {
+  @include transition('background-color');
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  z-index:32;
+  background-color:rgba(0,0,0,0);
+  display:none;
+  &.is-active {
+    background-color:rgba(0,0,0,0.5);
+    display:block;
+    .c-modal {
+      position:absolute;
+    }
+  }
+  .c-modal {
+    display:none;
+    max-width:90%;
+    max-height:90%;
+    // Really big screens
+    @include mq('huge', '+') {
+      min-width:$container-width;
+    }
+    // Everything else
+    @include mq('huge', '-') {
+      width:90%;
+      min-width:0;
+    }
+    &.is-active {
+      display:block;
+    }
+    .csstransforms & {
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+    }
+    .no-csstransforms & {
+      margin:auto auto;
+    }
+  }
+}
 .c-modal {
   display:block;
   position:relative;
+  overflow:hidden;
 }
 .c-modal--framed {
   border-left:0.8em solid $c-modal-border-color;
   background-color: $c-modal-background-color;
   border-radius:3px;
   .c-modal__content {
-    padding:1em 20px;
+    padding:1em 40px 1em 20px;
   }
 }
 .c-modal--frameless {
@@ -19,7 +64,7 @@
   // border-radius:0;
 }
 .c-modal__title {
-  padding:1em 20px 0.5em;
+  padding:1em 40px 0.5em 20px;
   margin:0;
 }
 .c-modal__content {

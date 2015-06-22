@@ -1,27 +1,10 @@
-<div class="c-gallery-item{{#type}} c-gallery-item--{{this}}{{/type}}">
-  {{#picture}}
-  <figure class="c-gallery-item__picture">
-    {{#if this.content}}
-     {{this.content}}
-    {{else}}
-     <img class="c-gallery-item__image" src="{{this.image}}" alt="{{#this.caption}}{{this}}{{/this.caption}}"{{#if this.width}} width="{{this.width}}"{{/if}}>{{#this.caption}}
-     <figcaption class="c-gallery-item__caption">{{this}}</figcaption>{{/this.caption}}
-    {{/if}}
+<a class="c-gallery-item js-modal js-modal--frameless" href="{{link}}">
+  {{#if thumbnail}}
+  <figure class="c-gallery-item__thumbnail">
+     <img class="c-gallery-item__thumbnail--image" src="{{thumbnail}}" alt="">
   </figure>
-  {{/picture}}{{#body}}
-  <div class="c-gallery-item__body">
-     {{#if this.title}}
-      <h4 class="c-gallery-item__title">{{#if this.button}}<a href="{{this.button.link}}">{{/if}}{{this.title}}{{#if this.button}}</a>{{/if}}</h4>
-    {{/if}}
-    {{#if this.subtitle}}
-      <h5 class="c-gallery-item__subtitle">{{this.subtitle}}</h5>
-    {{/if}}
-    {{#if this.content}}
-      {{this.content}}
-    {{/if}}
-    {{#this.button}}
-      <a href="{{this.link}}" class="c-btn c-gallery-item__button">{{this.text}}</a>
-    {{/this.button}}
-  </div>
-  {{/body}}
-</div>
+  {{/if}}{{#if content}}
+  <div class="c-gallery-item__content">
+      {{content}}
+  </div>{{/if}}
+</a>

@@ -17,7 +17,7 @@ define(['jquery', 'app/modal'], function ($, MODAL) {
     } catch (e) {
       return false;
     }
-  }
+  };
 
   var MODALLINK = function(options) {
 
@@ -45,9 +45,12 @@ define(['jquery', 'app/modal'], function ($, MODAL) {
       type: modalType
     });
 
-    console.log(m);
+    // console.log(m);
 
-    $a.on('click', m.open);
+    $a.on('click', function(e) {
+      e.preventDefault();
+      m.open();
+    });
 
   };
 
