@@ -12,5 +12,3 @@ id: accordion-page
 <p class="lead"></p>
 
 
-
--

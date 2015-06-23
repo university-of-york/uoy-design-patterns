@@ -9,8 +9,7 @@
 }
 .o-wrapper--main,
 .o-wrapper--wide {
-  padding:$base-spacing $base-spacing 0;
-  // padding:196px $base-spacing 0;
+  padding:0 $base-spacing;
   // Smaller logo and font
   @include mq(small) {
     // padding-top: 175px;

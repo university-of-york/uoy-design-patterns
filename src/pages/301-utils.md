@@ -39,5 +39,3 @@ If it's not a tab, normal fragment behaviour is not affected.
 For many modules, we search through the DOM to find a certain _js-_prefixed class name and, if we find it, turn it in to a module, e.g. an accordion or a toggle switch.
 
 This method does that for you, looking for _selector_ and calling _fn_ with each one.
-
--

@@ -44,5 +44,3 @@ var c = new CLEARINGTABLE({
 
   * **type** - either 'Home/EU', 'International' or 'Both'. Defaults to 'Both'.
   * **container** - the element into which the accordions will go
-
--

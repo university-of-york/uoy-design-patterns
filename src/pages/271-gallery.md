@@ -9,37 +9,27 @@ id: gallery-page
 
 ---
 
-<p class="lead">Galleries use a [grid layout](grid.html) to create a two-, three- or four-column layout. Then add `o-gallery-item` components to each grid box.</p>
+<p class="lead">Galleries use a [grid layout](grid.html) to create a two-, three- or four-column layout. Then add `c-gallery-item` components to each grid box.</p>
 
 <script>
 var g1 = {
   "gallery-item": {
-    "picture": {
-      "image": "http://lorempixel.com/244/122/people/1"
-    },
-    "body": {
-      "content": "<p>The University is in the middle of an unprecedented period of expansion and renewal.</p>"
-    }
+    "link": "http://lorempixel.com/1280/640/people/1",
+    "thumbnail": "http://lorempixel.com/280/140/people/1",
+    "content": "<p>The University is in the middle of an unprecedented period of expansion and renewal.</p>"
   }
 };
 var g2 = {
   "gallery-item": {
-    "picture": {
-      "image": "http://lorempixel.com/244/122/people/4"
-    },
-    "body": {
-      "content": "<p>We have invested in 20 new buildings on Heslington West.</p>"
-    }
+    "link": "http://lorempixel.com/1280/640/people/4",
+    "thumbnail": "http://lorempixel.com/280/140/people/4"
   }
 };
 var g3 = {
   "gallery-item": {
-    "picture": {
-      "image": "http://lorempixel.com/244/122/people/7"
-    },
-    "body": {
-      "content": "<p>Our investment in new colleges mean it has never been a better time to join our student body or research groups at York.</p>"
-    }
+    "link": "http://lorempixel.com/1280/640/people/7",
+    "thumbnail": "http://lorempixel.com/280/140/people/7",
+    "content": "<p>Our investment in new colleges mean it has never been a better time to join our student body or research groups at York.</p>"
   }
 };
 component("grid", { "atoms": [
@@ -69,13 +59,6 @@ component("grid", { "atoms": [
 
 
 * **gallery-item**
-  * **picture**: The picture for the gallery, comprising:
-    * **image**: the URL of the image
-    * **caption**: an optional caption for the image (see [captions](caption.html))
-  * **body**: the stuff that goes in the box under the picture. Can include:
-    * **title**: the title of the image
-    * **subtitle**: the subtitle
-    * **content**: any HTML content
-    * **button**: an action button
-      * **text**: the button text
-      * **link**: the button link
+  * **link**: the URL of the picture for the gallery
+  * **thumbnail**: the URL of the image thumbnail
+  * **content**: the stuff that goes in the box under the picture. Should be an HTML string.

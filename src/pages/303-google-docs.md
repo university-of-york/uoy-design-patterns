@@ -29,6 +29,3 @@ $(window).on('data:loaded', function(e, id, data) {
   Pass an _options_ object with the following keys:
 
   * **id** - the element on which to toggle the class (required)
-
-
--
