@@ -2,8 +2,11 @@
 // BASE
 // This Sass file contains all the styles for the basic elements
 //
+html {
+  font-size:$base-font-size;
+}
 body,select,textarea,input {
-  @include font-size;
+  //@include font-size;
   font-family: $font-default;
 }
 body {
@@ -42,26 +45,31 @@ h1,h2,h3,h4,h5,h6 {
   font-weight:700;
   margin:$base-spacing 0;
 }
+h6 {
+  font-family: $font-default;
+  text-transform: uppercase;
+}
+
 h1 {
-  @include font-size(48px,1.125);
+  @include responsive-font-size($h1-font-sizes);
 }
 h2 {
-  @include font-size(40px,1.15);
+  @include responsive-font-size($h2-font-sizes);
 }
 h3 {
-  @include font-size(32px,1.125);
+  @include responsive-font-size($h3-font-sizes);
 }
 h4 {
-  @include font-size(24px,1.167);
+  @include responsive-font-size($h4-font-sizes);
 }
 h5 {
-  @include font-size(20px,1.1);
+  @include responsive-font-size($h5-font-sizes);
 }
 h6 {
-  @include font-size(18px,1.111);
+  @include responsive-font-size($h6-font-sizes);
 }
 p {
-  // @include font-size(16px,1.5);
+  @include responsive-font-size($p-font-sizes);
   margin:$base-spacing 0;
   white-space: break-word;
 }

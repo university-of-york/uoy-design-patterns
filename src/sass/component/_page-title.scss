@@ -5,7 +5,7 @@
   min-height:2.75em;
 }
 .c-page-title__header {
-  @include font-size(32px, 1.625);
+  @include font-size(32px, 1.25);
   max-width:$container-width;
   margin:0 auto;
   padding:0 0 0 $base-spacing;
@@ -13,7 +13,6 @@
 .c-page-title__link {
   color:$c-page-title__link-color;
   padding:0;
-  line-height:1.625;
   text-decoration: none;
   &:hover {
     color:$c-page-title__link-color;
