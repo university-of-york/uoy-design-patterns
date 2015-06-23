@@ -18,9 +18,6 @@ define(['jquery'], function ($) {
       rows,
       columnClasses = [];
 
-
-  // "Private" functions (only available inside this file)
-
   var addRowClasses = function() {
 
     $.each(rows, function(i, row) {
@@ -63,22 +60,6 @@ define(['jquery'], function ($) {
     // Return true or false (or something else)
     return true;
 
-  };
-
-
-  // "Public" variables
-
-  TABLE.color = 'blue';
-
-
-  // "Public" functions (accessible outside this file)
-
-  TABLE.setColor = function(val) {
-    // Always return true or false from setters
-  };
-
-  TABLE.getColor = function() {
-    // Return the value
   };
 
   return TABLE;

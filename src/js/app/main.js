@@ -49,7 +49,7 @@ define(
     var t = new TOGGLE({
       container: $c,
       button: $b,
-      class:'is-open'
+      className:'is-open'
     });
   });
 

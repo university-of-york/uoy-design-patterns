@@ -156,7 +156,8 @@
 //
 @mixin transition($property:'all') {
   transition-property: #{$property};
-  transition-duration: 0.2s;
+  transition-duration: 0.4s;
+  // transition-duration: 0.2s;
   transition-timing-function: ease-out;
 }
 

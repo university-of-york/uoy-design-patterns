@@ -15,11 +15,11 @@ define(['jquery'], function ($) {
 
     var toggleContainer = options.container;
     var toggleButton = options.button;
-    var toggleClass = options.class || 'is-open';
+    var toggleClassName = options.className || 'is-open';
 
     toggleButton.on('click', function(e) {
       e.preventDefault();
-      toggleContainer.toggleClass(toggleClass);
+      toggleContainer.toggleClass(toggleClassName);
       return false;
     });
 
