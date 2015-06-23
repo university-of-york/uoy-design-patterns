@@ -30,6 +30,50 @@ $base-font-size:    16px;
 $base-line-height:  1.5;
 $base-spacing:      20px;
 
+// Varying typographic scales for different breakpoints
+// http://typecast.com/blog/a-more-modern-scale-for-web-typography
+$p-font-sizes: (
+  null:   (16px, 1.25),
+  medium: (16px, 1.375),
+  huge:   (18px, 1.5)
+);
+
+$lead-font-sizes: (
+  null: (18px, 1.5),
+  huge: (24px, 1.25)
+);
+
+$h1-font-sizes: (
+  null:   (32px, 1.25),
+  medium: (40px, 1.125),
+  large:  (48px, 1.05)
+);
+
+$h2-font-sizes: (
+  null:   (26px, 1.15384615),
+  medium: (32px, 1.25),
+  large:  36px
+);
+
+$h3-font-sizes: (
+  null:   (22px, 1.13636364),
+  medium: (24px, 1.25),
+  large:  28px
+);
+
+$h4-font-sizes: (
+  null:   (18px, 1.11111111),
+  medium: (18px, 1.22222222)
+);
+
+$h5-font-sizes: (
+  null:   16px
+);
+
+$h6-font-sizes: (
+  null:   14px
+);
+
 // Measurements
 $container-width: 1200px;
 
