@@ -37,20 +37,27 @@ $box-margin: $base-spacing;
   }
   a {
     color:darken($light, 5);
+    &:hover {
+      color:$blue;
+    }
   }
 }
 .o-grid__row--alt1 {
   background-color:$teal;
+  border-bottom:$base-spacing/2 solid lighten($teal,15);
   &:before,
   &:after {
     background-color:$teal;
+    border-bottom:$base-spacing/2 solid lighten($teal,15);
   }
 }
 .o-grid__row--alt2 {
   background-color:darken($teal,5);
+    border-bottom:$base-spacing/2 solid lighten($teal,5);
   &:before,
   &:after {
     background-color:darken($teal,5);
+      border-bottom:$base-spacing/2 solid lighten($teal,5);
   }
 }
 .o-grid__box {
@@ -158,5 +165,3 @@ $box-margin: $base-spacing;
     }
   }
 }
-
-
