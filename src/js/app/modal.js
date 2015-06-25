@@ -44,7 +44,7 @@ define(['jquery'], function ($) {
     $el.removeClass('is-hidden');
     setTimeout(function() {
       $el.addClass('is-active');
-    }, 30)
+    }, 30);
   };
 
   MODAL.prototype.close = function() {

@@ -8,3 +8,6 @@
   padding:0;
   list-style:none;
 }
+.foo {
+  @extend .unstyled-list;
+}

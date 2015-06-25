@@ -12,7 +12,7 @@ id: typography-page
 
 We restrict the fonts used on the site to just three (and, to be honest, not many pages have code samples on, except for this documentation):
 
-###### **FF Tisa Pro** for headings (falls back to Georgia, Times New Roman, Times, serif)
+##### **FF Tisa Pro** for headings (falls back to Georgia, Times New Roman, Times, serif)
 
 `Consolas for code samples and monospaced text (falls back to Monaco, 'Andale Mono', monospace)`
 
