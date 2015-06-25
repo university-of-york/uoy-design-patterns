@@ -1,7 +1,9 @@
 //
 // TYPOGRAPHY
 //
-.lead {
+
+//.lead p for Site Manager
+.lead, .lead p {
   @include responsive-font-size($lead-font-sizes);
 }
 
