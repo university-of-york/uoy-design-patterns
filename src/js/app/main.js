@@ -1,6 +1,6 @@
 define(
-  ['jquery', 'es5shim', 'picturefill', 'app/utils', 'app/modal-link', 'app/accordion', 'app/clearing-table', 'app/tabs', 'app/responsive-tables', 'app/toggle', 'app/grunticon'],
-  function ($, ES5SHIM, PICTUREFILL, UTILS, MODALLINK, ACCORDION, CLEARINGTABLE, TABS, TABLE, TOGGLE, GRUNTICON) {
+  ['jquery', 'es5shim', 'picturefill', 'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav', 'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/responsive-tables', 'app/toggle', 'app/grunticon'],
+  function ($, ES5SHIM, PICTUREFILL, UTILS, MODALLINK, ACCORDION, STICKYNAV, TARGETEDNAV, CLEARINGTABLE, TABS, TABLE, TOGGLE, GRUNTICON) {
 
   var $window = $(window);
 
@@ -8,8 +8,6 @@ define(
     console = {};
     console.log = function(a) { /*alert(a);*/ };
   }
-
-  console.log('Javascript loaded');
 
   // Disable buttons
   $('.btn-disabled').click(function(e) {
@@ -78,13 +76,26 @@ define(
     });
   });
 
-  // A button with class .js-modal will href modal content
+  // A link with class .js-modal will href modal content
   UTILS.eachIfExists('.js-modal', function(i, a) {
     var m = new MODALLINK({
       link: $(a)
     });
   });
 
+  // Add sticky nav functionality to nav
+  UTILS.eachIfExists('.js-sticky-nav', function(i, a) {
+    var s = new STICKYNAV({
+      container: $(a)
+    });
+  });
+
+  // Add sticky nav functionality to nav
+  UTILS.eachIfExists('.js-targeted-nav', function(i, a) {
+    var s = new TARGETEDNAV({
+      container: $(a)
+    });
+  });
 
   // Sample use of UTILS.debounce
   var resizeFn = UTILS.debounce(function() {
@@ -92,5 +103,7 @@ define(
   }, 250);
 
   $window.on('resize', resizeFn);
+
+  console.log('Javascript loaded');
 
 });

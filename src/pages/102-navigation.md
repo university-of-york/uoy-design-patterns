@@ -10,6 +10,23 @@ id: navigation-page
 
 <p class="lead">In general, navigation is kept up at the top of the page, so we can use the whole width of the page for content.</p>
 
+## Sticky nav
+
+The sticky nav strays in place on the page until it hits the top of the screen, at which point it stays fixed to the top, highlighting the nearest section fragment as it goes.
+
+<div class="c-nav__wrapper">
+  <nav class="c-nav c-nav--sticky js-sticky-nav js-targeted-nav">
+    <ul class="c-nav__list"><!--
+   --><li class="c-nav__item"><a class="c-nav__link" href="#utility-navigation">Utility navigation</a></li><!--
+   --><li class="c-nav__item"><a class="c-nav__link" href="#main-menu">Main menu</a></li><!--
+   --><li class="c-nav__item"><a class="c-nav__link" href="#menu-title">Menu title</a></li><!--
+   --><li class="c-nav__item"><a class="c-nav__link" href="#menu-navigation">Menu navigation</a></li><!--
+   --><li class="c-nav__item"><a class="c-nav__link" href="#breadcrumb-navigation">Breadcrumb navigation</a></li><!--
+   --><li class="c-nav__item"><a class="c-nav__link" href="#putting-it-all-together">Putting it all together</a></li><!--
+ --></ul>
+  </nav>
+</div>
+
 <!--
 ## Structural navigation
 
@@ -28,7 +45,7 @@ The top-level **structural navigation** (Study, Research, Business) is kept at t
 
 ## Utility navigation
 
-**Utility navigation** is links that aren't directly related to page content, but are important for general site navigation. This includes _Jobs_, _Staff_, _Current students_ and the _Search_ functionality. These are kept in a top banner on the homepage but hidden elsewhere. THey also appear in the footer.
+**Utility navigation** is links that aren't directly related to page content, but are important for general site navigation. This includes _Jobs_, _Staff_, _Current students_ and the _Search_ functionality. These are kept in a top banner on the homepage but hidden elsewhere. They also appear in the footer.
 
 <nav class="c-utility-nav">
   <ul class="c-utility-nav__list">
@@ -210,3 +227,43 @@ Unopened, the main navigation shows the pages currently in this section (childre
     </li>
   </ul>
 </nav>
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+<small style="color:grey;">this is just here to create some space</small>

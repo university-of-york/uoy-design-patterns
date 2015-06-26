@@ -91,4 +91,40 @@
     background-color:$c-modal__close-hover-background-color;
     color:$c-modal__close-hover-color;
   }
+  @include mq('medium', '-') {
+    display:none;
+  }
+}
+.c-modal__nav {
+  @include transition('opacity');
+  position:absolute;
+  top:0;
+  width:72px;
+  height:100%;
+  cursor:pointer;
+  opacity:0;
+  background-color:rgba(255,255,255,0.15);
+  z-index:10;
+  &.is-active {
+    opacity:0.8;
+    &:hover {
+      opacity:1;
+    }
+  }
+  .c-icon {
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-top:-16px;
+    margin-left:-16px;
+  }
+  @include mq('small', '-') {
+    width:52px;
+  }
+}
+.c-modal__nav--prev {
+  left:0;
+}
+.c-modal__nav--next {
+  right:0;
 }

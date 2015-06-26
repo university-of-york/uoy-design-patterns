@@ -159,8 +159,13 @@
   // Force navs to stretch to full width
   .c-utility-nav,
   .c-menu-title,
-  .c-menu-nav {
+  .c-menu-nav,
+  .c-nav {
     margin:0 -20px;
+    width:calc(100% + 40px);
+  }
+  #Main-Navigation {
+    margin:0;
   }
 }
 

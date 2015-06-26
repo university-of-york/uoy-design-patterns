@@ -27,6 +27,14 @@ define(['jquery', 'app/modal'], function ($, MODAL) {
     var modalContent = false;
     var modalTitle = $a.attr('data-title') || false;
     var modalType = $a.hasClass('js-modal--frameless') ? 'frameless' : 'framed';
+    var prevItem = false ;
+    var nextItem = false ;
+    if ($a.hasClass('js-modal--gallery')) {
+      var galleryItems = $('.js-modal--gallery');
+      var thisIndex = galleryItems.index($a);
+      prevItem = (thisIndex > 0) ? galleryItems.get(thisIndex-1) : false ;
+      nextItem = (thisIndex < galleryItems.length - 1) ? galleryItems.get(thisIndex+1) : false ;
+    }
 
     if ($a.attr('data-content')) {
       // Content from attribute
@@ -42,7 +50,9 @@ define(['jquery', 'app/modal'], function ($, MODAL) {
     var m = new MODAL({
       content: modalContent,
       title: modalTitle,
-      type: modalType
+      type: modalType,
+      prev: prevItem,
+      next: nextItem
     });
 
     // console.log(m);

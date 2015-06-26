@@ -11,6 +11,8 @@ id: gallery-page
 
 <p class="lead">Galleries use a [grid layout](grid.html) to create a two-, three- or four-column layout. Then add `c-gallery-item` components to each grid box.</p>
 
+If a collection of items on a page all have the `js-modal--gallery` class, then they will automatically be scrollable when popped up in a modal window.
+
 <script>
 var g1 = {
   "gallery-item": {
