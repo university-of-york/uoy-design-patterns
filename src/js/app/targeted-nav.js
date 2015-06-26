@@ -44,7 +44,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       var $section = $(section);
       if (scrollTop < ($section.offset().top - that.height)) {
         var currentSection = i > 0 ? that.sections[i-1] : false ;
-        that.makeCurrent(currentSection)
+        that.makeCurrent(currentSection);
         return false;
       } else if (i === that.sections.length - 1) {
         that.makeCurrent(that.sections[i]);

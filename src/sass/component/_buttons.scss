@@ -46,13 +46,6 @@
       color: $textColor;
       background-color: $bgFocusColor;
     }
-    // Keep this in here for now, but make sure
-    // the icon itself has a .c-icon--light
-    @if $name != '' {
-      .c-icon {
-        @extend .c-icon--light;
-      }
-    }
   }
 }
 .c-btn--disabled {

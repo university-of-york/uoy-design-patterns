@@ -6,7 +6,7 @@
  * CONTENTS
  *
  * CORE
- * Fonts...................@font-face declarations (current empty).
+ * Fonts...................@font-face declarations (currently empty)
  * Variables...............Variable setup: colours, fonts, measurements etc. Also mapping generic variable names to specific variables
  * Mixins..................Globally available mixins.
  * Extends.................[deprecated] we're trying to remove extends as they cause specificity  issues. DO NOT USE.
@@ -35,7 +35,7 @@
  * Page title..............Page title
  * Alerts..................Alert box
  * Buttons.................All button styles
- * Icons...................Iconography (imports icons/*.scss)
+ * Icons...................Iconography (imports FontAwesome files)
  * Pagination..............For navigating multiple pages
  * Blockquotes.............Blockquote styles
  * Breadcrumb..............Breadcrumb styles
@@ -67,7 +67,7 @@
 
 
 //CORE
-@import "core/fonts";
+// @import "core/fonts";
 @import "core/variables";
 @import "core/mixins";
 @import "core/extends";
