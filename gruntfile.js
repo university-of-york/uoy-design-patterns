@@ -9,6 +9,9 @@ module.exports = function (grunt) {
     configPath: path.join(process.cwd(), 'config')
   });
 
+  // Load custom tasks
+  grunt.loadTasks('tasks');
+
   grunt.registerTask('default', ['bower']);
 
   grunt.registerTask('icons', ['clean:icons', 'copy:darkicons', 'copy:lighticons', 'newer:svgmin', 'grunticon']);
