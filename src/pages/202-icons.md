@@ -9,26 +9,13 @@ id: icons-page
 
 ---
 
-<p class="lead">We're currently using [Iconic Open](https://useiconic.com/open) as an icon set, but this is easy to replace. All icons are held in an `i` element, as it has no semantic meaning and is very concise (i.e. it's one letter!).</p>
-
-By default we use SVG icons, but there is a fallback to PNG if background SVGs are not supported.
+<p class="lead">We're currently using [Font Awesome](http://fortawesome.github.io/Font-Awesome/) as an icon set, but this is easy to replace. All icons are held in an `i` element, as it has no semantic meaning and is very concise (i.e. it's one letter!).</p>
 
 <script>
 component("icon", { "type": "heart" } );
 </script>
 
-There are five different sizes:
-
-<script>
-component("icon", { "type": "heart", "size": "tiny" } )
-+component("icon", { "type": "heart", "size": "small" } )
-+component("icon", { "type": "heart", "size": "medium" } )
-+component("icon", { "type": "heart", "size": "large" } )
-+component("icon", { "type": "heart", "size": "huge" } );
-
-</script>
-
-(Did you notice how the icon sizes match the button sizes? Hmmm....)
+See the [Font Awesome documentation](http://fortawesome.github.io/Font-Awesome/examples/) for details of all the different things that you can do with them.
 
 Here's a comprehensive list of icons.
 
@@ -1004,5 +991,4 @@ component("icon", { "type": "adn", "style": "light" } )
 
 * icon
   * **type**: the type of option you want **(required)**
-  * **size**: can be _tiny_, _small_, _medium_, _large_ or _huge_. Default is _medium_
   * **style**: can be _dark_ (default) or _light_
