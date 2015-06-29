@@ -50,9 +50,9 @@ component("button", { "text": "Huge button", "size": "huge" })
 It's also easy to add an icon to a button, either at the front, the end, (or both (which doesn't look good, so don't do it)), above the text or on its own.
 
 <script>
-component("button", { "text": "Stop", "icon-before": "media-stop" })
-+component("button", { "text": "Play", "icon-after": "media-play" })
-+component("button", { "text": "Please don't do this", "icon-before": "media-skip-backward", "icon-after": "media-skip-forward" })
+component("button", { "text": "Stop", "icon-before": "stop" })
++component("button", { "text": "Play", "icon-after": "play" })
++component("button", { "text": "Please don't do this", "icon-before": "fast-backward", "icon-after": "fast-forward" })
 +component("button", { "text":"Like", "icon-above": "heart" })
 +component("button", { "icon": "heart" });
 </script>
@@ -74,8 +74,8 @@ component("button", { "text": "Bippitty<br>Boppity<br>Boo" });
 A block button takes 100% of the width of the containing element. They're useful for finishing off a form, when there's only one option.
 
 <script>
-component("button", { "block": true, size: "huge", "text": "Head", "icon-after": "person" })
-+component("button", { "block": true, size: "large", "text": "Shoulders", "type": "primary", "icon-before": "people" })
+component("button", { "block": true, size: "huge", "text": "Head", "icon-after": "user" })
++component("button", { "block": true, size: "large", "text": "Shoulders", "type": "primary", "icon-before": "users" })
 +component("button", { "block": true, size: "medium", "text": "Knees", "type": "cancel" })
 +component("button", { "block": true, size: "small", "text": "Toes", "type": "danger" })
 +component("button", { "block": true, size: "tiny", "text": "If you can read this you're too close" });
