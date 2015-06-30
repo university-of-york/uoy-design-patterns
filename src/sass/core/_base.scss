@@ -13,7 +13,7 @@ body {
   color:$charcoal;
 }
 a {
-  color:$teal;
+  color:darken($blue,10);
   text-decoration: underline;
   &,
   &:hover,
@@ -71,7 +71,7 @@ h6 {
 p {
   @include responsive-font-size($p-font-sizes);
   margin:$base-spacing 0;
-  white-space: break-word;
+  word-wrap: break-word;
 }
 ul,
 ol {

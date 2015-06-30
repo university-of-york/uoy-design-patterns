@@ -20,16 +20,16 @@
     }
   }
 }
-.c-subnav__link {
-  @include transition('background-color');
+.c-subnav__link,
+//We can't put classes on links in Site Manager
+.c-subnav__item a {
   color:$c-subnav__link-color;
   display:block;
-  //border-bottom:1px solid $s2;
-  padding:0.4em 20px;
+  padding:0.2em 0;
   position:relative;
   text-decoration: none;
   &:hover {
-    background-color:darken($light, 10);
+    color:$blue;
   }
   .c-icon--after {
     position: absolute;
