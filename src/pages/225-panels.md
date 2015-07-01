@@ -28,6 +28,15 @@ component("panel", {
 });
 </script>
 
+A compact panel can be used in places where space is at a premium:
+
+<script>
+component("panel", {
+  "content": "<p>Atmospheric chemist Professor Alastair Lewis argues that clean air should be the engine of economic growth in China, rather than the brake.</p>",
+  "type":"compact"
+});
+</script>
+
 You can have a _header_:
 
 <script>

@@ -38,6 +38,10 @@
   color:$light;
 }
 
+.c-panel--compact, .c-panel--compact p {
+  @include font-size(14px);
+}
+
 .c-panel--kis-widget {
 
 }
