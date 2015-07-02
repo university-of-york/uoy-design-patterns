@@ -39,7 +39,7 @@ define(['jquery', 'app/google-docs', 'app/accordion'], function ($, GOOGLEDOC, A
                 container: currentAccordion
               });
               var accordion = $('<div>').addClass('c-accordion__item js-accordion__item').appendTo(container);
-              var accordionTitle = $('<a>').addClass('c-accordion__title').attr('href', '#').html(data[i].Subject+'<i class="c-accordion__icon c-icon c-icon--plus c-icon--medium c-icon--after"></i>').appendTo(accordion);
+              var accordionTitle = $('<a>').addClass('c-accordion__title').attr('href', '#').html(data[i].Subject+'<i class="c-accordion__icon c-icon c-icon--plus c-icon--after"></i>').appendTo(accordion);
               currentAccordion = accordion;
               currentSubject = data[i].Subject;
             }

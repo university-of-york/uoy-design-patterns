@@ -27,7 +27,7 @@
 .c-accordion__icon {
   @include transition(transform);
   position:absolute;
-  top:50%;
+  top:33%;
   right:$base-spacing;
   transform:rotate(45deg);
   @each $name, $size in $icons {
