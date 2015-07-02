@@ -14,6 +14,7 @@
 .c-breadcrumb a {
   text-decoration: none;
   color:$c-breadcrumb__link-color;
+  display:inline-block;
 }
 
 .c-breadcrumb__separator {
