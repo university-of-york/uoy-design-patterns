@@ -15,7 +15,6 @@ $fa-css-prefix:       'c-icon';
 .c-icon {
   display:inline-block;
   background-size:100%;
-  vertical-align:middle;
   box-sizing:padding-box;
 }
 @each $name, $size in $icons {
@@ -26,10 +25,10 @@ $fa-css-prefix:       'c-icon';
   }
 }
 .c-icon--before {
-  margin-right:0.6em;
+  margin-right:0.4em;
 }
 .c-icon--after {
-  margin-left:0.6em;
+  margin-left:0.4em;
 }
 .c-icon--above {
   display: block;
