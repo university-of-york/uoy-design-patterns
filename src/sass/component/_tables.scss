@@ -9,14 +9,25 @@ table {
 th {
   font-weight:bold;
   text-align:left;
-  padding:16px 8px;
-  color:$blue;
+  padding:12px;
+  color:$teal;
   border-bottom:2px solid $blue;
   line-height:1.2;
 }
+
+tbody th {
+  background-color: $s3;
+  color:lighten($teal,5);
+  border-bottom: 1px dotted lighten($blue,15);
+}
+
+tbody tr:last-child th {
+  border-bottom: 0;
+}
+
 td {
   padding:12px;
-  border-bottom:1px solid $blue;
+  border-bottom:1px dotted lighten($blue,15);
 }
 tr:last-child td {
   border-bottom:0;

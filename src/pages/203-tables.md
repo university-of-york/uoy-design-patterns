@@ -9,7 +9,7 @@ id: tables-page
 
 ---
 
-A basic table is very straighforward: remember to include a `caption`, add your table headers to `th`s in the `thead` and the main content in the `tbody`.
+A basic table is very straightforward: remember to include a `caption`, add your table headers to `th`s in the `thead` and the main content in the `tbody`.
 
 <table>
   <caption>Just a normal table</caption>
@@ -54,6 +54,91 @@ A basic table is very straighforward: remember to include a `caption`, add your 
       <td>Shared</td>
       <td>Catered</td>
       <td>&pound;5115.60</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+
+Tables can also have row headings
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="2">Room type</th>
+      <th>Price per week*</th>
+      <th>Price per year*</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Economy</th>
+      <td>Catered, shared bathroom</td>
+      <td>£128 </td>
+      <td>£5,116</td>
+    </tr>
+    <tr>
+      <th rowspan="3">Standard</th>
+      <td>Self-catered, ensuite<br>Nursing and Midwifery students only</td>
+      <td>£132 </td>
+      <td>£5,278</td>
+    </tr>
+    <tr>
+      <td>Catered, ensuite</td>
+      <td>£168</td>
+      <td>£6,706</td>
+    </tr>
+    <tr>
+      <td> Catered, shared bathroom</td>
+      <td>£152</td>
+      <td>£6,062</td>
+    </tr>
+    <tr>
+      <th>Premium</th>
+      <td>Self-catered, ensuite<br>36 week let, room must be vacated at Easter</td>
+      <td>£135</td>
+      <td>£4,869</td>
+    </tr>
+  </tbody>
+</table>
+
+```markup
+<table>
+  <thead>
+    <tr>
+      <th colspan="2">Room type</th>
+      <th>Price per week*</th>
+      <th>Price per year*</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Economy</th>
+      <td>Catered, shared bathroom</td>
+      <td>£128 </td>
+      <td>£5,116</td>
+    </tr>
+    <tr>
+      <th rowspan="3">Standard</th>
+      <td>Self-catered, ensuite<br>Nursing and Midwifery students only</td>
+      <td>£132 </td>
+      <td>£5,278</td>
+    </tr>
+    <tr>
+      <td>Catered, ensuite</td>
+      <td>£168</td>
+      <td>£6,706</td>
+    </tr>
+    <tr>
+      <td> Catered, shared bathroom</td>
+      <td>£152</td>
+      <td>£6,062</td>
+    </tr>
+    <tr>
+      <th>Premium</th>
+      <td>Self-catered, ensuite<br>36 week let, room must be vacated at Easter</td>
+      <td>£135</td>
+      <td>£4,869</td>
     </tr>
   </tbody>
 </table>
