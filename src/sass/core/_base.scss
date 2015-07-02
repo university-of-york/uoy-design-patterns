@@ -117,7 +117,7 @@ hr {
   clear:both;
 }
 small {
-  font-size:0.625em;
+  @include font-size(13px);
 }
 em, i {
   font-style: italic;
