@@ -14,8 +14,11 @@
 .c-breadcrumb a {
   text-decoration: none;
   color:$c-breadcrumb__link-color;
+}
+
+.c-breadcrumb__separator {
   padding:0 $base-spacing/2;
-  &:first-child {
-    padding-left:0;
+  @include mq(small, '-') {
+    padding:0 $base-spacing/4;
   }
 }
