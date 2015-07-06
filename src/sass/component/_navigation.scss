@@ -117,6 +117,7 @@
   right:0;
   top:0;
   background-color:$c-nav__item--more-background-color;
+  border-right:0;
   font-weight: bold;
   .c-nav.is-open & {
     list-style:none;
