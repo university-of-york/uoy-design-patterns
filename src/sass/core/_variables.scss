@@ -134,10 +134,12 @@ $c-mobile-search-button-background-color:$light;
 $c-page-title__link-color:$teal;
 
 // Breadcrumbs
-$c-breadcrumb__link-color:$charcoal;
+$c-breadcrumb-color:$light;
+$c-breadcrumb-background-color:darken($charcoal, 5);
+$c-breadcrumb__link-color:$light;
 
 // Navigation
-$c-nav-background-color:$charcoal;
+$c-nav-background-color:lighten($charcoal,5);
 $c-nav-border-color:$blue;
 $c-nav__item--more-background-color:$blue;
 $c-nav__header-color:$light;
