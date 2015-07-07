@@ -64,12 +64,10 @@ var s3 = {
     "icon"    : "thumbs-o-up"
   }
 };
-component("grid", { "atoms": [
-  { "grid-row": { "atoms": [
+component("grid-row", { "atoms": [
     { "grid-box": { "size": "third", "atoms": s1 } },
     { "grid-box": { "size": "third", "atoms": s2 } },
     { "grid-box": { "size": "third", "atoms": s3 } }
-  ] } }
 ] });
 
 </script>
