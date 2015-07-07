@@ -79,6 +79,8 @@ component("grid", { "atoms": [
 #### Molecules
 
 * **signpost**
-  * **content**: text or HTML to go in the panel itself (required)
-  * **header**: text or HTML to go in the panel header
-  * **image**: URL of an image to go in the panel
+  * **content**: text to go in the signpost itself (required)
+  * **title**: text to go in the signpost header (required)
+  * **icon**: name of icon to go above the title
+  * **cta**: text to be used on the cta button (required)
+  * **href**: target URL for the cta button (required)
