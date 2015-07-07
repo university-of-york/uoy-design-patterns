@@ -165,7 +165,7 @@ component("grid", { "atoms":[
 
 ### Fancy alternative coloured rows
 
-You can make a whole row go blue or teal (including the space going off the screen on either side) by defining the row as `.o-grid__row--alt1` or `.o-grid__row--alt2`.
+You can make a whole row go blue, teal or light grey (including the space going off the screen on either side) by defining the row as `.o-grid__row--alt1`, `.o-grid__row--alt2` or `.o-grid__row--alt3`.
 
 <script>
 component("grid", { "atoms":[
@@ -173,6 +173,9 @@ component("grid", { "atoms":[
     { "grid-box": { "size": "full", "atoms": { "text": " .o-grid__box--full" } } }
   ] } },
   { "grid-row": { "type": "alt2", "atoms": [
+    { "grid-box": { "size": "full", "atoms": { "text": " .o-grid__box--full" } } }
+  ] } },
+  { "grid-row": { "type": "alt3", "atoms": [
     { "grid-box": { "size": "full", "atoms": { "text": " .o-grid__box--full" } } }
   ] } }
 ] } );
@@ -197,4 +200,3 @@ component("grid", { "atoms":[
 
 * **grid**
   * **atoms**: an array of `grid-row`s.
-

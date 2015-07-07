@@ -14,8 +14,8 @@ $box-margin: $base-spacing;
   margin-left:-$box-margin;
 }
 .o-grid__row--alt1,
-.o-grid__row--alt2 {
-  color:$light;
+.o-grid__row--alt2,
+.o-grid__row--alt3 {
   &:before,
   &:after {
     display:block;
@@ -31,6 +31,10 @@ $box-margin: $base-spacing;
   &:after {
     left:100%;
   }
+}
+.o-grid__row--alt1,
+.o-grid__row--alt2 {
+  color:$light;
   hr {
     background-color:$blue;
     color:$blue;
@@ -42,6 +46,7 @@ $box-margin: $base-spacing;
     }
   }
 }
+
 .o-grid__row--alt1 {
   background-color:$teal;
   &:before,
@@ -56,6 +61,15 @@ $box-margin: $base-spacing;
     background-color:darken($teal,5);
   }
 }
+.o-grid__row--alt3 {
+  background-color:$s2;
+  &:before,
+  &:after {
+    background-color:$s2;
+  }
+}
+
+
 .o-grid__box {
   @include font-size;
   //@include demarginalise;
