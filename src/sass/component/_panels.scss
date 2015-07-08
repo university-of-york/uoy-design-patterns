@@ -36,6 +36,9 @@
   background-color:$c-panel--highlight-background-color;
   border-color:$c-panel--highlight-border-color;
   color:$light;
+  & a {
+    color:$light;
+  }
 }
 
 .c-panel--compact, .c-panel--compact p {
