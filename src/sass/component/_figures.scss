@@ -14,7 +14,7 @@
 }
 .c-figure__caption {
   @include demarginalise;
-  background:transparentize($charcoal, 0.25);
+  background:transparentize($charcoal, 0.15);
   color:$light;
   padding:$base-spacing;
   display:inline;
