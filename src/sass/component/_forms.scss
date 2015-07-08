@@ -10,6 +10,7 @@
 }
 .c-form__label {
   display:block;
+  cursor:pointer;
   ~ .c-form__label {
     display:inline-block; // Only first .c-form__label is block-level
     margin-left:2px;
@@ -20,10 +21,10 @@
   width:100%;
   line-height:1.5;
   height:2em;
-  border:1px solid $charcoal;
+  border:1px solid lighten($charcoal,50);
   padding:0.25em 8px;
   border-radius:3px;
-  background:transparent;
+  background-color:#fff;
   -webkit-appearance:none;
 }
 .c-form__input--textarea {
