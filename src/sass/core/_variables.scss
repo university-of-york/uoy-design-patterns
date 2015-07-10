@@ -150,7 +150,7 @@ $c-nav__link-hover-color:darken($light, 5);
 $c-nav__link-hover-background-color:darken($blue, 20);
 
 // Subnavigation
-$c-subnav__link-color:$charcoal;
+$c-subnav__link-color:lighten($charcoal,10);
 
 // Panels
 $c-panel-background-color:$s2;

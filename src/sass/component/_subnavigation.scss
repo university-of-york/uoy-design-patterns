@@ -2,10 +2,20 @@
 // NAVIGATION
 //
 
+.c-subnav {
+  margin:$base-spacing 0;
+}
+
 .c-subnav__list {
   list-style:none;
   margin:0;
   padding:0;
+}
+.c-subnav__list--structural {
+  //Hides the current branch from the 'Other sections' side nav. Site Manager uses 'currentbranchN' classes
+  span[class^="currentbranch"] {
+    display:none;
+  }
 }
 .c-subnav__item {
   + .c-subnav__item {
@@ -45,15 +55,21 @@
 .c-subnav__title {
   margin-top:$base-spacing;
   font-family: $font-title;
+  font-size:24px;
   &:first-child {
     margin-top:0;
   }
-  .c-subnav__link {
+  .c-subnav__link, a {
     //background-color:$charcoal;
     color:$teal;
-    font-size:24px;
     &:hover {
     //  background-color:lighten($charcoal,10);
     }
   }
+}
+//Site Manager uses .currentsection span
+.currentsection {
+  display: block;
+  font-weight: bold;
+  padding:0.2em 0;
 }
