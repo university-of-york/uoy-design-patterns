@@ -1,6 +1,6 @@
 define(
-  ['jquery', 'es5shim', 'picturefill', 'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav', 'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/responsive-tables', 'app/toggle', 'app/grunticon'],
-  function ($, ES5SHIM, PICTUREFILL, UTILS, MODALLINK, ACCORDION, STICKYNAV, TARGETEDNAV, CLEARINGTABLE, TABS, TABLE, TOGGLE, GRUNTICON) {
+  ['jquery', 'es5shim', 'picturefill', 'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav', 'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/responsive-tables', 'app/toggle', 'app/wrapper-height'],
+  function ($, ES5SHIM, PICTUREFILL, UTILS, MODALLINK, ACCORDION, STICKYNAV, TARGETEDNAV, CLEARINGTABLE, TABS, TABLE, TOGGLE, WRAPPERHEIGHT) {
 
   var $window = $(window);
 
@@ -97,9 +97,14 @@ define(
     });
   });
 
+  // Set min-height on wrapper (to ensure footer is at bottom of page)
+  var w = new WRAPPERHEIGHT();
+
   // Sample use of UTILS.debounce
   var resizeFn = UTILS.debounce(function() {
     console.log('Window resized');
+    // CHange min-height of main wrapper
+    w.resize();
   }, 250);
 
   $window.on('resize', resizeFn);
