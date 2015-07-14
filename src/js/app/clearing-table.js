@@ -24,10 +24,12 @@ define(['jquery', 'app/google-docs', 'app/accordion'], function ($, GOOGLEDOC, A
 
     $(window).on('data:loaded', function(e, id, data) {
       if (id === docID) {
-        console.log(data);
         // Sort by department name
         data.sort(function(a, b) {
-            return (a.Subject === b.Subject) ? a['Title of course'] > b['Title of course'] : a.Subject > b.Subject;
+          if (a.Subject === b.Subject) {
+            return (a['Title of course'] > b['Title of course']) ? 1 : -1 ;
+          }
+          return (a.Subject > b.Subject) ? 1 : -1 ;
         });
         var currentSubject = false;
         var currentAccordion = false;
@@ -40,24 +42,43 @@ define(['jquery', 'app/google-docs', 'app/accordion'], function ($, GOOGLEDOC, A
               });
               var accordion = $('<div>').addClass('c-accordion__item js-accordion__item').appendTo(container);
               var accordionTitle = $('<a>').addClass('c-accordion__title').attr('href', '#').html(data[i].Subject+'<i class="c-accordion__icon c-icon c-icon--plus c-icon--after"></i>').appendTo(accordion);
+              var accordionContent = $('<div>').addClass('c-accordion__content').html(output).appendTo(accordion);
               currentAccordion = accordion;
+              currentAccordionContent = accordionContent;
               currentSubject = data[i].Subject;
             }
             var output = '';
-            output+= '    <h4>'+data[i]['Title of course']+'</h4>\n';
-            output+= '    <p>Grade required: '+data[i]['Grade required']+'</p>\n';
-            output+= '    <p>UCAS code: '+data[i]['UCAS code']+'</p>\n';
-            output+= '    <p>Phone number(s): '+data[i]['Phone number(s)']+'</p>\n';
-            output+= '    <p>Qualification earned: '+data[i]['Qualification earned']+'</p>\n';
-            output+= '    <p>Course length: '+data[i]['Course length']+'</p>\n';
-            output+= '    <p>Type of course: '+data[i]['Type of course']+'</p>\n';
-            if (data[i]['Bullet 1'] || data[i]['Bullet 2'] || data[i]['Bullet 3']) output+= '    <ul>';
-            if (data[i]['Bullet 1']) output+= '      <li>'+data[i]['Bullet 1']+'</li>\n';
-            if (data[i]['Bullet 2']) output+= '      <li>'+data[i]['Bullet 2']+'</li>\n';
-            if (data[i]['Bullet 3']) output+= '      <li>'+data[i]['Bullet 3']+'</li>\n';
+            if (data[i]['Link to course page']) {
+              output+= '    <h4 class="c-clearing-table__title"><a href="'+data[i]['Link to course page']+'">'+data[i]['Qualification earned']+' in '+data[i]['Title of course']+'</a></h4>\n';
+            } else {
+              output+= '    <h4 class="c-clearing-table__title">'+data[i]['Qualification earned']+' in '+data[i]['Title of course']+'</h4>\n';
+            }
+            if (data[i]['Entry requirements']) output+= '    <div class="c-clearing-table__requirements">'+data[i]['Entry requirements']+' <small>* or equivalent tariff points</small></div>\n';
+            if (data[i]['UCAS code']) output+= '    <p class="c-clearing-table__ucas-code">UCAS code: '+data[i]['UCAS code']+'</p>\n';
+            if (data[i]['Course length']) output+= '    <p class="c-clearing-table__course-length">Course length: '+data[i]['Course length']+'</p>\n';
+            if (data[i]['Bullet 1'] || data[i]['Bullet 2'] || data[i]['Bullet 3']) {
+              output+= '    <p class="c-clearing-table__additional-requirements">This course has additional entry requirements:</p>';
+              output+= '    <ul class="c-clearing-table__list">';
+            }
+            if (data[i]['Bullet 1']) output+= '      <li class="c-clearing-table__list-item">'+data[i]['Bullet 1']+'</li>\n';
+            if (data[i]['Bullet 2']) output+= '      <li class="c-clearing-table__list-item">'+data[i]['Bullet 2']+'</li>\n';
+            if (data[i]['Bullet 3']) output+= '      <li class="c-clearing-table__list-item">'+data[i]['Bullet 3']+'</li>\n';
             if (data[i]['Bullet 1'] || data[i]['Bullet 2'] || data[i]['Bullet 3']) output+= '    </ul>';
-            output+= '  </div>\n';
-            var accordionContent = $('<div>').addClass('c-accordion__content').html(output).appendTo(currentAccordion);
+            if (data[i]['Phone number(s)']) {
+              // See if it's more than one number
+              var numbers = data[i]['Phone number(s)'].split(',');
+              console.log(numbers);
+              output+= '    <p class="c-clearing-table__phone-numbers">To apply for this course, please call:<br>';
+              $.each(numbers, function(i, v) {
+                console.log(i, v.trim());
+                var vt = v.trim();
+                if (i == numbers.length - 1 && i !== 0) output+= 'or ';
+                output+= '<a class="c-clearing-table__phone-number" href="tel:'+vt+'">'+vt+'</a>\n';
+                if (i < numbers.length - 1) output+= ', ';
+              });
+              output+= '</p>';
+            }
+            var thisContent = $('<div>').addClass('c-clearing-table').html(output).appendTo(currentAccordionContent);
           }
           // Set up accordion if next one is different or if last one
           if (i === data.length - 1) {

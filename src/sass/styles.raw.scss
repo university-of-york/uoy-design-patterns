@@ -54,6 +54,7 @@
  * Events..................Event listings
  * Forms...................Form layout
  * Gallery.................Gallery layout
+ * Clearing tables.........Layout for clearing tables
  *
  * SCOPES
  * TinyMCE.................Stylesheet for TinyMCE - extends other styles
@@ -120,6 +121,10 @@
 @import "component/events";
 @import "component/forms";
 @import "component/gallery";
+@import "component/clearing-tables";
+
+// SCOPES
+@import "scopes/tinymce";
 
 // THEMES
 @import "themes/404";

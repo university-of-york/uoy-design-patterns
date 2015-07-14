@@ -1,0 +1,11 @@
+<div class="c-clearing-table">
+  <h4 class="c-clearing-table__title">{{#link}}<a href="{{this}}">{{/link}}{{title}}{{#link}}<a/>{{/link}}</h4>{{#requirements}}
+  <div class="c-clearing-table__requirements">{{this}} <small>* or equivalent tariff points</div>{{/requirements}}{{#ucas-code}}
+  <p class="c-clearing-table__ucas-code">UCAS code: {{this}}</p>{{/ucas-code}}{{#course-length}}
+  <p class="c-clearing-table__course-length">Course length: 3 years</p>{{/course-length}}{{#if additional-requirements}}
+  <p class="c-clearing-table__additional-requirements">This course has additional entry requirements:</p>
+  <ul class="c-clearing-table__list">{{#each additional-requirements}}
+    <li class="c-clearing-table__list-item">{{this}}</li>{{/each}}
+  </ul>{{/if}}{{#if phone-numbers}}
+  <p class="c-clearing-table__phone-numbers">To apply for this course, please call:<br>{{#each phone-numbers}}{{#if @first}}{{else}}{{#if @last}}or {{/if}}{{/if}}<a class="c-clearing-table__phone-number" href="tel:{{this}}">{{this}}</a>{{#if @last}}{{else}}, {{/if}}{{/each}}</p>{{/if}}
+</div>

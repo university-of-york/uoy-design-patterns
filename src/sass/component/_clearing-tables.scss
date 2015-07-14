@@ -1,0 +1,57 @@
+//
+// CLEARING TABLES
+//
+
+.c-clearing-table {
+  @include demarginalise;
+  margin:$base-spacing 0;
+  border-left:0.8em solid $charcoal;
+  background-color:darken($light, 5);
+  border-radius:4px;
+  padding:1.6em 0.8em;
+  position:relative;
+}
+.c-clearing-table__title {
+  padding-right:120px;
+  font-size:24px;
+  font-size:1.5rem;
+}
+.c-clearing-table__requirements {
+  position:absolute;
+  top:0;
+  right:0;
+  width:100px;
+  max-width:100px;
+  background:$charcoal;
+  color:$light;
+  padding:0.2em;
+  border-radius:4px;
+  text-align:center;
+  margin:0;
+  font-size:32px;
+  font-size:2rem;
+  font-family:$font-title;
+  line-height:1.333;
+  small {
+    font-size:10px;
+    display:block;
+  }
+}
+.c-clearing-table__ucas-code {
+}
+.c-clearing-table__phone-numbers {
+  text-align:right;
+}
+.c-clearing-table__phone-number {
+  white-space: nowrap;
+}
+.c-clearing-table__course-length {
+}
+.c-clearing-table__additional-requirements {
+  margin-bottom:0;
+}
+.c-clearing-table__list {
+  margin:0;
+}
+.c-clearing-table__list-item {
+}
