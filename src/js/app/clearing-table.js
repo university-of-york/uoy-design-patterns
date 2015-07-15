@@ -60,11 +60,11 @@ define(['jquery', 'app/google-docs', 'app/accordion'], function ($, GOOGLEDOC, A
             }
             var output = '';
             if (data[i]['Link to course page']) {
-              output+= '    <h4 class="c-clearing-table__title"><a href="'+data[i]['Link to course page']+'">'+data[i]['Qualification earned']+' in '+data[i]['Title of course']+'</a></h4>\n';
+              output+= '    <h4 class="c-clearing-table__title"><a href="'+data[i]['Link to course page']+'">'+data[i]['Qualification earned']+' '+data[i]['Title of course']+'</a></h4>\n';
             } else {
-              output+= '    <h4 class="c-clearing-table__title">'+data[i]['Qualification earned']+' in '+data[i]['Title of course']+'</h4>\n';
+              output+= '    <h4 class="c-clearing-table__title">'+data[i]['Qualification earned']+' '+data[i]['Title of course']+'</h4>\n';
             }
-            if (data[i]['Entry requirements']) output+= '    <div class="c-clearing-table__requirements">'+data[i]['Entry requirements']+' <small>* or equivalent tariff points</small></div>\n';
+            if (data[i]['Entry requirements']) output+= '    <div class="c-clearing-table__requirements">'+data[i]['Entry requirements']+' <small>or equivalent tariff points</small></div>\n';
             if (data[i]['UCAS code']) output+= '    <p class="c-clearing-table__ucas-code">UCAS code: '+data[i]['UCAS code']+'</p>\n';
             if (data[i]['Course length']) output+= '    <p class="c-clearing-table__course-length">Course length: '+data[i]['Course length']+'</p>\n';
             if (data[i]['Bullet 1'] || data[i]['Bullet 2'] || data[i]['Bullet 3']) {
@@ -78,7 +78,6 @@ define(['jquery', 'app/google-docs', 'app/accordion'], function ($, GOOGLEDOC, A
             if (data[i]['Phone number(s)']) {
               // See if it's more than one number
               var numbers = data[i]['Phone number(s)'].split(',');
-              console.log(numbers);
               output+= '    <p class="c-clearing-table__phone-numbers">To apply for this course, please call:<br>';
               output+= trimAndAdd(numbers);
               output+= '</p>';

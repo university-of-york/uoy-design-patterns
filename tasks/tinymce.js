@@ -81,7 +81,6 @@ module.exports = function(grunt) {
     getStyles(tinyMCESass, function(tinyParsedStyles) {
 
       // Write the additional editor styles to the stylesheet
-      // grunt.log.writeln(tinyParsedStyles);
       addRules(tinyParsedStyles);
 
       // Get the main stylesheet styles
