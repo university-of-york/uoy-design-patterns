@@ -83,7 +83,7 @@
   width:100%;
   text-align:center;
   + .c-btn--block {
-    margin-top:$base-spacing;
+    margin-top:$base-spacing/2;
   }
   .icon-after {
     float:right;
@@ -97,6 +97,9 @@
     display:table-cell;
     border-left-width: 0;
     border-radius: 0;
+    + .c-btn {
+      border-left: 1px solid rgba(255,255,255,0.15);
+    }
     &:first-child {
       border-left-width: 1px;
       &.c-btn--tiny {

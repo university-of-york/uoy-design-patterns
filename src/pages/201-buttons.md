@@ -53,7 +53,7 @@ It's also easy to add an icon to a button, either at the front, the end, (or bot
 component("button", { "text": "Stop", "icon-before": "stop" })
 +component("button", { "text": "Play", "icon-after": "play" })
 +component("button", { "text": "Please don't do this", "icon-before": "fast-backward", "icon-after": "fast-forward" })
-+component("button", { "text":"Like", "icon-above": "heart" })
++component("button", { "text":"Tweet this", "icon-above": "twitter" })
 +component("button", { "icon": "heart" });
 </script>
 

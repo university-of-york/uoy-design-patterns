@@ -79,23 +79,23 @@ component("button-group", { "block": true, "atoms": [
   { "button": { "text": "6", "size": "tiny" } }
 ]})
 +component("button-group", { "block": true, "atoms": [
-  { "button": { "icon": "action-undo" } },
+  { "button": { "icon": "camera" } },
+  { "button": { "icon": "car" } },
   { "button": { "icon": "ban" } },
   { "button": { "icon": "bookmark" } },
-  { "button": { "icon": "brush" } },
-  { "button": { "icon": "box" } },
-  { "button": { "icon": "beaker" } },
-  { "button": { "icon": "action-redo" } }
+  { "button": { "icon": "eye" } },
+  { "button": { "icon": "music" } },
+  { "button": { "icon": "newspaper-o" } }
 ]})
 +component("button-group", { "block": true, "atoms": [
-  { "button": { "text": "Undo", "icon-above": "action-undo" } },
-  { "button": { "text": "Badge", "icon-above": "badge" } },
+  { "button": { "text": "Camera", "icon-above": "camera" } },
+  { "button": { "text": "Car", "icon-above": "car" } },
   { "button": { "text": "Ban", "icon-above": "ban" } },
   { "button": { "text": "Bookmark", "icon-above": "bookmark" } },
-  { "button": { "text": "Brush", "icon-above": "brush" } },
-  { "button": { "text": "Box", "icon-above": "box" } },
-  { "button": { "text": "Beaker", "icon-above": "beaker" } },
-  { "button": { "text": "Redo", "icon-above": "action-redo" } }
+  { "button": { "text": "Envelope", "icon-above": "envelope-o" } },
+  { "button": { "text": "Eye", "icon-above": "eye" } },
+  { "button": { "text": "Music", "icon-above": "music" } },
+  { "button": { "text": "Newspaper", "icon-above": "newspaper-o" } }
 ]});
 </script>
 
