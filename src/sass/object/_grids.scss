@@ -12,6 +12,7 @@ $box-margin: $base-spacing;
   font-size:0;
   position:relative;
   margin-left:-$box-margin;
+  padding-bottom:$base-spacing;
 }
 .o-grid__row--alt1,
 .o-grid__row--alt2,
@@ -77,6 +78,9 @@ $box-margin: $base-spacing;
   vertical-align:top;
   padding-left:$box-margin;
   //padding-bottom:$box-margin;
+  > :last-child {
+    margin-bottom:0;
+  }
 }
 
 // Used once on the page for the main content, please!

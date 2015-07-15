@@ -82,6 +82,9 @@
   display:block;
   width:100%;
   text-align:center;
+  + .c-btn--block {
+    margin-top:$base-spacing;
+  }
   .icon-after {
     float:right;
   }

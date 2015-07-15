@@ -7,7 +7,6 @@
 #grid-page {
   .o-wrapper--main > .o-grid__row > .o-grid__box--full {
     .o-grid__row {
-      margin-bottom:20px;
     }
     .o-grid__box {
       min-height:240px;
@@ -24,30 +23,32 @@
 // Lay out the icons nicely
 #icons-page {
   .c-icon {
-    border-top:6px solid #fff;
-    border-bottom:6px solid #fff;
-    width:100%;
-    background-size:auto 100%;
-    background-position:4px center;
-    line-height:16px;
+    width:96%;
+    width:calc(100% - 24px);
+    border-width:6px 12px;
+    border-style:solid;
+    border-color:#fff;
     &:after {
       content: attr(class) " ";
-      margin-left:26px;
       white-space:nowrap;
+      font-size:16px;
+      font-size:1rem;
+      position:absolute;
+      top:50%;
+      margin-top:-8px;
+      left:32px;
     }
     @each $name, $size in $icons {
       &.c-icon--#{$name} {
-        line-height:$size;
         &:after {
-          margin-left:$size + 16px;
+          left:$size + 16px;
         }
       }
     }
   }
-  .c-icon--light {
+  .c-icon--inverse {
     background-color:$charcoal;
-    border-color:$charcoal;
-    color:$light;
+    border-color:$charcoal
   }
 }
 
