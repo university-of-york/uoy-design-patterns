@@ -12,6 +12,10 @@
   // font-family:Arial;
 }
 
+.cta {
+  @extend .c-btn !optional;
+}
+
 /* Already a selector elsewhere - no need to extend */
 .lead {
 }
