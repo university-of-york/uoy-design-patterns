@@ -1,0 +1,17 @@
+/*
+ * TinyMCE stylesheet
+ * All extends must be !optional, so that the standalone CSS file can still be created
+ what*/
+
+/* Extending existing classes */
+.text-highlight {
+  @extend .c-alert--info !optional;
+  @extend .c-alert !optional;
+  /* Additional styles for TinyMCE editor only - use Sass-style comments */
+  // font-weight:bold;
+  // font-family:Arial;
+}
+
+/* Already a selector elsewhere - no need to extend */
+.lead {
+}

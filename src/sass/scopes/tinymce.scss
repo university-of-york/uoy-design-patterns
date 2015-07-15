@@ -1,8 +1,0 @@
-//
-// TinyMCE stylesheet
-// All extends must be !optional, so that the standalone CSS file can still be created
-//
-
-.text-highlight {
-  @extend .c-alert--info !optional;
-}

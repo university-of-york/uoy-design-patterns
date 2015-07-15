@@ -33,6 +33,17 @@ define(['jquery', 'app/google-docs', 'app/accordion'], function ($, GOOGLEDOC, A
         });
         var currentSubject = false;
         var currentAccordion = false;
+        var trimAndAdd = function(numbers) {
+          var output = '';
+          $.each(numbers, function(i, v) {
+            console.log(i, v.trim());
+            var vt = v.trim();
+            if (i == numbers.length - 1 && i !== 0) output+= ' or ';
+            output+= '<a class="c-clearing-table__phone-number" href="tel:'+vt+'">'+vt+'</a>';
+            if (i < numbers.length - 2) output+= ', ';
+          });
+          return output;
+        };
         for (var i = 0; i < data.length; i++) {
           if (type === 'Both' || data[i][type] === 'Yes') {
             // Set up new current accordion
@@ -69,13 +80,7 @@ define(['jquery', 'app/google-docs', 'app/accordion'], function ($, GOOGLEDOC, A
               var numbers = data[i]['Phone number(s)'].split(',');
               console.log(numbers);
               output+= '    <p class="c-clearing-table__phone-numbers">To apply for this course, please call:<br>';
-              $.each(numbers, function(i, v) {
-                console.log(i, v.trim());
-                var vt = v.trim();
-                if (i == numbers.length - 1 && i !== 0) output+= 'or ';
-                output+= '<a class="c-clearing-table__phone-number" href="tel:'+vt+'">'+vt+'</a>\n';
-                if (i < numbers.length - 1) output+= ', ';
-              });
+              output+= trimAndAdd(numbers);
               output+= '</p>';
             }
             var thisContent = $('<div>').addClass('c-clearing-table').html(output).appendTo(currentAccordionContent);
