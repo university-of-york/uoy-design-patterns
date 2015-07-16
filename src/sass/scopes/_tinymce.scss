@@ -14,6 +14,7 @@
 
 .cta {
   @extend .c-btn !optional;
+  @extend .c-btn--medium !optional;
 }
 
 /* Already a selector elsewhere - no need to extend */

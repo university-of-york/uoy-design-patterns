@@ -144,6 +144,7 @@ $c-nav-background-color:lighten($charcoal,5);
 $c-nav-border-color:$blue;
 $c-nav__item--more-background-color:$blue;
 $c-nav__header-color:$light;
+$c-nav__list-color:darken($light,10);
 $c-nav__link-color:$light;
 $c-nav__link-background-color:transparent;
 $c-nav__link-is-current-background-color:$blue;
@@ -151,7 +152,7 @@ $c-nav__link-hover-color:darken($light, 5);
 $c-nav__link-hover-background-color:darken($blue, 20);
 
 // Subnavigation
-$c-subnav__link-color:lighten($charcoal,10);
+$c-subnav__link-color:lighten($charcoal,20);
 
 // Panels
 $c-panel-background-color:$s2;
