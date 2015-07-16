@@ -190,5 +190,12 @@
   padding:0 $base-spacing;
   .c-nav.is-open & {
     display:block;
+    a {
+      color:$c-nav__link-color;
+      text-decoration: none;
+      &:hover {
+        color:$c-nav__link-hover-color;
+      }
+    }
   }
 }
