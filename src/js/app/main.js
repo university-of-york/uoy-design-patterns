@@ -1,36 +1,36 @@
 define(
-  ['jquery', 'es5shim', 'picturefill', 'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav', 'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/responsive-tables', 'app/toggle', 'app/wrapper-height'],
-  function ($, ES5SHIM, PICTUREFILL, UTILS, MODALLINK, ACCORDION, STICKYNAV, TARGETEDNAV, CLEARINGTABLE, TABS, TABLE, TOGGLE, WRAPPERHEIGHT) {
+  ['jquery', 'es5shim', 'picturefill', 'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav', 'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/responsive-tables', 'app/toggle', 'app/wrapper-height', 'app/analytics'],
+  function ($, ES5SHIM, PICTUREFILL, UTILS, MODALLINK, ACCORDION, STICKYNAV, TARGETEDNAV, CLEARINGTABLE, TABS, TABLE, TOGGLE, WRAPPERHEIGHT, ANALYTICS) {
 
   var $window = $(window);
 
   if (typeof window.console === 'undefined') {
     console = {};
-    console.log = function(a) { /*alert(a);*/ };
+    console.log = function (a) { /*alert(a);*/ };
   }
 
   // Disable buttons
-  $('.btn-disabled').click(function(e) {
+  $('.btn-disabled').click(function (e) {
     e.preventDefault();
     return false;
   });
 
   // Add accordion functionality
-  UTILS.eachIfExists('.js-accordion__item', function(i, accordion) {
+  UTILS.eachIfExists('.js-accordion__item', function (i, accordion) {
     var a = new ACCORDION({
       container: accordion
     });
   });
 
   // Add accordion functionality
-  UTILS.eachIfExists('.js-responsive-table', function(i, table) {
+  UTILS.eachIfExists('.js-responsive-table', function (i, table) {
     var t = new TABLE({
       container: table
     });
   });
 
   // Add tab functionality
-  UTILS.eachIfExists('.js-tabs', function(i, tabs) {
+  UTILS.eachIfExists('.js-tabs', function (i, tabs) {
     var t = new TABS({
       container: tabs
     });
@@ -40,7 +40,7 @@ define(
   UTILS.scrollToHash();
 
   // Add menu toggle functionality
-  UTILS.eachIfExists('.js-toggle-button', function(i, button) {
+  UTILS.eachIfExists('.js-toggle-button', function (i, button) {
     var $b = $(button);
     var $c = $($b.attr('href'));
     // console.log($b.attr('href'));
@@ -52,9 +52,9 @@ define(
   });
 
   // Use anchors to submit forms
-  UTILS.eachIfExists('.js-submit-form', function(i, a) {
+  UTILS.eachIfExists('.js-submit-form', function (i, a) {
     var $a = $(a);
-    $a.on('click', function(e) {
+    $a.on('click', function (e) {
       e.preventDefault();
       var thisForm = $a.parents('form');
       thisForm.submit();
@@ -62,14 +62,14 @@ define(
   });
 
   // Clearing tables
-  UTILS.eachIfExists('#clearing-courses-uk-eu', function(i, a) {
+  UTILS.eachIfExists('#clearing-courses-uk-eu', function (i, a) {
     var c = new CLEARINGTABLE({
       type: 'Home/EU',
       container: $(a)
     });
   });
 
-  UTILS.eachIfExists('#clearing-courses-international', function(i, a) {
+  UTILS.eachIfExists('#clearing-courses-international', function (i, a) {
     var c = new CLEARINGTABLE({
       type: 'International',
       container: $(a)
@@ -77,21 +77,21 @@ define(
   });
 
   // A link with class .js-modal will href modal content
-  UTILS.eachIfExists('.js-modal', function(i, a) {
+  UTILS.eachIfExists('.js-modal', function (i, a) {
     var m = new MODALLINK({
       link: $(a)
     });
   });
 
   // Add sticky nav functionality to nav
-  UTILS.eachIfExists('.js-sticky-nav', function(i, a) {
+  UTILS.eachIfExists('.js-sticky-nav', function (i, a) {
     var s = new STICKYNAV({
       container: $(a)
     });
   });
 
   // Add sticky nav functionality to nav
-  UTILS.eachIfExists('.js-targeted-nav', function(i, a) {
+  UTILS.eachIfExists('.js-targeted-nav', function (i, a) {
     var s = new TARGETEDNAV({
       container: $(a)
     });
@@ -101,7 +101,7 @@ define(
   var w = new WRAPPERHEIGHT();
 
   // Sample use of UTILS.debounce
-  var resizeFn = UTILS.debounce(function() {
+  var resizeFn = UTILS.debounce(function () {
     console.log('Window resized');
     // CHange min-height of main wrapper
     w.resize();
@@ -112,3 +112,8 @@ define(
   console.log('Javascript loaded');
 
 });
+
+(function (i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function (){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');

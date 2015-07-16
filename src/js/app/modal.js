@@ -14,7 +14,7 @@ define(['jquery'], function ($) {
   var modalPrev = false;
   var modalNext = false;
 
-  var MODAL = function(options) {
+  var MODAL = function (options) {
 
     this.content = options.content || this.defaults.content;
     this.title = options.title || this.defaults.title;
@@ -22,7 +22,7 @@ define(['jquery'], function ($) {
     this.prev = options.prev || false;
     this.next = options.next || false;
     // Use setTimout to get unique ID
-    this.id = setTimeout(function(){});
+    this.id = setTimeout(function (){});
 
     this.checkModal();
     this.container = this.createModal();
@@ -35,7 +35,7 @@ define(['jquery'], function ($) {
     type: 'framed'
   };
 
-  MODAL.prototype.open = function() {
+  MODAL.prototype.open = function () {
     // Show wrapper
     var thisModal = $('#modal-'+this.id);
     this.activate(modalWrapper);
@@ -51,24 +51,24 @@ define(['jquery'], function ($) {
     currentModal = this;
   };
 
-  MODAL.prototype.activate = function($el) {
+  MODAL.prototype.activate = function ($el) {
     $el.removeClass('is-hidden');
-    setTimeout(function() {
+    setTimeout(function () {
       $el.addClass('is-active');
     }, 30);
   };
 
-  MODAL.prototype.close = function() {
+  MODAL.prototype.close = function () {
     // Deactivate all the modals (in case one is hanging around)
     this.deactivate($('.c-modal'));
     this.deactivate($('.c-modal__wrapper'));
     this.deactivate($('.c-modal__nav'));
   };
 
-  MODAL.prototype.deactivate = function($el) {
+  MODAL.prototype.deactivate = function ($el) {
 
     var called = false;
-    $el.removeClass('is-active').one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function(e){
+    $el.removeClass('is-active').one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function (e){
       // Stop it affecting the wrapper
       e.stopPropagation();
       $el.off('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd');
@@ -76,7 +76,7 @@ define(['jquery'], function ($) {
       $el.addClass('is-hidden');
     });
     // Manually trigger transition end in unsupported or broken implementations
-    var callback = function() {
+    var callback = function () {
       if (called !== true) {
         $el.trigger('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd');
       }
@@ -84,31 +84,31 @@ define(['jquery'], function ($) {
     setTimeout(callback, 5000);
   };
 
-  MODAL.prototype.navigate = function(dir) {
+  MODAL.prototype.navigate = function (dir) {
     dir = dir || 'next';
     if (this[dir] !== false) this[dir].click();
   };
 
-  MODAL.prototype.checkModal = function() {
+  MODAL.prototype.checkModal = function () {
 
     // Temporary this-holder
     // var that = this;
 
     if ($('.c-modal__wrapper').length > 0) return true;
 
-    modalWrapper = $('<div>').addClass('c-modal__wrapper is-hidden').on('click', function(e) {
+    modalWrapper = $('<div>').addClass('c-modal__wrapper is-hidden').on('click', function (e) {
       currentModal.close();
     });
     modalPrev = $('<a>').addClass('c-modal__nav c-modal__nav--prev is-hidden')
                         .html('<i class="c-icon c-icon--huge c-icon--chevron-left c-icon--light"></i>')
-                        .on('click', function(e) {
+                        .on('click', function (e) {
                           e.stopPropagation();
                           currentModal.navigate('prev');
                         })
                         .appendTo(modalWrapper);
     modalNext = $('<a>').addClass('c-modal__nav c-modal__nav--next is-hidden')
                         .html('<i class="c-icon c-icon--huge c-icon--chevron-right c-icon--light"></i>')
-                        .on('click', function(e) {
+                        .on('click', function (e) {
                           e.stopPropagation();
                           currentModal.navigate('next');
                         })
@@ -120,17 +120,17 @@ define(['jquery'], function ($) {
 
   };
 
-  MODAL.prototype.createModal = function() {
+  MODAL.prototype.createModal = function () {
 
     // Temporary this-holder
     var that = this;
-    var modalContainer = $('<div>').addClass('c-modal c-modal--'+this.type+' is-hidden').attr('id', 'modal-'+this.id).on('click', function(e) {
+    var modalContainer = $('<div>').addClass('c-modal c-modal--'+this.type+' is-hidden').attr('id', 'modal-'+this.id).on('click', function (e) {
       // Don't allow the click to get to the wrapper, or it will close
       e.stopPropagation();
     });
     var modalTitle = this.title !== false ? $('<h4>').addClass('c-modal__title').text(this.title) : false;
     var modalContent = this.content !== false ? $('<div>').addClass('c-modal__content').html(this.content) : false;
-    var modalClose = $('<a>').addClass('c-modal__close').attr('title', 'Close this window').html('&times;').on('click', function(e) {
+    var modalClose = $('<a>').addClass('c-modal__close').attr('title', 'Close this window').html('&times;').on('click', function (e) {
       that.close();
     });
 

@@ -9,7 +9,7 @@ category: Javascript
  */
 define(['jquery', 'app/google-docs', 'app/accordion'], function ($, GOOGLEDOC, ACCORDION) {
 
-  var CLEARINGTABLE = function(options) {
+  var CLEARINGTABLE = function (options) {
 
     if (!options.container) return false;
 
@@ -22,10 +22,10 @@ define(['jquery', 'app/google-docs', 'app/accordion'], function ($, GOOGLEDOC, A
       id: docID
     });
 
-    $(window).on('data:loaded', function(e, id, data) {
+    $(window).on('data:loaded', function (e, id, data) {
       if (id === docID) {
         // Sort by department name
-        data.sort(function(a, b) {
+        data.sort(function (a, b) {
           if (a.Subject === b.Subject) {
             return (a['Title of course'] > b['Title of course']) ? 1 : -1 ;
           }
@@ -33,9 +33,9 @@ define(['jquery', 'app/google-docs', 'app/accordion'], function ($, GOOGLEDOC, A
         });
         var currentSubject = false;
         var currentAccordion = false;
-        var trimAndAdd = function(numbers) {
+        var trimAndAdd = function (numbers) {
           var output = '';
-          $.each(numbers, function(i, v) {
+          $.each(numbers, function (i, v) {
             console.log(i, v.trim());
             var vt = v.trim();
             if (i == numbers.length - 1 && i !== 0) output+= ' or ';

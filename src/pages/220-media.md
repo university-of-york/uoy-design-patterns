@@ -9,7 +9,7 @@ id: media-page
 
 ---
 
-<p class="lead">The media object is a multi-purpose object that can be used in a variety of different location. It's basic use is to float an image to the left, with some text next to it (see [this blog post](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/). The basic set-up of the _media_ object is:</p>
+<p class="lead">The media object is a multi-purpose object that can be used in a variety of different location. It's basic use is to float an image to the left, with some text next to it (see [this blog post](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/)). The basic set-up of the _media_ object is:</p>
 
 * A _picture_ on the left (usually containing a [`.c-figure`](figure.html))
 * A _body_ on the right, which can contain any markup, usually a title, subtitle and content

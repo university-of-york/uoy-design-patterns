@@ -18,20 +18,20 @@ define(['jquery'], function ($) {
       rows,
       columnClasses = [];
 
-  var addRowClasses = function() {
+  var addRowClasses = function () {
 
-    $.each(rows, function(i, row) {
+    $.each(rows, function (i, row) {
       var cells = $(row).children('th, td');
-      $.each(cells, function(j, cell) {
+      $.each(cells, function (j, cell) {
         $(cells[j]).addClass(columnClasses[j]);
       });
     });
 
   };
 
-  var getColClasses = function(onComplete) {
+  var getColClasses = function (onComplete) {
 
-    $.each(columns, function(i, column) {
+    $.each(columns, function (i, column) {
       var $column = $(column);
       var span = $column.attr('span') || 1;
       for (var j = 0; j < span; j++) {
@@ -47,7 +47,7 @@ define(['jquery'], function ($) {
 
 
   // Define your 'class'
-  var TABLE = function(options) {
+  var TABLE = function (options) {
 
     if (!options.container) return false;
 

@@ -12,7 +12,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   var $window = $(window);
   var $document = $(document);
 
-  var STICKYNAV = function(options) {
+  var STICKYNAV = function (options) {
 
     if (!options.container) return false;
 
@@ -32,7 +32,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     content: false
   };
 
-  STICKYNAV.prototype.check = function(e) {
+  STICKYNAV.prototype.check = function (e) {
     var that = e.data.that,
         scrollTop = $window.scrollTop(),
         addOrRemove = scrollTop >= that.containerStartPosition;
@@ -40,14 +40,14 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   };
 
   // Find new position of sticky nav
-  STICKYNAV.prototype.reset = function(e) {
+  STICKYNAV.prototype.reset = function (e) {
     var that = e.data.that;
     that.containerStartPosition = that.parent.offset().top;
     console.log('New container start position is '+that.containerStartPosition);
     $window.trigger('scroll');
   };
 
-  STICKYNAV.prototype.foo = UTILS.debounce(function() {
+  STICKYNAV.prototype.foo = UTILS.debounce(function () {
     var scrollTop = $window.scrollTop(),
         documentHeight = $document.height(),
         windowHeight = $window.height(),

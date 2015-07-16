@@ -11,7 +11,7 @@ define(['jquery'], function ($) {
 
   // Define your 'class'
   // Better to pass an options object instead of multiple arguments
-  var TABS = function(options) {
+  var TABS = function (options) {
 
     // Get the options or their defaults
     if (!options.container) return false;
@@ -28,7 +28,7 @@ define(['jquery'], function ($) {
       tabContainer.css('min-height', navHeight);
     }
 
-    tabLinks.on('click', function(e) {
+    tabLinks.on('click', function (e) {
       e.preventDefault();
       var $this = $(this);
       var $thisTab = $this.parent();
