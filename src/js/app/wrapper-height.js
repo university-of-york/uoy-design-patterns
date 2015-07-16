@@ -9,18 +9,18 @@ category: Javascript
  */
 define(['jquery'], function ($) {
 
-  var WRAPPERHEIGHT = function(options) {
+  var WRAPPERHEIGHT = function (options) {
 
     this.resize();
 
   };
 
-  WRAPPERHEIGHT.prototype.resize = function() {
+  WRAPPERHEIGHT.prototype.resize = function () {
 
     var windowHeight = $(window).height();
     var bodyChildren = $('body').children();
     var nonMainWrapperHeight = 0;
-    bodyChildren.each(function(i,v) {
+    bodyChildren.each(function (i,v) {
 
       var $v = $(v);
       // Don't count them if position is 'fixed' or 'absolute', or if it is a script

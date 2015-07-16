@@ -9,14 +9,14 @@ category: Javascript
  */
 define(['jquery'], function ($) {
 
-  var makeURL = function(id) {
+  var makeURL = function (id) {
     return 'https://spreadsheets.google.com/feeds/cells/'+id+'/od6/public/full?alt=json';
   };
 
 
   // Define your 'class'
   // Better to pass an options object instead of multiple arguments
-  var GOOGLEDOC = function(options) {
+  var GOOGLEDOC = function (options) {
     // Get the options or their defaults
     if (!options.id) return false;
 
@@ -25,7 +25,7 @@ define(['jquery'], function ($) {
 
     // Create the data array
     var docURL = makeURL(id);
-    $.getJSON(docURL, function(r) {
+    $.getJSON(docURL, function (r) {
       for (var i = 0; i < r.feed.entry.length; i++) {
         var cell = r.feed.entry[i].gs$cell;
         var row = parseInt(cell.row) - 1;

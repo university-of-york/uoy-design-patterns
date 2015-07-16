@@ -12,7 +12,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   var $window = $(window);
   var $document = $(document);
 
-  var TARGETEDNAV = function(options) {
+  var TARGETEDNAV = function (options) {
 
     if (!options.container) return false;
     this.container = options.container;
@@ -22,7 +22,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     this.height = this.container.height();
     console.log(this.height);
     var sections = [];
-    this.links.each(function(i, link) {
+    this.links.each(function (i, link) {
       var $link = $(link),
           section = $($link.attr('href'));
       if (section.length > 0) sections.push(section.get(0));
@@ -37,10 +37,10 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
   };
 
-  TARGETEDNAV.prototype.check = function(e) {
+  TARGETEDNAV.prototype.check = function (e) {
     var that = e.data.that,
         scrollTop = $window.scrollTop();
-    $.each(that.sections, function(i, section) {
+    $.each(that.sections, function (i, section) {
       var $section = $(section);
       if (scrollTop < ($section.offset().top - that.height)) {
         var currentSection = i > 0 ? that.sections[i-1] : false ;
@@ -53,11 +53,11 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     });
   };
 
-  TARGETEDNAV.prototype.reset = function(e) {
+  TARGETEDNAV.prototype.reset = function (e) {
 
   };
 
-  TARGETEDNAV.prototype.makeCurrent = function(section) {
+  TARGETEDNAV.prototype.makeCurrent = function (section) {
     if (section !== false) {
       var $link = $('a[href="#'+$(section).attr('id')+'"]', this.container);
       var $item = $link.parent();

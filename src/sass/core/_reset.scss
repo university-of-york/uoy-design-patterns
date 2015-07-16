@@ -5,6 +5,8 @@ html,body,section,nav,article,aside,h1,h2,h3,h4,h5,h6,
 header,footer,p,hr,pre,blockquote,ol,ul,li,dl,dt,dd,figure,figcaption,
 div,a,img,iframe,form,fieldset,legend,label,input,button,select,textarea {
   box-sizing:border-box;
+  // iOS <=4 needs prefix
+  -webkit-box-sizing:border-box;
 }
 html {
   font-size:100%;

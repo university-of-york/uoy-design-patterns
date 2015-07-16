@@ -26,14 +26,14 @@ define(['jquery', 'app/color'], function ($, COLOR) {
       canFlip = true;
 
   // "Private" functions (only available inside this file)
-  var colorSwap = function(a, b) {
+  var colorSwap = function (a, b) {
     // Remember to return something
   };
 
 
   // Define your 'class'
   // Better to pass an options object instead of multiple arguments
-  var SAMPLE = function(options) {
+  var SAMPLE = function (options) {
     // Get the options or their defaults
     this.width = options.width || Default.width;
     this.easing = options.easing || Default.easing;
@@ -50,11 +50,11 @@ define(['jquery', 'app/color'], function ($, COLOR) {
 
   // "Public" functions (accessible outside this file)
 
-  SAMPLE.prototype.setColor = function(val) {
+  SAMPLE.prototype.setColor = function (val) {
     // Always return true or false from setters
   };
 
-  SAMPLE.prototype.getColor = function() {
+  SAMPLE.prototype.getColor = function () {
     // Return the value
   };
 

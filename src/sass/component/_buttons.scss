@@ -17,6 +17,14 @@
   // Just some default colors
   background-color:map-get(map-get($c-btn, default), bg);
   color:map-get(map-get($c-btn, default), text);
+  // Stops buttons bunching up on smaller devices
+  margin-bottom:$base-spacing/2;
+  margin-right:$base-spacing/2;
+  &:only-child,
+  &:last-child {
+    margin-bottom:0;
+    margin-right:0;
+  }
 }
 // Button types
 @each $name, $color in $c-btn {
@@ -97,6 +105,8 @@
     display:table-cell;
     border-left-width: 0;
     border-radius: 0;
+    margin-bottom:0;
+    margin-right:0;
     + .c-btn {
       border-left: 1px solid rgba(255,255,255,0.15);
     }

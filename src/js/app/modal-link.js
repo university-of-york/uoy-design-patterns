@@ -9,7 +9,7 @@ category: Javascript
  */
 define(['jquery', 'app/modal'], function ($, MODAL) {
 
-  var validateURL = function(url) {
+  var validateURL = function (url) {
     var p = document.createElement('a');
     try {
       p.href = url;
@@ -19,7 +19,7 @@ define(['jquery', 'app/modal'], function ($, MODAL) {
     }
   };
 
-  var MODALLINK = function(options) {
+  var MODALLINK = function (options) {
 
     $a = options.link;
 
@@ -57,7 +57,7 @@ define(['jquery', 'app/modal'], function ($, MODAL) {
 
     // console.log(m);
 
-    $a.on('click', function(e) {
+    $a.on('click', function (e) {
       e.preventDefault();
       m.open();
     });

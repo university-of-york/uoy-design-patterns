@@ -73,11 +73,9 @@ $box-margin: $base-spacing;
 
 .o-grid__box {
   @include font-size;
-  //@include demarginalise;
   display:inline-block;
   vertical-align:top;
   padding-left:$box-margin;
-  //padding-bottom:$box-margin;
   > :last-child {
     margin-bottom:0;
   }

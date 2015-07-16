@@ -9,7 +9,7 @@ category: Javascript
  */
 define(['jquery'], function ($) {
 
-  var TOGGLE = function(options) {
+  var TOGGLE = function (options) {
 
     if (!options.container && !options.button) return false;
 
@@ -17,7 +17,7 @@ define(['jquery'], function ($) {
     var toggleButton = options.button;
     var toggleClassName = options.className || 'is-open';
 
-    toggleButton.on('click', function(e) {
+    toggleButton.on('click', function (e) {
       e.preventDefault();
       toggleContainer.toggleClass(toggleClassName);
       return false;

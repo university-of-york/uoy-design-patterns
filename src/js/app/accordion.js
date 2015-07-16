@@ -18,7 +18,7 @@ define(['jquery'], function ($) {
 
 
   // Toggle state of item
-  var toggleState = function(e) {
+  var toggleState = function (e) {
 
     e.preventDefault();
 
@@ -34,7 +34,7 @@ define(['jquery'], function ($) {
     // Close others if needed
     if ($item.parent().hasClass('c-accordion--collapse')) {
       var $otherItems = $item.siblings('.c-accordion__item');
-      $otherItems.each(function(i, otherItem) {
+      $otherItems.each(function (i, otherItem) {
         toggleContent(otherItem, true);
       });
     }
@@ -44,7 +44,7 @@ define(['jquery'], function ($) {
   };
 
   // Open the content in item
-  var toggleContent = function(item, close) {
+  var toggleContent = function (item, close) {
 
     // jQuerify item if needed
     var $item = item instanceof jQuery ? item : $(item);
@@ -70,7 +70,7 @@ define(['jquery'], function ($) {
 
 
   // Define your 'class'
-  var ACCORDION = function(options) {
+  var ACCORDION = function (options) {
 
     // Get the options or their defaults
     if (!options.container) return false;
