@@ -6,7 +6,7 @@
   overflow:hidden;
 }
 .c-page-title__header {
-  @include font-size(32px, 1.25);
+  @include font-size(24px, 1.25);
   max-width:$container-width;
   margin:0 auto $base-spacing/2 auto;
   padding:0 0 0 $base-spacing;
