@@ -53,9 +53,6 @@ module.exports = function (grunt) {
               }
               output+= '  </li>\n';
             }
-            output+= '  <li class="c-nav__item c-nav__item--more">\n';
-            output+= '    <a class="c-nav__link js-toggle-button" href="#Main-Navigation">More&hellip;</a>\n';
-            output+= '  </li>\n';
             output+= '</ul>\n';
             grunt.file.write(navPage, output);
             grunt.log.ok("Wrote file to " + navPage);
