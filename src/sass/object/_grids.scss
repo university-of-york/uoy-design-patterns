@@ -13,6 +13,9 @@ $box-margin: $base-spacing;
   position:relative;
   margin-left:-$box-margin;
   padding-bottom:$base-spacing;
+  &:only-child {
+    padding-bottom:0;
+  }
 }
 .o-grid__row--alt1,
 .o-grid__row--alt2,
@@ -150,7 +153,8 @@ $box-margin: $base-spacing;
 // e.g. .o-grid__box--third@small will go to 33.333% width on small screens and lower
 // (even if it would normally go to 100% width)
 //
-@each $size, $measurement in $width {
+$htdiw: mapReverse($width);
+@each $size, $measurement in $htdiw {
 
   @include mq(#{$size}, '-') {
     // Two classes to override specificity of usual grid boxes

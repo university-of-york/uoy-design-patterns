@@ -1,6 +1,6 @@
 {
   "name": "UoYDesignPatterns",
-  "version": "0.1.3",
+  "version": "0.7.0",
   "description": "This repository holds the design patterns used on the University of York's website (http://www.york.ac.uk).",
   "main": "gruntfile.js",
   "repository": {

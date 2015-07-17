@@ -1,7 +1,7 @@
 module.exports = {
   build: {
     options: {
-      text: '<%= banner.compact %>\n'
+      text: '<%= banner.compact %>'
     },
     files: {
       'build/js/app.min.js': 'build/js/app.min.js',
@@ -10,7 +10,7 @@ module.exports = {
   },
   live: {
     options: {
-      text: '<%= banner.full %>\n'
+      text: '<%= banner.full %>'
     },
     files: {
       'build/js/app.min.js': 'build/js/app.min.js',

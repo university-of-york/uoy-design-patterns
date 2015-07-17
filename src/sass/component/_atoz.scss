@@ -26,6 +26,7 @@
   border-radius:3px;
   text-align:center;
   background:$light;
+  text-decoration:none;
   &:hover {
     background:darken($light, 5);
   }
@@ -70,6 +71,9 @@
   &:nth-of-type(odd) {
     background:darken($light, 5);
   }
+}
+.c-atoz__link {
+  text-decoration:none;
 }
 .c-atoz__title {
   margin-bottom:0.4em;

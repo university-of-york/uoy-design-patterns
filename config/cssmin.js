@@ -1,7 +1,7 @@
 module.exports = {
   build: {
     options: {
-      keepSpecialComments: 1
+      keepSpecialComments: 0
     },
     files: [{
       expand: true,

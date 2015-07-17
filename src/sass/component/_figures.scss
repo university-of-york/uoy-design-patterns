@@ -6,6 +6,7 @@
   margin:$base-spacing 0;
   display:block;
   overflow:hidden;
+  max-width:100%;
 }
 .c-figure__image,
 .c-figure img {
@@ -19,6 +20,9 @@
   padding:$base-spacing;
   display:inline;
   position:absolute;
+  @include mq('small', '-') {
+    padding:$base-spacing/2;
+  }
 }
 
 // Caption positions
@@ -29,13 +33,23 @@
   @include mq('medium', '-') {
     margin-right:20px;
   }
+  @include mq('small', '-') {
+    margin-right:$base-spacing/2;
+    bottom:$base-spacing/2;
+    left:$base-spacing/2;
+  }
 }
 .c-figure__caption--top-left {
   top:$base-spacing;
   left:$base-spacing;
   margin-right:25%;
-  @include mq('medium', '-') {
-    margin-right:20px;
+  @include mq('medium', '~') {
+    margin-right:$base-spacing;
+  }
+  @include mq('small', '-') {
+    margin-right:$base-spacing/2;
+    top:$base-spacing/2;
+    left:$base-spacing/2;
   }
 }
 .c-figure__caption--top-right {
@@ -45,6 +59,11 @@
   @include mq('medium', '-') {
     margin-left:20px;
   }
+  @include mq('small', '-') {
+    margin-left:$base-spacing/2;
+    top:$base-spacing/2;
+    right:$base-spacing/2;
+  }
 }
 .c-figure__caption--bottom-right {
   bottom:$base-spacing;
@@ -52,6 +71,11 @@
   margin-left:25%;
   @include mq('medium', '-') {
     margin-left:20px;
+  }
+  @include mq('small', '-') {
+    margin-left:$base-spacing/2;
+    bottom:$base-spacing/2;
+    right:$base-spacing/2;
   }
 }
 .c-figure__caption--right {
@@ -82,6 +106,8 @@
     display:block;
     position:absolute;
     z-index:10;
+    height:100%;
+    width:auto;
   }
   .c-figure__caption {
     position:relative;
@@ -99,11 +125,32 @@
 
 // LINK
 .c-figure--link {
+  text-decoration:none;
   .c-figure__caption {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     width: 100%;
+    @include mq('tiny') {
+      position:static;
+      display:block;
+      &.c-figure__caption--blue {
+        background-color:$blue;
+      }
+      &.c-figure__caption--pink {
+        background-color:$pink;
+      }
+      &.c-figure__caption--teal {
+        background-color:$teal;
+      }
+      &.c-figure__caption--gold {
+        background-color:$gold;
+      }
+      &.c-figure__caption--charcoal {
+        background-color:$charcoal;
+      }
+
+    }
   }
 }

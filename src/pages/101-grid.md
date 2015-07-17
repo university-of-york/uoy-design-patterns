@@ -163,6 +163,18 @@ component("grid", { "atoms":[
 ] } );
 </script>
 
+You can play around with the differnt displays by assigning these classes.
+
+<script>
+component("grid", { "atoms":[
+  { "grid-row": { "atoms": [
+    { "grid-box": { "size": "third o-grid__box--half@medium o-grid__box--full@small", "atoms": { "text": " .o-grid__box--third.o-grid__box--half@medium.o-grid__box--full@small" } } },
+    { "grid-box": { "size": "third o-grid__box--half@medium o-grid__box--full@small", "atoms": { "text": " .o-grid__box--third.o-grid__box--half@medium.o-grid__box--full@small" } } },
+    { "grid-box": { "size": "third o-grid__box--full@medium", "atoms": { "text": " .o-grid__box--third.o-grid__box--full@medium" } } }
+  ] } }
+] } );
+</script>
+
 ### Fancy alternative coloured rows
 
 You can make a whole row go blue, teal or light grey (including the space going off the screen on either side) by defining the row as `.o-grid__row--alt1`, `.o-grid__row--alt2` or `.o-grid__row--alt3`.
