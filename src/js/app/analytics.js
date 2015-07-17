@@ -12,7 +12,7 @@ category: modules
 
 define(['jquery', 'app/utils'], function ($, UTILS) {
 
-  var isDev = !!(document.location.hostname === 'localhost');
+  var isDev = (document.location.hostname === 'localhost');
   var analyticsOptions = isDev ? { 'cookieDomain': 'none' } : 'auto' ;
   var trackerNumber = isDev ? 'UA-1621853-16' : 'UA-1621853-1';
 
@@ -67,20 +67,20 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
         ga('send', 'event', category, action, label);
 
-        if (event.metaKey || event.ctrlKey || hrefTarget == "_blank"){
-          newTab = true;
-        }
+        return true;
 
-        // Check to see if external images should always load externally or they might be in a gallery
+        // if (event.metaKey || event.ctrlKey || hrefTarget == "_blank"){
+        //   newTab = true;
+        // }
 
-        if (newTab === false && targetImage.length === 0){
-          event.preventDefault();
-          setTimeout('location.href = "'+href+'"', 200); //delay is set before redirection so google gets a chance to send tracking gif
-        }
+        // if (newTab === false && targetImage.length === 0){
+        //   event.preventDefault();
+        //   setTimeout('location.href = "'+href+'"', 200); //delay is set before redirection so google gets a chance to send tracking gif
+        // }
 
       });
     });
-  }
+  };
 
   ga_track("a[href^='mailto']");
   ga_track("a[href^='tel']");
