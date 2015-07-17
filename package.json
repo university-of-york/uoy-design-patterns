@@ -1,6 +1,6 @@
 {
   "name": "UoYDesignPatterns",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "description": "This repository holds the design patterns used on the University of York's website (http://www.york.ac.uk).",
   "main": "gruntfile.js",
   "repository": {
@@ -16,6 +16,10 @@
       "name": "Chris Marsh",
       "email": "chris.marsh@york.ac.uk",
       "url": "http://www-users.york.ac.uk/~cm1438/"
+    },
+    {
+      "name": "Paul Kelly",
+      "email": "paul.kelly@york.ac.uk"
     }
   ],
   "devDependencies": {
@@ -24,6 +28,7 @@
     "grunt-autoprefixer": "^2.2.0",
     "grunt-bower-task": "^0.4.0",
     "grunt-browser-sync": "^2.0.0",
+    "grunt-bump": "^0.3.1",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-compass": "^1.0.1",
     "grunt-contrib-concat": "^0.5.0",
@@ -33,11 +38,10 @@
     "grunt-contrib-jshint": "^0.11.0",
     "grunt-contrib-requirejs": "^0.4.4",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-grunticon": "^2.1.2",
+    "grunt-header": "^1.0.0",
     "grunt-makedocs": "latest",
     "grunt-modernizr": "^0.6.0",
     "grunt-newer": "^1.1.0",
-    "grunt-svgmin": "^2.0.1",
     "load-grunt-config": "^0.16.0",
     "time-grunt": "^1.2.1"
   }

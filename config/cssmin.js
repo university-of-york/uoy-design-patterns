@@ -1,7 +1,7 @@
 module.exports = {
   build: {
     options: {
-      banner: '<%= banner.compact %>'
+      keepSpecialComments: 1
     },
     files: [{
       expand: true,
