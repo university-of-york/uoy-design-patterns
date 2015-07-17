@@ -6,18 +6,7 @@
   @include clearfix;
   margin:0 auto;
   max-width:$container-width;
-}
-.o-wrapper--main,
-.o-wrapper--wide {
   padding:0 $base-spacing;
-  // Smaller logo and font
-  @include mq(small) {
-    // padding-top: 175px;
-  }
-  // Mobile nav
-  @include mq(tiny) {
-    // padding-top: 127px;
-  }
 }
 .o-wrapper--wide {
   max-width:100%;

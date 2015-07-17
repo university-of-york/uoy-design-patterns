@@ -14,15 +14,12 @@
   @include clearfix;
   color:$charcoal;
   background:#fff;
-  // max-width:$container-width;
-  margin:0 auto;
 }
 .c-main-header__title {
   @include font-size(24px, 41px);
   display:block;
   float:left;
   margin:17px 0;
-  padding-left:20px;
   @include mq(tiny) {
     // Change size of logo on tiny screens
     @include font-size(18px, 20px);

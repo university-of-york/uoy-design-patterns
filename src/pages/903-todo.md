@@ -14,18 +14,13 @@ id: todo-page
 
 * Breadcrumb styling
 * Tags
-* Modal
 * Tables
 * News list
-* Banners
-* Blockquote
 * Select boxes
 
 ### JS Modules
 
 * Write module documentation
-* Accordion module
-* Tabs module
 * Form validation
 * Selectable buttons
 * Video

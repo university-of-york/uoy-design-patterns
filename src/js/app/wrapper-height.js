@@ -31,7 +31,7 @@ define(['jquery'], function ($) {
       }
       if (i == bodyChildren.length - 1) {
         var minHeight = windowHeight - nonMainWrapperHeight;
-        $('.o-wrapper--main').css('min-height', minHeight);
+        $('.js-wrapper--main').css('min-height', minHeight);
 
       }
 

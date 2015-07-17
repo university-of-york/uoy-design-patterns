@@ -7,9 +7,7 @@
 }
 .c-page-title__header {
   @include font-size(24px, 1.25);
-  max-width:$container-width;
   margin:0 auto $base-spacing/2 auto;
-  padding:0 0 0 $base-spacing;
 }
 .c-page-title__link {
   color:$c-page-title__link-color;
