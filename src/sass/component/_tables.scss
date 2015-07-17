@@ -29,6 +29,10 @@ tbody tr:last-child th {
 td {
   padding:12px;
   border-bottom:1px dotted lighten($blue,15);
+  vertical-align:top;
+  ul {
+    margin:0;
+  }
 }
 tr:last-child td {
   border-bottom:0;

@@ -42,6 +42,7 @@
  *
  * - Molecules
  * Tables..................Tabular data
+ * Course tables...........Course search results tables
  * A to Z..................Alphabetical listing
  * Figures.................Displaying images and captions
  * Lists...................Different lists
@@ -109,6 +110,7 @@
 @import "component/breadcrumb";
 
 @import "component/tables";
+@import "component/coursetables";
 @import "component/atoz";
 @import "component/banner";
 @import "component/figures";
