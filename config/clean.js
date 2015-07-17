@@ -1,5 +1,4 @@
 module.exports = {
-  icons: ['src/icons/svg/', 'src/icons/*.*', 'src/img/icons/*'],
   dev: ['dev/css/styles.raw.css'],
   build: {
     options: {

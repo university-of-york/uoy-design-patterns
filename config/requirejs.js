@@ -14,11 +14,7 @@ module.exports = {
         warnings: true
       },
       unsafe: true,
-      preserveLicenseComments: true,
-      wrap: {
-        start: '<%= banner.full %>\n',
-        end: ''
-      }
+      preserveLicenseComments: false
     }
   }
 };
