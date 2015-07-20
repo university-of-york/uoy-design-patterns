@@ -135,9 +135,9 @@ $c-mobile-search-button-background-color:$light;
 $c-page-title__link-color:$teal;
 
 // Breadcrumbs
-$c-breadcrumb-color:$light;
-$c-breadcrumb-background-color:darken($charcoal, 5);
-$c-breadcrumb__link-color:$light;
+$c-breadcrumb-color:$charcoal;
+$c-breadcrumb-background-color:transparent;
+$c-breadcrumb__link-color:$charcoal;
 
 // Navigation
 $c-nav-background-color:lighten($charcoal,5);
