@@ -137,9 +137,9 @@ $c-mobile-search-form-background-color:lighten($pink, 20);
 $c-page-title__link-color:$teal;
 
 // Breadcrumbs
-$c-breadcrumb-color:$light;
-$c-breadcrumb-background-color:darken($charcoal, 5);
-$c-breadcrumb__link-color:$light;
+$c-breadcrumb-color:$charcoal;
+$c-breadcrumb-background-color:transparent;
+$c-breadcrumb__link-color:$charcoal;
 
 // Navigation
 $c-nav-background-color:lighten($charcoal,5);
@@ -169,3 +169,9 @@ $c-modal__close-background-color:$charcoal;
 $c-modal__close-color:$light;
 $c-modal__close-hover-background-color:lighten($charcoal, 10);
 $c-modal__close-hover-color:darken($light, 10);
+
+// Footer
+$c-footer-main-color:darken($light,10);
+$c-footer-main__link-color:darken($light,10);
+$c-footer-main__link-hover-color:$blue;
+$c-footer-main__link--edit-color:lighten($charcoal,10);

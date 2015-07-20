@@ -3,12 +3,36 @@
 //
 .c-footer-main {
   background-color:$charcoal;
-  color:$light;
+  color:$c-footer-main-color;
   border-top:2px solid $blue;
   padding:$base-spacing;
   margin-top:$base-spacing;
   a {
-    color:$light;
+    @include transition('color');
+    color:$c-footer-main__link-color;
+    font-weight: bold;
     text-decoration: none;
+    &:hover {
+      color:$c-footer-main__link-hover-color;
+      text-decoration: none;
+    }
+    // Site Manager uses t4Edit-page class for edit links
+    &.t4Edit-page {
+      color:$c-footer-main__link--edit-color;
+    }
   }
+  ul {
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    li {
+      padding:0.1em 0;
+    }
+  }
+}
+.c-footer-main__heading {
+  margin: $base-spacing 0 $base-spacing/2 0;
+}
+.c-footer-main__address {
+  margin-top:0;
 }
