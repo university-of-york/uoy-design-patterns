@@ -3,13 +3,14 @@
 //
 
 .c-mobile-search-button {
-  @include mq(medium, '+') {
+  @include mq(large, '+') {
     display:none;
   }
   @include mq(tiny, '-') {
     height: 36px;
     width: 36px;
     padding: 6px;
+    font-size:24px;
   }
   position:absolute;
   z-index:10;
@@ -18,17 +19,42 @@
   height:58px;
   width:58px;
   padding:13px;
-  background-color:$c-mobile-search-button-background-color;
+  font-size:32px;
+  color:$c-mobile-search-button-color;
+  &:hover {
+    color:$c-mobile-search-button-hover-color;
+  }
 }
 .c-form--mobile-search {
-  @include mq(medium, '+') {
+  @include mq(large, '+') {
     display:none;
   }
   @include transition('height');
   height:0;
   overflow:hidden;
+  position:relative;
+  top:-10px;
   &.is-open {
-    height:3.625em;
+    height:4.25em;
+  }
+  .c-form__fieldset {
+    background-color:$c-mobile-search-form-background-color;
+    margin-top:$base-spacing/2;
+    &:after {
+      content:'';
+      position:absolute;
+      top:0;
+      right:$base-spacing + 12px;
+      border-width:0 $base-spacing/2 $base-spacing/2 $base-spacing/2;
+      border-style:solid;
+      border-color:transparent;
+      border-bottom-color:$c-mobile-search-form-background-color;
+      @include mq(tiny, '-') {
+        top:2px;
+        right:$base-spacing;
+        border-bottom-width:$base-spacing/2 - 2px;
+      }
+    }
   }
   .c-form__element {
     padding:$base-spacing/2;

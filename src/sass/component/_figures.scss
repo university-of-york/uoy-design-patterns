@@ -22,6 +22,12 @@
   position:absolute;
   @include mq('small', '-') {
     padding:$base-spacing/2;
+    .o-grid__box--half\@small & {
+      h3 {
+        font-size: 18px;
+        font-size: 1.25rem;
+      }
+    }
   }
 }
 

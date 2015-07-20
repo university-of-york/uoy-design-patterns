@@ -99,10 +99,10 @@ Lastly, there's a special panel type for displaying the [KIS widget](https://www
 <div class="c-panel c-panel--kis-widget">
   <div class="c-panel__content">
     <h2 class="c-panel--kis-widget__title">Unistats for this course</h2>
-    <div class="is-visible@medium is-visible@small is-visible@tiny">
+    <div class="c-panel--kis-widget__content is-visible@large+">
       <iframe id="unistats-widget-frame-horizontal" title="Unistats KIS Widget" src="//widget.unistats.ac.uk/Widget/10007167/UUBMATSMAT3~UBMATSMAT3/horizontal/small/en-GB/FullTime" scrolling="no" style="overflow: hidden; border: 0px none transparent; width: 615px; height: 150px;"></iframe>
     </div>
-    <div class="is-hidden@huge is-hidden@large">
+    <div class="c-panel--kis-widget__content is-visible@medium-">
       <iframe id="unistats-widget-frame-vertical" title="Unistats KIS Widget" src="//widget.unistats.ac.uk/Widget/10007167/UUBMATSMAT3~UBMATSMAT3/vertical/small/en-GB/FullTime" scrolling="no" style="overflow: hidden; border: 0px none transparent; width: 190px; height: 500px;"></iframe>
     </div>
   </div>

@@ -11,7 +11,9 @@
 }
 
 @each $name, $size in $width {
-  .is-visible\@#{$name} {
+  .is-visible\@#{$name},
+  .is-visible\@#{$name}\+,
+  .is-visible\@#{$name}- {
     display:none;
   }
   @include mq(#{$name}, '~') {
@@ -20,6 +22,24 @@
     }
     // Double class name for better specificity
     .is-visible\@#{$name}.is-visible\@#{$name} {
+      display:block;
+    }
+  }
+  @include mq(#{$name}, '+') {
+    .is-hidden\@#{$name}\+ {
+      display:none;
+    }
+    // Double class name for better specificity
+    .is-visible\@#{$name}\+.is-visible\@#{$name}\+ {
+      display:block;
+    }
+  }
+  @include mq(#{$name}, '-') {
+    .is-hidden\@#{$name}- {
+      display:none;
+    }
+    // Double class name for better specificity
+    .is-visible\@#{$name}-.is-visible\@#{$name}- {
       display:block;
     }
   }

@@ -16,7 +16,6 @@
  *
  * GENERIC
  * Typography..............Some typographic styles (un-namespaced).
- * Visibility..............Stateful styles for showing/hiding elements at certain sizes
  *
  * OBJECTS
  * Structure...............Wrappers and site-wide structure.
@@ -64,6 +63,7 @@
  * 404.....................[sample] styles for different themes
  *
  * MISCELLANEOUS
+ * Visibility..............Stateful styles for showing/hiding elements at certain sizes
  * Overrides...............overriding styles using !important
  * IE7.....................specific IE7 styles
  * IE8.....................specific IE8 styles
@@ -83,7 +83,6 @@
 
 //GENERIC
 @import "generic/typography";
-@import "generic/visibility";
 
 //OBJECTS
 @import "object/structure";
@@ -132,6 +131,7 @@
 @import "themes/404";
 
 // MISCELLANEOUS
+@import "generic/visibility";
 @import "misc/overrides";
 @import "misc/ie7";
 @import "misc/ie8";

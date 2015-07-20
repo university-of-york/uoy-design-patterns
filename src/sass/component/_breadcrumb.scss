@@ -2,7 +2,6 @@
 // BREADCRUMB
 //
 .c-breadcrumb {
-
   width:100%;
   background-color: $c-breadcrumb-background-color;
   color:$c-breadcrumb-color;
@@ -14,7 +13,7 @@
 .c-breadcrumb__items {
   max-width:$container-width;
   margin:0 auto;
-  padding:$base-spacing/2 $base-spacing;
+  padding:$base-spacing/4 $base-spacing;
 }
 
 .c-breadcrumb__link,

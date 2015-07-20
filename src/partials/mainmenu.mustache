@@ -1,3 +1,22 @@
+<a href="#Mobile-Search" class="c-mobile-search-button js-toggle-button"><i class="c-icon c-icon--search"></i></a>
+
+<form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--mobile-search" id="Mobile-Search">
+  <fieldset class="c-form__fieldset">
+    <legend class="c-form__legend">Search york.ac.uk</legend>
+    <div class="o-grid">
+      <div class="o-grid__row">
+        <div class="o-grid__box o-grid__box--full">
+          <div class="c-form__element">
+            <input class="c-form__input c-form__input--text" type="text" id="q" name="q" placeholder="Search york.ac.uk" />
+            <input type="hidden" name="site" value="yorkweb">
+            <a class="c-btn c-btn--medium js-submit-form" href="#" role="button"><i class="c-icon c-icon--search"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</form>
+
 <div class="o-wrapper o-grid">
   <div class="o-grid__row">
     <div class="o-grid__box o-grid__box--threequarters">
@@ -5,23 +24,18 @@
         <h1 class="c-page-title__header"><a class="c-page-title__link" href="#">{{title}}</a></h1>
       </div>
     </div>
-    <div class="o-grid__box o-grid__box--quarter">
-        <form action="#" method="get" class="c-form c-form--joined">
+    <div class="o-grid__box o-grid__box--quarter is-hidden@medium-">
+        <form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined">
         <fieldset>
           <div class="c-form__element">
-            <input class="c-form__input c-form__input--text" type="text" id="ja" name="ja" placeholder="Search york.ac.uk" />
-            <a class="c-btn c-btn--medium" href="#" role="button"><i class="c-icon c-icon--search"></i></a>
+            <input class="c-form__input c-form__input--text" type="text" id="q" name="q" placeholder="Search york.ac.uk" />
+            <input type="hidden" name="site" value="yorkweb">
+            <a class="c-btn c-btn--medium js-submit-form" href="#" role="button"><i class="c-icon c-icon--search"></i></a>
           </div>
         </fieldset>
       </form>
     </div>
   </div>
-</div>
-
-<div class="c-breadcrumb">
-    <div class="c-breadcrumb__items"
-      <a class="c-breadcrumb__link" href="#">Study</a><span class="c-breadcrumb__separator">&gt;</span><a class="c-breadcrumb__link" href="#">Undergraduate</a><span class="c-breadcrumb__separator">&gt;</span><a class="c-breadcrumb__link" href="#">Applying</a>
-    </div>
 </div>
 
 <nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation">
@@ -44,20 +58,8 @@
   </ul>
 </nav>
 
-<a href="#Mobile-Search" class="c-mobile-search-button js-toggle-button"><i class="c-icon c-icon--magnifying-glass c-icon--large"></i></a>
-
-<form action="#" method="get" class="c-form c-form--joined c-form--mobile-search" id="Mobile-Search">
-  <fieldset>
-    <legend class="c-form__legend">Search york.ac.uk</legend>
-    <div class="o-grid">
-      <div class="o-grid__row">
-        <div class="o-grid__box o-grid__box--full">
-          <div class="c-form__element">
-            <input class="c-form__input c-form__input--text" type="text" id="Mobile-Search-Text" name="Mobile-Search-Text">
-            <a class="c-btn c-btn--medium js-submit-form" href="#" role="button">Search<i class="c-icon c-icon--magnifying-glass c-icon--after"></i></a>
-          </div>
-        </div>
-      </div>
+<div class="c-breadcrumb">
+    <div class="c-breadcrumb__items"
+      <a class="c-breadcrumb__link" href="#">Study</a><span class="c-breadcrumb__separator">&gt;</span><a class="c-breadcrumb__link" href="#">Undergraduate</a><span class="c-breadcrumb__separator">&gt;</span><a class="c-breadcrumb__link" href="#">Applying</a>
     </div>
-  </fieldset>
-</form>
+</div>

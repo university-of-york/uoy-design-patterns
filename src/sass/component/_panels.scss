@@ -16,6 +16,9 @@
   :last-child {
     margin-bottom:0;
   }
+  .c-panel__subheader + & {
+    padding-top:0;
+  }
 }
 .c-panel__header,
 .c-panel__subheader,
@@ -29,6 +32,11 @@
   img {
     display:block;
     width:100%;
+  }
+}
+.c-panel__footer {
+  .c-panel__content + & {
+    padding-top:0;
   }
 }
 
@@ -46,16 +54,9 @@
 }
 
 .c-panel--kis-widget {
-
 }
 .c-panel--kis-widget__title {
-  width:100%;
-  .o-grid__box--full > .c-panel--kis-widget & {
-    @include mq(huge, '+') {
-      float:left;
-      width:545px;
-      width:calc(100% - 615px);
-      min-width:200px;
-    }
-  }
+}
+.c-panel--kis-widget__content {
+  text-align:center;
 }

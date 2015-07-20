@@ -129,7 +129,9 @@ $c-blockquote--image-quote-color: $light;
 $c-blockquote--pull-quote-color: $pink;
 
 // Mobile search
-$c-mobile-search-button-background-color:$light;
+$c-mobile-search-button-color:$pink;
+$c-mobile-search-button-hover-color:lighten($c-mobile-search-button-color,10);
+$c-mobile-search-form-background-color:lighten($pink, 20);
 
 // Page title
 $c-page-title__link-color:$teal;

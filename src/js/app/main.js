@@ -54,10 +54,17 @@ define(
   // Use anchors to submit forms
   UTILS.eachIfExists('.js-submit-form', function (i, a) {
     var $a = $(a);
+    var thisForm = $a.parents('form');
     $a.on('click', function (e) {
       e.preventDefault();
-      var thisForm = $a.parents('form');
       thisForm.submit();
+    });
+    // Enter won't submit form when there's no <input> or <button>
+    thisForm.find('input, textarea').keypress(function(e) {
+      // Was Enter pressed?
+      if (e.which == 10 || e.which == 13) {
+        this.form.submit();
+      }
     });
   });
 

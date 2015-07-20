@@ -8,8 +8,15 @@
   border-top:0.8em solid lighten($teal,10);
   background-color:$s2;
   border-radius:4px;
-  padding:0.8em;
   position:relative;
+  padding:0.8em;
+  @include mq(small, '~') {
+    padding:0.8em 0.8em 120px 0.8em;
+    padding:0.8em calc(0.8em + 100px) 0.8em 0.8em;
+  }
+  @include mq(tiny, '~') {
+    padding-right:0.8em;
+  }
 }
 .c-clearing-table__title {
   padding-right:120px;
@@ -33,6 +40,11 @@
   line-height:1.333;
   small {
     display:block;
+  }
+  @include mq(tiny, '~') {
+    position:relative;
+    max-width:inherit;
+    width:100%;
   }
 }
 .c-clearing-table__ucas-code {

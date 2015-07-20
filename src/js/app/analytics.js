@@ -12,6 +12,10 @@ category: modules
 
 define(['jquery', 'app/utils'], function ($, UTILS) {
 
+  // Creates initial ga() function to queue commands
+  window.ga = window.ga || function(){(ga.q=ga.q||[]).push(arguments);};
+  ga.l =+ new Date();
+
   var isDev = (document.location.hostname === 'localhost');
   var analyticsOptions = isDev ? { 'cookieDomain': 'none' } : 'auto' ;
   var trackerNumber = isDev ? 'UA-1621853-16' : 'UA-1621853-1';
