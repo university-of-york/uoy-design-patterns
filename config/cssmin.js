@@ -1,7 +1,8 @@
 module.exports = {
   build: {
     options: {
-      keepSpecialComments: 0
+      keepSpecialComments: 0,
+      sourceMap: true
     },
     files: [{
       expand: true,

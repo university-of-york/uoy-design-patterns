@@ -6,11 +6,14 @@
   border-radius:3px;
   margin-bottom:20px;
   text-decoration:none;
-  display:block;
+  display:inline-block;
   color:$charcoal;
   &:hover {
     text-decoration:none;
     color:$charcoal;
+  }
+  + .c-gallery-item {
+    margin-left:$base-spacing/2;
   }
 }
 .c-gallery-item__thumbnail--image {

@@ -13,6 +13,7 @@ module.exports = {
         },
         warnings: true
       },
+      generateSourceMaps: true,
       unsafe: true,
       preserveLicenseComments: false
     }
