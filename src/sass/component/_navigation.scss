@@ -92,10 +92,10 @@
   }
 }
 .c-nav__list--associative {
-    display:none;
-    .c-nav.is-open & {
-      display:block;
-    }
+  display:none;
+  .c-nav.is-open & {
+    display:block;
+  }
 }
 .c-nav__list--structural {
   // Site Manager uses 'currentbranchN' classes
@@ -107,6 +107,17 @@
   }
 }
 
+.c-nav__title {
+  margin-top:$base-spacing;
+  font-family: $font-title;
+  font-size:24px;
+  &:first-child {
+    margin-top:0;
+  }
+  .c-subnav__link, a {
+    color:$teal;
+  }
+}
 .c-nav__item {
   @include transition('background-color');
   float:left;

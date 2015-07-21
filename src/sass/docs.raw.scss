@@ -126,31 +126,36 @@
   }
 }
 
-// Show hide appropriate submenu
-.c-subnav__list {
-  display:none;
+// Show/hide appropriate submenu
+.c-nav.is-open .c-nav__list--associative {
+  &.c-subnav--components,
+  &.c-subnav--layout,
+  &.c-subnav--modules,
+  &.c-subnav--about {
+    display:none;
+  }
 }
 #components-page,
 .category-components {
-  .c-subnav__list.c-subnav--components {
+  .c-nav.is-open .c-nav__list--associative.c-subnav--components {
     display:block;
   }
 }
 #layout-page,
 .category-layout {
-  .c-subnav__list.c-subnav--layout {
+  .c-nav.is-open .c-nav__list--associative.c-subnav--layout {
     display:block;
   }
 }
 #modules-page,
 .category-modules {
-  .c-subnav__list.c-subnav--modules {
+  .c-nav.is-open .c-nav__list--associative.c-subnav--modules {
     display:block;
   }
 }
 #about-page,
 .category-about {
-  .c-subnav__list.c-subnav--about {
+  .c-nav.is-open .c-nav__list--associative.c-subnav--about {
     display:block;
   }
 }

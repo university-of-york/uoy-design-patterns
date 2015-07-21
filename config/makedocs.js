@@ -10,6 +10,7 @@ module.exports = function (grunt) {
       nav: function(pages) {
         var navPage = "src/partials/nav.mustache";
         var subNavPage = "src/partials/subnav.mustache";
+        var assocNavPage = "src/partials/assocnav.mustache";
         var categories = {};
         pages.forEach(function(page, i) {
           if (page.category === false) {
@@ -30,8 +31,10 @@ module.exports = function (grunt) {
             categories[page.category]['children'].push(page);
           }
           if (i === pages.length - 1) {
-            var output = '<ul class="c-nav__list c-nav__list--associative">\n',
-                suboutput = '';
+            // Main nav, subnav and associative nav (to go alongside main nav)
+            var output = '<ul class="c-nav__list c-nav__list--structural">\n',
+                suboutput = '',
+                assocOutput = '';
             for (var c in categories) {
               var cat = categories[c];
               var dest = cat.page.dest || '#';
@@ -40,24 +43,31 @@ module.exports = function (grunt) {
               output+= '    <a class="c-nav__link" href="'+path.basename(cat.page.dest)+'">'+cat.page.title+'</a>\n';
               if (typeof cat['children'] !== 'undefined') {
                 var currentSubcategory = '';
-                suboutput+= '    <ul class="c-subnav__list c-subnav--'+cat.page.name+'">\n';
+                suboutput+= '    <ul class="c-subnav__list c-subnav--'+cat.page.name+' is-hidden@medium-">\n';
+                assocOutput+= '    <ul class="c-nav__list c-nav__list--associative c-subnav--'+cat.page.name+'">\n';
                 // Loop through category pages
                 cat['children'].forEach(function(p, j) {
                   if (p.subcategory && p.subcategory !== currentSubcategory) {
                     currentSubcategory = p.subcategory;
                     suboutput+= '      <li class="c-subnav__item c-subnav__title"><a class="c-subnav__link">'+p.subcategory+'</a></li>\n';
+                    assocOutput+= '      <li class="c-nav__item c-nav__title"><a class="c-nav__link">'+p.subcategory+'</a></li>\n';
                   }
                   suboutput+= '      <li class="c-subnav__item"><a class="c-subnav__link" href="'+path.basename(p.dest)+'">'+p.title+'</a></li>\n';
+                  assocOutput+= '      <li class="c-nav__item"><a class="c-nav__link" href="'+path.basename(p.dest)+'">'+p.title+'</a></li>\n';
                 });
                 suboutput+= '    </ul>\n';
+                assocOutput+= '    </ul>\n';
               }
               output+= '  </li>\n';
             }
+            output+= '  <li class="c-nav__item c-nav__item--more"><a class="c-nav__link js-toggle-button" href="#Main-Navigation">More&hellip;</a></li>';
             output+= '</ul>\n';
             grunt.file.write(navPage, output);
             grunt.log.ok("Wrote file to " + navPage);
             grunt.file.write(subNavPage, suboutput);
             grunt.log.ok("Wrote file to " + subNavPage);
+            grunt.file.write(assocNavPage, assocOutput);
+            grunt.log.ok("Wrote file to " + assocNavPage);
           }
         });
       }
