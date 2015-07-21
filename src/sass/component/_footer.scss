@@ -5,7 +5,7 @@
   background-color:$charcoal;
   color:$c-footer-main-color;
   border-top:2px solid $blue;
-  padding:$base-spacing;
+  padding:$base-spacing 0;
   margin-top:$base-spacing;
   a {
     @include transition('color');
