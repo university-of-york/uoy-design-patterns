@@ -12,7 +12,7 @@
   // font-family:Arial;
 }
 
-.cta {
+.cta, p.cta a {
   @extend .c-btn !optional;
   @extend .c-btn--medium !optional;
 }
