@@ -89,18 +89,23 @@
 }
 // Caption colours
 .c-figure__caption--blue {
+  background-color:$blue;
   background-color:transparentize($blue, 0.25);
 }
 .c-figure__caption--pink {
+  background-color:$pink;
   background-color:transparentize($pink, 0.25);
 }
 .c-figure__caption--teal {
+  background-color:$teal;
   background-color:transparentize($teal, 0.25);
 }
 .c-figure__caption--gold {
+  background-color:$gold;
   background-color:transparentize($gold, 0.25);
 }
 .c-figure__caption--charcoal {
+  background-color:$charcoal;
   background-color:transparentize($charcoal, 0.25);
 }
 
