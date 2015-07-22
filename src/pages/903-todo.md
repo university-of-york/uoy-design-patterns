@@ -16,7 +16,7 @@ id: todo-page
 * Tags
 * Tables
 * News list
-* Select boxes
+* Select boxes?
 
 ### JS Modules
 

@@ -49,6 +49,9 @@
 .c-form__element {
   position:relative;
   margin-bottom:10px;
+  &:only-child {
+    margin-bottom:0;
+  }
 }
 .c-form__element--select {
   &:after {
@@ -115,4 +118,9 @@
     vertical-align: middle;
   }
 
+}
+
+// (Search) form in the header
+.c-form--header {
+  margin-top:17px;
 }

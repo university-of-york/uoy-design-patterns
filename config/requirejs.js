@@ -9,10 +9,12 @@ module.exports = {
       optimize: 'uglify2',
       uglify2: {
         compress: {
-          drop_console: true
+          drop_console: true,
+          drop_debugger: true
         },
         warnings: true
       },
+      generateSourceMaps: true,
       unsafe: true,
       preserveLicenseComments: false
     }

@@ -25,6 +25,10 @@
     margin-bottom:0;
     margin-right:0;
   }
+  // In case .c-btn is used on containing element
+  a {
+    text-decoration:none;
+  }
 }
 // Button types
 @each $name, $color in $c-btn {

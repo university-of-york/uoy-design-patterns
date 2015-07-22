@@ -1,4 +1,4 @@
-  define([], function () {
+  define(['jquery'], function ($) {
 
   var UTILS = {
     // Returns a function, that, as long as it continues to be invoked, will not
@@ -37,7 +37,7 @@
     // selector: selector string, or anything that can be wrapped in a jQuery object
     // fn: function with arguments (index, element)
     eachIfExists: function (selector, fn) {
-      $elements = $(selector);
+      var $elements = $(selector);
       if ($elements.length) {
         $elements.each(fn);
       }

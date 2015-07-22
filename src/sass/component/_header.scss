@@ -19,7 +19,7 @@
   @include font-size(24px, 41px);
   display:block;
   float:left;
-  margin:17px 0;
+  margin:17px 0 13px; // Check overrides.scss for margin-bottom override
   @include mq(tiny) {
     // Change size of logo on tiny screens
     @include font-size(18px, 20px);

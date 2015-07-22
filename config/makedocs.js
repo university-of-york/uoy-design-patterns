@@ -43,7 +43,7 @@ module.exports = function (grunt) {
               output+= '    <a class="c-nav__link" href="'+path.basename(cat.page.dest)+'">'+cat.page.title+'</a>\n';
               if (typeof cat['children'] !== 'undefined') {
                 var currentSubcategory = '';
-                suboutput+= '    <ul class="c-subnav__list c-subnav--'+cat.page.name+' is-hidden@medium-">\n';
+                suboutput+= '    <ul class="c-subnav__list c-subnav--'+cat.page.name+'">\n';
                 assocOutput+= '    <ul class="c-nav__list c-nav__list--associative c-subnav--'+cat.page.name+'">\n';
                 // Loop through category pages
                 cat['children'].forEach(function(p, j) {

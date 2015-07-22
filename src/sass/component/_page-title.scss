@@ -1,13 +1,20 @@
 //
 // PAGE TITLE
 //
+
+// Weird to have an element outside the block, I know
+.c-page-title__wrapper {
+  background-color:$c-page-title__background-color;
+}
 .c-page-title {
   min-height:2.75em;
   overflow:hidden;
+  background-color:$c-page-title__background-color;
 }
 .c-page-title__header {
   @include font-size(24px, 1.25);
-  margin:0 auto $base-spacing/2 auto;
+  max-width:$container-width;
+  margin:$base-spacing/2 40px;
 }
 .c-page-title__link {
   color:$c-page-title__link-color;
