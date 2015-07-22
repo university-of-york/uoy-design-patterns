@@ -134,7 +134,8 @@ $c-mobile-search-button-hover-color:lighten($c-mobile-search-button-color,10);
 $c-mobile-search-form-background-color:$teal;
 
 // Page title
-$c-page-title__link-color:$teal;
+$c-page-title__background-color:lighten($charcoal,5);
+$c-page-title__link-color:$light;
 
 // Breadcrumbs
 $c-breadcrumb-color:$charcoal;

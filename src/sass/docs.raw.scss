@@ -127,6 +127,7 @@
 }
 
 // Show/hide appropriate submenu
+.c-subnav__list,
 .c-nav.is-open .c-nav__list--associative {
   &.c-subnav--components,
   &.c-subnav--layout,
@@ -137,25 +138,29 @@
 }
 #components-page,
 .category-components {
-  .c-nav.is-open .c-nav__list--associative.c-subnav--components {
+  .c-nav.is-open .c-nav__list--associative.c-subnav--components,
+  .c-subnav__list.c-subnav--components {
     display:block;
   }
 }
 #layout-page,
 .category-layout {
-  .c-nav.is-open .c-nav__list--associative.c-subnav--layout {
+  .c-nav.is-open .c-nav__list--associative.c-subnav--layout,
+  .c-subnav__list.c-subnav--layout {
     display:block;
   }
 }
 #modules-page,
 .category-modules {
-  .c-nav.is-open .c-nav__list--associative.c-subnav--modules {
+  .c-nav.is-open .c-nav__list--associative.c-subnav--modules,
+  .c-subnav__list.c-subnav--modules {
     display:block;
   }
 }
 #about-page,
 .category-about {
-  .c-nav.is-open .c-nav__list--associative.c-subnav--about {
+  .c-nav.is-open .c-nav__list--associative.c-subnav--about,
+  .c-subnav__list.c-subnav--about {
     display:block;
   }
 }

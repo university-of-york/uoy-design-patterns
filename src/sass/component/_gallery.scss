@@ -12,8 +12,13 @@
     text-decoration:none;
     color:$charcoal;
   }
-  + .c-gallery-item {
-    margin-left:$base-spacing/2;
+  margin-right:$base-spacing/2;
+  &:last-of-type {
+    margin-right:0;
+  }
+  @include mq(tiny, '~') {
+    max-width:30%;
+    margin-right:$base-spacing/4
   }
 }
 .c-gallery-item__thumbnail--image {

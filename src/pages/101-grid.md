@@ -163,7 +163,7 @@ component("grid", { "atoms":[
 ] } );
 </script>
 
-You can play around with the differnt displays by assigning these classes.
+You can play around with the different displays by assigning these classes.
 
 <script>
 component("grid", { "atoms":[
@@ -174,6 +174,15 @@ component("grid", { "atoms":[
   ] } }
 ] } );
 </script>
+
+Usually, _@-classes_ only apply at the size you specify, so in the example above, the box `.o-grid__box--third.o-grid__box--full@medium` would revert to normal `.o-grid__box--third` behaviour at tiny, small, large or huge sizes. It's also possible to add a `+` or `-` to the class if you want the behaviour to still apply at larger or smaller sizes.
+
+For example, the following two lines of code have the same effect:
+
+```markup
+<div class="o-grid__box--third o-grid__box--full@medium-"></div>
+<div class="o-grid__box--third o-grid__box--full@medium o-grid__box--full@small o-grid__box--full@tiny"></div>
+```
 
 ### Fancy alternative coloured rows
 
