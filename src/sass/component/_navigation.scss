@@ -9,6 +9,7 @@
   height:2.75em;
   background-color:$c-nav-background-color;
   border-bottom:3px solid $c-nav-border-color;
+  border-top:1px solid lighten($c-nav-background-color,10);
   overflow:hidden;
   position:relative;
   width:100%;
