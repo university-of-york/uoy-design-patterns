@@ -12,7 +12,11 @@
   // font-family:Arial;
 }
 
+/* Need the root selector for TinyMCE to use */
 .cta {
+  // display:block;
+}
+.cta a {
   @extend .c-btn !optional;
   @extend .c-btn--medium !optional;
 }

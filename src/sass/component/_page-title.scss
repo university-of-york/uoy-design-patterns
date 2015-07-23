@@ -10,11 +10,12 @@
   min-height:2.75em;
   overflow:hidden;
   background-color:$c-page-title__background-color;
+  max-width:$container-width;
+  margin:0 auto;
 }
 .c-page-title__header {
   @include font-size(24px, 1.25);
-  max-width:$container-width;
-  margin:$base-spacing/2 40px;
+  margin:$base-spacing/2 $base-spacing;
 }
 .c-page-title__link {
   color:$c-page-title__link-color;

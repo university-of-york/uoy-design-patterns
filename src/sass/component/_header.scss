@@ -20,7 +20,6 @@
   display:block;
   float:left;
   margin:17px 0 13px; // Check overrides.scss for margin-bottom override
-  width:264px;
   height:41px;
   @include mq(tiny) {
     // Change size of logo on tiny screens

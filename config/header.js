@@ -5,7 +5,8 @@ module.exports = {
     },
     files: {
       'build/js/app.min.js': 'build/js/app.min.js',
-      'build/css/styles.min.css': 'build/css/styles.min.css'
+      'build/css/styles.min.css': 'build/css/styles.min.css',
+      'build/css/tinymce.min.css': 'build/css/tinymce.min.css'
     }
   },
   live: {
@@ -14,7 +15,8 @@ module.exports = {
     },
     files: {
       'build/js/app.min.js': 'build/js/app.min.js',
-      'build/css/styles.min.css': 'build/css/styles.min.css'
+      'build/css/styles.min.css': 'build/css/styles.min.css',
+      'build/css/tinymce.min.css': 'build/css/tinymce.min.css'
     }
   }
 };

@@ -3,7 +3,7 @@ var css = require('css');
 var fs = require('fs');
 var fullStylesheet = path.resolve('dev/css/styles.css');
 var tinyMCESass = path.resolve('src/sass/scopes/_tinymce.scss');
-var tinyMCEStylesheet = path.resolve('dev/css/tinymce.css');
+var tinyMCEStylesheet = path.resolve('build/css/tinymce.css');
 
 module.exports = function(grunt) {
 
