@@ -23,9 +23,10 @@
     max-width:90%;
     max-height:90%;
     opacity:0;
+    overflow:auto;
     // Really big screens
     @include mq('huge', '+') {
-      min-width:$container-width;
+      // min-width:$container-width;
     }
     // Everything else
     @include mq('huge', '-') {
@@ -71,7 +72,8 @@
 }
 .c-modal__content {
   @include demarginalise;
-  @include center-image;
+  max-height:100%;
+  max-width:100%;
 }
 .c-modal__close {
   position:absolute;

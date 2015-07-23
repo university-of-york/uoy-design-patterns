@@ -13,11 +13,12 @@ $c-gallery-item-border-width:1px;
   display:inline-block;
   vertical-align:top;
   color:$charcoal;
+  width:100%;
+  margin-right:$base-spacing/2;
   &:hover {
     text-decoration:none;
     color:$charcoal;
   }
-  margin-right:$base-spacing/2;
   &:last-of-type {
     margin-right:0;
   }
@@ -26,6 +27,9 @@ $c-gallery-item-border-width:1px;
     margin-right:$base-spacing/4
   }
 }
+.c-gallery-item__thumbnail {
+  width: 100%;
+}
 .c-gallery-item--landscape,
 .c-gallery-item--portrait {
   width:$c-gallery-item-size + (2 * $c-gallery-item-border-width);
@@ -33,13 +37,13 @@ $c-gallery-item-border-width:1px;
   overflow:hidden;
   .c-gallery-item__thumbnail {
     @include center-image;
-    width:100%;
     height:100%;
     position:relative;
   }
 }
 .c-gallery-item__thumbnail-image {
   display:block;
+  width:100%;
 }
 .c-gallery-item--landscape {
   .c-gallery-item__thumbnail-image {
@@ -50,7 +54,6 @@ $c-gallery-item-border-width:1px;
 .c-gallery-item--portrait {
   .c-gallery-item__thumbnail-image {
     height:auto;
-    width:100%;
   }
 }
 .c-gallery-item__content {
