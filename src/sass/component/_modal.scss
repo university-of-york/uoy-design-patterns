@@ -71,6 +71,7 @@
 }
 .c-modal__content {
   @include demarginalise;
+  @include center-image;
 }
 .c-modal__close {
   position:absolute;

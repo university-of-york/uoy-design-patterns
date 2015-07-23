@@ -17,16 +17,19 @@ If a collection of items on a page all have the `js-modal--gallery` class, then 
 
 <script>
 component("gallery-item", {
-  "link": "http://lorempixel.com/1280/1280/food/1",
-  "thumbnail": "http://lorempixel.com/140/140/food/1"
+  "type": "landscape",
+  "link": "http://lorempixel.com/1120/840/food/1",
+  "thumbnail": "http://lorempixel.com/374/280/food/1"
 })+
 component("gallery-item", {
-  "link": "http://lorempixel.com/1280/1280/food/4",
-  "thumbnail": "http://lorempixel.com/140/140/food/4"
+  "type": "portrait",
+  "link": "http://lorempixel.com/840/1120/food/4",
+  "thumbnail": "http://lorempixel.com/280/374/food/4"
 })+
 component("gallery-item", {
-  "link": "http://lorempixel.com/1280/1280/food/7",
-  "thumbnail": "http://lorempixel.com/140/140/food/7"
+  "type": "portrait",
+  "link": "http://lorempixel.com/840/1120/food/7",
+  "thumbnail": "http://lorempixel.com/280/374/food/7"
 });
 
 </script>

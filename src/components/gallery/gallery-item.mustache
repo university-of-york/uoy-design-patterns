@@ -1,6 +1,6 @@
-<a class="c-gallery-item js-modal js-modal--frameless js-modal--gallery" href="{{link}}">{{#if thumbnail}}
+<a class="c-gallery-item{{#type}} c-gallery-item--{{this}}{{/type}} js-modal js-modal--frameless js-modal--gallery" href="{{link}}">{{#if thumbnail}}
   <figure class="c-gallery-item__thumbnail">
-     <img class="c-gallery-item__thumbnail--image" src="{{thumbnail}}" alt="">
+     <img class="c-gallery-item__thumbnail-image" src="{{thumbnail}}" alt="">
   </figure>{{/if}}{{#if content}}
   <div class="c-gallery-item__content">
       {{content}}
