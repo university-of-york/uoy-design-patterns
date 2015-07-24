@@ -4,7 +4,7 @@
 
 .c-clearing-table {
   @include demarginalise;
-  margin:$base-spacing 0;
+  @include component-margin;
   border-top:0.8em solid lighten($teal,10);
   background-color:$s2;
   border-radius:4px;

@@ -87,6 +87,13 @@
 }
 
 //
+// Default component margins
+//
+@mixin component-margin() {
+    margin:0 0 $base-spacing;
+}
+
+//
 // Horiz/vertical alignment of overflowing figures
 // Only when width and height are set
 //

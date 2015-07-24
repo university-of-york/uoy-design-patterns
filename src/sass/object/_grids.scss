@@ -12,14 +12,12 @@ $box-margin: $base-spacing;
   font-size:0;
   position:relative;
   margin-left:-$box-margin;
-  padding-bottom:$base-spacing;
-  &:only-child {
-    padding-bottom:0;
-  }
 }
 .o-grid__row--alt1,
 .o-grid__row--alt2,
 .o-grid__row--alt3 {
+  // Coloured rows need to have padding so components don't butt up against the top
+  padding-top:$base-spacing;
   &:before,
   &:after {
     display:block;
@@ -34,6 +32,10 @@ $box-margin: $base-spacing;
   }
   &:after {
     left:100%;
+  }
+  // Rows following coloured rows should also be padded at the top to separate the content.
+  + .o-grid__row {
+    padding-top:$base-spacing;
   }
 }
 .o-grid__row--alt1,
@@ -79,16 +81,6 @@ $box-margin: $base-spacing;
   display:inline-block;
   vertical-align:top;
   padding-left:$box-margin;
-  > :last-child {
-    margin-bottom:0;
-  }
-}
-
-// Used once on the page for the main content, please!
-// Isn't that what an ID is used for?
-// Interesting point. Well made.
-.o-grid__box--main {
-  // @include demarginalise;
 }
 
 .o-grid__box--full {

@@ -4,8 +4,8 @@
 .c-atoz-nav {
 }
 .c-atoz__nav-list {
+  @include component-margin;
   display:table;
-  margin:0 0 1em;
   padding:0;
   list-style:none;
   overflow:hidden;
@@ -32,8 +32,8 @@
   }
 }
 .c-atoz__container {
+  @include component-margin;
   padding:0;
-  margin:0 0 1em;
   list-style:none;
 }
 .c-atoz__letter {
@@ -76,6 +76,10 @@
 }
 .c-atoz__page {
   padding:1em 16px;
+  border-bottom:1px solid $charcoal;
+  &:nth-of-type(n) {
+    border-bottom-width:0;
+  }
   &:nth-of-type(odd) {
     background:darken($light, 5);
   }

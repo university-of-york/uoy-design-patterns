@@ -53,39 +53,15 @@ component("figure", { "type":"h400", "image": "http://lorempixel.com/400/800/peo
 component("figure", { "type":"h400", "image": "http://lorempixel.com/800/400/people/8"});
 </script>
 
-<!--
-#### Defined width and height:
-
-Putting an `img` into a `figure` element also has the following benefit: the image will be vertically and horizontally centered, even if it overlaps. **This only works when the figure has a defined height and width.**
-
-_The following image is 800px wide and 400px high_
-
-<script>
-component("figure", { "type":"w400 c-figure--h400", "image": "http://lorempixel.com/800/400/people/9"});
-</script>
-
-_The following image is 400px wide and 800px high_
-
-<script>
-component("figure", { "type":"w400 c-figure--h400", "image": "http://lorempixel.com/400/800/people/9"});
-</script>
-
-_The following image is 800px wide and 800px high_
-
-<script>
-component("figure", { "type":"w400 c-figure--h400", "image": "http://lorempixel.com/800/800/people/10"});
-</script>
--->
-
 #### Banner figures
 
-Banner figures act a little differently than normal figures. The height of the image is based on the content in the caption. The width of the caption is a third at large sizes, 50% at medium and 100% on small screens. Banner captions can be positioned _left_ or _right_.
+Banner figures act a little differently than normal figures. The height of the image is based on the content in the caption (where CSS transforms are supported, ie not &lt;IE8). The width of the caption is a third at large sizes, 50% at medium and 100% on small screens. Banner captions can be positioned _left_ or _right_.
 
 <script>
-component("figure", { "type":"banner", "image": "http://lorempixel.com/800/800/people/1", "caption":"<h3>Here's some content</h3>\n<p>Here is some caption content. The height of the banner will fit to the content size.</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a></div>", "position": "left"});
+component("figure", { "type":"banner", "image": "http://lorempixel.com/1200/600/people/1", "caption":"<h3>Here's some content</h3>\n<p>Here is some caption content. The height of the banner will fit to the content size.</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a></div>", "position": "left"});
 </script>
 <script>
-component("figure", { "type":"banner", "image": "http://lorempixel.com/800/800/people/2", "caption":"<h3>Here's some content</h3>\n<p>Here is some caption content. The height of the banner will fit to the content size.</p>\n<p>So if you have loads and loads of content, the banner will get taller and taller and taller.</p>\n<p>And taller.</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>\n</div>", "position": "right"});
+component("figure", { "type":"banner", "image": "http://lorempixel.com/1200/600/people/2", "caption":"<h3>Here's some content</h3>\n<p>Here is some caption content. The height of the banner will fit to the content size.</p>\n<p>So if you have loads and loads of content, the banner will get taller and taller and taller.</p>\n<p>And taller.</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>\n</div>", "position": "right"});
 </script>
 
 #### Link figures

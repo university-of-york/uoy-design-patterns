@@ -18,8 +18,8 @@ $c-blockquote__image-tiny-ratio:0.75;
   }
 }
 .c-blockquote {
+  @include component-margin;
   overflow:hidden;
-  margin:$base-spacing 0;
 }
 .c-blockquote--image-quote {
   .c-blockquote__content {

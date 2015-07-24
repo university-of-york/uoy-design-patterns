@@ -6,15 +6,14 @@ $c-gallery-item-size:140px;
 $c-gallery-item-border-width:1px;
 
 .c-gallery-item {
+  @include component-margin;
   border:$c-gallery-item-border-width solid $charcoal;
   border-radius:3px;
-  margin-bottom:20px;
   text-decoration:none;
   display:inline-block;
   vertical-align:top;
   color:$charcoal;
   width:100%;
-  margin-right:$base-spacing/2;
   &:hover {
     text-decoration:none;
     color:$charcoal;
@@ -22,16 +21,13 @@ $c-gallery-item-border-width:1px;
   &:last-of-type {
     margin-right:0;
   }
-  @include mq(tiny, '~') {
-    max-width:30%;
-    margin-right:$base-spacing/4
-  }
 }
 .c-gallery-item__thumbnail {
   width: 100%;
 }
 .c-gallery-item--landscape,
 .c-gallery-item--portrait {
+  margin-right:$base-spacing/2;
   width:$c-gallery-item-size + (2 * $c-gallery-item-border-width);
   height:$c-gallery-item-size + (2 * $c-gallery-item-border-width);
   overflow:hidden;
@@ -39,6 +35,10 @@ $c-gallery-item-border-width:1px;
     @include center-image;
     height:100%;
     position:relative;
+  }
+  @include mq(tiny, '~') {
+    max-width:30%;
+    margin-right:$base-spacing/4
   }
 }
 .c-gallery-item__thumbnail-image {

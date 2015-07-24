@@ -2,8 +2,8 @@
 // FIGURES & CAPTIONS
 //
 .c-figure {
+  @include component-margin;
   position:relative;
-  margin:$base-spacing 0;
   display:block;
   overflow:hidden;
   max-width:100%;
@@ -15,6 +15,7 @@
 }
 .c-figure__caption {
   @include demarginalise;
+  background:$charcoal;
   background:transparentize($charcoal, 0.15);
   color:$light;
   padding:$base-spacing;
@@ -112,24 +113,34 @@
 // BANNER
 .c-figure--banner {
   @include center-image('y');
-  padding:$base-spacing;
   .c-figure__image {
     display:block;
-    position:absolute;
     z-index:10;
     min-height:100%;
     min-width:100%;
   }
   .c-figure__caption {
-    position:relative;
+    position:absolute;
     display:inline-block;
     z-index:12;
     width:33.333%;
+    left:$base-spacing;
+    bottom:$base-spacing;
     @include mq('medium', '~') {
       width:50%;
     }
     @include mq('small', '-') {
       width:100%;
+    }
+  }
+  .csstransforms & {
+    padding:$base-spacing;
+    .c-figure__image {
+    }
+    .c-figure__caption {
+      position:relative;
+      top:0;
+      left:0;
     }
   }
 }

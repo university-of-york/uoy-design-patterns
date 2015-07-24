@@ -42,13 +42,16 @@
       top:50%;
       left:50%;
       transform:translate(-50%, -50%);
+      margin-top:0;
+      margin-bottom:0;
     }
     .no-csstransforms & {
-      margin:auto auto;
+      margin:$base-spacing auto;
     }
   }
 }
 .c-modal {
+  @include component-margin;
   display:block;
   position:relative;
   overflow:hidden;

@@ -3,8 +3,8 @@
 //
 
 .c-mobile-search-button {
-  @include mq(large, '+') {
-    display:none;
+  @include mq(medium, '-') {
+    display:block;
   }
   @include mq(tiny, '-') {
     height: 36px;
@@ -12,6 +12,7 @@
     padding: 6px;
     font-size:24px;
   }
+  display:none;
   position:absolute;
   z-index:10;
   top:10px;

@@ -1,9 +1,14 @@
 //
 // Pagination
 //
+.c-pagination {
+  // .c-pagination_pages have 4px bottom margin to separate them if they wrap
+  // This makes it up to normal $base-spacing size
+  margin:0 0 $base-spacing - 4px;
+}
 .c-pagination__list {
   overflow:hidden;
-  margin:0.4em 0 0;
+  margin:0;
   padding:0;
   list-style:none;
 }
@@ -20,7 +25,7 @@
   background-color:#fff;
   color:$charcoal;
   margin-right:0.25em;
-  margin-bottom:0.4em;
+  margin-bottom:4px;
   transition:all 0.2s ease-out;
   text-decoration:none;
   &:hover {

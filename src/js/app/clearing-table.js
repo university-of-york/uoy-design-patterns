@@ -16,10 +16,12 @@ define(['jquery', 'app/google-docs', 'app/accordion'], function ($, GOOGLEDOC, A
     var type = options.type || 'Both';
     var container = options.container;
 
-    var docID = '1wbTOk0YHux4LxJZxOlE_nhmGBdi7mT9NL-WCwB7-gT8';
+    var docID = '1u6AjJqtDAnOH8_rEKDb0lBjlp0ScCqzg0Q_q0Xlh';
+    var backupDoc = 'https://www.york.ac.uk/media/**/**/clearing.json';
 
     var t = new GOOGLEDOC({
-      id: docID
+      id: docID,
+      backup: backupDoc
     });
 
     $(window).on('data:loaded', function (e, id, data) {
@@ -36,7 +38,6 @@ define(['jquery', 'app/google-docs', 'app/accordion'], function ($, GOOGLEDOC, A
         var trimAndAdd = function (numbers) {
           var output = '';
           $.each(numbers, function (i, v) {
-            console.log(i, v.trim());
             var vt = v.trim();
             if (i == numbers.length - 1 && i !== 0) output+= ' or ';
             output+= '<a class="c-clearing-table__phone-number" href="tel:'+vt+'">'+vt+'</a>';

@@ -2,7 +2,7 @@
 // TABS
 //
 .c-tabs {
-  margin:0 0 $base-spacing;
+  @include component-margin;
 }
 .c-tabs__nav {
   width:100%;

@@ -84,8 +84,8 @@ component("grid", { "atoms": [
     { "grid-box": { "size": "third o-grid__box--quarter@medium", "atoms": g1 } }
   ] } },
   { "grid-row": { "atoms": [
-    { "grid-box": { "size": "third o-grid__box--full@medium", "atoms": g3 } },
-    { "grid-box": { "size": "third o-grid__box--full@medium", "atoms": g2 } },
+    { "grid-box": { "size": "third o-grid__box--half@medium", "atoms": g3 } },
+    { "grid-box": { "size": "third o-grid__box--half@medium", "atoms": g2 } },
     { "grid-box": { "size": "third o-grid__box--full@medium", "atoms": g1 } }
   ] } }
 ] });

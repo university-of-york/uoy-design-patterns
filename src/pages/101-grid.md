@@ -27,7 +27,7 @@ All grid boxes (any bit of code at all, in fact) can be given a `.mobile-hidden`
 
 You can also override grid sizes by adding a custom `@` class to a grid box: for example, `.o-grid__box--quarter@small` will go to quarter width on small (and lower) screens regardless of its usual class.
 
-**N.B. There is normally no background colour on grid boxes. It is just there for the documentation.**
+**N.B. There is normally no background colour or margin on grid boxes. It is just there for the documentation.**
 
 The default is to have a box that takes up the whole width:
 
@@ -175,6 +175,7 @@ component("grid", { "atoms":[
 ] } );
 </script>
 
+<!--
 Usually, _@-classes_ only apply at the size you specify, so in the example above, the box `.o-grid__box--third.o-grid__box--full@medium` would revert to normal `.o-grid__box--third` behaviour at tiny, small, large or huge sizes. It's also possible to add a `+` or `-` to the class if you want the behaviour to still apply at larger or smaller sizes.
 
 For example, the following two lines of code have the same effect:
@@ -183,6 +184,7 @@ For example, the following two lines of code have the same effect:
 <div class="o-grid__box--third o-grid__box--full@medium-"></div>
 <div class="o-grid__box--third o-grid__box--full@medium o-grid__box--full@small o-grid__box--full@tiny"></div>
 ```
+-->
 
 ### Fancy alternative coloured rows
 

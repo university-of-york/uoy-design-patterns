@@ -68,20 +68,28 @@ define(['jquery'], function ($) {
   MODAL.prototype.deactivate = function ($el) {
 
     var called = false;
-    $el.removeClass('is-active').one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function (e){
-      // Stop it affecting the wrapper
-      e.stopPropagation();
-      $el.off('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd');
-      called = true;
-      $el.addClass('is-hidden');
-    });
-    // Manually trigger transition end in unsupported or broken implementations
-    var callback = function () {
+    $el.removeClass('is-active')
+    if (Modernizr.csstransitions) {
+      $el.one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function (e){
+        // Stop it affecting the wrapper
+        e.stopPropagation();
+        $el.off('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd');
+        called = true;
+        $el.addClass('is-hidden');
+      });
+      // In case it doesn't fire
+      setTimeout(function () {
+        if (called !== true) {
+          $el.trigger('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd');
+        }
+      }, 1000);
+    } else {
+      // Do the same thing, but in unsupported or broken implementations
       if (called !== true) {
-        $el.trigger('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd');
+        called = true;
+        $el.addClass('is-hidden');
       }
-    };
-    setTimeout(callback, 5000);
+    }
   };
 
   MODAL.prototype.navigate = function (dir) {

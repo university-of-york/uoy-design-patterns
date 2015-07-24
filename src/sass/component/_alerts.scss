@@ -2,11 +2,11 @@
 // ALERTS
 //
 .c-alert {
+  @include component-margin;
   border-left:0.8em solid $charcoal;
   background-color:darken($light, 5);
   border-radius:4px;
   padding:0.8em;
-  margin:$base-spacing 0;
   position:relative;
 }
 .c-alert--dismissable {

@@ -2,9 +2,12 @@
 // FORMS
 //
 
+.c-form {
+  @include component-margin;
+}
 .c-form__legend {
+  @include component-margin;
   padding:0;
-  margin-bottom:20px;
   font-family:$font-title;
   font-size:24px;
 }
@@ -49,9 +52,6 @@
 .c-form__element {
   position:relative;
   margin-bottom:10px;
-  &:only-child {
-    margin-bottom:0;
-  }
 }
 .c-form__element--select {
   &:after {

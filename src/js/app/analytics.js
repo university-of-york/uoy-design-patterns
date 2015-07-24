@@ -16,7 +16,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   window.ga = window.ga || function(){(ga.q=ga.q||[]).push(arguments);};
   ga.l =+ new Date();
 
-  var isDev = (document.location.hostname === 'localhost');
+    var isDev = (document.location.hostname === 'localhost' || document.location.hostname === '10.0.2.2');
   var analyticsOptions = isDev ? { 'cookieDomain': 'none' } : 'auto' ;
   var trackerNumber = isDev ? 'UA-1621853-16' : 'UA-1621853-1';
 
@@ -25,7 +25,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   // Set up tracker
   ga('create', trackerNumber, analyticsOptions);
 
-  // Send geenric pageview
+  // Send generic pageview
   ga('send', 'pageview');
 
 
