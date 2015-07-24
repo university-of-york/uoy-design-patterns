@@ -10,7 +10,7 @@
     height: 36px;
     width: 36px;
     padding: 6px;
-    font-size:24px;
+    font-size:16px;
   }
   position:absolute;
   z-index:10;
@@ -19,7 +19,7 @@
   height:58px;
   width:58px;
   padding:13px;
-  font-size:32px;
+  font-size:24px;
   color:$c-mobile-search-button-color;
   &:hover {
     color:$c-mobile-search-button-hover-color;
