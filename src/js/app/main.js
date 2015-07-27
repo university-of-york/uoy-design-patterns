@@ -99,7 +99,7 @@ define(
       });
     });
 
-    // Add sticky nav functionality to nav
+    // Add targeted nav functionality to nav
     UTILS.eachIfExists('.js-targeted-nav', function (i, a) {
       var s = new TARGETEDNAV({
         container: $(a)

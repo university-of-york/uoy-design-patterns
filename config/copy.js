@@ -3,7 +3,7 @@ module.exports = {
     files: [{
       expand: true,
       cwd: 'src/',
-      src: ['js/**', 'img/**', 'fonts/**', 'media/**'],
+      src: ['favicon.ico', 'js/**', 'img/**', 'fonts/**', 'media/**'],
       dest: 'dev/'
     }]
   },
