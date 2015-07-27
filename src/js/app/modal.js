@@ -68,7 +68,7 @@ define(['jquery'], function ($) {
   MODAL.prototype.deactivate = function ($el) {
 
     var called = false;
-    $el.removeClass('is-active')
+    $el.removeClass('is-active');
     if (Modernizr.csstransitions) {
       $el.one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function (e){
         // Stop it affecting the wrapper

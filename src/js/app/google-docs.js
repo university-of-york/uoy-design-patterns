@@ -11,7 +11,7 @@ define(['jquery'], function ($) {
 
   var makeURL = function (id) {
     var api_key = 'AIzaSyCDjI0iMdVB66iHUQVqWC_F9CbvDeaOm5Y';
-    return 'https://www.googleapis.com/fusiontables/v2/query?sql=SELECT * FROM '+id+'&key='+api_key+'&callback=?'
+    return 'https://www.googleapis.com/fusiontables/v2/query?sql=SELECT * FROM '+id+'&key='+api_key+'&callback=?';
   };
 
   // Define your 'class'
@@ -49,7 +49,7 @@ define(['jquery'], function ($) {
       });
     }
 
-  }
+  };
 
   // Create the data array from JSON source
   GOOGLEDOC.prototype.processData = function (r) {
