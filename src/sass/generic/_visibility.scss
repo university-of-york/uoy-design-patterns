@@ -11,10 +11,12 @@
 }
 
 @each $name, $size in $width {
-  .is-visible\@#{$name},
-  .is-visible\@#{$name}\+,
-  .is-visible\@#{$name}- {
-    display:none;
+  @media only screen {
+    .is-visible\@#{$name},
+    .is-visible\@#{$name}\+,
+    .is-visible\@#{$name}- {
+      display:none;
+    }
   }
   @include mq(#{$name}, '~') {
     .is-hidden\@#{$name} {

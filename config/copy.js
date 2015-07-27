@@ -7,6 +7,14 @@ module.exports = {
       dest: 'dev/'
     }]
   },
+  study: {
+    files: [{
+      expand: true,
+      cwd: 'src/',
+      src: ['study-new/**'],
+      dest: 'dev/'
+    }]
+  },
   build: {
     files: [{
       expand: true,
