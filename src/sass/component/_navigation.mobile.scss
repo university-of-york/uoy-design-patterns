@@ -35,6 +35,10 @@
   overflow:hidden;
   position:relative;
   top:-10px;
+  // Double class for more specificity
+  &.c-form {
+    margin:0;
+  }
   &.is-open {
     height:4.25em;
   }

@@ -11,6 +11,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
   var $window = $(window);
   var $document = $(document);
+  var windowWidth = $window.width();
 
   var STICKYNAV = function (options) {
 
@@ -18,13 +19,15 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
     this.container = options.container;
     this.parent = this.container.parent();
-    // Get offset position from parent
-    this.containerStartPosition = this.parent.offset().top;
+
+    this.isSticky = false;
+    this.isCentered = false;
 
     $window.on('resize', null, { that: this }, this.reset);
     $window.on('scroll', null, { that: this }, this.check);
+    $window.on('nav:targeted:new-current', null, { that: this }, this.centerCurrentNav);
 
-    $window.trigger('scroll');
+    $window.trigger('resize');
 
   };
 
@@ -34,62 +37,52 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
   STICKYNAV.prototype.check = function (e) {
     var that = e.data.that,
-        scrollTop = $window.scrollTop(),
-        addOrRemove = scrollTop >= that.containerStartPosition;
-    that.container.toggleClass('is-sticky', addOrRemove);
+        scrollTop = $window.scrollTop();
+    that.isSticky = scrollTop >= that.containerStartPosition;
+    // Make nav stick to top of the page
+    that.container.toggleClass('is-sticky', that.isSticky);
   };
 
   // Find new position of sticky nav
   STICKYNAV.prototype.reset = function (e) {
     var that = e.data.that;
-    that.containerStartPosition = that.parent.offset().top;
-    console.log('New container start position is '+that.containerStartPosition);
+    windowWidth = $window.width();
+    that.getOffsetPosition();
+    that.getNavWidth();
+    that.isCentered = that.navWidth > windowWidth;
+    // console.log('Container start position is '+that.containerStartPosition);
+    that.container.toggleClass('is-centered', that.isCentered);
     $window.trigger('scroll');
   };
 
-  STICKYNAV.prototype.foo = UTILS.debounce(function () {
-    var scrollTop = $window.scrollTop(),
-        documentHeight = $document.height(),
-        windowHeight = $window.height(),
-        dwh = documentHeight - windowHeight,
-        extra = (scrollTop > dwh) ? dwh - scrollTop : 0;
-    console.log(scrollTop, documentHeight, windowHeight, dwh, extra);
-    // for (var i = 0; i < sticked.length; i++) {
-    //     var s = sticked[i],
-    //         elementTop = s.stickyWrapper.offset().top,
-    //         etse = elementTop - s.topSpacing - extra;
+  STICKYNAV.prototype.getOffsetPosition = function () {
+    this.containerStartPosition = this.parent.offset().top;
+  };
 
-    //     if (scrollTop <= etse) {
-    //       if (s.currentTop !== null) {
-    //         s.stickyElement
-    //           .css('position', '')
-    //           .css('top', '');
-    //         s.stickyElement.trigger('sticky-end', [s]).parent().removeClass(s.className);
-    //         s.currentTop = null;
-    //       }
-    //     } else {
-    //       var newTop = documentHeight - s.stickyElement.outerHeight()
-    //         - s.topSpacing - s.bottomSpacing - scrollTop - extra;
-    //       if (newTop < 0) {
-    //         newTop = newTop + s.topSpacing;
-    //       } else {
-    //         newTop = s.topSpacing;
-    //       }
-    //       if (s.currentTop != newTop) {
-    //         s.stickyElement
-    //           .css('position', 'fixed')
-    //           .css('top', newTop);
+  STICKYNAV.prototype.getNavWidth = function () {
+    var that = this;
+    var width = 0;
+    var listItems = this.container.find('li');
+    $.each(listItems, function(i, v) {
+      width+= $(v).outerWidth();
+      if (i == listItems.length - 1) {
+        // console.log('navWidth is '+width);
+        that.navWidth = width;
+      }
+    })
+  };
 
-    //         if (typeof s.getWidthFrom !== 'undefined') {
-    //           s.stickyElement.css('width', $(s.getWidthFrom).width());
-    //         }
-
-    //         s.stickyElement.trigger('sticky-start', [s]).parent().addClass(s.className);
-    //         s.currentTop = newTop;
-    //       }
-    //     }
-    //   }
-  }, 250);
+  STICKYNAV.prototype.centerCurrentNav = function (e) {
+    var that = e.data.that;
+    if (!that.isSticky || !that.isCentered) return false;
+    var $navUl = $(that.container.children('ul')),
+        $currentNav = $(that.container.find('li.is-current')),
+        hasCurrent = $currentNav.length === 0,
+        currentLeft = hasCurrent ? 0 : $currentNav.position().left,
+        currentWidth = hasCurrent ? 0 : $currentNav.width(),
+        newOffset = hasCurrent ? 0 : windowWidth/2 - currentLeft - currentWidth/2;
+    $navUl.css('left', newOffset);
+  };
 
   return STICKYNAV;
 

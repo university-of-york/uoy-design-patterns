@@ -172,7 +172,8 @@ $c-modal__close-hover-background-color:lighten($charcoal, 10);
 $c-modal__close-hover-color:darken($light, 10);
 
 // Footer
-$c-footer-main-color:darken($light,10);
+$c-footer-background-color:$charcoal;
+$c-footer-color:darken($light,10);
 $c-footer-main__link-color:darken($light,10);
 $c-footer-main__link-hover-color:$blue;
 $c-footer-main__link--edit-color:lighten($charcoal,10);

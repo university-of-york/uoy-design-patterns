@@ -74,10 +74,10 @@ component("button", { "text": "Bippitty<br>Boppity<br>Boo" });
 A block button takes 100% of the width of the containing element. They're useful for finishing off a form, when there's only one option.
 
 <script>
-component("button", { "block": true, size: "huge", "text": "Head", "icon-after": "user" })
-+component("button", { "block": true, size: "large", "text": "Shoulders", "type": "primary", "icon-before": "users" })
-+component("button", { "block": true, size: "medium", "text": "Knees", "type": "cancel" })
-+component("button", { "block": true, size: "small", "text": "Toes", "type": "danger" })
+ component("button", { "block": true, size: "huge", "text": "Head", "icon-after": "user" })
++component("button", { "block": true, size: "large", "text": "Shoulders", "icon-before": "users" })
++component("button", { "block": true, size: "medium", "text": "Knees" })
++component("button", { "block": true, size: "small", "text": "Toes" })
 +component("button", { "block": true, size: "tiny", "text": "If you can read this you're too close" });
 </script>
 

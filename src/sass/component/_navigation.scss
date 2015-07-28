@@ -6,7 +6,7 @@
 // MENU NAVIGATION
 //
 .c-nav {
-  height:2.75em;
+  height:2.8125em;
   background-color:$c-nav-background-color;
   border-bottom:3px solid $c-nav-border-color;
   border-top:1px solid lighten($c-nav-background-color,10);
@@ -27,16 +27,42 @@
   height:2.75em;
 }
 .c-nav--sticky {
+  @include transition;
   overflow:visible;
+  background-color:transparent;
+  border-bottom-color:transparent;
+  text-align:center;
+  @include mq(large, '-') {
+    @include font-size(13px);
+  }
   &.is-sticky {
     position:fixed;
     top:0;
+    left:0;
     z-index:64;
+    width:100%;
+    background-color:$c-nav-background-color;
+    border-bottom-color:$c-nav-border-color;
+  }
+  &.is-centered {
+    .c-nav__list {
+      position:absolute;
+      left:0;
+      top:0;
+    }
+    .c-nav__item {
+    }
+    .c-nav__link {
+    }
   }
   .c-nav__list {
+    // To match position when in main wrapper
+    max-width:$container-width - (2 * $base-spacing);
     overflow:visible;
     width:100%;
     white-space:nowrap;
+    background-color:$c-nav-background-color;
+    border-bottom:3px solid $c-nav-border-color;
   }
   .c-nav__link {
     text-transform:uppercase;
@@ -45,11 +71,15 @@
     display:inline-block;
     float:none;
     .c-nav__link,
-    // We can't add classes to 'a' tags in Site Manager
-    .c-nav__item a {
+    // We can't add classes to 'a' tags in nav objects Site Manager
+    a {
+      @include mq(large, '-') {
+        padding-left:$base-spacing/2;
+        padding-right:$base-spacing/2;
+      }
       &:after {
         @include transition;
-        bottom: 0;
+        bottom: 2px;
         border-right: 15px solid transparent;
         border-left: 15px solid transparent;
         border-top: 12px solid $c-nav-background-color;
@@ -59,6 +89,9 @@
         margin-left: -15px;
         position: absolute;
         width: 0;
+        @include mq(large, '-') {
+          border-top-width:8px;
+        }
       }
       &:hover {
         &:after {
@@ -69,17 +102,21 @@
     &.is-current {
       .c-nav__link,
       // We can't add classes to 'a' tags in Site Manager
-      .c-nav__item a {
+      a {
         background-color:$c-nav__link-is-current-background-color;
         &:after {
           border-top-color:$c-nav__link-is-current-background-color;
           bottom: -12px;
+          @include mq(large, '-') {
+            bottom:-8px;
+          }
         }
       }
     }
   }
 }
 .c-nav__list {
+  @include transition;
   max-width:$container-width;
   margin:0 auto;
   padding:0;

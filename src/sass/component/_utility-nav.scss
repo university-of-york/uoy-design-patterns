@@ -25,6 +25,9 @@
 }
 .c-utility-nav__search {
   float:right;
+  .c-form {
+    margin-bottom:0;
+  }
   .c-form__input--text {
     @include font-size(12px,1.5);
     width:auto;

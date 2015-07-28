@@ -2,11 +2,10 @@
 // FOOTER
 //
 .c-footer-main {
-  background-color:$charcoal;
-  color:$c-footer-main-color;
+  background-color:$c-footer-background-color;
+  color:$c-footer-color;
   border-top:2px solid $blue;
   padding:$base-spacing 0;
-  margin-top:$base-spacing;
   a {
     @include transition('color');
     color:$c-footer-main__link-color;
@@ -31,7 +30,7 @@
   }
 }
 .c-footer-main__heading {
-  margin: $base-spacing 0 $base-spacing/2 0;
+  margin: $base-spacing 0 $base-spacing/2;
 }
 .c-footer-main__address {
   margin-top:0;

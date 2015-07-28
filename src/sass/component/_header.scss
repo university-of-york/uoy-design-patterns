@@ -14,6 +14,7 @@
   @include clearfix;
   color:$charcoal;
   background:#fff;
+  position:relative;
 }
 .c-main-header__title {
   @include font-size(24px, 41px);
@@ -24,7 +25,6 @@
   @include mq(tiny) {
     // Change size of logo on tiny screens
     @include font-size(18px, 20px);
-    width:132px;
     height:20px;
   }
 }

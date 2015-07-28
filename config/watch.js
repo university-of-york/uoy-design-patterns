@@ -12,6 +12,10 @@ module.exports = {
     // tasks: ['newer:makedocs:dev'] // Recreates nav with single, changed file :(
     tasks: ['makedocs:dev']
   },
+  study: {
+    files: ['src/study-new/**/*.html'],
+    tasks: ['newer:copy:study']
+  },
   js: {
     files: ['src/js/**/*.js'],
     tasks: ['newer:copy:dev']

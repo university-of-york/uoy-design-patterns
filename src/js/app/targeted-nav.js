@@ -16,11 +16,11 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
     if (!options.container) return false;
     this.container = options.container;
+    this.spacing = 20;
 
     // Find all the hrefs that point to fragments
     this.links = $('a[href^=#]', this.container);
-    this.height = this.container.height();
-    console.log(this.height);
+    this.reset({data:{that:this}});
     var sections = [];
     this.links.each(function (i, link) {
       var $link = $(link),
@@ -54,7 +54,8 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   };
 
   TARGETEDNAV.prototype.reset = function (e) {
-
+    var that = e.data.that;
+    that.height = that.container.height() + that.spacing;
   };
 
   TARGETEDNAV.prototype.makeCurrent = function (section) {
@@ -67,6 +68,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     } else {
       this.links.parent().removeClass('is-current');
     }
+    $window.trigger('nav:targeted:new-current')
   };
 
   return TARGETEDNAV;

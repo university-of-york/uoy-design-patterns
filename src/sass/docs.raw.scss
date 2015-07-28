@@ -166,19 +166,19 @@
   }
 }
 #navigation-page {
+  .o-grid__box[role="main"] {
+    p, h2, h3 {
+      padding:0 $base-spacing;
+      max-width:1200px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    .c-main-header__title {
+      padding:0;
+    }
+  }
   .c-subnav__list {
     display:block;
-  }
-  // Force navs to stretch to full width
-  .c-utility-nav,
-  .c-menu-title,
-  .c-menu-nav,
-  .c-nav {
-    margin:0 -20px;
-    width:calc(100% + 40px);
-  }
-  #Main-Navigation {
-    margin:0;
   }
 }
 

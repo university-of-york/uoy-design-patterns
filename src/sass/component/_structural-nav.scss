@@ -4,7 +4,6 @@
 .c-structural-nav {
   @include clearfix;
   .c-main-header & {
-    display:inline-block;
     float:right;
     clear:right;
     padding:1.625em 0;
