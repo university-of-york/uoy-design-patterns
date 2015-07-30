@@ -48,7 +48,13 @@
     color:$light;
   }
 }
-
+a.c-panel {
+  color:$charcoal;
+  text-decoration: none;
+}
+a.c-panel--highlight {
+  color:$light;
+}
 .c-panel--compact, .c-panel--compact p {
   @include font-size(14px);
 }
