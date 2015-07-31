@@ -15,6 +15,9 @@
 }
 .c-figure__caption {
   @include image-caption;
+  h2, h3, h4, h5 {
+    line-height:1;
+  }
   @include mq('small', '-') {
     padding:$base-spacing/2;
     .o-grid__box--half\@small &,

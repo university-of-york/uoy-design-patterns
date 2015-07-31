@@ -92,6 +92,22 @@ component("panel", {
 });
 </script>
 
+### Link panels
+
+A whole panel can act as a link:
+
+<script>
+component("panel-link", {
+  "content": "<p>Atmospheric chemist Professor Alastair Lewis argues that clean air should be the engine of economic growth in China, rather than the brake.</p>",
+  "url":"http://www.york.ac.uk"
+}) +
+component("panel-link", {
+  "type":"highlight",
+  "content": "<p>Atmospheric chemist Professor Alastair Lewis argues that clean air should be the engine of economic growth in China, rather than the brake.</p>",
+  "url":"http://www.york.ac.uk"
+});
+</script>
+
 ### KIS widget
 
 Lastly, there's a special panel type for displaying the [KIS widget](https://www.hesa.ac.uk/includes/C14061_resources/download/Unistats_widget_user_guide.pdf?v=1.7). It uses the normal panel markup but with a `.c-panel--kis-widget` modifier.

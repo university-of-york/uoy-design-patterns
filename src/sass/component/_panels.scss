@@ -49,6 +49,25 @@
   }
 }
 
+.c-panel--link {
+  color:$charcoal;
+  text-decoration: none;
+  .c-panel__more {
+    color: $link-color;
+    font-weight: bold;
+    text-decoration:underline;
+  }
+  &:hover {
+    color:$charcoal;
+    .c-panel__more {
+      color:$link-hover-color;
+    }
+  }
+  &.c-panel--highlight {
+    color:$light;
+  }
+}
+
 .c-panel--compact, .c-panel--compact p {
   @include font-size(14px);
 }

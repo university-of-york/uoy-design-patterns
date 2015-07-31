@@ -1,0 +1,18 @@
+<a href="{{url}}" class="c-panel c-panel--link {{#type}}c-panel--{{this}}{{/type}}">{{#header}}
+  <div class="c-panel__header">
+    {{this}}
+  </div>{{/header}}{{#image}}
+  <div class="c-panel__image">
+    <img src="{{this}}" alt="{{#if header}}{{header}}{{else}}{{#subheader}}{{this}}{{/subheader}}{{/if}}">
+  </div>{{/image}}{{#subheader}}
+  <div class="c-panel__subheader">
+    {{this}}
+  </div>{{/subheader}}
+  <div class="c-panel__content">
+    {{content}}
+    <p class="c-panel__more">Read more</p>
+  </div>{{#footer}}
+  <div class="c-panel__footer">
+    {{this}}
+  </div>{{/footer}}
+</a>

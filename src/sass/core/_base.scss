@@ -13,7 +13,7 @@ body {
   color:$charcoal;
 }
 a {
-  color:darken($blue,10);
+  color:$link-color;
   text-decoration: underline;
   &,
   &:hover,
@@ -22,7 +22,7 @@ a {
     outline: 0px;
   }
   &:hover {
-    color:$blue;
+    color:$link-hover-color;
   }
   img {
     border:0;
