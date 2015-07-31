@@ -9,7 +9,7 @@ id: panels-page
 
 ---
 
-<p class="lead">Panels are used to highlight certain elements of a page, in the same way that _boxout_ is used on the 2013 site.</p>
+<div class="lead"><p>Panels are used to highlight certain elements of a page, in the same way that _boxout_ is used on the 2013 site.</p></div>
 
 The default panel is simply some content.
 

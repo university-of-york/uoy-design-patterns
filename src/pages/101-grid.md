@@ -8,7 +8,7 @@ id: grid-page
 
 ---
 
-<p class="lead">We use a flexible grid system that can be used at all screen resolutions. It's percentage-based, so is flexible enough to fit any container. This means is possible (but not necessarily advisable) to nest a grid within a grid.</p>
+<div class="lead"><p>We use a flexible grid system that can be used at all screen resolutions. It's percentage-based, so is flexible enough to fit any container. This means is possible (but not necessarily advisable) to nest a grid within a grid.</p></div>
 
 Note that the grid is used for layout only, and holds no details as to the contents of the grid box. Other components should be included within the grid boxes.
 

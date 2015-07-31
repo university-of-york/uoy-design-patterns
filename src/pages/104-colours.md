@@ -8,7 +8,7 @@ id: colours-page
 
 ---
 
-<p class="lead">We'll use a fairly restrained colour palette across the site.</p>
+<div class="lead"><p>We'll use a fairly restrained colour palette across the site.</p></div>
 
 ##Primary colours
 

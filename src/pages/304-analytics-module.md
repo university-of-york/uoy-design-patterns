@@ -9,7 +9,7 @@ id: modal-link-module-page
 
 ---
 
-<p class="lead">The main Google Analytics code is contained in `app/main.js` as it needs to live outside of the main 'onload' script. The Google Analytics module contains all the rules for tracking pageviews and events.</p>
+<div class="lead"><p>The main Google Analytics code is contained in `app/main.js` as it needs to live outside of the main 'onload' script. The Google Analytics module contains all the rules for tracking pageviews and events.</p></div>
 
 ### Events
 

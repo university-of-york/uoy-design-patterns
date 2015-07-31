@@ -9,7 +9,7 @@ id: clearing-tables-page
 
 ---
 
-<p class="lead">The table layout for courses in clearing (bit of a misnomer, since it doesn't actually use a table).</p>
+<div class="lead"><p>The table layout for courses in clearing (bit of a misnomer, since it doesn't actually use a table).</p></div>
 
 <script>
 component("clearing-table", {

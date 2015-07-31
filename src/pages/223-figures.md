@@ -9,7 +9,7 @@ id: figures-page
 
 ---
 
-<p class="lead">You can add text to an image by using a `figure` component with a `figcaption`.</p>
+<div class="lead"><p>You can add text to an image by using a `figure` component with a `figcaption`.</p></div>
 
 In most cases, figures are sized by the size of the image (with the notable exception of [banners](#banner-figures))
 

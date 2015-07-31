@@ -9,7 +9,7 @@ id: toggle-page
 
 ---
 
-<p class="lead">General class for using a _button_ to toggle a _class_ on a _container_.</p>
+<div class="lead"><p>General class for using a _button_ to toggle a _class_ on a _container_.</p></div>
 
 ### Use
 

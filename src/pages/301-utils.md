@@ -9,7 +9,7 @@ id: utils-page
 
 ---
 
-<p class="lead">This is a list of the utilities module. It has a range of different methods that can be used throughout the code.</p>
+<div class="lead"><p>This is a list of the utilities module. It has a range of different methods that can be used throughout the code.</p></div>
 
 ###UTILS.debounce(_fn_ function, _ms_ delay)
 

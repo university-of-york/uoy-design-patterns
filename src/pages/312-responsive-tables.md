@@ -9,7 +9,7 @@ id: responsive-tables-page
 
 ---
 
-<p class="lead">When a table has to be used in markup, but some of the columns are optional and can be lost on smaller screen sizes, use the Responsive tables module.</p>
+<div class="lead"><p>When a table has to be used in markup, but some of the columns are optional and can be lost on smaller screen sizes, use the Responsive tables module.</p></div>
 
 You can see an example of the markup on the [tables page](tables.html).
 

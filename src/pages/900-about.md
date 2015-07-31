@@ -8,7 +8,7 @@ id: about-page
 
 ---
 
-<p class="lead">This is a meta-page about how the documentation is built, with examples of how you can call new component templates into pages.</p>
+<div class="lead"><p>This is a meta-page about how the documentation is built, with examples of how you can call new component templates into pages.</p></div>
 
 You can include an atomic component like so:
 

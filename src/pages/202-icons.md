@@ -9,7 +9,7 @@ id: icons-page
 
 ---
 
-<p class="lead">We're currently using [Font Awesome](http://fortawesome.github.io/Font-Awesome/) as an icon set. All icons are held in an `i` element, as it has no semantic meaning and is very concise (i.e. it's one letter!).</p>
+<div class="lead"><p>We're currently using [Font Awesome](http://fortawesome.github.io/Font-Awesome/) as an icon set. All icons are held in an `i` element, as it has no semantic meaning and is very concise (i.e. it's one letter!).</p></div>
 
 <script>
 component("icon", { "type": "heart" } );

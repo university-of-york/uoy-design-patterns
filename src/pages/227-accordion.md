@@ -9,7 +9,7 @@ id: accordion-page
 
 ---
 
-<p class="lead">An accordion list for expandable content.</p>
+<div class="lead"><p>An accordion list for expandable content.</p></div>
 
 <script>
 component("accordion-item", {

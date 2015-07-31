@@ -9,7 +9,7 @@ id: clearing-tables-module-page
 
 ---
 
-<p class="lead">At clearing, we need to update the available courses minute-by-minute to give students the best information. The Clearing Tables module helps to do that. It </p>
+<div class="lead"><p>At clearing, we need to update the available courses minute-by-minute to give students the best information. The Clearing Tables module helps to do that. It </p></div>
 
 ### Use
 

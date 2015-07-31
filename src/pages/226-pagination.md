@@ -9,7 +9,7 @@ id: pagination-page
 
 ---
 
-<p class="lead">For when we need to show pagination, for news articles, events listings, search results, and so on.</p>
+<div class="lead"><p>For when we need to show pagination, for news articles, events listings, search results, and so on.</p></div>
 
 Each `page` link is an _atom_:
 

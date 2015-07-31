@@ -9,7 +9,7 @@ id: tabs-page
 
 ---
 
-<p class="lead">Tabs are an easy way to fit lots of related content on a page without overwhelming the page with content.</p>
+<div class="lead"><p>Tabs are an easy way to fit lots of related content on a page without overwhelming the page with content.</p></div>
 
 Individual tabs can be referenced by the page hash.
 

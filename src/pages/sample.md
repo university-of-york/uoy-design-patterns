@@ -8,7 +8,7 @@ id: sample-page
 
 ---
 
-<p class="lead">Sample text</p>
+<div class="lead"><p>Sample text</p></div>
 
 <script>
 component("sample", { "text": "Sample text", "type": "sample-type" });

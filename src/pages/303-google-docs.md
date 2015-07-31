@@ -9,7 +9,7 @@ id: google-docs-page
 
 ---
 
-<p class="lead">Google Docs are a great way to store data that needs to be easily editable and instantly updated. This module grabs data from a Google Doc and returns a two-dimensional array - an array of rows, each of which is an array using the column headings as keys.</p>
+<div class="lead"><p>Google Docs are a great way to store data that needs to be easily editable and instantly updated. This module grabs data from a Google Doc and returns a two-dimensional array - an array of rows, each of which is an array using the column headings as keys.</p></div>
 
 ### Use
 

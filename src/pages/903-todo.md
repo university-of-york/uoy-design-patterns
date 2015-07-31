@@ -8,7 +8,7 @@ id: todo-page
 
 ---
 
-<p class="lead">This is a (fairly inaccurate) list of things left to do.</p>
+<div class="lead"><p>This is a (fairly inaccurate) list of things left to do.</p></div>
 
 ### CSS Components
 

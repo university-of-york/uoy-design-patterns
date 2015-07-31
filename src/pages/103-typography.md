@@ -8,7 +8,7 @@ id: typography-page
 
 ---
 
-<p class="lead">Here you can find documentation about default typography used on the site. The usual `line-height` is 1.5, which gives a 24px line-height for 16px font sizes. A margin of 22px (1.375em) is the default spacing between elements. In general, _ems_ are used for vertical spacing, and _pixels_ or _percent_ for horizontal spacing.</p>
+<div class="lead"><p>Here you can find documentation about default typography used on the site. The usual `line-height` is 1.5, which gives a 24px line-height for 16px font sizes. A margin of 22px (1.375em) is the default spacing between elements. In general, _ems_ are used for vertical spacing, and _pixels_ or _percent_ for horizontal spacing.</p></div>
 
 We restrict the fonts used on the site to just three (and, to be honest, not many pages have code samples on, except for this documentation):
 
@@ -114,10 +114,10 @@ Reprehenderit eiusmod aliquip labore sint laborum dolor laborum adipisicing cill
 
 Add `.lead` to a paragraph to highlight it. Usually only used on the first paragraph on the page.
 
-<p class="lead">Duis ut anim ut ex amet non in irure occaecat ullamco in tempor nostrud velit in incididunt in amet reprehenderit ea in ad adipisicing officia aliqua ad enim ut officia dolore dolor dolor aliqua dolor in reprehenderit sint consectetur cillum laborum ea adipisicing proident id irure laborum amet proident nostrud et ut amet minim</p>
+<div class="lead"><p>Duis ut anim ut ex amet non in irure occaecat ullamco in tempor nostrud velit in incididunt in amet reprehenderit ea in ad adipisicing officia aliqua ad enim ut officia dolore dolor dolor aliqua dolor in reprehenderit sint consectetur cillum laborum ea adipisicing proident id irure laborum amet proident nostrud et ut amet minim</p></div>
 
 ```markup
-<p class="lead">Duis ut anim ut ex amet non in irure occaecat ullamco in tempor nostrud velit in incididunt in amet reprehenderit ea in ad adipisicing officia aliqua ad enim ut officia dolore dolor dolor aliqua dolor in reprehenderit sint consectetur cillum laborum ea adipisicing proident id irure laborum amet proident nostrud et ut amet minim</p>
+<div class="lead"><p>Duis ut anim ut ex amet non in irure occaecat ullamco in tempor nostrud velit in incididunt in amet reprehenderit ea in ad adipisicing officia aliqua ad enim ut officia dolore dolor dolor aliqua dolor in reprehenderit sint consectetur cillum laborum ea adipisicing proident id irure laborum amet proident nostrud et ut amet minim</p></div>
 ```
 
 ## Lists

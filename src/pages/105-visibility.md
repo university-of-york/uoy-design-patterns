@@ -8,7 +8,7 @@ id: visibility-page
 
 ---
 
-<p class="lead">There are a range of _state_ classes which can be used to show or hide elements at a certain width.</p>
+<div class="lead"><p>There are a range of _state_ classes which can be used to show or hide elements at a certain width.</p></div>
 
 The form of the class is `.is-visible` or `.is-hidden`. On their own, these can be used to show or hide elements, usually using Javascript to unhide them when needed.
 

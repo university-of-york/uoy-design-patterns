@@ -9,7 +9,7 @@ id: modal-link-module-page
 
 ---
 
-<p class="lead">You can turn any link you like in to a modal link using this module. It utilises the markup of the link in conjunction with the [modal module](modal-module.html).</p>
+<div class="lead"><p>You can turn any link you like in to a modal link using this module. It utilises the markup of the link in conjunction with the [modal module](modal-module.html).</p></div>
 
 
 ### Use

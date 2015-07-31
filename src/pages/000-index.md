@@ -12,7 +12,7 @@ id: homepage
 
 ### What is a design pattern?
 
-<p class="lead">When we're building the website, we can reuse a lot of the code and styling across the site. Components such as buttons, forms and tables can and should look the same to give the site a unified feel.</p>
+<div class="lead"><p>When we're building the website, we can reuse a lot of the code and styling across the site. Components such as buttons, forms and tables can and should look the same to give the site a unified feel.</p></div>
 
 The design pattern library is our way of documenting the different components that we use on the site, so that existing pages and new sites can be created without losing the visual identity we've created.
 

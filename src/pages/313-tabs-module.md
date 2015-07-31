@@ -9,7 +9,7 @@ id: tabs-page
 
 ---
 
-<p class="lead">[Tabbed content](tabs.html) is used to display a lot of alternative text in one place. For example, they're used on the course pages to show prospective students what they can expect to study in each year of the course.</p>
+<div class="lead"><p>[Tabbed content](tabs.html) is used to display a lot of alternative text in one place. For example, they're used on the course pages to show prospective students what they can expect to study in each year of the course.</p></div>
 
 To convert the tab markup to useable tabs, `new TABS` is called for each `.js-tabs` element.
 

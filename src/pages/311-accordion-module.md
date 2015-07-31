@@ -9,6 +9,6 @@ id: accordion-page
 
 ---
 
-<p class="lead"></p>
+<div class="lead"><p></p></div>
 
 

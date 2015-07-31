@@ -9,7 +9,7 @@ id: buttons-page
 
 ---
 
-<p class="lead">Buttons come in four different types and three different sizes.</p>
+<div class="lead"><p>Buttons come in four different types and three different sizes.</p></div>
 
 Usually a `button` element should be used, although an `a`, an `input[type=button]`, an `input[type=reset]` or an `input[type=submit]` could be used.
 

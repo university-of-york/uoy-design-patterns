@@ -9,7 +9,7 @@ id: signposts-page
 
 ---
 
-<p class="lead">Signposts are used to show a series of next steps or calls to action. They can be used on their own at full width, or within multiple column grids</p>
+<div class="lead"><p>Signposts are used to show a series of next steps or calls to action. They can be used on their own at full width, or within multiple column grids</p></div>
 
 The default signpost has a heading, text and a link.
 

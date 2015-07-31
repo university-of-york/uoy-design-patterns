@@ -9,7 +9,7 @@ id: forms-page
 
 ---
 
-<p class="lead">Building up a form takes time, but should be a simple case of combining all the elements here in a sensible way.</p>
+<div class="lead"><p>Building up a form takes time, but should be a simple case of combining all the elements here in a sensible way.</p></div>
 
 The basic unit in forms is the _form-element_. This is a _molecule_, made up of one or more _atoms_. The atoms can be an `input`, a `textarea`, a number of `checkbox` or `radio` buttons, or a `select` dropdown. It combines a label with these form elements and boxes them all up in a handy-sized `div`.
 

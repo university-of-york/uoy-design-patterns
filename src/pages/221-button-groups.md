@@ -11,7 +11,7 @@ id: button-groups-page
 
 ## Button groups
 
-<p class="lead">You can combine [buttons](buttons.html) together in a `btn-group`. This will join the buttons together seamlessly (as long as they're all the same size. Otherwise, results can be unpredictable).</p>
+<div class="lead"><p>You can combine [buttons](buttons.html) together in a `btn-group`. This will join the buttons together seamlessly (as long as they're all the same size. Otherwise, results can be unpredictable).</p></div>
 
 <script>
 component("button-group", { "atoms": [
