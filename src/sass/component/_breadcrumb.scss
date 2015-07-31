@@ -2,6 +2,7 @@
 // BREADCRUMB
 //
 .c-breadcrumb {
+  @include component-margin;
   width:100%;
   background-color: $c-breadcrumb-background-color;
   color:$c-breadcrumb-color;

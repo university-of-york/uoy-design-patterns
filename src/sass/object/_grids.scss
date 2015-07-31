@@ -77,7 +77,8 @@ $box-margin: $base-spacing;
 
 
 .o-grid__box {
-  @include font-size;
+  @include responsive-font-size($default-font-sizes);
+  // @include font-size;
   display:inline-block;
   vertical-align:top;
   padding-left:$box-margin;

@@ -17,7 +17,7 @@ define(['jquery', 'app/google-docs', 'app/accordion'], function ($, GOOGLEDOC, A
     var container = options.container;
 
     var docID = '1u6AjJqtDAnOH8_rEKDb0lBjlp0ScCqzg0Q_q0Xlh';
-    var backupDoc = 'https://www.york.ac.uk/media/**/**/clearing.json';
+    var backupDoc = 'https://www.york.ac.uk/media/global/responsiveredesign/clearing.json';
 
     var t = new GOOGLEDOC({
       id: docID,
@@ -54,7 +54,7 @@ define(['jquery', 'app/google-docs', 'app/accordion'], function ($, GOOGLEDOC, A
               });
               var accordion = $('<div>').addClass('c-accordion__item js-accordion__item').appendTo(container);
               var accordionTitle = $('<a>').addClass('c-accordion__title').attr('href', '#').html(data[i].Subject+'<i class="c-accordion__icon c-icon c-icon--plus c-icon--after"></i>').appendTo(accordion);
-              var accordionContent = $('<div>').addClass('c-accordion__content').html(output).appendTo(accordion);
+              var accordionContent = $('<div>').addClass('c-accordion__content').appendTo(accordion);
               currentAccordion = accordion;
               currentAccordionContent = accordionContent;
               currentSubject = data[i].Subject;
@@ -69,7 +69,7 @@ define(['jquery', 'app/google-docs', 'app/accordion'], function ($, GOOGLEDOC, A
             if (data[i]['UCAS code']) output+= '    <p class="c-clearing-table__ucas-code">UCAS code: '+data[i]['UCAS code']+'</p>\n';
             if (data[i]['Course length']) output+= '    <p class="c-clearing-table__course-length">Course length: '+data[i]['Course length']+'</p>\n';
             if (data[i]['Bullet 1'] || data[i]['Bullet 2'] || data[i]['Bullet 3']) {
-              output+= '    <p class="c-clearing-table__additional-requirements">This course has additional entry requirements:</p>';
+              output+= '    <p class="c-clearing-table__additional-requirements">Additional entry requirements:</p>';
               output+= '    <ul class="c-clearing-table__list">';
             }
             if (data[i]['Bullet 1']) output+= '      <li class="c-clearing-table__list-item">'+data[i]['Bullet 1']+'</li>\n';

@@ -23,6 +23,7 @@
   }
 }
 .c-nav__wrapper {
+  @include component-margin;
   // Placeholder for when sticky nav goes AWOL
   height:2.75em;
 }
@@ -46,6 +47,7 @@
   }
   &.is-centered {
     .c-nav__list {
+      @include transition('left');
       position:absolute;
       left:0;
       top:0;
@@ -116,7 +118,7 @@
   }
 }
 .c-nav__list {
-  @include transition;
+  // @include transition;
   max-width:$container-width;
   margin:0 auto;
   padding:0;

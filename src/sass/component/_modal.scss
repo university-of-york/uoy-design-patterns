@@ -78,6 +78,15 @@
   max-height:100%;
   max-width:100%;
 }
+.c-modal__image {
+  display:block;
+}
+.c-modal__caption {
+  @include image-caption;
+  left:0;
+  bottom:0;
+  width:100%;
+}
 .c-modal__close {
   position:absolute;
   top:$base-spacing/2;

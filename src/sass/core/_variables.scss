@@ -32,6 +32,12 @@ $base-spacing:      20px;
 
 // Varying typographic scales for different breakpoints
 // http://typecast.com/blog/a-more-modern-scale-for-web-typography
+$default-font-sizes: (
+  null:   (16px, 1.25),
+  medium: (16px, 1.375),
+  huge:   (18px, 1.5)
+);
+
 $p-font-sizes: (
   null:   (16px, 1.25),
   medium: (16px, 1.375),

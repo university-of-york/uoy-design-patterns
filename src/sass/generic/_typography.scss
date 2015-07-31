@@ -3,15 +3,24 @@
 //
 
 //.lead p for Site Manager
-.lead, .lead p {
+.lead {
   @include responsive-font-size($lead-font-sizes);
   @include demarginalise;
+  @include component-margin;
 }
-
+.lead p {
+  @include responsive-font-size($lead-font-sizes);
+}
 .subtitle {
   @include font-size(18px, 1);
   display:block;
   margin:0;
+  h4 &, h5 & {
+    @include font-size(13px, 1);
+  }
+  h6 & {
+    @include font-size(12px, 1);
+  }
 }
 
 .right {

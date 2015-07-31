@@ -2,7 +2,7 @@
 // NAVIGATION
 //
 .c-subnav {
-  margin:$base-spacing 0;
+  @include component-margin;
 }
 .c-subnav__list {
   list-style:none;

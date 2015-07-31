@@ -20,6 +20,7 @@ define(['jquery'], function ($) {
     toggleButton.on('click', function (e) {
       e.preventDefault();
       toggleContainer.toggleClass(toggleClassName);
+      $(window).trigger('toggle', options);
       return false;
     });
 

@@ -22,10 +22,12 @@
   float:left;
   margin:17px 0 13px; // Check overrides.scss for margin-bottom override
   height:41px;
+  min-width:262px;
   @include mq(tiny) {
     // Change size of logo on tiny screens
     @include font-size(18px, 20px);
     height:20px;
+    min-width:132px;
   }
 }
 .c-main-header__logo {

@@ -21,6 +21,11 @@
       };
     },
 
+    // Are we on a dev server (localhost or VM)
+    isDev: function() {
+      return (document.location.hostname === 'localhost' || document.location.hostname === '10.0.2.2');
+    },
+
     // If the page hash is set on load, scroll to and show the appropriate tab
     scrollToHash: function () {
       var hash = document.location.hash;

@@ -16,18 +16,15 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   window.ga = window.ga || function(){(ga.q=ga.q||[]).push(arguments);};
   ga.l =+ new Date();
 
-    var isDev = (document.location.hostname === 'localhost' || document.location.hostname === '10.0.2.2');
+  var isDev = UTILS.isDev();
   var analyticsOptions = isDev ? { 'cookieDomain': 'none' } : 'auto' ;
   var trackerNumber = isDev ? 'UA-1621853-16' : 'UA-1621853-1';
-
-  console.log('isDev is '+isDev);
 
   // Set up tracker
   ga('create', trackerNumber, analyticsOptions);
 
   // Send generic pageview
   ga('send', 'pageview');
-
 
   // Track external links, email links and file downloads as events in Google Analytics
   ga_track = function (target){

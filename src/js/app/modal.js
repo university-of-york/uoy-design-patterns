@@ -18,6 +18,7 @@ define(['jquery'], function ($) {
 
     this.content = options.content || this.defaults.content;
     this.title = options.title || this.defaults.title;
+    this.caption = options.caption || this.defaults.caption;
     this.type = options.type || this.defaults.type;
     this.prev = options.prev || false;
     this.next = options.next || false;
@@ -32,6 +33,7 @@ define(['jquery'], function ($) {
   MODAL.prototype.defaults = {
     content: false,
     title: false,
+    caption: false,
     type: 'framed'
   };
 
@@ -138,6 +140,9 @@ define(['jquery'], function ($) {
     });
     var modalTitle = this.title !== false ? $('<h4>').addClass('c-modal__title').text(this.title) : false;
     var modalContent = this.content !== false ? $('<div>').addClass('c-modal__content').html(this.content) : false;
+    if (this.caption !== false && modalContent !== false) {
+      modalContent.append($('<div>').addClass('c-modal__caption').html(this.caption));
+    }
     var modalClose = $('<a>').addClass('c-modal__close').attr('title', 'Close this window').html('&times;').on('click', function (e) {
       that.close();
     });

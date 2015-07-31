@@ -69,7 +69,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
         // console.log('navWidth is '+width);
         that.navWidth = width;
       }
-    })
+    });
   };
 
   STICKYNAV.prototype.centerCurrentNav = function (e) {

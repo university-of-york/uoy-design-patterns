@@ -14,16 +14,11 @@
   width:100%;
 }
 .c-figure__caption {
-  @include demarginalise;
-  background:$charcoal;
-  background:transparentize($charcoal, 0.15);
-  color:$light;
-  padding:$base-spacing;
-  display:inline;
-  position:absolute;
+  @include image-caption;
   @include mq('small', '-') {
     padding:$base-spacing/2;
-    .o-grid__box--half\@small & {
+    .o-grid__box--half\@small &,
+    .o-grid__box--third\@small & {
       h3 {
         font-size: 18px;
         font-size: 1.25rem;

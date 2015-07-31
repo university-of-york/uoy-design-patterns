@@ -26,6 +26,7 @@ define(['jquery', 'app/modal'], function ($, MODAL) {
     var aHref = $a.attr('href');
     var modalContent = false;
     var modalTitle = $a.attr('data-title') || false;
+    var modalCaption = $a.attr('data-caption') || false;
     var modalType = $a.hasClass('js-modal--frameless') ? 'frameless' : 'framed';
     var prevItem = false ;
     var nextItem = false ;
@@ -44,12 +45,13 @@ define(['jquery', 'app/modal'], function ($, MODAL) {
       modalContent = $(aHref).html();
     } else if (validateURL(aHref) === true) {
       // Content from URL (image)
-      modalContent = '<img src="'+$a.prop('href')+'">';
+      modalContent = '<img class="c-modal__image" src="'+$a.prop('href')+'">';
     }
 
     var m = new MODAL({
       content: modalContent,
       title: modalTitle,
+      caption: modalCaption,
       type: modalType,
       prev: prevItem,
       next: nextItem

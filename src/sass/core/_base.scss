@@ -40,14 +40,27 @@ img {
   //     max-width: none;
   // }
 }
-h1,h2,h3,h4,h5,h6 {
+
+// Generic margins
+h1,h2,h3,h4,h5,h6,p,ul,ol {
+  @include component-margin;
+}
+
+// Headers following paras/lists have larger margin-top
+p, ul, ol, .lead, pre {
+  + h1,+ h2,+ h3,+ h4,+ h5,+ h6 {
+    margin-top:$base-spacing*1.4;
+  }
+}
+
+h1,h2,h3,h4,h5 {
   font-family: $font-title;
   font-weight:600;
-  margin:$base-spacing 0;
 }
 h6 {
   font-family: $font-default;
   text-transform: uppercase;
+  font-weight:600;
 }
 
 h1 {
@@ -69,13 +82,10 @@ h6 {
   @include responsive-font-size($h6-font-sizes);
 }
 p {
-  @include responsive-font-size($p-font-sizes);
-  margin:$base-spacing 0;
   word-wrap: break-word;
 }
 ul,
 ol {
-  margin:$base-spacing 0;
   padding: 0 0 0 1.8em;
 }
 li > {
@@ -109,10 +119,10 @@ code {
   padding:0 0.25em;
 }
 hr {
+  @include component-margin;
   background:#ccc;
   border:none;
   color:#ccc;
-  margin:$base-spacing 0;
   height:1px;
   clear:both;
 }

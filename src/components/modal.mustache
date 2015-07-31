@@ -1,7 +1,8 @@
 <div class="c-modal c-modal--{{#if type}}{{type}}{{else}}framed{{/if}}">{{#title}}
   <h4 class="c-modal__title">{{this}}</h4>{{/title}}
   <div class="c-modal__content">
-    {{content}}
+    {{content}}{{#caption}}
+    <div class="c-modal__caption">{{this}}</div>{{/caption}}
   </div>
   <a class="c-modal__close" title="Close this window">&times;</a>
 </div>

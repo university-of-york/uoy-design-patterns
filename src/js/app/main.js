@@ -106,6 +106,14 @@ define(
       });
     });
 
+    // Update 'More' text
+    $window.on('toggle', function(e, options) {
+      if (options.container.attr('id') === 'Main-Navigation') {
+        var newText = options.button.html() === 'Close' ? 'More&hellip;' : 'Close' ;
+        options.button.html(newText);
+      }
+    });
+
     // Set min-height on wrapper (to ensure footer is at bottom of page)
     var w = new WRAPPERHEIGHT();
 
