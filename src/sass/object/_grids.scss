@@ -46,9 +46,9 @@ $box-margin: $base-spacing;
     color:$blue;
   }
   a {
-    color:darken($light, 5);
+    color:lighten($blue,5);
     &:hover {
-      color:$blue;
+      color:lighten($blue,15);
     }
   }
 }
