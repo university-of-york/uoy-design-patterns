@@ -234,9 +234,7 @@
 .c-nav__header {
   display:none;
   max-width:$container-width;
-  margin-left:auto;
-  margin-right:auto;
-  margin-bottom:$base-spacing/2;
+  margin:$base-spacing auto $base-spacing/2;
   color:$c-nav__header-color;
   padding:0 $base-spacing;
   .c-nav.is-open & {
