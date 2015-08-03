@@ -42,7 +42,8 @@
   $bgFocusColor:darken($bgColor, 10);
   $borderColor:$bgColor;
   $textColor:map-get($color, text);
-  .c-btn#{$name} {
+  // Duplicate classname to override specificity on alt-rows
+  .c-btn.c-btn#{$name} {
     color: $textColor;
     background-color: $bgColor;
     border-color:$borderColor;

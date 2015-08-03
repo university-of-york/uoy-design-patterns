@@ -12,86 +12,86 @@ category: modules
 
 define(['jquery'], function ($) {
 
-  // "Private" variables (only available inside the module)
-
-  var isToggling = false;
-
-
-  // Toggle state of item
-  var toggleState = function (e) {
-
-    e.preventDefault();
-
-    // Things are still moving
-    if (isToggling) return false;
-
-    var $item = $(this).parent();
-
-    isToggling = true;
-
-    toggleContent($item);
-
-    // Close others if needed
-    if ($item.parent().hasClass('c-accordion--collapse')) {
-      var $otherItems = $item.siblings('.c-accordion__item');
-      $otherItems.each(function (i, otherItem) {
-        toggleContent(otherItem, true);
-      });
-    }
-
-    isToggling = false;
-
-  };
-
-  // Open the content in item
-  var toggleContent = function (item, close) {
-
-    // jQuerify item if needed
-    var $item = item instanceof jQuery ? item : $(item);
-    var $itemTitle = $item.children('.c-accordion__title');
-    var $itemContent = $item.children('.c-accordion__content');
-    var contentHeight = $itemContent.outerHeight();
-    var newContentHeight = 0;
-
-    if (contentHeight === 0 && close !== true) {
-      newContentHeight = $itemContent.attr('data-height');
-    }
-
-    $itemContent.css('height', newContentHeight);
-    if (close === true) {
-      $item.addClass('is-closed');
-    } else {
-      $item.toggleClass('is-closed');
-    }
-
-    // Returns true if open, false if closed
-    return !$item.hasClass('is-closed');
-  };
-
-
   // Define your 'class'
   var ACCORDION = function (options) {
 
     // Get the options or their defaults
     if (!options.container) return false;
 
-    $item = $(options.container);
-    $itemTitle = $item.children('.c-accordion__title');
-    $itemContent = $item.children('.c-accordion__content');
+    this.item = $(options.container);
+    this.itemTitle = this.item.children('.c-accordion__title');
+    this.itemContent = this.item.children('.c-accordion__content');
 
     // Hide content
-    $itemContent.addClass('is-hidden');
-
-    // Get content height
-    var contentHeight = $itemContent.outerHeight();
-    $itemContent.attr('data-height', contentHeight);
-
-    // Collapse content
-    $item.addClass('is-closed');
-    $itemContent.removeClass('is-hidden');
+    this.itemContent.addClass('is-hidden');
 
     // Add click event on title
-    $itemTitle.on('click', toggleState);
+    this.itemTitle.on('click', { that: this }, this.toggleState);
+
+  };
+
+  // Boolean to see if animation is still underway
+  ACCORDION.prototype.isToggling = false;
+
+  // GEt the height of the hidden accordion content
+  ACCORDION.prototype.setAccordionHeight = function() {
+
+      // Get content height
+      var contentHeight = this.itemContent.outerHeight();
+      this.itemContent.attr('data-height', contentHeight);
+
+      // Collapse content
+      this.item.addClass('is-closed');
+      this.itemContent.removeClass('is-hidden');
+
+  };
+
+  // Toggle state of item
+  ACCORDION.prototype.toggleState = function (e) {
+
+    e.preventDefault();
+
+    // Temp this-holder
+    var that = e.data.that;
+
+    // Things are still moving
+    if (that.isToggling) return false;
+
+    that.isToggling = true;
+
+    that.toggleContent(this.item);
+
+    // Close others if needed
+    if (that.item.parent().hasClass('c-accordion--collapse')) {
+      var $otherItems = this.item.siblings('.c-accordion__item');
+      $otherItems.each(function (i, otherItem) {
+        that.toggleContent(otherItem, true);
+      });
+    }
+
+    that.isToggling = false;
+
+  };
+
+  // Open the content in item
+  ACCORDION.prototype.toggleContent = function (item, close) {
+
+    var contentHeight = this.itemContent.outerHeight();
+    var newContentHeight = 0;
+
+    if (contentHeight === 0 && close !== true) {
+      newContentHeight = this.itemContent.attr('data-height');
+    }
+
+    this.itemContent.css('height', newContentHeight);
+    if (close === true) {
+      this.item.addClass('is-closed');
+    } else {
+      this.item.toggleClass('is-closed');
+    }
+
+    // Returns true if open, false if closed
+    return !this.item.hasClass('is-closed');
 
   };
 

@@ -39,21 +39,22 @@
   }
 }
 .c-accordion__content {
-  // @include demarginalise;
+  @include demarginalise;
   @include transition;
-  padding:0 $base-spacing;
+  padding:$base-spacing;
   overflow:hidden;
   position:static;
   width: 100%;
   .c-accordion__item.is-closed & {
-    // padding-top:0;
-    // padding-bottom:0;
+    padding-top:0;
+    padding-bottom:0;
     height:0;
   }
   // Starting class - added by JS to hide the content but still be able to get the height
   &.is-hidden {
     visibility: hidden;
     position: absolute;
+    // display:block;
   }
 }
 .csstransforms {

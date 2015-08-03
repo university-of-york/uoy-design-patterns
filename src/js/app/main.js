@@ -4,8 +4,6 @@ define(
 
   $(function(){
 
-    var $window = $(window);
-
     if (typeof window.console === 'undefined') {
       console = {};
       console.log = function (a) { alert(a); };
@@ -17,24 +15,42 @@ define(
       return false;
     });
 
+    var $window = $(window);
+    var $html = $('html');
+
+    // Interval to check if fonts have loaded
+    var t = setInterval(function() {
+      if ($html.hasClass('wf-active')) {
+        $window.trigger('fonts:active');
+        clearInterval(t);
+      }
+    }, 15);
+
     // Add accordion functionality
     UTILS.eachIfExists('.js-accordion__item', function (i, accordion) {
       var a = new ACCORDION({
         container: accordion
       });
+      // Wait till fonts are loaded
+      $window.on('fonts:active', function() {
+        a.setAccordionHeight();
+      });
     });
 
-    // Add accordion functionality
+    // Add responsive tables functionality
     UTILS.eachIfExists('.js-responsive-table', function (i, table) {
       var t = new TABLE({
         container: table
       });
     });
 
-    // Add tab functionality
-    UTILS.eachIfExists('.js-tabs', function (i, tabs) {
-      var t = new TABS({
-        container: tabs
+    // Wait till fonts are loaded
+    $window.on('fonts:loaded', function() {
+      // Add tab functionality
+      UTILS.eachIfExists('.js-tabs', function (i, tabs) {
+        var t = new TABS({
+          container: tabs
+        });
       });
     });
 
