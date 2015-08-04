@@ -3,6 +3,7 @@
 //
 .c-subnav {
   @include component-margin;
+  font-size: 16px;
 }
 .c-subnav__list {
   list-style:none;
