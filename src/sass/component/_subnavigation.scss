@@ -16,6 +16,10 @@
   }
 }
 .c-subnav__item {
+  margin:5px 0;
+  li {
+    margin:5px 0;
+  }
   + .c-subnav__item {
     .c-subnav__link {
       border-top:0;

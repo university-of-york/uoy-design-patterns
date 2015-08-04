@@ -163,7 +163,7 @@
   float:left;
   border-right:1px solid lighten($c-nav-background-color, 10);
   border-left:1px solid lighten($c-nav-background-color, 10);
-
+  margin:0;
   + .c-nav__item {
     border-left:0;
   }
@@ -176,6 +176,9 @@
     border:0;
     float:none;
     min-height:0;
+    li {
+      margin:0;
+    }
   }
   //Site Manager uses .currentsection span
   .currentsection {
