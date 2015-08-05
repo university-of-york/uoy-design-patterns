@@ -2,7 +2,7 @@
 // BLOCKQUOTES
 //
 $c-blockquote__image-size:120px;
-// HOw much should the image shrink?
+// How much should the image shrink?
 $c-blockquote__image-tiny-ratio:0.75;
 @mixin quote-block() {
   content:'';
@@ -140,4 +140,34 @@ $c-blockquote__image-tiny-ratio:0.75;
   text-align:left;
   clear:right;
   float:right;
+}
+
+// When an image quote is in a quarter col at medium+
+@include mq(medium, '+') {
+  .o-grid__box--quarter {
+    .c-blockquote--image-quote {
+      .c-blockquote__image {
+        float:none;
+        display:block;
+        margin:0 auto $base-spacing * 1.5;
+      }
+      .c-blockquote__content {
+        &:after {
+          left:50%;
+          margin-left:-$base-spacing;
+          top:-$base-spacing;
+          border-left:$base-spacing solid transparent;
+          border-right:$base-spacing solid transparent;
+          border-top:0 solid transparent;
+          border-bottom:$base-spacing solid $c-blockquote--image-quote-background-color;
+        }
+      }
+      .c-blockquote__content,
+      .c-blockquote__cite {
+        float:none;
+        width:100%;
+      }
+
+    }
+  }
 }
