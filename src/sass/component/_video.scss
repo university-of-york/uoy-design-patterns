@@ -1,0 +1,9 @@
+//
+// VIDEOS
+//
+.c-video {
+  @include component-margin;
+  iframe {
+    max-width:100%;
+  }
+}

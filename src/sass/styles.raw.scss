@@ -38,6 +38,7 @@
  * Pagination..............For navigating multiple pages
  * Blockquotes.............Blockquote styles
  * Breadcrumb..............Breadcrumb styles
+ * Video...................Embedded videos
  *
  * - Molecules
  * Tables..................Tabular data
@@ -107,6 +108,7 @@
 @import "component/pagination";
 @import "component/blockquotes";
 @import "component/breadcrumb";
+@import "component/video";
 
 @import "component/tables";
 @import "component/coursetables";

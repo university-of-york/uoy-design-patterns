@@ -1,6 +1,15 @@
 define(
-  ['jquery', 'es5shim', 'picturefill', 'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav', 'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/responsive-tables', 'app/toggle', 'app/wrapper-height', 'app/analytics'],
-  function ($, ES5SHIM, PICTUREFILL, UTILS, MODALLINK, ACCORDION, STICKYNAV, TARGETEDNAV, CLEARINGTABLE, TABS, TABLE, TOGGLE, WRAPPERHEIGHT, ANALYTICS) {
+  ['jquery', 'es5shim', 'picturefill',
+   'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav',
+   'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/responsive-tables',
+   'app/toggle', 'app/wrapper-height', 'app/youtube-embed',
+   'app/analytics'],
+  function (
+    $, ES5SHIM, PICTUREFILL,
+    UTILS, MODALLINK, ACCORDION, STICKYNAV,
+    TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
+    TOGGLE, WRAPPERHEIGHT, YOUTUBE,
+    ANALYTICS) {
 
   $(function(){
 
@@ -119,6 +128,13 @@ define(
     UTILS.eachIfExists('.js-targeted-nav', function (i, a) {
       var s = new TARGETEDNAV({
         container: $(a)
+      });
+    });
+
+    // Add targeted nav functionality to nav
+    UTILS.eachIfExists('.youtube-video-embed', function (i, a) {
+      var s = new YOUTUBE({
+        link: $(a)
       });
     });
 
