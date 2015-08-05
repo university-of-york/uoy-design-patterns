@@ -46,7 +46,7 @@ define(['jquery', 'app/google-docs', 'app/accordion'], function ($, GOOGLEDOC, A
           return output;
         };
         for (var i = 0; i < data.length; i++) {
-          if (type === 'Both' || data[i][type] === 'Yes') {
+          if (type === 'Both' || data[i][type] === 'y') {
             // Set up new current accordion
             if (data[i].Subject !== currentSubject) {
               var a = new ACCORDION({
