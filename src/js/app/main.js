@@ -130,17 +130,28 @@ define(
       }
     });
 
-    // Set min-height on wrapper (to ensure footer is at bottom of page)
+    // Set min-height on wrapper (to ensure footer is (at least) at bottom of page)
     var w = new WRAPPERHEIGHT();
 
-    // Sample use of UTILS.debounce
-    var resizeFn = UTILS.debounce(function () {
-      console.log('Window resized');
-      // Change min-height of main wrapper
-      w.resize();
-    }, 250);
+    UTILS.eachIfExists('#Course-Search', function(i, a) {
+      var $a = $(a),
+          inputs = $a.find('input[type=radio]');
+      inputs.change(function(e) {
+        var level = $(this).attr('id').substr(6),
+            action = '/study/'+level+'/courses/search/';
+        $a.attr('action', action);
+      });
+    });
 
-    $window.on('resize', resizeFn);
+
+    // Sample use of UTILS.debounce
+    // var resizeFn = UTILS.debounce(function () {
+    //   console.log('Window resized');
+    //   // Change min-height of main wrapper
+    //   w.resize();
+    // }, 250);
+
+    // $window.on('resize', resizeFn);
 
     console.log('Javascript loaded');
 

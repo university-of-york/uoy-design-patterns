@@ -44,7 +44,6 @@ define(['jquery', 'app/color'], function ($, COLOR) {
 
 
   // "Public" variables
-
   SAMPLE.prototype.color = colorSwap('#fff', '#000');
 
 
