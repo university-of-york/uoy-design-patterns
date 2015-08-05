@@ -68,8 +68,14 @@
   }
 }
 
-.c-panel--compact, .c-panel--compact p {
+.c-panel--compact {
   @include font-size(14px);
+  li {
+    margin:0;
+  }
+  p {
+    @include font-size(14px);
+  }
 }
 
 .c-panel--kis-widget {

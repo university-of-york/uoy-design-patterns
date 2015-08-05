@@ -3,6 +3,7 @@
 //
 .c-subnav {
   @include component-margin;
+  font-size: 16px;
 }
 .c-subnav__list {
   list-style:none;
@@ -16,9 +17,9 @@
   }
 }
 .c-subnav__item {
-  margin:5px 0;
+  margin:0;
   li {
-    margin:5px 0;
+    margin:0;
   }
   + .c-subnav__item {
     .c-subnav__link {
@@ -70,5 +71,6 @@
   }
   .c-subnav__link, a {
     color:$teal;
+    padding-top:0;
   }
 }
