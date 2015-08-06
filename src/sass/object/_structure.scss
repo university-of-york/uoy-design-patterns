@@ -12,3 +12,9 @@
   max-width:100%;
   padding:0;
 }
+.o-wrapper--main {
+  // Last row is padded to space away from the footer
+  .o-grid__row:last-of-type {
+    padding-bottom:$base-spacing;
+  }
+}

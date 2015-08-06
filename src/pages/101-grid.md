@@ -204,6 +204,27 @@ component("grid", { "atoms":[
 ] } );
 </script>
 
+### Bordered rows
+
+Add a thick border to the bottom of the row by using the class `.o-grid__row--bordered`. It works especially well on _alt_ rows.
+
+<script>
+component("grid", { "atoms":[
+  { "grid-row": { "type": "bordered", "atoms": [
+    { "grid-box": { "size": "full", "atoms": { "text": " .o-grid__box--full" } } }
+  ] } },
+  { "grid-row": { "type": "alt1 o-grid__row--bordered", "atoms": [
+    { "grid-box": { "size": "full", "atoms": { "text": " .o-grid__box--full" } } }
+  ] } },
+  { "grid-row": { "type": "alt2 o-grid__row--bordered", "atoms": [
+    { "grid-box": { "size": "full", "atoms": { "text": " .o-grid__box--full" } } }
+  ] } },
+  { "grid-row": { "type": "alt3 o-grid__row--bordered", "atoms": [
+    { "grid-box": { "size": "full", "atoms": { "text": " .o-grid__box--full" } } }
+  ] } }
+] } );
+</script>
+
 ### Options
 
 #### Atoms

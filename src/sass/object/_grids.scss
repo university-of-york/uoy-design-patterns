@@ -2,22 +2,7 @@
 // GRID SYSTEM
 //
 $box-margin: $base-spacing;
-
-.o-grid {
-
-}
-
-.o-grid__row {
-  @include clearfix;
-  font-size:0;
-  position:relative;
-  margin-left:-$box-margin;
-}
-.o-grid__row--alt1,
-.o-grid__row--alt2,
-.o-grid__row--alt3 {
-  // Coloured rows need to have padding so components don't butt up against the top
-  padding-top:$base-spacing;
+@mixin extend-rows() {
   &:before,
   &:after {
     display:block;
@@ -33,6 +18,23 @@ $box-margin: $base-spacing;
   &:after {
     left:100%;
   }
+}
+.o-grid {
+
+}
+
+.o-grid__row {
+  @include clearfix;
+  font-size:0;
+  position:relative;
+  margin-left:-$box-margin;
+}
+.o-grid__row--alt1,
+.o-grid__row--alt2,
+.o-grid__row--alt3 {
+  @include extend-rows;
+  // Coloured rows need to have padding so components don't butt up against the top
+  padding-top:$base-spacing;
   // Rows following coloured rows should also be padded at the top to separate the content.
   + .o-grid__row {
     padding-top:$base-spacing;
@@ -52,12 +54,26 @@ $box-margin: $base-spacing;
     }
   }
 }
-
+.o-grid__row--bordered {
+  @include extend-rows;
+  border-bottom:10px solid $charcoal;
+  &:before,
+  &:after {
+    border-bottom:10px solid $charcoal;
+  }
+}
 .o-grid__row--alt1 {
   background-color:$teal;
   &:before,
   &:after {
     background-color:$teal;
+  }
+  &.o-grid__row--bordered {
+    border-bottom-color:$blue;
+    &:before,
+    &:after {
+      border-bottom-color:$blue;
+    }
   }
 }
 .o-grid__row--alt2 {
@@ -66,12 +82,26 @@ $box-margin: $base-spacing;
   &:after {
     background-color:darken($teal,5);
   }
+  &.o-grid__row--bordered {
+    border-bottom-color:$teal;
+    &:before,
+    &:after {
+      border-bottom-color:$teal;
+    }
+  }
 }
 .o-grid__row--alt3 {
   background-color:$s2;
   &:before,
   &:after {
     background-color:$s2;
+  }
+  &.o-grid__row--bordered {
+    border-bottom-color:$s1;
+    &:before,
+    &:after {
+      border-bottom-color:$s1;
+    }
   }
 }
 

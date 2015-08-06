@@ -33,12 +33,11 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     var that = this;
     var resizeFn = UTILS.debounce(function () {
       that.setDimensions();
-    }, 250, false);
+    }, 250);
 
     $window.on('resize', resizeFn);
 
   };
-
 
   YOUTUBE.prototype.getDimensions = function () {
     var videoWidth = this.container.width();
@@ -50,8 +49,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   };
 
   YOUTUBE.prototype.setDimensions = function () {
-    var videoDimensions = this.getDimensions()
-    console.log(this.container, this.url, this.id, videoDimensions);
+    var videoDimensions = this.getDimensions();
     // create the embed code
     this.container.html('<iframe width="' + videoDimensions.width + '" height="' + videoDimensions.height + '" src="//www.youtube.com/embed/' + this.id + '?rel=0" frameborder="0" allowfullscreen></iframe>');
   };

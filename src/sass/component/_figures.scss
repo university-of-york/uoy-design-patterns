@@ -13,6 +13,9 @@
   display:block;
   width:100%;
 }
+.c-figure__image--rounded {
+  @include round;
+}
 .c-figure__caption {
   @include image-caption;
   h2, h3, h4, h5 {
