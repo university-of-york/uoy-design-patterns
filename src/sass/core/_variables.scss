@@ -175,7 +175,7 @@ $c-modal-border-color:$s1;
 $c-modal__close-background-color:$charcoal;
 $c-modal__close-color:$light;
 $c-modal__close-hover-background-color:lighten($charcoal, 10);
-$c-modal__close-hover-color:darken($light, 10);
+$c-modal__close-hover-color:$blue;
 
 // Footer
 $c-footer-background-color:$charcoal;
