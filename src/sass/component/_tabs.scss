@@ -56,6 +56,9 @@
     border:none;
     padding-left:$base-spacing/2;
     padding-right:$base-spacing/2;
+    @include mq('small', '-') {
+      padding:$base-spacing/2 $base-spacing/4;
+    }
   }
   .c-tabs__container {
     width:75%;
@@ -89,6 +92,9 @@
   &:hover{
     background-color:darken($blue,20);
     color:$light;
+  }
+  @include mq('small', '-') {
+    font-size:14px;
   }
 }
 .c-tabs__container {
