@@ -44,8 +44,7 @@ define(['jquery'], function ($) {
     // Close existing modals
     var otherModals = $('.c-modal').not(thisModal).not('.is-hidden');
     if (otherModals.length > 0) this.deactivate(otherModals);
-    // Add content if needed)
-    console.log(this.modalContent.text());
+    // Add content (if needed)
     if (this.modalContent !== false && this.modalContent.text() === '') {
       this.loadContent();
     }
