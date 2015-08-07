@@ -10,14 +10,13 @@ category: Javascript
 define(['jquery', 'app/modal'], function ($, MODAL) {
 
   var validateURL = function (url) {
-    return true;
-    // var p = document.createElement('a');
-    // try {
-    //   p.href = url;
-    //   return !!p.hostname;
-    // } catch (e) {
-    //   return false;
-    // }
+    var p = document.createElement('a');
+    try {
+      p.href = url;
+      return !!p.hostname;
+    } catch (e) {
+      return false;
+    }
   };
 
   var MODALLINK = function (options) {
