@@ -122,14 +122,14 @@ define(['jquery'], function ($) {
       currentModal.close();
     });
     modalPrev = $('<a>').addClass('c-modal__nav c-modal__nav--prev is-hidden')
-                        .html('<i class="c-icon c-icon--huge c-icon--chevron-left c-icon--light"></i>')
+                        .html('<i class="c-icon c-icon--3x c-icon--chevron-left c-icon--light"></i>')
                         .on('click', function (e) {
                           e.stopPropagation();
                           currentModal.navigate('prev');
                         })
                         .appendTo(modalWrapper);
     modalNext = $('<a>').addClass('c-modal__nav c-modal__nav--next is-hidden')
-                        .html('<i class="c-icon c-icon--huge c-icon--chevron-right c-icon--light"></i>')
+                        .html('<i class="c-icon c-icon--3x c-icon--chevron-right c-icon--light"></i>')
                         .on('click', function (e) {
                           e.stopPropagation();
                           currentModal.navigate('next');
