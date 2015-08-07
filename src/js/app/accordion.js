@@ -36,13 +36,13 @@ define(['jquery'], function ($) {
   // GEt the height of the hidden accordion content
   ACCORDION.prototype.setAccordionHeight = function() {
 
-      // Get content height
-      var contentHeight = this.itemContent.outerHeight();
-      this.itemContent.attr('data-height', contentHeight);
+    // Get content height
+    var contentHeight = this.itemContent.outerHeight();
+    this.itemContent.attr('data-height', contentHeight);
 
-      // Collapse content
-      this.item.addClass('is-closed');
-      this.itemContent.removeClass('is-hidden');
+    // Collapse content
+    this.item.addClass('is-closed');
+    this.itemContent.removeClass('is-hidden');
 
   };
 
@@ -52,7 +52,7 @@ define(['jquery'], function ($) {
     e.preventDefault();
 
     // Temp this-holder
-    var that = e.data.that;
+    var that = e.data && e.data.that ? e.data.that : this ;
 
     // Things are still moving
     if (that.isToggling) return false;

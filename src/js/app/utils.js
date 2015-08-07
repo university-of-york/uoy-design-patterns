@@ -38,6 +38,19 @@
       document.body.scrollTop = tabOffset.top;
     },
 
+    // Runs a function when fonts are active,
+    // either immediately if already loaded
+    // or on font load event
+    fontsActive: function(fn, ths) {
+      if ($('html').hasClass('wf-active')) {
+        fn.apply(ths);
+      } else {
+        $window.on('fonts:active', function() {
+          fn.apply(ths);
+        });
+      }
+    },
+
     // Checks to see if selector exists and, if it does, runs a function on it.
     // selector: selector string, or anything that can be wrapped in a jQuery object
     // fn: function with arguments (index, element)

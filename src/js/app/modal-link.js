@@ -10,13 +10,14 @@ category: Javascript
 define(['jquery', 'app/modal'], function ($, MODAL) {
 
   var validateURL = function (url) {
-    var p = document.createElement('a');
-    try {
-      p.href = url;
-      return !!p.hostname;
-    } catch (e) {
-      return false;
-    }
+    return true;
+    // var p = document.createElement('a');
+    // try {
+    //   p.href = url;
+    //   return !!p.hostname;
+    // } catch (e) {
+    //   return false;
+    // }
   };
 
   var MODALLINK = function (options) {
@@ -41,7 +42,7 @@ define(['jquery', 'app/modal'], function ($, MODAL) {
       // Content from attribute
       modalContent = $a.attr('data-content');
     } else if (aHref.indexOf('#') === 0) {
-      // COntent from fragment
+      // Content from fragment
       modalContent = $(aHref).html();
     } else if (validateURL(aHref) === true) {
       // Content from URL (image)

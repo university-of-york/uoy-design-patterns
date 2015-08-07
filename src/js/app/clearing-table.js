@@ -7,7 +7,9 @@ category: Javascript
 ---
 
  */
-define(['jquery', 'app/google-docs', 'app/accordion'], function ($, GOOGLEDOC, ACCORDION) {
+define(['jquery', 'app/google-docs', 'app/accordion', 'app/utils'], function ($, GOOGLEDOC, ACCORDION, UTILS) {
+
+  var $window = $(window);
 
   var CLEARINGTABLE = function (options) {
 
@@ -15,6 +17,8 @@ define(['jquery', 'app/google-docs', 'app/accordion'], function ($, GOOGLEDOC, A
 
     var type = options.type || 'Both';
     var container = options.container;
+
+    container.addClass('c-accordion');
 
     var docID = '1u6AjJqtDAnOH8_rEKDb0lBjlp0ScCqzg0Q_q0Xlh';
     var backupDoc = 'https://www.york.ac.uk/media/global/responsiveredesign/clearing.json';
@@ -52,6 +56,9 @@ define(['jquery', 'app/google-docs', 'app/accordion'], function ($, GOOGLEDOC, A
               var a = new ACCORDION({
                 container: currentAccordion
               });
+              if (currentAccordion !== false) {
+                UTILS.fontsActive(a.setAccordionHeight, a);
+              }
               var accordion = $('<div>').addClass('c-accordion__item js-accordion__item').appendTo(container);
               var accordionTitle = $('<a>').addClass('c-accordion__title').attr('href', '#').html(data[i].Subject+'<i class="c-accordion__icon c-icon c-icon--plus c-icon--after"></i>').appendTo(accordion);
               var accordionContent = $('<div>').addClass('c-accordion__content').appendTo(accordion);
@@ -87,9 +94,10 @@ define(['jquery', 'app/google-docs', 'app/accordion'], function ($, GOOGLEDOC, A
           }
           // Set up accordion if next one is different or if last one
           if (i === data.length - 1) {
-            new ACCORDION({
+            var ac = new ACCORDION({
               container: currentAccordion
             });
+            UTILS.fontsActive(ac.setAccordionHeight, ac);
           }
         }
       }

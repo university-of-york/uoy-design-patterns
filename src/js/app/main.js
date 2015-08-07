@@ -41,9 +41,7 @@ define(
         container: accordion
       });
       // Wait till fonts are loaded
-      $window.on('fonts:active', function() {
-        a.setAccordionHeight();
-      });
+      UTILS.fontsActive(a.setAccordionHeight, a);
     });
 
     // Add responsive tables functionality

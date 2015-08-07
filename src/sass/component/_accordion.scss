@@ -3,6 +3,7 @@
 //
 
 .c-accordion {
+  @include component-margin;
 }
 .c-accordion__item {
   position:relative;
