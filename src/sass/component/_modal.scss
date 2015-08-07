@@ -80,6 +80,7 @@
 }
 .c-modal__image {
   display:block;
+  width:100%;
 }
 .c-modal__caption {
   @include image-caption;

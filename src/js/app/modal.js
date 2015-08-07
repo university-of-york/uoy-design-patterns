@@ -26,7 +26,7 @@ define(['jquery'], function ($) {
     this.id = setTimeout(function (){});
 
     this.checkModal();
-    this.container = this.createModal();
+    this.createModal();
 
   };
 
@@ -44,9 +44,14 @@ define(['jquery'], function ($) {
     // Close existing modals
     var otherModals = $('.c-modal').not(thisModal).not('.is-hidden');
     if (otherModals.length > 0) this.deactivate(otherModals);
+    // Add content if needed)
+    console.log(this.modalContent.text());
+    if (this.modalContent !== false && this.modalContent.text() === '') {
+      this.loadContent();
+    }
     // Add modal if needed - check if ID is in DOM
-    if (thisModal.length === 0) this.container.appendTo(modalWrapper);
-    this.activate(this.container);
+    if (thisModal.length === 0) this.modalContainer.appendTo(modalWrapper);
+    this.activate(this.modalContainer);
     // Show/hide prev/next button
     if (this.prev === false) { this.deactivate(modalPrev); } else { this.activate(modalPrev); }
     if (this.next === false) { this.deactivate(modalNext); } else { this.activate(modalNext); }
@@ -94,7 +99,14 @@ define(['jquery'], function ($) {
     }
   };
 
-  MODAL.prototype.navigate = function (dir) {
+  MODAL.prototype.loadContent = function() {
+    this.modalContent.html(this.content);
+    if (this.caption !== false) {
+      this.modalContent.append($('<div>').addClass('c-modal__caption').html(this.caption));
+    }
+  };
+
+  MODAL.prototype.navigate = function(dir) {
     dir = dir || 'next';
     if (this[dir] !== false) this[dir].click();
   };
@@ -134,22 +146,17 @@ define(['jquery'], function ($) {
 
     // Temporary this-holder
     var that = this;
-    var modalContainer = $('<div>').addClass('c-modal c-modal--'+this.type+' is-hidden').attr('id', 'modal-'+this.id).on('click', function (e) {
+    this.modalContainer = $('<div>').addClass('c-modal c-modal--'+this.type+' is-hidden').attr('id', 'modal-'+this.id).on('click', function (e) {
       // Don't allow the click to get to the wrapper, or it will close
       e.stopPropagation();
     });
-    var modalTitle = this.title !== false ? $('<h4>').addClass('c-modal__title').text(this.title) : false;
-    var modalContent = this.content !== false ? $('<div>').addClass('c-modal__content').html(this.content) : false;
-    if (this.caption !== false && modalContent !== false) {
-      modalContent.append($('<div>').addClass('c-modal__caption').html(this.caption));
-    }
-    var modalClose = $('<a>').addClass('c-modal__close').attr('title', 'Close this window').html('&times;').on('click', function (e) {
+    this.modalTitle = this.title !== false ? $('<h4>').addClass('c-modal__title').text(this.title) : false;
+    this.modalContent = this.content !== false ? $('<div>').addClass('c-modal__content') : false;
+    this.modalClose = $('<a>').addClass('c-modal__close').attr('title', 'Close this window').html('&times;').on('click', function (e) {
       that.close();
     });
 
-    modalContainer.append([modalTitle, modalContent, modalClose]);
-
-    return modalContainer;
+    this.modalContainer.append([this.modalTitle, this.modalContent, this.modalClose]);
 
   };
 
