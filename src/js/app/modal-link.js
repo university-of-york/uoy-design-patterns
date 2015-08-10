@@ -9,6 +9,7 @@ category: Javascript
  */
 define(['jquery', 'app/modal'], function ($, MODAL) {
 
+  // This doesn't work in IE for relative links - removing for now.
   var validateURL = function (url) {
     var p = document.createElement('a');
     try {
@@ -43,7 +44,8 @@ define(['jquery', 'app/modal'], function ($, MODAL) {
     } else if (aHref.indexOf('#') === 0) {
       // Content from fragment
       modalContent = $(aHref).html();
-    } else if (validateURL(aHref) === true) {
+    // } else if (validateURL(aHref) === true) {
+    } else {
       // Content from URL (image)
       modalContent = '<img class="c-modal__image" src="'+$a.prop('href')+'">';
     }

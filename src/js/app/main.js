@@ -15,7 +15,7 @@ define(
 
     if (typeof window.console === 'undefined') {
       console = {};
-      console.log = function (a) { alert(a); };
+      console.log = function (a) { /*alert(a);*/ };
     }
 
     // Disable buttons
@@ -51,13 +51,10 @@ define(
       });
     });
 
-    // Wait till fonts are loaded
-    $window.on('fonts:loaded', function() {
-      // Add tab functionality
-      UTILS.eachIfExists('.js-tabs', function (i, tabs) {
-        var t = new TABS({
-          container: tabs
-        });
+    // Add tab functionality
+    UTILS.eachIfExists('.js-tabs', function (i, tabs) {
+      var t = new TABS({
+        container: tabs
       });
     });
 
@@ -139,7 +136,7 @@ define(
     // Update 'More' text
     $window.on('toggle', function(e, options) {
       if (options.container.attr('id') === 'Main-Navigation') {
-        var newText = options.button.html() === 'Close' ? 'More&hellip;' : 'Close' ;
+        var newText = options.button.html() === 'Close' ? 'More…' : 'Close' ;
         options.button.html(newText);
       }
     });

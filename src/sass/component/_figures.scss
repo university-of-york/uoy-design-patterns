@@ -111,6 +111,11 @@
   background-color:transparentize($charcoal, 0.25);
 }
 
+// DEMARGINED FIGURE (SO NAV CAN BE CLOSER)
+.c-figure--no-margin {
+  margin:0;
+}
+
 // BANNER
 .c-figure--banner {
   @include center-image('y');

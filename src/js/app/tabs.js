@@ -7,7 +7,7 @@ category: Javascript
 ---
 
  */
-define(['jquery'], function ($) {
+define(['jquery', 'app/utils'], function ($, UTILS) {
 
   // Define your 'class'
   // Better to pass an options object instead of multiple arguments
@@ -22,10 +22,12 @@ define(['jquery'], function ($) {
     var tabContent = this.container.find('.c-tabs__content');
 
     // Make vertical container at least as high as nav
-    console.log(this.container.hasClass('c-tabs--vertical'));
     if (this.container.hasClass('c-tabs--vertical')) {
-      var navHeight = tabTabs.parent().height()+'px';
-      tabContainer.css('min-height', navHeight);
+    // Wait till fonts are loaded
+      UTILS.fontsActive(function() {
+        var navHeight = tabTabs.parent().height()+'px';
+        tabContainer.css('min-height', navHeight);
+      }, this);
     }
 
     tabLinks.on('click', function (e) {

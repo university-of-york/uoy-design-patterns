@@ -155,6 +155,13 @@ $box-margin: $base-spacing;
   // Stops stepped display of q+h+q
   .o-grid__box--quarter + .o-grid__box--half {
     float: left;
+    // Remove float if default size is overridden by an @-class
+    &.o-grid__box--twothirds\@medium,
+    &.o-grid__box--half\@medium,
+    &.o-grid__box--third\@medium,
+    &.o-grid__box--quarter\@medium {
+      float:none;
+    }
   }
   // Stops the above fix also affecting q+q+h
   .o-grid__box--quarter + .o-grid__box--quarter + .o-grid__box--half {
