@@ -41,6 +41,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     that.isSticky = scrollTop >= that.containerStartPosition;
     // Make nav stick to top of the page
     that.container.toggleClass('is-sticky', that.isSticky);
+    that.container.toggleClass('is-centered', that.isCentered && that.isSticky);
   };
 
   // Find new position of sticky nav
