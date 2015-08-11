@@ -24,8 +24,8 @@ component("clearing-table", {
   ],
   "course-length": "3 years",
   "additional-requirements":[
-    "GCSE Mathematics grade B",
-    "Maths A level, no less than a B"
+    "GCSE Mathematics grade B (or equivalent)",
+    "Maths A level, no less than a B (or equivalent)"
   ]
 });
 </script>

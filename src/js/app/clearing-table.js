@@ -72,17 +72,17 @@ define(['jquery', 'app/google-docs', 'app/accordion', 'app/utils'], function ($,
             } else {
               output+= '    <h4 class="c-clearing-table__title">'+data[i]['Qualification earned']+' '+data[i]['Title of course']+'</h4>\n';
             }
-            if (data[i]['Entry requirements']) output+= '    <div class="c-clearing-table__requirements">'+data[i]['Entry requirements']+' <small>or equivalent tariff points</small></div>\n';
-            if (data[i]['UCAS code']) output+= '    <p class="c-clearing-table__ucas-code">UCAS code: '+data[i]['UCAS code']+'</p>\n';
-            if (data[i]['Course length']) output+= '    <p class="c-clearing-table__course-length">Course length: '+data[i]['Course length']+'</p>\n';
+            if (data[i]['Entry requirements']) output+= '    <div class="c-clearing-table__requirements"><small>Entry requirements</small> '+data[i]['Entry requirements']+' <small>or equivalent tariff points</small></div>\n';
             if (data[i]['Bullet 1'] || data[i]['Bullet 2'] || data[i]['Bullet 3']) {
-              output+= '    <p class="c-clearing-table__additional-requirements">Additional entry requirements:</p>';
+              output+= '    <p class="c-clearing-table__additional-requirements">This course has additional entry requirements:</p>';
               output+= '    <ul class="c-clearing-table__list">';
             }
             if (data[i]['Bullet 1']) output+= '      <li class="c-clearing-table__list-item">'+data[i]['Bullet 1']+'</li>\n';
             if (data[i]['Bullet 2']) output+= '      <li class="c-clearing-table__list-item">'+data[i]['Bullet 2']+'</li>\n';
             if (data[i]['Bullet 3']) output+= '      <li class="c-clearing-table__list-item">'+data[i]['Bullet 3']+'</li>\n';
             if (data[i]['Bullet 1'] || data[i]['Bullet 2'] || data[i]['Bullet 3']) output+= '    </ul>';
+            if (data[i]['UCAS code']) output+= '    <p class="c-clearing-table__ucas-code">UCAS code: '+data[i]['UCAS code']+'</p>\n';
+            if (data[i]['Course length']) output+= '    <p class="c-clearing-table__course-length">Course length: '+data[i]['Course length']+'</p>\n';
             if (data[i]['Phone number(s)']) {
               // See if it's more than one number
               var numbers = data[i]['Phone number(s)'].split(',');
