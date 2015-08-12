@@ -21,7 +21,7 @@ define(['jquery', 'app/google-docs', 'app/accordion', 'app/utils'], function ($,
     container.addClass('c-accordion');
 
     var docID = '1u6AjJqtDAnOH8_rEKDb0lBjlp0ScCqzg0Q_q0Xlh';
-    var backupDoc = 'https://www.york.ac.uk/media/global/responsiveredesign/clearing.json';
+    var backupDoc = 'http://www.york.ac.uk/about/maps/campus/data/clearing.json';
 
     var t = new GOOGLEDOC({
       id: docID,
@@ -72,9 +72,10 @@ define(['jquery', 'app/google-docs', 'app/accordion', 'app/utils'], function ($,
             } else {
               output+= '    <h4 class="c-clearing-table__title">'+data[i]['Qualification earned']+' '+data[i]['Title of course']+'</h4>\n';
             }
+            if (data[i]['Adjustment only'] === 'y') output+= '    <p class="c-clearing-table__adjustment-only">Adjustment places only</p>\n';
             if (data[i]['Entry requirements']) output+= '    <div class="c-clearing-table__requirements"><small>Entry requirements</small> '+data[i]['Entry requirements']+' <small>or equivalent tariff points</small></div>\n';
             if (data[i]['Bullet 1'] || data[i]['Bullet 2'] || data[i]['Bullet 3']) {
-              output+= '    <p class="c-clearing-table__additional-requirements">This course has additional entry requirements:</p>';
+              output+= '    <p class="c-clearing-table__additional-requirements">Including:</p>';
               output+= '    <ul class="c-clearing-table__list">';
             }
             if (data[i]['Bullet 1']) output+= '      <li class="c-clearing-table__list-item">'+data[i]['Bullet 1']+'</li>\n';

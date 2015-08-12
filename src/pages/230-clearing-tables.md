@@ -17,6 +17,7 @@ component("clearing-table", {
   "link":"http://www.york.ac.uk/economics/undergraduate/courses/bsc-economics/",
   "requirements": "AAB",
   "ucas-code": "V400",
+  "adjustment":true,
   "phone-numbers" : [
     "01904 324107",
     "01904 324108",

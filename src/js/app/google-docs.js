@@ -28,6 +28,7 @@ define(['jquery'], function ($) {
 
     $.getJSON(docURL, function(data) {
       if (data.error) {
+        console.warn(data.error.message);
         return that.runBackup();
       }
       that.processData(data);
@@ -43,6 +44,7 @@ define(['jquery'], function ($) {
     var that = this;
     if (this.backup) {
       $.getJSON(this.backup, function(backupData) {
+        console.log(backupData)
         that.processData(backupData);
       }).fail(function() {
         console.log('Backup failed. Uh-oh.');
