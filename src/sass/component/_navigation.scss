@@ -26,6 +26,7 @@
   @include component-margin;
   // Placeholder for when sticky nav goes AWOL
   height:2.75em;
+  overflow:hidden;
 }
 .c-nav--sticky {
   @include transition;

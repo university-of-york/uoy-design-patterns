@@ -44,7 +44,6 @@ define(['jquery'], function ($) {
     var that = this;
     if (this.backup) {
       $.getJSON(this.backup, function(backupData) {
-        console.log(backupData)
         that.processData(backupData);
       }).fail(function() {
         console.log('Backup failed. Uh-oh.');

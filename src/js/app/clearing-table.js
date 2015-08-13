@@ -66,13 +66,21 @@ define(['jquery', 'app/google-docs', 'app/accordion', 'app/utils'], function ($,
               currentAccordionContent = accordionContent;
               currentSubject = data[i].Subject;
             }
+            var isAdjustmentOnly = false;
+            if (data[i]['Adjustment only'] === 'y') {
+              isAdjustmentOnly = true;
+            } else if (data[i]['Adjustment only'] === 'h' && (type === 'Home/EU' || type === 'Both')) {
+              isAdjustmentOnly = true;
+            } else if (data[i]['Adjustment only'] === 'i' && (type === 'International' || type === 'Both')) {
+              isAdjustmentOnly = true;
+            }
             var output = '';
             if (data[i]['Link to course page']) {
               output+= '    <h4 class="c-clearing-table__title"><a href="'+data[i]['Link to course page']+'">'+data[i]['Qualification earned']+' '+data[i]['Title of course']+'</a></h4>\n';
             } else {
               output+= '    <h4 class="c-clearing-table__title">'+data[i]['Qualification earned']+' '+data[i]['Title of course']+'</h4>\n';
             }
-            if (data[i]['Adjustment only'] === 'y') output+= '    <p class="c-clearing-table__adjustment-only">Adjustment places only</p>\n';
+            if (isAdjustmentOnly === true) output+= '    <p class="c-clearing-table__adjustment-only">Adjustment places only</p>\n';
             if (data[i]['Entry requirements']) output+= '    <div class="c-clearing-table__requirements"><small>Entry requirements</small> '+data[i]['Entry requirements']+' <small>or equivalent tariff points</small></div>\n';
             if (data[i]['Bullet 1'] || data[i]['Bullet 2'] || data[i]['Bullet 3']) {
               output+= '    <p class="c-clearing-table__additional-requirements">Including:</p>';

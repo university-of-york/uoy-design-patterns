@@ -35,7 +35,7 @@ var c = new CLEARINGTABLE({
 });
 ```
 
-<div id="clearing-courses-uk-eu"></div>
+<div id="clearing-courses-international"></div>
 
 
 ### Options
