@@ -5,6 +5,10 @@
 .c-form {
   @include component-margin;
 }
+.c-form--bordered {
+  border:2px solid $blue;
+  padding:$base-spacing;
+}
 .c-form__legend {
   @include component-margin;
   padding:0;

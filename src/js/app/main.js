@@ -2,13 +2,13 @@ define(
   ['jquery', 'es5shim', 'picturefill',
    'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav',
    'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/responsive-tables',
-   'app/toggle', 'app/wrapper-height', 'app/youtube-embed',
+   'app/toggle', 'app/wrapper-height', 'app/youtube-embed', 'app/searchable-tables',
    'app/analytics'],
   function (
     $, ES5SHIM, PICTUREFILL,
     UTILS, MODALLINK, ACCORDION, STICKYNAV,
     TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
-    TOGGLE, WRAPPERHEIGHT, YOUTUBE,
+    TOGGLE, WRAPPERHEIGHT, YOUTUBE, SEARCHABLE,
     ANALYTICS) {
 
   $(function(){
@@ -46,14 +46,14 @@ define(
 
     // Add responsive tables functionality
     UTILS.eachIfExists('.js-responsive-table', function (i, table) {
-      var t = new TABLE({
+      new TABLE({
         container: table
       });
     });
 
     // Add tab functionality
     UTILS.eachIfExists('.js-tabs', function (i, tabs) {
-      var t = new TABS({
+      new TABS({
         container: tabs
       });
     });
@@ -66,7 +66,7 @@ define(
       var $b = $(button);
       var $c = $($b.attr('href'));
       // console.log($b.attr('href'));
-      var t = new TOGGLE({
+      new TOGGLE({
         container: $c,
         button: $b,
         className:'is-open'
@@ -92,14 +92,14 @@ define(
 
     // Clearing tables
     UTILS.eachIfExists('#clearing-courses-uk-eu', function (i, a) {
-      var c = new CLEARINGTABLE({
+      new CLEARINGTABLE({
         type: 'Home/EU',
         container: $(a)
       });
     });
 
     UTILS.eachIfExists('#clearing-courses-international', function (i, a) {
-      var c = new CLEARINGTABLE({
+      new CLEARINGTABLE({
         type: 'International',
         container: $(a)
       });
@@ -107,29 +107,43 @@ define(
 
     // A link with class .js-modal will href modal content
     UTILS.eachIfExists('.js-modal', function (i, a) {
-      var m = new MODALLINK({
+      new MODALLINK({
         link: $(a)
       });
     });
 
     // Add sticky nav functionality to nav
     UTILS.eachIfExists('.js-sticky-nav', function (i, a) {
-      var s = new STICKYNAV({
+      new STICKYNAV({
         container: $(a)
       });
     });
 
     // Add targeted nav functionality to nav
     UTILS.eachIfExists('.js-targeted-nav', function (i, a) {
-      var s = new TARGETEDNAV({
+      new TARGETEDNAV({
         container: $(a)
       });
     });
 
-    // Add targeted nav functionality to nav
+    // Add youtube video to embed links
     UTILS.eachIfExists('.youtube-video-embed', function (i, a) {
-      var s = new YOUTUBE({
+      new YOUTUBE({
         link: $(a)
+      });
+    });
+
+    // Make a table searchable
+    UTILS.eachIfExists('.js-searchable-table', function (i, a) {
+      var $a = $(a),
+          hasHeader = $a.attr('data-header') == 'true' ? true : false ,
+          isCaseSensitive = $a.attr('data-case-sensitive') == 'true' ? true : false ,
+          colArray = $a.attr('data-cols') ? $a.attr('data-cols').split(',') : false ;
+      var s = new SEARCHABLE({
+        table: $a,
+        header: hasHeader,
+        cols: colArray,
+        caseSensitive: isCaseSensitive
       });
     });
 
