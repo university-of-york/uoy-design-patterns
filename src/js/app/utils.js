@@ -28,6 +28,11 @@
       return (document.location.hostname === 'localhost' || document.location.hostname === '10.0.2.2');
     },
 
+    // Remove value or array from another array
+    removeFromArray: function(removeThis, fromThis) {
+      return fromThis;
+    },
+
     // If the page hash is set on load, scroll to and show the appropriate tab
     scrollToHash: function () {
       var hash = document.location.hash;

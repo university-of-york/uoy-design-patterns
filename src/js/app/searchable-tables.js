@@ -14,7 +14,8 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     if (!options.table) return false;
     this.table = options.table;
     this.header = options.header || this.Defaults.header;
-    this.cols = options.cols || this.Defaults.cols;
+    this.cols = options.cols;
+
     this.caseSensitive = options.caseSensitive || this.Defaults.caseSensitive;
     if (!this.table.attr('id')) {
       var id = setTimeout(null, 0);
@@ -50,7 +51,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       'action': '#'+this.id,
       'method': 'get'
     }).addClass('c-form c-form--bordered');
-    var fs = $('<fieldset>')
+    var fs = $('<fieldset>');
     var fe = $('<div>').addClass('c-form__element');
     var inputName = this.id+'-input';
     var fl = $('<label>').addClass('c-form__label')
@@ -75,14 +76,18 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     if (that.caseSensitive !== true) inputContent = inputContent.toLowerCase();
     that.searchRows.each(function(i, row) {
       var hideIt = true;
-      var $row = $(row)
+      var $row = $(row);
       $row.children().each(function(j, cell) {
         if (hideIt === false) return;
         if (that.cols !== false) {
-          // Remove cells that match column numbers
           // colNo needs to be a string
           var colNo = (j+1)+'';
-          if ($.inArray(colNo, that.cols) > -1) {
+          // Only include cells that match column numbers in include...
+          if (that.cols.include && $.inArray(colNo, that.cols.include) === -1) {
+            return;
+          }
+          // ...or don't match column numbers in exclude
+          if (that.cols.exclude && $.inArray(colNo, that.cols.exclude) > -1) {
             return;
           }
         }

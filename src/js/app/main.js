@@ -3,13 +3,13 @@ define(
    'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav',
    'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/responsive-tables',
    'app/toggle', 'app/wrapper-height', 'app/youtube-embed', 'app/searchable-tables',
-   'app/analytics'],
+   'app/filterable-tables', 'app/analytics'],
   function (
     $, ES5SHIM, PICTUREFILL,
     UTILS, MODALLINK, ACCORDION, STICKYNAV,
     TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
     TOGGLE, WRAPPERHEIGHT, YOUTUBE, SEARCHABLE,
-    ANALYTICS) {
+    FILTERABLE, ANALYTICS) {
 
   $(function(){
 
@@ -138,12 +138,28 @@ define(
       var $a = $(a),
           hasHeader = $a.attr('data-header') == 'true' ? true : false ,
           isCaseSensitive = $a.attr('data-case-sensitive') == 'true' ? true : false ,
-          colArray = $a.attr('data-cols') ? $a.attr('data-cols').split(',') : false ;
+          includeCols = $a.attr('data-include-cols') ? $a.attr('data-include-cols').split(',') : false ,
+          excludeCols = $a.attr('data-exclude-cols') ? $a.attr('data-exclude-cols').split(',') : false ;
+
       var s = new SEARCHABLE({
         table: $a,
         header: hasHeader,
-        cols: colArray,
+        cols: {
+          include: includeCols,
+          exclude: excludeCols
+        },
         caseSensitive: isCaseSensitive
+      });
+    });
+
+    // Make a table filterable
+    UTILS.eachIfExists('.js-filterable-table', function (i, a) {
+      var $a = $(a),
+          hasHeader = $a.attr('data-header') == 'true' ? true : false ;
+
+      var f = new FILTERABLE({
+        table: $a,
+        header: hasHeader
       });
     });
 

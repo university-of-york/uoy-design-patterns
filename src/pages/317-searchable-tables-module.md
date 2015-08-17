@@ -15,7 +15,7 @@ You can add other options to the table by using `data-` attributes.
 
 By default, the search will look at the text content of every table cell (`th` or `td`) in the `tbody`, and will not search the `thead`. If you have a header line in the `tbody`, add the `data-header="true"` attribute and the search will skip the first row in the table. See [here](#example-using-data-header-).
 
-You can skip columns by passing a `data-cols` attribute. THis should be a comma-separated list of the column numbers to skip. See the example [here](#example-using-data-cols-).
+You can skip columns by passing a `data-exclude-cols` attribute. This should be a comma-separated list of the column numbers to skip. See the example [here](#example-using-data-exclude-cols-). You can do the same with `data-include-cols` instead if you like.
 
 Lastly, you can set the search to be case-sensitive by adding a `data-case-sensitive="true"` attribute. Example [here](#example-using-data-case-sensitive-).
 
@@ -101,11 +101,11 @@ By passing `data-header="true"`, the first row of the table is skipped
   </tbody>
 </table>
 
-### Example using `data-cols`
+### Example using `data-exclude-cols`
 
-In this example, we're not interested in searching the second and third columns. By passing a `data-cols="2,3"` attribute, we can avoid adding them to the search.
+In this example, we're not interested in searching the second and third columns. By passing a `data-exclude-cols="2,3"` attribute, we can avoid adding them to the search. You could alternatively use `data-include-cols="1"`.
 
-<table class="js-searchable-table" data-cols="2,3">
+<table class="js-searchable-table" data-exclude-cols="2,3">
   <thead>
     <tr>
       <th>Programme</th>
@@ -183,7 +183,7 @@ A case-sensitive search (try _MA_ vs. _ma_).
 
 This search skips the header row, is case sensitive, and skips searching col 3 (Overseas).
 
-<table class="js-searchable-table" data-header="true" data-cols="3" data-case-sensitive="true">
+<table class="js-searchable-table" data-header="true" data-exclude-cols="3" data-case-sensitive="true">
   <tbody>
     <tr>
       <th>Programme</th>
@@ -221,5 +221,5 @@ This search skips the header row, is case sensitive, and skips searching col 3 (
  * **table** - a jQuery object, which should be a `table` element. The script automatically parses for tables with the class `.js-searchable-table`.
  * **header** - _Boolean_, whether the first row of the `tbody` should be included.
  * **caseSensitive** - _Boolean_, whether the search is case-sensitive.
- * **cols** - _Array_, Array of column numbers (**not** zero-based) to skip in the search.
+ * **exclude-cols** - _Array_, Array of column numbers (**not** zero-based) to skip in the search.
 
