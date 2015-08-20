@@ -35,12 +35,13 @@ var m = new FILTERABLE({
 <table class="js-filterable-table">
   <colgroup>
     <col data-filter="text">
-    <col span="2" data-filter="option">
+    <col data-filter="option">
+    <col>
     <col span="2" data-filter="range">
   </colgroup>
   <thead>
     <tr>
-      <th>Course title</th>Qualification earned<th></th><th>Study mode</th><th>UK/EU</th><th>International</th>
+      <th>Course title</th><th>Qualification earned</th><th>Study mode</th><th>UK/EU</th><th>International</th>
     </tr>
   </thead>
   <tbody>
@@ -54,7 +55,7 @@ var m = new FILTERABLE({
       <td>Archaeology of Buildings</td><td>MA</td><td>Part-time (36 months)</td><td>£2,580</td><td>£6,060</td>
     </tr>
     <tr>
-      <td>Archaeology of Buildings PG Cert</td><td>Full-time</td><td>£3,220</td><td>£7,570</td>
+      <td>Archaeology of Buildings</td><td>PG Cert</td><td>Full-time</td><td>£3,220</td><td>£7,570</td>
     </tr>
     <tr>
       <td>Archaeology of Buildings</td><td>PG Dip</td><td>Full-time</td><td>£4,830</td><td>£11,360</td>
@@ -75,7 +76,7 @@ var m = new FILTERABLE({
       <td>Digital Heritage</td><td>MSc</td><td>Part-time (36 months)</td><td>£2,580</td><td>£6,060</td>
     </tr>
     <tr>
-      <td>Digital Heritage PG Cert</td><td>Full-time</td><td>£3,220</td><td>£7,570</td>
+      <td>Digital Heritage</td><td>PG Cert</td><td>Full-time</td><td>£3,220</td><td>£7,570</td>
     </tr>
     <tr>
       <td>Early Prehistory</td><td>MSc</td><td>Part-time (36 months)</td><td>£2,580</td><td>£6,060</td>

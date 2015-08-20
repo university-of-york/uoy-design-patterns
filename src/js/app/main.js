@@ -156,7 +156,6 @@ define(
     UTILS.eachIfExists('.js-filterable-table', function (i, a) {
       var $a = $(a),
           hasHeader = $a.attr('data-header') == 'true' ? true : false ;
-
       var f = new FILTERABLE({
         table: $a,
         header: hasHeader
