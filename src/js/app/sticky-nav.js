@@ -25,7 +25,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
     $window.on('resize', null, { that: this }, this.reset);
     $window.on('scroll', null, { that: this }, this.check);
-    $window.on('nav:targeted:new-current', null, { that: this }, this.centerCurrentNav);
+    $window.on('nav.new-targeted-current', null, { that: this }, this.centerCurrentNav);
 
     $window.trigger('resize');
 

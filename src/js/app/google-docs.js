@@ -62,7 +62,7 @@ define(['jquery'], function ($) {
         data[i][colName] = r.rows[i][j];
       }
       if (i == r.rows.length - 1) {
-        $(window).trigger('data:loaded', [this.id, data]);
+        $(window).trigger('data.loaded', [this.id, data]);
       }
     }
   };

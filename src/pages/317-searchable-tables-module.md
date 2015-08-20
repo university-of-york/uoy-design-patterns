@@ -19,6 +19,8 @@ You can skip columns by passing a `data-exclude-cols` attribute. This should be 
 
 Lastly, you can set the search to be case-sensitive by adding a `data-case-sensitive="true"` attribute. Example [here](#example-using-data-case-sensitive-).
 
+If the searchable table is shorter than the height of the browser window, the searchable field won't appear.
+
 
 ### Use
 

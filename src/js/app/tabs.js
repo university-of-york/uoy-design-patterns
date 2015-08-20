@@ -56,6 +56,8 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
         document.body.scrollTop = scrollV;
         document.body.scrollLeft = scrollH;
       }
+      // Fire update event
+      $(window).trigger('content.updated');
 
     });
 

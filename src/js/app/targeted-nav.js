@@ -68,7 +68,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     } else {
       this.links.parent().removeClass('is-current');
     }
-    $window.trigger('nav:targeted:new-current');
+    $window.trigger('nav.new-targeted-current');
   };
 
   return TARGETEDNAV;

@@ -23,26 +23,33 @@ define(['jquery'], function ($) {
     this.itemContent = this.item.children('.c-accordion__content');
 
     // Hide content
-    this.itemContent.addClass('is-hidden');
+    this.item.addClass('is-closed');
 
     // Add click event on title
     this.itemTitle.on('click', { that: this }, this.toggleState);
+
+    var that = this;
+    $(window).on('content.updated', function() {
+      that.setAccordionHeight.apply(that);
+    });
 
   };
 
   // Boolean to see if animation is still underway
   ACCORDION.prototype.isToggling = false;
 
-  // GEt the height of the hidden accordion content
+  // Set the height of the hidden accordion content
   ACCORDION.prototype.setAccordionHeight = function() {
 
     // Get content height
-    var contentHeight = this.itemContent.outerHeight();
+    var contentHeight = 0;
+    this.itemContent.children().each(function(i, v) {
+      contentHeight+= $(v).outerHeight(true);
+    });
     this.itemContent.attr('data-height', contentHeight);
-
-    // Collapse content
-    this.item.addClass('is-closed');
-    this.itemContent.removeClass('is-hidden');
+    if (!this.item.hasClass('is-closed')) {
+      this.itemContent.css('height', contentHeight);
+    }
 
   };
 

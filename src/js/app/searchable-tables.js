@@ -23,6 +23,8 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     }
     this.id = this.table.attr('id');
 
+    // console.log(this.table.height(), $(window).height());
+
     var rows = this.table.children('tbody').children('tr');
 
     // Load searchable items into memory
@@ -36,6 +38,8 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     var form = this.createForm();
     // Add above table
     this.table.before(form);
+    // Fire event (for e.g. resizing accordion)
+    $(window).trigger('content.updated');
 
   };
 

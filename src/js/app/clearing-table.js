@@ -28,7 +28,7 @@ define(['jquery', 'app/google-docs', 'app/accordion', 'app/utils'], function ($,
       backup: backupDoc
     });
 
-    $window.on('data:loaded', function (e, id, data) {
+    $window.on('data.loaded', function (e, id, data) {
       if (id === docID) {
         // Sort by department name
         data.sort(function (a, b) {

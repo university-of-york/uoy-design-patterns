@@ -30,7 +30,7 @@ define(
     // Interval to check if fonts have loaded
     var t = setInterval(function() {
       if ($html.hasClass('wf-active')) {
-        $window.trigger('fonts:active');
+        $window.trigger('fonts.active');
         clearInterval(t);
       }
     }, 15);
@@ -184,15 +184,12 @@ define(
       });
     });
 
-
-    // Sample use of UTILS.debounce
-    // var resizeFn = UTILS.debounce(function () {
-    //   console.log('Window resized');
-    //   // Change min-height of main wrapper
-    //   w.resize();
-    // }, 250);
-
-    // $window.on('resize', resizeFn);
+    // Broadcast window events
+    if (UTILS.isDev) {
+      $window.on('data,font,nav,content', function(e) {
+        console.log(this);
+      });
+    }
 
     console.log('Javascript loaded');
 

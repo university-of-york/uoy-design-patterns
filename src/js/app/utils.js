@@ -52,7 +52,7 @@
       if ($('html').hasClass('wf-active')) {
         fn.apply(ths);
       } else {
-        $window.on('fonts:active', function() {
+        $window.on('fonts.active', function() {
           fn.apply(ths);
         });
       }

@@ -64,7 +64,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       // // Join it all together
       // fe.append(fl, fi);
       fs.append(fe);
-    })
+    });
     f.append(fs);
 
     return f;

@@ -129,7 +129,8 @@
   .c-nav.is-open & {
     color:$c-nav__list-color;
     padding:0 0 0 $base-spacing;
-    margin-bottom:1em;
+    margin-top:$base-spacing/2;
+    margin-bottom:$base-spacing/2;
   }
 }
 .c-nav__list--associative {
