@@ -16,19 +16,29 @@
   margin-right:8px;
 }
 .c-atoz__nav-link {
-  @include transition('background-color');
-  @include font-size(18px, 2);
+  line-height: 2;
   display:block;
   width:2em;
   height:2em;
   padding:0;
-  border:1px solid $charcoal;
+  border:1px solid darken($s2,5);
   border-radius:3px;
+  font-weight: bold;
   text-align:center;
-  background:$light;
+  background:$s2;
   text-decoration:none;
   &:hover {
-    background:darken($light, 5);
+    background:$blue;
+    border-color:$blue;
+    color:$light;
+  }
+}
+.c-atoz__nav-link--inactive {
+  &,&:hover{
+    background:$s3;
+    border-color:darken($s3,5);
+    color:darken($s3,25);
+    cursor:default;
   }
 }
 .c-atoz__container {
