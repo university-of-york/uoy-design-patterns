@@ -18,7 +18,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
     this.caseSensitive = options.caseSensitive || this.Defaults.caseSensitive;
     if (!this.table.attr('id')) {
-      var id = setTimeout(null, 0);
+      var id = setTimeout(function(){}, 0);
       this.table.attr('id', 'searchable-table-'+id);
     }
     this.id = this.table.attr('id');

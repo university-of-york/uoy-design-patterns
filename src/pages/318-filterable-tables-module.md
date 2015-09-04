@@ -20,6 +20,8 @@ By adding a `js-filterable-table` class to the table, the script will automatica
 
 You can define which columns are to be filtered using a `colgroup`, with each `col` given a `data-` attribute relevant to the filter option. Further options can be assigned to the filter using these `data-` attributes. You can add `span` attributes to the `col` elements to search multiple columns using the same filter.
 
+Add a `data-label` attribute to overwrite the label name (usually the table heading name will be used). If you span multiple columns you should always add a `data-label` or the heading of the first column in the span will be used, which might be strange.
+
 As with [searchable tables](searchable-tables-module.html), you can choose to ignore the first row of the `tbody` by adding `data-header="true"` to the `table` element.
 
 ### Use
@@ -32,12 +34,30 @@ var m = new FILTERABLE({
 
 ### Example
 
+In the following example, the filters added are:
+
+* Column one (Course title) filtered by text
+* Column two (Qualification earned) filtered by a dropdown (options taken from the table)
+* Column three (Study mode) not filtered at all
+* Columns four and five are combined in a single range search (i.e. **both** values must be within the range specified)
+
+The markup used is as follows:
+
+````markup
+<colgroup>
+  <col data-filter="text">
+  <col data-filter="option">
+  <col>
+  <col span="2" data-filter="range" data-label="Cost">
+</colgroup>
+```
+
 <table class="js-filterable-table">
   <colgroup>
     <col data-filter="text">
     <col data-filter="option">
     <col>
-    <col span="2" data-filter="range">
+    <col span="2" data-filter="range" data-label="Cost">
   </colgroup>
   <thead>
     <tr>
@@ -233,20 +253,16 @@ var m = new FILTERABLE({
 
 ### Example with `data-header="true"`
 
-### Example with `data-exclude-cols` and `data-include-cols`
-
-
-
 ### Options
 
  * **table** - a jQuery object, which should be a `table` element. The script automatically parses for tables with the class `.js-filterable-table`.
  * **header** - _Boolean_, whether the first row of the `tbody` should be included.
- * **exclude-cols** - _Array_, Array of column numbers (**not** zero-based) to skip in the search.
 
 Each column can have the options:
 
-* **filter-text** - Filter the column based on a text search
+* **filter-text** - Filter the table based on a text search
   * **caseSensitive** - _Boolean_, whether the search is case-sensitive.
+* **filter-option** - Filter the table based on a dropdown &lt;select&gt; element populated from the column
+* **filter-range** - Filter the table based on a range of numbers
 
-* **filter-text** - Filter the column based on a text search
-
+* **label** - overwrites the default label (which is the column name) with a custom label
