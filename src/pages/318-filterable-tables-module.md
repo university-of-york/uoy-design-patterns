@@ -13,12 +13,12 @@ id: filterable-tables-module-page
 
 By adding a `js-filterable-table` class to the table, the script will automatically add filter boxes above the table. The type of filter will be:
 
-* **text search** - filter the table based on a text input. Add `data-case-sensitive="true"` to witch on case-sensitivity.
+* **text** - filter the table based on a text input. Add `data-case-sensitive="true"` to switch on case-sensitivity.
 * **range** - filter the table based on a range of values. It ignores preceding and following text (e.g pound signs or p.a.).
 * **option** - filter the table based on a selected option. Options are gathered from the content in the column.
 * **false** - don't add a filter for this column (default)
 
-You can define which columns are to be filtered using a `colgroup`, with each `col` given a `data-` attribute relevant to the filter option. Further options can be assigned to the filter using these `data-` attributes. You can add `span` attributes to the `col` elements to save space.
+You can define which columns are to be filtered using a `colgroup`, with each `col` given a `data-` attribute relevant to the filter option. Further options can be assigned to the filter using these `data-` attributes. You can add `span` attributes to the `col` elements to search multiple columns using the same filter.
 
 As with [searchable tables](searchable-tables-module.html), you can choose to ignore the first row of the `tbody` by adding `data-header="true"` to the `table` element.
 

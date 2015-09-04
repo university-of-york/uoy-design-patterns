@@ -58,6 +58,18 @@
   position:relative;
   margin-bottom:10px;
 }
+// Form element to select a range of numbers
+.c-form__element--range {
+  .c-form__input--number {
+    display:inline-block;
+    width:40%;
+  }
+  .c-form__link-text {
+    display:inline-block;
+    width:20%;
+    text-align:center;
+  }
+}
 .c-form__element--select {
   &:after {
     line-height:2;

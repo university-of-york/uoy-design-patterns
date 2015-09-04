@@ -48,32 +48,53 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   // expand col elements with colspans to make an array of columns
   FILTERABLE.prototype.expandCols = function ($cols) {
     var colArray = [];
-    $cols.each(function(i, v) {
-      var colspan = parseInt($(v).attr('span') || 1);
+    var filterCount = 0;
+    $cols.each(function(i, col) {
+      var $col = $(col);
+      var colspan = parseInt($col.attr('span') || 1);
+      if (!!$col.attr('data-filter') === true) filterCount = filterCount + colspan;;
       if (colspan === 1) {
-        colArray.push(v);
+        colArray.push(col);
       } else {
         var p = 0;
-        v.removeAttribute('span');
+        col.removeAttribute('span');
         for (;p < colspan; p++) {
-          colArray.push(v);
+          colArray.push(col);
         }
       }
     });
+    this.filterCount = filterCount;
     return colArray;
   };
 
   FILTERABLE.prototype.createForm = function () {
 
     var that = this;
-    var f = $('<form>').attr({
+    var f = $('<form>').addClass('o-grid').attr({
       'action': '#'+this.id,
       'method': 'get'
     }).addClass('c-form c-form--bordered');
-    var fs = $('<fieldset>');
+    var fs = $('<fieldset>').addClass('o-grid__row');
+    var colName = 'full';
+    switch (this.filterCount) {
+      case 2:
+        colName = 'half';
+        break;
+      case 3:
+      case 5: // A bit weird but best to have 3 + 2
+      case 6:
+        colName = 'third';
+        break;
+      case 4:
+      case 7: // A bit weird but best to have 4 + 3
+      case 8:
+        colName = 'quarter';
+        break;
+    }
     $.each(this.cols, function(i, col) {
       var filterType = $(col).attr('data-filter');
       if (!filterType || filterType == 'false') return;
+      var gb = $('<div>').addClass('o-grid__box o-grid__box--'+colName);
       var fe = $('<div>').addClass('c-form__element');
       var inputName = that.id+'-col-'+i;
       var headingText = that.headings[i].textContent || that.headings[i].innerText;
@@ -84,7 +105,14 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       switch(filterType) {
         case 'range':
           fi = [];
-
+          fe.addClass('c-form__element--range')
+          fi.push($('<input>').addClass('c-form__input c-form__input--number')
+                              .attr({'type': 'number', 'id': inputName+'-from', 'name': inputName+'-from' })
+                              .on('keyup', { that: that }, that.checkTable));
+          fi.push($('<span>').addClass('c-form__link-text').text('to'));
+          fi.push($('<input>').addClass('c-form__input c-form__input--number')
+                              .attr({'type': 'number', 'id': inputName+'-to', 'name': inputName+'-to' })
+                              .on('keyup', { that: that }, that.checkTable));
           break;
         case 'option':
           fe.addClass('c-form__element--select');
@@ -104,7 +132,8 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
       // // Join it all together
       fe.append(fl, fi);
-      fs.append(fe);
+      gb.append(fe);
+      fs.append(gb);
     });
     f.append(fs);
 
