@@ -53,10 +53,10 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       if (colspan === 1) {
         colArray.push(v);
       } else {
-        var i = 0;
+        var j = 0;
         v.removeAttribute('span');
-        for (;i < colspan; i++) {
-          colArray.push(v)
+        for (;j < colspan; j++) {
+          colArray.push(v);
         }
       }
     });
@@ -96,7 +96,6 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
           break;
         case 'text':
-        default:
           fi = $('<input>').addClass('c-form__input c-form__input--text')
                            .attr({'type': 'text', 'id': inputName, 'name': inputName })
                            .on('keyup', { that: that }, that.checkTable);
