@@ -1,67 +1,176 @@
 
 @media print {
-    * {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow: none !important;
-        text-shadow: none !important;
+
+  @mixin subtle-image {
+    max-width:25%!important;
+    float:left;
+    margin-right:$base-spacing;
+  }
+  @mixin unsubtle-image {
+    max-width:100%!important;
+    float:none;
+    margin-right:0;
+  }
+
+  * {
+    background: transparent !important;
+    color: #000 !important; /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+    page-break-inside: avoid !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links for images, or javascript/internal/mailto/tel links
+   */
+
+  .c-breadcrumb a,
+  a[href^="javascript:"],
+  a[href^="#"],
+  a[href^="mailto:"],
+  a[href^="tel:"],
+  a[href=""] {
+    &:after {
+      content: "";
     }
+  }
 
-    a,
-    a:visited {
-        text-decoration: underline;
+  thead {
+    display: table-header-group; /* h5bp.com/t */
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    display:block;
+  }
+
+  @page {
+    margin: 0.5cm;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+  /*
+   * Get rid of a load of unnecessary stuff
+   */
+  .c-nav,
+  .c-nav__wrapper,
+  .c-footer-main,
+  .c-form--header {
+    display:none;
+  }
+  /*
+   * Fixes to the grid
+   */
+  .o-grid__row--alt1,
+  .o-grid__row--alt2,
+  .o-grid__row--alt3 {
+    &:before,
+    &:after {
+      display:none;
     }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
+    + .o-grid__row {
+      padding-top:0;
     }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
+  }
+  .o-grid__row--bordered {
+    border-bottom: 0;
+  }
+  .o-grid__box {
+    width:100%!important;
+  }
+  /*
+   * Figure link captions move alongside images
+   */
+  .c-figure,
+  .image-fit-width img {
+    @include subtle-image;
+    .o-wrapper--main .o-grid__row:first-child &,
+    .o-media__picture & {
+      @include unsubtle-image;
     }
-
-    /*
-     * Don't show links for images, or javascript/internal links
-     */
-
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
-
-    tr,
+  }
+  .c-figure--link {
+    overflow:visible;
+    .c-figure__image,
     img {
-        page-break-inside: avoid;
+      @include unsubtle-image;
     }
+    .c-figure__caption {
+      position:static;
+      padding:0;
+      margin-top:$base-spacing;
+      display:block;
+    }
+  }
+  /*
+   * Quote blockquotes don't need speech bubbles
+   */
+  .c-blockquote--image-quote .c-blockquote__image + .c-blockquote__content:after   {
+    display:none;
+  }
+  /*
+   * Panels don't need borders
+   */
+  .c-panel {
+    border-top:0;
+  }
+  .c-panel__content {
+    padding:0;
+  }
+  .c-panel--kis-widget {
+    display:none;
+  }
+  /*
+   * Tabs separate out into blocks of text
+   */
+  .c-tabs__nav {
+    display:none !important;
+  }
+  .c-tabs__container {
+    border:0;
+    padding:0!important;
+  }
+  .c-tabs__content {
+    margin-bottom:$base-spacing;
+    display:block;
+    &:last-of-type {
+      margin-bottom:0;
+    }
+  }
+  .c-tabs--vertical {
+    .c-tabs__container {
+      width:100%;
+    }
+  }
 
-    img {
-        max-width: 100% !important;
-    }
-
-    @page {
-        margin: 0.5cm;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+  /*
+   * Course pages
+   */
 }
