@@ -57,12 +57,20 @@
     page-break-inside: avoid;
   }
 
+  th, td {
+    border-color:#000 !important;
+  }
+
   img {
     display:block;
   }
+  img.icon,
+  .c-main-header__logo {
+    display:inline;
+  }
 
   @page {
-    margin: 0.5cm;
+    margin: 2.5cm;
   }
 
   p,
@@ -80,9 +88,11 @@
    * Get rid of a load of unnecessary stuff
    */
   .c-nav,
+  .c-subnav,
   .c-nav__wrapper,
   .c-footer-main,
-  .c-form--header {
+  .c-form--header,
+  #__bs_notify__ {
     display:none;
   }
   /*
@@ -106,9 +116,38 @@
     width:100%!important;
   }
   /*
+   * Fix buttons a bit
+   */
+  .c-btn,
+  .cta a {
+    border:0;
+    padding:0;
+    text-decoration: underline;
+  }
+  /*
+   * Open all accordions
+   */
+  .c-accordion__item {
+    border:0;
+  }
+  .c-accordion__title {
+    @include component-margin;
+    padding:0;
+  }
+  .c-accordion__content {
+    @include component-margin;
+    padding:0;
+    overflow:visible;
+    height:auto!important;
+  }
+  .c-accordion__icon {
+    display:none;
+  }
+  /*
    * Figure link captions move alongside images
    */
-  .c-figure,
+  .c-figure img,
+  .c-figure__image,
   .image-fit-width img {
     @include subtle-image;
     .o-wrapper--main .o-grid__row:first-child &,
@@ -118,10 +157,6 @@
   }
   .c-figure--link {
     overflow:visible;
-    .c-figure__image,
-    img {
-      @include unsubtle-image;
-    }
     .c-figure__caption {
       position:static;
       padding:0;
@@ -140,8 +175,14 @@
    */
   .c-panel {
     border-top:0;
+    margin-bottom:0;
   }
-  .c-panel__content {
+  .c-panel__header,
+  .c-panel__image,
+  .c-panel__subheader,
+  .c-panel__content,
+  .c-panel__footer {
+    @include component-margin;
     padding:0;
   }
   .c-panel--kis-widget {
@@ -169,8 +210,21 @@
       width:100%;
     }
   }
-
   /*
-   * Course pages
+   * Make alerts look more like headers
    */
+  .c-alert {
+    padding:0;
+    border:0;
+    font-weight:bold;
+  }
+  .c-alert__close {
+    display:none;
+  }
+  /*
+   * Signpost amends
+   */
+  .c-signpost__icon {
+    @include subtle-image;
+  }
 }
