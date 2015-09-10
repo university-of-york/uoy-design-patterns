@@ -17,9 +17,11 @@
     color: #000 !important; /* Black prints faster: h5bp.com/s */
     box-shadow: none !important;
     text-shadow: none !important;
-    page-break-inside: avoid !important;
   }
-
+  body {
+    page-break-before: avoid !important;
+    page-break-after: auto !important;
+  }
   a,
   a:visited {
     text-decoration: underline;
