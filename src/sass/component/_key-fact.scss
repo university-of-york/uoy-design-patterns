@@ -1,0 +1,22 @@
+//
+// KEY FACTS
+//
+.c-key-fact {
+  @include component-margin;
+  padding:$base-spacing;
+  width:100%;
+  background-color:$c-key-fact-background-color;
+  color:$c-key-fact-color;
+  text-decoration:none;
+}
+.c-key-fact__title {
+  @include font-size(20px, 1.1);
+  color:$c-key-fact__title-color;
+}
+.c-key-fact__content {
+  @include demarginalise;
+  @include font-size(16px, 1.1);
+}
+.c-key-fact__icon {
+  color:$c-key-fact__icon-color;
+}

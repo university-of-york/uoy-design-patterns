@@ -177,6 +177,12 @@ $c-modal__close-color:$light;
 $c-modal__close-hover-background-color:lighten($charcoal, 10);
 $c-modal__close-hover-color:$blue;
 
+// Key facts
+$c-key-fact-background-color:$charcoal;
+$c-key-fact-color:$blue;
+$c-key-fact__icon-color:$pink;
+$c-key-fact__title-color:$light;
+
 // Footer
 $c-footer-background-color:$charcoal;
 $c-footer-color:darken($light,10);

@@ -50,6 +50,7 @@
  * Panels..................a.k.a. boxout
  * Tabs....................Tabbed data
  * Signposts...............Signposting and supporting c-panel__content
+ * Key facts...............Key facts boxes
  *
  * - Organisms
  * Events..................Event listings
@@ -120,6 +121,7 @@
 @import "component/panels";
 @import "component/tabs";
 @import "component/signposts";
+@import "component/key-fact";
 
 @import "component/events";
 @import "component/forms";

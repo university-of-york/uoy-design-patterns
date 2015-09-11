@@ -1,0 +1,9 @@
+{{#if link}}<a href="{{link}}" class="c-key-fact o-media">{{else}}<div class="c-key-fact o-media">{{/if}}{{#icon}}
+  <div class="o-media__picture">
+    <i class="c-key-fact__icon c-icon c-icon--{{this}} c-icon--4x"></i>
+  </div>{{/icon}}
+  <div class="o-media__body">
+    <h3 class="c-key-fact__title">{{title}}</h3>
+    <div class="c-key-fact__content">{{content}}</div>
+  </div>
+{{#if link}}</a>{{else}}</div>{{/if}}
