@@ -9,7 +9,7 @@ id: key-fact-page
 
 ---
 
-<div class="lead"><p>Key facts highlight important facts on the page, such as the research strategy on the research home page.</p></div>
+<div class="lead"><p>Key facts highlight important facts on the page, such as the research strategy on the research home page :).</p></div>
 
 <script>
 component("key-fact", {
