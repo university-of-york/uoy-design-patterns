@@ -4,6 +4,8 @@ build
 dev
 node_modules
 src/js/vendor
+src/partials/assocnav.mustache
+src/partials/subnav.mustache
 
 **/*.zip
 **/.DS_Store
