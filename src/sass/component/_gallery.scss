@@ -6,7 +6,7 @@ $c-gallery-item-size:140px;
 $c-gallery-item-border-width:1px;
 
 .c-gallery-item {
-  @include component-margin;
+  @include component;
   border:$c-gallery-item-border-width solid $charcoal;
   border-radius:3px;
   text-decoration:none;

@@ -100,10 +100,22 @@
 }
 
 //
+// Default component details
+//
+@mixin component() {
+  // Default margin
+  @include component-margin;
+  // Fill height in equal row grid boxes
+  &:only-child {
+    height:100%;
+    height:calc(100% - #{$base-spacing}); //Takes bottom margin into account
+  }
+}
+//
 // Default component margins
 //
 @mixin component-margin() {
-    margin:0 0 $base-spacing;
+  margin:0 0 $base-spacing;
 }
 
 //

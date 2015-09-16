@@ -2,7 +2,7 @@
 // ALERTS
 //
 .c-alert {
-  @include component-margin;
+  @include component;
   border-left:0.8em solid $charcoal;
   background-color:darken($light, 5);
   border-radius:4px;

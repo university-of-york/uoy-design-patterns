@@ -2,7 +2,7 @@
 // PANELS
 //
 .c-panel {
-  @include component-margin;
+  @include component;
   border-top:0.8em solid $c-panel-border-color;
   background-color: $c-panel-background-color;
   color:$charcoal;
