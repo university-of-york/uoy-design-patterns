@@ -51,7 +51,13 @@ The `master` branch of this repository is the one we use to build our CSS and JS
 git checkout -b "new-branch-name"
 ```
 
-**TODO:** standardise branch names using slash syntax e.g. new-feature/carousel (see http://www.guyroutledge.co.uk/blog/git-branch-naming-conventions/ for details)
+There is a standardised way to name branches using slash syntax (taken from http://www.guyroutledge.co.uk/blog/git-branch-naming-conventions/). Our categories (so far) are:
+
+`component/` - for new components, or updates to existing ones
+`module/` - for new Javascript modules, or updates to existing ones
+`fix/` - for changes that are to fix bugs, whether layout, Javascript or anything else.
+
+So for a new component you would use `component/component-name`, for new JS modules use `module/module-name`, and so on.
 
 This will create, and switch to, a new branch in Git. Make your changes as usual, then run `git add` and `git commit -m "Your concise and descriptive commit message"`. When you come to push your changes you'll need to do a slightly different command in order to create the new branch on the remote:
 
