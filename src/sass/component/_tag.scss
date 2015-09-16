@@ -1,0 +1,54 @@
+//
+// TAG LIST
+//
+.c-tag-list {
+  @include component-margin;
+  padding:0;
+}
+.c-tag-list--left {
+  text-align:left;
+}
+.c-tag-list--center {
+  text-align:center;
+}
+.c-tag-list--right {
+  text-align:right;
+}
+.c-tag-list__item,
+.c-tag-list > li {
+  list-style:none;
+  display:inline;
+}
+.c-tag {
+  @include transition;
+  display:inline-block;
+  background-color:$c-tag-background-color;
+  color:$c-tag-color;
+  text-decoration:none;
+  text-transform:uppercase;
+  padding:0 $base-spacing/2;
+  line-height:1.6;
+  margin:0 0 4px;
+  &:hover {
+    background-color:$c-tag-background-color-hover;
+    color:$c-tag-color-hover;
+  }
+  .c-tag-list__item:nth-child(3n+2) &,
+  .c-tag-list > li:nth-child(3n+2) & {
+    background-color:$c-tag-background-color-alt1;
+    &:hover {
+      background-color:$c-tag-background-color-alt1-hover;
+    }
+  }
+  .c-tag-list__item:nth-child(3n+3) &,
+  .c-tag-list > li:nth-child(3n+3) & {
+    background-color:$c-tag-background-color-alt2;
+    &:hover {
+      background-color:$c-tag-background-color-alt2-hover;
+    }
+  }
+}
+.c-tag__icon {
+  color:$c-tag-color;
+  margin-right:$base-spacing/2;
+}

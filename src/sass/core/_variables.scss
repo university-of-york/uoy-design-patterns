@@ -193,3 +193,14 @@ $c-footer-main__link--edit-color:lighten($charcoal,10);
 // Links
 $link-color:darken($blue,10);
 $link-hover-color:$blue;
+
+// Tags
+$c-tag-background-color:$pink;
+$c-tag-background-color-hover:darken($pink,5);
+$c-tag-background-color-alt1:darken($pink,10);
+$c-tag-background-color-alt1-hover:darken($pink,15);
+$c-tag-background-color-alt2:darken($pink,20);
+$c-tag-background-color-alt2-hover:darken($pink,25);
+$c-tag-color:$light;
+$c-tag-color-hover:darken($light,5);
+
