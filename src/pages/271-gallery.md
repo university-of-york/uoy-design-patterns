@@ -3,7 +3,7 @@
 title: Gallery
 name: gallery
 category: components
-subcategory: Molecules
+subcategory: Organisms
 layout: q+tq
 id: gallery-page
 
