@@ -2,7 +2,7 @@
 // FIGURES & CAPTIONS
 //
 .c-figure {
-  @include component-margin;
+  @include component;
   position:relative;
   display:block;
   overflow:hidden;

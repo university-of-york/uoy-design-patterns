@@ -3,13 +3,13 @@ define(
    'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav',
    'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/responsive-tables',
    'app/toggle', 'app/wrapper-height', 'app/youtube-embed', 'app/searchable-tables',
-   'app/filterable-tables', 'app/analytics'],
+   'app/filterable-tables', 'app/equal-height-row', 'app/analytics'],
   function (
     $, ES5SHIM, PICTUREFILL,
     UTILS, MODALLINK, ACCORDION, STICKYNAV,
     TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
     TOGGLE, WRAPPERHEIGHT, YOUTUBE, SEARCHABLE,
-    FILTERABLE, ANALYTICS) {
+    FILTERABLE, EQUALHEIGHT, ANALYTICS) {
 
   $(function(){
 
@@ -159,6 +159,13 @@ define(
       var f = new FILTERABLE({
         table: $a,
         header: hasHeader
+      });
+    });
+
+    // Make a table filterable
+    UTILS.eachIfExists('.js-equal-height-row', function (i, a) {
+      var e = new EQUALHEIGHT({
+        row: $(a)
       });
     });
 

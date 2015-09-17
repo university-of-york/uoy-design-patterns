@@ -3,7 +3,7 @@
 //
 
 .c-signpost {
-  @include component-margin;
+  @include component;
   text-align:center;
   margin:$base-spacing 0;
 }

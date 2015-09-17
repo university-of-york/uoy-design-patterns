@@ -10,7 +10,7 @@
   padding:$base-spacing;
 }
 .c-form__legend {
-  @include component-margin;
+  @include component;
   padding:0;
   font-family:$font-title;
   font-size:24px;

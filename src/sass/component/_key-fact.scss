@@ -2,7 +2,7 @@
 // KEY FACTS
 //
 .c-key-fact {
-  @include component-margin;
+  @include component;
   padding:$base-spacing;
   width:100%;
   background-color:$c-key-fact-background-color;

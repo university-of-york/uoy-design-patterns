@@ -51,6 +51,7 @@
  * Tabs....................Tabbed data
  * Signposts...............Signposting and supporting c-panel__content
  * Key facts...............Key facts boxes
+ * Tags....................Tag lists
  *
  * - Organisms
  * Events..................Event listings
@@ -122,6 +123,7 @@
 @import "component/tabs";
 @import "component/signposts";
 @import "component/key-fact";
+@import "component/tag";
 
 @import "component/events";
 @import "component/forms";
