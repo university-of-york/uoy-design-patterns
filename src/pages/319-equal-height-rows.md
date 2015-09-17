@@ -11,6 +11,10 @@ id: equal-height-rows-module-page
 
 <div class="lead"><p>When you need to have boxes within a row all appear the same height regardless of the content, you can call this module on the row. The easiest way is to add a class of `js-equal-height-row` to an `o-grid__row` and it will automatically resize the grid boxes within the row to be the same height as the tallest one in the row.</p></div>
 
+The default `component` mixin automatically sets the height to 100%<sup>*</sup> of `:only-child`ren, so they will expand to fill the grid box.
+
+<small>* Actually, it sets the height to 100% - 20px, the default bottom margin on components</small>
+
 ### Use
 
 ```javascript
