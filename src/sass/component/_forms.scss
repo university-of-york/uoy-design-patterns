@@ -16,7 +16,6 @@
   font-size:24px;
 }
 .c-form__label {
-  display:block;
   cursor:pointer;
   ~ .c-form__label {
     display:inline-block; // Only first .c-form__label is block-level
@@ -78,6 +77,9 @@
 }
 // Stacked form
 .c-form--stacked {
+  .c-form__label {
+    display:block;
+  }
 }
 // Inline form
 .c-form--inline {

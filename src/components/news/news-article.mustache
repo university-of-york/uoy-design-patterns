@@ -1,0 +1,20 @@
+<div class="c-news c-news--article">
+  <h1 class="c-news__title">{{title}}</h1>
+  <ul class="c-tag-list c-tag-list--center c-news__category">{{#category}}
+    <li class="c-tag-list__item">{{this}}</li>{{/category}}
+  </ul>
+  <div class="c-news__lead">
+    <p>{{lead}}</p>
+  </div>{{#if banner}}
+  <div class="c-news__banner">
+    <img src="{{banner}}" alt="{{title}}">
+  </div>{{/if}}
+  <div class="c-news__content">
+    {{content}}
+  </div>{{#if date}}
+  <datetime class="c-news__date">Posted on {{date}}</datetime>{{/if}}{{#if license}}
+  <div class="c-news__license">
+    {{license}}
+  </div>{{/if}}
+  <!-- SHARE BUTTONS -->
+</div>
