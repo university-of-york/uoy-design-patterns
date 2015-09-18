@@ -50,13 +50,14 @@
  * Panels..................a.k.a. boxout
  * Tabs....................Tabbed data
  * Signposts...............Signposting and supporting c-panel__content
+ * Clearing tables.........Layout for clearing tables
  * Key facts...............Key facts boxes
  *
  * - Organisms
  * Events..................Event listings
  * Forms...................Form layout
  * Gallery.................Gallery layout
- * Clearing tables.........Layout for clearing tables
+ * News....................News listings, articles and excerpts
  *
  * SCOPES
  * TinyMCE.................Stylesheet for TinyMCE - extends other styles
@@ -121,12 +122,13 @@
 @import "component/panels";
 @import "component/tabs";
 @import "component/signposts";
+@import "component/clearing-tables";
 @import "component/key-fact";
 
 @import "component/events";
 @import "component/forms";
 @import "component/gallery";
-@import "component/clearing-tables";
+@import "component/news";
 
 // SCOPES
 @import "scopes/tinymce";
