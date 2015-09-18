@@ -7,11 +7,11 @@ module.exports = {
       dest: 'dev/'
     }]
   },
-  study: {
+  templates: {
     files: [{
       expand: true,
       cwd: 'src/',
-      src: ['study-new/**'],
+      src: ['templates/**'],
       dest: 'dev/'
     }]
   },

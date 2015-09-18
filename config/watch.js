@@ -13,8 +13,8 @@ module.exports = {
     tasks: ['makedocs:dev']
   },
   study: {
-    files: ['src/study-new/**/*.html'],
-    tasks: ['newer:copy:study']
+    files: ['src/templates/**/*.html'],
+    tasks: ['newer:copy:templates']
   },
   js: {
     files: ['src/js/**/*.js'],

@@ -52,6 +52,7 @@
  * Signposts...............Signposting and supporting c-panel__content
  * Clearing tables.........Layout for clearing tables
  * Key facts...............Key facts boxes
+ * Tags....................Tag lists
  *
  * - Organisms
  * Events..................Event listings
@@ -124,6 +125,7 @@
 @import "component/signposts";
 @import "component/clearing-tables";
 @import "component/key-fact";
+@import "component/tag";
 
 @import "component/events";
 @import "component/forms";
