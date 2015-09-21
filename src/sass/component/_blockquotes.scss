@@ -49,6 +49,10 @@ $c-blockquote__image-tiny-ratio:0.75;
       content: no-close-quote;
     }
   }
+  .c-blockquote__cite {
+    @include font-size(16px, 1.1);
+    padding:0 $base-spacing * 1.5;
+  }
 }
 .c-blockquote__image {
   @include round;

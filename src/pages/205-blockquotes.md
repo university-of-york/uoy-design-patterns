@@ -16,25 +16,26 @@ A way to section of quoted speech. They come in a couple of different flavours (
 ### Default blockquotes
 
 <script>
-component("blockquote", { "content": "Lorem ipsum Excepteur proident ut esse Ut sit ullamco voluptate commodo nostrud amet culpa sint ullamco cillum."})
-+component("blockquote", { "content": "Lorem ipsum excepteur proident ut esse sit ullamco voluptate commodo nostrud amet culpa sint ullamco cillum.", "cite": "Voltaire"})
-+component("blockquote", { "content": "Lorem ipsum excepteur proident ut esse sit ullamco voluptate commodo nostrud amet culpa sint ullamco cillum.", "cite": "Voltaire", "image": "http://lorempixel.com/120/120/people/6"})
-+component("blockquote", { "content": "Lorem ipsum excepteur proident ut esse sit ullamco voluptate commodo nostrud amet culpa sint ullamco cillum.", "cite": "Voltaire", "image": "http://lorempixel.com/120/120/people/7", "imagefloat":"left"});
+component("blockquote", { "content": "It’s incredible to think that research carried out at York has gone on to have such a major impact in one of the world’s biggest manufacturing industries."})
++component("blockquote", { "content": "It’s incredible to think that research carried out at York has gone on to have such a major impact in one of the world’s biggest manufacturing industries.", "cite": "Dr. Rob Davis<br>Department of Computer Science"})
++component("blockquote", { "content": "It’s incredible to think that research carried out at York has gone on to have such a major impact in one of the world’s biggest manufacturing industries.", "cite": "Dr. Rob Davis<br>Department of Computer Science", "image": "/media/rob.jpg"})
++component("blockquote", { "content": "It’s incredible to think that research carried out at York has gone on to have such a major impact in one of the world’s biggest manufacturing industries.", "cite": "Dr. Rob Davis<br>Department of Computer Science", "image": "/media/rob.jpg", "imagefloat":"left"});
 </script>
 
 ### Pull quote-style blockquotes
 
 <script>
-component("blockquote", { "type": "pull-quote", "content": "Lorem ipsum excepteur proident ut esse sit ullamco voluptate commodo nostrud amet culpa sint ullamco cillum."});
+component("blockquote", { "type": "pull-quote", "content": "It’s incredible to think that research carried out at York has gone on to have such a major impact in one of the world’s biggest manufacturing industries."})+
+component("blockquote", { "type": "pull-quote", "content": "It’s incredible to think that research carried out at York has gone on to have such a major impact in one of the world’s biggest manufacturing industries.", "cite":"Dr. Rob Davis<br>Department of Computer Science"});
 </script>
 
 ### Image blockquotes
 
 <script>
-component("blockquote", { "type": "image-quote", "content": "<p>Lorem ipsum excepteur proident ut esse sit ullamco voluptate commodo nostrud amet culpa sint ullamco cillum.</p><p>Mollit sit ut id culpa adipisicing voluptate ut veniam deserunt ad veniam ullamco quis.</p>"})
-+component("blockquote", { "type": "image-quote", "content": "<p>Lorem ipsum excepteur proident ut esse sit ullamco voluptate commodo nostrud amet culpa sint ullamco cillum.</p><p>Mollit sit ut id culpa adipisicing voluptate ut veniam deserunt ad veniam ullamco quis.</p>", "cite": "Woody Allen"})
-+component("blockquote", { "type": "image-quote", "content": "<p>Lorem ipsum excepteur proident ut esse sit ullamco voluptate commodo nostrud amet culpa sint ullamco cillum.</p><p>Mollit sit ut id culpa adipisicing voluptate ut veniam deserunt ad veniam ullamco quis.</p>", "cite": "Woody Allen", "image": "http://lorempixel.com/120/120/people/8"})
-+component("blockquote", { "type": "image-quote", "content": "<p>Lorem ipsum excepteur proident ut esse sit ullamco voluptate commodo nostrud amet culpa sint ullamco cillum.</p><p>Mollit sit ut id culpa adipisicing voluptate ut veniam deserunt ad veniam ullamco quis.</p>", "cite": "Woody Allen", "image": "http://lorempixel.com/120/120/people/9", "imagefloat":"left"});
+component("blockquote", { "type": "image-quote", "content": "<p>It’s incredible to think that research carried out at York has gone on to have such a major impact in one of the world’s biggest manufacturing industries.</p><p>Mollit sit ut id culpa adipisicing voluptate ut veniam deserunt ad veniam ullamco quis.</p>"})
++component("blockquote", { "type": "image-quote", "content": "<p>It’s incredible to think that research carried out at York has gone on to have such a major impact in one of the world’s biggest manufacturing industries.</p><p>Mollit sit ut id culpa adipisicing voluptate ut veniam deserunt ad veniam ullamco quis.</p>", "cite": "Dr. Rob Davis<br>Department of Computer Science"})
++component("blockquote", { "type": "image-quote", "content": "<p>It’s incredible to think that research carried out at York has gone on to have such a major impact in one of the world’s biggest manufacturing industries.</p><p>Mollit sit ut id culpa adipisicing voluptate ut veniam deserunt ad veniam ullamco quis.</p>", "cite": "Dr. Rob Davis<br>Department of Computer Science", "image": "/media/rob.jpg"})
++component("blockquote", { "type": "image-quote", "content": "<p>It’s incredible to think that research carried out at York has gone on to have such a major impact in one of the world’s biggest manufacturing industries.</p><p>Mollit sit ut id culpa adipisicing voluptate ut veniam deserunt ad veniam ullamco quis.</p>", "cite": "Dr. Rob Davis<br>Department of Computer Science", "image": "/media/rob.jpg", "imagefloat":"left"});
 </script>
 
 
@@ -43,7 +44,7 @@ component("blockquote", { "type": "image-quote", "content": "<p>Lorem ipsum exce
 #### Atoms
 
 * **blockquote**
-  * **type**: Choose from _default_ or _pull-quote_ (or nothing)
+  * **type**: Choose from _default_, _image-quote_ or _pull-quote_ (or nothing)
   * **content**: The text to go in the alert. Can include HTML markup (required)
   * **cite**: Who said this?
   * **image**: Well give me a URL for their picture

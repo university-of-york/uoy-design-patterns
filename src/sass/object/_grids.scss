@@ -186,7 +186,7 @@ $box-margin: $base-spacing;
 $htdiw: mapReverse($width);
 @each $size, $measurement in $htdiw {
 
-  @include mq(#{$size}, '-') {
+  @include mq(#{$size}) {
     // Two classes to override specificity of usual grid boxes
     .o-grid__box {
       &.o-grid__box--full\@#{$size} {
