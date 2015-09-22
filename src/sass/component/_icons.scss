@@ -13,9 +13,6 @@ $fa-inverse:          $light;
 @import "icons/font-awesome";
 
 .c-icon {
-  display:inline-block;
-  background-size:100%;
-  box-sizing:padding-box;
   &:before {
     // width:$fa-font-size-base;
     height:$fa-font-size-base;
