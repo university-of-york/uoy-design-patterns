@@ -1,0 +1,65 @@
+//
+// HCARD
+//
+$img_size:140px;
+.h-card {
+
+}
+.h-card__title {
+
+}
+.h-card__name {
+
+}
+.h-card__email {
+
+}
+.h-card__tel {
+
+}
+.h-card__url {
+
+}
+.h-card__figure {
+    @include round;
+    @include center-image;
+    width:$img_size;
+    height:$img_size;
+    overflow:hidden;
+}
+.h-card__bio {
+
+}
+.h-card--article {
+  @include component;
+  @include demarginalise;
+  border-top:0.8em solid $pink;
+  background-color: $light;
+  color:$charcoal;
+  border-radius:3px;
+  padding:$base-spacing;
+  .h-card__title {
+    text-transform:uppercase;
+    font-family:$font-default;
+    margin-bottom:$base-spacing;
+  }
+  .h-card__figure {
+    float:left;
+    margin-right:$base-spacing;
+    margin-bottom:0;
+  }
+  .h-card__name {
+    @include font-size(20px);
+    font-family:$font-title;
+    font-weight:700;
+  }
+  // Margin to give room for the image
+  .h-card__name,
+  .h-card__email,
+  .h-card__tel,
+  .h-card__url,
+  .h-card__bio {
+    margin-left:$img_size + $base-spacing;
+
+  }
+}

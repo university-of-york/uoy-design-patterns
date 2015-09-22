@@ -29,6 +29,7 @@
  * Mobile navigation.......Page navigation, but fopr mobiles.
  * Subnavigation...........Subnavigation list.
  * Modal...................Modal window for lightboxes, popups etc.
+ * hCard...................Address card using microformats
  *
  * - Atoms
  * Page title..............Page title
@@ -103,6 +104,7 @@
 @import "component/utility-nav";
 @import "component/structural-nav";
 @import "component/modal";
+@import "component/hcard";
 
 @import "component/page-title";
 @import "component/alerts";
