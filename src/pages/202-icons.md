@@ -511,7 +511,7 @@ component("icon", { "type": "adn" } )
 
 </script>
 
-You can also specify `.icon-light` for a white version of each icon:
+You can also specify `.c-icon--inverse` for a white version of each icon:
 
 <script>
 component("icon", { "type": "adn", "style": "inverse" } )

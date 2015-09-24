@@ -28,7 +28,7 @@
 
 // Lay out the icons nicely
 #icons-page {
-  .c-icon {
+  .o-wrapper--main .c-icon {
     width:96%;
     width:calc(100% - 24px);
     border-width:6px 12px;
@@ -52,10 +52,10 @@
         }
       }
     }
-  }
-  .c-icon--inverse {
-    background-color:$charcoal;
-    border-color:$charcoal
+    &.c-icon--inverse {
+      background-color:$charcoal;
+      border-color:$charcoal
+    }
   }
 }
 

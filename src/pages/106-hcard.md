@@ -16,29 +16,17 @@ The basic hCard has a _name_, an _email_ and/or a _telephone_:
 component("hcard", {
   "name": "Chris Marsh",
   "email": "chris.marsh@york.ac.uk",
-  "telephone": "+44 (0)1904 324107"
+  "tel": "+44 (0)1904 324107"
 });
 </script>
 
-You can also add in an _image_, and a _url_:
+You can also add in an _image_, a _bio_ and a _url_:
 
 <script>
 component("hcard", {
   "name": "Chris Marsh",
   "email": "chris.marsh@york.ac.uk",
-  "telephone": "+44 (0)1904 324107",
-  "image": "/media/chris.jpg",
-  "url": "http://www-users.york.ac.uk/~cm1438/"
-});
-</script>
-
-You can also add in an _image_, and a _url_:
-
-<script>
-component("hcard", {
-  "name": "Chris Marsh",
-  "email": "chris.marsh@york.ac.uk",
-  "telephone": "+44 (0)1904 324107",
+  "tel": "+44 (0)1904 324107",
   "image": "/media/chris.jpg",
   "url": "http://www-users.york.ac.uk/~cm1438/",
   "bio": "<p>Chris is a front-end developer at the University of York. He's been developing websites for over ten years and started working at the university in early 2015.</p>"
@@ -51,13 +39,14 @@ And the whole hog, a postal address too:
 component("hcard", {
   "name": "Chris Marsh",
   "email": "chris.marsh@york.ac.uk",
+  "tel": "+44 (0)1904 324107",
   "image": "/media/chris.jpg",
   "url": "http://www-users.york.ac.uk/~cm1438/",
   "bio": "<p>Chris is a front-end developer at the University of York. He's been developing websites for over ten years and started working at the university in early 2015.</p>",
   "address": {
     "street-address": "Heslington Hall",
     "locality": "York",
-    "postal-code": "YO10 4DD"
+    "postal-code": "YO10 5DD"
   }
 });
 </script>
@@ -79,16 +68,16 @@ component("hcard-article", {
 
 ### Options
 
-* **hcard**
+* **hcard**/**hcard-article**
   * **name** (required)
-  * **title** Used on the article type hCard (optional)
   * **email** (optional)
   * **tel** (optional)
   * **image** (optional)
   * **url** (optional)
+  * **title** Used at the top on the article type hCard (optional)
   * **bio** an HTML string containing a brief biography (optional)
   * **address** an object containing the address, containing the following optional information
-    * **street-address** e.g. _221B Baker Street_
+    * **street-address** e.g. _Heslington Hall_
     * **locality** e.g. _York_
     * **region** e.g. _North Yorkshire_
     * **country-name** e.g. _UK_
