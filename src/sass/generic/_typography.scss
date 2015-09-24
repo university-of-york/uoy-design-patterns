@@ -22,6 +22,11 @@
     @include font-size(12px, 1);
   }
 }
+.header--underline {
+  padding-bottom:$base-spacing/2;
+  margin-bottom:$base-spacing;
+  border-bottom:1px solid darken($light, 10);
+}
 
 .right {
   float:right;
@@ -38,6 +43,16 @@
     margin-top:0;
   }
 }
+
+// Links in headers
+.header-link--right {
+  font-size:0.666em;
+  margin-top:0.333em;
+  float:right;
+  text-decoration:none;
+  cursor:pointer;
+}
+
 .text-center {
   text-align:center;
 }
