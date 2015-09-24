@@ -14,7 +14,13 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     this.row = options.row;
     this.boxes = this.row.children('.o-grid__box');
     this.maxHeight = 0;
-    this.getMaxHeight(this.setMaxHeight);
+    this.setMaxHeight();
+    var that = this;
+    var resizeFn = UTILS.debounce(function () {
+      that.setMaxHeight();
+    }, 250);
+
+    $(window).on('resize', resizeFn);
     return true;
   };
 
@@ -31,7 +37,11 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   };
 
   EQUALHEIGHT.prototype.setMaxHeight = function() {
-    this.boxes.height(this.maxHeight);
+    this.boxes.height('auto');
+    this.maxHeight = 0;
+    this.getMaxHeight(function() {
+      this.boxes.height(this.maxHeight);
+    });
   };
 
   return EQUALHEIGHT;
