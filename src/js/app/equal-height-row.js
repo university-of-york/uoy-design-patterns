@@ -37,7 +37,6 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   };
 
   EQUALHEIGHT.prototype.setMaxHeight = function() {
-    console.log('Setting height');
     this.boxes.height('auto');
     this.maxHeight = 0;
     this.getMaxHeight(function() {
