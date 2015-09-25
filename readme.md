@@ -53,9 +53,10 @@ git checkout -b "new-branch-name"
 
 There is a standardised way to name branches using slash syntax (taken from http://www.guyroutledge.co.uk/blog/git-branch-naming-conventions/). Our categories (so far) are:
 
-* `component/` - for new components, or updates to existing ones
-* `module/` - for new Javascript modules, or updates to existing ones
-* `fix/` - for changes that are to fix bugs, whether layout, Javascript or anything else.
+* `component/` - new components, or updates to existing ones
+* `module/` - new Javascript modules, or updates to existing ones
+* `feature` - adding new features to the build process
+* `fix/` - changes that are to fix bugs, whether layout, Javascript or anything else.
 
 So for a new component you would use `component/component-name`, for new JS modules use `module/module-name`, and so on.
 

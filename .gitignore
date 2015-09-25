@@ -3,6 +3,7 @@ bower_components
 build
 dev
 node_modules
+secret.json
 src/js/vendor
 src/partials/assocnav.mustache
 src/partials/subnav.mustache
