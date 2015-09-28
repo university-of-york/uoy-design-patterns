@@ -59,7 +59,11 @@
     text-align:center;
   }
 }
+.c-news__share {
+  @include component-margin;
+}
 .c-news__license {
+  @include demarginalise;
   @include component-margin;
   padding:$base-spacing 0;
   border-top:1px solid $charcoal;

@@ -3,7 +3,8 @@
   <figure class="c-figure h-card__figure">
     <img class="c-figure__image u-photo" src="{{image}}" alt="{{name}}" />
   </figure>{{/if}}
-  <p class="h-card__name p-name">{{name}}</p>{{#if email}}
+  <p class="h-card__name p-name">{{name}}</p>{{#if position}}
+  <p class="h-card__position">{{position}}</p>{{/if}}{{#if email}}
   <p class="h-card__email"><i class="c-icon c-icon--envelope"></i> <a class="u-email" href="mailto:{{email}}">{{email}}</a></p>{{/if}}{{#if telephone}}
   <p class="h-card__tel"><i class="c-icon c-icon--phone"></i> <a class="p-tel" href="tel:{{telephone}}">{{telephone}}</a></p>{{/if}}{{#if bio}}
   <div class="h-card__bio">{{bio}}</div>{{/if}}{{#address}}

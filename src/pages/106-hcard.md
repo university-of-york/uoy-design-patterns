@@ -33,7 +33,7 @@ component("hcard", {
 });
 </script>
 
-And the whole hog, a postal address too:
+And the whole hog, a postal address and position too:
 
 <script>
 component("hcard", {
@@ -43,6 +43,7 @@ component("hcard", {
   "image": "/media/chris.jpg",
   "url": "http://www-users.york.ac.uk/~cm1438/",
   "bio": "<p>Chris is a front-end developer at the University of York. He's been developing websites for over ten years and started working at the university in early 2015.</p>",
+  "position": "Front-end web developer",
   "address": {
     "street-address": "Heslington Hall",
     "locality": "York",
@@ -62,6 +63,7 @@ component("hcard-article", {
   "image": "/media/chris.jpg",
   "email": "chris.marsh@york.ac.uk",
   "url": "http://www-users.york.ac.uk/~cm1438/",
+  "position": "Front-end web developer",
   "bio": "<p>Chris is a front-end developer at the University of York. He's been developing websites for over ten years and started working at the university in early 2015.</p>"
 });
 </script>
@@ -74,6 +76,7 @@ component("hcard-article", {
   * **tel** (optional)
   * **image** (optional)
   * **url** (optional)
+  * **position** (optional)
   * **title** Used at the top on the article type hCard (optional)
   * **bio** an HTML string containing a brief biography (optional)
   * **address** an object containing the address, containing the following optional information

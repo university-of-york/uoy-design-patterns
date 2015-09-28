@@ -12,9 +12,9 @@
   <div class="c-news__content">
     {{content}}
   </div>{{#if date}}
-  <datetime class="c-news__date">Posted on {{date}}</datetime>{{/if}}{{#if license}}
+  <time datetime="{{date}}" class="c-news__date">Posted on {{date}}</time>{{/if}}{{#if license}}
   <div class="c-news__license">
-    {{license}}
+    <p>{{license}}</p>
   </div>{{/if}}
   <!-- SHARE BUTTONS -->
 </div>
