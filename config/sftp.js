@@ -1,7 +1,12 @@
 
 module.exports = function(grunt) {
 
-  var secret = grunt.file.readJSON('../secret.json');
+  var filename = 'secret.json';
+  if (!grunt.file.exists(filename)) {
+    grunt.log.warn('Please add a scret.json file to the root of the project');
+    return false;
+  }
+  var secret = grunt.file.readJSON(filename);
 
   return {
     build: {
