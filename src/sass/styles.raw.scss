@@ -40,6 +40,7 @@
  * Blockquotes.............Blockquote styles
  * Breadcrumb..............Breadcrumb styles
  * Video...................Embedded videos
+ * Audio...................Embedded audio
  *
  * - Molecules
  * Tables..................Tabular data
@@ -114,6 +115,7 @@
 @import "component/blockquotes";
 @import "component/breadcrumb";
 @import "component/video";
+@import "component/audio";
 
 @import "component/tables";
 @import "component/coursetables";

@@ -53,6 +53,7 @@
 
 }
 .c-news__lead {
+  @include demarginalise;
   .c-news--article & {
     @include font-size(24px);
     font-family:$font-title;

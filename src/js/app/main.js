@@ -2,14 +2,14 @@ define(
   ['jquery', 'es5shim', 'picturefill',
    'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav',
    'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/responsive-tables',
-   'app/toggle', 'app/wrapper-height', 'app/youtube-embed', 'app/searchable-tables',
-   'app/filterable-tables', 'app/equal-height-row', 'app/analytics'],
+   'app/toggle', 'app/wrapper-height', 'app/youtube-embed', 'app/soundcloud-embed',
+   'app/searchable-tables', 'app/filterable-tables', 'app/equal-height-row', 'app/analytics'],
   function (
     $, ES5SHIM, PICTUREFILL,
     UTILS, MODALLINK, ACCORDION, STICKYNAV,
     TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
-    TOGGLE, WRAPPERHEIGHT, YOUTUBE, SEARCHABLE,
-    FILTERABLE, EQUALHEIGHT, ANALYTICS) {
+    TOGGLE, WRAPPERHEIGHT, YOUTUBE, SOUNDCLOUD,
+    SEARCHABLE, FILTERABLE, EQUALHEIGHT, ANALYTICS) {
 
   $(function(){
 
@@ -129,6 +129,13 @@ define(
     // Add youtube video to embed links
     UTILS.eachIfExists('.youtube-video-embed', function (i, a) {
       new YOUTUBE({
+        link: $(a)
+      });
+    });
+
+    // Add youtube video to embed links
+    UTILS.eachIfExists('.soundcloud-audio-embed', function (i, a) {
+      new SOUNDCLOUD({
         link: $(a)
       });
     });

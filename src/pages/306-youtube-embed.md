@@ -16,3 +16,12 @@ When the page is resized, the iframe dimensions will be resized to fit the paren
 ### Use
 
 <p><a class="youtube-video-embed" href="https://www.youtube.com/watch?v=s67Nb0wpcbE">Watch the video here</a></p>
+
+```markup
+<p><a class="youtube-video-embed" href="https://www.youtube.com/watch?v=s67Nb0wpcbE">Watch the video here</a></p>
+```
+&hellip;becomes&hellip;
+
+```markup
+<div class="c-video"><iframe width="730" height="410.625" src="//www.youtube.com/embed/s67Nb0wpcbE?rel=0" frameborder="0" allowfullscreen=""></iframe></div>
+```
