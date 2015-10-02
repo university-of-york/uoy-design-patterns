@@ -35,6 +35,13 @@ define(
       }
     }, 15);
 
+    //Prevent orphaned words in headings and paras
+    $('h1, h2, h3, p').each(function(){
+        var string = $(this).html();
+        string = string.replace(/ ([^ ]*)$/,' $1');
+        $(this).html(string);
+    });
+
     // Add accordion functionality
     UTILS.eachIfExists('.js-accordion__item', function (i, accordion) {
       var a = new ACCORDION({
