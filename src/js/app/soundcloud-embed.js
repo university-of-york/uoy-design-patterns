@@ -24,7 +24,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     this.url = this.link.attr("href");
     if (this.url.indexOf('?') > 0) {
       this.url = this.url.substring(0, this.url.indexOf('?'));
-    };
+    }
     this.container = $('<div>').addClass('c-audio');
 
     this.link.replaceWith(this.container);
