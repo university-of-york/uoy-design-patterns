@@ -33,6 +33,27 @@
       return fromThis;
     },
 
+    //Prevent orphaned words in headings and paras
+    preventOrphans: function() {
+      $('h1, h2, h3, .lead p').each(function(){
+          var string = $(this).html();
+          string = string.replace(/ ([^ ]*)$/,' $1');
+          $(this).html(string);
+      });
+    },
+
+    // Ugh. Removes final item from breadcrumb (and separator) if content is 'Header'
+    cleanBreadcrumb: function() {
+      var $breadcrumbItems = $('.c-breadcrumb__items');
+      if ($breadcrumbItems.length > 0) {
+        var $breadcrumbLinks = $breadcrumbItems.children('a');
+        var $last = $($breadcrumbLinks[$breadcrumbLinks.length-1]);
+        if ($last.text() === 'Header') {
+          $last.add($last.prev('.c-breadcrumb__separator')).remove();
+        }
+      }
+    },
+
     // If the page hash is set on load, scroll to and show the appropriate tab
     scrollToHash: function () {
       var hash = document.location.hash;
