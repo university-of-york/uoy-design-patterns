@@ -35,7 +35,7 @@ define(
       }
     }, 15);
 
-    UTILS.preventOrphans();
+    //UTILS.preventOrphans();
 
     UTILS.cleanBreadcrumb();
 

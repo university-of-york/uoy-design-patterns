@@ -66,7 +66,8 @@
  * TinyMCE.................Stylesheet for TinyMCE - extends other styles
  *
  * THEMES
- * 404.....................[sample] styles for different themes
+ * 404.....................404 theme
+ * Sample..................[sample] Copy this example for future themes
  *
  * MISCELLANEOUS
  * Visibility..............Stateful styles for showing/hiding elements at certain sizes
@@ -141,6 +142,7 @@
 
 // THEMES
 @import "themes/404";
+@import "themes/sample";
 
 // MISCELLANEOUS
 @import "generic/visibility";

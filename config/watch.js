@@ -26,6 +26,6 @@ module.exports = {
   },
   autoprefix: {
     files: ['dev/css/*.raw.css'],
-    tasks: ['newer:autoprefixer:dev']
+    tasks: ['newer:postcss:dev']
   }
 };
