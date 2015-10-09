@@ -1,0 +1,9 @@
+//
+// AUDIO
+//
+.c-audio {
+  @include component-margin;
+  iframe {
+    max-width:100%;
+  }
+}

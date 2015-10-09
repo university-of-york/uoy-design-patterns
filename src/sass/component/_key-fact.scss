@@ -8,6 +8,9 @@
   background-color:$c-key-fact-background-color;
   color:$c-key-fact-color;
   text-decoration:none;
+  .o-media__picture img {
+    min-width:45px;
+  }
 }
 .c-key-fact__title {
   @include font-size(20px, 1.1);

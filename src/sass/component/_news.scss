@@ -74,6 +74,7 @@ p.c-news__meta {
   }
 }
 .c-news__lead {
+  @include demarginalise;
   .c-news--article & {
     // This should be the same as the lead elsewhere - should just use .lead on articles, or should we extend it so the same styles are used?
   }

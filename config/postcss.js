@@ -1,4 +1,9 @@
 module.exports = {
+  options: {
+    processors: [
+      require('autoprefixer')({ browsers: ['last 1 version'] })
+    ]
+  },
   dev: {
     files: [{
       expand: true,

@@ -17,7 +17,7 @@
   @include font-size(24px, 1.25);
   margin:$base-spacing/2 $base-spacing;
 }
-.c-page-title__link {
+.c-page-title__link.c-page-title__link {
   color:$c-page-title__link-color;
   padding:0;
   text-decoration: none;

@@ -39,3 +39,11 @@ If it's not a tab, normal fragment behaviour is not affected.
 For many modules, we search through the DOM to find a certain _js-_prefixed class name and, if we find it, turn it in to a module, e.g. an accordion or a toggle switch.
 
 This method does that for you, looking for _selector_ and calling _fn_ with each one.
+
+###UTILS.preventOrphans()
+
+Adds a `&nbsp;` between the last two words in a header or paragraph, in order to prevent orphans
+
+###UTILS.cleanBreadcrumbs()
+
+Removes the last item in the breadcrumb if the txt content is "Header". Also removes the preceding `.breadcrumb__separator`.

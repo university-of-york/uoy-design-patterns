@@ -40,6 +40,7 @@
  * Blockquotes.............Blockquote styles
  * Breadcrumb..............Breadcrumb styles
  * Video...................Embedded videos
+ * Audio...................Embedded audio
  *
  * - Molecules
  * Tables..................Tabular data
@@ -65,7 +66,8 @@
  * TinyMCE.................Stylesheet for TinyMCE - extends other styles
  *
  * THEMES
- * 404.....................[sample] styles for different themes
+ * 404.....................404 theme
+ * Sample..................[sample] Copy this example for future themes
  *
  * MISCELLANEOUS
  * Visibility..............Stateful styles for showing/hiding elements at certain sizes
@@ -114,6 +116,7 @@
 @import "component/blockquotes";
 @import "component/breadcrumb";
 @import "component/video";
+@import "component/audio";
 
 @import "component/tables";
 @import "component/coursetables";
@@ -139,6 +142,7 @@
 
 // THEMES
 @import "themes/404";
+@import "themes/sample";
 
 // MISCELLANEOUS
 @import "generic/visibility";

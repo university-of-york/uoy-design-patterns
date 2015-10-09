@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="University of York">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="" />
+
+<title>...</title>
+
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="stylesheet" href="/link/to/stylesheets/styles.min.css">
+
+<script src="/link/to/scripts/modernizr.min.js"></script>
+<script src="/link/to/scripts/app.min.js"></script>
+
+</head>
+
+<body>
+
+<header class="c-main-header" role="banner">...</header>
+
+<div class="o-wrapper o-wrapper--wide c-page-title__wrapper o-grid">...</div>
+
+<nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation">...</nav>
+
+<div class="c-breadcrumb">...</div>
+
+<div class="o-wrapper o-wrapper--main o-grid js-wrapper--main">...</div>
+
+<footer class="c-footer-main" role="contentinfo">...</footer>
+
+</body>
+
+</html>
