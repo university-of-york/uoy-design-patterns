@@ -10,38 +10,53 @@
     color:$charcoal;
   }
 }
+.c-news--excerpt {
+  background-color: #fff;
+  display:block;
+  padding:$base-spacing;
+}
+
 .c-news__title {
   .c-news--excerpt & {
-    @include font-size(24px, 1.1);
+    @include font-size(22px, 1.1);
     color:$c-news--excerpt__title-color;
     margin-top:0;
+  }
+  .c-news--excerpt:hover & {
+    color:$c-news--excerpt__title-hover-color;
   }
   .c-news--listing & {
     @include font-size(24px, 1.1);
     color:$c-news--listing__title-color;
     margin-bottom:$base-spacing/4;
   }
+  .c-news--listing:hover & {
+    color:$c-news--excerpt__title-hover-color;
+  }
   .c-news--article & {
-    text-align:center;
   }
 }
 .c-news__category {
   .c-news--excerpt & {
-    @include font-size(20px, 1);
-    text-transform:uppercase;
-    font-weight:700;
-    color:$c-news--excerpt__category-color;
-    margin-bottom:$base-spacing/2;
+    //color:$teal;
   }
 }
+p.c-news__meta {
+  .c-news--excerpt & {
+    @include font-size(14px);
+    color:$c-news--excerpt__meta-color;
+    margin-bottom:0; //Only needed to override the margin on p - would it be better for this to just not be a paragraph?
+  }
+}
+
 .c-news__author {
 
 }
 .c-news__date {
   .c-news--listing & {
     display:block;
-    font-weight:700;
-    margin-bottom:$base-spacing/2;
+    margin-bottom:$base-spacing/4;
+    color:lighten($charcoal,30);
   }
   .c-news--article & {
     @include component-margin;
@@ -50,13 +65,17 @@
   }
 }
 .c-news__teaser {
-
+  .c-news--excerpt & {
+    @include font-size(16px);
+    color:lighten($charcoal,5);
+    p {
+      margin-bottom:$base-spacing/2;
+    }
+  }
 }
 .c-news__lead {
   .c-news--article & {
-    @include font-size(24px);
-    font-family:$font-title;
-    text-align:center;
+    // This should be the same as the lead elsewhere - should just use .lead on articles, or should we extend it so the same styles are used?
   }
 }
 .c-news__share {
@@ -70,7 +89,7 @@
   border-bottom:1px solid $charcoal;
 }
 .c-news__thumbnail {
-  width:140px;
+  width:100px;
 }
 .c-news__poster {
   @include component-margin;
