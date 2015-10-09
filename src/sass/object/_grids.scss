@@ -35,10 +35,16 @@ $box-margin: $base-spacing;
   @include extend-rows;
   // Coloured rows need to have padding so components don't butt up against the top
   padding-top:$base-spacing;
-  // Rows following coloured rows should also be padded at the top to separate the content.
+  // Rows following coloured rows should also be padded at the top to separate the content...
   + .o-grid__row {
     padding-top:$base-spacing;
   }
+}
+// ...unless they are the same type.
+.o-grid__row--alt1 + .o-grid__row--alt1,
+.o-grid__row--alt2 + .o-grid__row--alt2,
+.o-grid__row--alt3 + .o-grid__row--alt3 {
+  padding-top:0;
 }
 .o-grid__row--alt1,
 .o-grid__row--alt2 {

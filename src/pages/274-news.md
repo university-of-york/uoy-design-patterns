@@ -21,6 +21,7 @@ The basic `excerpt` has a category, title and teaser text. You can optionally ha
 component("news-excerpt", {
   "category":"Technologies for the future",
   "title": "Vehicle for success",
+  "date": "1 October 2015",
   "teaser": "Our computer scientists are driving the latest advances in car electronics.",
   "link":"#"
 });
@@ -32,13 +33,14 @@ And with a poster image:
 component("news-excerpt", {
   "category":"Technologies for the future",
   "title": "Vehicle for success",
+  "date": "1 October 2015",
   "teaser": "Our computer scientists are driving the latest advances in car electronics.",
-  "poster": "/media/traffic-poster.jpg",
+  "poster": "/media/traffic-banner.jpg",
   "link":"#"
 });
 </script>
 
-You can see this in action on the [demo research front page](/research/index.html)
+You can see this in action on the [demo research front page](/templates/research/index.html)
 
 ## News listing
 
@@ -82,7 +84,7 @@ component("news-list", { "atoms":[
 ]});
 </script>
 
-You can see this in action on the [demo research front page](/research/index.html)
+You can see this in action on the [demo research front page](/templates/research/index.html)
 
 ## News article
 
@@ -116,8 +118,8 @@ You can see this in action on the [demo research article](/research/themes/car-e
   * **lead** - a paragraph of text to introduce the article. _Should not be replicated at the beginning of the article._ (required for _news-article_, optional elsewhere)
   * **license** - the details of the license for use (optional)
   * **thumbnail** - the URL of the image to use as the thumbnail image (should be 280px x 280px (i.e. 140px for double density screens))  (required for _news-listing_, optional elsewhere)
-  * **poster** - the URL of the image to use as the poster image (should be 1.4:1 ratio)  (optional)
-  * **banner** - the URL of the image to use as the banner image (should be 2.2:1 ratio) (optional)
+  * **poster** - the URL of the image to use as the poster image (should be 2:1 ratio)  (optional)
+  * **banner** - the URL of the image to use as the banner image (should be 2:1 ratio) (optional)
   * **content** - an HTML string with the content of the news article (required for _news-article_, optional elsewhere)
   * **link** - the URL of the main article (required for _news-excerpt and _news-listing_, optional for _news-article_)
 

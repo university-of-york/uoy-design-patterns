@@ -11,6 +11,7 @@
   }
 }
 .c-news--excerpt {
+  @include demarginalise;
   background-color: #fff;
   display:block;
   padding:$base-spacing;
@@ -41,11 +42,10 @@
     //color:$teal;
   }
 }
-p.c-news__meta {
+.c-news__meta {
   .c-news--excerpt & {
     @include font-size(14px);
     color:$c-news--excerpt__meta-color;
-    margin-bottom:0; //Only needed to override the margin on p - would it be better for this to just not be a paragraph?
   }
 }
 
@@ -76,7 +76,7 @@ p.c-news__meta {
 .c-news__lead {
   @include demarginalise;
   .c-news--article & {
-    // This should be the same as the lead elsewhere - should just use .lead on articles, or should we extend it so the same styles are used?
+    @extend .lead;
   }
 }
 .c-news__share {
