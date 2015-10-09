@@ -34,7 +34,7 @@ By using this automated process, we cut out any errors in the code, deliver prod
 
 ### What happens when we want to change it?
 
-We intend to release version 1 of the design patterns for use on the new site in the first half of 2015. Any changes to the styles will use the existing markup, so all websites and digital assets can use the same stylesheet. Once we have brought all (or, at least, most) of the websites under the new scheme, we will assess if and when a version 2 will be released.
+We released version 1 of the design patterns for use on the new site on the 10th August 2015. Any changes to the styles will use the existing markup, so all websites and digital assets can use the same stylesheet. Once we have brought all (or, at least, most) of the current websites under the new scheme, we will assess if and when a version 2 will be released.
 
 ### I've spotted a mistake, who do I tell?
 
