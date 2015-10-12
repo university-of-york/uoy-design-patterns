@@ -22,10 +22,10 @@ component("blockquote", { "content": "It’s incredible to think that research c
 component("blockquote", { "content": "It’s incredible to think that research carried out at York has gone on to have such a major impact in one of the world’s biggest manufacturing industries.", "cite": "Dr. Rob Davis<br>Department of Computer Science"});
 </script>
 <script>
-component("blockquote", { "content": "It’s incredible to think that research carried out at York has gone on to have such a major impact in one of the world’s biggest manufacturing industries.", "cite": "Dr. Rob Davis<br>Department of Computer Science", "image": "/media/rob.jpg"});
+component("blockquote", { "content": "It’s incredible to think that research carried out at York has gone on to have such a major impact in one of the world’s biggest manufacturing industries.", "cite": "Dr. Rob Davis<br>Department of Computer Science", "image": "media/rob.jpg"});
 </script>
 <script>
-component("blockquote", { "content": "It’s incredible to think that research carried out at York has gone on to have such a major impact in one of the world’s biggest manufacturing industries.", "cite": "Dr. Rob Davis<br>Department of Computer Science", "image": "/media/rob.jpg", "imagefloat":"left"});
+component("blockquote", { "content": "It’s incredible to think that research carried out at York has gone on to have such a major impact in one of the world’s biggest manufacturing industries.", "cite": "Dr. Rob Davis<br>Department of Computer Science", "image": "media/rob.jpg", "imagefloat":"left"});
 </script>
 
 ### Pull quote-style blockquotes
@@ -46,10 +46,10 @@ component("blockquote", { "type": "image-quote", "content": "<p>It’s incredibl
 component("blockquote", { "type": "image-quote", "content": "<p>It’s incredible to think that research carried out at York has gone on to have such a major impact in one of the world’s biggest manufacturing industries.</p><p>Mollit sit ut id culpa adipisicing voluptate ut veniam deserunt ad veniam ullamco quis.</p>", "cite": "Dr. Rob Davis<br>Department of Computer Science"});
 </script>
 <script>
-component("blockquote", { "type": "image-quote", "content": "<p>It’s incredible to think that research carried out at York has gone on to have such a major impact in one of the world’s biggest manufacturing industries.</p><p>Mollit sit ut id culpa adipisicing voluptate ut veniam deserunt ad veniam ullamco quis.</p>", "cite": "Dr. Rob Davis<br>Department of Computer Science", "image": "/media/rob.jpg"});
+component("blockquote", { "type": "image-quote", "content": "<p>It’s incredible to think that research carried out at York has gone on to have such a major impact in one of the world’s biggest manufacturing industries.</p><p>Mollit sit ut id culpa adipisicing voluptate ut veniam deserunt ad veniam ullamco quis.</p>", "cite": "Dr. Rob Davis<br>Department of Computer Science", "image": "media/rob.jpg"});
 </script>
 <script>
-component("blockquote", { "type": "image-quote", "content": "<p>It’s incredible to think that research carried out at York has gone on to have such a major impact in one of the world’s biggest manufacturing industries.</p><p>Mollit sit ut id culpa adipisicing voluptate ut veniam deserunt ad veniam ullamco quis.</p>", "cite": "Dr. Rob Davis<br>Department of Computer Science", "image": "/media/rob.jpg", "imagefloat":"left"});
+component("blockquote", { "type": "image-quote", "content": "<p>It’s incredible to think that research carried out at York has gone on to have such a major impact in one of the world’s biggest manufacturing industries.</p><p>Mollit sit ut id culpa adipisicing voluptate ut veniam deserunt ad veniam ullamco quis.</p>", "cite": "Dr. Rob Davis<br>Department of Computer Science", "image": "media/rob.jpg", "imagefloat":"left"});
 </script>
 
 ### Options

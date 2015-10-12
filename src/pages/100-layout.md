@@ -63,7 +63,7 @@ The `body` of the page should contain a main [_header_](/navigation.html#main-he
 
 The following is a standard page template.
 
-<a class="c-btn c-btn--medium" href="/media/template.txt" target="_blank">Download the page template here</a>
+<a class="c-btn c-btn--medium" href="media/template.txt" target="_blank">Download the page template here</a>
 
 ```markup
 <!DOCTYPE html>

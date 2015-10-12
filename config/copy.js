@@ -19,7 +19,7 @@ module.exports = {
     files: [{
       expand: true,
       cwd: 'src/',
-      src: ['fonts/**', 'js/prism.js', 'js/usabilla.js'],
+      src: ['favicon.ico', 'fonts/**', 'media/**', 'js/prism.js', 'js/usabilla.js'],
       dest: 'build/'
     }]
   }

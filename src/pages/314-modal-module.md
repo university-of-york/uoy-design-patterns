@@ -30,7 +30,7 @@ m1.open()
 
 // Framed (text) modal
 var m2 = new MODAL({
-  content: '<img src="/media/pics/trees.jpg">',
+  content: '<img src="media/pics/trees.jpg">',
   caption: 'This is a picture of some trees',
   frameless: true
 });

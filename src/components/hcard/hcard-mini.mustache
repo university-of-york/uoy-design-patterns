@@ -1,0 +1,15 @@
+<div class="h-card h-card--mini">{{#if title}}
+  <h5 class="h-card__title">{{title}}</h5>{{/if}}{{#if title}}
+  <p class="h-card__name p-name">{{name}}</p>{{/if}}{{#if email}}
+  <p class="h-card__email"><i class="c-icon c-icon--envelope"></i> <a class="u-email" href="mailto:{{email}}">{{email}}</a></p>{{/if}}{{#if telephone}}
+  <p class="h-card__tel"><i class="c-icon c-icon--phone"></i> <a class="p-tel" href="tel:{{telephone}}">{{telephone}}</a></p>{{/if}}{{#if position}}
+  <p class="h-card__position">{{position}}</p>{{/if}}{{#address}}
+  <p class="h-card__adr h-adr">{{#if street-address}}
+    <span class="p-street-address">{{street-address}}</span><br>{{/if}}{{#if locality}}
+    <span class="p-locality">{{locality}}</span><br>{{/if}}{{#if region}}
+    <span class="p-region">{{region}}</span><br>{{/if}}{{#if postal-code}}
+    <span class="p-postal-code">{{postal-code}}</span><br>{{/if}}{{#if country-name}}
+    <span class="p-country-name">{{country-name}}</span><br>{{/if}}
+  </p>{{/address}}{{#if url}}
+  <p class="h-card__url"><a class="u-url c-btn c-btn--medium" href="{{url}}">View profile</a></p>{{/if}}
+</div>

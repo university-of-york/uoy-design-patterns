@@ -3,7 +3,7 @@
 //
 $img_size:140px;
 .h-card {
-
+  @include component;
 }
 .h-card__title {
 
@@ -30,8 +30,52 @@ $img_size:140px;
 .h-card__bio {
 
 }
+.h-card--mini {
+  @include demarginalise;
+  display:inline-block;
+  border-top:0.8em solid $pink;
+  background-color: $light;
+  color:$charcoal;
+  border-radius:3px;
+  padding:$base-spacing;
+  .h-card__title {
+    text-transform:uppercase;
+    font-family:$font-default;
+    margin-bottom:$base-spacing;
+  }
+  .h-card__email {
+    margin-bottom:$base-spacing/2;
+  }
+  .h-card__position {
+    margin-bottom:0;
+  }
+  .h-card__name {
+    @include font-size(20px);
+    font-family:$font-title;
+    font-weight:700;
+    margin-bottom:0;
+  }
+}
+.h-card--byline {
+  overflow:hidden;
+  border-bottom:2px solid darken($light, 10);
+  .h-card__name {
+    @include font-size(20px);
+    font-family:$font-title;
+    font-weight:700;
+    margin-top:$base-spacing/2;
+    margin-bottom:0;
+  }
+  .h-card__position {
+  }
+  .h-card__figure {
+    width:$img_size/2;
+    height:$img_size/2;
+    float:left;
+    margin:0 $base-spacing 0 0;
+  }
+}
 .h-card--article {
-  @include component;
   @include demarginalise;
   border-top:0.8em solid $pink;
   background-color: $light;
