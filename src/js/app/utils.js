@@ -34,6 +34,8 @@
     },
 
     //Prevent orphaned words in headings and paras
+    // TODO: check number of words in content >  3 (?)
+    // TODO: check if joined text < width of container (?)
     preventOrphans: function() {
       $('h1, h2, h3, .lead p').each(function(){
           var string = $(this).html();

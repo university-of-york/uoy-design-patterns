@@ -3,13 +3,13 @@ define(
    'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav',
    'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/responsive-tables',
    'app/toggle', 'app/wrapper-height', 'app/youtube-embed', 'app/soundcloud-embed',
-   'app/searchable-tables', 'app/filterable-tables', 'app/equal-height-row', 'app/analytics'],
+   'app/searchable-tables', 'app/filterable-tables', 'app/equal-height-row'],
   function (
     $, ES5SHIM, PICTUREFILL,
     UTILS, MODALLINK, ACCORDION, STICKYNAV,
     TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
     TOGGLE, WRAPPERHEIGHT, YOUTUBE, SOUNDCLOUD,
-    SEARCHABLE, FILTERABLE, EQUALHEIGHT, ANALYTICS) {
+    SEARCHABLE, FILTERABLE, EQUALHEIGHT) {
 
   $(function(){
 

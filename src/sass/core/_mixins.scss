@@ -106,7 +106,7 @@
   // Default margin
   @include component-margin;
   // Fill height in equal row grid boxes
-  &:only-child {
+  .js-equal-height-row &:only-child {
     height:100%;
     height:calc(100% - #{$base-spacing}); //Takes bottom margin into account
   }
