@@ -48,8 +48,8 @@ define(
       UTILS.fontsActive(a.setAccordionHeight, a);
     });
 
-    // Add responsive tables functionality
-    UTILS.eachIfExists('.js-responsive-table', function (i, table) {
+    // Add prioritised tables functionality
+    UTILS.eachIfExists('.js-prioritised-table', function (i, table) {
       new TABLE({
         container: table
       });

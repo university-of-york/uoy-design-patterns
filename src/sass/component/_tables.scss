@@ -40,8 +40,37 @@ td {
   @include mq(tiny, '~') {
     @include font-size(14px);
     padding:5px;
+    li {
+      margin:0;
+    }
+    p {
+      margin-bottom: $base-spacing/2;
+    }
   }
 }
 tr:last-child td {
   border-bottom:0;
+}
+
+.c-table--striped {
+  tbody tr:nth-child(odd) {
+    background-color:lighten($s2,2);
+  }
+}
+
+.c-table--stacked {
+  @include mq(small, '-') {
+    thead {
+      display:none;
+    }
+    tr,th,td {
+      display:block;
+    }
+    td {
+      border-bottom:none;
+    }
+    tr {
+      border-top:1px dotted lighten($blue,15);
+    }
+  }
 }

@@ -2,8 +2,8 @@
 
 ---
 
-title: Responsive tables
-name: responsive-table-module
+title: Prioritised tables
+name: prioritised-table-module
 category: modules
 
 ---
