@@ -1,7 +1,7 @@
 define(
   ['jquery', 'es5shim', 'picturefill',
    'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav',
-   'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/responsive-tables',
+   'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/prioritised-tables',
    'app/toggle', 'app/wrapper-height', 'app/youtube-embed', 'app/soundcloud-embed',
    'app/searchable-tables', 'app/filterable-tables', 'app/equal-height-row'],
   function (
