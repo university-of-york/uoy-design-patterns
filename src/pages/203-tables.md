@@ -340,6 +340,7 @@ Add a `.js-prioritised-table` class to the table and a `colgroup` containing `co
 Cells are stacked vertically at small screen sizes and below.
 
 <table class="c-table--stacked">
+  <caption>A responsive table with stacked cells</caption>
   <thead>
     <tr>
       <th>Course</th>
@@ -398,6 +399,7 @@ Cells are stacked vertically at small screen sizes and below.
 
 ```markup
 <table class="c-table--stacked">
+  <caption>A responsive table with stacked cells</caption>
   <thead>
     <tr>
       <th>Course</th>
