@@ -14,6 +14,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     if (!options.table) return false;
     this.table = options.table;
     this.header = options.header || this.Defaults.header;
+    this.label = options.label || this.Defaults.label;
     this.cols = options.cols;
 
     this.caseSensitive = options.caseSensitive || this.Defaults.caseSensitive;
@@ -46,7 +47,8 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   SEARCHABLE.prototype.Defaults = {
     header: false,
     cols: false,
-    caseSensitive: false
+    caseSensitive: false,
+    label: 'Search this table'
   };
 
   SEARCHABLE.prototype.createForm = function () {
@@ -60,7 +62,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     var inputName = this.id+'-input';
     var fl = $('<label>').addClass('c-form__label')
                          .attr('for', inputName)
-                         .text('Search this table');
+                         .text(this.label);
     var fi = $('<input>').addClass('c-form__input c-form__input--text')
                          .attr({'type': 'text', 'id': inputName, 'name': inputName })
                          .on('keyup', { that: this }, this.checkTable);

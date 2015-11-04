@@ -9,7 +9,7 @@ id: course-search-page
 
 ---
 
-<div class="lead"><p>A separate bit of code in `main.js` deals with switching the _action_ attribute of the form when the user switches from UG to PG. This bit of functiona;ity is too specialised to need its own module.</p></div>
+<div class="lead"><p>A separate bit of code in `main.js` deals with switching the _action_ attribute of the form when the user switches from UG to PG. This bit of functionality is too specialised to need its own module.</p></div>
 
 
 ### Use

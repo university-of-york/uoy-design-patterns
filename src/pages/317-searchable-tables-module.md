@@ -29,9 +29,9 @@ var m = new SEARCHABLE({
   table: $('#some-table')
 });
 ```
-### Example
+### Example using `data-label`
 
-<table class="js-searchable-table">
+<table class="js-searchable-table" data-label="Enter your search term here">
   <thead>
     <tr>
       <th>Programme</th>
@@ -221,6 +221,7 @@ This search skips the header row, is case sensitive, and skips searching col 3 (
 ### Options
 
  * **table** - a jQuery object, which should be a `table` element. The script automatically parses for tables with the class `.js-searchable-table`.
+ * **label** - _String_, the label for the search box. Defaults to _"Search this table"_.
  * **header** - _Boolean_, whether the first row of the `tbody` should be included.
  * **caseSensitive** - _Boolean_, whether the search is case-sensitive.
  * **exclude-cols** - _Array_, Array of column numbers (**not** zero-based) to skip in the search.
