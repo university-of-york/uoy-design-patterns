@@ -40,7 +40,7 @@ component("news-excerpt", {
 });
 </script>
 
-You can see this in action on the [demo research front page](/templates/research/index.html)
+When it's within an `alt` row the background will be white and the box will be padded. You can see this in action on the [demo research front page](/templates/research/index.html)
 
 ## News listing
 

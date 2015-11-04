@@ -12,9 +12,13 @@
 }
 .c-news--excerpt {
   @include demarginalise;
-  background-color: #fff;
   display:block;
-  padding:$base-spacing;
+  .o-grid__row--alt1 &,
+  .o-grid__row--alt2 &,
+  .o-grid__row--alt3 & {
+    background-color: #fff;
+    padding:$base-spacing;
+  }
 }
 
 .c-news__title {
