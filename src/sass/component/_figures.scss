@@ -34,6 +34,11 @@
 }
 
 // Caption positions
+.c-figure__caption--below {
+  display: block;
+  position: static;
+}
+
 .c-figure__caption--bottom-left {
   bottom:$base-spacing;
   left:$base-spacing;

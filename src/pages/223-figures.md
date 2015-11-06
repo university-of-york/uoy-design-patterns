@@ -14,6 +14,10 @@ id: figures-page
 In most cases, figures are sized by the size of the image (with the notable exception of [banners](#banner-figures))
 
 <script>
+component("figure", { "image": "http://lorempixel.com/800/400/people/5", "caption": "A plain caption below an image", "position": "below"});
+</script>
+
+<script>
 component("figure", { "image": "http://lorempixel.com/800/400/people/7", "caption": "Simple text caption", "position": "bottom-left"});
 </script>
 
