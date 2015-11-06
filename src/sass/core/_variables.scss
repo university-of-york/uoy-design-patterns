@@ -178,9 +178,12 @@ $c-modal__close-hover-background-color:lighten($charcoal, 10);
 $c-modal__close-hover-color:$blue;
 
 // Key facts
-$c-key-fact-background-color:$charcoal;
-$c-key-fact-color:$blue;
-$c-key-fact__icon-color:$pink;
+$c-key-fact-background-color:$teal;
+$c-key-fact-background-hover-color:lighten($teal,5);
+$c-key-fact-color:darken($light,10);
+$c-key-fact-hover-color:darken($light,10);
+$c-key-fact__icon-color:lighten($teal,15);
+$c-key-fact__icon-hover-color:lighten($teal,25);
 $c-key-fact__title-color:$light;
 
 // Footer

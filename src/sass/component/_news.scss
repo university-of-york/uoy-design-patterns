@@ -9,6 +9,13 @@
   &:hover {
     color:$charcoal;
   }
+  .o-grid__row--alt1 &,
+  .o-grid__row--alt2 & {
+    color:$light;
+    &:hover {
+      color:$light;
+    }
+  }
 }
 .c-news--excerpt {
   @include demarginalise;
@@ -34,6 +41,9 @@
     @include font-size(24px, 1.1);
     color:$c-news--listing__title-color;
     margin-bottom:$base-spacing/4;
+    .o-grid__row--alt1 & {
+      color:$light;
+    }
   }
   .c-news--listing:hover & {
     color:$c-news--excerpt__title-hover-color;
@@ -59,8 +69,14 @@
 .c-news__date {
   .c-news--listing & {
     display:block;
+    @include font-size(14px);
     margin-bottom:$base-spacing/4;
     color:lighten($charcoal,30);
+    .o-grid__row--alt1 &,
+    .o-grid__row--alt2 & {
+      color:darken($light,30);
+    }
+
   }
   .c-news--article & {
     @include component-margin;

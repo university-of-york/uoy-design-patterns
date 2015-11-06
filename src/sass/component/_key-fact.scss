@@ -11,11 +11,35 @@
   .o-media__picture img {
     min-width:45px;
   }
+  &:hover{
+    color:$c-key-fact-hover-color;
+    background-color:$c-key-fact-background-hover-color;
+    .c-key-fact__icon{
+      color:$c-key-fact__icon-hover-color;
+    }
+  }
 }
+
+// Override change in link text colour
+.o-grid__row--alt1,
+.o-grid__row--alt2 {
+  a.c-key-fact {
+    color:$c-key-fact-color;
+  }
+}
+
 .c-key-fact__title {
-  @include font-size(20px, 1.1);
+  // @include responsive-font-size($h4-font-sizes);
+  @include font-size(21px,1.1);
+  margin-bottom:$base-spacing/4;
+  font-family: $font-default;
   color:$c-key-fact__title-color;
+  strong {
+    color:$blue;
+  }
 }
+
+
 .c-key-fact__content {
   @include demarginalise;
   @include font-size(16px, 1.1);

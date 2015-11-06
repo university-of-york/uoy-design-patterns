@@ -67,6 +67,13 @@
   &.c-panel--highlight {
     color:$light;
   }
+  .o-grid__row--alt1 &,
+  .o-grid__row--alt2 & {
+    color:$charcoal;
+    &:hover {
+      color:$charcoal;
+    }
+  }
 }
 
 .c-panel--compact {
