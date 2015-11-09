@@ -98,6 +98,9 @@
   .c-news--article & {
     @extend .lead;
   }
+  .c-news--listing & {
+    @include font-size(16px);
+  }
 }
 .c-news__share {
   @include component-margin;
@@ -111,6 +114,9 @@
 }
 .c-news__thumbnail {
   width:100px;
+  img {
+    @include round;
+  }
 }
 .c-news__poster {
   @include component-margin;
@@ -138,4 +144,5 @@
 .c-news-list li,
 .c-news-list__item {
   list-style:none;
+  margin-bottom: $base-spacing;
 }
