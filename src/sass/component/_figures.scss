@@ -37,6 +37,10 @@
 .c-figure__caption--below {
   display: block;
   position: static;
+  background: transparent;
+  color:lighten($charcoal,20);
+  padding: $base-spacing/2 0;
+  @include font-size(14px);
 }
 
 .c-figure__caption--bottom-left {
