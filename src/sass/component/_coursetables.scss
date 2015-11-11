@@ -13,3 +13,15 @@ table.courses .detail {
 }
 table.courses .code {
 }
+
+
+// PG APPLY SCREEN
+.documents .mandatory {
+  display:none;
+}
+.documents-mandatory li {
+  display:none;
+}
+.documents-mandatory li.mandatory {
+  display:list-item;
+}
