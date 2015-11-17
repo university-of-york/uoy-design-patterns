@@ -13,6 +13,8 @@ id: searchable-tables-module-page
 
 You can add other options to the table by using `data-` attributes.
 
+THe label of the text field will usually say **Search this table**. To change it, add a `data-label` attribute. See the example [here](#example-using-data-label-).
+
 By default, the search will look at the text content of every table cell (`th` or `td`) in the `tbody`, and will not search the `thead`. If you have a header line in the `tbody`, add the `data-header="true"` attribute and the search will skip the first row in the table. See [here](#example-using-data-header-).
 
 You can skip columns by passing a `data-exclude-cols` attribute. This should be a comma-separated list of the column numbers to skip. See the example [here](#example-using-data-exclude-cols-). You can do the same with `data-include-cols` instead if you like.

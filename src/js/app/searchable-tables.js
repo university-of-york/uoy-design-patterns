@@ -56,7 +56,9 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     var f = $('<form>').attr({
       'action': '#'+this.id,
       'method': 'get'
-    }).addClass('c-form c-form--bordered');
+    }).addClass('c-form c-form--bordered').on('submit', function(e) {
+      e.preventDefault();
+    });
     var fs = $('<fieldset>');
     var fe = $('<div>').addClass('c-form__element');
     var inputName = this.id+'-input';
