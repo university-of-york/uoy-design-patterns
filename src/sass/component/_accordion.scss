@@ -19,7 +19,7 @@
   @include transition('color');
   display:block;
   font-weight: bold;
-  padding:$base-spacing/2 $base-spacing;
+  padding:$base-spacing/2 $base-spacing*2 $base-spacing/2 $base-spacing ;
   position:relative;
   text-decoration: none;
   &:hover {
