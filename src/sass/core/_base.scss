@@ -55,12 +55,12 @@ p, ul, ol, .lead, pre {
 
 h1,h2,h3,h4,h5 {
   font-family: $font-title-bold;
-  font-weight:700;
+  font-weight:400;
 }
 h6 {
   font-family: $font-default-bold;
   text-transform: uppercase;
-  font-weight:700;
+  font-weight:400;
 }
 
 h2,h3,h4,h5,h6 {
@@ -141,7 +141,7 @@ em, i {
 }
 strong,b,dt {
   font-family:$font-default-bold;
-  font-weight:700;
+  font-weight:400;
 }
 mark {
   background: #fefe99;
