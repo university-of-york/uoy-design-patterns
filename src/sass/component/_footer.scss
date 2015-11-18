@@ -9,7 +9,7 @@
   a {
     @include transition('color');
     color:$c-footer-main__link-color;
-    font-weight: bold;
+    font-family:$font-default-bold;
     text-decoration: none;
     &:hover {
       color:$c-footer-main__link-hover-color;

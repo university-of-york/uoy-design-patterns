@@ -55,7 +55,7 @@
   text-decoration: none;
   .c-panel__more {
     color: $link-color;
-    font-weight: bold;
+    font-family:$font-default-bold;
     text-decoration:underline;
   }
   &:hover {

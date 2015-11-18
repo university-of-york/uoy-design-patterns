@@ -103,7 +103,7 @@
   color:$c-modal__close-color;
   background-color:$c-modal__close-background-color;
   border-radius:50%;
-  font-weight:bold;
+  font-family:$font-default-bold;
   text-decoration:none;
   cursor:pointer;
   &:hover {

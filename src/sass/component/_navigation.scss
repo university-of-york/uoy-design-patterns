@@ -142,7 +142,7 @@
 .c-nav__list--structural {
   // Site Manager uses 'currentbranchN' classes
   span[class^="currentbranch"] {
-    font-weight: bold;
+    font-family:$font-default-bold;
     .c-nav.is-open & {
       display:none;
     }
@@ -186,7 +186,7 @@
   .currentsection {
     color:$c-nav__link-color;
     display: block;
-    font-weight: bold;
+    font-family:$font-default-bold;
     padding:0.4rem 0;
   }
 }
@@ -195,7 +195,7 @@
   right:0;
   top:0;
   border-right:0;
-  font-weight: bold;
+  font-family:$font-default-bold;
   .c-nav__link {
       background-color:$c-nav__item--more-background-color;
   }

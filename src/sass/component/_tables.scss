@@ -15,7 +15,7 @@ caption {
 }
 
 th {
-  font-weight:bold;
+  font-family:$font-default-bold;
   text-align:left;
   padding:10px;
   @include mq(tiny, '~') {

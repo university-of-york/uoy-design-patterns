@@ -81,7 +81,7 @@
   .c-news--article & {
     @include component-margin;
     display:block;
-    font-weight:700;
+    font-family:$font-default-bold;
   }
 }
 .c-news__teaser {

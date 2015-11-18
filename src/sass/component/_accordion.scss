@@ -18,7 +18,7 @@
   @include demarginalise;
   @include transition('color');
   display:block;
-  font-weight: bold;
+  font-family:$font-default-bold;
   padding:$base-spacing/2 $base-spacing;
   position:relative;
   text-decoration: none;
