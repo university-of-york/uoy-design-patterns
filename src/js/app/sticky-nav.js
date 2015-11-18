@@ -12,6 +12,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   var $window = $(window);
   var $document = $(document);
   var windowWidth = $window.width();
+  var navHeight;
 
   var STICKYNAV = function (options) {
 
@@ -19,9 +20,16 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
     this.container = options.container;
     this.parent = this.container.parent();
+    navHeight = this.getNavHeight();
 
     this.isSticky = false;
     this.isCentered = false;
+
+    // When there's a sticky nav, URL fragments will scroll the page under the navigation
+    // Nudge the scroll by nav height
+    $window.on('hashchange', this.updateScrollPos);
+    // Also do it on page load if location.hash is set
+    if (location.hash !== '') this.updateScrollPos();
 
     $window.on('resize', null, { that: this }, this.reset);
     $window.on('scroll', null, { that: this }, this.check);
@@ -48,6 +56,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   STICKYNAV.prototype.reset = function (e) {
     var that = e.data.that;
     windowWidth = $window.width();
+    navHeight = that.getNavHeight();
     that.getOffsetPosition();
     that.getNavWidth();
     that.isCentered = that.navWidth > windowWidth;
@@ -58,6 +67,10 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
   STICKYNAV.prototype.getOffsetPosition = function () {
     this.containerStartPosition = this.parent.offset().top;
+  };
+
+  STICKYNAV.prototype.getNavHeight = function () {
+    return this.container.outerHeight();
   };
 
   STICKYNAV.prototype.getNavWidth = function () {
@@ -83,6 +96,11 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
         currentWidth = hasCurrent ? 0 : $currentNav.width(),
         newOffset = hasCurrent ? 0 : windowWidth/2 - currentLeft - currentWidth/2;
     $navUl.css('left', newOffset);
+  };
+
+  STICKYNAV.prototype.updateScrollPos = function(e) {
+    var scrollPos = $window.scrollTop();
+    $window.scrollTop(scrollPos - navHeight);
   };
 
   return STICKYNAV;

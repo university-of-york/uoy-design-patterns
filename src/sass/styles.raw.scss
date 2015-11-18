@@ -16,6 +16,7 @@
  *
  * GENERIC
  * Typography..............Some typographic styles (un-namespaced).
+ * Utilities...............Generic utility classes. Use wisely.
  *
  * OBJECTS
  * Structure...............Wrappers and site-wide structure.
@@ -90,6 +91,7 @@
 
 //GENERIC
 @import "generic/typography";
+@import "generic/utilities";
 
 //OBJECTS
 @import "object/structure";
