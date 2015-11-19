@@ -12,7 +12,6 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   var $window = $(window);
   var $document = $(document);
   var windowWidth = $window.width();
-  var navHeight;
 
   var STICKYNAV = function (options) {
 
@@ -20,16 +19,15 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
     this.container = options.container;
     this.parent = this.container.parent();
-    navHeight = this.getNavHeight();
 
     this.isSticky = false;
     this.isCentered = false;
 
     // When there's a sticky nav, URL fragments will scroll the page under the navigation
     // Nudge the scroll by nav height
-    $window.on('hashchange', this.updateScrollPos);
+    $window.on('hashchange', null, { that: this }, this.updateScrollPos);
     // Also do it on page load if location.hash is set
-    if (location.hash !== '') this.updateScrollPos();
+    //if (location.hash !== '') UTILS.fontsActive(function() { $window.trigger('hashchange'); });
 
     $window.on('resize', null, { that: this }, this.reset);
     $window.on('scroll', null, { that: this }, this.check);
@@ -99,7 +97,11 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   };
 
   STICKYNAV.prototype.updateScrollPos = function(e) {
+    var that = e.data.that;
     var scrollPos = $window.scrollTop();
+    var navHeight = that.getNavHeight();
+    var paddingTop = parseInt($(location.hash).css('padding-top'),10);
+    navHeight+= (paddingTop > 0) ? 0 : 20 ;
     $window.scrollTop(scrollPos - navHeight);
   };
 
