@@ -81,7 +81,6 @@
   .c-news--article & {
     @include component-margin;
     display:block;
-    font-weight:700;
   }
 }
 .c-news__teaser {
@@ -109,8 +108,10 @@
   @include demarginalise;
   @include component-margin;
   padding:$base-spacing 0;
-  border-top:1px solid $charcoal;
-  border-bottom:1px solid $charcoal;
+  font-style: italic;
+  color:lighten($charcoal,25);
+  border-top:1px solid $s3;
+  border-bottom:1px solid $s3;
 }
 .c-news__thumbnail {
   width:100px;
