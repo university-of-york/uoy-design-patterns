@@ -2,8 +2,10 @@
 // HCARD
 //
 $img_size:140px;
+
 .h-card {
   @include component;
+  overflow:hidden;
 }
 .h-card__title {
 

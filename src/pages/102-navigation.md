@@ -15,7 +15,7 @@ The main header has a button, hidden on larger screens, that pops out the search
 <header class="c-main-header o-wrapper o-grid" role="banner">
   <div class="o-grid__row">
     <div class="o-grid__box o-grid__box--threequarters">
-      <h2 class="c-main-header__title"><img class="c-main-header__logo" src="img/logo.jpg" alt="University of York logo" width="264" height="41"></h2>
+      <h2 class="c-main-header__title"><img class="c-main-header__logo" src="img/logo.png" alt="University of York logo" width="264" height="41"></h2>
     </div>
     <div class="o-grid__box o-grid__box--quarter is-hidden@medium-">
       <form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--header">
@@ -161,7 +161,7 @@ Unopened, the main navigation shows the pages currently in this section. Open it
 </nav>
 <header class="c-main-header" role="banner">
   <div class="o-wrapper">
-    <h2 class="c-main-header__title"><img class="c-main-header__logo" src="img/logo.jpg" alt="University of York logo" width="264" height="41"></h2>
+    <h2 class="c-main-header__title"><img class="c-main-header__logo" src="img/logo.png" alt="University of York logo" width="264" height="41"></h2>
     <nav class="c-structural-nav is-hidden@medium-">
       <ul class="c-structural-nav__list">
         <li class="c-structural-nav__item"><a class="c-structural-nav__link" href="#">Study</a></li>
@@ -201,7 +201,7 @@ Unopened, the main navigation shows the pages currently in this section. Open it
 <header class="c-main-header o-wrapper o-grid" role="banner">
   <div class="o-grid__row">
     <div class="o-grid__box o-grid__box--threequarters">
-      <h2 class="c-main-header__title"><img class="c-main-header__logo" src="img/logo.jpg" alt="University of York logo" width="264" height="41"></h2>
+      <h2 class="c-main-header__title"><img class="c-main-header__logo" src="img/logo.png" alt="University of York logo" width="264" height="41"></h2>
     </div>
     <div class="o-grid__box o-grid__box--quarter is-hidden@medium-">
       <form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--header">

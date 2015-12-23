@@ -19,7 +19,9 @@
   list-style:none;
   display:inline;
 }
-.c-tag {
+.c-tag,
+// To get around CMS issues in nav objects
+.c-tag-list a {
   @include transition;
   display:inline-block;
   background-color:$c-tag-background-color;

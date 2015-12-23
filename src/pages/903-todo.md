@@ -12,19 +12,15 @@ id: todo-page
 
 ### CSS Components
 
-* Breadcrumb styling
-* Tags
-* Tables
-* News list
-* Select boxes?
+* Select boxes
 
 ### JS Modules
 
 * Write module documentation
 * Form validation
 * Selectable buttons
-* Video
 
 ### General stuff
 
 * Themes: add a `theme` option to components
+* Arbitrary classes: add a `class` option to components to add additional arbitrary classnames
