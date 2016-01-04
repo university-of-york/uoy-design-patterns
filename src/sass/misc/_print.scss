@@ -169,6 +169,7 @@
   .cta a {
     border:0;
     padding:0;
+    word-break:break-word;
   }
   /*
    * Open all accordions
@@ -191,7 +192,7 @@
   }
   /*
    * Figure link captions move alongside images
-   */
+   *
   .c-figure img,
   .c-figure__image,
   .image-fit-width img {
@@ -201,8 +202,12 @@
       @include unsubtle-image;
     }
   }
-  .c-news--excerpt .c-news__poster img {
-    @include subtle-image;
+  */
+  .c-figure--link,
+  .c-news--excerpt .c-news__poster {
+    img {
+      @include subtle-image;
+    }
   }
   .c-figure--link {
     overflow:visible;
