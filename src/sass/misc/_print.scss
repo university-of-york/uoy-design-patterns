@@ -112,6 +112,7 @@
   .c-nav__wrapper,
   .c-footer-main,
   .c-form--header,
+  .c-news__share,
   #__bs_notify__ {
     display:none;
   }
@@ -128,13 +129,39 @@
     + .o-grid__row {
       padding-top:0;
     }
+    .c-news--excerpt {
+      padding:0;
+    }
   }
   .o-grid__row--bordered {
     border-bottom: 0;
   }
   .o-grid__box {
     width:100%!important;
+    height:auto!important; // To stop js-equal-height-rows
+    /*
+     * Print override layouts
+     */
+    &.o-grid__box--full\@print {
+      width:100%!important;
+    }
+    &.o-grid__box--half\@print {
+      width:50%!important;
+    }
+    &.o-grid__box--third\@print {
+      width:33.333%!important;
+    }
+    &.o-grid__box--twothirds\@print {
+      width:66.666%!important;
+    }
+    &.o-grid__box--quarter\@print {
+      width:25%!important;
+    }
+    &.o-grid__box--threequarters\@print {
+      width:75%!important;
+    }
   }
+
   /*
    * Fix buttons a bit
    */
@@ -174,6 +201,9 @@
       @include unsubtle-image;
     }
   }
+  .c-news--excerpt .c-news__poster img {
+    @include subtle-image;
+  }
   .c-figure--link {
     overflow:visible;
     .c-figure__caption {
@@ -183,8 +213,6 @@
       display:block;
     }
   }
-
-
   /*
    * Quote blockquotes don't need speech bubbles
    */
@@ -194,7 +222,8 @@
   /*
    * Panels don't need borders
    */
-  .c-panel {
+  .c-panel,
+  .h-card--article {
     border-top:0;
     margin-bottom:0;
   }
@@ -243,13 +272,25 @@
     display:none;
   }
   /*
+   * Key fact amends
+   */
+  .c-key-fact {
+    padding:0;
+  }
+  /*
    * Signpost amends
    */
-   .c-signpost {
-     text-align:left;
-   }
-
+  .c-signpost {
+    text-align:left;
+  }
   .c-signpost__icon {
     @include subtle-image;
+  }
+  /*
+   * Line up tags
+   */
+  .c-tag,
+  .c-tag-list a {
+    padding-left:0;
   }
 }

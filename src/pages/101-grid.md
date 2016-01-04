@@ -151,7 +151,7 @@ component("grid", { "atoms":[
 
 ### Responsive override classes
 
-As mentioned above, you can override the default response of the grid items by giving them an `@` class. So the following grid items would usually go from being a 33.333% wide at medium size to 100% width at small size, but the `.o-grid__box--third@small` class means they will stay a third wide even at small screen sizes.
+As mentioned above, you can override the default response of the grid items by giving them an `@` class. So the following grid items would usually go from being a 33.333% wide at medium size to 100% width at small size, but the `.o-grid__box--third@small` class means they will stay a third wide even at small screen sizes. You can also specify an `@print` variation that only affects print layouts.
 
 <script>
 component("grid", { "atoms":[
@@ -165,26 +165,17 @@ component("grid", { "atoms":[
 
 You can play around with the different displays by assigning these classes.
 
+(Try resizing and printing the following example. The boxes should be thirds at huge and large sizes, full/half/half at medium, full/full/full (default) at small and tiny, and half/quarter/quarter in print).
+
 <script>
 component("grid", { "atoms":[
   { "grid-row": { "atoms": [
-    { "grid-box": { "size": "third o-grid__box--half@medium o-grid__box--full@small", "atoms": { "text": " .o-grid__box--third.o-grid__box--half@medium.o-grid__box--full@small" } } },
-    { "grid-box": { "size": "third o-grid__box--half@medium o-grid__box--full@small", "atoms": { "text": " .o-grid__box--third.o-grid__box--half@medium.o-grid__box--full@small" } } },
-    { "grid-box": { "size": "third o-grid__box--full@medium", "atoms": { "text": " .o-grid__box--third.o-grid__box--full@medium" } } }
+    { "grid-box": { "size": "third o-grid__box--full@medium o-grid__box--half@print", "atoms": { "text": " .o-grid__box--third<br>.o-grid__box--full@medium<br>.o-grid__box--half@print" } } },
+    { "grid-box": { "size": "third o-grid__box--half@medium o-grid__box--quarter@print", "atoms": { "text": " .o-grid__box--third<br>.o-grid__box--half@medium<br>.o-grid__box--quarter@print" } } },
+    { "grid-box": { "size": "third o-grid__box--half@medium o-grid__box--quarter@print", "atoms": { "text": " .o-grid__box--third<br>.o-grid__box--half@medium<br>.o-grid__box--quarter@print" } } }
   ] } }
 ] } );
 </script>
-
-<!--
-Usually, _@-classes_ only apply at the size you specify, so in the example above, the box `.o-grid__box--third.o-grid__box--full@medium` would revert to normal `.o-grid__box--third` behaviour at tiny, small, large or huge sizes. It's also possible to add a `+` or `-` to the class if you want the behaviour to still apply at larger or smaller sizes.
-
-For example, the following two lines of code have the same effect:
-
-```markup
-<div class="o-grid__box--third o-grid__box--full@medium-"></div>
-<div class="o-grid__box--third o-grid__box--full@medium o-grid__box--full@small o-grid__box--full@tiny"></div>
-```
--->
 
 ### Fancy alternative coloured rows
 

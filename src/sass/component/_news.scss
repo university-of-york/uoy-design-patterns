@@ -19,6 +19,7 @@
 }
 .c-news--excerpt {
   @include demarginalise;
+  overflow:hidden;
   display:block;
   .o-grid__row--alt1 &,
   .o-grid__row--alt2 &,
