@@ -40,11 +40,11 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       if ($thisTab.hasClass('is-active')) return false;
 
       // Make current tab active
-      tabTabs.not($thisTab).removeClass('is-active');
-      $thisTab.addClass('is-active');
+      tabTabs.not($thisTab).removeClass('is-active').children('.c-tabs__link').attr('aria-selected', 'false');
+      $thisTab.addClass('is-active').children('.c-tabs__link').attr('aria-selected', 'true');
       // Make tab content visible
-      tabContent.not($thisContainer).removeClass('is-active');
-      $thisContainer.addClass('is-active');
+      tabContent.not($thisContainer).removeClass('is-active').attr('aria-hidden', 'true');
+      $thisContainer.addClass('is-active').attr('aria-hidden', 'false');
       // Update the hash
       if (Modernizr.hashchange === true) {
         history.replaceState({}, "", thisHref);
