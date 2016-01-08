@@ -121,7 +121,7 @@ Unopened, the main navigation shows the pages currently in this section. Open it
 <nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation-2">
   <h4 class="c-nav__header">In this section</h4>
   <ul class="c-nav__list c-nav__list--structural">
-    <li class="c-nav__item"><a href="#">Courses</a></li><li class="c-nav__item"><a href="#">Applying</a></li><li class="c-nav__item"><a href="#">Open days and visits</a></li><li class="c-nav__item"><a href="#">Student finance</a></li><li class="c-nav__item"><a href="#">Accommodation</a></li><li class="c-nav__item"><a href="#">Study and work abroad</a></li><li class="c-nav__item"><a href="#">Careers and skills</a></li><li class="c-nav__item"><a href="#">Prospectus</a></li><li class="c-nav__item c-nav__item--more"><a class="c-nav__link js-toggle-button" href="#Main-Navigation">More…</a></li>
+    <li class="c-nav__item"><a href="#">Courses</a></li><li class="c-nav__item"><a href="#">Applying</a></li><li class="c-nav__item"><a href="#">Open days and visits</a></li><li class="c-nav__item"><a href="#">Student finance</a></li><li class="c-nav__item"><a href="#">Accommodation</a></li><li class="c-nav__item"><a href="#">Study and work abroad</a></li><li class="c-nav__item"><a href="#">Careers and skills</a></li><li class="c-nav__item"><a href="#">Prospectus</a></li><li class="c-nav__item c-nav__item--more"><a class="c-nav__link js-toggle-button" href="#Main-Navigation-2">More…</a></li>
   </ul>
   <h4 class="c-nav__header">All sections</h4>
   <ul class="c-nav__list c-nav__list--associative">
@@ -242,10 +242,10 @@ Unopened, the main navigation shows the pages currently in this section. Open it
     </div>
   </div>
 </div><!--
---><nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation-2">
+--><nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation-4">
   <h4 class="c-nav__header">In this section</h4>
   <ul class="c-nav__list c-nav__list--structural">
-    <li class="c-nav__item"><a href="#">Courses</a></li><li class="c-nav__item"><a href="#">Applying</a></li><li class="c-nav__item"><a href="#">Open days and visits</a></li><li class="c-nav__item"><a href="#">Student finance</a></li><li class="c-nav__item"><a href="#">Accommodation</a></li><li class="c-nav__item"><a href="#">Study and work abroad</a></li><li class="c-nav__item"><a href="#">Careers and skills</a></li><li class="c-nav__item"><a href="#">Prospectus</a></li><li class="c-nav__item c-nav__item--more"><a class="c-nav__link js-toggle-button" href="#Main-Navigation">More…</a></li>
+    <li class="c-nav__item"><a href="#">Courses</a></li><li class="c-nav__item"><a href="#">Applying</a></li><li class="c-nav__item"><a href="#">Open days and visits</a></li><li class="c-nav__item"><a href="#">Student finance</a></li><li class="c-nav__item"><a href="#">Accommodation</a></li><li class="c-nav__item"><a href="#">Study and work abroad</a></li><li class="c-nav__item"><a href="#">Careers and skills</a></li><li class="c-nav__item"><a href="#">Prospectus</a></li><li class="c-nav__item c-nav__item--more"><a class="c-nav__link js-toggle-button" href="#Main-Navigation-4">More…</a></li>
   </ul>
   <h4 class="c-nav__header">All sections</h4>
   <ul class="c-nav__list c-nav__list--associative">

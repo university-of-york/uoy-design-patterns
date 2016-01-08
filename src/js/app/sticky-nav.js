@@ -97,6 +97,8 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   };
 
   STICKYNAV.prototype.updateScrollPos = function(e) {
+    // Don't scroll if it was a tab click
+    console.log(e);
     var that = e.data.that;
     var scrollPos = $window.scrollTop();
     var navHeight = that.getNavHeight();

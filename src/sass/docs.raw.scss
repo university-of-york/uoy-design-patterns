@@ -179,6 +179,13 @@
       margin-left:auto;
       margin-right:auto;
     }
+    // Navs/page titles etc. have no bottom margin, so give top margin to follwing items
+    .c-nav,
+    .c-page-title {
+      + * {
+        margin-top:20px;
+      }
+    }
     .c-main-header__title {
       padding:0;
     }
