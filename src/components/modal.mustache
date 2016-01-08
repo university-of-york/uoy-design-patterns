@@ -1,4 +1,4 @@
-<div class="c-modal c-modal--{{#if type}}{{type}}{{else}}framed{{/if}}">{{#title}}
+<div class="c-modal c-modal--{{#if type}}{{type}}{{else}}framed{{/if}}" role="dialog"{{#title}} aria-labelledby="{{this}}"{{/title}}>{{#title}}
   <h4 class="c-modal__title">{{this}}</h4>{{/title}}
   <div class="c-modal__content">
     {{content}}{{#caption}}
