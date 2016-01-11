@@ -34,7 +34,7 @@ $c-blockquote__image-tiny-ratio:0.75;
   overflow:visible;
   padding-top:$base-spacing/2;
   .c-blockquote__content {
-    @include font-size(18px);
+    @include font-size(22px, 1.13636364);
     color:$c-blockquote--pull-quote-color;
     font-family:$font-title;
     padding:0 $base-spacing * 1.5;
@@ -50,7 +50,6 @@ $c-blockquote__image-tiny-ratio:0.75;
     }
   }
   .c-blockquote__cite {
-    @include font-size(16px, 1.1);
     padding:0 $base-spacing * 1.5;
   }
 }
@@ -133,6 +132,8 @@ $c-blockquote__image-tiny-ratio:0.75;
   }
 }
 .c-blockquote__cite {
+  @include font-size(14px);
+  font-style: normal;
   display:block;
   margin-top:$base-spacing/2;
 }
