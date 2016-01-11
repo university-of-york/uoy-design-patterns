@@ -181,8 +181,11 @@
     }
     // Navs/page titles etc. have no bottom margin, so give top margin to follwing items
     .c-nav,
-    .c-page-title {
-      + * {
+    .c-page-title,
+    .c-utility-nav,
+    .c-structural-nav {
+      + h2,
+      + h3 {
         margin-top:20px;
       }
     }

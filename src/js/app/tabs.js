@@ -31,7 +31,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     }
 
     tabLinks.on('click', function (e) {
-      e.preventDefault();
+      //e.preventDefault();
       var $this = $(this);
       var $thisTab = $this.parent();
       var thisHref = $this.attr('href');
