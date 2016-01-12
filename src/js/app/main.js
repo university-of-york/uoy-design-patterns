@@ -3,13 +3,13 @@ define(
    'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav',
    'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/prioritised-tables',
    'app/toggle', 'app/wrapper-height', 'app/youtube-embed', 'app/soundcloud-embed',
-   'app/searchable-tables', 'app/filterable-tables', 'app/equal-height-row'],
+   'app/searchable-tables', 'app/filterable-tables', 'app/equal-height-row', 'app/google-map'],
   function (
     $, ES5SHIM, PICTUREFILL,
     UTILS, MODALLINK, ACCORDION, STICKYNAV,
     TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
     TOGGLE, WRAPPERHEIGHT, YOUTUBE, SOUNDCLOUD,
-    SEARCHABLE, FILTERABLE, EQUALHEIGHT) {
+    SEARCHABLE, FILTERABLE, EQUALHEIGHT, GOOGLEMAP) {
 
   $(function(){
 
@@ -38,6 +38,18 @@ define(
     //UTILS.preventOrphans();
 
     UTILS.cleanBreadcrumb();
+
+    // Add google map functionality
+    UTILS.eachIfExists('.js-map', function (i, map) {
+      var $map = $(map);
+      var m = new GOOGLEMAP({
+        container: map,
+        location: $map.data('location'),
+        label: $map.data('label'),
+        zoom: $map.data('zoom'),
+        marker: $map.data('marker')
+      });
+    });
 
     // Add accordion functionality
     UTILS.eachIfExists('.js-accordion__item', function (i, accordion) {
