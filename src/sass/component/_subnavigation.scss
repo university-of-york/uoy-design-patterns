@@ -17,6 +17,7 @@
   }
 }
 .c-subnav__item {
+  line-height: 1;
   margin:0;
   li {
     margin:0;
@@ -37,7 +38,7 @@
     color:$c-subnav__link-color;
     display: block;
     font-weight: bold;
-    padding:0.2em 0;
+    padding:0.4em 0;
   }
 }
 .c-subnav__link,
@@ -45,7 +46,7 @@
 .c-subnav__item a {
   color:$c-subnav__link-color;
   display:block;
-  padding:0.2em 0;
+  padding:0.4em 0;
   position:relative;
   text-decoration: none;
   &:hover {
@@ -67,7 +68,7 @@
   font-family: $font-title;
   font-size:24px;
   &:first-child {
-    margin-top:0;
+    margin:0;
   }
   .c-subnav__link, a {
     color:$teal;
