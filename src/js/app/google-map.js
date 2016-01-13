@@ -7,7 +7,9 @@ category: Javascript
 ---
 
  */
-define(['jquery'], function ($) {
+define(['jquery', 'app/utils'], function ($, UTILS) {
+
+  window.map = [];
 
   $window = $(window);
   $html = $('html');
@@ -31,8 +33,9 @@ define(['jquery'], function ($) {
     if (!options.location) return false;
 
     this.container = options.container;
-    this.zoom = options.zoom || 12;
-
+    this.zoom = options.zoom || 16;
+    this.type = options.type || 'cloudmade';
+    this.fullscreen = (options.fullscreen+'').toLowerCase() === "true" ? true : false;
     this.centre = splitStringToCoords(options.location);
 
     // Make label an array
@@ -79,24 +82,90 @@ define(['jquery'], function ($) {
   GOOGLEMAP.prototype.initialise = function(e) {
 
     var that = e.data.that;
+    // console.log(that);
 
-    console.log(that);
+    // Map type for Cloudmade tiles
+    var cloudMadeMapType = new google.maps.ImageMapType({
+      getTileUrl: function(coord, zoom) {
+        return "https://www.york.ac.uk/about/maps/campus/data/tiles/" +
+          zoom + "/" + coord.x + "/" + coord.y + ".png";
+      },
+      tileSize: new google.maps.Size(256, 256),
+      isPng: true,
+      maxZoom: 18,
+      minZoom: 13,
+      name: 'Campus map',
+      alt: 'Campus map'
+    });
+
+    var thisMapTypeIdArray;
+    var thisMapTypeId;
+    var thisMapBounds;
+
+    if (that.type === 'googlemaps') {
+      thisMapTypeIdArray = [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.SATELLITE];
+      thisMapTypeId = google.maps.MapTypeId.ROADMAP;
+      thisMapBounds = false;
+    } else {
+      // Cloudmade 'Campus map' by default
+      thisMapTypeIdArray = ['Campus map', google.maps.MapTypeId.SATELLITE];
+      thisMapTypeId = 'Campus map';
+      // These are the bounds at which we clip our tiles
+      thisMapBounds = new google.maps.LatLngBounds({ lat: 53.917431, lng: -1.151901 }, { lat: 54.006755, lng: -1.003017 });
+    }
 
     var mapOptions = {
       zoom: that.zoom,
       center: new google.maps.LatLng(that.centre),
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      scaleControl: true,
+      mapTypeControlOptions: {
+        mapTypeIds: thisMapTypeIdArray
+      },
+      mapTypeId: thisMapTypeId
     };
+
     that.map = new google.maps.Map(that.container, mapOptions);
+
+    that.map.mapTypes.set('Campus map', cloudMadeMapType);
+
+    if (thisMapBounds !== false) {
+      var thisCentre = that.map.getCenter();
+      that.map.addListener('idle', function() {
+        var thisNewCentre = that.map.getCenter();
+        var mapBounds = that.map.getBounds();
+        var fitsSW = thisMapBounds.contains(mapBounds.getSouthWest());
+        var fitsNE = thisMapBounds.contains(mapBounds.getNorthEast());
+        if (fitsSW === false || fitsNE === false) {
+          that.map.setCenter(thisCentre);
+        } else {
+          thisCentre = thisNewCentre;
+        }
+      });
+    }
+
+    // Set up fullscreen button?
+    // Track Enter fullscreen
+    // ga('send', 'event', 'Map', 'Full screen', 'Enter full screen');
+    // Track Exit fullscreen
+    // ga('send', 'event', 'Map', 'Full screen', 'Exit full screen');
+
+    // Track StreetView being activated with Analytics
+    var theStreetView = that.map.getStreetView();
+    google.maps.event.addListener(theStreetView, 'visible_changed', function() {
+      if (theStreetView.getVisible() && (UTILS.isDev === false)) {
+        ga('send', 'event', 'Map', 'Show Streetview');
+      }
+    });
 
     if (that.label.length > 0) {
       // Set up info window for later
       that.infowindow = new google.maps.InfoWindow({});
+      that.map.addListener('click', function() {
+        that.infowindow.close();
+      });
     }
 
-    that.map.addListener('click', function() {
-      that.infowindow.close();
-    });
+    window.map.push(that.map);
 
     $.each(that.marker, function(i, m) {
 
@@ -111,6 +180,9 @@ define(['jquery'], function ($) {
           that.infowindow.close();
           that.infowindow.setContent('<div class="c-map__infowindow">'+that.label[i]+'</div>');
           that.infowindow.open(that.map, marker);
+          if (UTILS.isDev === false) {
+            ga('send', 'event', 'Map', 'Click pin', that.label[i]);
+          }
         });
       }
 

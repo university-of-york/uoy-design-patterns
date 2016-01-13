@@ -39,7 +39,7 @@ define(
 
     UTILS.cleanBreadcrumb();
 
-    // Add google map functionality
+    // Add Google map functionality
     UTILS.eachIfExists('.js-map', function (i, map) {
       var $map = $(map);
       var m = new GOOGLEMAP({
@@ -47,7 +47,9 @@ define(
         location: $map.data('location'),
         label: $map.data('label'),
         zoom: $map.data('zoom'),
-        marker: $map.data('marker')
+        marker: $map.data('marker'),
+        type: $map.data('type'),
+        fullscreen: $map.data('fullscreen')
       });
     });
 
