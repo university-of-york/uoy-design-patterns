@@ -32,7 +32,7 @@ The simplest version, specifying a single location.
 <div class="c-map js-map" data-location="53.945746, -1.047011"></div>
 ```
 
-<div class="c-map js-map" data-location="53.945746, -1.047011" style="min-height:240px; margin-bottom:20px;"></div>
+<div class="c-map js-map" data-location="53.945746, -1.047011" style="height:240px; margin-bottom:20px;"></div>
 
 ### Example including label
 
@@ -40,7 +40,7 @@ The simplest version, specifying a single location.
 <div class="c-map js-map" data-location="53.945746, -1.047011" data-label="Heslington Hall"></div>
 ```
 
-<div class="c-map js-map" data-location="53.945746, -1.047011" data-label="Heslington Hall" style="min-height:240px; margin-bottom:20px;"></div>
+<div class="c-map js-map" data-location="53.945746, -1.047011" data-label="Heslington Hall" style="height:240px; margin-bottom:20px;"></div>
 
 ### Example including zoom, multiple markers with labels and a fullscreen button
 
@@ -48,7 +48,7 @@ The simplest version, specifying a single location.
 <div class="c-map js-map" data-location="53.945746, -1.047011" data-zoom="14" data-label="Vanbrugh; Derwent; Wentworth" data-marker="53.947658, -1.054425; 53.946812, -1.048276; 53.945934, -1.057953" data-fullscreen="true"></div>
 ```
 
-<div class="c-map js-map" data-location="53.945746, -1.047011" data-zoom="14" data-label="Vanbrugh; Derwent; Wentworth" data-marker="53.947658, -1.054425; 53.946812, -1.048276; 53.945934, -1.057953" data-fullscreen="true" style="min-height:240px; margin-bottom:20px;"></div>
+<div class="c-map js-map" data-location="53.945746, -1.047011" data-zoom="14" data-label="Vanbrugh; Derwent; Wentworth" data-marker="53.947658, -1.054425; 53.946812, -1.048276; 53.945934, -1.057953" data-fullscreen="true" style="height:240px; margin-bottom:20px;"></div>
 
 ### Example using Google Maps
 
@@ -58,7 +58,7 @@ For locations outside of York, you have to use Google Maps, as our map tile cove
 <div class="c-map js-map" data-location="40.776722, -73.969233" data-type="googlemaps"></div>
 ```
 
-<div class="c-map js-map" data-location="40.776722, -73.969233" data-type="googlemaps" style="min-height:240px; margin-bottom:20px;"></div>
+<div class="c-map js-map" data-location="40.776722, -73.969233" data-type="googlemaps" style="height:240px; margin-bottom:20px;"></div>
 
 ### Options
 

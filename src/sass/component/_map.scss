@@ -1,0 +1,33 @@
+//
+// MAP
+//
+.c-map {
+  position:relative;
+}
+.c-map__mapdiv {
+  height:100%;
+}
+.c-map__infowindow {
+
+}
+.c-map__fsbutton-text {
+  margin-right: 10px;
+}
+.c-map__fsbutton {
+  @include transition;
+  display: block;
+  position: absolute;
+  text-decoration: none;
+  top:0;
+  right:0;
+  color: $charcoal;
+  background-color:$s3;
+  padding: 0 10px;
+  line-height: 2em;
+  height: 2em;
+  width: auto;
+  text-align: center;
+  &:hover {
+    background-color:darken($s3, 5);
+  }
+}

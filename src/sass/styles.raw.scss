@@ -62,6 +62,7 @@
  * Forms...................Form layout
  * Gallery.................Gallery layout
  * News....................News listings, articles and excerpts
+ * Maps....................Map module styles and controls
  *
  * SCOPES
  * TinyMCE.................Stylesheet for TinyMCE - extends other styles
@@ -138,6 +139,7 @@
 @import "component/forms";
 @import "component/gallery";
 @import "component/news";
+@import "component/map";
 
 // SCOPES
 @import "scopes/tinymce";

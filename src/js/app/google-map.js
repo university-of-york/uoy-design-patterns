@@ -7,9 +7,7 @@ category: Javascript
 ---
 
  */
-define(['jquery', 'app/utils'], function ($, UTILS) {
-
-  window.map = [];
+define(['jquery', 'app/utils', 'app/fullscreen'], function ($, UTILS, FULLSCREEN) {
 
   $window = $(window);
   $html = $('html');
@@ -24,7 +22,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       return parseFloat($.trim(l));
     });
     return { lat: llArray[0], lng: llArray[1] };
-  }
+  };
 
   // Define your 'class'
   var GOOGLEMAP = function (options) {
@@ -66,6 +64,15 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       console.warn('Label length and marker length do not match!');
     }
 
+    // Create mapdiv element for holding the map itself.
+    this.mapdiv = document.createElement('div');
+    $(this.mapdiv).addClass('c-map__mapdiv');
+    this.container.appendChild(this.mapdiv);
+
+    // Use setTimeout to get unique ID
+    this.id = setTimeout(function (){});
+    this.container.id = this.id;
+
     // Load Google Maps API (only once)
     if (!$html.hasClass('maps-active')) {
       var script_tag = document.createElement('script');
@@ -77,12 +84,13 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     // Initialise map on callback trigger
     $window.on('gMapsLoaded', { that: this }, this.initialise);
 
+    console.info(this);
+
   };
 
   GOOGLEMAP.prototype.initialise = function(e) {
 
     var that = e.data.that;
-    // console.log(that);
 
     // Map type for Cloudmade tiles
     var cloudMadeMapType = new google.maps.ImageMapType({
@@ -124,7 +132,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       mapTypeId: thisMapTypeId
     };
 
-    that.map = new google.maps.Map(that.container, mapOptions);
+    that.map = new google.maps.Map(that.mapdiv, mapOptions);
 
     that.map.mapTypes.set('Campus map', cloudMadeMapType);
 
@@ -143,11 +151,37 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       });
     }
 
-    // Set up fullscreen button?
-    // Track Enter fullscreen
-    // ga('send', 'event', 'Map', 'Full screen', 'Enter full screen');
-    // Track Exit fullscreen
-    // ga('send', 'event', 'Map', 'Full screen', 'Exit full screen');
+    // Set up fullscreen button
+    if (that.fullscreen === true) {
+      var $fsButton = $('<a>').addClass('c-map__fsbutton').attr('href', '#'+that.id),
+          $fsButtonText = $('<span>').addClass('c-map__fsbutton-text is-hidden@small').text('Enter fullscreen').appendTo($fsButton),
+          $fsButtonIcon = $('<i>').addClass('c-map__fsbutton-icon c-icon c-icon--expand').appendTo($fsButton),
+          $container = $(that.container);
+      $container.append($fsButton);
+      var fs = new FULLSCREEN({
+        button: $fsButton,
+        target: that.container
+      });
+      // Track clicks and change text
+      $fsButton.on('click', function(e) {
+        e.preventDefault();
+        if ($container.hasClass('is-fullscreen')) {
+          $fsButtonText.text('Exit fullscreen');
+          // Track click
+          if (!UTILS.isDev()) {
+            ga('send', 'event', 'Map', 'Full screen', 'Enter full screen');
+          }
+        } else {
+          $fsButtonText.text('Enter fullscreen');
+          // Track click
+          if (!UTILS.isDev()) {
+            ga('send', 'event', 'Map', 'Full screen', 'Exit full screen');
+          }
+        }
+        $fsButtonIcon.toggleClass('c-icon--expand c-icon--compress');
+        google.maps.event.trigger(that.map, 'resize');
+      });
+    }
 
     // Track StreetView being activated with Analytics
     var theStreetView = that.map.getStreetView();
@@ -164,8 +198,6 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
         that.infowindow.close();
       });
     }
-
-    window.map.push(that.map);
 
     $.each(that.marker, function(i, m) {
 
