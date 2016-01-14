@@ -30,16 +30,24 @@ define(['jquery', 'app/color'], function ($, COLOR) {
     // Remember to return something
   };
 
-
   // Define your 'class'
   // Better to pass an options object instead of multiple arguments
   var SAMPLE = function (options) {
+
+    // Return false if required options aren't passed
+    if (!options.height) return false;
+
     // Get the options or their defaults
     this.width = options.width || Default.width;
     this.easing = options.easing || Default.easing;
     this.isCompatible = options.isCompatible || Default.isCompatible;
     // Do some setup stuff
     // Return true or false (or something else)
+
+    // Always console.info(this) at the end of the constructor class
+    // Useful for debugging and verifying the module has been launched
+    console.info(this);
+
   };
 
 

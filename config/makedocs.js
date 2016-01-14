@@ -63,11 +63,11 @@ module.exports = function (grunt) {
             output+= '  <li class="c-nav__item c-nav__item--more"><a class="c-nav__link js-toggle-button" href="#Main-Navigation">More&hellip;</a></li>';
             output+= '</ul>\n';
             grunt.file.write(navPage, output);
-            grunt.log.ok("Wrote file to " + navPage);
+            grunt.verbose.ok("Wrote file to " + navPage);
             grunt.file.write(subNavPage, suboutput);
-            grunt.log.ok("Wrote file to " + subNavPage);
+            grunt.verbose.ok("Wrote file to " + subNavPage);
             grunt.file.write(assocNavPage, assocOutput);
-            grunt.log.ok("Wrote file to " + assocNavPage);
+            grunt.verbose.ok("Wrote file to " + assocNavPage);
           }
         });
       }
