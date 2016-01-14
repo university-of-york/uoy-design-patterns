@@ -1,6 +1,6 @@
 ---
 
-title: Google Map
+title: Maps
 name: map-module
 category: modules
 subcategory: General modules
@@ -64,7 +64,6 @@ For locations outside of York, you have to use Google Maps, as our map tile cove
 
  * **container** - (DOM node/jQuery object) the container element (required). All containers with a class of `js-map` will automatically be made into maps as long as they have a `data-location` attribute.
  * **location** - (string) the location to pinpoint on the map (required). Will be used as the centre for more complex maps with multiple locations.
-
  * **label** - (string) the label to add to the pin (optional). When used with the `marker` option it should be a semi-colon-separated list that matches the order of the markers (default false).
  * **zoom** - (int) the zoom level (optional). 0 is fully zoomed out, 20 is fully zoomed in (default 13)
  * **marker** - (string) a semi-colon-separated list of locations (lat,long) to add as markers to the map (optional). If this is included, the `location` option is used as the centre of the map.

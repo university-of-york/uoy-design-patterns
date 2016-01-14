@@ -17,8 +17,8 @@ Used within the [map module](map-module.html).
 
 ```javascript
 var t = new FULLSCREEN({
-  target: $('#fs-target'),
-  button: $('#fs-button')
+  button: $('#fs-button'),
+  target: $('#fs-target')
 });
 ```
 ### Options

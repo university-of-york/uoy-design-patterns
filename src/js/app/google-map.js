@@ -154,7 +154,7 @@ define(['jquery', 'app/utils', 'app/fullscreen'], function ($, UTILS, FULLSCREEN
     // Set up fullscreen button
     if (that.fullscreen === true) {
       var $fsButton = $('<a>').addClass('c-map__fsbutton').attr('href', '#'+that.id),
-          $fsButtonText = $('<span>').addClass('c-map__fsbutton-text is-hidden@small').text('Enter fullscreen').appendTo($fsButton),
+          $fsButtonText = $('<span>').addClass('c-map__fsbutton-text is-hidden@small-').text('Enter fullscreen').appendTo($fsButton),
           $fsButtonIcon = $('<i>').addClass('c-map__fsbutton-icon c-icon c-icon--expand').appendTo($fsButton),
           $container = $(that.container);
       $container.append($fsButton);
