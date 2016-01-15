@@ -61,6 +61,8 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
     });
 
+    console.info(this);
+
     return true;
 
   };

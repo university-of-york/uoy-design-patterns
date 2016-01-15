@@ -35,6 +35,8 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
     $window.trigger('scroll');
 
+    console.info(this);
+
   };
 
   TARGETEDNAV.prototype.check = function (e) {

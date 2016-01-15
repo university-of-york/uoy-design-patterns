@@ -33,6 +33,8 @@ define(['jquery'], function ($) {
       that.setAccordionHeight.apply(that);
     });
 
+    console.info(this);
+
   };
 
   // Boolean to see if animation is still underway

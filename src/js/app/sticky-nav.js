@@ -35,6 +35,8 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
     $window.trigger('resize');
 
+    console.info(this);
+
   };
 
   STICKYNAV.prototype.defaults = {

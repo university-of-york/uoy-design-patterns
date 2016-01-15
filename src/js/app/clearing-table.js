@@ -113,6 +113,8 @@ define(['jquery', 'app/google-docs', 'app/accordion', 'app/utils'], function ($,
 
     });
 
+    console.info(this);
+
   };
 
   return CLEARINGTABLE;

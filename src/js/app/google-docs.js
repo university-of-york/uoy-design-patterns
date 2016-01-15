@@ -34,7 +34,9 @@ define(['jquery'], function ($) {
       that.processData(data);
     }).fail(function() {
       that.runBackup();
-   });
+    });
+
+    console.info(this);
 
   };
 

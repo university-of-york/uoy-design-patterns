@@ -39,6 +39,8 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     // Add above table
     this.table.before(form);
 
+    console.info(this);
+
   };
 
   FILTERABLE.prototype.Defaults = {

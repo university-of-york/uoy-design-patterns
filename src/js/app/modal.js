@@ -28,6 +28,8 @@ define(['jquery'], function ($) {
     this.checkModal();
     this.createModal();
 
+    console.info(this);
+
   };
 
   MODAL.prototype.defaults = {

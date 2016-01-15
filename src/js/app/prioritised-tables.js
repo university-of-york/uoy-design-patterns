@@ -57,6 +57,8 @@ define(['jquery'], function ($) {
 
     getColClasses(addRowClasses);
 
+    console.info(this);
+
     // Return true or false (or something else)
     return true;
 

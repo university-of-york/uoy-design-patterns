@@ -25,6 +25,7 @@ define(['jquery'], function ($) {
     });
 
     return true;
+
   };
 
   return TOGGLE;

@@ -32,6 +32,8 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     // replace the original link element with the embed code
     this.setIframe();
 
+    console.info(this);
+
   };
 
   SOUNDCLOUD.prototype.setIframe = function () {

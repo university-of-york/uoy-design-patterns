@@ -59,12 +59,12 @@ define(['jquery', 'app/modal'], function ($, MODAL) {
       next: nextItem
     });
 
-    // console.log(m);
-
     $a.on('click', function (e) {
       e.preventDefault();
       m.open();
     });
+
+    console.info(this);
 
   };
 

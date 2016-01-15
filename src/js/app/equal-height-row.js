@@ -21,7 +21,11 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     }, 250);
 
     $(window).on('resize', resizeFn);
+
+    console.info(this);
+
     return true;
+
   };
 
   EQUALHEIGHT.prototype.getMaxHeight = function(onComplete) {

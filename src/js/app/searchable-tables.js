@@ -42,6 +42,8 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     // Fire event (for e.g. resizing accordion)
     $(window).trigger('content.updated');
 
+    console.info(this);
+
   };
 
   SEARCHABLE.prototype.Defaults = {

@@ -37,6 +37,8 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
     $window.on('resize', resizeFn);
 
+    console.info(this);
+
   };
 
   YOUTUBE.prototype.getDimensions = function () {
