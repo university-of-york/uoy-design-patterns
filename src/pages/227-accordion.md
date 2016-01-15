@@ -14,7 +14,8 @@ id: accordion-page
 <script>
 component("accordion-item", {
   "title": "This accordion title",
-  "content": "<p>This accordion content.</p>"
+  "content": "<p>This accordion content.</p>",
+    "id": "accordion-1a"
 } );
 </script>
 
@@ -32,7 +33,7 @@ component("accordion", { "atoms": [
   } },
   { "accordion-item": {
     "title": "Third accordion title",
-    "content": "<p>Third accordion content.</p><p>Third accordion content.</p>"
+    "content": "<p>Third accordion content.</p><p>More third accordion content.</p>"
   } }
 ] } );
 </script>
@@ -43,18 +44,23 @@ By default, the accordion will allow you to open as many as you like. Passing `"
 component("accordion", { "collapse": true, "atoms": [
   { "accordion-item": {
     "title": "This accordion title",
-    "content": "<p>First accordion content.</p>"
+    "content": "<p>First accordion content.</p>",
+    "id": "accordion-3a"
   } },
   { "accordion-item": {
     "title": "This other accordion title",
-    "content": "<p>Second accordion content.</p><p>Second accordion content.</p><p>Second accordion content.</p>"
+    "content": "<p>Second accordion content.</p><p>Second accordion content.</p><p>Second accordion content.</p>",
+    "id": "accordion-3b"
   } },
   { "accordion-item": {
     "title": "Third accordion title",
-    "content": "<p>Third accordion content.</p><p>Third accordion content.</p>"
+    "content": "<p>Third accordion content.</p><p>Third accordion content.</p>",
+    "id": "accordion-3c"
   } }
 ] } );
 </script>
+
+If an accordion item has an ID, then a cookie will be set to remember the state of the accordion, so revisiting the page in the same session will keep the same accordions open.
 
 ### Options
 

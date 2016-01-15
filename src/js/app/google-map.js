@@ -70,7 +70,7 @@ define(['jquery', 'app/utils', 'app/fullscreen'], function ($, UTILS, FULLSCREEN
     this.container.appendChild(this.mapdiv);
 
     // Use setTimeout to get unique ID
-    this.id = setTimeout(function (){});
+    this.id = 'map-'+(setTimeout(function (){}));
     this.container.id = this.id;
 
     // Load Google Maps API (only once)

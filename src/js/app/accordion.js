@@ -10,7 +10,7 @@ category: modules
 
 */
 
-define(['jquery'], function ($) {
+define(['jquery', 'jscookie'], function ($, COOKIES) {
 
   // Define your 'class'
   var ACCORDION = function (options) {
@@ -22,8 +22,11 @@ define(['jquery'], function ($) {
     this.itemTitle = this.item.children('.c-accordion__title');
     this.itemContent = this.item.children('.c-accordion__content');
 
-    // Hide content
-    this.item.addClass('is-closed');
+    // Hide content (unless cookie says no)
+    var thisId = this.item.attr('id') || false;
+    if (thisId === false || COOKIES.get(thisId) !== 'open') {
+      this.item.addClass('is-closed');
+    }
 
     // Add click event on title
     this.itemTitle.on('click', { that: this }, this.toggleState);
@@ -68,13 +71,17 @@ define(['jquery'], function ($) {
 
     that.isToggling = true;
 
-    that.toggleContent(this.item);
+    var thisContentOpen = that.toggleContent(that.item);
+
+    // Set/remove cookie for this accordion
+    that.setCookie(that.item, thisContentOpen);
 
     // Close others if needed
     if (that.item.parent().hasClass('c-accordion--collapse')) {
-      var $otherItems = this.item.siblings('.c-accordion__item');
+      var $otherItems = that.item.siblings('.c-accordion__item');
       $otherItems.each(function (i, otherItem) {
-        that.toggleContent(otherItem, true);
+        var otherContentOpen = that.toggleContent(otherItem, true);
+        that.setCookie(otherItem, otherContentOpen);
       });
     }
 
@@ -85,22 +92,38 @@ define(['jquery'], function ($) {
   // Open the content in item
   ACCORDION.prototype.toggleContent = function (item, close) {
 
-    var contentHeight = this.itemContent.outerHeight();
+    var $item = $(item);
+    var itemContent = $item.children('.c-accordion__content');
+
+    var contentHeight = itemContent.outerHeight();
     var newContentHeight = 0;
 
     if (contentHeight === 0 && close !== true) {
-      newContentHeight = this.itemContent.attr('data-height');
+      newContentHeight = itemContent.attr('data-height');
     }
 
-    this.itemContent.css('height', newContentHeight);
+    itemContent.css('height', newContentHeight);
     if (close === true) {
-      this.item.addClass('is-closed');
+      $item.addClass('is-closed');
     } else {
-      this.item.toggleClass('is-closed');
+      $item.toggleClass('is-closed');
     }
 
     // Returns true if open, false if closed
-    return !this.item.hasClass('is-closed');
+    return !$item.hasClass('is-closed');
+
+  };
+
+  // Open the content in item
+  ACCORDION.prototype.setCookie = function (item, isOpen) {
+
+    var itemId = $(item).attr('id') || false;
+    if (itemId === false) return false;
+    if (isOpen === true) {
+      COOKIES.set(itemId, 'open');
+    } else {
+      COOKIES.remove(itemId);
+    }
 
   };
 
