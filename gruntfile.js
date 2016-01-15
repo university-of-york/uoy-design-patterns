@@ -19,7 +19,7 @@ module.exports = function (grunt) {
   // Build process - minified CSS and JS
   grunt.registerTask('build', ['bump:patch', 'clean:build', 'makedocs:build', 'copy:build', 'compass:build', 'postcss:build', 'tinymce', 'clean:precssmin', 'modernizr', 'cssmin', 'newer:imagemin', 'requirejs', 'jshint:dev', 'header:build', 'clean:postbuild']);
   // Publish to york.ac.uk/pattern-library
-  grunt.registerTask('publish', ['build', 'bump:minor', 'sftp:build']);
+  grunt.registerTask('publish', ['build', 'sftp:build']);
   //grunt.registerTask('live', ['build', 'bump:major', 'header:live', 'clean:live']);
 
 }
