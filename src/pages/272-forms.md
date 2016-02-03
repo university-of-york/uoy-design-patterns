@@ -48,16 +48,20 @@ component("form-element", { "label": "What is your favourite colour?", "select":
 	{ "option": { "label": "Green", "value": "green" } },
 	{ "option": { "label": "Yellow", "value": "yellow" } }
 ]})
-+component("form-element", { "label": "What instruments do you play?", "name": "j", "atoms":[
-	{ "checkbox": { "label": "Ukulele", "value": "ukulele" } },
-	{ "checkbox": { "label": "Mandolin", "value": "mandolin" } },
-	{ "checkbox": { "label": "Banjo", "value": "banjo", "checked": true } },
-	{ "checkbox": { "label": "Guitar", "value": "guitar" } }
++component("form-element", { "label": "What instruments do you play?", "name": "j", "atoms": [
+  { "form-element-group": { "name": "j", "atoms":[
+  	{ "checkbox": { "label": "Ukulele", "value": "ukulele" } },
+  	{ "checkbox": { "label": "Mandolin", "value": "mandolin" } },
+  	{ "checkbox": { "label": "Banjo", "value": "banjo", "checked": true } },
+  	{ "checkbox": { "label": "Guitar", "value": "guitar" } }
+  ]}}
 ]})
-+component("form-element", { "label": "Do you know the way to San Jose?", "name": "k", "atoms":[
-	{ "radio": { "label": "Yes", "value": "yes" } },
-	{ "radio": { "label": "No", "value": "no" } },
-	{ "radio": { "label": "Not sure", "value": "unsure" } }
++component("form-element", { "label": "Do you know the way to San Jose?", "name": "k", "atoms": [
+  { "form-element-group": { "name": "k", "atoms":[
+  	{ "radio": { "label": "Yes", "value": "yes" } },
+  	{ "radio": { "label": "No", "value": "no" } },
+  	{ "radio": { "label": "Not sure", "value": "unsure" } }
+  ]}}
 ]});
 </script>
 
@@ -116,17 +120,21 @@ component("form", { "type":"stacked", "method":"get", "legend": "Fill in this fo
       ] } }
     } },
     { "grid-box": { "size": "third", "atoms":
-      { "form-element": { "label": "Radio", "name": "sh", "atoms":[
-        { "radio": { "label": "Yes", "value": "yes" } },
-        { "radio": { "label": "No", "value": "no" } },
-        { "radio": { "label": "Not sure", "value": "unsure" } }
+      { "form-element": { "label": "Radio", "name": "sh", "atoms": [
+        { "form-element-group": { "name": "sh", "atoms":[
+          { "radio": { "label": "Yes", "value": "yes" } },
+          { "radio": { "label": "No", "value": "no" } },
+          { "radio": { "label": "Not sure", "value": "unsure" } }
+        ] } }
       ] } }
     } },
     { "grid-box": { "size": "third", "atoms":
       { "form-element": { "label": "Checkbox", "name": "si", "atoms":[
-        { "checkbox": { "label": "Ukulele", "value": "ukulele" } },
-        { "checkbox": { "label": "Mandolin", "value": "mandolin" } },
-        { "checkbox": { "label": "Banjo", "value": "banjo", "checked": true } }
+        { "form-element-group": { "name": "si", "atoms":[
+          { "checkbox": { "label": "Ukulele", "value": "ukulele" } },
+          { "checkbox": { "label": "Mandolin", "value": "mandolin" } },
+          { "checkbox": { "label": "Banjo", "value": "banjo", "checked": true } }
+        ] } }
       ] } }
     } }
   ] } },
@@ -179,17 +187,21 @@ component("form", { "type":"inline", "method":"get", "legend": "Fill in this for
   } } } },
   { "grid-row": { "atoms": { "grid-box": { "size": "full", "atoms":
     { "form-element": { "label": "Radio", "name": "ih", "atoms":[
+      { "form-element-group": { "name": "j", "atoms":[
         { "radio": { "label": "Yes", "value": "yes" } },
         { "radio": { "label": "No", "value": "no" } },
         { "radio": { "label": "Not sure", "value": "unsure" } }
       ] } }
+    ] } }
   } } } },
   { "grid-row": { "atoms": { "grid-box": { "size": "full", "atoms":
     { "form-element": { "label": "Checkbox", "name": "ii", "atoms":[
+      { "form-element-group": { "name": "j", "atoms":[
         { "checkbox": { "label": "Ukulele", "value": "ukulele" } },
         { "checkbox": { "label": "Mandolin", "value": "mandolin" } },
         { "checkbox": { "label": "Banjo", "value": "banjo", "checked": true } }
       ] } }
+    ] } }
   } } } },
   { "grid-row": { "atoms": { "grid-box": { "size": "full", "atoms":
     { "form-element": { "label": "Textarea", "name": "ij", "atoms": { "textarea": { } } } }

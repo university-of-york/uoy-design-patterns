@@ -17,11 +17,6 @@
 }
 .c-form__label {
   cursor:pointer;
-  ~ .c-form__label {
-    display:inline-block; // Only first .c-form__label is block-level
-    margin-left:2px;
-    margin-right:4px;
-  }
 }
 .c-form__input {
   width:100%;
@@ -75,6 +70,19 @@
     pointer-events:none;
   }
 }
+.c-form__element-group {
+  min-height:2em;
+  min-height:calc(2em + 2px);
+  line-height:2em;
+  height:2em;
+  // Higher specificity - same in all types of form
+  .c-form__label.c-form__label {
+    display:inline-block; // Only first .c-form__label is block-level
+    // margin-left:4px; // Not needed - should be joined with &nbsp;
+    margin-right:8px;
+  }
+
+}
 // Stacked form
 .c-form--stacked {
   .c-form__label {
@@ -93,13 +101,15 @@
     vertical-align:top;
     min-height:2em;
     padding:0.25em 0; // regular line height (1.5) plus padding = 2
-    & ~ .c-form__label {
-      width:auto;
-      padding:0;
-    }
   }
   .c-form__input {
     display:table-cell;
+  }
+  .c-form__element-group {
+    .c-form__label {
+      width:auto;
+      padding:0;
+    }
   }
 }
 // Joined form/button
