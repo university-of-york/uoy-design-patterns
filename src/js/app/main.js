@@ -1,11 +1,11 @@
 define(
-  ['jquery', 'es5shim', 'picturefill',
+  ['jquery', 'es5shim', 'picturefill', 'select2',
    'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav',
    'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/prioritised-tables',
    'app/toggle', 'app/wrapper-height', 'app/youtube-embed', 'app/soundcloud-embed',
    'app/searchable-tables', 'app/filterable-tables', 'app/equal-height-row', 'app/google-map'],
   function (
-    $, ES5SHIM, PICTUREFILL,
+    $, ES5SHIM, PICTUREFILL, SELECT2,
     UTILS, MODALLINK, ACCORDION, STICKYNAV,
     TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
     TOGGLE, WRAPPERHEIGHT, YOUTUBE, SOUNDCLOUD,
@@ -17,6 +17,10 @@ define(
       console = {};
       console.log = function (a) { /*alert(a);*/ };
     }
+
+    // Select elements
+    $.fn.select2.defaults.set("theme", "uoy")
+    $('select').select2();
 
     // Disable buttons
     $('.btn-disabled').click(function (e) {

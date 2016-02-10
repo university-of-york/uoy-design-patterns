@@ -60,6 +60,7 @@
  * - Organisms
  * Events..................Event listings
  * Forms...................Form layout
+ * Select2.................Select2
  * Gallery.................Gallery layout
  * News....................News listings, articles and excerpts
  * Maps....................Map module styles and controls
@@ -137,6 +138,7 @@
 
 @import "component/events";
 @import "component/forms";
+@import "component/select2/core";
 @import "component/gallery";
 @import "component/news";
 @import "component/map";
