@@ -187,7 +187,8 @@ $c-key-fact__icon-hover-color:lighten($teal,25);
 $c-key-fact__title-color:$light;
 
 // Alerts
-$c-alert-border-left-color:$charcoal;
+$c-alert-border:$charcoal;
+$c-alert-background:darken($light, 5);
 $c-alert--success-border:$green;
 $c-alert--success-background:lighten($green, 45);
 $c-alert--info-border:$blue;
