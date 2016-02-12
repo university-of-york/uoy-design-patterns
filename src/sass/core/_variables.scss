@@ -186,6 +186,17 @@ $c-key-fact__icon-color:lighten($teal,15);
 $c-key-fact__icon-hover-color:lighten($teal,25);
 $c-key-fact__title-color:$light;
 
+// Alerts
+$c-alert-border-left-color:$charcoal;
+$c-alert--success-border:$green;
+$c-alert--success-background:lighten($green, 45);
+$c-alert--info-border:$blue;
+$c-alert--info-background:lighten($blue, 45);
+$c-alert--warning-border:$gold;
+$c-alert--warning-background:lighten($gold, 45);
+$c-alert--danger-border:$red;
+$c-alert--danger-background:lighten($red, 45);
+
 // Footer
 $c-footer-background-color:$charcoal;
 $c-footer-color:darken($light,10);

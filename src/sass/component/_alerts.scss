@@ -3,8 +3,8 @@
 //
 .c-alert {
   @include component;
-  border-left:0.8em solid $charcoal;
-  background-color:darken($light, 5);
+  border-left:0.8em solid $c-alert-border;
+  background-color:$c-alert-background;
   border-radius:4px;
   padding:0.8em;
   position:relative;
@@ -13,20 +13,20 @@
   padding-right:40px;
 }
 .c-alert--success {
-  border-color:$green;
-  background-color:lighten($green, 45);
+  border-color:$c-alert--success-border;
+  background-color:$c-alert--success-background;
 }
 .c-alert--info {
-  border-color:$blue;
-  background-color:lighten($blue, 45);
+  border-color:$c-alert--info-border;
+  background-color:$c-alert--info-background;
 }
 .c-alert--warning {
-  border-color:$gold;
-  background-color:lighten($gold, 30);
+  border-color:$c-alert--warning-border;
+  background-color:$c-alert--warning-background;
 }
 .c-alert--danger {
-  border-color:$red;
-  background-color:lighten($red, 45);
+  border-color:$c-alert--danger-border;
+  background-color:$c-alert--danger-background;
 }
 .c-alert__close {
   @include font-size(20px, 1);
