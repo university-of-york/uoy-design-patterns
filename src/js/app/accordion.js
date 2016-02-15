@@ -23,10 +23,8 @@ define(['jquery', 'jscookie'], function ($, COOKIES) {
     this.itemContent = this.item.children('.c-accordion__content');
 
     // Hide content (unless cookie says no)
-    var thisId = this.item.attr('id') || false;
-    if (thisId === false || COOKIES.get(thisId) !== 'open') {
-      this.item.addClass('is-closed');
-    }
+    this.item.addClass('is-closed');
+    this.itemContent.addClass('is-hidden');
 
     // Add click event on title
     this.itemTitle.on('click', { that: this }, this.toggleState);
@@ -47,14 +45,19 @@ define(['jquery', 'jscookie'], function ($, COOKIES) {
   ACCORDION.prototype.setAccordionHeight = function() {
 
     // Get content height
-    var contentHeight = 0;
-    this.itemContent.children().each(function(i, v) {
-      contentHeight+= $(v).outerHeight(true);
-    });
+    var contentHeight = this.itemContent.height();
+
     this.itemContent.attr('data-height', contentHeight);
-    if (!this.item.hasClass('is-closed')) {
+
+    var thisId = this.item.attr('id') || false;
+    if (thisId !== false && COOKIES.get(thisId) === 'open') {
+      this.item.removeClass('is-closed');
       this.itemContent.css('height', contentHeight);
+    } else {
+      this.itemContent.css('height', 0);
     }
+
+    this.itemContent.removeClass('is-hidden');
 
   };
 
