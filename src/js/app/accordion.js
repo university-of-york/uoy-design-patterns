@@ -10,7 +10,9 @@ category: modules
 
 */
 
-define(['jquery', 'jscookie'], function ($, COOKIES) {
+define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
+
+  var $window = $(window);
 
   // Define your 'class'
   var ACCORDION = function (options) {
@@ -22,17 +24,19 @@ define(['jquery', 'jscookie'], function ($, COOKIES) {
     this.itemTitle = this.item.children('.c-accordion__title');
     this.itemContent = this.item.children('.c-accordion__content');
 
-    // Hide content (unless cookie says no)
+    // Hide content
     this.item.addClass('is-closed');
-    this.itemContent.addClass('is-hidden');
 
     // Add click event on title
     this.itemTitle.on('click', { that: this }, this.toggleState);
 
     var that = this;
-    $(window).on('content.updated', function() {
+    $window.on('content.updated', function() {
       that.setAccordionHeight.apply(that);
     });
+    $window.on('resize', UTILS.debounce(function() {
+      that.setAccordionHeight.apply(that);
+    }, 250));
 
     console.info(this);
 
@@ -44,6 +48,9 @@ define(['jquery', 'jscookie'], function ($, COOKIES) {
   // Set the height of the hidden accordion content
   ACCORDION.prototype.setAccordionHeight = function() {
 
+    // Reset the itemContent
+    this.itemContent.addClass('is-hidden').height('auto');
+
     // Get content height
     var contentHeight = this.itemContent.height();
 
@@ -52,10 +59,12 @@ define(['jquery', 'jscookie'], function ($, COOKIES) {
     var thisId = this.item.attr('id') || false;
     if (thisId !== false && COOKIES.get(thisId) === 'open') {
       this.item.removeClass('is-closed');
-      this.itemContent.css('height', contentHeight);
-    } else {
-      this.itemContent.css('height', 0);
     }
+    if (this.item.hasClass('is-closed')) {
+      contentHeight = 0;
+    }
+
+    this.itemContent.css('height', contentHeight);
 
     this.itemContent.removeClass('is-hidden');
 
