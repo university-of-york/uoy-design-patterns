@@ -7,11 +7,11 @@
 }
 .c-accordion__item {
   position:relative;
-  border: 1px solid lighten($s1,5);
+  border: 1px solid $c-accordion__item-border;
   border-left-width:10px;
   margin-bottom:$base-spacing/2;
   &:nth-of-type(even) .c-accordion__title {
-  //  background:lighten($charcoal, 20);
+  //  background:$c-accordion__item-even-background-color;
   }
 }
 .c-accordion__title {
@@ -23,7 +23,7 @@
   position:relative;
   text-decoration: none;
   &:hover {
-    color:$blue;
+    color:$c-accordion__title-hover-color;
   }
 }
 .c-accordion__icon {

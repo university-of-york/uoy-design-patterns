@@ -3,9 +3,9 @@
 //
 .c-panel {
   @include component;
-  border-top:0.8em solid $c-panel-border-color;
+  border-top:0.8em solid $c-panel-border;
   background-color: $c-panel-background-color;
-  color:$charcoal;
+  color:$c-panel-color;
   border-radius:3px;
   display:block;
 }
@@ -26,8 +26,8 @@
 .c-panel__footer {
   @include demarginalise;
   padding:0.4em 20px;
-  background:$s2;
-  color:$charcoal;
+  background:$c-panel__elements-background-color;
+  color:$c-panel__elements-color;
 }
 .c-panel__image {
   img {
@@ -44,34 +44,34 @@
 .c-panel--highlight {
   background-color:$c-panel--highlight-background-color;
   border-color:$c-panel--highlight-border-color;
-  color:$light;
+  color:$c-panel--highlight-color;
   & a {
-    color:$light;
+    color:$c-panel--highlight-a-color;
   }
 }
 
 .c-panel--link {
-  color:$charcoal;
+  color:$c-panel--link-color;
   text-decoration: none;
   .c-panel__more {
-    color: $link-color;
+    color: $c-panel--link__more-color;
     font-weight: bold;
     text-decoration:underline;
   }
   &:hover {
-    color:$charcoal;
+    color:$c-panel--link-color;
     .c-panel__more {
-      color:$link-hover-color;
+      color:$c-panel--link__more-hover-color;
     }
   }
   &.c-panel--highlight {
-    color:$light;
+    color:$c-panel--link--highlight-color;
   }
   .o-grid__row--alt1 &,
   .o-grid__row--alt2 & {
-    color:$charcoal;
+    color:$c-panel--link-color;
     &:hover {
-      color:$charcoal;
+      color:$c-panel--link-color;
     }
   }
 }

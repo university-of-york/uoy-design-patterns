@@ -198,12 +198,12 @@ The selected level 2 title will appear in larger text (this will be something li
 ### Page title
 
 <div class="c-page-title">
-  <h1 class="c-page-title__header"><a class="c-page-title__link" href="#">Navigation</a></h1>
+  <h1 class="c-page-title__header"><a class="c-page-title__link" href="#">Department of Chemistry</a></h1>
 </div>
 
 ```markup
 <div class="c-page-title">
-  <h1 class="c-page-title__header"><a class="c-page-title__link" href="#">Navigation</a></h1>
+  <h1 class="c-page-title__header"><a class="c-page-title__link" href="#">Department of Chemistry</a></h1>
 </div>
 ```
 

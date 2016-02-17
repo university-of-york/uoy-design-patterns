@@ -48,65 +48,65 @@ $box-margin: $base-spacing;
 }
 .o-grid__row--alt1,
 .o-grid__row--alt2 {
-  color:$light;
+  color:$o-grid__row--alt12-color;
   hr {
-    background-color:$blue;
-    color:$blue;
+    background-color:$o-grid__row--alt12-hr-color;
+    color:$o-grid__row--alt12-hr-color;
   }
   a {
-    color:lighten($blue,5);
+    color:$o-grid__row--alt12-a-color;
     &:hover {
-      color:lighten($blue,15);
+      color:$o-grid__row--alt12-a-hover-color;
     }
   }
 }
 .o-grid__row--bordered {
   @include extend-rows;
-  border-bottom:10px solid $charcoal;
+  border-bottom:10px solid $o-grid__row--bordered-border;
   &:before,
   &:after {
-    border-bottom:10px solid $charcoal;
+    border-bottom:10px solid $o-grid__row--bordered-border;
   }
 }
 .o-grid__row--alt1 {
-  background-color:$teal;
+  background-color:$o-grid__row--alt1-background-color;
   &:before,
   &:after {
-    background-color:$teal;
+    background-color:$o-grid__row--alt1-background-color;
   }
   &.o-grid__row--bordered {
-    border-bottom-color:$blue;
+    border-bottom-color:$o-grid__row--alt1-border-color;
     &:before,
     &:after {
-      border-bottom-color:$blue;
+      border-bottom-color:$o-grid__row--alt1-border-color;
     }
   }
 }
 .o-grid__row--alt2 {
-  background-color:darken($teal,5);
+  background-color:$o-grid__row--alt2-background-color;
   &:before,
   &:after {
-    background-color:darken($teal,5);
+    background-color:$o-grid__row--alt2-background-color;
   }
   &.o-grid__row--bordered {
-    border-bottom-color:$teal;
+    border-bottom-color:$o-grid__row--alt2-border-color;
     &:before,
     &:after {
-      border-bottom-color:$teal;
+      border-bottom-color:$o-grid__row--alt2-border-color;
     }
   }
 }
 .o-grid__row--alt3 {
-  background-color:$s2;
+  background-color:$o-grid__row--alt3-background-color;
   &:before,
   &:after {
-    background-color:$s2;
+    background-color:$o-grid__row--alt3-background-color;
   }
   &.o-grid__row--bordered {
-    border-bottom-color:$s1;
+    border-bottom-color:$o-grid__row--alt3-border-color;
     &:before,
     &:after {
-      border-bottom-color:$s1;
+      border-bottom-color:$o-grid__row--alt3-border-color;
     }
   }
 }

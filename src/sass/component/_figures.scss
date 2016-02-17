@@ -35,12 +35,12 @@
 
 // Caption positions
 .c-figure__caption--below {
+  @include font-size(14px);
   display: block;
   position: static;
   background: transparent;
-  color:lighten($charcoal,20);
+  color:$c-figure__caption--below-color;
   padding: $base-spacing/2 0;
-  @include font-size(14px);
 }
 
 .c-figure__caption--bottom-left {
@@ -99,25 +99,24 @@
   float:right;
 }
 // Caption colours
-.c-figure__caption--blue {
-  background-color:$blue;
-  background-color:transparentize($blue, 0.25);
-}
-.c-figure__caption--pink {
-  background-color:$pink;
-  background-color:transparentize($pink, 0.25);
-}
 .c-figure__caption--teal {
-  background-color:$teal;
-  background-color:transparentize($teal, 0.25);
-}
-.c-figure__caption--gold {
-  background-color:$gold;
-  background-color:transparentize($gold, 0.25);
+  background-color:$c-figure__caption--teal-background-color;
+  background-color:$c-figure__caption--teal-background-transparent;
 }
 .c-figure__caption--charcoal {
-  background-color:$charcoal;
-  background-color:transparentize($charcoal, 0.25);
+  background-color:$c-figure__caption--charcoal-background-color;
+  background-color:$c-figure__caption--charcoal-background-transparent;
+}
+.c-figure__caption--accent {
+  background-color:$c-figure__caption--accent-background-color;
+  background-color:$c-figure__caption--accent-background-transparent;
+}
+.c-figure__caption--complementary {
+  background-color:$c-figure__caption--complementary-background-color;
+  background-color:$c-figure__caption--complementary-background-transparent;
+  .c-btn {
+    background-color:$c-figure__caption--complementary__button-background-color;
+  }
 }
 
 // DEMARGINED FIGURE (SO NAV CAN BE CLOSER)
@@ -172,22 +171,19 @@
     @include mq('tiny') {
       position:static;
       display:block;
-      &.c-figure__caption--blue {
-        background-color:$blue;
-      }
-      &.c-figure__caption--pink {
-        background-color:$pink;
-      }
+      // Solid colours
       &.c-figure__caption--teal {
-        background-color:$teal;
-      }
-      &.c-figure__caption--gold {
-        background-color:$gold;
+        background-color:$c-figure__caption--teal-background-color;
       }
       &.c-figure__caption--charcoal {
-        background-color:$charcoal;
+        background-color:$c-figure__caption--charcoal-background-color;
       }
-
+      &.c-figure__caption--accent {
+        background-color:$c-figure__caption--accent-background-color;
+      }
+      &.c-figure__caption--complementary {
+        background-color:$c-figure__caption--complementary-background-color;
+      }
     }
   }
 }

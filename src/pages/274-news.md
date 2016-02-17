@@ -103,7 +103,7 @@ component("news-article", {
 });
 </script>
 
-You can see this in action on the [demo research article](/research/themes/car-electronics/index.html)
+You can see this in action on the [demo research article](/templates/research/themes/car-electronics/index.html)
 
 ### Options
 

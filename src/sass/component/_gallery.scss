@@ -7,16 +7,16 @@ $c-gallery-item-border-width:1px;
 
 .c-gallery-item {
   @include component;
-  border:$c-gallery-item-border-width solid $charcoal;
+  border:$c-gallery-item-border-width solid $c-gallery-item-border;
   border-radius:3px;
   text-decoration:none;
   display:inline-block;
   vertical-align:top;
-  color:$charcoal;
+  color:$c-gallery-item-color;
   width:100%;
   &:hover {
     text-decoration:none;
-    color:$charcoal;
+    color:$c-gallery-item-color;
   }
   &:last-of-type {
     margin-right:0;

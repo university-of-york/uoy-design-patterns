@@ -27,7 +27,7 @@
     }
     &.is-active {
       .c-tabs__link {
-        border-bottom:1px solid #fff;
+        border-bottom:1px solid $c-tabs--horizontal-is-active__link-border;
       }
     }
   }
@@ -47,8 +47,8 @@
     }
     &.is-active {
       .c-tabs__link {
-        background-color: $blue;
-        color:$light;
+        background-color: $c-tabs--vertical-is-active__link-background-color;
+        color:$c-tabs--vertical-is-active__link-color;
       }
     }
   }
@@ -72,17 +72,17 @@
 .c-tabs__tab {
   &.is-active {
     .c-tabs__link {
-      background:#fff;
-      color:$charcoal;
+      background:$c-tabs__tab-is-active__link-background-color;
+      color:$c-tabs__tab-is-active__link-color;
       cursor:default;
     }
   }
 }
 .c-tabs__link {
   @include transition('background-color');
-  border:1px solid $s1;
-  background:darken($light, 5);
-  color:$teal;
+  border:1px solid $c-tabs__link-border;
+  background:$c-tabs__link-background-color;
+  color:$c-tabs__link-color;
   display:block;
   font-weight: bold;
   padding: 0.75em 0;
@@ -90,16 +90,16 @@
   text-decoration: none;
   vertical-align: top;
   &:hover{
-    background-color:darken($blue,20);
-    color:$light;
+    background:$c-tabs__link-hover-background-color;
+    color:$c-tabs__link-hover-color;
   }
   @include mq('small', '-') {
     font-size:14px;
   }
 }
 .c-tabs__container {
-  background:#fff;
-  border:1px solid $s1;
+  background:$c-tabs__container-background-color;
+  border:1px solid $c-tabs__container-border;
   padding:$base-spacing;
   clear:both;
   position:relative;

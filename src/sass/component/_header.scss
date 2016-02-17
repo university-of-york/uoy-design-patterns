@@ -12,8 +12,8 @@
 }
 .c-main-header {
   @include clearfix;
-  color:$charcoal;
-  background:#fff;
+  color:$c-main-header-color;
+  background:$c-main-header-background-color;
   position:relative;
 }
 .c-main-header__title {

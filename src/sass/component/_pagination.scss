@@ -16,58 +16,62 @@
   float:left;
 }
 .c-pagination__page {
+  padding:0;
+  border-radius:3px;
+  font-weight: bold;
   display:block;
   width:2em;
   height:2em;
   line-height:2em;
-  border:1px solid $charcoal;
+  border:1px solid $c-pagination__page-border;
   text-align:center;
-  background-color:#fff;
-  color:$charcoal;
+  background-color:$c-pagination__page-background;
   margin-right:0.25em;
   margin-bottom:4px;
   transition:all 0.2s ease-out;
   text-decoration:none;
   &:hover {
-    background-color:#aaa;
-    color:#fff;
+    border-color:$c-pagination__page-hover-border;
+    background-color:$c-pagination__page-hover-background-color;
+    color:$c-pagination__page-hover-color;
   }
   // Don't style ellipsis links
   &:not([href]) {
     &:hover {
-      background-color:#fff;
-      color:$charcoal;
+      border-color:$c-pagination__ellipsis-page-hover-border;
+      background-color:$c-pagination__ellipsis-page-hover-background-color;
+      color:$c-pagination__ellipsis-page-hover-color;
       cursor:default;
     }
   }
   &.c-pagination__page--first {
-    background-color:#ccc;
+    background-color:$c-pagination__page--first-background-color;
     &:hover {
-      background-color:#666;
+      background-color:$c-pagination__page--first-hover-background-color;
     }
   }
   &.c-pagination__page--last {
-    background-color:#ccc;
+    background-color:$c-pagination__page--last-background-color;
     &:hover {
-      background-color:#666;
+      background-color:$c-pagination__page--last-hover-background-color;
     }
   }
   &.c-pagination__page--previous {
-    background-color:#ccc;
+    background-color:$c-pagination__page--previous-background-color;
     &:hover {
-      background-color:#666;
+      background-color:$c-pagination__page--previous-hover-background-color;
     }
   }
   &.c-pagination__page--next {
-    background-color:#ccc;
+    background-color:$c-pagination__page--next-background-color;
     &:hover {
-      background-color:#666;
+      background-color:$c-pagination__page--next-hover-background-color;
     }
   }
   &.c-pagination__page--current {
-    background-color:#aaa;
+    background-color:$c-pagination__page--current-background-color;
     &:hover {
-      background-color:$charcoal;
+      background-color:$c-pagination__page--current-hover-background-color;
     }
   }
 }

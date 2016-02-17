@@ -6,7 +6,7 @@
   @include component-margin;
 }
 .c-form--bordered {
-  border:2px solid $blue;
+  border:2px solid $c-form--bordered-border;
   padding:$base-spacing;
 }
 .c-form__legend {
@@ -22,11 +22,11 @@
   width:100%;
   line-height:1.5;
   height:2em;
-  border:1px solid lighten($charcoal,50);
+  border:1px solid $c-form__input-border;
   padding:0.25em 8px;
   border-radius:3px;
-  background-color:#fff;
-  color:$charcoal;
+  background-color:$c-form__input-background-color;
+  color:$c-form__input-color;
   -webkit-appearance:none;
 }
 .c-form__input--textarea {
@@ -65,8 +65,8 @@
     height:2em;
     width:2em;
     text-align:center;
-    color:$light;
-    background-color:$charcoal;
+    color:$c-form__element--select-color;
+    background-color:$c-form__element--select-background-color;
     pointer-events:none;
   }
 }

@@ -91,9 +91,9 @@
 //
 @mixin image-caption() {
   @include demarginalise;
-  background:$charcoal;
-  background:transparentize($charcoal, 0.15);
-  color:$light;
+  background:$image-caption-background-color;
+  background:$image-caption-background-color-transparent;
+  color:$image-caption-color;
   padding:$base-spacing;
   display:inline;
   position:absolute;
@@ -235,13 +235,6 @@
   transition-property: #{$property};
   transition-duration: 0.4s;
   transition-timing-function: ease-out;
-}
-
-//
-// Get color from color map
-//
-@function color($color, $tone: 'base') {
-    @return map-get(map-get($colors, $color), $tone);
 }
 
 //

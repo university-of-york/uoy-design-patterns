@@ -4,8 +4,8 @@
 
 .c-clearing-table {
   @include component-margin;
-  border-top:0.8em solid lighten($teal,10);
-  background-color:$s2;
+  border-top:0.8em solid $c-clearing-table-border;
+  background-color:$c-clearing-table-background-color;
   border-radius:4px;
   position:relative;
   padding:16px;
@@ -29,8 +29,8 @@
   clear:left;
   width:160px;
   max-width:160px;
-  background:$teal;
-  color:$light;
+  background:$c-clearing-table__requirements-background-color;
+  color:$c-clearing-table__requirements-color;
   padding:12px 6px;
   text-align:center;
   margin:20px 20px 20px 0;

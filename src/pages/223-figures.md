@@ -73,22 +73,19 @@ component("figure", { "type":"banner", "image": "http://lorempixel.com/1200/600/
 <script>
 component("grid", { "atoms":[
   { "grid-row": { "atoms": [
-    { "grid-box": { "size": "third", "atoms": {
+    { "grid-box": { "size": "half", "atoms": {
       "figure-link": { "color":"charcoal", "image": "http://lorempixel.com/400/600/people/3", "caption":"<h3>Content title</h3>\n<div class=\"c-figure__caption-content\">\n<p>Here is some caption content.</p>\n<button class=\"c-btn c-btn--medium c-btn--block\">Click here for more</button>\n</div>", "url":"http://google.com"}
     } } },
-    { "grid-box": { "size": "third", "atoms": {
-      "figure-link": { "color":"pink", "image": "http://lorempixel.com/400/600/people/4", "caption":"<h3>Content title</h3>\n<div class=\"c-figure__caption-content\">\n<p>Here is some caption content.</p>\n<button class=\"c-btn c-btn--medium c-btn--block\">Click here for more</button>\n</div>", "url":"http://google.com"}
-    } } },
-    { "grid-box": { "size": "third", "atoms": {
+    { "grid-box": { "size": "half", "atoms": {
       "figure-link": { "color":"teal", "image": "http://lorempixel.com/400/600/people/5", "caption":"<h3>Content title</h3>\n<div class=\"c-figure__caption-content\">\n<p>Here is some caption content.</p>\n<button class=\"c-btn c-btn--medium c-btn--block\">Click here for more</button>\n</div>", "url":"http://google.com"}
     } } }
   ] } },
   { "grid-row": { "atoms": [
     { "grid-box": { "size": "half", "atoms": {
-      "figure-link": { "color":"gold", "image": "http://lorempixel.com/400/600/people/6", "caption":"<h3>Content title</h3>\n<div class=\"c-figure__caption-content\">\n<p>Here is some caption content.</p>\n<button class=\"c-btn c-btn--medium c-btn--block\">Click here for more</button>\n</div>", "url":"http://google.com"}
+      "figure-link": { "color":"accent", "image": "http://lorempixel.com/400/600/people/7", "caption":"<h3>Content title</h3>\n<div class=\"c-figure__caption-content\">\n<p>Here is some caption content.</p>\n<button class=\"c-btn c-btn--medium c-btn--block\">Click here for more</button>\n</div>", "url":"http://google.com"}
     } } },
     { "grid-box": { "size": "half", "atoms": {
-      "figure-link": { "color":"blue", "image": "http://lorempixel.com/400/600/people/7", "caption":"<h3>Content title</h3>\n<div class=\"c-figure__caption-content\">\n<p>Here is some caption content.</p>\n<button class=\"c-btn c-btn--medium c-btn--block\">Click here for more</button>\n</div>", "url":"http://google.com"}
+      "figure-link": { "color":"complementary", "image": "http://lorempixel.com/400/600/people/4", "caption":"<h3>Content title</h3>\n<div class=\"c-figure__caption-content\">\n<p>Here is some caption content.</p>\n<button class=\"c-btn c-btn--medium c-btn--block\">Click here for more</button>\n</div>", "url":"http://google.com"}
     } } }
   ] } }
 ] });

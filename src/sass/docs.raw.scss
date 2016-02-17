@@ -54,8 +54,8 @@
       }
     }
     &.c-icon--inverse {
-      background-color:$charcoal;
-      border-color:$charcoal
+      background-color:$p-charcoal;
+      border-color:$p-charcoal
     }
   }
 }
@@ -74,15 +74,12 @@
   .c-figure {
     &[class*="c-figure--w"] {
       @include set-width-figure;
-      // @extend %set-width-figure;
     }
     &[class*="c-figure--h"] {
       @include set-height-figure;
-      // @extend %set-height-figure;
     }
     &[class*="c-figure--w"][class*="c-figure--h"] {
       @include center-image;
-      // @extend %centered-image;
     }
   }
 }
@@ -96,40 +93,85 @@
     line-height:100px;
     margin:0 10px 10px 0;
     display:inline-block;
-    color:$light;
+    color:$p-light;
     text-align:center;
-    border:1px solid $charcoal;
+    border:1px solid $p-charcoal;
   }
+  // Primary colours
   .c-swatch--charcoal {
-    background-color:$charcoal;
-  }
-  .c-swatch--light {
-    background-color:$light;
-    color:$charcoal;
-  }
-  .c-swatch--blue {
-    background-color:$blue;
-  }
-  .c-swatch--pink {
-    background-color:$pink;
+    background-color:$p-charcoal;
   }
   .c-swatch--teal {
-    background-color:$teal;
+    background-color:$p-teal;
   }
-  .c-swatch--gold {
-    background-color:$gold;
+  .c-swatch--teal-85 {
+    background-color:$p-teal-85;
   }
-  .c-swatch--s1 {
-    background-color:$s1;
-    color:$charcoal;
+  .c-swatch--light-teal {
+    background-color:$p-light-teal;
   }
-  .c-swatch--s2 {
-    background-color:$s2;
-    color:$charcoal;
+  .c-swatch--light-teal-85 {
+    background-color:$p-light-teal-85;
   }
-  .c-swatch--s3 {
-    background-color:$s3;
-    color:$charcoal;
+  .c-swatch--light {
+    background-color:$p-light;
+    color:$p-charcoal;
+  }
+  // Secondary colours
+  .c-swatch--beige {
+    background-color:$s-beige;
+    color:$p-charcoal;
+  }
+  .c-swatch--beige-40 {
+    background-color:$s-beige-40;
+    color:$p-charcoal;
+  }
+  .c-swatch--grey {
+    background-color:$s-grey;
+    color:$p-charcoal;
+  }
+  .c-swatch--grey-40 {
+    background-color:$s-grey-40;
+    color:$p-charcoal;
+  }
+  // Accent colours
+  .c-swatch--yellow {
+    background-color:$a-yellow;
+  }
+  .c-swatch--green {
+    background-color:$a-green;
+  }
+  .c-swatch--red {
+    background-color:$a-red;
+  }
+  .c-swatch--orange {
+    background-color:$a-orange;
+  }
+  .c-swatch--turquoise {
+    background-color:$a-turquoise;
+  }
+  .c-swatch--pink {
+    background-color:$a-pink;
+  }
+  .c-swatch--amber {
+    background-color:$a-amber;
+  }
+  .c-swatch--blue {
+    background-color:$a-blue;
+  }
+  .c-swatch--purple {
+    background-color:$a-purple;
+  }
+  //Utility colours
+  .c-swatch--u-red {
+    background-color:$u-red;
+  }
+  .c-swatch--u-green {
+    background-color:$u-green;
+  }
+  .c-swatch--u-white {
+    background-color:$u-white;
+    color:$p-charcoal;
   }
 }
 

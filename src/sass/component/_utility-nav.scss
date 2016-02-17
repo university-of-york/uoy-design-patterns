@@ -3,8 +3,8 @@
 //
 .c-utility-nav {
   @include clearfix;
-  background:$charcoal;
-  color:$light;
+  background:$c-utility-nav-background;
+  color:$c-utility-nav-color;
   padding:0.25em 6px;
 }
 .c-utility-nav__list {
@@ -15,13 +15,13 @@
   margin-top:0.1em;
   margin-bottom:0.1em;
   ~ .c-utility-nav__item {
-    border-left:1px solid $light;
+    border-left:1px solid $c-utility-nav__item-sibling-border;
   }
 }
 .c-utility-nav__link {
   padding:0 0.75em;
   font-size:0.8em;
-  color:$light;
+  color:$c-utility-nav__link-color;
 }
 .c-utility-nav__search {
   float:right;
@@ -32,8 +32,8 @@
     @include font-size(12px,1.5);
     width:auto;
     border:0;
-    background-color:$light;
-    color:$charcoal;
+    background-color:$c-utility-nav__search__input--text-background-color;
+    color:$c-utility-nav__search__input--text-color;
   }
   .c-btn {
     min-height:0;

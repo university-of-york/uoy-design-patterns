@@ -11,8 +11,8 @@
   left:0;
   z-index:9999; // To be above everything
   opacity:0;
-  background-color:#999;
-  background-color:rgba(0,0,0,0.8);
+  background-color:$c-modal__wrapper-background;
+  background-color:$c-modal__wrapper-background-transparent;
   &.is-active {
     opacity:1;
     transition-delay:0ms;
@@ -123,7 +123,7 @@
   height:100%;
   cursor:pointer;
   opacity:0;
-  color:$light;
+  color:$c-modal__nav-color;
   z-index:10;
   &.is-active {
     opacity:0.7;
@@ -132,7 +132,7 @@
     }
   }
   .c-icon {
-    background-color: $charcoal;
+    background-color:$c-modal__nav-icon-background-color;
     position:absolute;
     top:50%;
     left:50%;

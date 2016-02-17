@@ -110,6 +110,16 @@ Reprehenderit eiusmod aliquip labore sint laborum dolor laborum adipisicing cill
 <p>Reprehenderit eiusmod aliquip labore sint laborum dolor laborum adipisicing cillum aliqua qui mollit in officia do culpa esse veniam exercitation ut est amet eiusmod do voluptate sit velit in nostrud do dolore dolore adipisicing pariatur dolore Ut sunt tempor voluptate.</p>
 ```
 
+## Horizontal rule
+
+To divide sections of text, use an `<hr>`.
+
+<hr>
+
+```markup
+<hr>
+```
+
 ## Lead paragraph
 
 Add `.lead` to a paragraph to highlight it. Usually only used on the first paragraph on the page.

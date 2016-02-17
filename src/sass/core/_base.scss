@@ -10,7 +10,7 @@ body,select,textarea,input {
   font-family: $font-default;
 }
 body {
-  color:$charcoal;
+  color:$body-color;
 }
 a {
   color:$link-color;
@@ -127,9 +127,9 @@ code {
 }
 hr {
   @include component-margin;
-  background:#ccc;
+  background:$hr-color;
   border:none;
-  color:#ccc;
+  color:$hr-color;
   height:1px;
   clear:both;
 }
@@ -143,8 +143,8 @@ strong,b,dt {
   font-weight:700;
 }
 mark {
-  background: #fefe99;
-  color: #000;
+  background:$mark-background-color;
+  color: $mark-color;
 }
 s, strike, del {
   text-decoration: line-through;

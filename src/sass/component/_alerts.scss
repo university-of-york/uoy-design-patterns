@@ -4,7 +4,7 @@
 .c-alert {
   @include component;
   border-left:0.8em solid $c-alert-border;
-  background-color:$c-alert-background;
+  background-color:$c-alert-background-color;
   border-radius:4px;
   padding:0.8em;
   position:relative;
@@ -14,19 +14,19 @@
 }
 .c-alert--success {
   border-color:$c-alert--success-border;
-  background-color:$c-alert--success-background;
+  background-color:$c-alert--success-background-color;
 }
 .c-alert--info {
   border-color:$c-alert--info-border;
-  background-color:$c-alert--info-background;
+  background-color:$c-alert--info-background-color;
 }
 .c-alert--warning {
   border-color:$c-alert--warning-border;
-  background-color:$c-alert--warning-background;
+  background-color:$c-alert--warning-background-color;
 }
 .c-alert--danger {
   border-color:$c-alert--danger-border;
-  background-color:$c-alert--danger-background;
+  background-color:$c-alert--danger-background-color;
 }
 .c-alert__close {
   @include font-size(20px, 1);

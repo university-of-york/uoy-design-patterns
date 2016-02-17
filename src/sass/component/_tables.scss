@@ -22,15 +22,15 @@ th {
     @include font-size(14px);
     padding:5px;
   }
-  color:$teal;
-  border-bottom:2px solid $blue;
+  color:$th-color;
+  border-bottom:2px solid $th-border;
   line-height:1.2;
 }
 
 tbody th {
-  background-color: $s3;
-  color:lighten($teal,5);
-  border-bottom: 1px dotted lighten($blue,15);
+  background-color: $tbody-th-background-color;
+  color:$tbody-th-color;
+  border-bottom: 1px dotted $tbody-th-border;
 }
 
 tbody tr:last-child th {
@@ -39,7 +39,7 @@ tbody tr:last-child th {
 
 td {
   padding:10px;
-  border-bottom:1px dotted lighten($blue,15);
+  border-bottom:1px dotted $td-border;
   vertical-align:top;
   ul {
     margin:0;
@@ -61,7 +61,7 @@ tr:last-child td {
 
 .c-table--striped {
   tbody tr:nth-child(odd) {
-    background-color:lighten($s2,2);
+    background-color:$c-table--striped-tr-odd-background-color;
   }
 }
 
@@ -77,7 +77,7 @@ tr:last-child td {
       border-bottom:none;
     }
     tr {
-      border-top:1px dotted lighten($blue,15);
+      border-top:1px dotted $c-table--stacked-tr-border;
     }
   }
 }
