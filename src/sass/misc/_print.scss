@@ -22,37 +22,6 @@
     page-break-before: avoid !important;
     page-break-after: auto !important;
   }
-  a,
-  a:visited {
-    text-decoration: none;
-  }
-
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-
-  /*
-   * Don't show links for images, or javascript/internal/mailto/tel links
-   */
-
-  .c-breadcrumb a,
-  .c-main-header__title a,
-  a.c-page-title__link,
-  a[href^="javascript:"],
-  a[href^="/"],
-  a[href*="www.york.ac.uk"],
-  a[href^="#"],
-  a[href^="mailto:"],
-  a[href^="tel:"],
-  a[href=""] {
-    &:after {
-      content: "";
-    }
-  }
 
   thead {
     display: table-header-group; /* h5bp.com/t */
