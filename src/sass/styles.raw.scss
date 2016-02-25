@@ -27,7 +27,7 @@
  * Header..................Header styles, containing logo etc.
  * Footer..................Footer styles.
  * Navigation..............Page navigation.
- * Mobile navigation.......Page navigation, but fopr mobiles.
+ * Mobile navigation.......Page navigation, but for mobiles.
  * Subnavigation...........Subnavigation list.
  * Modal...................Modal window for lightboxes, popups etc.
  * hCard...................Address card using microformats
@@ -68,8 +68,7 @@
  * TinyMCE.................Stylesheet for TinyMCE - extends other styles
  *
  * THEMES
- * 404.....................404 theme
- * Sample..................[sample] Copy this example for future themes
+ * All themes..............Loops through all accent colours to make the theme
  *
  * MISCELLANEOUS
  * Visibility..............Stateful styles for showing/hiding elements at certain sizes
@@ -145,8 +144,7 @@
 @import "scopes/tinymce";
 
 // THEMES
-@import "themes/404";
-@import "themes/sample";
+@import "themes/allthemes";
 
 // MISCELLANEOUS
 @import "generic/visibility";

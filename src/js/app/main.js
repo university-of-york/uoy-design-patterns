@@ -1,11 +1,11 @@
 define(
-  ['jquery', 'es5shim', 'picturefill',
+  ['jquery', 'es5shim', 'picturefill', 'jscookie',
    'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav',
    'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/prioritised-tables',
    'app/toggle', 'app/wrapper-height', 'app/youtube-embed', 'app/soundcloud-embed',
    'app/searchable-tables', 'app/filterable-tables', 'app/equal-height-row', 'app/google-map'],
   function (
-    $, ES5SHIM, PICTUREFILL,
+    $, ES5SHIM, PICTUREFILL, COOKIES,
     UTILS, MODALLINK, ACCORDION, STICKYNAV,
     TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
     TOGGLE, WRAPPERHEIGHT, YOUTUBE, SOUNDCLOUD,
@@ -217,11 +217,23 @@ define(
       });
     });
 
-    // Broadcast window events
     if (UTILS.isDev) {
+      // Broadcast window events
       $window.on('data,font,nav,content', function(e) {
         console.log(this);
       });
+      // Add theme switching
+      var $body = $('body');
+      window.theme = function(color) {
+        COOKIES.set('theme', color);
+        $body.removeClass('t-yellow t-green t-red t-orange t-turquoise t-pink t-amber t-blue t-purple');
+        $body.addClass('t-'+color);
+        return 'Theme changed to '+color;
+      };
+      var themeColor = COOKIES.get('theme');
+      if (themeColor) {
+        $('body').addClass('t-'+themeColor);
+      }
     }
 
     console.log('Javascript loaded');

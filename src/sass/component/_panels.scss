@@ -66,6 +66,9 @@
   }
   &.c-panel--highlight {
     color:$c-panel--link--highlight-color;
+    .c-panel__more {
+      color: $c-panel--link--highlight-color;
+    }
   }
   .o-grid__row--alt1 &,
   .o-grid__row--alt2 & {

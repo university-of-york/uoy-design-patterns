@@ -22,6 +22,7 @@
   padding:$base-spacing/2 $base-spacing*2 $base-spacing/2 $base-spacing ;
   position:relative;
   text-decoration: none;
+  color:$c-accordion__title-color;
   &:hover {
     color:$c-accordion__title-hover-color;
   }

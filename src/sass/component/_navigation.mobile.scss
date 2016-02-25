@@ -21,9 +21,9 @@
   width:58px;
   padding:13px;
   font-size:24px;
-  color:$c-mobile-search-button-color;
+  color:$c-mobile-search-icon-color;
   &:hover {
-    color:$c-mobile-search-button-hover-color;
+    color:$c-mobile-search-icon-hover-color;
   }
 }
 .c-form--mobile-search {
@@ -74,6 +74,14 @@
       margin-left:calc(#{$base-spacing/2});
       width:90%;
       width:calc(100% - #{$base-spacing/2});
+    }
+  }
+  .c-btn.c-btn.c-btn {
+    background-color:$c-mobile-search-button-background-color;
+    border-color:$c-mobile-search-button-background-color;
+    &:hover {
+      background-color:$c-mobile-search-button-hover-background-color;
+      border-color:$c-mobile-search-button-hover-background-color;
     }
   }
 }

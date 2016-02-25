@@ -1,12 +1,12 @@
 //
-// SAMPLE THEME
+// YELLOW THEME
 //
 
 // Colours
-$t-accent: $a-sample;
-$t-text:   $p-light;
+$t-accent: $a-yellow;
+$t-text:   $u-black;
 
-.t-sample {
+.t-yellow {
 
   // NAV BORDER
   .c-nav {
@@ -128,6 +128,7 @@ $t-text:   $p-light;
 
   // KEY FACTS
   // Key facts aren't brilliant...
+  /*
   .c-key-fact__icon {
     color:$t-accent;
   }
@@ -143,6 +144,7 @@ $t-text:   $p-light;
       color:$t-accent;
     }
   }
+  */
 
   // TAGS
   .c-tag,

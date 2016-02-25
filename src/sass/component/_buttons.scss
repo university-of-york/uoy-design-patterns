@@ -36,28 +36,28 @@
   @if $name == '--default' {
     $name:'';
   }
-  $bgColor:map-get($color, bg);
-  $bgHoverColor:lighten($bgColor, 5);
-  $bgActiveColor:lighten($bgColor, 10);
-  $bgFocusColor:darken($bgColor, 10);
-  $borderColor:$bgColor;
-  $textColor:map-get($color, text);
+  $btn-background-color:map-get($color, bg);
+  $btn-hover-background-color:lighten($btn-background-color, 5);
+  $btn-active-background-color:lighten($btn-background-color, 10);
+  $btn-focus-background-color:darken($btn-background-color, 10);
+  $btn-border-color:$btn-background-color;
+  $btn-color:map-get($color, text);
   // Duplicate classname to override specificity on alt-rows
   .c-btn.c-btn#{$name} {
-    color: $textColor;
-    background-color: $bgColor;
-    border-color:$borderColor;
+    color: $btn-color;
+    background-color: $btn-background-color;
+    border-color:$btn-border-color;
     &:hover {
-      color: $textColor;
-      background-color: $bgHoverColor;
+      color: $btn-color;
+      background-color: $btn-hover-background-color;
     }
     &:active {
-      color: $textColor;
-      background-color: $bgActiveColor;
+      color: $btn-color;
+      background-color: $btn-active-background-color;
     }
     &:focus {
-      color: $textColor;
-      background-color: $bgFocusColor;
+      color: $btn-color;
+      background-color: $btn-focus-background-color;
     }
   }
 }

@@ -96,22 +96,20 @@
     color:$p-light;
     text-align:center;
     border:1px solid $p-charcoal;
+    white-space:nowrap;
   }
   // Primary colours
   .c-swatch--charcoal {
     background-color:$p-charcoal;
+  }
+  .c-swatch--charcoal-85 {
+    background-color:$p-charcoal-85;
   }
   .c-swatch--teal {
     background-color:$p-teal;
   }
   .c-swatch--teal-85 {
     background-color:$p-teal-85;
-  }
-  .c-swatch--light-teal {
-    background-color:$p-light-teal;
-  }
-  .c-swatch--light-teal-85 {
-    background-color:$p-light-teal-85;
   }
   .c-swatch--light {
     background-color:$p-light;
@@ -163,6 +161,9 @@
     background-color:$a-purple;
   }
   //Utility colours
+  .c-swatch--u-black {
+    background-color:$u-black;
+  }
   .c-swatch--u-red {
     background-color:$u-red;
   }

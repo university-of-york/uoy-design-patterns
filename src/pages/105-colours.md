@@ -13,11 +13,10 @@ id: colours-page
 ##Primary colours
 
 <div class="c-swatch c-swatch--charcoal">CHARCOAL</div>
-<div class="c-swatch c-swatch--light">LIGHT</div>
+<div class="c-swatch c-swatch--charcoal-85">CHAR. (85%)</div>
 <div class="c-swatch c-swatch--teal">TEAL</div>
 <div class="c-swatch c-swatch--teal-85">TEAL (85%)</div>
-<div class="c-swatch c-swatch--light-teal">LIGHT TEAL</div>
-<div class="c-swatch c-swatch--light-teal-85">L. TEAL (85%)</div>
+<div class="c-swatch c-swatch--light">LIGHT</div>
 
 ##Secondary colours
 
@@ -40,6 +39,7 @@ id: colours-page
 
 ##Utility colours
 
+<div class="c-swatch c-swatch--u-black">BLACK</div>
 <div class="c-swatch c-swatch--u-red">RED</div>
 <div class="c-swatch c-swatch--u-green">GREEN</div>
 <div class="c-swatch c-swatch--u-white">WHITE</div>

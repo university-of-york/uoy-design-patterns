@@ -1,0 +1,195 @@
+//
+// THEME LOOP
+//
+@each $name, $color in map-get($colors, accent) {
+
+  // Colours
+  $t-accent: $color;
+  $t-text: $p-light;
+  // Add in accents that need dark text on buttons
+  @if $name == yellow {
+    $t-text: $u-black;
+  } @else if $name == orange {
+    $t-text: $u-black;
+  }
+
+  .t-#{$name} {
+
+    // NAV BORDER
+    .c-nav {
+      border-bottom-color:$t-accent;
+    }
+
+    // HCARD MINI
+    .h-card--mini {
+      border-top-color:$t-accent;
+    }
+
+    // BUTTONS
+    $btn-background-color:$t-accent;
+    $btn-hover-background-color:lighten($btn-background-color, 5);
+    $btn-active-background-color:lighten($btn-background-color, 10);
+    $btn-focus-background-color:darken($btn-background-color, 10);
+    $btn-border-color:$btn-background-color;
+    $btn-color:$t-text;
+    // Duplicate classname to override specificity on alt-rows
+    .c-btn.c-btn {
+      color: $btn-color;
+      background-color: $btn-background-color;
+      border-color:$btn-border-color;
+      &:hover {
+        color: $btn-color;
+        background-color: $btn-hover-background-color;
+      }
+      &:active {
+        color: $btn-color;
+        background-color: $btn-active-background-color;
+      }
+      &:focus {
+        color: $btn-color;
+        background-color: $btn-focus-background-color;
+      }
+    }
+
+    // PAGINATION
+    .c-pagination__page {
+      &:hover {
+        border-color:$t-accent;
+        background-color:$t-accent;
+        color:$t-text;
+      }
+      &.c-pagination__page--first {
+        &:hover {
+          background-color:$t-accent;
+        }
+      }
+      &.c-pagination__page--last {
+        &:hover {
+          background-color:$t-accent;
+        }
+      }
+      &.c-pagination__page--previous {
+        &:hover {
+          background-color:$t-accent;
+        }
+      }
+      &.c-pagination__page--next {
+        &:hover {
+          background-color:$t-accent;
+        }
+      }
+      &.c-pagination__page--current {
+        &:hover {
+          background-color:$t-accent;
+        }
+      }
+    }
+
+    // BLOCKQUOTES
+    .c-blockquote--pull-quote {
+      .c-blockquote__content {
+        color:$t-accent;
+      }
+    }
+
+    // TABLES
+    th {
+      border-bottom-color:$t-accent;
+    }
+    tbody th {
+      border-bottom-color:lighten($t-accent,15);
+    }
+    td {
+      border-bottom-color:lighten($t-accent,15);
+    }
+    .c-table--stacked {
+      @include mq(small, '-') {
+        tr {
+          border-top-color:lighten($t-accent,15);
+        }
+      }
+    }
+
+    .c-atoz__nav-link {
+      &:hover {
+        background:$t-accent;
+        border-color:$t-accent;
+      }
+    }
+
+    // ACCENT CAPTIONS
+    .c-figure__caption--accent {
+      background-color:$t-accent;
+      background-color:transparentize($t-accent, 0.25);
+    }
+
+    // SIGNPOSTS
+    .c-signpost__icon {
+      color:$t-accent;
+    }
+
+    // KEY FACTS
+    // Key facts aren't brilliant...
+    /*
+    .c-key-fact__icon {
+      color:$t-accent;
+    }
+    .c-key-fact {
+      &:hover{
+        .c-key-fact__icon{
+          color:lighten($t-accent,15);
+        }
+      }
+    }
+    .c-key-fact__title {
+      strong {
+        color:$t-accent;
+      }
+    }
+    */
+
+    // TAGS
+    .c-tag,
+    // To get around CMS issues in nav objects
+    .c-tag-list a {
+      background-color:$t-accent;
+      color:$t-text;
+      &:hover {
+        background-color:darken($t-accent,4);
+        color:darken($t-text,5);
+      }
+    }
+    .c-tag-list__item:nth-child(3n+2),
+    .c-tag-list > li:nth-child(3n+2) {
+      .c-tag,
+      // To get around CMS issues in nav objects
+      .c-tag-list a {
+        background-color:darken($t-accent,8);
+        &:hover {
+          background-color:darken($t-accent,12);
+        }
+      }
+    }
+    .c-tag-list__item:nth-child(3n+3),
+    .c-tag-list > li:nth-child(3n+3) {
+      .c-tag,
+      // To get around CMS issues in nav objects
+      .c-tag-list a {
+        background-color:darken($t-accent,16);
+        &:hover {
+          background-color:darken($t-accent,20);
+        }
+      }
+    }
+    .c-tag__icon {
+      color:t-text;
+    }
+
+    // BORDERED FORM
+    .c-form--bordered {
+      border-color:$t-accent;
+    }
+
+  }
+
+}

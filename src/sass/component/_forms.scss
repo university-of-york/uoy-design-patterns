@@ -142,4 +142,14 @@
 .c-form--header {
   margin-top:17px;
   margin-bottom:0;
+  .c-btn.c-btn.c-btn {
+    background-color:$c-form--header-button-background-color;
+    border-color:$c-form--header-button-background-color;
+    color:$c-form--header-button-color;
+    &:hover {
+      background-color:$c-form--header-button-hover-background-color;
+      border-color:$c-form--header-button-hover-background-color;
+      color:$c-form--header-button-hover-color;
+    }
+  }
 }
