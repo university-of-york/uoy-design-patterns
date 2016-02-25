@@ -224,15 +224,18 @@ define(
       });
       // Add theme switching
       var $body = $('body');
-      window.theme = function(color) {
-        COOKIES.set('theme', color);
+      var swapColor = function(color) {
         $body.removeClass('t-yellow t-green t-red t-orange t-turquoise t-pink t-amber t-blue t-purple');
         $body.addClass('t-'+color);
+      };
+      window.theme = function(color) {
+        COOKIES.set('theme', color);
+        swapColor(color);
         return 'Theme changed to '+color;
       };
       var themeColor = COOKIES.get('theme');
       if (themeColor) {
-        $('body').addClass('t-'+themeColor);
+        swapColor(themeColor);
       }
     }
 

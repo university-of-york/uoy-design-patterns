@@ -2,6 +2,13 @@
 // VARIABLES
 //
 
+// Function to get the colour
+// e.g. col('primary', 'teal');
+@function col($type, $col) {
+  // @if map-has-key($colors, $type)
+  @return map-get(map-get($colors, $type), $col);
+}
+
 $colors: (
   primary: (
     light:         #f9f9f9,
@@ -31,39 +38,32 @@ $colors: (
     black:        #333333,
     red:          #b62d2d,
     green:        #54b62d,
+    blue:         #00b3eb,
+    yellow:       #e4b53c,
     white:        #fff
   )
 );
 
 //Primary colours
-$p-light:         #f9f9f9;
-$p-charcoal:      #333e48;
-$p-charcoal-85:   #4e5861;
-$p-teal:          #006580;
-$p-teal-85:       #007b91;
-
-//Accent colours
-$a-yellow:        #c4d600;
-$a-green:         #63a70c;
-$a-red:           #f42635;
-$a-orange:        #ffb81a;
-$a-turquoise:     #00afaa;
-$a-pink:          #d7006d;
-$a-amber:         #ff6b00;
-$a-blue:          #009ade;
-$a-purple:        #9364cc;
+$p-light:         col(primary, light);
+$p-charcoal:      col(primary, charcoal);
+$p-charcoal-85:   col(primary, charcoal-85);
+$p-teal:          col(primary, teal);
+$p-teal-85:       col(primary, teal-85);
 
 // Secondary colours
-$s-beige:        #d3ccbd;
-$s-beige-40:     #eeeae4;
-$s-grey:         #d1d3d3;
-$s-grey-40:      #eeedec;
+$s-beige:        col(secondary, beige);
+$s-beige-40:     col(secondary, beige-40);
+$s-grey:         col(secondary, grey);
+$s-grey-40:      col(secondary, grey-40);
 
 //Utility colours
-$u-black:         #333333;
-$u-red:           #b62d2d;
-$u-green:         #54b62d;
-$u-white:         #fff;
+$u-black:        col(utility, black);
+$u-red:          col(utility, red);
+$u-green:        col(utility, green);
+$u-blue:         col(utility, blue);
+$u-yellow:       col(utility, yellow);
+$u-white:        col(utility, white);
 
 // Fonts
 $font-default: 'museo-sans', Helvetica, Arial, sans-serif;
@@ -184,10 +184,10 @@ $o-grid__row--alt12-hr-color:        darken($p-light,10);
 $o-grid__row--alt12-a-color:         darken($p-light,10);
 $o-grid__row--alt12-a-hover-color:   darken($p-light,20);
 $o-grid__row--bordered-border:       $u-black;
-$o-grid__row--alt1-background-color: $p-charcoal-85;
-$o-grid__row--alt1-border-color:     $p-charcoal;
-$o-grid__row--alt2-background-color: $p-teal-85;
-$o-grid__row--alt2-border-color:     $p-teal;
+$o-grid__row--alt1-background-color: $p-charcoal;
+$o-grid__row--alt1-border-color:     $p-charcoal-85;
+$o-grid__row--alt2-background-color: $p-teal;
+$o-grid__row--alt2-border-color:     $p-teal-85;
 $o-grid__row--alt3-background-color: $s-beige-40;
 $o-grid__row--alt3-border-color:     $s-beige;
 
@@ -273,16 +273,16 @@ $c-page-title__background-color: $p-charcoal;
 $c-page-title__link-color:       $p-light;
 
 // Alerts
-$c-alert-border:$u-black;
-$c-alert-background-color:darken($p-light, 5);
-$c-alert--success-border:$u-green;
-$c-alert--success-background-color:lighten($u-green, 45);
-$c-alert--info-border:$a-blue;
-$c-alert--info-background-color:lighten($a-blue, 45);
-$c-alert--warning-border:$a-yellow;
-$c-alert--warning-background-color:lighten($a-yellow, 45);
-$c-alert--danger-border:$u-red;
-$c-alert--danger-background-color:lighten($u-red, 45);
+$c-alert-border:                    $u-black;
+$c-alert-background-color:          darken($p-light, 5);
+$c-alert--success-border:           $u-green;
+$c-alert--success-background-color: lighten($c-alert--success-border, 45);
+$c-alert--info-border:              $u-blue;
+$c-alert--info-background-color:    lighten($c-alert--info-border, 45);
+$c-alert--warning-border:           $u-yellow;
+$c-alert--warning-background-color: lighten($c-alert--warning-border, 35);
+$c-alert--danger-border:            $u-red;
+$c-alert--danger-background-color:  lighten($c-alert--danger-border, 45);
 
 // Buttons
 $c-btn: (
@@ -309,13 +309,13 @@ $c-btn-border: $p-teal;
 $c-icon--inverse-background-color: $p-light;
 
 // Pagination
-$c-pagination__page-border:                           lighten($s-beige,5);
 $c-pagination__page-background:                       $s-beige-40;
-$c-pagination__page-hover-border:                     $p-teal;
+$c-pagination__page-border:                           darken($c-pagination__page-background,20);
 $c-pagination__page-hover-background-color:           $p-teal;
+$c-pagination__page-hover-border:                     $p-teal;
 $c-pagination__page-hover-color:                      $p-light;
-$c-pagination__ellipsis-page-hover-border:            lighten($s-beige,5);
 $c-pagination__ellipsis-page-hover-background-color:  $s-beige-40;
+$c-pagination__ellipsis-page-hover-border:            darken($c-pagination__ellipsis-page-hover-background-color,20);
 $c-pagination__ellipsis-page-hover-color:             $u-black;
 $c-pagination__page--first-background-color:          $s-beige;
 $c-pagination__page--first-hover-background-color:    $p-teal;
@@ -355,13 +355,13 @@ $c-table--stacked-tr-border:               lighten($p-teal,15);
 // Course tables
 
 // A to Z
-$c-atoz__nav-link-border:                     lighten($s-beige,5);
 $c-atoz__nav-link-background-color:           $s-beige-40;
+$c-atoz__nav-link-border:                     darken($c-atoz__nav-link-background-color,20);
 $c-atoz__nav-link-hover-background-color:     $p-teal;
 $c-atoz__nav-link-hover-border:               $p-teal;
 $c-atoz__nav-link-hover-color:                $p-light;
 $c-atoz__nav-link--inactive-background-color: $s-grey-40;
-$c-atoz__nav-link--inactive-border:           lighten($s-grey,5);
+$c-atoz__nav-link--inactive-border:           darken($c-atoz__nav-link--inactive-background-color,20);
 $c-atoz__nav-link--inactive-color:            $s-grey;
 $c-atoz__letter-border:                       $u-black;
 $c-atoz__page-border:                         $u-black;
@@ -389,7 +389,7 @@ $c-panel-background-color:            $s-beige-40;
 $c-panel-border:                      $s-beige;
 $c-panel-color:                       $u-black;
 $c-panel--highlight-background-color: $p-charcoal;
-$c-panel--highlight-border-color:     lighten($p-charcoal,10);
+$c-panel--highlight-border-color:     $p-teal;
 $c-panel--highlight-color:            $p-light;
 $c-panel--highlight-a-color:          $p-light;
 $c-panel__elements-background-color:  $s-beige-40;

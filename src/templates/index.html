@@ -6,12 +6,15 @@
   <meta name="author" content="University of York">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Study at York - Study at York, University of York</title>
+  <title>Study at York - University of York</title>
+  <!-- Description meta -->
+  <meta name="description" content="Find out about opportunities for undergraduate and postgraduate study at the University of York." />
 
-  <meta name="description" content="">
+  <!-- Keywords meta -->
+  <meta name="keywords" content="york, yorkshire, uk, united kingdom, university, university of york, student, recruitment, admissions, study, prospectus" />
 
   <!-- Head end + header -->
-  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
   <link rel="stylesheet" href="/css/styles.css">
@@ -19,7 +22,7 @@
   <script src="/js/vendor/modernizr/modernizr.js"></script>
   <script src="/js/vendor/requirejs/require.js" data-main="/js/app"></script>
 
-  <!-- External, third party scripts -->
+  <!-- Typekit script -->
   <script src="//use.typekit.net/dvj8rpp.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
 
@@ -27,11 +30,16 @@
 
 <body>
 
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WXLX54" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WXLX54');</script>
+
+
 <header class="c-main-header" role="banner">
   <div class="o-wrapper o-grid">
-  <div class="o-grid__row">
+    <div class="o-grid__row">
       <div class="o-grid__box o-grid__box--threequarters">
-        <h2 class="c-main-header__title"><img class="c-main-header__logo" src="/img/logo.png" alt="University of York logo" width="264" height="41"></h2>
+        <h2 class="c-main-header__title"><a href="http://www.york.ac.uk/"><img class="c-main-header__logo" src="http://www.york.ac.uk/media/global/responsiveredesign/img/logo.png" alt="University of York" width="250" height="40"></a></h2>
       </div>
       <div class="o-grid__box o-grid__box--quarter is-hidden@medium-">
         <form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--header">
@@ -50,6 +58,7 @@
   </div>
 </header>
 
+<!-- Mobile search -->
 <form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--mobile-search" id="Mobile-Search">
   <fieldset class="c-form__fieldset">
     <legend class="c-form__legend">Search york.ac.uk</legend>
@@ -57,7 +66,7 @@
       <div class="o-grid__row">
         <div class="o-grid__box o-grid__box--full">
           <div class="c-form__element">
-            <input class="c-form__input c-form__input--text" type="text" id="q" name="q" />
+            <input class="c-form__input c-form__input--text" type="text" id="q-mobile" name="q" />
             <input type="hidden" name="site" value="yorkweb">
             <a class="c-btn c-btn--medium js-submit-form" href="https://www.york.ac.uk/search" role="button">Search</a>
           </div>
@@ -66,7 +75,6 @@
     </div>
   </fieldset>
 </form>
-
 
 <!-- Page title -->
 <div class="o-wrapper o-wrapper--wide c-page-title__wrapper o-grid">
@@ -82,84 +90,114 @@
 <!-- Main nav -->
 <nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation">
    <ul class="c-nav__list c-nav__list--structural">
-     <li class="c-nav__item"><a href="undergraduate/">Undergraduate study</a></li>
-     <li class="c-nav__item"><a href="/study/postgraduate/">Postgraduate study</a></li>
-     <li class="c-nav__item"><a href="continuing/">Continuing education</a></li>
-     <li class="c-nav__item"><a href="accommodation/">Accommodation</a></li>
-     <li class="c-nav__item"><a href="/study/international/">International students</a></li>
-     <li class="c-nav__item"><a href="/study/student-life/">Student life</a></li>
-     <li class="c-nav__item"><a href="/study/careers-skills/">Careers and skills</a></li>
-     <li class="c-nav__item"><a href="/study/undergraduate/outreach/">Schools and colleges</a></li>
+     <li class="c-nav__item"><a href="/study/undergraduate/">Undergraduate study</a></li><li class="c-nav__item"><a href="/study/postgraduate/">Postgraduate study</a></li><li class="c-nav__item"><a href="/study/international/">International students</a></li><li class="c-nav__item"><a href="/study/accommodation/">Accommodation</a></li><li class="c-nav__item"><a href="/study/student-life/">Student life</a></li><li class="c-nav__item"><a href="/study/study-abroad/">Study and work abroad</a></li><li class="c-nav__item"><a href="/study/careers-skills/">Careers and skills</a></li><li class="c-nav__item"><a href="/study/visit/">Visit us</a></li><li class="c-nav__item"><a href="/study/prospectus/">Get a prospectus</a></li>
+
      <li class="c-nav__item c-nav__item--more"><a class="c-nav__link js-toggle-button" href="#Main-Navigation">More&hellip;</a></li>
   </ul>
   <!--h4 class="c-nav__header">All sections</h4>
   <ul class="c-nav__list c-nav__list--associative">
-	<li class="c-nav__item"><a href="/study-new/undergraduate/">Undergraduate study</a></li><li class="c-nav__item"><a href="/study/postgraduate/">Postgraduate study</a></li><li class="c-nav__item"><a href="/study/international/">International students</a></li><li class="c-nav__item"><a href="/study-new/accommodation/">Accommodation</a></li><li class="c-nav__item"><a href="/study/student-life/">Student life</a></li><li class="c-nav__item"><a href="/study/careers-skills/">Careers and skills</a></li>
+	<li class="c-nav__item"><a href="/study/undergraduate/">Undergraduate study</a></li><li class="c-nav__item"><a href="/study/postgraduate/">Postgraduate study</a></li><li class="c-nav__item"><a href="/study/international/">International students</a></li><li class="c-nav__item"><a href="/study/accommodation/">Accommodation</a></li><li class="c-nav__item"><a href="/study/student-life/">Student life</a></li><li class="c-nav__item"><a href="/study/study-abroad/">Study and work abroad</a></li><li class="c-nav__item"><a href="/study/careers-skills/">Careers and skills</a></li><li class="c-nav__item"><a href="/study/visit/">Visit us</a></li><li class="c-nav__item"><a href="/study/prospectus/">Get a prospectus</a></li>
   </ul-->
 
 
 </nav>
 
 <!-- Breadcrumb -->
-<div class="c-breadcrumb"><div class="c-breadcrumb__items"><a href="/"><i class="c-icon c-icon--home"></i></a><span class="c-breadcrumb__separator">&gt;</span><a href="/study-new/">Study at York</a></div></div>
+<div class="c-breadcrumb"><div class="c-breadcrumb__items"><a href="/"><i class="c-icon c-icon--home"></i></a><span class="c-breadcrumb__separator">&gt;</span><a href="/study/">Study at York</a></div></div>
 
 <div class="o-wrapper o-wrapper--main o-grid js-wrapper--main">
-<!-- /study-new/accesscontrol.cms--><div class="o-grid__row">
+<div class="o-grid__row">
       <div class="o-grid__box o-grid__box--twothirds">
 <h1>Study at York</h1>
-<p class="lead">You'll be taught by academics who are thought leaders in their field. You'll graduate with more than a qualification and be inspired to make a difference.</p><p class="lead"> Join us on a journey that will change your world.</p>
+<p class="lead">Study at York and you'll graduate with more than a qualification.</p>
+<p class="lead">You'll be immersed in knowledge and opportunities that will encourage you to grow and succeed. You’ll grapple with big ideas and be encouraged to think differently by academics whose research is changing the world.</p>
 </div>
  <div class="o-grid__box o-grid__box--third">
 <div class="c-panel c-panel--highlight">
           <div class="c-panel__content">
-            <h3>Find a course</h3> [Needs UG/PG option]
-            <form method="get" action="https://wwwtest.york.ac.uk/study/undergraduate/courses/search" class="c-form">
+            <h3>Find a course</h3>
+            <form method="get" action="/study/undergraduate/courses/search" class="c-form" id="Course-Search">
               <fieldset>
-                <!-- <legend class="c-form__legend">Search courses</legend> -->
                 <div class="c-form__element">
                   <input class="c-form__input c-form__input--text" type="text" name="q" placeholder="Enter course title, keywords or UCAS code">
-
                 </div>
                 <div class="c-form__element">
-                  <input id="level" type="hidden" name="level" value="undergraduate"><button class="c-btn  c-btn--block c-btn--medium" type="submit">Search courses<i class="c-icon c-icon--after c-icon--search"></i></button>
+                  <label class="c-form__label is-hidden" for="level">Level:</label>
+                  <input class="c-form__radio" type="radio" id="level-undergraduate" name="level" value="undergraduate" checked="checked"/>
+                  <label for="level-undergraduate" class="c-form__label">Undergraduate</label>
+                  <input class="c-form__radio" type="radio" id="level-postgraduate" name="level" value="postgraduate" />
+                  <label for="level-postgraduate" class="c-form__label">Postgraduate</label>
+                </div>
+                <div class="c-form__element">
+                 <button class="c-btn  c-btn--block c-btn--medium" type="submit">Search courses<i class="c-icon c-icon--after c-icon--search"></i></button>
                 </div>
               </fieldset>
             </form>
-
+            <hr>
+            <p><a href="https://york.ac.uk/distance-learning/courses">Online and distance learning courses</a></p>
           </div>
         </div>
 </div>
 </div><div class="o-grid__row" style="margin-bottom:20px;">
-  <div class="o-grid__box o-grid__box--third">
-  <a class="c-figure c-figure--link" href="/study-new/undergraduate/">
-      <img class="c-figure__image" src="https://www.york.ac.uk/media/study-new/toplevel/ug_600x300.jpg">
+  <div class="o-grid__box o-grid__box--half">
+  <a class="c-figure c-figure--link" href="/study/undergraduate/">
+      <img class="c-figure__image" alt="" src="http://www.york.ac.uk/media/study-new/toplevel/ug_600x300.jpg" width="600" height="300">
       <div class="c-figure__caption c-figure__caption--blue">
         <h3>Undergraduate study</h3>
       </div>
     </a>
     <p>Choose from over 250 undergraduate courses in a wide range of subjects including arts and humanities, sciences and social sciences.</p>
   </div>
-  <div class="o-grid__box o-grid__box--third">
+  <div class="o-grid__box o-grid__box--half">
   <a class="c-figure c-figure--link" href="/study/postgraduate/">
-      <img class="c-figure__image" src="https://www.york.ac.uk/media/study-new/toplevel/pg_600x300.jpg">
+      <img class="c-figure__image" alt="" src="http://www.york.ac.uk/media/study-new/toplevel/PGCampus15_JohnHoulihan_05232015344-600px.jpg" width="600" height="300">
       <div class="c-figure__caption c-figure__caption--blue">
         <h3>Postgraduate study</h3>
       </div>
     </a>
-   <p>Our taught masters and research degrees are delivered by world-leading academics. We offer a number of online and distance learning courses as well as those taught on campus.</p>
+   <p>Our taught masters and research degrees are delivered by world-leading academics. </p>
   </div>
-  <div class="o-grid__box o-grid__box--third">
-  <a class="c-figure c-figure--link" href="">
-      <img class="c-figure__image" src="https://www.york.ac.uk/media/study-new/pluto_1000x500.jpg">
-      <div class="c-figure__caption c-figure__caption--blue">
-        <h3>Continuing education</h3>
-      </div>
-    </a>
-   <p>Enhance your skills, try something new or explore your passions through our programme of professional development and learning for leisure courses.</p>
+</div><div class="o-grid__row js-equal-height-row" style="margin-top:20px">
+  <div class="o-grid__box o-grid__box--quarter">
+    <a class="c-panel c-panel--link" href="/distance-learning/">
+    <div class="c-panel__content">
+      <h3>Distance learning</h3>
+      <p>Online degrees at York offer the opportunity to study in a more flexible way.</p>
+      <p class="c-panel__more">Read more</p>
+    </div>
+  </a>
   </div>
-</div><div class="o-grid__row o-grid__row--alt1">
-  <div class="o-grid__box o-grid__box--half">
-    <h2>Student life</h2>
+  <div class="o-grid__box o-grid__box--quarter">
+    <a class="c-panel c-panel--link" href="/business/cpd/">
+    <div class="c-panel__content">
+      <h3>Professional development</h3>
+      <p>We offer over 300 courses per year in a diverse range of subjects.</p>
+      <p class="c-panel__more">Read more</p>
+    </div>
+  </a>
+  </div>
+  <div class="o-grid__box o-grid__box--quarter">
+    <a class="c-panel c-panel--link" href="/lifelonglearning/">
+    <div class="c-panel__content">
+      <h3>Lifelong learning</h3>
+      <p>Choose from over 200 accredited and non-accredited courses.</p>
+      <p class="c-panel__more">Read more</p>
+    </div>
+  </a>
+  </div>
+  <div class="o-grid__box o-grid__box--quarter">
+    <a class="c-panel c-panel--link" href="/lfa/">
+    <div class="c-panel__content">
+      <h3>Language courses</h3>
+      <p>We have a range of foreign language courses on offer, from Medieval Latin to Modern Greek.​</p>
+      <p class="c-panel__more">Read more</p>
+    </div>
+  </a>
+  </div>
+</div>
+<div class="o-grid__row o-grid__row--alt1">
+<div class="o-grid__box o-grid__box--half o-grid__box--half@medium o-grid__box--half@print">
+<h2>Student life</h2>
 <p><span>From the moment you arrive on campus you'll be welcomed as a member of one of our nine colleges. Through&nbsp;</span><span>societies, sports clubs, art, music</span><span class="redactor-invisible-space">​ and&nbsp;</span><span>college life&nbsp;</span><span>there is always something to be part of, both on campus and in the city.</span></p>
 <ul>
 <li><strong>16,000 students</strong></li>
@@ -169,13 +207,17 @@
 <li><strong>60+ sports clubs</strong></li>
 </ul>
 <p class="cta"><a href="/study/student-life/">Find out about student life at York</a></p>
-  </div>
-  <div class="o-grid__box o-grid__box--half">
-    <figure class="c-figure">
-      <img class="c-figure__image" src="https://www.york.ac.uk/media/study/responsivetestarea/colleges.jpg" />
-  	</figure>
-  </div>
-</div><div class="o-grid__row">
+<p class="cta"><a href="/study/accommodation/">Find out about accommodation</a></p>
+</div>
+
+<div class="o-grid__box o-grid__box--half o-grid__box--half@medium o-grid__box--half@print">
+      <figure class="c-figure">
+        <img class="c-figure__image" alt="" src="http://www.york.ac.uk/media/study/responsivetestarea/colleges.jpg">
+      </figure>
+    </div>
+
+</div>
+<div class="o-grid__row">
   <div class="o-grid__box o-grid__box--quarter o-grid__box--half@small">
     <div class="c-signpost">
       <i class="c-signpost__icon c-icon c-icon--map-marker c-icon--4x"></i>
@@ -189,7 +231,7 @@
       <i class="c-signpost__icon c-icon c-icon--trophy c-icon--4x"></i>
       <h3>World-class university</h3>
       <p>We're one of the UK's leading universities and a proud member of the Russell Group. </p>
-      <a class="c-btn c-btn--medium" href="/about/awards/" role="button">See our awards and achievements</a>
+      <a class="c-btn c-btn--medium" href="/about/awards/" role="button">Read more</a>
     </div>
   </div>
   <div class="o-grid__box o-grid__box--quarter o-grid__box--half@small">
@@ -262,7 +304,7 @@
         <p>&copy; University of York <br /> <a href="http://www.york.ac.uk/about/legal-statements/">Legal statements</a> | <a href="http://www.york.ac.uk/about/legal-statements/#tab-5">Privacy and cookies</a></p>
       </div>
       <div class="o-grid__box o-grid__box--quarter"><!-- Footer start-->
-<p><a class="t4Edit-page" href="https://cms.york.ac.uk/terminalfour/SiteManager?ctfn=content&amp;fnno=30&amp;sid=129134">Modify</a></p>
+<p><a class="t4Edit-page" href="https://cms.york.ac.uk/terminalfour/SiteManager?ctfn=content&amp;fnno=30&amp;sid=45605">Modify</a></p>
       </div>
     </div>
   </div>

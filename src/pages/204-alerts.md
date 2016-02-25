@@ -12,8 +12,8 @@ id: alerts-page
 <script>
 component("alert", { "type": "success", "content": "<strong>Congratulations!</strong> You have successfully completed a thing." } )
 +component("alert", { "type": "info", "content": "<strong>FYI.</strong> You need to know this thing." } )
-+component("alert", { "type": "warning", "content": "<strong>Attention!</strong> Don't forget to do a thing.", "dismissable": true } )
-+component("alert", { "type": "danger", "content": "<strong>Danger!</strong> You have forgotten to do a thing.", "dismissable": true } );
++component("alert", { "type": "warning", "content": "<strong>Attention!</strong> Don't forget to do a thing." } )
++component("alert", { "type": "danger", "content": "<strong>Danger!</strong> You have forgotten to do a thing." } );
 </script>
 
 ### Options
@@ -23,4 +23,4 @@ component("alert", { "type": "success", "content": "<strong>Congratulations!</st
 * **alert**
   * **type**: Choose from _success_, _info_, _warning_ or _danger_ (required)
   * **content**: The text to go in the alert. Can include HTML markup (required)
-  * **dismissable**: Boolean. Whether the alert is dismissable or not
+  * **dismissable**: Boolean. Whether the alert is dismissable or not **NOT YET IMPLEMENTED - DO NOT USE**

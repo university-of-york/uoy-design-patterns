@@ -98,84 +98,18 @@
     border:1px solid $p-charcoal;
     white-space:nowrap;
   }
-  // Primary colours
-  .c-swatch--charcoal {
-    background-color:$p-charcoal;
-  }
-  .c-swatch--charcoal-85 {
-    background-color:$p-charcoal-85;
-  }
-  .c-swatch--teal {
-    background-color:$p-teal;
-  }
-  .c-swatch--teal-85 {
-    background-color:$p-teal-85;
-  }
-  .c-swatch--light {
-    background-color:$p-light;
-    color:$p-charcoal;
-  }
-  // Secondary colours
-  .c-swatch--beige {
-    background-color:$s-beige;
-    color:$p-charcoal;
-  }
-  .c-swatch--beige-40 {
-    background-color:$s-beige-40;
-    color:$p-charcoal;
-  }
-  .c-swatch--grey {
-    background-color:$s-grey;
-    color:$p-charcoal;
-  }
-  .c-swatch--grey-40 {
-    background-color:$s-grey-40;
-    color:$p-charcoal;
-  }
-  // Accent colours
-  .c-swatch--yellow {
-    background-color:$a-yellow;
-  }
-  .c-swatch--green {
-    background-color:$a-green;
-  }
-  .c-swatch--red {
-    background-color:$a-red;
-  }
-  .c-swatch--orange {
-    background-color:$a-orange;
-  }
-  .c-swatch--turquoise {
-    background-color:$a-turquoise;
-  }
-  .c-swatch--pink {
-    background-color:$a-pink;
-  }
-  .c-swatch--amber {
-    background-color:$a-amber;
-  }
-  .c-swatch--blue {
-    background-color:$a-blue;
-  }
-  .c-swatch--purple {
-    background-color:$a-purple;
-  }
-  //Utility colours
-  .c-swatch--u-black {
-    background-color:$u-black;
-  }
-  .c-swatch--u-red {
-    background-color:$u-red;
-  }
-  .c-swatch--u-green {
-    background-color:$u-green;
-  }
-  .c-swatch--u-white {
-    background-color:$u-white;
-    color:$p-charcoal;
+  @each $type, $map in $colors {
+    @each $name, $color in $map {
+      .c-swatch--#{$type}-#{$name} {
+        background-color:#{$color};
+        @if $name == light or $name == beige-40 or $name == grey-40 or
+            $name == yellow or $name == orange or $name == white {
+          color: $u-black;
+        }
+      }
+    }
   }
 }
-
 // Show/hide appropriate submenu
 .c-subnav__list,
 .c-nav.is-open .c-nav__list--associative {

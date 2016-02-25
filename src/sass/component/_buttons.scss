@@ -31,17 +31,17 @@
   }
 }
 // Button types
-@each $name, $color in $c-btn {
+@each $name, $type in $c-btn {
   $name: --#{$name};
   @if $name == '--default' {
     $name:'';
   }
-  $btn-background-color:map-get($color, bg);
+  $btn-background-color:map-get($type, bg);
   $btn-hover-background-color:lighten($btn-background-color, 5);
   $btn-active-background-color:lighten($btn-background-color, 10);
   $btn-focus-background-color:darken($btn-background-color, 10);
   $btn-border-color:$btn-background-color;
-  $btn-color:map-get($color, text);
+  $btn-color:map-get($type, text);
   // Duplicate classname to override specificity on alt-rows
   .c-btn.c-btn#{$name} {
     color: $btn-color;
