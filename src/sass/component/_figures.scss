@@ -153,6 +153,7 @@
     width:33.333%;
     left:$base-spacing;
     bottom:$base-spacing;
+    @include font-size(14px);
     @include mq('medium', '~') {
       width:50%;
     }
