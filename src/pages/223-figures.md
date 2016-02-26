@@ -59,7 +59,7 @@ component("figure", { "type":"h400", "image": "http://lorempixel.com/800/400/peo
 
 #### Banner figures
 
-Banner figures act a little differently than normal figures. The height of the image is based on the content in the caption (where CSS transforms are supported, ie not &lt;IE8). The width of the caption is a third at large sizes, 50% at medium and 100% on small screens. Banner captions can be positioned _left_ or _right_.
+Banner figures act a little differently than normal figures. The height of the image is based on the content in the caption (where CSS transforms are supported, ie not &lt;IE8). The width of the caption is a third at large sizes, 50% at medium and 100% on small screens. On small screens the caption moves to be below the image. Banner captions can be positioned _left_ or _right_.
 
 <script>
 component("figure", { "type":"banner", "image": "http://lorempixel.com/1200/600/people/1", "caption":"<h3>Here's some content</h3>\n<p>Here is some caption content. The height of the banner will fit to the content size.</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a></div>", "position": "left"});

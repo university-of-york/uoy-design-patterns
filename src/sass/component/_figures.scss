@@ -127,7 +127,19 @@
 
 // BANNER
 .c-figure--banner {
-  @include center-image('y');
+  @include mq('medium', '+') {
+    @include center-image('y');
+    .csstransforms & {
+      padding:$base-spacing;
+      .c-figure__image {
+      }
+      .c-figure__caption {
+        position:relative;
+        top:0;
+        left:0;
+      }
+    }
+  }
   .c-figure__image {
     display:block;
     z-index:10;
@@ -146,18 +158,11 @@
     }
     @include mq('small', '-') {
       width:100%;
+      position:static;
+      display:block;
     }
   }
-  .csstransforms & {
-    padding:$base-spacing;
-    .c-figure__image {
-    }
-    .c-figure__caption {
-      position:relative;
-      top:0;
-      left:0;
-    }
-  }
+
 }
 
 // LINK
