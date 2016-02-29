@@ -100,7 +100,7 @@
   }
   @each $type, $map in $colors {
     @each $name, $color in $map {
-      .c-swatch--#{$type}-#{$name} {
+      .c-swatch--#{$type}-#{""+$name} {
         background-color:#{$color};
         @if $name == light or $name == beige-40 or $name == grey-40 or
             $name == yellow or $name == orange or $name == white {

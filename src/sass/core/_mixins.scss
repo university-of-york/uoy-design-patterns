@@ -178,7 +178,7 @@
   @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
     line-height: $line-height;
   } @elseif ($line-height != none and $line-height != false) {
-    @warn "D’oh! ‘#{$line-height}’ is not a valid value for `line-height`.";
+    @warn "D’oh! '#{$line-height}' is not a valid value for line-height.";
   }
 
 }

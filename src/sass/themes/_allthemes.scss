@@ -11,7 +11,7 @@
     $t-text: $u-black;
   }
 
-  .t-#{$name} {
+  .t-#{""+$name} {
 
     // NAV BORDER
     .c-nav {
