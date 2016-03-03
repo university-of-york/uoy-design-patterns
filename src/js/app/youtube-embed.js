@@ -25,17 +25,20 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     this.id = this.url.slice(-11);
     this.container = $('<div>').addClass('c-video');
 
+    // This will return true or false depending on if it's full screen or not.
+    //this.fullScreenMode = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
+
     this.link.replaceWith(this.container);
 
-    this.setDimensions();
+    this.iframe = this.createIframe();
     // replace the original link element with the embed code
 
     var that = this;
-    var resizeFn = UTILS.debounce(function () {
+    var resizeFn = UTILS.debounce(function (e) {
       that.setDimensions();
     }, 250);
 
-    $window.on('resize', resizeFn);
+    $window.on('resize', null, { that: this }, resizeFn);
 
     console.info(this);
 
@@ -43,7 +46,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
   YOUTUBE.prototype.getDimensions = function () {
     var videoWidth = this.container.width();
-    var videoHeight = (videoWidth/16)*9;
+    var videoHeight = Math.floor((videoWidth/16)*9);
     return {
       width: videoWidth,
       height: videoHeight
@@ -51,9 +54,38 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   };
 
   YOUTUBE.prototype.setDimensions = function () {
+
+    // Check to see if it's a fullscreen resize
+    var screenW = screen.width;
+    var screenH = screen.height;
+    var windowW = $window.width();
+    var windowH = $window.height();
+    var isFullscreen = (screenW == windowW) && (screenH == windowH);
+
+    if (isFullscreen === true) return false;
+
+    var videoDimensions = this.getDimensions();
+
+    this.iframe.attr({
+      width: videoDimensions.width,
+      height: videoDimensions.height
+    });
+
+  };
+
+  YOUTUBE.prototype.createIframe = function () {
     var videoDimensions = this.getDimensions();
     // create the embed code
-    this.container.html('<iframe width="' + videoDimensions.width + '" height="' + videoDimensions.height + '" src="//www.youtube.com/embed/' + this.id + '?rel=0" frameborder="0" allowfullscreen></iframe>');
+    var iframe = $('<iframe>').attr({
+      width: videoDimensions.width,
+      height: videoDimensions.height,
+      src: '//www.youtube.com/embed/'+this.id+'?rel=0',
+      frameborder: 0,
+      allowfullscreen: true
+    });
+    // add to container
+    this.container.html(iframe);
+    return iframe;
   };
 
   return YOUTUBE;
