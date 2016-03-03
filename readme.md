@@ -58,6 +58,7 @@ There is a standardised way to name branches using slash syntax (taken from http
 * `feature/` - adding new features to the build process
 * `fix/` - changes that are to fix bugs, whether layout, Javascript or anything else
 * `update/` - using a new version of e.g. FontAwesome, Grunt etc.
+* `themes/` - new theme colours and variants
 
 So for a new component you would use `component/component-name`, for new JS modules use `module/module-name`, and so on.
 
