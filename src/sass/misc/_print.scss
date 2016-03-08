@@ -60,6 +60,28 @@
     page-break-after: avoid;
   }
 
+  a {
+    text-decoration:none;
+  }
+  // Add external links afterwards
+  a[href^="http"]:not([href*="york.ac.uk"]) {
+    &:after {
+      content:" (" attr(href) ") ";
+      font-size:0.8em;
+      font-weight:normal;
+    }
+  }
+
+  // Add link to Youtube video
+  .c-video {
+    &:before {
+      content:"Watch the video at https://youtu.be/"attr(data-video-id);
+    }
+    iframe {
+      display:none;
+    }
+  }
+
   /*
    * Reduce header spacing
    */

@@ -21,17 +21,17 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       this.link.unwrap();
     }
     // figure out the Youtube ID
-    this.url = this.link.attr("href");
-    this.id = this.url.slice(-11);
-    this.container = $('<div>').addClass('c-video');
+    var url = this.link.attr("href");
+    this.id = url.slice(-11);
+    this.url = '//www.youtube.com/embed/'+this.id+'?rel=0'
+    this.container = $('<div>').addClass('c-video').attr({
+      'data-video-id':this.id
+    });
 
-    // This will return true or false depending on if it's full screen or not.
-    //this.fullScreenMode = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
-
+    // replace the original link element with the embed code
     this.link.replaceWith(this.container);
 
     this.iframe = this.createIframe();
-    // replace the original link element with the embed code
 
     var that = this;
     var resizeFn = UTILS.debounce(function (e) {
@@ -79,7 +79,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     var iframe = $('<iframe>').attr({
       width: videoDimensions.width,
       height: videoDimensions.height,
-      src: '//www.youtube.com/embed/'+this.id+'?rel=0',
+      src: this.url,
       frameborder: 0,
       allowfullscreen: true
     });
