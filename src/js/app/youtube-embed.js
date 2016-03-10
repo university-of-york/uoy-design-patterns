@@ -23,7 +23,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     // figure out the Youtube ID
     var url = this.link.attr("href");
     this.id = url.slice(-11);
-    this.url = '//www.youtube.com/embed/'+this.id+'?rel=0'
+    this.url = '//www.youtube.com/embed/'+this.id+'?rel=0';
     this.container = $('<div>').addClass('c-video').attr({
       'data-video-id':this.id
     });

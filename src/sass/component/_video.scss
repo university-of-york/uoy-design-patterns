@@ -3,6 +3,9 @@
 //
 .c-video {
   @include component-margin;
+  // To stop it floating over the sticky nav
+  position:relative;
+  z-index:32;
   iframe {
     max-width:100%;
   }
