@@ -41,6 +41,10 @@
   color:lighten($charcoal,20);
   padding: $base-spacing/2 0;
   @include font-size(14px);
+  .o-grid__row--alt1 &,
+  .o-grid__row--alt2 & {
+    color:darken($light,20);
+  }
 }
 
 .c-figure__caption--bottom-left {
