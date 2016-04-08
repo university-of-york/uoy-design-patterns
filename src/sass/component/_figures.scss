@@ -21,6 +21,12 @@
   h2, h3, h4, h5 {
     line-height:1;
   }
+  a {
+    color:lighten($blue,10);
+    &:hover {
+      color:lighten($blue,25);
+    }
+  }
   @include mq('small', '-') {
     padding:$base-spacing/2;
     .o-grid__box--half\@small &,
@@ -159,12 +165,6 @@
     left:$base-spacing;
     bottom:$base-spacing;
     background-color:transparentize($teal, 0.1);
-    a {
-      color:lighten($blue,10);
-      &:hover {
-        color:lighten($blue,25);
-      }
-    }
     @include mq('medium', '-') {
       width:100%;
       position:static;
