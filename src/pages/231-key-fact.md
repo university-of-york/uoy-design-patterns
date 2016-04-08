@@ -13,7 +13,7 @@ id: key-fact-page
 
 <script>
 component("key-fact", {
-  "title": "10th for research impact in the REF 2014",
+  "title": "<strong>10th</strong> for research impact in the REF 2014",
   "content": "<p>Research performance</p>"
 });
 </script>
@@ -22,7 +22,7 @@ If you add in a `link` property it will become an `a` tag with a link:
 
 <script>
 component("key-fact", {
-  "title": "10th for research impact in the REF 2014",
+  "title": "<strong>10th</strong> for research impact in the REF 2014",
   "content": "<p>Research performance</p>",
   "link": "http://www.york.ac.uk/research/performance/"
 });
@@ -32,7 +32,7 @@ You can have an icon:
 
 <script>
 component("key-fact", {
-  "title": "10th for research impact in the REF 2014",
+  "title": "<strong>10th</strong> for research impact in the REF 2014",
   "content": "<p>Research performance</p>",
   "link": "http://www.york.ac.uk/research/performance/",
   "icon": "book"
@@ -44,26 +44,53 @@ Multiple key facts can be used together within a row of a grid:
 <script>
 component("grid-row", { "atoms": [
   { "grid-box": { "size": "third", "atoms": { "key-fact": {
-    "title": "10th for research impact in the REF 2014",
+    "title": "<strong>10th</strong> for research impact in the REF 2014",
     "content": "<p>Research performance</p>",
     "link": "http://www.york.ac.uk/research/performance/",
     "icon": "book"
   } } } },
   { "grid-box": { "size": "third", "atoms": { "key-fact": {
-    "title": "&pound;500 million invested in facilities",
+    "title": "<strong>&pound;500 million</strong> invested in facilities",
     "content": "<p>World-class resources available to staff and partners</p>",
     "link": "http://www.york.ac.uk/research/facilities/",
     "icon": "money"
   } } } },
   { "grid-box": { "size": "third", "atoms": { "key-fact": {
-    "title": "York Graduate Research School",
-    "content": "Supporting a community of over 2,000 research students",
+    "title": "A community of <strong>2,000+</strong> research students",
+    "content": "supported by the York Graduate Research School",
     "link": "http://www.york.ac.uk/research/graduate-school/",
     "icon": "graduation-cap"
   } } } }
 ] });
 
 </script>
+
+Facts in alt rows have a slightly different style:
+
+<script>
+component("grid-row", {"type": "alt2", "class":"js-equal-height-row", "atoms": [
+  { "grid-box": { "size": "third", "atoms": { "key-fact": {
+    "title": "<strong>10th</strong> for research impact in the REF 2014",
+    "content": "<p>Research performance</p>",
+    "link": "http://www.york.ac.uk/research/performance/",
+    "icon": "book"
+  } } } },
+  { "grid-box": { "size": "third", "atoms": { "key-fact": {
+    "title": "<strong>&pound;500 million</strong> invested in facilities",
+    "content": "<p>World-class resources available to staff and partners</p>",
+    "link": "http://www.york.ac.uk/research/facilities/",
+    "icon": "money"
+  } } } },
+  { "grid-box": { "size": "third", "atoms": { "key-fact": {
+    "title": "A community of <strong>2,000+</strong> research students",
+    "content": "supported by the York Graduate Research School",
+    "link": "http://www.york.ac.uk/research/graduate-school/",
+    "icon": "graduation-cap"
+  } } } }
+] });
+
+</script>
+
 
 ### Options
 
