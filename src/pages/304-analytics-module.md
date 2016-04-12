@@ -43,9 +43,9 @@ The _action_ is the `href` of the link, and the `label` is the text content (or 
 
 Links that contain image will use the images alt text as the label. If it doesn't exist the label will simply be 'image'.
 
-<a href="http://lorempixel.com/1000/1000/food/1"><img src="http://lorempixel.com/100/100/food/1" alt="Some alt text for this image"></a> (should fire a 'Download' event with alt text as the label)
+<a href="https://unsplash.it/1000/1000/?random"><img src="https://unsplash.it/100/100/?random" alt="Some alt text for this image"></a> (should fire a 'Download' event with alt text as the label)
 
-<a href="http://lorempixel.com/1000/1000/food/2"><img src="http://lorempixel.com/100/100/food/2"></a> (should fire a 'Download' event with 'image' as the label)
+<a href="https://unsplash.it/1000/1000/?random"><img src="https://unsplash.it/100/100/?random"></a> (should fire a 'Download' event with 'image' as the label)
 
 ### How to use
 

@@ -18,30 +18,30 @@ If a collection of items on a page all have the `js-modal--gallery` class, then 
 <script>
 component("gallery-item", {
   "type": "landscape",
-  "link": "http://lorempixel.com/1120/840/food/1",
-  "thumbnail": "http://lorempixel.com/374/280/food/1"
+  "link": "https://unsplash.it/1120/840/?image=992",
+  "thumbnail": "https://unsplash.it/374/280/?image=992"
 })+
 component("gallery-item", {
   "type": "landscape",
-  "link": "http://lorempixel.com/1920/640/food/4",
-  "thumbnail": "http://lorempixel.com/374/280/food/4",
+  "link": "https://unsplash.it/1920/640/?image=993",
+  "thumbnail": "https://unsplash.it/374/280/?image=993",
   "caption": "<p>The University is in the middle of an unprecedented period of expansion and renewal.</p>"
 })+
 component("gallery-item", {
   "type": "portrait",
-  "link": "http://lorempixel.com/840/1120/food/9",
-  "thumbnail": "http://lorempixel.com/280/374/food/9",
+  "link": "https://unsplash.it/840/1120/?image=994",
+  "thumbnail": "https://unsplash.it/280/374/?image=994",
   "caption": "<p>The University is in the middle of an unprecedented period of expansion and renewal.</p>"
 })+
 component("gallery-item", {
   "type": "portrait",
-  "link": "http://lorempixel.com/640/1920/food/6",
-  "thumbnail": "http://lorempixel.com/280/374/food/6"
+  "link": "https://unsplash.it/640/1920/?image=995",
+  "thumbnail": "https://unsplash.it/280/374/?image=995"
 })+
 component("gallery-item", {
   "type": "portrait",
-  "link": "http://lorempixel.com/1920/1920/food/7",
-  "thumbnail": "http://lorempixel.com/280/374/food/7",
+  "link": "https://unsplash.it/1920/1920/?image=996",
+  "thumbnail": "https://unsplash.it/280/374/?image=996",
   "caption": "<p>Our investment in new colleges mean it has never been a better time to join our student body or research groups at York.</p>"
 });
 
@@ -54,21 +54,21 @@ Galleries can also be created by using a grid layout, which gives you more contr
 <script>
 var g1 = {
   "gallery-item": {
-    "link": "http://lorempixel.com/1280/1280/food/1",
-    "thumbnail": "http://lorempixel.com/280/280/food/1",
+    "link": "https://unsplash.it/1280/1280/?image=997",
+    "thumbnail": "https://unsplash.it/280/280/?image=997",
     "caption": "<p>The University is in the middle of an unprecedented period of expansion and renewal.</p>"
   }
 };
 var g2 = {
   "gallery-item": {
-    "link": "http://lorempixel.com/1280/1280/food/4",
-    "thumbnail": "http://lorempixel.com/280/280/food/4"
+    "link": "https://unsplash.it/1280/1280/?image=998",
+    "thumbnail": "https://unsplash.it/280/280/?image=998"
   }
 };
 var g3 = {
   "gallery-item": {
-    "link": "http://lorempixel.com/1280/1280/food/7",
-    "thumbnail": "http://lorempixel.com/280/280/food/7",
+    "link": "https://unsplash.it/1280/1280/?image=999",
+    "thumbnail": "https://unsplash.it/280/280/?image=999",
     "caption": "<p>Our investment in new colleges mean it has never been a better time to join our student body or research groups at York.</p>"
   }
 };

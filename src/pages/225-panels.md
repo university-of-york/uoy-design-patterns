@@ -51,7 +51,7 @@ And an image:
 <script>
 component("panel", {
   "header": "<h5>Air pollution clouds economic growth in China</h5>",
-  "image": "http://lorempixel.com/800/400/city/1",
+  "image": "https://unsplash.it/800/400?image=962",
   "content": "<p>Atmospheric chemist Professor Alastair Lewis argues that clean air should be the engine of economic growth in China, rather than the brake.</p>"
 });
 </script>
@@ -60,7 +60,7 @@ Or a _subheader_, under the image:
 
 <script>
 component("panel", {
-  "image": "http://lorempixel.com/800/400/city/1",
+  "image": "https://unsplash.it/800/400?image=962",
   "subheader": "<h6>How the Chinese could improve the quality of the air they breathe</h6>",
   "content": "<p>Atmospheric chemist Professor Alastair Lewis argues that clean air should be the engine of economic growth in China, rather than the brake.</p>"
 });
@@ -71,7 +71,7 @@ And a footer:
 <script>
 component("panel", {
   "header": "<h5>Air pollution clouds economic growth in China</h5>",
-  "image": "http://lorempixel.com/800/400/city/1",
+  "image": "https://unsplash.it/800/400?image=962",
   "footer": "This article was first published on The Conversation website",
   "content": "<p>Atmospheric chemist Professor Alastair Lewis argues that clean air should be the engine of economic growth in China, rather than the brake.</p>"
 });
@@ -85,7 +85,7 @@ And here's the whole lot together:
 component("panel", {
   "type": "default",
   "header": "<h5>Air pollution clouds economic growth in China</h5>",
-  "image": "http://lorempixel.com/800/400/city/1",
+  "image": "https://unsplash.it/800/400?image=962",
   "subheader": "<h6>How the Chinese could improve the quality of the air they breathe</h6>",
   "footer": "This article was first published on The Conversation website",
   "content": "<p>Atmospheric chemist Professor Alastair Lewis argues that clean air should be the engine of economic growth in China, rather than the brake.</p>"
