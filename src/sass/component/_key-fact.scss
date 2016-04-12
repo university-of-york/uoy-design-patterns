@@ -3,9 +3,8 @@
 //
 .c-key-fact {
   @include component;
-  padding:$base-spacing;
+  padding-right: $base-spacing;
   width:100%;
-  background-color:$c-key-fact-background-color;
   color:$c-key-fact-color;
   text-decoration:none;
   .o-media__picture img {
@@ -13,9 +12,17 @@
   }
   &:hover{
     color:$c-key-fact-hover-color;
-    background-color:$c-key-fact-background-hover-color;
     .c-key-fact__icon{
       color:$c-key-fact__icon-hover-color;
+    }
+  }
+  .o-grid__row--alt1 &,
+  .o-grid__row--alt2 & {
+    background-color:$c-key-fact-alt-background-color;
+    color:$c-key-fact-alt-color;
+    padding:$base-spacing;
+    &:hover {
+      background-color:$c-key-fact-alt-background-hover-color
     }
   }
 }
@@ -24,7 +31,7 @@
 .o-grid__row--alt1,
 .o-grid__row--alt2 {
   a.c-key-fact {
-    color:$c-key-fact-color;
+    color:$c-key-fact-alt-color;
   }
 }
 
@@ -35,7 +42,11 @@
   font-family: $font-default;
   color:$c-key-fact__title-color;
   strong {
-    color:$blue;
+    color:$c-key-fact__title-highlight-color;
+  }
+  .o-grid__row--alt1 &,
+  .o-grid__row--alt2 & {
+    color:$c-key-fact-alt__title-color;
   }
 }
 

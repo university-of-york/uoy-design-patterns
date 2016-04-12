@@ -21,6 +21,12 @@
   h2, h3, h4, h5 {
     line-height:1;
   }
+  a {
+    color:lighten($blue,10);
+    &:hover {
+      color:lighten($blue,25);
+    }
+  }
   @include mq('small', '-') {
     padding:$base-spacing/2;
     .o-grid__box--half\@small &,
@@ -41,6 +47,10 @@
   color:lighten($charcoal,20);
   padding: $base-spacing/2 0;
   @include font-size(14px);
+  .o-grid__row--alt1 &,
+  .o-grid__row--alt2 & {
+    color:darken($light,20);
+  }
 }
 
 .c-figure__caption--bottom-left {
@@ -125,13 +135,14 @@
   margin:0;
 }
 
-// BANNER
+//
 .c-figure--banner {
-  @include mq('medium', '+') {
+  @include mq('large', '+') {
     @include center-image('y');
     .csstransforms & {
       padding:$base-spacing;
       .c-figure__image {
+        width:auto;
       }
       .c-figure__caption {
         position:relative;
@@ -150,17 +161,15 @@
     position:absolute;
     display:inline-block;
     z-index:12;
-    width:33.333%;
+    width:50%;
     left:$base-spacing;
     bottom:$base-spacing;
-    @include font-size(14px);
-    @include mq('medium', '~') {
-      width:50%;
-    }
-    @include mq('small', '-') {
+    background-color:transparentize($teal, 0.1);
+    @include mq('medium', '-') {
       width:100%;
       position:static;
       display:block;
+      background-color:$teal;
     }
   }
 
