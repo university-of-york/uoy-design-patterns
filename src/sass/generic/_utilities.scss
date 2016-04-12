@@ -5,3 +5,8 @@
 // This class ensures sticky nav doesn't hide the top of anchors
 //.u-sticky-anchor {
 //}
+
+// Make a span look like a link (to create fake links inside block -level anchors)
+.u-link {
+  @extend a;
+}
