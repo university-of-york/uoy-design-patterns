@@ -16,7 +16,7 @@
 .cta {
   // display:block;
 }
-.cta a {
+.cta.cta a {
   @extend .c-btn !optional;
   @extend .c-btn--medium !optional;
 }
