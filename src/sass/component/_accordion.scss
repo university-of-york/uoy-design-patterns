@@ -42,13 +42,10 @@
 .c-accordion__content {
   @include demarginalise;
   @include transition('height, padding-top, padding-bottom');
-  box-sizing:content-box;
-  // iOS <=4 needs prefix
-  -webkit-box-sizing:content-box;
   padding:$base-spacing;
   overflow:hidden;
   position:static;
-  //width: 100%;
+  width: 100%;
   .c-accordion__item.is-closed & {
     padding-top:0;
     padding-bottom:0;
