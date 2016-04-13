@@ -52,7 +52,7 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
     this.itemContent.addClass('is-hidden').height('auto');
 
     // Get content height
-    var contentHeight = this.itemContent.height();
+    var contentHeight = this.itemContent.outerHeight();
 
     this.itemContent.attr('data-height', contentHeight);
 

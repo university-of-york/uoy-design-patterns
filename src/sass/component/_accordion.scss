@@ -58,6 +58,10 @@
     visibility: hidden;
     position: absolute;
     display:block;
+    .c-accordion__item.is-closed & {
+      padding-top:$base-spacing;
+      padding-bottom:$base-spacing;
+    }
   }
 }
 .csstransforms {
