@@ -151,6 +151,10 @@ $c-blockquote__image-tiny-ratio:0.75;
   display:block;
   margin-top:$base-spacing/2;
   color:$charcoal;
+  .o-grid__row--alt1 &,
+  .o-grid__row--alt2 & {
+    color:$light;
+  }
 }
 .c-blockquote__image--right ~ .c-blockquote__cite {
   text-align:right;
