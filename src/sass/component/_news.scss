@@ -1,6 +1,7 @@
 //
 // NEWS
 //
+$thumbnail_size:100px;
 .c-news {
   @include component;
   width:100%;
@@ -115,9 +116,10 @@
   border-bottom:1px solid $s3;
 }
 .c-news__thumbnail {
-  width:100px;
+  width:$thumbnail_size;
   img {
     @include round;
+    max-width:$thumbnail_size;
   }
 }
 .c-news__poster {
