@@ -45,6 +45,35 @@
       });
     },
 
+    // Adds an 'is-closed' class to breadcrumbs that are three lines or longer
+    fixLongBreadcrumb: function() {
+      this.eachIfExists('.c-breadcrumb', function(i, breadcrumb) {
+        function fixBreadcrumb(e) {
+          var $breadcrumb = $(breadcrumb);
+          $breadcrumb.removeClass('is-closed');
+          var $breadcrumbItems = $breadcrumb.children('.c-breadcrumb__items');
+          var breadcrumbHeight = $breadcrumbItems.height();
+          var breadcrumbLineHeight = parseInt($breadcrumbItems.css('line-height'), 10);
+          var lineCount = Math.floor(breadcrumbHeight/breadcrumbLineHeight);
+          var toClose = lineCount > 2;
+          $breadcrumb.toggleClass('is-closed', toClose);
+          // Clicking the third link removes 'is-closed' class
+          if (toClose === true) {
+            $moreLink = $breadcrumbItems.children('a:nth-of-type(3)');
+            $moreLink.one('click', function(e) {
+              e.preventDefault();
+              $breadcrumb.removeClass('is-closed');
+            });
+          }
+        }
+        fixBreadcrumb();
+        var resizeFn = UTILS.debounce(function () {
+          fixBreadcrumb();
+        }, 250);
+        $window.resize(resizeFn);
+      });
+    },
+
     // Ugh. Removes final item from breadcrumb (and separator) if content is 'Header'
     cleanBreadcrumb: function() {
       var $breadcrumbItems = $('.c-breadcrumb__items');
