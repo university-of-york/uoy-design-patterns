@@ -63,7 +63,7 @@
             $moreLink.one('click', function(e) {
               e.preventDefault();
               $breadcrumb.removeClass('is-closed');
-            })
+            });
           }
         }
         fixBreadcrumb();
