@@ -13,9 +13,6 @@ module.exports = function (grunt) {
         var assocNavPage = "src/partials/assocnav.mustache";
         var categories = {};
         pages.forEach(function(page, i) {
-          // if (i === 0) {
-          //   Object.keys(page).forEach(function(k, j) { grunt.log.writeln(k+': '+page[k]) });
-          // }
           // Top level page
           if (page.category === false) {
             // Set up category
