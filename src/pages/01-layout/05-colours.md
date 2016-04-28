@@ -10,7 +10,7 @@ id: colours-page
 
 <div class="lead"><p>We'll use a fairly restrained colour palette across the site.</p></div>
 
-##Primary colours
+## Primary colours
 
 <div class="c-swatch c-swatch--teal">TEAL</div>
 <div class="c-swatch c-swatch--blue">BLUE</div>
@@ -19,7 +19,7 @@ id: colours-page
 <div class="c-swatch c-swatch--gold">GOLD</div>
 <div class="c-swatch c-swatch--light">LIGHT</div>
 
-##Secondary colours
+## Secondary colours
 
 <div class="c-swatch c-swatch--s1">S1</div>
 <div class="c-swatch c-swatch--s2">S2</div>
