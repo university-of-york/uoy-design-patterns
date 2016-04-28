@@ -13,13 +13,15 @@ module.exports = function (grunt) {
         var assocNavPage = "src/partials/assocnav.mustache";
         var categories = {};
         pages.forEach(function(page, i) {
+          // Top level page
           if (page.category === false) {
+            // Set up category
             if (typeof categories[page.name] === 'undefined') {
               categories[page.name] = {};
             }
-            // Top level page
             categories[page.name].page = page;
           } else {
+            // Set up category
             if (typeof categories[page.category] === 'undefined') {
               categories[page.category] = {};
               var catTitle = page.category.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
@@ -39,14 +41,18 @@ module.exports = function (grunt) {
               var cat = categories[c];
               var dest = cat.page.dest || '#';
               var title = cat.page.title || '#';
+              // Get path relative to cwd/dev
+              var catPath = '/'+path.relative(path.resolve(process.cwd(), 'dev/'), cat.page.dest);
               output+= '  <li class="c-nav__item">\n';
-              output+= '    <a class="c-nav__link" href="'+path.basename(cat.page.dest)+'">'+cat.page.title+'</a>\n';
+              output+= '    <a class="c-nav__link" href="'+catPath+'">'+cat.page.title+'</a>\n';
               if (typeof cat['children'] !== 'undefined') {
                 var currentSubcategory = '';
                 suboutput+= '    <ul class="c-subnav__list c-subnav--'+cat.page.name+'">\n';
                 assocOutput+= '    <ul class="c-nav__list c-nav__list--associative c-subnav--'+cat.page.name+'">\n';
                 // Loop through category pages
                 cat['children'].forEach(function(p, j) {
+                  // Get path relative to cwd/dev
+                  var thisPath = '/'+path.relative(path.resolve(process.cwd(), 'dev/'), p.dest);
                   if (p.subcategory && p.subcategory !== currentSubcategory) {
                     currentSubcategory = p.subcategory;
                     suboutput+= '      <li class="c-subnav__item c-subnav__title"><a class="c-subnav__link">'+p.subcategory+'</a></li>\n';
@@ -77,11 +83,11 @@ module.exports = function (grunt) {
         {
           expand: true,
           cwd: 'src/pages/',
-          src: ['*.md', '!sample.md'],
+          src: ['**/*.md', '!sample.md'],
           dest: 'dev/',
           rename: function(dest, src) {
-            // remove numbers from start
-            return dest + src.replace(/\d+\-/, '');
+            // remove numbers from start of file and dir
+            return dest + src.replace(/\d+\-/g, '');
           },
           ext: '.html'
         }
@@ -95,11 +101,11 @@ module.exports = function (grunt) {
         {
           expand: true,
           cwd: 'src/pages/',
-          src: ['*.md', '!sample.md'],
+          src: ['**/*.md', '!sample.md'],
           dest: 'build/',
           rename: function(dest, src) {
-            // remove numbers from start
-            return dest + src.replace(/\d+\-/, '');
+            // remove numbers from start of file and dir
+            return dest + src.replace(/\d+\-/g, '');
           },
           ext: '.html'
         }
