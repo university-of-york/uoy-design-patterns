@@ -1,0 +1,17 @@
+/*
+ * SKIP LINK
+ */
+
+.o-skip-link {
+  @include transition(height);
+  display:block;
+  text-align:center;
+  &:focus {
+    color:$o-skip-link-color;
+    background:$o-skip-link-background-color;
+    width:auto;
+    height:2em;
+    line-height:2;
+    z-index:99;
+  }
+}

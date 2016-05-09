@@ -22,6 +22,7 @@
  * Structure...............Wrappers and site-wide structure.
  * Grids...................Grid system.
  * Media object............The media object
+ * Accessibility...........Accessible styles
  *
  * COMPONENTS
  * Header..................Header styles, containing logo etc.
@@ -98,6 +99,7 @@
 @import "object/structure";
 @import "object/grids";
 @import "object/media";
+@import "object/accessibility";
 
 //COMPONENTS
 @import "component/header";

@@ -31,10 +31,10 @@ component("button", { "text": "Secondary", "type": "secondary" })
 +component("button", { "text": "Delete", "type": "danger" });
 </script>
 
-A button can also be _disabled_:
+A button can also be _disabled_ (even _link_ type buttons):
 
 <script>
-component("button", { "text": "Don't click this!", "type": "disabled" });
+component("button", { "text": "Don't click this!", "type": "disabled", "disabled": true });
 </script>
 
 You can define the size of the button too:
@@ -96,3 +96,4 @@ A block button takes 100% of the width of the containing element. They're useful
   * **icon-after**: the type of [icon](icons.html) to appear at the end of the button (doesn't work with input[type=submit], input[type=reset] or input[type=button])
   * **href**: the URL to visit when clicked (only for button-link, defaults to "#")
   * **block**: (Boolean) defaults to false
+  * **disabled**: is the button disabled? (Boolean) defaults to false

@@ -129,6 +129,10 @@ $c-btn: (
   )
 );
 
+// Skip link
+$o-skip-link-color:$light;
+$o-skip-link-background-color:$blue;
+
 // Blockquotes
 $c-blockquote--image-quote-background-color: lighten($teal,10);
 $c-blockquote--image-quote-color: $light;

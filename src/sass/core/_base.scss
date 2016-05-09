@@ -22,6 +22,10 @@ a {
   &:visited {
     outline: 0px;
   }
+  &:focus {
+    outline:$blue auto 5px;
+    outline-offset:-2px;
+  }
   &:hover {
     color:$link-hover-color;
   }
@@ -116,6 +120,14 @@ ol {
   list-style:decimal;
 }
 form {
+}
+input,
+select,
+textarea {
+  &:focus {
+    outline:$blue auto 5px;
+    outline-offset:-2px;
+  }
 }
 fieldset {
   border:0;
