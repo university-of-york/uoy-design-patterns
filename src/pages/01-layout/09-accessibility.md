@@ -19,10 +19,10 @@ The pattern library works on all current browsers (e.g. Chrome, Firefox, Safari 
 Every page should have a 'Skip to content link', as the first thing in the code. THe markup is as follows:
 
 ```markup
-<a href="#Main-Content" class="is-invisible">Skip to content</a>
+<a href="#Main-Content" class="o-skip-link is-invisible">Skip to content</a>
 ```
 
-The `is-invisible class hides the link without making it hidden to screen readers. When the link is focussed it appears on the screen, allowing sighted readers to use it to navigate.
+The link is invisible without making it hidden to screen readers. When the link is focussed it appears on the screen, allowing sighted readers to use it to navigate.
 
 Obviously, the element with `id="Main-Content"` should be the main part of the page, after the header and navigation (and subnavigation, if present).
 
