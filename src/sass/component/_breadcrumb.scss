@@ -77,4 +77,5 @@
 
 .c-breadcrumb__separator {
   @include breadcrumb-separator-padding;
+  word-break: break-all;
 }

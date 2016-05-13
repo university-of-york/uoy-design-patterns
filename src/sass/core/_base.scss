@@ -23,7 +23,7 @@ a {
     outline: 0px;
   }
   &:focus {
-    outline:$blue auto 5px;
+    outline:$link-focus-outline-color auto 5px;
     outline-offset:-2px;
   }
   &:hover {

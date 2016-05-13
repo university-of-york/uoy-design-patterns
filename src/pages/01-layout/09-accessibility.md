@@ -2,7 +2,7 @@
 
 title: Accessibility
 name: accessibility
-category: false
+category: layout
 layout: q+tq
 id: accessibility-page
 
@@ -16,7 +16,7 @@ The pattern library works on all current browsers (e.g. Chrome, Firefox, Safari 
 
 ## 'Skip to Content' link
 
-Every page should have a 'Skip to content link', as the first thing in the code. THe markup is as follows:
+Every page should have a 'Skip to content link', as the first thing in the code. The markup is as follows:
 
 ```markup
 <a href="#Main-Content" class="o-skip-link is-invisible">Skip to content</a>
