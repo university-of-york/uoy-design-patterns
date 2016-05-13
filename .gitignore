@@ -4,6 +4,7 @@ build
 dev
 node_modules
 secret.json
+npm-debug.log
 src/js/vendor
 src/partials/assocnav.mustache
 src/partials/subnav.mustache
