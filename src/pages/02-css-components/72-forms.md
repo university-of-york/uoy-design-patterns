@@ -65,6 +65,15 @@ component("form-element", { "label": "What is your favourite colour?", "select":
 ]});
 </script>
 
+### Form hints
+
+You can add a `hint` to any `form-element`, to give users more information about a form field.
+
+<script>
+component("form-element", { "label": "Password", "name": "l", "hint": "Must contain a letter, a number, a hieroglyph and at least two Cyrillic characters", "atoms": { "input": { "type":"password" } } });
+</script>
+
+
 You can put these together in the usual grid system: a `grid-row` can be `form-elements` that are three `third`s, two `half`s, a `half` and two `quarter`s, and so on.
 
 <script>
@@ -94,7 +103,7 @@ component("form", { "type":"stacked", "method":"get", "legend": "Fill in this fo
       { "form-element": { "label": "File input", "name": "sb", "atoms": { "input": { "type":"file" } } } },
     } },
     { "grid-box": { "size": "third", "atoms":
-      { "form-element": { "label": "Password", "name": "sc", "atoms": { "input": { "type":"password" } } } }
+      { "form-element": { "label": "Password", "name": "sc", "hint": "Must contain a letter, a number, a hieroglyph and at least two Cyrillic characters", "atoms": { "input": { "type":"password" } } } }
     } }
   ] } },
 
@@ -154,6 +163,8 @@ component("form", { "type":"stacked", "method":"get", "legend": "Fill in this fo
 ]});
 </script>
 
+### Inline forms
+
 Inline forms have the label and the input on the same line. By default, the label is 25% of the width of the row, and the input is the remaining 75%. Because of this it's not recommended to put inline forms into quarter- or third-width grid boxes. Here is the same form as above but as a `form-inline` version.
 
 <script>
@@ -166,7 +177,7 @@ component("form", { "type":"inline", "method":"get", "legend": "Fill in this for
     { "form-element": { "label": "File input", "name": "ib", "atoms": { "input": { "type":"file" } } } }
   } } } },
   { "grid-row": { "atoms": { "grid-box": { "size": "full", "atoms":
-    { "form-element": { "label": "Password", "name": "ic", "atoms": { "input": { "type":"password" } } } }
+    { "form-element": { "label": "Password", "name": "ic", "hint": "Must contain a letter, a number, a hieroglyph and at least two Cyrillic characters", "atoms": { "input": { "type":"password" } } } }
   } } } },
   { "grid-row": { "atoms": { "grid-box": { "size": "full", "atoms":
     { "form-element": { "label": "Email", "name": "id", "atoms": { "input": { "type":"email" } } } }
@@ -212,6 +223,8 @@ component("form", { "type":"inline", "method":"get", "legend": "Fill in this for
 ]});
 </script>
 
+### Joined forms
+
 A _joined_ form is a single-field form with the submit button joined to the end. It must be a text-style input that is joined to the button (or it won't fit). No label is required.
 
 <script>
@@ -223,6 +236,81 @@ component("form", { "type":"joined", "method":"get", "legend": "A joined form an
       { "button-link": { "text": "Search", "size": "medium", "icon-after": "search" } }
       ] } }
   } } } }
+
+]});
+</script>
+
+## Form validation
+
+Add an `is-invalid` class to the `form-element` div to flag it up as invalid its contents. You can also add a `hint-invalid` message to each invalid element, if required.
+
+<script>
+component("form", { "type":"stacked", "method":"get", "legend": "Fill in this form", "atoms": [
+
+  { "grid-row": { "atoms": [
+    { "grid-box": { "size": "third", "atoms":
+      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Text input", "name": "sa", "atoms": { "input": { "type":"text" } } } },
+    } },
+    { "grid-box": { "size": "third", "atoms":
+      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "File input", "name": "sb", "atoms": { "input": { "type":"file" } } } },
+    } },
+    { "grid-box": { "size": "third", "atoms":
+      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Password", "name": "sc", "hint": "Must contain a letter, a number, a hieroglyph and at least two Cyrillic characters", "atoms": { "input": { "type":"password" } } } }
+    } }
+  ] } },
+
+  { "grid-row": { "atoms": [
+    { "grid-box": { "size": "third", "atoms":
+      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Email", "name": "sd", "atoms": { "input": { "type":"email" } } } },
+    } },
+    { "grid-box": { "size": "third", "atoms":
+      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "URL", "name": "se", "atoms": { "input": { "type":"url" } } } },
+    } },
+    { "grid-box": { "size": "third", "atoms":
+      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Telephone", "name": "sf", "atoms": { "input": { "type":"tel" } } } }
+    } }
+  ] } },
+
+  { "grid-row": { "atoms": [
+    { "grid-box": { "size": "third", "atoms":
+      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Select", "select": true, "name": "sg", "atoms":[
+        { "option": { "label": "Red", "value": "red" } },
+        { "option": { "label": "Blue", "value": "blue" } },
+        { "option": { "label": "Green", "value": "green" } },
+        { "option": { "label": "Yellow", "value": "yellow" } }
+      ] } }
+    } },
+    { "grid-box": { "size": "third", "atoms":
+      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Radio", "name": "sh", "atoms": [
+        { "form-element-group": { "name": "sh", "atoms":[
+          { "radio": { "label": "Yes", "value": "yes" } },
+          { "radio": { "label": "No", "value": "no" } },
+          { "radio": { "label": "Not sure", "value": "unsure" } }
+        ] } }
+      ] } }
+    } },
+    { "grid-box": { "size": "third", "atoms":
+      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Checkbox", "name": "si", "atoms":[
+        { "form-element-group": { "name": "si", "atoms":[
+          { "checkbox": { "label": "Ukulele", "value": "ukulele" } },
+          { "checkbox": { "label": "Mandolin", "value": "mandolin" } },
+          { "checkbox": { "label": "Banjo", "value": "banjo", "checked": true } }
+        ] } }
+      ] } }
+    } }
+  ] } },
+
+  { "grid-row": { "atoms":
+    { "grid-box": { "size": "full", "atoms":
+      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Textarea", "name": "sj", "atoms": { "textarea": { } } } }
+    } }
+  } },
+
+  { "grid-row": { "atoms":
+    { "grid-box": { "size": "full", "atoms":
+      { "button": { "text": "Submit" } }
+    } }
+  } }
 
 ]});
 </script>
@@ -257,6 +345,9 @@ component("form", { "type":"joined", "method":"get", "legend": "A joined form an
   * **name**: the name of the form field **(required)**
   * **select**: true if this is a `select` dropdown
   * **size**: one of _half_, _quarter_ or _third_ (leaving blank will render full-width)
+  * **hint**: (string) Help users out with tricky form questions
+  * **invalid**: (Boolean) (default `false`) whether the field is invalid or not
+  * **hint-invalid**: (string) Error message for invalid fields
   * **atoms**: an array of atoms (multiple `options`, `checkboxes` or `radios`) or an atom object (i.e. one `input`). If this is missing a text `input` is added by default
 
 #### Organisms
@@ -269,8 +360,8 @@ component("form", { "type":"joined", "method":"get", "legend": "A joined form an
   * **legend**: some text to go in the `legend` of the form. Default is to omit it altogether.
   * **atoms**: an array of `grid-row` molecules.
 
-###TODO
+### TODO
 
-* Add validation options?
+* Add validation options? (as `data-validation` option)
 * Fancy select boxes?
 * Fancy file input?

@@ -18,6 +18,9 @@
 .c-form__label {
   cursor:pointer;
 }
+.c-form__hint {
+  display:block;
+}
 .c-form__input {
   width:100%;
   line-height:1.5;
@@ -52,14 +55,29 @@
   position:relative;
   margin-bottom:10px;
 }
-.c-form__element--select {
+// This styles the select box inside the container
+.c-form__select {
+  width:100%;
+  line-height:1.5;
+  height:1.99em;
+  height:calc(2em - 2px); // minus top/bottom border
+  border:none;
+  padding:0.25em 8px;
+  border-radius:3px;
+  background-color:#fff;
+  color:$charcoal;
+  -webkit-appearance:none;
+}
+.c-form__input--select {
+  position:relative;
+  padding:0;
   &:after {
     line-height:2;
     content:'\25bc';
     display:block;
     position:absolute;
-    right:0;
-    bottom:0;
+    right:-1px;
+    bottom:-1px;
     border-top-right-radius:3px;
     border-bottom-right-radius:3px;
     height:2em;
@@ -142,4 +160,16 @@
 .c-form--header {
   margin-top:17px;
   margin-bottom:0;
+}
+
+// Form validation
+.is-invalid {
+  .c-form__input {
+    border-color:$red;
+  }
+  .c-form__label,
+  &.c-form__hint {
+    color:$red;
+  }
+
 }
