@@ -16,8 +16,54 @@
 .c-figure__image--rounded {
   @include round;
 }
+
+// Image captions
 .c-figure__caption {
   @include image-caption;
+  background:$blue;
+  background:transparentize($blue, 0.15);
+  color:$light;
+  padding:$base-spacing/2 $base-spacing;
+}
+.c-figure__caption--below {
+  display: block;
+  position: static;
+  background: transparent;
+  color:lighten($charcoal,20);
+  padding: $base-spacing/2 0;
+  @include font-size(14px);
+  .o-grid__row--alt1 &,
+  .o-grid__row--alt2 & {
+    color:darken($light,20);
+  }
+}
+.c-figure__caption--bottom-left {
+  bottom:0;
+  left:0;
+}
+.c-figure__caption--top-left {
+  top:0;
+  left:0;
+}
+.c-figure__caption--top-right {
+  top:0;
+  right:0;
+}
+.c-figure__caption--bottom-right {
+  bottom:0;
+  right:0;
+}
+.c-figure__caption-icon {
+  margin-right:$base-spacing/2;
+}
+
+// Image content
+.c-figure__content {
+  @include image-caption;
+  background:$charcoal;
+  background:transparentize($charcoal, 0.15);
+  color:$light;
+  padding:$base-spacing;
   h2, h3, h4, h5 {
     line-height:1;
   }
@@ -38,99 +84,32 @@
     }
   }
 }
-
-// Caption positions
-.c-figure__caption--below {
-  display: block;
-  position: static;
-  background: transparent;
-  color:lighten($charcoal,20);
-  padding: $base-spacing/2 0;
-  @include font-size(14px);
-  .o-grid__row--alt1 &,
-  .o-grid__row--alt2 & {
-    color:darken($light,20);
-  }
-}
-
-.c-figure__caption--bottom-left {
-  bottom:$base-spacing;
-  left:$base-spacing;
-  margin-right:25%;
-  @include mq('medium', '-') {
-    margin-right:20px;
-  }
-  @include mq('small', '-') {
-    margin-right:$base-spacing/2;
-    bottom:$base-spacing/2;
-    left:$base-spacing/2;
-  }
-}
-.c-figure__caption--top-left {
-  top:$base-spacing;
-  left:$base-spacing;
-  margin-right:25%;
-  @include mq('medium', '~') {
-    margin-right:$base-spacing;
-  }
-  @include mq('small', '-') {
-    margin-right:$base-spacing/2;
-    top:$base-spacing/2;
-    left:$base-spacing/2;
-  }
-}
-.c-figure__caption--top-right {
-  top:$base-spacing;
-  right:$base-spacing;
-  margin-left:25%;
-  @include mq('medium', '-') {
-    margin-left:20px;
-  }
-  @include mq('small', '-') {
-    margin-left:$base-spacing/2;
-    top:$base-spacing/2;
-    right:$base-spacing/2;
-  }
-}
-.c-figure__caption--bottom-right {
-  bottom:$base-spacing;
-  right:$base-spacing;
-  margin-left:25%;
-  @include mq('medium', '-') {
-    margin-left:20px;
-  }
-  @include mq('small', '-') {
-    margin-left:$base-spacing/2;
-    bottom:$base-spacing/2;
-    right:$base-spacing/2;
-  }
-}
-.c-figure__caption--right {
+.c-figure__content--right {
   float:right;
 }
-// Caption colours
-.c-figure__caption--blue {
+// Content colours
+.c-figure__content--blue {
   background-color:$blue;
   background-color:transparentize($blue, 0.25);
 }
-.c-figure__caption--pink {
+.c-figure__content--pink {
   background-color:$pink;
   background-color:transparentize($pink, 0.25);
 }
-.c-figure__caption--teal {
+.c-figure__content--teal {
   background-color:$teal;
   background-color:transparentize($teal, 0.25);
 }
-.c-figure__caption--gold {
+.c-figure__content--gold {
   background-color:$gold;
   background-color:transparentize($gold, 0.25);
 }
-.c-figure__caption--charcoal {
+.c-figure__content--charcoal {
   background-color:$charcoal;
   background-color:transparentize($charcoal, 0.25);
 }
 
-// DEMARGINED FIGURE (SO NAV CAN BE CLOSER)
+// DEMARGINED FIGURE (SO STICKY NAV CAN BE CLOSER)
 .c-figure--no-margin {
   margin:0;
 }
@@ -144,7 +123,7 @@
       .c-figure__image {
         width:auto;
       }
-      .c-figure__caption {
+      .c-figure__content {
         position:relative;
         top:0;
         left:0;
@@ -155,7 +134,7 @@
     z-index:10;
     min-width:100%;
   }
-  .c-figure__caption {
+  .c-figure__content {
     position:absolute;
     display:inline-block;
     z-index:12;
@@ -170,13 +149,17 @@
       background-color:$teal;
     }
   }
-
+  .c-figure__caption {
+    z-index:12;
+    max-width:45%;
+    max-width:calc(50% - #{$base-spacing});
+  }
 }
 
 // LINK
 .c-figure--link {
   text-decoration:none;
-  .c-figure__caption {
+  .c-figure__content {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -185,19 +168,19 @@
     @include mq('tiny') {
       position:static;
       display:block;
-      &.c-figure__caption--blue {
+      &.c-figure__content--blue {
         background-color:$blue;
       }
-      &.c-figure__caption--pink {
+      &.c-figure__content--pink {
         background-color:$pink;
       }
-      &.c-figure__caption--teal {
+      &.c-figure__content--teal {
         background-color:$teal;
       }
-      &.c-figure__caption--gold {
+      &.c-figure__content--gold {
         background-color:$gold;
       }
-      &.c-figure__caption--charcoal {
+      &.c-figure__content--charcoal {
         background-color:$charcoal;
       }
 

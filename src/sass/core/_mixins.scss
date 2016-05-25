@@ -87,14 +87,10 @@
 }
 
 //
-// Image caption style
+// Image caption/content style
 //
 @mixin image-caption() {
   @include demarginalise;
-  background:$charcoal;
-  background:transparentize($charcoal, 0.15);
-  color:$light;
-  padding:$base-spacing;
   display:inline;
   position:absolute;
 }

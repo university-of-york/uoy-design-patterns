@@ -3,7 +3,7 @@ module.exports = {
     files: [{
       expand: true,
       cwd: 'src/',
-      src: ['favicon.ico', 'js/**', 'img/**', 'fonts/**', 'media/**'],
+      src: ['js/**', 'img/**', 'fonts/**', 'media/**'],
       dest: 'dev/'
     }]
   },
@@ -19,7 +19,7 @@ module.exports = {
     files: [{
       expand: true,
       cwd: 'src/',
-      src: ['favicon.ico', 'fonts/**', 'media/**', 'js/prism.js', 'js/usabilla.js'],
+      src: ['fonts/**', 'media/**', 'js/prism.js'],
       dest: 'build/'
     }]
   }

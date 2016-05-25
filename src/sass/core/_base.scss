@@ -98,6 +98,7 @@ ol {
   padding: 0 0 0 1.8em;
 }
 li {
+  @include demarginalise;
   margin: 0 0 $base-spacing/2 0;
 }
 li > {
