@@ -146,7 +146,7 @@ The top-level **structural navigation** (Study, Research, Business) can be kept 
 </nav>
 ```
 -->
-<!--
+
 ### Utility navigation
 
 **Utility navigation** is links that aren't directly related to page content, but are important for general site navigation. This includes _Jobs_, _Staff_, _Current students_ and the _Search_ functionality. These are kept in a top banner on the homepage but hidden elsewhere. They also appear in the footer.
@@ -190,7 +190,7 @@ The top-level **structural navigation** (Study, Research, Business) can be kept 
   </div>
 </nav>
 ```
--->
+
 ## Main menu
 
 The selected level 2 title will appear in larger text (this will be something like _Postgraduate Study_, or _Chemistry_). This means that the other Level 2 navigation won't be immediately clickable, which is intentional: if you've gone to Undergraduate study, you're unlikely to need Postgraduate study as well, if you're looking at Chemistry you're unlikely to need Archaeology as well.

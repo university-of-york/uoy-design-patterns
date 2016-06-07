@@ -1,8 +1,12 @@
 module.exports = {
   compass: {
     files: ['src/sass/**/*.{scss,sass}'],
-    tasks: ['compass:dev']
+    tasks: ['compass:dev', 'newer:postcss:dev']
   },
+/*  formstack: {
+    files: ['src/sass/scopes/formstack.scss'],
+    tasks: ['compass:dev', 'newer:postcss:dev']//, 'scopedCSS:formstackDev']
+  },*/
   components: {
     files: ['src/components/**/*.mustache'],
     tasks: ['makedocs:dev']
@@ -23,9 +27,9 @@ module.exports = {
   img: {
     files: ['src/img/**/*.{png,jpg,svg,gif}'],
     tasks: ['newer:copy:dev']
-  },
-  autoprefix: {
-    files: ['dev/css/*.raw.css'],
-    tasks: ['newer:postcss:dev']
+  // },
+  // autoprefix: {
+  //   files: ['dev/css/*.raw.css'],
+  //   tasks: ['newer:postcss:dev']
   }
 };

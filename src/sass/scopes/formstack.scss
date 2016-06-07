@@ -1,0 +1,159 @@
+@import "core/variables";
+@import "core/mixins";
+@import "core/extends";
+@import "core/normalize";
+@import "core/reset";
+@import "core/base";
+
+//GENERIC
+@import "generic/typography";
+@import "generic/utilities";
+
+//COMPONENTS
+@import "component/alerts";
+@import "component/buttons";
+@import "component/forms";
+
+/*
+ * Formstack styles
+ */
+
+/* Base styles */
+html {}
+body {}
+form {}
+input {}
+select {}
+textarea {
+  @extend .c-form__input--textarea !optional;
+}
+label {}
+fieldset {}
+
+// This could be grouped by ID to allow different extensions for warnign, success etc.
+div.fsError {
+  @extend .c-alert !optional;
+  @extend .c-alert--danger !optional;
+  @include responsive-font-size($default-font-sizes);
+  text-align:left;
+  color:$charcoal;
+}
+.fsBody {
+  font-family:$font-default;
+}
+.fsForm,
+.fsBody .fsInput,
+.fsBody .fsLabel,
+label.fsOptionLabel {
+  @include responsive-font-size($default-font-sizes);
+}
+.fsBody .fsForm {
+  @extend .c-form !optional;
+  margin:0 auto;
+  border:0;
+}
+.fsboxshadow .fsBody .fsForm {
+  box-shadow:none;
+}
+.fsborderradius .fsBody .fsForm,
+.fsborderradius .fsBody .fsSectionHeader {
+  border-radius:0;
+}
+
+.fsBody .fsSectionHeader {
+  background:none;
+  padding:0;
+  margin:$base-spacing/2 0 $base-spacing;
+}
+.fsborderradius .fsBody .fsSectionHeader {
+  margin:$base-spacing/2 0 $base-spacing;
+}
+
+.fsSectionHeading {
+  font-family:$font-title;
+}
+
+.fsSectionText {
+}
+
+.fsBody .fsSupporting {
+  @extend .c-form__hint !optional;
+}
+
+.fsCallout {
+}
+
+.fsRow {
+}
+.fsBody .fsRowBody {
+  padding-left:0;
+  padding-right:0;
+}
+.fsFieldRow {
+}
+
+.fsCell {
+  @extend .c-form__element !optional;
+}
+
+.fsSectionCell {
+}
+
+.fsSection {
+}
+
+.fsForm .fsLabel {
+  @extend .c-form__label !optional;
+}
+.fsBody .fsLabel {
+  font-weight:normal;
+}
+select,
+.fsForm textarea, .fsRowBody input[type=email],
+.fsRowBody input[type=number],
+.fsRowBody input[type=tel],
+.fsRowBody input[type=text] {
+  @extend .c-form__input !optional;
+  background-image:none;
+}
+
+.fsRequiredLabel {
+  @extend .c-form__element--required !optional;
+}
+
+#fsFooterImage {
+}
+
+#fsHeaderImage {
+}
+
+.fsFieldFocused {
+}
+
+.fsReadOnly {
+}
+.fsRequiredMarker {
+  @include responsive-font-size($default-font-sizes);
+  font-family:$font-default;
+  color:$charcoal;
+  font-weight:400;
+}
+.fsValidationError .fsRequiredMarker {
+  color:$red;
+}
+.fsValidationError {
+  @extend .is-invalid !optional;
+  background-color:transparent!important;
+}
+.fsValidationError .fsLabel {
+  background-image:none;
+  padding-left:0;
+}
+.fsForm .fsSubmit {
+  background-color:transparent;
+}
+.fsSubmit input.fsSubmitButton,
+.fsSubmit input.fsSubmitMultipage {
+  @extend .c-btn !optional;
+  @extend .c-btn--medium !optional;
+}

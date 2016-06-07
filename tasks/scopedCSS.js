@@ -2,8 +2,7 @@ var path = require('path');
 var css = require('css');
 var fs = require('fs');
 var fullStylesheet = path.resolve('dev/css/styles.css');
-var tinyMCESass = path.resolve('src/sass/scopes/_tinymce.scss');
-var tinyMCEStylesheet = path.resolve('build/css/tinymce.css');
+var includeExtends = false;
 
 module.exports = function(grunt) {
 
@@ -12,10 +11,13 @@ module.exports = function(grunt) {
   var getStyles = function(pathToFile, callback) {
     fs.readFile(pathToFile, 'utf-8', function(err, data) {
       if (err) throw err;
-      // Replace @extend lines and Sass-style comments - CSS parser doesn't like them
-      var extendRe = /@extend .+|\/\/\s/g;
-      var newData = data.replace(extendRe, '');
-      var parsedStyles = css.parse(newData);
+      // Remove @extend, @include and regular lines, only include Sass-style commented lines
+      // Declaration lines must have a trailing semicolon - it's what differentiates them from selectors
+      var removeRegex = /(\n\s*[a-zA-Z0-9!@.:;$_()\-\s]*;)/g;
+      var data2 = data.replace(removeRegex, '');
+      var commentRegex = /\/\/\s*/g;
+      var data3 = data2.replace(commentRegex, '');
+      var parsedStyles = css.parse(data3);
       callback(parsedStyles);
     });
   };
@@ -26,6 +28,7 @@ module.exports = function(grunt) {
       if (rule.type === 'rule') {
         rule.selectors.forEach(function(selector, j, allSelectors) {
           selectorList.push(selector);
+          //grunt.log.writeln(selector)
         });
       }
       if (i === allRules.length - 1) {
@@ -34,7 +37,8 @@ module.exports = function(grunt) {
     });
   };
 
-  var addRules = function(styles, list, done) {
+  var addRules = function(styles, stylesheetPath, list, done) {
+    grunt.log.writeln('includeExtends', includeExtends);
     styles.stylesheet.rules.forEach(function(rule, i, allRules) {
       if (rule.type === 'rule') {
         rule.selectors.forEach(function(selector, j, allSelectors) {
@@ -43,14 +47,19 @@ module.exports = function(grunt) {
             // Don't write declaration-less selectors!
             var declarationCount = 0;
             rule.declarations.forEach(function(declaration, k, allDeclarations) {
-              if (declaration.type === "declaration") {
+              // Skip declaration if it contains a variable
+              // grunt.log.writeln(declaration.type, declaration.value);
+              if (declaration.type === "declaration" && declaration.value.indexOf('$') === -1) {
                 declarationCount++;
                 ruleText+= '  '+declaration.property+':'+declaration.value+';\n';
               }
             });
             ruleText+= '}\n';
-            if (declarationCount === 0) return false;
-            fs.appendFile(tinyMCEStylesheet, ruleText, function (err) {
+            if (declarationCount === 0) {
+              grunt.log.warn('No declarations for "'+selector+'"');
+              return false;
+            }
+            fs.appendFile(stylesheetPath, ruleText, function (err) {
               if (err) {
                 grunt.log.warn('Could not create the rules for "'+selector+'"');
                 throw err;
@@ -65,32 +74,36 @@ module.exports = function(grunt) {
     });
   };
 
-  grunt.registerTask('tinymce', 'Task to create custom TinyMCE stylesheet.', function() {
+  grunt.registerMultiTask('scopedCSS', 'Task to create custom scoped stylesheets.', function() {
 
     var done = this.async();
 
+    var srcPath = path.resolve(this.data.srcPath);
+    var buildPath = path.resolve(this.data.buildPath);
+    includeExtends = this.data.includeExtends || false;
+
     // Remove existing stylesheet
     try {
-      fs.unlinkSync(tinyMCEStylesheet);
-      grunt.log.ok('Successfully deleted TinyMCE stylesheet!');
+      fs.unlinkSync(buildPath);
+      grunt.log.ok('Successfully deleted existing stylesheet!');
     } catch (e) {
-      grunt.log.warn('Cannot delete non-existent TinyMCE stylesheet!');
+      grunt.log.warn('Cannot delete non-existent stylesheet!');
     }
 
     // Find the styles we need to match first
-    getStyles(tinyMCESass, function(tinyParsedStyles) {
+    getStyles(srcPath, function(parsedStyles1) {
 
       // Write the additional editor styles to the stylesheet
-      addRules(tinyParsedStyles);
+      addRules(parsedStyles1, buildPath);
 
       // Get the main stylesheet styles
-      getSelectorList(tinyParsedStyles, function(selectorList) {
+      getSelectorList(parsedStyles1, function(selectorList) {
 
         // Get the matchable styles
-        getStyles(fullStylesheet, function(parsedStyles) {
+        getStyles(fullStylesheet, function(parsedStyles2) {
 
           // Add rules (if selector matches our list)
-          addRules(parsedStyles, selectorList, done);
+          addRules(parsedStyles2, buildPath, selectorList, done);
 
         });
 
