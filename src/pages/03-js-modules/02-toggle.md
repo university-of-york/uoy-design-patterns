@@ -17,7 +17,8 @@ id: toggle-page
 var t = new TOGGLE({
   container: $('.toggle-container'),
   button: $('.toggle-button'),
-  class: 'is-toggled'
+  class: 'is-toggled',
+  collapse: true
 })
 ```
 
@@ -29,3 +30,4 @@ var t = new TOGGLE({
   * **container** - the element on which to toggle the class (required)
   * **button** - the element to listen for a click (required)
   * **class** - the class to toggle (optional - defaults to `is-open`)
+  * **collapse** - close items with this class opening this toggle (optional selector, default _false_)

@@ -15,7 +15,7 @@ The main header has a button, hidden on larger screens, that pops out the search
 <header class="c-main-header o-wrapper o-grid" role="banner">
   <div class="o-grid__row">
     <div class="o-grid__box o-grid__box--threequarters">
-      <h2 class="c-main-header__title"><img class="c-main-header__logo" src="img/logo.png" alt="University of York logo" width="264" height="41"></h2>
+      <h2 class="c-main-header__title"><img class="c-main-header__logo" src="https://www.york.ac.uk/static/1.2/img/logo.png" alt="University of York logo" width="264" height="41"></h2>
     </div>
     <div class="o-grid__box o-grid__box--quarter is-hidden@medium-">
       <form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--header">
@@ -52,7 +52,7 @@ The main header has a button, hidden on larger screens, that pops out the search
 <header class="c-main-header o-wrapper o-grid" role="banner">
   <div class="o-grid__row">
     <div class="o-grid__box o-grid__box--threequarters">
-      <h2 class="c-main-header__title"><img class="c-main-header__logo" src="img/logo.png" alt="University of York logo" width="264" height="41"></h2>
+      <h2 class="c-main-header__title"><img class="c-main-header__logo" src="https://www.york.ac.uk/static/1.2/img/logo.png" alt="University of York logo" width="264" height="41"></h2>
     </div>
     <div class="o-grid__box o-grid__box--quarter is-hidden@medium-">
       <form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--header">
@@ -149,45 +149,93 @@ The top-level **structural navigation** (Study, Research, Business) can be kept 
 
 ### Utility navigation
 
-**Utility navigation** is links that aren't directly related to page content, but are important for general site navigation. This includes _Jobs_, _Staff_, _Current students_ and the _Search_ functionality. These are kept in a top banner on the homepage but hidden elsewhere. They also appear in the footer.
+**Utility navigation** is links that aren't directly related to page content, but are important for general site navigation. This includes _Jobs_, _Staff and students_, _Alumni_ and a general _A-Z_ listing. These are kept in a top banner on the homepage but hidden elsewhere.
 
 <nav class="c-utility-nav">
   <ul class="c-utility-nav__list">
+    <li class="c-utility-nav__item c-utility-nav__item--parent" id="staff-and-students">
+      <a class="c-utility-nav__link js-utility-toggle" href="#staff-and-students">Staff and students</a>
+      <div class="c-utility-nav__subnav">
+        <ul class="c-utility-nav__sublist">
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Staff homepage</a></li>
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Student homepage</a></li>
+        </ul>
+        <ul class="c-utility-nav__sublist">
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Term dates</a></li>
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Timetables</a></li>
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Library</a></li>
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Yorkshare VLE</a></li>
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">e:Vision</a></li>
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Directory</a></li>
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Email</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="c-utility-nav__item c-utility-nav__item--parent" id="a-to-z">
+      <a class="c-utility-nav__link js-utility-toggle" href="#a-to-z">A-Z</a>
+      <div class="c-utility-nav__subnav">
+        <ul class="c-utility-nav__sublist">
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Undergraduate courses</a></li>
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Postgraduate courses</a></li>
+        </ul>
+        <ul class="c-utility-nav__sublist">
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Departments and centres</a></li>
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Support services</a></li>
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Staff directory</a></li>
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Maps and directions</a></li>
+        </ul>
+        <ul class="c-utility-nav__sublist">
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Full A-Z</a></li>
+        </ul>
+      </div>
+    </li>
     <li class="c-utility-nav__item"><a class="c-utility-nav__link" href="#">Jobs</a></li>
-    <li class="c-utility-nav__item"><a class="c-utility-nav__link" href="#">Visitors</a></li>
     <li class="c-utility-nav__item"><a class="c-utility-nav__link" href="#">Alumni</a></li>
-    <li class="c-utility-nav__item"><a class="c-utility-nav__link" href="#">Current students</a></li>
-    <li class="c-utility-nav__item"><a class="c-utility-nav__link" href="#">Staff</a></li>
-    <li class="c-utility-nav__item"><a class="c-utility-nav__link" href="#">News</a></li>
-    <li class="c-utility-nav__item"><a class="c-utility-nav__link" href="#">Events</a></li>
-    <li class="c-utility-nav__item"><a class="c-utility-nav__link" href="#">Contact us</a></li>
   </ul>
-  <div class="c-utility-nav__search">
-    <form action="" method="get" class="c-form">
-      <input class="c-form__input c-form__input--text" type="text" placeholder="Enter your search">
-      <button class="c-btn c-btn--small"><i class="c-icon c-icon--search"></i></button>
-    </form>
-  </div>
 </nav>
 
 ```markup
 <nav class="c-utility-nav">
   <ul class="c-utility-nav__list">
+    <li class="c-utility-nav__item c-utility-nav__item--parent" id="staff-and-students">
+      <a class="c-utility-nav__link js-utility-toggle" href="#staff-and-students">Staff and students</a>
+      <div class="c-utility-nav__subnav">
+        <ul class="c-utility-nav__sublist">
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Staff homepage</a></li>
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Student homepage</a></li>
+        </ul>
+        <ul class="c-utility-nav__sublist">
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Term dates</a></li>
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Timetables</a></li>
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Library</a></li>
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Yorkshare VLE</a></li>
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">e:Vision</a></li>
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Directory</a></li>
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Email</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="c-utility-nav__item c-utility-nav__item--parent" id="a-to-z">
+      <a class="c-utility-nav__link js-utility-toggle" href="#a-to-z">A-Z</a>
+      <div class="c-utility-nav__subnav">
+        <ul class="c-utility-nav__sublist">
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Undergraduate courses</a></li>
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Postgraduate courses</a></li>
+        </ul>
+        <ul class="c-utility-nav__sublist">
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Departments and centres</a></li>
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Support services</a></li>
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Staff directory</a></li>
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Maps and directions</a></li>
+        </ul>
+        <ul class="c-utility-nav__sublist">
+          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Full A-Z</a></li>
+        </ul>
+      </div>
+    </li>
     <li class="c-utility-nav__item"><a class="c-utility-nav__link" href="#">Jobs</a></li>
-    <li class="c-utility-nav__item"><a class="c-utility-nav__link" href="#">Visitors</a></li>
     <li class="c-utility-nav__item"><a class="c-utility-nav__link" href="#">Alumni</a></li>
-    <li class="c-utility-nav__item"><a class="c-utility-nav__link" href="#">Current students</a></li>
-    <li class="c-utility-nav__item"><a class="c-utility-nav__link" href="#">Staff</a></li>
-    <li class="c-utility-nav__item"><a class="c-utility-nav__link" href="#">News</a></li>
-    <li class="c-utility-nav__item"><a class="c-utility-nav__link" href="#">Events</a></li>
-    <li class="c-utility-nav__item"><a class="c-utility-nav__link" href="#">Contact us</a></li>
   </ul>
-  <div class="c-utility-nav__search">
-    <form action="" method="get" class="c-form">
-      <input class="c-form__input c-form__input--text" type="text" placeholder="Enter your search">
-      <button class="c-btn c-btn--small"><i class="c-icon c-icon--search"></i></button>
-    </form>
-  </div>
 </nav>
 ```
 
@@ -275,7 +323,7 @@ Unopened, the main navigation shows the pages currently in this section. Open it
 </nav>
 <header class="c-main-header" role="banner">
   <div class="o-wrapper">
-    <h2 class="c-main-header__title"><img class="c-main-header__logo" src="img/logo.png" alt="University of York logo" width="264" height="41"></h2>
+    <h2 class="c-main-header__title"><img class="c-main-header__logo" src="https://www.york.ac.uk/static/1.2/img/logo.png" alt="University of York logo" width="264" height="41"></h2>
     <nav class="c-structural-nav is-hidden@medium-">
       <ul class="c-structural-nav__list">
         <li class="c-structural-nav__item"><a class="c-structural-nav__link" href="#">Study</a></li>
@@ -315,7 +363,7 @@ Unopened, the main navigation shows the pages currently in this section. Open it
 <header class="c-main-header o-wrapper o-grid" role="banner">
   <div class="o-grid__row">
     <div class="o-grid__box o-grid__box--threequarters">
-      <h2 class="c-main-header__title"><img class="c-main-header__logo" src="img/logo.png" alt="University of York logo" width="264" height="41"></h2>
+      <h2 class="c-main-header__title"><img class="c-main-header__logo" src="https://www.york.ac.uk/static/1.2/img/logo.png" alt="University of York logo" width="264" height="41"></h2>
     </div>
     <div class="o-grid__box o-grid__box--quarter is-hidden@medium-">
       <form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--header">
@@ -376,7 +424,7 @@ Unopened, the main navigation shows the pages currently in this section. Open it
 <header class="c-main-header o-wrapper o-grid" role="banner">
   <div class="o-grid__row">
     <div class="o-grid__box o-grid__box--threequarters">
-      <h2 class="c-main-header__title"><img class="c-main-header__logo" src="img/logo.png" alt="University of York logo" width="264" height="41"></h2>
+      <h2 class="c-main-header__title"><img class="c-main-header__logo" src="https://www.york.ac.uk/static/1.2/img/logo.png" alt="University of York logo" width="264" height="41"></h2>
     </div>
     <div class="o-grid__box o-grid__box--quarter is-hidden@medium-">
       <form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--header">

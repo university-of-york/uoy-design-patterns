@@ -1,47 +1,120 @@
 //
 // Utility navigation
 //
+
 .c-utility-nav {
   @include clearfix;
-  background:$charcoal;
-  color:$light;
-  padding:0.25em 6px;
 }
+
 .c-utility-nav__list {
-  @include inline-links;
-  float:left;
+  list-style:none;
+  margin:0 auto;
+  padding:0;
+  max-width:$container-width;
+  width:100%;
+  text-align:right;
+  position:relative;
 }
+
 .c-utility-nav__item {
-  margin-top:0.1em;
-  margin-bottom:0.1em;
-  ~ .c-utility-nav__item {
-    border-left:1px solid $light;
-  }
-}
-.c-utility-nav__link {
-  padding:0 0.75em;
+  display:inline-block;
+  position:relative;
+  margin-top:0;
+  margin-bottom:0;
   font-size:0.8em;
-  color:$light;
 }
-.c-utility-nav__search {
-  float:right;
-  .c-form {
-    margin-bottom:0;
+
+.c-utility-nav__link {
+  @include transition('color');
+  display:block;
+  position:relative;
+  padding:0.5em 10px;
+  font-weight:bold;
+  text-decoration:none;
+  color:$c-utility-nav__link-color;
+  &:hover {
+    color:$c-utility-nav__link-hover-color;
   }
-  .c-form__input--text {
-    @include font-size(12px,1.5);
-    width:auto;
-    border:0;
-    background-color:$light;
-    color:$charcoal;
+  .c-utility-nav__item.is-open &,
+  &:focus {
+    color:$c-utility-nav__link-is-open-color;
+    background-color:$c-utility-nav__link-is-open-background-color;
   }
-  .c-btn {
-    min-height:0;
-    border-width:0;
-    line-height:1;
-    height:2em;
-    padding-left:0.5em;
-    padding-right:0.5em;
-    vertical-align:baseline;
+  .c-utility-nav__item--parent & {
+    padding-right:1.5em;
+    &:after {
+      @extend .c-icon;
+      position:absolute;
+      right:0.5em;
+      top:50%;
+      margin-top:-6px;
+      // Down arrow
+      content: "\f0d7";
+    }
+  }
+  .c-utility-nav__item--parent.c-utility-nav__item.is-open &,
+  .c-utility-nav__item--parent &:focus {
+    &:after {
+      // cross
+      content: "\f00d";
+    }
+  }
+}
+
+.c-utility-nav__subnav {
+  @include demarginalise;
+  display:none;
+  position:absolute;
+  left:0;
+  top:100%;
+  min-width:100%;
+  padding:$base-spacing;
+  background-color:$c-utility-nav__subnav-background-color;
+  z-index:2;
+  .c-utility-nav__item.is-open &,
+  .c-utility-nav__link:focus ~ & {
+    display:block;
+  }
+}
+
+// Left aligned
+.c-utility-nav__subnav--left {
+  left:0;
+  right:auto;
+}
+// Right aligned
+.c-utility-nav__subnav--right {
+  left:auto;
+  right:0;
+}
+// Block aligned
+.c-utility-nav__subnav--block {
+  top:calc(100% - 1px); // Not sure why there's 1px extra...
+  max-width:100%;
+}
+.c-utility-nav__item--block-parent {
+  position:static;
+}
+
+.c-utility-nav__sublist {
+  @include demarginalise;
+  list-style:none;
+  padding:0;
+}
+
+.c-utility-nav__subitem {
+  display:block;
+  text-align:left;
+}
+
+.c-utility-nav__sublink {
+  color:$c-utility-nav__sublink-color;
+  text-decoration:none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display:block;
+  &:hover {
+    color:$c-utility-nav__sublink-hover-color;
+    text-decoration:underline;
   }
 }

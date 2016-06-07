@@ -2,13 +2,13 @@ define(
   ['jquery', 'es5shim', 'picturefill',
    'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav',
    'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/prioritised-tables',
-   'app/toggle', 'app/wrapper-height', 'app/youtube-embed', 'app/soundcloud-embed',
+   'app/toggle', 'app/utility-toggle', 'app/wrapper-height', 'app/youtube-embed', 'app/soundcloud-embed',
    'app/searchable-tables', 'app/filterable-tables', 'app/equal-height-row', 'app/google-map'],
   function (
     $, ES5SHIM, PICTUREFILL,
     UTILS, MODALLINK, ACCORDION, STICKYNAV,
     TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
-    TOGGLE, WRAPPERHEIGHT, YOUTUBE, SOUNDCLOUD,
+    TOGGLE, UTILITYTOGGLE, WRAPPERHEIGHT, YOUTUBE, SOUNDCLOUD,
     SEARCHABLE, FILTERABLE, EQUALHEIGHT, GOOGLEMAP) {
 
   $(function(){
@@ -36,6 +36,8 @@ define(
     }, 15);
 
     //UTILS.preventOrphans();
+
+    UTILS.dontBreakSpaces('.c-utility-nav__sublink');
 
     UTILS.cleanBreadcrumb();
 
@@ -85,11 +87,18 @@ define(
     UTILS.eachIfExists('.js-toggle-button', function (i, button) {
       var $b = $(button);
       var $c = $($b.attr('href'));
-      // console.log($b.attr('href'));
       new TOGGLE({
         container: $c,
         button: $b,
         className:'is-open'
+      });
+    });
+
+    // Add utility nav toggle functionality
+    UTILS.eachIfExists('.c-utility-nav', function (i, nav) {
+      var $n = $(nav);
+      new UTILITYTOGGLE({
+        container: $n
       });
     });
 

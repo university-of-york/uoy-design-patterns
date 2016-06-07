@@ -175,11 +175,13 @@
   .o-grid__box[role="main"] {
     p, h2, h3 {
       padding:0 $base-spacing;
+    }
+    p, h2, h3, pre {
       max-width:1200px;
       margin-left:auto;
       margin-right:auto;
     }
-    // Navs/page titles etc. have no bottom margin, so give top margin to follwing items
+    // Navs/page titles etc. have no bottom margin, so give top margin to following items
     .c-nav,
     .c-page-title,
     .c-utility-nav,

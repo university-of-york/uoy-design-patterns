@@ -29,7 +29,17 @@
       return (document.location.hostname === 'localhost' || document.location.hostname === '10.0.2.2');
     },
 
+    // Replace spaces in subnav with &nbsp;
+    dontBreakSpaces: function(ob) {
+      $(ob).map(function(i, v) {
+        var $v = $(v)
+        var newText = $v.html().replace(/ /g, '&nbsp;');
+        $v.html(newText);
+      });
+    },
+
     // Remove value or array from another array
+    // TODO
     removeFromArray: function(removeThis, fromThis) {
       return fromThis;
     },
