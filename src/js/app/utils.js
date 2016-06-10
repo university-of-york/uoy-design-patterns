@@ -32,7 +32,7 @@
     // Replace spaces in subnav with &nbsp;
     dontBreakSpaces: function(ob) {
       $(ob).map(function(i, v) {
-        var $v = $(v)
+        var $v = $(v);
         var newText = $v.html().replace(/ /g, '&nbsp;');
         $v.html(newText);
       });

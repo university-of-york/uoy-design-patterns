@@ -32,7 +32,7 @@ define(['jquery', 'app/toggle', 'app/utils'], function ($, TOGGLE, UTILS) {
         // Get width of subnav
         $subnav.addClass('is-ghost');
         $subnav.removeClass(pfx+'right '+pfx+'block '+pfx+'left');
-        $parent.removeClass('c-utility-nav__item--block-parent')
+        $parent.removeClass('c-utility-nav__item--block-parent');
         var subnavWidth = $subnav.outerWidth();
         $subnav.removeClass('is-ghost');
         // Get width position of sublink
@@ -42,13 +42,13 @@ define(['jquery', 'app/toggle', 'app/utils'], function ($, TOGGLE, UTILS) {
 
         if (buttonLeft + subnavWidth < windowWidth) {
           $subnav.removeClass(pfx+'right '+pfx+'block').addClass(pfx+'left').css('top', '');
-          $parent.removeClass('c-utility-nav__item--block-parent')
+          $parent.removeClass('c-utility-nav__item--block-parent');
         } else if (buttonLeft + buttonWidth > subnavWidth) {
           $subnav.removeClass(pfx+'left '+pfx+'block').addClass(pfx+'right').css('top', '');
-          $parent.removeClass('c-utility-nav__item--block-parent')
+          $parent.removeClass('c-utility-nav__item--block-parent');
         } else {
           $subnav.removeClass(pfx+'left '+pfx+' right').addClass(pfx+'block').css('top', buttonHeight);
-          $parent.addClass('c-utility-nav__item--block-parent')
+          $parent.addClass('c-utility-nav__item--block-parent');
         }
 
       };
