@@ -201,13 +201,14 @@
     }
   }
   .c-figure--link {
-    overflow:visible;
     .c-figure__content {
       position:static;
       padding:0;
-      margin-top:$base-spacing;
       display:block;
     }
+  }
+  .c-figure--no-margin {
+    margin-bottom:$base-spacing;
   }
   /*
    * Quote blockquotes don't need speech bubbles

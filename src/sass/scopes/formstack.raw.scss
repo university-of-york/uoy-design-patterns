@@ -8,6 +8,7 @@
 //GENERIC
 @import "generic/typography";
 @import "generic/utilities";
+@import "generic/visibility";
 
 //COMPONENTS
 @import "component/alerts";
@@ -19,18 +20,44 @@
  */
 
 /* Base styles */
-html {}
-body {}
-form {}
-input {}
-select {}
 textarea {
   @extend .c-form__input--textarea !optional;
 }
-label {}
-fieldset {}
 
-// This could be grouped by ID to allow different extensions for warnign, success etc.
+.hidden {
+  @extend .is-invisible;
+  display: block;
+}
+.fsSubField {
+  margin-top:5px;
+}
+.fieldset-content {
+  @extend .c-form__element-group;
+  height:auto;
+}
+.fsOptionLabel {
+  @extend .c-form__label.c-form__label;
+  input {
+    margin-right:0.25em;
+  }
+}
+
+.fsBody {
+  .fsHidden,
+  .fsHiddenPage {
+    padding: 0!important;
+    margin: 0!important;
+    display: none
+  }
+  .fsHiddenPage {
+    height: 0;
+  }
+}
+.fsHiddenByFieldSetting {
+  display: none
+}
+
+// This could be grouped by ID to allow different extensions for warning, success etc.
 div.fsError {
   @extend .c-alert !optional;
   @extend .c-alert--danger !optional;
@@ -38,34 +65,33 @@ div.fsError {
   text-align:left;
   color:$charcoal;
 }
-.fsBody {
-  font-family:$font-default;
-}
 .fsForm,
-.fsBody .fsInput,
-.fsBody .fsLabel,
+.fsInput,
+.fsLabel,
 label.fsOptionLabel {
   @include responsive-font-size($default-font-sizes);
 }
-.fsBody .fsForm {
+.fsForm {
   @extend .c-form !optional;
+  font-family:$font-default;
   margin:0 auto;
+  padding:2px;
   border:0;
 }
-.fsboxshadow .fsBody .fsForm {
+.fsboxshadow .fsForm {
   box-shadow:none;
 }
-.fsborderradius .fsBody .fsForm,
-.fsborderradius .fsBody .fsSectionHeader {
+.fsborderradius .fsForm,
+.fsborderradius .fsSectionHeader {
   border-radius:0;
 }
 
-.fsBody .fsSectionHeader {
+.fsSectionHeader {
   background:none;
   padding:0;
   margin:$base-spacing/2 0 $base-spacing;
 }
-.fsborderradius .fsBody .fsSectionHeader {
+.fsborderradius .fsSectionHeader {
   margin:$base-spacing/2 0 $base-spacing;
 }
 
@@ -76,7 +102,8 @@ label.fsOptionLabel {
 .fsSectionText {
 }
 
-.fsBody .fsSupporting {
+.fsSupporting {
+  @extend small;
   @extend .c-form__hint !optional;
 }
 
@@ -85,9 +112,7 @@ label.fsOptionLabel {
 
 .fsRow {
 }
-.fsBody .fsRowBody {
-  padding-left:0;
-  padding-right:0;
+.fsRowBody {
 }
 .fsFieldRow {
 }
@@ -106,15 +131,15 @@ label.fsOptionLabel {
   @extend .c-form__label !optional;
 }
 .fsBody .fsLabel {
-  font-weight:normal;
 }
+
 select,
-.fsForm textarea, .fsRowBody input[type=email],
-.fsRowBody input[type=number],
-.fsRowBody input[type=tel],
-.fsRowBody input[type=text] {
+textarea,
+input[type=email],
+input[type=number],
+input[type=tel],
+input[type=text] {
   @extend .c-form__input !optional;
-  background-image:none;
 }
 
 .fsRequiredLabel {
@@ -152,8 +177,17 @@ select,
 .fsForm .fsSubmit {
   background-color:transparent;
 }
+.fs-btn2,
 .fsSubmit input.fsSubmitButton,
+.fsSubmit input.fsNextButton,
+.fsSubmit input.fsPreviousButton,
 .fsSubmit input.fsSubmitMultipage {
   @extend .c-btn !optional;
   @extend .c-btn--medium !optional;
+}
+
+// Dialog
+.fs-form-dialog--hidden {
+  display: none;
+  opacity: 0;
 }
