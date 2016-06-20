@@ -14,6 +14,7 @@
 @import "component/alerts";
 @import "component/buttons";
 @import "component/forms";
+@import "component/icons";
 
 /*
  * Formstack styles
@@ -185,7 +186,16 @@ input[type=text] {
   @extend .c-btn !optional;
   @extend .c-btn--medium !optional;
 }
-
+#fsSubmissionCheckmark {
+  @extend .c-icon !optional;
+  @extend .c-icon--check !optional;
+  @extend .c-icon--3x !optional;
+  float:left;
+}
+// Make text next top checkmark padded to line up
+#fsSubmissionCheckmark + * {
+  padding-top:14px;
+}
 // Dialog
 .fs-form-dialog--hidden {
   display: none;

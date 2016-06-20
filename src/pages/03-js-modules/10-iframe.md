@@ -11,7 +11,7 @@ id: iframe-resizer-module-page
 
 <div class="lead"><p>This module includes the [iframe resizer module](http://davidjbradshaw.github.io/iframe-resizer/). Add a class of `js-iframe-resize` to your iframe to automatically resize iframes based on their content.</p></div>
 
-**You will need to include the [content window script](https://www.york.ac.uk/static/stable/js/xxx.js) on the page with the content.**
+**You will need to include the [content window script](https://www.york.ac.uk/static/stable/js/iframeResizer.contentWindow.min.js) on the page with the content.**
 
 ### Use
 
