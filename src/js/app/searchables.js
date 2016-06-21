@@ -1,8 +1,8 @@
 /*
 
 ---
-title: Searchable Table Module
-name: searchable-table-module
+title: Searchables Module
+name: searchablse-module
 category: Javascript
 ---
 
@@ -11,34 +11,36 @@ category: Javascript
 define(['jquery', 'app/utils'], function ($, UTILS) {
 
   var SEARCHABLE = function (options) {
-    if (!options.table) return false;
-    this.table = options.table;
+    if (!options.container) return false;
+    this.container = options.container;
     this.header = options.header || this.Defaults.header;
     this.label = options.label || this.Defaults.label;
     this.cols = options.cols;
+    this.type = this.container.prop('nodeName');
+    console.log(this.type);
 
     this.caseSensitive = options.caseSensitive || this.Defaults.caseSensitive;
-    if (!this.table.attr('id')) {
+    if (!this.container.attr('id')) {
       var id = setTimeout(null, 0);
-      this.table.attr('id', 'searchable-table-'+id);
+      this.container.attr('id', 'searchable-table-'+id);
     }
-    this.id = this.table.attr('id');
+    this.id = this.container.attr('id');
 
-    // console.log(this.table.height(), $(window).height());
+    // console.log(this.container.height(), $(window).height());
 
-    var rows = this.table.children('tbody').children('tr');
+    var rows = this.type === 'TABLE' ? this.container.children('tbody').children('tr') : this.container.children('li');
 
     // Load searchable items into memory
     this.searchRows = rows;
 
-    if (this.header === true) {
+    if (this.header === true && this.type === 'TABLE') {
       this.searchRows = rows.not('tr:first-of-type');
     }
 
-    // Create table search form
+    // Create search form
     var form = this.createForm();
-    // Add above table
-    this.table.before(form);
+    // Add above container
+    this.container.before(form);
     // Fire event (for e.g. resizing accordion)
     $(window).trigger('content.updated');
 
@@ -50,7 +52,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     header: false,
     cols: false,
     caseSensitive: false,
-    label: 'Search this table'
+    label: 'Search'
   };
 
   SEARCHABLE.prototype.createForm = function () {
@@ -84,31 +86,39 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     var that = e.data.that;
     var inputContent = $(this).val();
     if (that.caseSensitive !== true) inputContent = inputContent.toLowerCase();
+    var testText = function($cell) {
+      var text = $cell.text();
+      if (that.caseSensitive !== true) text = text.toLowerCase();
+      var searchIndex = text.indexOf(inputContent);
+      console.log(text, inputContent, searchIndex);
+      return (searchIndex === -1 && inputContent !== '');
+    };
     that.searchRows.each(function(i, row) {
       var hideIt = true;
       var $row = $(row);
-      $row.children().each(function(j, cell) {
-        if (hideIt === false) return;
-        if (that.cols !== false) {
-          // colNo needs to be a string
-          var colNo = (j+1)+'';
-          // Only include cells that match column numbers in include...
-          if (that.cols.include && $.inArray(colNo, that.cols.include) === -1) {
-            return;
+      var $text;
+      if (that.type === 'TABLE') {
+        $row.children().each(function(j, cell) {
+          if (hideIt === false) return;
+          if (that.cols !== false) {
+            // colNo needs to be a string
+            var colNo = (j+1)+'';
+            // Only include cells that match column numbers in include...
+            if (that.cols.include && $.inArray(colNo, that.cols.include) === -1) {
+              return;
+            }
+            // ...or don't match column numbers in exclude
+            if (that.cols.exclude && $.inArray(colNo, that.cols.exclude) > -1) {
+              return;
+            }
           }
-          // ...or don't match column numbers in exclude
-          if (that.cols.exclude && $.inArray(colNo, that.cols.exclude) > -1) {
-            return;
-          }
-        }
-        var $cell = $(cell);
-        var cellText = $cell.text();
-        if (that.caseSensitive !== true) cellText = cellText.toLowerCase();
-        var searchIndex = cellText.indexOf(inputContent);
-        if (searchIndex > -1 || inputContent === '') {
-          hideIt = false;
-        }
-      });
+          var $cell = $(cell);
+          hideIt = testText($cell);
+        });
+      } else {
+        hideIt = testText($row);
+        console.log(hideIt);
+      }
       $row.toggleClass('is-hidden', hideIt);
     });
   };

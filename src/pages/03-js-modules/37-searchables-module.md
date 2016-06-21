@@ -1,19 +1,21 @@
 ---
 
-title: Searchable tables
-name: searchable-tables-module
+title: Searchables
+name: searchables-module
 category: modules
 subcategory: Component modules
 layout: q+tq
-id: searchable-tables-module-page
+id: searchables-module-page
 
 ---
 
-<div class="lead"><p>Make any table searchable by adding a `js-searchable-table` class to a table. It will automatically add the required search field above the table.</p></div>
+<div class="lead"><p>Make any table or list searchable by adding a `js-searchable` class to a table. It will automatically add the required search field above the table.</p></div>
 
 You can add other options to the table by using `data-` attributes.
 
-THe label of the text field will usually say **Search this table**. To change it, add a `data-label` attribute. See the example [here](#example-using-data-label-).
+The simplest version searches [list items](#example-using-list-).
+
+The label of the text field will usually say **Search**. To change it, add a `data-label` attribute. See the example [here](#example-using-data-label-).
 
 By default, the search will look at the text content of every table cell (`th` or `td`) in the `tbody`, and will not search the `thead`. If you have a header line in the `tbody`, add the `data-header="true"` attribute and the search will skip the first row in the table. See [here](#example-using-data-header-).
 
@@ -28,12 +30,76 @@ If the searchable table is shorter than the height of the browser window, the se
 
 ```javascript
 var m = new SEARCHABLE({
-  table: $('#some-table')
+  container: $('#some-id')
 });
 ```
+
+### Example using list
+<ul class="js-searchable">
+  <li><a href="#">Afghanistan</a></li>
+  <li><a href="#">Australia</a></li>
+  <li><a href="#">Azerbaijan</a></li>
+  <li><a href="#">Bahrain</a></li>
+  <li><a href="#">Bangladesh</a></li>
+  <li><a href="#">Brazil</a></li>
+  <li><a href="#">Brunei</a></li>
+  <li><a href="#">Canada</a></li>
+  <li><a href="#">Chile</a></li>
+  <li><a href="#">China</a></li>
+  <li><a href="#">Colombia</a></li>
+  <li><a href="#">Cyprus</a></li>
+  <li><a href="#">Denmark</a></li>
+  <li><a href="#">Egypt</a></li>
+  <li><a href="#">France</a></li>
+  <li><a href="#">Germany</a></li>
+  <li><a href="#">Ghana</a></li>
+  <li><a href="#">Greece</a></li>
+  <li><a href="#">Hong Kong</a></li>
+  <li><a href="#">India</a></li>
+  <li><a href="#">Indonesia</a></li>
+  <li><a href="#">Iran</a></li>
+  <li><a href="#">Iraq</a></li>
+  <li><a href="#">Italy</a></li>
+  <li><a href="#">Japan</a></li>
+  <li><a href="#">Jordan</a></li>
+  <li><a href="#">Kazakhstan</a></li>
+  <li><a href="#">Kenya</a></li>
+  <li><a href="#">Kuwait</a></li>
+  <li><a href="#">Lebanon</a></li>
+  <li><a href="#">Lithuania</a></li>
+  <li><a href="#">Malaysia</a></li>
+  <li><a href="#">Mexico</a></li>
+  <li><a href="#">Morocco</a></li>
+  <li><a href="#">Netherlands</a></li>
+  <li><a href="#">New Zealand</a></li>
+  <li><a href="#">Nigeria</a></li>
+  <li><a href="#">Norway</a></li>
+  <li><a href="#">Oman</a></li>
+  <li><a href="#">Pakistan</a></li>
+  <li><a href="#">Peru</a></li>
+  <li><a href="#">Poland</a></li>
+  <li><a href="#">Qatar</a></li>
+  <li><a href="#">Republic of Ireland</a></li>
+  <li><a href="#">Russia</a></li>
+  <li><a href="#">Saudi Arabia</a></li>
+  <li><a href="#">Singapore</a></li>
+  <li><a href="#">South Africa</a></li>
+  <li><a href="#">South Korea</a></li>
+  <li><a href="#">Spain</a></li>
+  <li><a href="#">Sri Lanka</a></li>
+  <li><a href="#">Syria</a></li>
+  <li><a href="#">Taiwan</a></li>
+  <li><a href="#">Thailand</a></li>
+  <li><a href="#">Turkey</a></li>
+  <li><a href="#">Ukraine</a></li>
+  <li><a href="#">United Arab Emirates</a></li>
+  <li><a href="#">USA</a></li>
+  <li><a href="#">Vietnam</a></li>
+</ul>
+
 ### Example using `data-label`
 
-<table class="js-searchable-table" data-label="Enter your search term here">
+<table class="js-searchable" data-label="Enter your search term here">
   <thead>
     <tr>
       <th>Programme</th>
@@ -72,7 +138,7 @@ var m = new SEARCHABLE({
 
 By passing `data-header="true"`, the first row of the table is skipped
 
-<table class="js-searchable-table" data-header="true">
+<table class="js-searchable" data-header="true">
   <tbody>
     <tr>
       <th>Programme</th>
@@ -109,7 +175,7 @@ By passing `data-header="true"`, the first row of the table is skipped
 
 In this example, we're not interested in searching the second and third columns. By passing a `data-exclude-cols="2,3"` attribute, we can avoid adding them to the search. You could alternatively use `data-include-cols="1"`.
 
-<table class="js-searchable-table" data-exclude-cols="2,3">
+<table class="js-searchable" data-exclude-cols="2,3">
   <thead>
     <tr>
       <th>Programme</th>
@@ -148,7 +214,7 @@ In this example, we're not interested in searching the second and third columns.
 
 A case-sensitive search (try _MA_ vs. _ma_).
 
-<table class="js-searchable-table" data-case-sensitive="true">
+<table class="js-searchable" data-case-sensitive="true">
   <thead>
     <tr>
       <th>Programme</th>
@@ -187,7 +253,7 @@ A case-sensitive search (try _MA_ vs. _ma_).
 
 This search skips the header row, is case sensitive, and skips searching col 3 (Overseas).
 
-<table class="js-searchable-table" data-header="true" data-exclude-cols="3" data-case-sensitive="true">
+<table class="js-searchable" data-header="true" data-exclude-cols="3" data-case-sensitive="true">
   <tbody>
     <tr>
       <th>Programme</th>
@@ -222,7 +288,7 @@ This search skips the header row, is case sensitive, and skips searching col 3 (
 
 ### Options
 
- * **table** - a jQuery object, which should be a `table` element. The script automatically parses for tables with the class `.js-searchable-table`.
+ * **table** - a jQuery object, which should be a `table` or `ul` element. The script automatically parses for elements with the class `.js-searchable`.
  * **label** - _String_, the label for the search box. Defaults to _"Search this table"_.
  * **header** - _Boolean_, whether the first row of the `tbody` should be included.
  * **caseSensitive** - _Boolean_, whether the search is case-sensitive.

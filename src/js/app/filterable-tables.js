@@ -85,17 +85,18 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       var fi;
       switch(filterType) {
         case 'range':
-          fi = [];
+          fi = []; //TODO
 
           break;
         case 'option':
           fe.addClass('c-form__element--select');
-          fi = $('<select>').addClass('c-form__input c-form__input--select')
+          fi = $('<div>').addClass('c-form__input c-form__input--select');
+          ft = $('<select>').addClass('c-form__select')
                             .attr({'id': inputName, 'name': inputName })
                             .on('change', { that: that }, that.checkTable);
           var options = that.getOptions(i);
-          fi.append(options);
-
+          ft.append(options);
+          fi.append(ft);
           break;
         case 'text':
           fi = $('<input>').addClass('c-form__input c-form__input--text')

@@ -3,7 +3,7 @@ define(
    'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav',
    'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/prioritised-tables',
    'app/toggle', 'app/utility-toggle', 'app/wrapper-height', 'app/youtube-embed', 'app/soundcloud-embed',
-   'app/searchable-tables', 'app/filterable-tables', 'app/equal-height-row', 'app/google-map'],
+   'app/searchables', 'app/filterable-tables', 'app/equal-height-row', 'app/google-map'],
   function (
     $, ES5SHIM, PICTUREFILL, IFRAMERESIZER,
     UTILS, MODALLINK, ACCORDION, STICKYNAV,
@@ -175,7 +175,8 @@ define(
     });
 
     // Make a table searchable
-    UTILS.eachIfExists('.js-searchable-table', function (i, a) {
+    UTILS.eachIfExists('.js-searchable', function (i, a) {
+
       var $a = $(a),
           hasHeader = $a.attr('data-header') == 'true' ? true : false ,
           isCaseSensitive = $a.attr('data-case-sensitive') == 'true' ? true : false ,
@@ -184,7 +185,7 @@ define(
           excludeCols = $a.attr('data-exclude-cols') ? $a.attr('data-exclude-cols').split(',') : false ;
 
       var s = new SEARCHABLE({
-        table: $a,
+        container: $a,
         header: hasHeader,
         cols: {
           include: includeCols,
