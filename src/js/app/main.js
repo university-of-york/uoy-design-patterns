@@ -174,10 +174,10 @@ define(
       });
     });
 
-    // Make a table searchable
+    // Make a table or list searchable
     UTILS.eachIfExists('.js-searchable', function (i, a) {
 
-      var $a = $(a),
+      var $a = $(a).children('ul, table'),
           hasHeader = $a.attr('data-header') == 'true' ? true : false ,
           isCaseSensitive = $a.attr('data-case-sensitive') == 'true' ? true : false ,
           dataLabel = $a.attr('data-label') ? $a.attr('data-label') : false ,

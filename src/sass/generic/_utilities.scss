@@ -10,3 +10,23 @@
 .u-link {
   @extend a;
 }
+
+// Break text into columns (useful for long lists)
+.u-two-columns {
+  column-count: 2;
+}
+.u-three-columns {
+  column-count: 3;
+}
+.u-four-columns {
+  column-count: 4;
+}
+// To make sure bullets appear
+ul.u-two-columns,
+ul.u-three-columns,
+ul.u-four-columns {
+  padding-left:1em;
+  li {
+    margin-left:1em;
+  }
+}

@@ -16,24 +16,23 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     this.header = options.header || this.Defaults.header;
     this.label = options.label || this.Defaults.label;
     this.cols = options.cols;
-    this.type = this.container.prop('nodeName');
-    console.log(this.type);
+    this.type = this.container.prop('nodeName').toLowerCase();
 
     this.caseSensitive = options.caseSensitive || this.Defaults.caseSensitive;
     if (!this.container.attr('id')) {
       var id = setTimeout(null, 0);
-      this.container.attr('id', 'searchable-table-'+id);
+      this.container.attr('id', 'searchable-'+this.type+'-'+id);
     }
     this.id = this.container.attr('id');
 
     // console.log(this.container.height(), $(window).height());
 
-    var rows = this.type === 'TABLE' ? this.container.children('tbody').children('tr') : this.container.children('li');
+    var rows = this.type === 'table' ? this.container.children('tbody').children('tr') : this.container.children('li');
 
     // Load searchable items into memory
     this.searchRows = rows;
 
-    if (this.header === true && this.type === 'TABLE') {
+    if (this.header === true && this.type === 'table') {
       this.searchRows = rows.not('tr:first-of-type');
     }
 
@@ -90,14 +89,13 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       var text = $cell.text();
       if (that.caseSensitive !== true) text = text.toLowerCase();
       var searchIndex = text.indexOf(inputContent);
-      console.log(text, inputContent, searchIndex);
       return (searchIndex === -1 && inputContent !== '');
     };
     that.searchRows.each(function(i, row) {
       var hideIt = true;
       var $row = $(row);
       var $text;
-      if (that.type === 'TABLE') {
+      if (that.type === 'table') {
         $row.children().each(function(j, cell) {
           if (hideIt === false) return;
           if (that.cols !== false) {

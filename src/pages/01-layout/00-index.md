@@ -31,12 +31,12 @@ Then in the head section:
 
 <title>...</title>
 
-<link rel="shortcut icon" href="/favicon.ico">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="stylesheet" href="/link/to/stylesheets/styles.min.css">
+<link rel="shortcut icon" href="https://www.york.ac.uk/static/stable/img/favicon.ico">
+<link rel="icon" type="image/x-icon" href="https://www.york.ac.uk/static/stable/img/favicon.ico">
+<link rel="stylesheet" href="https://www.york.ac.uk/static/stable/css/styles.min.css">
 
-<script src="/link/to/scripts/modernizr.min.js"></script>
-<script src="/link/to/scripts/app.min.js"></script>
+<script src="https://www.york.ac.uk/static/stable/js/modernizr.min.js"></script>
+<script src="https://www.york.ac.uk/static/stable/js/app.min.js"></script>
 
 </head>
 ```
@@ -79,12 +79,12 @@ The following is a standard page template.
 
 <title>...</title>
 
-<link rel="shortcut icon" href="/favicon.ico">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="stylesheet" href="/link/to/stylesheets/styles.min.css">
+<link rel="shortcut icon" href="https://www.york.ac.uk/static/stable/img/favicon.ico">
+<link rel="icon" type="image/x-icon" href="https://www.york.ac.uk/static/stable/img/favicon.ico">
+<link rel="stylesheet" href="https://www.york.ac.uk/static/stable/css/styles.min.css">
 
-<script src="/link/to/scripts/modernizr.min.js"></script>
-<script src="/link/to/scripts/app.min.js"></script>
+<script src="https://www.york.ac.uk/static/stable/js/modernizr.min.js"></script>
+<script src="https://www.york.ac.uk/static/stable/js/app.min.js"></script>
 
 </head>
 

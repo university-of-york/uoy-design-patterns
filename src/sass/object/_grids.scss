@@ -29,6 +29,12 @@ $box-margin: $base-spacing;
   position:relative;
   margin-left:-$box-margin;
 }
+
+.o-grid__row--image {
+  background-position:50% 50%;
+  background-size:cover;
+}
+
 .o-grid__row--alt1,
 .o-grid__row--alt2,
 .o-grid__row--alt3 {

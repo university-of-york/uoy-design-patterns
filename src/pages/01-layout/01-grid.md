@@ -216,6 +216,18 @@ component("grid", { "atoms":[
 ] } );
 </script>
 
+### Image rows
+
+Add an `image` value to put a background image in. This works best inside an `o-wrapper--wide` wrapper component, otherwise it will just fill the available wrapper.
+
+<script>
+component("grid", { "atoms":[
+  { "grid-row": { "type": "alt2 o-grid__row--bordered  o-grid__row--wide", "image": "/media/wide-image.jpg", "atoms": [
+    { "grid-box": { "size": "full", "atoms": { "text": " .o-grid__box--full" } } }
+  ] } }
+] } );
+</script>
+
 ### Options
 
 #### Atoms
@@ -229,7 +241,8 @@ component("grid", { "atoms":[
 
 * **grid-row**
   * **atoms**: an array of `grid-box`es. The sizes of the `grid-box`es should add up to one. Duh.
-  * **type**: either _alt1_ or _alt2_, for alternative styles of row
+  * **type**: either _alt1_,  _alt2_,  _alt3_ for alternative styles of row
+  * **image**: what image should fill the row?
 
 #### Organisms
 
