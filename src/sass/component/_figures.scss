@@ -20,6 +20,7 @@
 // Image captions
 .c-figure__caption {
   @include image-caption;
+  @include font-size(14px);
   background:$blue;
   background:transparentize($blue, 0.15);
   color:$light;
@@ -31,7 +32,6 @@
   background: transparent;
   color:lighten($charcoal,20);
   padding: $base-spacing/2 0;
-  @include font-size(14px);
   .o-grid__row--alt1 &,
   .o-grid__row--alt2 & {
     color:darken($light,20);
@@ -153,6 +153,13 @@
     z-index:12;
     max-width:45%;
     max-width:calc(50% - #{$base-spacing});
+    @include mq('medium', '-') {
+      width:100%;
+      max-width: none;
+      position:static;
+      display:block;
+      background-color:$blue;
+    }
   }
 }
 
