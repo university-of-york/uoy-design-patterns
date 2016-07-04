@@ -96,16 +96,20 @@
       }
     },
 
-    // If the page hash is set on load, scroll to and show the appropriate tab
+    // If the page hash is set on load, scroll to and show the appropriate tab/accordion
     scrollToHash: function () {
       var hash = document.location.hash;
       if (hash === '') return;
-      var tabContainer = $(hash).parents('.js-tabs');
-      if (tabContainer.length === 0) return;
-      var tabLink = $('a[href='+hash+']');
-      var tabOffset = tabContainer.offset();
-      tabLink.click();
-      document.body.scrollTop = tabOffset.top;
+      var container = $(hash).parents('.js-tabs, .js-accordion__item');
+      if (container.length === 0) return;
+      var link = $('a[href='+hash+']');
+      var offset = container.offset();
+      // only click if accordion is not open or tab is not selected
+      if (container.hasClass('is-closed') ||
+        (link.parent().hasClass('c-tabs__tab') && !link.parent().hasClass('is-current'))) {
+        link.click();
+      }
+      document.body.scrollTop = offset.top;
     },
 
     // Runs a function when fonts are active,

@@ -25,6 +25,7 @@ And the `accordion` itself is made up of an array of `accordion-item`s:
 component("accordion", { "atoms": [
   { "accordion-item": {
     "title": "Mandatory for all applicants",
+    "id": "accordion-2a",
     "content": "<h3>Academic transcripts</h3>"+
                "<h4>If you've completed your studies</h4>"+
                "<p>You need to provide copies of your degree certificates and formal transcripts of your academic record. This should include full details of the degrees, classes, grades you've obtained and the modules/units you have taken.</p>"+
@@ -42,6 +43,7 @@ component("accordion", { "atoms": [
   } },
   { "accordion-item": {
     "title": "Course-specific requirements",
+    "id": "accordion-2b",
     "content": "<h3>Written work</h3>"+
                "<p>Some courses require a sample of your written work to further demonstrate your suitability. If you're required to submit written work, the details of what is required will be in the application form. To help you prepare see <a href=\"/study/postgraduate/apply/supporting-documents/written-work/\">courses with written work requirements</a>.</p>"+
                "<h3>Personal statement</h3>"+
@@ -54,6 +56,7 @@ component("accordion", { "atoms": [
   } },
   { "accordion-item": {
     "title": "Research applicants: additional documents",
+    "id": "accordion-2c",
     "content": "<h3>Research proposal or outline of academic interests</h3>"+
                "<p>If you're applying to a research degree, you should provide an outline of your proposed research topic. You must indicate whether you're interested in the work of a particular member of academic staff. Details of what to include in your research proposal will be provided during the application process. To help you prepare see our <a href=\"/study/postgraduate/apply/supporting-documents/research-proposal-guidance/\">guidance for research proposals</a>.</p>"
   } }
@@ -104,7 +107,7 @@ component("accordion", { "collapse": true, "atoms": [
 ] } );
 </script>
 
-If an accordion item has an ID, then a cookie will be set to remember the state of the accordion, so revisiting the page in the same session will keep the same accordions open.
+If an accordion content has an ID, then a cookie will be set to remember the state of the accordion, so revisiting the page in the same session will keep the same accordions open.
 
 ### Options
 

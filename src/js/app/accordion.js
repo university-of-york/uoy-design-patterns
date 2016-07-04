@@ -26,6 +26,9 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
 
     // Hide content
     this.item.addClass('is-closed');
+    // Enable transition
+    var iC = this.itemContent;
+    setTimeout(function() { iC.addClass('is-ready'); }, 400);
 
     // Add click event on title
     this.itemTitle.on('click', { that: this }, this.toggleState);
@@ -49,14 +52,14 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
   ACCORDION.prototype.setAccordionHeight = function() {
 
     // Reset the itemContent
-    this.itemContent.addClass('is-hidden').height('auto');
+    this.itemContent.addClass('is-ghost').height('auto');
 
     // Get content height
     var contentHeight = this.itemContent.outerHeight();
 
     this.itemContent.attr('data-height', contentHeight);
 
-    var thisId = this.item.attr('id') || false;
+    var thisId = this.itemContent.attr('id') || false;
     if (thisId !== false && COOKIES.get(thisId) === 'open') {
       this.item.removeClass('is-closed');
     }
@@ -66,7 +69,7 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
 
     this.itemContent.css('height', contentHeight);
 
-    this.itemContent.removeClass('is-hidden');
+    this.itemContent.removeClass('is-ghost');
 
   };
 
@@ -129,7 +132,7 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
   // Open the content in item
   ACCORDION.prototype.setCookie = function (item, isOpen) {
 
-    var itemId = $(item).attr('id') || false;
+    var itemId = $(item).children('.c-accordion__content').attr('id') || false;
     if (itemId === false) return false;
     if (isOpen === true) {
       COOKIES.set(itemId, 'open');

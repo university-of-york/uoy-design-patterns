@@ -87,6 +87,7 @@ define(
 
     // Go to tab if hash is set
     UTILS.scrollToHash();
+    $window.on('hashchange', UTILS.scrollToHash);
 
     // Add menu toggle functionality
     UTILS.eachIfExists('.js-toggle-button', function (i, button) {
