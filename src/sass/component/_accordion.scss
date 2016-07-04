@@ -41,7 +41,6 @@
 }
 .c-accordion__content {
   @include demarginalise;
-  @include transition('height, padding-top, padding-bottom');
   padding:$base-spacing;
   overflow:hidden;
   position:static;
@@ -53,11 +52,7 @@
     // height:0;
   }
   // Starting class - added by JS to hide the content but still be able to get the height
-  &.is-hidden {
-    transition-duration:0s;
-    visibility: hidden;
-    position: absolute;
-    display:block;
+  &.is-ghost {
     .c-accordion__item.is-closed & {
       padding-top:$base-spacing;
       padding-bottom:$base-spacing;
@@ -65,6 +60,10 @@
   }
 }
 .csstransforms {
+  // 'is-ready' class added by JS after preparation
+  .c-accordion__content.is-ready {
+    @include transition('height, padding-top, padding-bottom');
+  }
   .c-accordion__item.is-closed {
     .c-accordion__icon {
         transform:rotate(0deg);
