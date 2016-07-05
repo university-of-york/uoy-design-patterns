@@ -38,6 +38,9 @@ textarea {
 }
 .fsOptionLabel {
   @extend .c-form__label.c-form__label;
+  &.vertical {
+    display: block;
+  }
   input {
     margin-right:0.25em;
   }
@@ -102,7 +105,9 @@ label.fsOptionLabel {
 
 .fsSectionText {
 }
-
+.fsSelectParent {
+  @extend .c-form__input--select !optional;
+}
 .fsSupporting {
   @extend small;
   @extend .c-form__hint !optional;
