@@ -37,7 +37,8 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
     $window.on('content.updated', function() {
       that.setAccordionHeight.apply(that);
     });
-    $window.on('resize', UTILS.debounce(function() {
+    $window.on('resized.width', UTILS.debounce(function(e) {
+      console.log('Updating accordion content');
       that.setAccordionHeight.apply(that);
     }, 250));
 

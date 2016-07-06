@@ -35,6 +35,8 @@ define(
       }
     }, 15);
 
+    UTILS.axisResize();
+
     //UTILS.preventOrphans();
 
     UTILS.dontBreakSpaces('.c-utility-nav__sublink');

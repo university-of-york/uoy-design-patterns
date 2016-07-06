@@ -29,6 +29,27 @@
       return (document.location.hostname === 'localhost' || document.location.hostname === '10.0.2.2');
     },
 
+    axisResize: function() {
+      if (!$window.data('dimensions')) {
+        $window.data('dimensions', { width: $window.width(), height: $window.height() });
+      }
+      // Trigger resize.width and resize.height on window resize
+      $window.on('resize', function(e) {
+        var wDimensions = $window.data('dimensions');
+        var wWidth = $window.width();
+        var wHeight = $window.height();
+        if (wDimensions.width !== wWidth) {
+          //console.log('Trigger width resize!');
+          $window.trigger('resized.width');
+        }
+        if (wDimensions.height !== wHeight) {
+          //console.log('Trigger height resize!');
+          $window.trigger('resized.height');
+        }
+        $window.data('dimensions', { width: wWidth, height: wHeight });
+      });
+    },
+
     // Replace spaces in subnav with &nbsp;
     dontBreakSpaces: function(ob) {
       $(ob).map(function(i, v) {
