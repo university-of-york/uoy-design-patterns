@@ -4,6 +4,9 @@ module.exports = {
     dest : "build/js/modernizr.min.js",
     files : {
       src: ['src/js/app/**/*.js', 'src/sass/**/*']
-     }
+    },
+    "options": [
+      "setClasses"
+    ]
    }
 };
