@@ -8,6 +8,7 @@ npm-debug.log
 src/js/vendor
 src/partials/assocnav.mustache
 src/partials/subnav.mustache
+src/partials/nav.mustache
 
 **/*.zip
 **/.DS_Store
