@@ -200,6 +200,11 @@
   }
 }
 
+// Code blocks after grid examples
+.o-grid + pre[class*="language-"] {
+  margin-top:$base-spacing;
+}
+
 /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */
 /**
  * prism.js default theme for JavaScript, CSS and HTML

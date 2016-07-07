@@ -1,7 +1,7 @@
 //
 // GRID SYSTEM
 //
-$box-margin: $base-spacing;
+$box-padding: $base-spacing;
 @mixin extend-rows() {
   &:before,
   &:after {
@@ -27,7 +27,7 @@ $box-margin: $base-spacing;
   @include clearfix;
   font-size:0;
   position:relative;
-  margin-left:-$box-margin;
+  margin-left:-$box-padding;
 }
 
 .o-grid__row--image {
@@ -40,10 +40,10 @@ $box-margin: $base-spacing;
 .o-grid__row--alt3 {
   @include extend-rows;
   // Coloured rows need to have padding so components don't butt up against the top
-  padding-top:$base-spacing;
+  padding-top:$box-padding;
   // Rows following coloured rows should also be padded at the top to separate the content...
   + .o-grid__row {
-    padding-top:$base-spacing;
+    padding-top:$box-padding;
   }
 }
 // ...unless they are the same type.
@@ -52,78 +52,89 @@ $box-margin: $base-spacing;
 .o-grid__row--alt3 + .o-grid__row--alt3 {
   padding-top:0;
 }
-.o-grid__row--alt1,
-.o-grid__row--alt2 {
-  color:$light;
+.o-grid__row--alt1 {
+  color:$o-grid__row--alt1-color;
   hr {
-    background-color:$blue;
-    color:$blue;
+    background-color:$o-grid__row--alt1-hr-color;
+    color:$o-grid__row--alt1-hr-color;
   }
   a {
-    color:lighten($blue,5);
+    color:$o-grid__row--alt1-link-color;
     &:hover {
-      color:lighten($blue,15);
+      color:$o-grid__row--alt1-link-hover-color;
+    }
+  }
+}
+.o-grid__row--alt2 {
+  color:$o-grid__row--alt2-color;
+  hr {
+    background-color:$o-grid__row--alt2-hr-color;
+    color:$o-grid__row--alt2-hr-color;
+  }
+  a {
+    color:$o-grid__row--alt2-link-color;
+    &:hover {
+      color:$o-grid__row--alt2-link-hover-color;
     }
   }
 }
 .o-grid__row--bordered {
   @include extend-rows;
-  border-bottom:10px solid $charcoal;
+  border-bottom:10px solid $o-grid__row-border-color;
   &:before,
   &:after {
-    border-bottom:10px solid $charcoal;
+    border-bottom:10px solid $o-grid__row-border-color;
   }
 }
 .o-grid__row--alt1 {
-  background-color:$teal;
+  background-color:$o-grid__row--alt1-background-color;
   &:before,
   &:after {
-    background-color:$teal;
+    background-color:$o-grid__row--alt1-background-color;
   }
   &.o-grid__row--bordered {
-    border-bottom-color:$blue;
+    border-bottom-color:$o-grid__row--alt1-border-color;
     &:before,
     &:after {
-      border-bottom-color:$blue;
+      border-bottom-color:$o-grid__row--alt1-border-color;
     }
   }
 }
 .o-grid__row--alt2 {
-  background-color:darken($teal,5);
+  background-color:$o-grid__row--alt2-background-color;
   &:before,
   &:after {
-    background-color:darken($teal,5);
+    background-color:$o-grid__row--alt2-background-color;
   }
   &.o-grid__row--bordered {
-    border-bottom-color:$teal;
+    border-bottom-color:$o-grid__row--alt2-border-color;
     &:before,
     &:after {
-      border-bottom-color:$teal;
+      border-bottom-color:$o-grid__row--alt2-border-color;
     }
   }
 }
 .o-grid__row--alt3 {
-  background-color:$s2;
+  background-color:$o-grid__row--alt3-background-color;
   &:before,
   &:after {
-    background-color:$s2;
+    background-color:$o-grid__row--alt3-background-color;
   }
   &.o-grid__row--bordered {
-    border-bottom-color:$s1;
+    border-bottom-color:$o-grid__row--alt2-border-color;
     &:before,
     &:after {
-      border-bottom-color:$s1;
+      border-bottom-color:$o-grid__row--alt2-border-color;
     }
   }
 }
-
 
 .o-grid__box {
   @include responsive-font-size($default-font-sizes);
   // @include font-size;
   display:inline-block;
   vertical-align:top;
-  padding-left:$box-margin;
+  padding-left:$box-padding;
 }
 
 .o-grid__box--full {

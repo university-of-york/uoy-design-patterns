@@ -129,6 +129,24 @@ $c-btn: (
   )
 );
 
+// Grid colours
+$o-grid__row-background-color:transparent;
+$o-grid__row-border-color:$charcoal;
+$o-grid__row--alt1-background-color:$teal;
+$o-grid__row--alt1-border-color:$blue;
+$o-grid__row--alt1-color:$light;
+$o-grid__row--alt1-hr-color:$blue;
+$o-grid__row--alt1-link-color:lighten($blue,5);
+$o-grid__row--alt1-link-hover-color:lighten($blue,15);
+$o-grid__row--alt2-background-color:darken($teal,5);
+$o-grid__row--alt2-border-color:$teal;
+$o-grid__row--alt2-color:$light;
+$o-grid__row--alt2-hr-color:$blue;
+$o-grid__row--alt2-link-color:lighten($blue,5);
+$o-grid__row--alt2-link-hover-color:lighten($blue,15);
+$o-grid__row--alt3-background-color:$s2;
+$o-grid__row--alt3-border-color:$s1;
+
 // Skip link
 $o-skip-link-color:$light;
 $o-skip-link-background-color:$blue;
@@ -203,8 +221,6 @@ $c-key-fact-alt-background-color:$teal;
 $c-key-fact-alt-background-hover-color:lighten($teal,5);
 $c-key-fact-alt__title-color:$light;
 
-
-
 // Alerts
 $c-alert-border:$charcoal;
 $c-alert-background:darken($light, 5);
@@ -216,6 +232,10 @@ $c-alert--warning-border:$gold;
 $c-alert--warning-background:lighten($gold, 45);
 $c-alert--danger-border:$red;
 $c-alert--danger-background:lighten($red, 45);
+
+// Block links
+$c-block-link-background-color:transparent;
+$c-block-link-border-color:lighten($s1,5);
 
 // Footer
 $c-footer-background-color:$charcoal;

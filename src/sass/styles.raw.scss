@@ -43,6 +43,7 @@
  * Breadcrumb..............Breadcrumb styles
  * Video...................Embedded videos
  * Audio...................Embedded audio
+ * Block links.............Block links
  *
  * - Molecules
  * Tables..................Tabular data
@@ -124,6 +125,7 @@
 @import "component/breadcrumb";
 @import "component/video";
 @import "component/audio";
+@import "component/block-links";
 
 @import "component/tables";
 @import "component/coursetables";
