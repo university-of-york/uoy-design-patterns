@@ -33,8 +33,12 @@ $box-padding: $base-spacing;
 .o-grid__row--image {
   background-position:50% 50%;
   background-size:cover;
+  background-repeat:no-repeat;
+  .o-wrapper:not(.o-wrapper--wide) & {
+    // Shift bg-image over to line up with padded row (not in wide)
+    background-position:calc(50% + #{$base-spacing}) 50%;
+  }
 }
-
 .o-grid__row--alt1,
 .o-grid__row--alt2,
 .o-grid__row--alt3 {

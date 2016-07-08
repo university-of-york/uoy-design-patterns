@@ -222,7 +222,7 @@ Add an `image` value to put a background image in. This works best inside an `o-
 
 <script>
 component("grid", { "atoms":[
-  { "grid-row": { "type": "alt2 o-grid__row--bordered  o-grid__row--wide", "image": "/media/wide-image.jpg", "atoms": [
+  { "grid-row": { "image": "/media/wide-image.jpg", "atoms": [
     { "grid-box": { "size": "full", "atoms": { "text": " .o-grid__box--full" } } }
   ] } }
 ] } );
