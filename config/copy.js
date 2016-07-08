@@ -2,6 +2,7 @@ module.exports = {
   dev: {
     files: [{
       expand: true,
+      dot: true,
       cwd: 'src/',
       src: ['js/**', 'img/**', 'fonts/**', 'media/**'],
       dest: 'dev/'
@@ -10,6 +11,7 @@ module.exports = {
   templates: {
     files: [{
       expand: true,
+      dot: true,
       cwd: 'src/',
       src: ['templates/**'],
       dest: 'dev/'
@@ -18,6 +20,7 @@ module.exports = {
   build: {
     files: [{
       expand: true,
+      dot: true,
       cwd: 'src/',
       src: ['fonts/**', 'media/**', 'js/prism.js', 'js/iframeResizer.contentWindow.min.js'],
       dest: 'build/'
