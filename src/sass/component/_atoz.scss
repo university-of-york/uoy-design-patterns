@@ -4,7 +4,7 @@
 .c-atoz-nav {
 }
 .c-atoz__nav-list {
-  @include component-margin;
+  margin:0 0 $base-spacing/2;
   display:table;
   padding:0;
   list-style:none;
@@ -13,7 +13,7 @@
 .c-atoz__nav-item {
   display:table-cell;
   float:left;
-  margin-right:8px;
+  margin-right:$base-spacing/2.5;
 }
 .c-atoz__nav-link {
   line-height: 2;
@@ -27,6 +27,7 @@
   text-align:center;
   background:$s2;
   text-decoration:none;
+  cursor:pointer;
   &:hover {
     background:$blue;
     border-color:$blue;

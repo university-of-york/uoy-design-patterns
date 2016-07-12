@@ -9,6 +9,17 @@
   border:2px solid $blue;
   padding:$base-spacing;
 }
+.c-form--panel {
+  border-top:0.8em solid $c-panel--highlight-border-color;
+  background-color: $c-panel--highlight-background-color;
+  border-radius:3px;
+  display:block;
+  padding:$base-spacing/2 $base-spacing;
+  color:$light;
+  & a {
+    color:$light;
+  }
+}
 .c-form__legend {
   @include component;
   padding:0;
@@ -92,14 +103,13 @@
   min-height:2em;
   min-height:calc(2em + 2px);
   line-height:2em;
-  height:2em;
+  //height:2em;
   // Higher specificity - same in all types of form
   .c-form__label.c-form__label {
     display:inline-block; // Only first .c-form__label is block-level
     // margin-left:4px; // Not needed - should be joined with &nbsp;
     margin-right:8px;
   }
-
 }
 // Stacked form
 .c-form--stacked {

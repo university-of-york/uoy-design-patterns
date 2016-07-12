@@ -17,7 +17,7 @@ The simplest version searches [list items](#example-using-list-).
 
 The label of the text field will usually say **Search**. To change it, add a `data-label` attribute. See the example [here](#example-using-data-label-).
 
-By default, the search will look at the text content of every table cell (`th` or `td`) in the `tbody`, and will not search the `thead`. If you have a header line in the `tbody`, add the `data-header="true"` attribute and the search will skip the first row in the table. See [here](#example-using-data-header-).
+By default, the search will look at the text content of every table cell (`th` or `td`) in the `tbody`, and will not search the `thead`. If you have a header line in the `tbody`, add the `data-header="true"` attribute and the search will skip the first row in the table. If you have multiple headers throughout the table you can pass a selector and it will skip any row with that class name. See [here](#example-using-data-header-).
 
 You can skip columns by passing a `data-exclude-cols` attribute. This should be a comma-separated list of the column numbers to skip. See the example [here](#example-using-data-exclude-cols-). You can do the same with `data-include-cols` instead if you like.
 
@@ -302,7 +302,7 @@ This search skips the header row, is case sensitive, and skips searching col 3 (
 
  * **table** - a jQuery object, which should be a `table` or `ul` element. The script automatically parses for elements with the class `.js-searchable`.
  * **label** - _String_, the label for the search box. Defaults to _"Search this table"_.
- * **header** - _Boolean_, whether the first row of the `tbody` should be included.
+ * **header** - _Boolean_, whether the first row of the `tbody` should be included, or _String_, the selector of the header rows.
  * **caseSensitive** - _Boolean_, whether the search is case-sensitive.
  * **exclude-cols** - _Array_, Array of column numbers (**not** zero-based) to skip in the search.
 
