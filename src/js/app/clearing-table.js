@@ -80,21 +80,20 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
 
           var thisCourse = that.data[i];
 
-          // Add letter headers and update letter count
-          var thisLetter = thisCourse['Title of course'].substr(0,1);
-          if (thisLetter !== currentLetter) {
-            that.letters.push(thisLetter);
-            that.letterCount++;
-            that.addHeaderRow(thisLetter);
-            currentLetter = thisLetter;
-          }
-
           // Add the row to the table?
           var addRow = false;
-          if (that.type === 'Both') addRow = true;
+          if (that.type === 'Both' && (thisCourse['Home/EU'] === 'y' || thisCourse['International'] === 'y')) addRow = true;
           if (that.type === 'UK/EU' && thisCourse['Home/EU'] === 'y') addRow = true;
           if (that.type === 'International' && thisCourse['International'] === 'y') addRow = true;
           if (addRow === true) {
+            // Add letter headers and update letter count
+            var thisLetter = thisCourse['Title of course'].substr(0,1);
+            if (thisLetter !== currentLetter) {
+              that.letters.push(thisLetter);
+              that.letterCount++;
+              that.addHeaderRow(thisLetter);
+              currentLetter = thisLetter;
+            }
             that.addCourseRow(thisCourse);
           }
 
@@ -120,9 +119,6 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
           var gb1 = $('<div>').addClass('o-grid__box o-grid__box--half');
           gb1.append(t);
           gr.append(gb1);
-          // Click UK/EU toggle
-          var ukeuToggle = $('#clearing-table-'+that.id+'-toggle-input-ukeu');
-          ukeuToggle.click();
         }
 
         // Add A to Z or remove header rows
@@ -137,6 +133,10 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
           gr.append(gb2);
         }
 
+        // Click UK/EU toggle
+        var ukeuToggle = $('#clearing-table-'+that.id+'-toggle-input-ukeu');
+        ukeuToggle.click();
+
       }
 
     });
@@ -149,15 +149,27 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
   };
 
   CLEARINGTABLE.prototype.updateAtoZ = function(e) {
-    console.log('Search updated');
     var that = e.data.that;
     var atozRows = that.table.find('.c-clearing-table__letter-header');
     atozRows.each(function(i, row) {
       var $row = $(row);
-      console.log($row.text());
+      var hideHeader = true;
       var courseRows = $row.nextUntil('.c-clearing-table__letter-header');
-      console.log(courseRows.hasClass('is-off'));
-      console.log(courseRows.hasClass('is-hidden'));
+      var headerId = $row.children('th').attr('id');
+      var atozLink = $('.c-atoz__nav-link[href="#'+headerId+'"]').parent();
+      $row.show();
+      atozLink.removeClass('is-fadedout');
+      courseRows.each(function(j, courseRow) {
+        if (hideHeader === false) return;
+        var $courseRow = $(courseRow);
+        if (!$courseRow.hasClass('is-off') && !$courseRow.hasClass('is-hidden')) {
+          hideHeader = false;
+        }
+        if (j === courseRows.length - 1 && hideHeader === true) {
+          $row.hide();
+          atozLink.addClass('is-fadedout');
+        }
+      });
     });
   };
 
@@ -211,9 +223,9 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     courseRows.each(function(i, row) {
       var $row = $(row);
       $row.toggleClass('is-off', !$row.data(type));
-      //var e = jQuery.Event('keyup', { data: { that: that.searchable } });
-      //that.searchable.checkTable(e);
     });
+    var e = jQuery.Event('keyup', { data: { that: that } });
+    that.updateAtoZ(e)
   };
 
   CLEARINGTABLE.prototype.createLetterLinks = function() {
