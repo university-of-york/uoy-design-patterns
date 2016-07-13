@@ -125,10 +125,10 @@ $box-padding: $base-spacing;
     background-color:$o-grid__row--alt3-background-color;
   }
   &.o-grid__row--bordered {
-    border-bottom-color:$o-grid__row--alt2-border-color;
+    border-bottom-color:$o-grid__row--alt3-border-color;
     &:before,
     &:after {
-      border-bottom-color:$o-grid__row--alt2-border-color;
+      border-bottom-color:$o-grid__row--alt3-border-color;
     }
   }
 }
