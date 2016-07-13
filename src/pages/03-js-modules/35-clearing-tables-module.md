@@ -31,7 +31,21 @@ If there are more than 25 courses in the list then a search box will appear, and
 
 As you search or toggle between the two the A to Z listing and headers will (dis)appear depending on the results of the search/toggle.
 
+**These examples were generated in July 2016 with custom data - after August 17th 2016 the data will have changed.**
+
 ### Example using subject name
+
+This example has a relatively small list of courses for only UK/EU students.
+
+```markup
+<div class="js-clearing-table" data-subject="Mathematics"></div>
+```
+
+<div class="js-clearing-table" data-subject="Mathematics"></div>
+
+### Further example using subject name
+
+This example has a larger list (>25) of courses for both UK/EU and International students.
 
 ```markup
 <div class="js-clearing-table" data-subject="Electronics"></div>
@@ -42,12 +56,14 @@ As you search or toggle between the two the A to Z listing and headers will (dis
 ### Example using subject name and specific type
 
 ```markup
-<div class="js-clearing-table" data-subject="Mathematics" data-type="UK/EU"></div>
+<div class="js-clearing-table" data-subject="Management" data-type="UK/EU"></div>
 ```
 
-<div class="js-clearing-table" data-subject="Mathematics" data-type="UK/EU"></div>
+<div class="js-clearing-table" data-subject="Management" data-type="UK/EU"></div>
 
 ### Example using defaults
+
+This shows all available classes, with a toggle for UK/EU and International students, plus an A to Z and row headers (presuming there are still enough courses in the list).
 
 ```markup
 <div class="js-clearing-table"></div>

@@ -36,6 +36,10 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     this.letters = [];
     this.dataLoaded = false;
     this.letterCount = 0;
+    this.courseCount = {
+      "UK/EU": 0,
+      "International": 0
+    }
     this.id = setTimeout(null, 0);
     // Make up an ID if there isn't one
     if (!this.container.attr('id')) {
@@ -80,6 +84,10 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
 
           var thisCourse = that.data[i];
 
+          // Count UK/EU and Intl courses
+          if (thisCourse['Home/EU'] === 'y') that.courseCount['UK/EU']++;
+          if (thisCourse['International'] === 'y') that.courseCount['International']++;
+
           // Add the row to the table?
           var addRow = false;
           if (that.type === 'Both' && (thisCourse['Home/EU'] === 'y' || thisCourse['International'] === 'y')) addRow = true;
@@ -113,11 +121,19 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
         var gr = $('<div>').addClass('o-grid__row').appendTo(g);
         that.container.prepend(g);
 
-        // Add toggle switch if type is 'Both'
+        // Add toggle switch if type is 'Both' (and there are some courses to toggle!)
         if (that.type === 'Both') {
-          var t = that.createToggle();
           var gb1 = $('<div>').addClass('o-grid__box o-grid__box--half');
-          gb1.append(t);
+          var boxContent;
+          console.log(that.type, that.courseCount['UK/EU'], that.courseCount['International'])
+          if (that.courseCount['UK/EU'] !== 0 && that.courseCount['International'] !== 0) {
+            boxContent = that.createToggle();
+          } else if (that.courseCount['UK/EU'] === 0) {
+            boxContent = that.createPanel('<p>The following courses only have places available for International students.</p>');
+          } else if (that.courseCount['International'] === 0) {
+            boxContent = that.createPanel('<p>The following courses only have places available for UK/EU students.</p>');
+          }
+          gb1.append(boxContent);
           gr.append(gb1);
         }
 
@@ -158,7 +174,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
       var headerId = $row.children('th').attr('id');
       var atozLink = $('.c-atoz__nav-link[href="#'+headerId+'"]').parent();
       $row.show();
-      atozLink.removeClass('is-fadedout');
+      atozLink.show();
       courseRows.each(function(j, courseRow) {
         if (hideHeader === false) return;
         var $courseRow = $(courseRow);
@@ -167,7 +183,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
         }
         if (j === courseRows.length - 1 && hideHeader === true) {
           $row.hide();
-          atozLink.addClass('is-fadedout');
+          atozLink.hide();
         }
       });
     });
@@ -209,6 +225,13 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     f.append(fs);
 
     return f;
+  };
+
+  CLEARINGTABLE.prototype.createPanel = function(panelContent) {
+    var p = $('<div>').addClass('c-panel');
+    var pc = $('<div>').addClass('c-panel__content').appendTo(p);
+    pc.html(panelContent);
+    return p;
   };
 
   CLEARINGTABLE.prototype.checkTable = function(e) {
