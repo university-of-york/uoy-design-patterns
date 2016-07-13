@@ -2,10 +2,10 @@
 // TABLES
 //
 table {
+  @include component-margin;
   border-collapse: collapse;
   border:0;
   width:100%;
-  margin:$base-spacing 0;
 }
 
 caption {

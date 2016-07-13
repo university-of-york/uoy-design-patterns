@@ -131,9 +131,11 @@ define(
     UTILS.eachIfExists('.js-clearing-table', function (i, a) {
       var $a = $(a),
           type = $a.attr('data-type'),
+          layout = $a.attr('data-layout'),
           subject = $a.attr('data-subject');
       new CLEARINGTABLE({
         type: type,
+        layout: layout,
         subject: subject,
         container: $a
       });

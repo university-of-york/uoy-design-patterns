@@ -24,6 +24,16 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     });
     return output;
   };
+  var makeLink = function(dept) {
+    var link = '../'+dept.toLowerCase().replace(/,/g, '').replace(/\s/g, '-')
+    var a = $('<a>').addClass('c-clearing-list__link')
+                    .attr('href', link)
+                    .text(dept);
+    var li = $('<li>').addClass('c-clearing-list__item')
+                      .attr('data-department', dept)
+                      .append(a);
+    return li;
+  }
 
   var CLEARINGTABLE = function (options) {
 
@@ -31,23 +41,32 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
 
     this.type = options.type || 'Both';
     this.subject = options.subject || 'All';
+    this.layout = options.layout || 'Courses';
     this.container = options.container;
     this.data = [];
-    this.letters = [];
     this.dataLoaded = false;
-    this.letterCount = 0;
-    this.courseCount = {
-      "UK/EU": 0,
-      "International": 0
-    }
+    this.courseCount = {};
     this.id = setTimeout(null, 0);
     // Make up an ID if there isn't one
     if (!this.container.attr('id')) {
       this.container.attr('id', 'clearing-container-'+this.id);
     }
     this.container.addClass('c-clearing-container');
-    this.table = $('<table>').addClass('c-clearing-table');
-    this.table.attr('id', 'clearing-table-'+this.id);
+
+    console.log(this);
+
+    if (this.layout === 'Courses') {
+      this.courseCount['UK/EU'] = 0;
+      this.courseCount['International'] = 0;
+      this.letters = [];
+      this.letterCount = 0;
+      this.table = $('<table>').addClass('c-clearing-table');
+      this.table.attr('id', 'clearing-table-'+this.id);
+      // Update A to Z when search updates
+      this.table.on('search.updated', { that: that }, this.updateAtoZ);
+    } else if (this.layout === 'Departments') {
+      this.list = $('<ul>').addClass('c-clearing-list');
+    }
 
     var t = new GOOGLEDOC({
       id: docID,
@@ -73,92 +92,138 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
 
         // Sort course title then Qualification
         that.data.sort(function (a, b) {
-          if (a['Title of course'] === b['Title of course']) {
-            return (a['Qualification earned'] > b['Qualification earned']) ? 1 : -1 ;
+          if (that.layout === 'Courses') {
+            if (a['Title of course'] === b['Title of course']) {
+              return (a['Qualification earned'] > b['Qualification earned']) ? 1 : -1 ;
+            }
+            return (a['Title of course'] > b['Title of course']) ? 1 : -1 ;
+          } else {
+            return (a['Department'] > b['Department']) ? 1 : -1 ;
           }
-          return (a['Title of course'] > b['Title of course']) ? 1 : -1 ;
         });
 
         var currentLetter = false;
+        var currentDepartment = false;
         for (var i = 0; i < that.data.length; i++) {
 
           var thisCourse = that.data[i];
 
-          // Count UK/EU and Intl courses
-          if (thisCourse['Home/EU'] === 'y') that.courseCount['UK/EU']++;
-          if (thisCourse['International'] === 'y') that.courseCount['International']++;
+          // Course layout
+          if (that.layout === 'Courses') {
 
-          // Add the row to the table?
-          var addRow = false;
-          if (that.type === 'Both' && (thisCourse['Home/EU'] === 'y' || thisCourse['International'] === 'y')) addRow = true;
-          if (that.type === 'UK/EU' && thisCourse['Home/EU'] === 'y') addRow = true;
-          if (that.type === 'International' && thisCourse['International'] === 'y') addRow = true;
-          if (addRow === true) {
-            // Add letter headers and update letter count
-            var thisLetter = thisCourse['Title of course'].substr(0,1);
-            if (thisLetter !== currentLetter) {
-              that.letters.push(thisLetter);
-              that.letterCount++;
-              that.addHeaderRow(thisLetter);
-              currentLetter = thisLetter;
+            // Count UK/EU and Intl courses
+            if (thisCourse['Home/EU'] === 'y') that.courseCount['UK/EU']++;
+            if (thisCourse['International'] === 'y') that.courseCount['International']++;
+
+            // Add the row to the table?
+            var addRow = false;
+            if (that.type === 'Both' && (thisCourse['Home/EU'] === 'y' || thisCourse['International'] === 'y')) addRow = true;
+            if (that.type === 'UK/EU' && thisCourse['Home/EU'] === 'y') addRow = true;
+            if (that.type === 'International' && thisCourse['International'] === 'y') addRow = true;
+            if (addRow === true) {
+              // Add letter headers and update letter count
+              var thisLetter = thisCourse['Title of course'].substr(0,1);
+              if (thisLetter !== currentLetter) {
+                that.letters.push(thisLetter);
+                that.letterCount++;
+                that.addHeaderRow(thisLetter);
+                currentLetter = thisLetter;
+              }
+              that.addCourseRow(thisCourse);
+
             }
-            that.addCourseRow(thisCourse);
+
+          } else if (that.layout === "Departments") {
+
+            // Set up departmental counts
+            if (typeof that.courseCount[thisCourse['Department']] === 'undefined') {
+              that.courseCount[thisCourse['Department']] = {
+                'UK/EU': 0,
+                'International': 0
+              };
+            }
+            // Count UK/EU and Intl courses
+            if (thisCourse['Home/EU'] === 'y') that.courseCount[thisCourse['Department']]['UK/EU']++;
+            if (thisCourse['International'] === 'y') that.courseCount[thisCourse['Department']]['International']++;
+
+            if (thisCourse['Department'] !== currentDepartment) {
+
+              console.log(thisCourse['Department'], currentDepartment);
+
+              // Make link with previous course
+              if (currentDepartment !== false && (that.courseCount[currentDepartment]['UK/EU'] > 0 || that.courseCount[currentDepartment]['UK/EU'] > 0)) {
+                var li = makeLink(currentDepartment);
+                that.list.append(li);
+              }
+              if (i === that.data.length - 1) {
+                var li = makeLink(thisCourse['Department']);
+                that.list.append(li);
+              }
+              currentDepartment = thisCourse['Department'];
+            }
           }
 
         }
 
-        // Add table to container
-        that.container.append(that.table);
-        $(window).trigger('content.updated');
+        // Course layout
+        if (that.layout === 'Courses') {
+          // Add table to container
+          that.container.append(that.table);
+          $(window).trigger('content.updated');
 
-        if (that.data.length > searchLimit) {
-          // Make table searchable
-          that.makeSearchable();
-        }
-
-        // Grid layout for toggle/A to Z
-        var g = $('<div>').addClass('o-grid');
-        var gr = $('<div>').addClass('o-grid__row').appendTo(g);
-        that.container.prepend(g);
-
-        // Add toggle switch if type is 'Both' (and there are some courses to toggle!)
-        if (that.type === 'Both') {
-          var gb1 = $('<div>').addClass('o-grid__box o-grid__box--half');
-          var boxContent;
-          console.log(that.type, that.courseCount['UK/EU'], that.courseCount['International'])
-          if (that.courseCount['UK/EU'] !== 0 && that.courseCount['International'] !== 0) {
-            boxContent = that.createToggle();
-          } else if (that.courseCount['UK/EU'] === 0) {
-            boxContent = that.createPanel('<p>The following courses only have places available for International students.</p>');
-          } else if (that.courseCount['International'] === 0) {
-            boxContent = that.createPanel('<p>The following courses only have places available for UK/EU students.</p>');
+          if (that.data.length > searchLimit) {
+            // Make table searchable
+            that.makeSearchable();
           }
-          gb1.append(boxContent);
-          gr.append(gb1);
-        }
 
-        // Add A to Z or remove header rows
-        if (that.letterCount < letterLimit) {
-          // Remove letter headers
-          that.table.find('.c-clearing-table__letter-header').remove();
+          // Grid layout for toggle/A to Z
+          var g = $('<div>').addClass('o-grid');
+          var gr = $('<div>').addClass('o-grid__row').appendTo(g);
+          that.container.prepend(g);
+
+          // Add toggle switch if type is 'Both' (and there are some courses to toggle!)
+          if (that.type === 'Both') {
+            var gb1 = $('<div>').addClass('o-grid__box o-grid__box--half');
+            var boxContent;
+            if (that.courseCount['UK/EU'] !== 0 && that.courseCount['International'] !== 0) {
+              boxContent = that.createToggle();
+            } else if (that.courseCount['International'] > 0) {
+              boxContent = that.createPanel('<p>The following courses only have places available for International students.</p>');
+            } else if (that.courseCount['UK/EU'] > 0) {
+              boxContent = that.createPanel('<p>The following courses only have places available for UK/EU students.</p>');
+            }
+            gb1.append(boxContent);
+            gr.append(gb1);
+          }
+
+          // Add A to Z or remove header rows
+          if (that.letterCount < letterLimit) {
+            // Remove letter headers
+            that.table.find('.c-clearing-table__letter-header').remove();
+          } else {
+            // Add A-Z links
+            var ul = that.createLetterLinks();
+            var gb2 = $('<div>').addClass('o-grid__box o-grid__box--half');
+            gb2.append(ul);
+            gr.append(gb2);
+          }
+
+          // Click UK/EU toggle
+          var ukeuToggle = $('#clearing-table-'+that.id+'-toggle-input-ukeu');
+          ukeuToggle.click();
+
         } else {
-          // Add A-Z links
-          var ul = that.createLetterLinks();
-          var gb2 = $('<div>').addClass('o-grid__box o-grid__box--half');
-          gb2.append(ul);
-          gr.append(gb2);
-        }
 
-        // Click UK/EU toggle
-        var ukeuToggle = $('#clearing-table-'+that.id+'-toggle-input-ukeu');
-        ukeuToggle.click();
+          // Add markers to UK/EU-only or International-only departments
+          console.log(that.courseCount);
+          // Add list to container
+          that.container.append(that.list);
+          $(window).trigger('content.updated');
+        }
 
       }
 
     });
-
-    // Update A to Z when search updates
-    this.table.on('search.updated', { that: that }, this.updateAtoZ);
 
     console.info(this);
 
