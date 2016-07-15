@@ -46,7 +46,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     this.data = [];
     this.dataLoaded = false;
     this.courseCount = {};
-    this.id = setTimeout(null, 0);
+    this.id = setTimeout(function(){}, 0);
     // Make up an ID if there isn't one
     if (!this.container.attr('id')) {
       this.container.attr('id', 'clearing-container-'+this.id);
@@ -147,8 +147,6 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
             if (thisCourse.International === 'y') that.courseCount[thisCourse.Department].International++;
 
             if (thisCourse.Department !== currentDepartment) {
-
-              console.log(thisCourse.Department, currentDepartment);
 
               // Make link with previous course
               if (currentDepartment !== false && (that.courseCount[currentDepartment]['UK/EU'] > 0 || that.courseCount[currentDepartment]['UK/EU'] > 0)) {
