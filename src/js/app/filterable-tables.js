@@ -18,7 +18,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     if (this.colgroup.length === 0 || this.cols.length === 0) return false;
     this.header = options.header || this.Defaults.header;
     if (!this.table.attr('id')) {
-      var id = setTimeout(null, 0);
+      var id = setTimeout(function(){});
       this.table.attr('id', 'filterable-table-'+id);
     }
     this.id = this.table.attr('id');

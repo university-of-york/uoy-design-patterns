@@ -15,7 +15,8 @@ define(
 
     if (typeof window.console === 'undefined') {
       console = {};
-      console.log = function (a) { /*alert(a);*/ };
+      console.log = function(a) { /*alert(a);*/ };
+      console.info = function(a) { /*alert(a);*/ };
     }
 
     // Disable buttons
