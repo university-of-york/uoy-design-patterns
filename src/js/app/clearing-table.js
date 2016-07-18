@@ -53,8 +53,6 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     }
     this.container.addClass('c-clearing-container');
 
-    console.log(this);
-
     if (this.layout === 'Courses') {
       this.courseCount['UK/EU'] = 0;
       this.courseCount.International = 0;
@@ -63,7 +61,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
       this.table = $('<table>').addClass('c-clearing-table');
       this.table.attr('id', 'clearing-table-'+this.id);
       // Update A to Z when search updates
-      this.table.on('search.updated', { that: that }, this.updateAtoZ);
+      this.table.on('search.updated', { that: this }, this.updateAtoZ);
     } else if (this.layout === 'Departments') {
       this.list = $('<ul>').addClass('c-clearing-list');
     }
