@@ -68,4 +68,4 @@ This will create, and switch to, a new branch in Git. Make your changes as usual
 git push -u origin new-branch-name
 ```
 
-We will merge any signed-off branches into `master` and they will be deployed in the next build.
+We will merge any signed-off branches into `master` and they will be deployed in the next release. When you merge a branch into `master` you must add a line to [release-notes.md](release-notes.md) to clarify what the new feature/fix/component does.
