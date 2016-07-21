@@ -133,11 +133,11 @@ define(
       var $a = $(a),
           type = $a.attr('data-type'),
           layout = $a.attr('data-layout'),
-          subject = $a.attr('data-subject');
+          department = $a.attr('data-department');
       new CLEARINGTABLE({
         type: type,
         layout: layout,
-        subject: subject,
+        department: department,
         container: $a
       });
     });

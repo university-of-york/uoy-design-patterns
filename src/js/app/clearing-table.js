@@ -24,14 +24,34 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     });
     return output;
   };
-  var makeLink = function(dept) {
-    var link = '../'+dept.toLowerCase().replace(/,/g, '').replace(/\s/g, '-');
-    var a = $('<a>').addClass('c-clearing-list__link')
-                    .attr('href', link)
-                    .text(dept);
+  var makeLink = function(dept, courseCount) {
+    var link = './'+dept.Department.toLowerCase().replace(/,/g, '').replace(/\s/g, '-');
+    var a;
+    if (dept.Department === dept.Subject) {
+      // Link is Subject name
+      a = $('<a>').addClass('c-clearing-list__link')
+                  .attr('href', link)
+                  .text(dept.Subject);
+    } else {
+      // Link is Department name
+      l = $('<a>').addClass('c-clearing-list__link')
+                  .attr('href', link)
+                  .text(dept.Department);
+      a = dept.Subject+' (see '+l.prop('outerHTML')+')';
+    }
     var li = $('<li>').addClass('c-clearing-list__item')
-                      .attr('data-department', dept)
+                      .attr('data-department', dept.Subject)
                       .append(a);
+    // Add markers to UK/EU-only or International-only departments
+    if (courseCount['UK/EU'] === 0) {
+      // International courses only
+      li.addClass('is-international-only');
+      li.append('&nbsp;<small class="c-clearing-list__comment">Places for international students only</small>')
+    } else if (courseCount.International === 0) {
+      // UK/EU courses only
+      li.addClass('is-ukeu-only')
+      li.append('&nbsp;<small class="c-clearing-list__comment">Places for UK/EU students only</small>')
+    }
     return li;
   };
 
@@ -40,7 +60,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     if (!options.container) return false;
 
     this.type = options.type || 'Both';
-    this.subject = options.subject || 'All';
+    this.department = options.department || 'All';
     this.layout = options.layout || 'Courses';
     this.container = options.container;
     this.data = [];
@@ -79,10 +99,10 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
         // Only load it once, even if there's more than one table on a page!
         that.dataLoaded = true;
 
-        // Filter by subject
-        if (that.subject !== 'All') {
+        // Filter by department
+        if (that.department !== 'All') {
           $.grep(data, function(a) {
-            if (a.Subject === that.subject) that.data.push(a);
+            if (a.Department === that.department) that.data.push(a);
           });
         } else {
           that.data = data;
@@ -96,12 +116,12 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
             }
             return (a['Title of course'] > b['Title of course']) ? 1 : -1 ;
           } else {
-            return (a.Department > b.Department) ? 1 : -1 ;
+            return (a.Subject > b.Subject) ? 1 : -1 ;
           }
         });
 
         var currentLetter = false;
-        var currentDepartment = false;
+        var currentCourse = false;
         for (var i = 0; i < that.data.length; i++) {
 
           var thisCourse = that.data[i];
@@ -131,31 +151,34 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
 
             }
 
+          // Department layout
           } else if (that.layout === "Departments") {
 
-            // Set up departmental counts
-            if (typeof that.courseCount[thisCourse.Department] === 'undefined') {
-              that.courseCount[thisCourse.Department] = {
+            // Set up subject counts
+            if (typeof that.courseCount[thisCourse.Subject] === 'undefined') {
+              that.courseCount[thisCourse.Subject] = {
                 'UK/EU': 0,
                 'International': 0
               };
             }
             // Count UK/EU and Intl courses
-            if (thisCourse['Home/EU'] === 'y') that.courseCount[thisCourse.Department]['UK/EU']++;
-            if (thisCourse.International === 'y') that.courseCount[thisCourse.Department].International++;
+            if (thisCourse['Home/EU'] === 'y') that.courseCount[thisCourse.Subject]['UK/EU']++;
+            if (thisCourse.International === 'y') that.courseCount[thisCourse.Subject].International++;
 
-            if (thisCourse.Department !== currentDepartment) {
+            if (thisCourse.Subject !== currentCourse.Subject) {
 
               // Make link with previous course
-              if (currentDepartment !== false && (that.courseCount[currentDepartment]['UK/EU'] > 0 || that.courseCount[currentDepartment]['UK/EU'] > 0)) {
-                var li = makeLink(currentDepartment);
+              if (currentCourse !== false && (that.courseCount[currentCourse.Subject]['UK/EU'] > 0 || that.courseCount[currentCourse.Subject]['International'] > 0)) {
+                var li = makeLink(currentCourse, that.courseCount[currentCourse.Subject]);
                 that.list.append(li);
               }
-              if (i === that.data.length - 1) {
-                var lastLi = makeLink(thisCourse.Department);
+              currentCourse = thisCourse;
+            }
+            if (i === that.data.length - 1) {
+              if (currentCourse.Subject !== false && (thisCourse.Subject['UK/EU'] > 0 || thisCourse.Subject['International'] > 0)) {
+                var lastLi = makeLink(thisCourse, that.courseCount[thisCourse.Subject]);
                 that.list.append(lastLi);
               }
-              currentDepartment = thisCourse.Department;
             }
           }
 
@@ -210,9 +233,8 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
 
         } else {
 
-          // Add markers to UK/EU-only or International-only departments
-          console.log(that.courseCount);
           // Add list to container
+          that.container.append($('<h3>').text('Vacancies by subject area'));
           that.container.append(that.list);
           $(window).trigger('content.updated');
         }
@@ -289,8 +311,8 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
   };
 
   CLEARINGTABLE.prototype.createPanel = function(panelContent) {
-    var p = $('<div>').addClass('c-panel');
-    var pc = $('<div>').addClass('c-panel__content').appendTo(p);
+    var p = $('<div>').addClass('c-alert c-alert--info');
+    var pc = $('<div>').addClass('c-alert__content').appendTo(p);
     pc.html(panelContent);
     return p;
   };
@@ -389,7 +411,6 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
   };
 
   CLEARINGTABLE.prototype.addHeaderRow = function(letter) {
-    //console.log('Add header row for '+letter.toUpperCase());
     var rowId = this.table.attr('id')+'-'+letter.toUpperCase();
     var headerCell = $('<th>').text(letter.toUpperCase()).attr('id', rowId);
     var headerRow = $('<tr>').addClass('c-clearing-table__letter-header').append(headerCell);

@@ -46,4 +46,5 @@
   }
 }
 .c-alert__content {
+  @include demarginalise;
 }
