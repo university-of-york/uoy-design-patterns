@@ -46,6 +46,8 @@ define(
 
     UTILS.fixLongBreadcrumb();
 
+    UTILS.breakEmailAddresses();
+
     // Add Google map functionality
     UTILS.eachIfExists('.js-map', function (i, map) {
       var $map = $(map);

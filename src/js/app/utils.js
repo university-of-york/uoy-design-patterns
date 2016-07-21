@@ -29,6 +29,19 @@
       return (document.location.hostname === 'localhost' || document.location.hostname === '10.0.2.2');
     },
 
+    breakEmailAddresses: function() {
+      // Find all text nodes
+      $('a[href^="mailto"]').each(function(i, email) {
+        var $email = $(email);
+        var emailAddress = $email.text().split('@');
+        if (emailAddress.length == 2) {
+          $(this).html(emailAddress[0]+'<wbr>@'+emailAddress[1]);
+        }
+      });
+      return true;
+    },
+
+    // Check of resize event is horizontal or vertical
     axisResize: function() {
       if (!$window.data('dimensions')) {
         $window.data('dimensions', { width: $window.width(), height: $window.height() });
