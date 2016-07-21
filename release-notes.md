@@ -8,3 +8,14 @@ v1.3.6 (released 21 July 2016)
 
 v1.3.4 (released 8 July 2016)
 * New block link component added
+
+v1.3.3 (released 6 July 2016)
+* Axis resizing utility function added
+* Accordions only to update on horizontal resize
+
+v1.3.2 (released 30 June 2016)
+v1.3.1 (released 30 June 2016)
+* Captions go below image banners on small screens
+
+v1.3.0 (released 17 June 2016)
+* Updated `grunt-modernizr`
