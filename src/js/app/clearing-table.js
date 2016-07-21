@@ -46,11 +46,11 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     if (courseCount['UK/EU'] === 0) {
       // International courses only
       li.addClass('is-international-only');
-      li.append('&nbsp;<small class="c-clearing-list__comment">Places for international students only</small>')
+      li.append('&nbsp;<small class="c-clearing-list__comment">Places for international students only</small>');
     } else if (courseCount.International === 0) {
       // UK/EU courses only
-      li.addClass('is-ukeu-only')
-      li.append('&nbsp;<small class="c-clearing-list__comment">Places for UK/EU students only</small>')
+      li.addClass('is-ukeu-only');
+      li.append('&nbsp;<small class="c-clearing-list__comment">Places for UK/EU students only</small>');
     }
     return li;
   };
@@ -168,14 +168,14 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
             if (thisCourse.Subject !== currentCourse.Subject) {
 
               // Make link with previous course
-              if (currentCourse !== false && (that.courseCount[currentCourse.Subject]['UK/EU'] > 0 || that.courseCount[currentCourse.Subject]['International'] > 0)) {
+              if (currentCourse !== false && (that.courseCount[currentCourse.Subject]['UK/EU'] > 0 || that.courseCount[currentCourse.Subject].International > 0)) {
                 var li = makeLink(currentCourse, that.courseCount[currentCourse.Subject]);
                 that.list.append(li);
               }
               currentCourse = thisCourse;
             }
             if (i === that.data.length - 1) {
-              if (currentCourse.Subject !== false && (thisCourse.Subject['UK/EU'] > 0 || thisCourse.Subject['International'] > 0)) {
+              if (currentCourse.Subject !== false && (thisCourse.Subject['UK/EU'] > 0 || thisCourse.Subject.International > 0)) {
                 var lastLi = makeLink(thisCourse, that.courseCount[thisCourse.Subject]);
                 that.list.append(lastLi);
               }
