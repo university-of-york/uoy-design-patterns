@@ -15,7 +15,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     this.container = options.container;
     this.header = options.header || this.Defaults.header;
     this.label = options.label || this.Defaults.label;
-    this.cols = options.cols;
+    this.cols = options.cols || this.Defaults.cols;
     this.type = this.container.prop('nodeName').toLowerCase();
 
     this.caseSensitive = options.caseSensitive || this.Defaults.caseSensitive;
@@ -32,8 +32,12 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     // Load searchable items into memory
     this.searchRows = rows;
 
-    if (this.header === true && this.type === 'table') {
-      this.searchRows = rows.not('tr:first-of-type');
+    if (this.type === 'table') {
+      if (this.header === true) {
+        this.searchRows = rows.not('tr:first-of-type');
+      } else if (typeof this.header === 'string') {
+        this.searchRows = rows.not(this.header);
+      }
     }
 
     // Create search form
@@ -76,6 +80,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     fe.append(fl, fi);
     fs.append(fe);
     f.append(fs);
+    this.searchInput = fi;
 
     return f;
 
@@ -83,13 +88,14 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
   SEARCHABLE.prototype.checkTable = function (e) {
     var that = e.data.that;
-    var inputContent = $(this).val();
+    var inputContent = that.searchInput.val();
     if (that.caseSensitive !== true) inputContent = inputContent.toLowerCase();
     var testText = function($cell) {
+      if (inputContent === '') return false;
       var text = $cell.text();
       if (that.caseSensitive !== true) text = text.toLowerCase();
       var searchIndex = text.indexOf(inputContent);
-      return (searchIndex === -1 && inputContent !== '');
+      return searchIndex === -1;
     };
     that.searchRows.each(function(i, row) {
       var hideIt = true;
@@ -115,10 +121,10 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
         });
       } else {
         hideIt = testText($row);
-        console.log(hideIt);
       }
       $row.toggleClass('is-hidden', hideIt);
     });
+    that.container.trigger('search.updated');
   };
 
   return SEARCHABLE;

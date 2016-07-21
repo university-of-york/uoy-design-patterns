@@ -129,17 +129,16 @@ define(
     });
 
     // Clearing tables
-    UTILS.eachIfExists('#clearing-courses-uk-eu', function (i, a) {
+    UTILS.eachIfExists('.js-clearing-table', function (i, a) {
+      var $a = $(a),
+          type = $a.attr('data-type'),
+          layout = $a.attr('data-layout'),
+          department = $a.attr('data-department');
       new CLEARINGTABLE({
-        type: 'Home/EU',
-        container: $(a)
-      });
-    });
-
-    UTILS.eachIfExists('#clearing-courses-international', function (i, a) {
-      new CLEARINGTABLE({
-        type: 'International',
-        container: $(a)
+        type: type,
+        layout: layout,
+        department: department,
+        container: $a
       });
     });
 

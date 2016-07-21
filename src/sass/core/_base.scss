@@ -99,6 +99,7 @@ ol {
 }
 li {
   margin: 0 0 $base-spacing/2 0;
+  break-inside:avoid;
 }
 li > {
   // No margins in sub lists!
@@ -130,6 +131,7 @@ textarea {
   }
 }
 fieldset {
+  @include demarginalise;
   border:0;
   margin:0;
   padding:0;
