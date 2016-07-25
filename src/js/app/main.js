@@ -182,15 +182,17 @@ define(
     // Make a table or list searchable
     UTILS.eachIfExists('.js-searchable', function (i, a) {
 
-      var $a = $(a).children('ul, table'),
+      var $a = $(a),
           hasHeader = $a.attr('data-header') == 'true' ? true : false ,
           isCaseSensitive = $a.attr('data-case-sensitive') == 'true' ? true : false ,
           dataLabel = $a.attr('data-label') ? $a.attr('data-label') : false ,
           includeCols = $a.attr('data-include-cols') ? $a.attr('data-include-cols').split(',') : false ,
           excludeCols = $a.attr('data-exclude-cols') ? $a.attr('data-exclude-cols').split(',') : false ;
 
+      console.log(dataLabel);
+
       var s = new SEARCHABLE({
-        container: $a,
+        container: $a.children('ul, table'),
         header: hasHeader,
         cols: {
           include: includeCols,
