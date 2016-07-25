@@ -1,7 +1,8 @@
 # Release notes
 
 v1.3.7 (next)
-* Add a `<wbr>` to email addresses to stop them overflowing their bounding box.
+* Add a `<wbr>` to email addresses to stop them overflowing their bounding box
+* Fix broken data-label in searchables
 
 v1.3.6 (released 21 July 2016)
 * New clearing course lists and departmental lists for Clearing 2016
