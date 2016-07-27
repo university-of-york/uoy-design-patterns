@@ -7,23 +7,27 @@
     display:block;
   }
   @include mq(tiny, '-') {
-    height: 36px;
-    width: 36px;
-    padding: 6px;
-    font-size:16px;
+    height:36px;
+    width:36px;
+    padding:6px;
+    font-size:24px;
+    top:14px;
   }
   display:none;
   position:absolute;
   z-index:10;
-  top:10px;
+  top:22px;
   right:10px;
   height:58px;
   width:58px;
   padding:13px;
-  font-size:24px;
+  font-size:32px;
   color:$c-mobile-search-button-color;
   &:hover {
     color:$c-mobile-search-button-hover-color;
+  }
+  .c-icon {
+    vertical-align: top;
   }
 }
 .c-form--mobile-search {

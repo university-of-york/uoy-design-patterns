@@ -189,8 +189,6 @@ define(
           includeCols = $a.attr('data-include-cols') ? $a.attr('data-include-cols').split(',') : false ,
           excludeCols = $a.attr('data-exclude-cols') ? $a.attr('data-exclude-cols').split(',') : false ;
 
-      console.log(dataLabel);
-
       var s = new SEARCHABLE({
         container: $a.children('ul, table'),
         header: hasHeader,
@@ -243,8 +241,8 @@ define(
 
     // Broadcast window events
     if (UTILS.isDev) {
-      $window.on('data,font,nav,content,toggle', function(e) {
-        console.log(this);
+      $window.on('data font nav content toggle', function(e) {
+        console.info(this);
       });
     }
 

@@ -20,21 +20,24 @@
   @include font-size(24px, 41px);
   display:block;
   float:left;
-  margin:17px 0 13px; // Check overrides.scss for margin-bottom override
-  height:41px;
-  min-width:262px;
+  margin:16px 0 11px;
   @include mq(tiny) {
     // Change size of logo on tiny screens
     @include font-size(18px, 20px);
-    height:20px;
-    min-width:132px;
+    margin:8px 0 5px;
   }
 }
-.c-main-header__logo {
+.c-main-header__link {
+  display:inline-block;
   vertical-align:middle;
+}
+.c-main-header__logo {
+  display:block;
+  width:200px;
+  height:75px;
   @include mq(tiny) {
     // Change size of logo on tiny screens
-    width:132px;
-    height:20px;
+    width:136px;
+    height:51px;
   }
 }
