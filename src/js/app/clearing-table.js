@@ -12,7 +12,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
   var $window = $(window);
   var docID = '1M6mKYo2YAyIuEbePfFXWKaTKM7mZrM9f5eB-G43c';
   var backupDoc = 'http://www.york.ac.uk/static/data/clearing/2016.json';
-  var letterLimit = 3;
+  var letterLimit = 5;
   var searchLimit = 20;
   var trimAndAdd = function (numbers) {
     var output = '';
