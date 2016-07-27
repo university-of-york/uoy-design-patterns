@@ -3,11 +3,6 @@
 @import "core/mixins";
 @import "core/extends";
 
-// No breadcrumb in docs, so give some top padding
-.o-wrapper--main {
-  padding-top:$base-spacing;
-}
-
 // Style the grid examples
 #grid-page {
   .o-wrapper > .o-grid__row > .o-grid__box--full {
