@@ -1,6 +1,6 @@
 ---
 
-title: Clearing Tables
+title: Clearing tables
 name: clearing-tables-module
 category: modules
 subcategory: Component modules

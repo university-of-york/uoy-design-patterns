@@ -379,7 +379,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
       isAdjustmentOnly = true;
     }
     var courseCell =$('<td>');
-    var courseCellContent = '<p class="c-clearing-table__title"><a href="'+course['Link to course page']+'">'+course['Title of course']+' ('+course['Qualification earned']+')</a></p>'+
+    var courseCellContent = '<p class="c-clearing-table__title"><a href="'+course['Link to course page']+'">'+course['Qualification earned']+' '+course['Title of course']+'</a></p>'+
       '<ul class="u-two-columns">'+
       '<li class="c-clearing-table__entry-requirements"><strong>'+course['Entry requirements']+'</strong> or equivalent tarrif points required';
 
