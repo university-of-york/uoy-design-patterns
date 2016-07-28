@@ -1,5 +1,8 @@
 # Release notes
 
+v1.4.0 (next minor)
+* Update to new logo **N.B. requires markup change in header**
+
 v1.3.7 (next)
 * Add a `<wbr>` to email addresses to stop them overflowing their bounding box
 * Fix broken data-label in searchables

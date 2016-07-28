@@ -3,7 +3,7 @@
 //
 
 // Doesn't support :first-child so we'll manually override margin on caption titles
-.c-figure__caption {
+.c-figure__content {
   h1, h2, h3 {
     margin-bottom:0;
     + * {

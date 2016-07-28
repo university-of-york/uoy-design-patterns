@@ -17,13 +17,15 @@
   position:absolute;
   z-index:10;
   top:50%;
-  right:10px;
+  right:0;
   height:58px;
   width:58px;
   margin-top:-29px;
   padding:13px;
   font-size:32px;
   color:$c-mobile-search-button-color;
+  background-color:$c-mobile-search-button-background-color;
+  box-shadow:0 0 7px 2px $c-mobile-search-button-background-color;
   &:hover {
     color:$c-mobile-search-button-hover-color;
   }

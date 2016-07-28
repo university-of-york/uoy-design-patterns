@@ -20,24 +20,29 @@
   @include font-size(24px, 41px);
   display:block;
   float:left;
-  margin:16px 0 11px;
+  margin:20px 0;
   @include mq(tiny) {
     // Change size of logo on tiny screens
     @include font-size(18px, 20px);
-    margin:8px 0 5px;
+    margin:15px 0;
   }
 }
 .c-main-header__link {
   display:inline-block;
   vertical-align:middle;
+  width:200px;
+  @include mq(tiny) {
+    // Change size of logo on tiny screens
+    width:152px;
+  }
 }
 .c-main-header__logo {
   display:block;
   width:200px;
-  height:75px;
+  //height:75px; // will naturally go to 75px
   @include mq(tiny) {
     // Change size of logo on tiny screens
-    width:136px;
-    height:51px;
+    width:152px;
+    //height:auto; // will naturally go to 57px - on really small screens it won't become squished
   }
 }
