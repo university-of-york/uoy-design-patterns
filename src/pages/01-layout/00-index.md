@@ -8,7 +8,7 @@ id: layout-page
 
 ---
 
-<div class="lead"><p>This is how we put the site together. Top-level items, like the [grid system](grid.html), typography and navigation.</p></div>
+<div class="lead"><p>This is how we put the site together. Top-level items, like the [grid system](layout/grid.html), typography and navigation.</p></div>
 
 ## Basic page structure
 

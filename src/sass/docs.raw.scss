@@ -9,12 +9,15 @@
 }
 
 // Style the grid examples
-#grid-page {
+#grid-page,
+#alt-grid-page,
+#image-grid-page,
+#divided-grid-page {
   .o-wrapper > .o-grid__row > .o-grid__box--full {
     .o-grid__row {
     }
     .o-grid__box {
-      min-height:240px;
+      min-height:180px;
       background-color:#eee;
       background-color:rgba(180,180,180,0.5);
       background-clip: content-box;

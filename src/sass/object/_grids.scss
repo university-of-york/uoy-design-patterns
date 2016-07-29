@@ -1,7 +1,7 @@
 //
 // GRID SYSTEM
 //
-$box-padding: $base-spacing;
+$box-padding:$base-spacing;
 @mixin extend-rows() {
   &:before,
   &:after {
@@ -19,6 +19,28 @@ $box-padding: $base-spacing;
     left:100%;
   }
 }
+@mixin divider($type) {
+  @if $type == clipped {
+    width:calc(100% - #{$box-padding});
+  } @else {
+    @if $type == column {
+      width:1px;
+      height:100%;
+      left:$box-padding/2;
+      top:0;
+    } @else if $type == row {
+      width:100%;
+      height:1px;
+      left:$box-padding;
+      top:-$box-padding/2;
+    }
+    content:'';
+    display:block;
+    background-color:$o-grid__row--divider-color;
+    position:absolute;
+  }
+}
+
 .o-grid {
 
 }
@@ -133,12 +155,74 @@ $box-padding: $base-spacing;
   }
 }
 
+// Divided columns use :after, rows use :before,
+// so you can use both (if you want)!
+.o-grid__row--divided-columns {
+  .o-grid__box:after {
+    @include divider(column);
+  }
+  .o-grid__box:first-child:after {
+    display:none;
+  }
+  @include mq(medium, '~') {
+    .o-grid__box--half:after,
+    .o-grid__box--threequarters:after,
+    .o-grid__box--quarter:after {
+      display:none;
+    }
+    // only quarter boxes that are after other quarters
+    .o-grid__box--quarter ~ .o-grid__box--quarter:after {
+      display:block;
+    }
+    // unless it's the third of four
+    .o-grid__box--quarter:first-child + .o-grid__box--quarter + .o-grid__box--quarter:after {
+      display:none;
+    }
+  }
+  @include mq(small, '-') {
+    // All at 100% - no dividers
+    .o-grid__box:after {
+      display:none;
+    }
+  }
+}
+.o-grid__row--divided-rows {
+  .o-grid__box:before {
+    @include divider(row);
+  }
+  &:first-child {
+    .o-grid__box:before {
+      display:none;
+    }
+  }
+  .o-grid__box:last-of-type:before {
+    @include divider(clipped);
+  }
+  @include mq(medium, '~') {
+    .o-grid__box--threequarters:before,
+    .o-grid__box--half:before,
+    .o-grid__box--quarter:first-child + .o-grid__box--quarter:before,
+    // Wow I can't believe I'm doing it this way (again... see below)
+    // If quarter-size first child is also 2nd to last child then it must be q+tq
+    .o-grid__box--quarter:first-child:nth-last-child(2):before {
+      @include divider(clipped);
+    }
+  }
+  @include mq(small, '-') {
+    // All at 100% - all (100% - 20px) wide
+    .o-grid__box:before {
+      @include divider(clipped);
+    }
+  }
+}
+
 .o-grid__box {
   @include responsive-font-size($default-font-sizes);
   // @include font-size;
   display:inline-block;
   vertical-align:top;
   padding-left:$box-padding;
+  position:relative;
 }
 
 .o-grid__box--full {
@@ -181,7 +265,7 @@ $box-padding: $base-spacing;
 @include mq(medium) {
   // Stops stepped display of q+h+q
   .o-grid__box--quarter + .o-grid__box--half {
-    float: left;
+    float:left;
     // Remove float if default size is overridden by an @-class
     &.o-grid__box--twothirds\@medium,
     &.o-grid__box--half\@medium,
@@ -192,7 +276,7 @@ $box-padding: $base-spacing;
   }
   // Stops the above fix also affecting q+q+h
   .o-grid__box--quarter + .o-grid__box--quarter + .o-grid__box--half {
-    float: none;
+    float:none;
   }
   // Fixes tq+q
   .o-grid__box--threequarters + .o-grid__box--quarter {
@@ -210,7 +294,7 @@ $box-padding: $base-spacing;
 // e.g. .o-grid__box--third@small will go to 33.333% width on small screens and lower
 // (even if it would normally go to 100% width)
 //
-$htdiw: mapReverse($width);
+$htdiw:mapReverse($width);
 @each $size, $measurement in $htdiw {
 
   @include mq(#{$size}) {
