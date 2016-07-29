@@ -6,6 +6,7 @@ v1.4.0 (next minor)
 
 v1.3.7 (next patch)
 * [Keep checkboxes/radios and their labels on the same line](../../tree/component/forms)
+* [Amends to utility nav spacing and link appearance](../../tree/component/utility-nav)
 
 v1.3.6 (released 21 July 2016)
 * [New clearing course lists and departmental lists for Clearing 2016](../../tree/module/clearing-tables)
