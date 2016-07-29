@@ -192,7 +192,7 @@ $c-utility-nav__link-is-open-color:$light;
 $c-utility-nav__link-is-open-background-color:lighten($teal,10);
 $c-utility-nav__subnav-background-color:lighten($teal,10);
 $c-utility-nav__sublink-color:$light;
-$c-utility-nav__sublink-hover-color:darken($light, 20);
+$c-utility-nav__sublink-hover-color:lighten($blue, 10);
 
 // Panels
 $c-panel-background-color:$s2;
