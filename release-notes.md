@@ -22,7 +22,7 @@ v1.3.3 (released 6 July 2016)
 * Axis resizing utility function added
 * [Accordions only to update on horizontal resize](../../tree/module/accordion)
 
-v1.3.2 (released 30 June 2016)
+v1.3.2 (released 30 June 2016)<br>
 v1.3.1 (released 30 June 2016)
 * Captions go below image banners on small screens
 
