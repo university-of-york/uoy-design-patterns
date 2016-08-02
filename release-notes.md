@@ -4,7 +4,9 @@ v1.4.0 (next minor)
 * [Update to new logo](../../tree/update/logo)
 * [Add divided grid rows](../../tree/component/bordered-grid)
 
-v1.3.7 (next patch)
+v1.3.8 (next patch)
+
+v1.3.7 (released 2 Aug 2016)
 * [Keep checkboxes/radios and their labels on the same line](../../tree/component/forms) - this requires new markup for forms
 * [Amend utility nav spacing and link appearance](../../tree/component/utility-nav)
 * [Update colour on page title when it's not a link](../../tree/fix/page-title)
