@@ -7,6 +7,7 @@ category: Javascript
 ---
 
  */
+
 define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function ($, GOOGLEDOC, SEARCHABLE, UTILS) {
 
   var $window = $(window);
@@ -190,7 +191,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
           that.container.append(that.table);
           $(window).trigger('content.updated');
 
-          if (that.data.length > searchLimit) {
+          if ((that.courseCount['UK/EU'] > searchLimit) || (that.courseCount.International > searchLimit)) {
             // Make table searchable
             that.makeSearchable();
           }
@@ -203,7 +204,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
           // Add toggle switch if type is 'Both' (and there are some courses to toggle!)
           if (that.type === 'Both') {
             var gb1 = $('<div>').addClass('o-grid__box o-grid__box--half');
-            var boxContent;
+            var boxContent = '';
             if (that.courseCount['UK/EU'] !== 0 && that.courseCount.International !== 0) {
               boxContent = that.createToggle();
             } else if (that.courseCount.International > 0) {
