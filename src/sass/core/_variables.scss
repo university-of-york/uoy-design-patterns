@@ -18,7 +18,7 @@ $s3:#f0f1f4;
 //Utility colours - for warnings, errors, etc
 $red:#b62d2d;
 $green:#54b62d;
-
+$grey:#666;
 
 // Fonts
 $font-default: 'museo-sans', Helvetica, Arial, sans-serif;
@@ -258,6 +258,10 @@ $c-tag-background-color-alt2:darken($pink,20);
 $c-tag-background-color-alt2-hover:darken($pink,25);
 $c-tag-color:$light;
 $c-tag-color-hover:darken($light,5);
+
+// Labels
+$c-label-color:$grey;
+$c-label-color-hover:lighten($c-label-color,10);
 
 // News
 $c-news--excerpt__title-color:$link-color;
