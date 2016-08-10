@@ -381,7 +381,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     var courseCell =$('<td>');
     var courseCellContent = '<p class="c-clearing-table__title"><a href="'+course['Link to course page']+'">'+course['Title of course']+' ('+course['Qualification earned']+')</a></p>'+
       '<ul class="u-two-columns">'+
-      '<li class="c-clearing-table__entry-requirements"><strong>'+course['Entry requirements']+'</strong> or equivalent tarrif points required';
+      '<li class="c-clearing-table__entry-requirements"><strong>'+course['Entry requirements']+'</strong> or equivalent tariff points from three A levels. Other qualifications are also accepted.';
 
       if (course['Bullet 1'] || course['Bullet 2'] || course['Bullet 3']) {
         courseCellContent+= '    <br>';
