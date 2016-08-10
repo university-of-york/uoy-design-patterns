@@ -26,6 +26,7 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
 
     // Hide content
     this.item.addClass('is-closed');
+
     // Enable transition
     var iC = this.itemContent;
     setTimeout(function() { iC.addClass('is-ready'); }, 400);
@@ -38,9 +39,11 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
       that.setAccordionHeight.apply(that);
     });
     $window.on('resized.width', UTILS.debounce(function(e) {
-      console.log('Updating accordion content');
       that.setAccordionHeight.apply(that);
     }, 250));
+
+    // Initial load
+    that.setAccordionHeight.apply(that);
 
     console.info(this);
 

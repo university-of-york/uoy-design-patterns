@@ -87,6 +87,10 @@
   left:0;
   bottom:0;
   width:100%;
+  background:$blue;
+  background:transparentize($blue, 0.15);
+  color:$light;
+  padding:$base-spacing/2 $base-spacing;
   @include mq('small') {
     position:static;
     display:block;

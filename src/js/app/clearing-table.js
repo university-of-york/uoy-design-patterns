@@ -7,12 +7,13 @@ category: Javascript
 ---
 
  */
+
 define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function ($, GOOGLEDOC, SEARCHABLE, UTILS) {
 
   var $window = $(window);
   var docID = '1M6mKYo2YAyIuEbePfFXWKaTKM7mZrM9f5eB-G43c';
   var backupDoc = 'http://www.york.ac.uk/static/data/clearing/2016.json';
-  var letterLimit = 3;
+  var letterLimit = 5;
   var searchLimit = 20;
   var trimAndAdd = function (numbers) {
     var output = '';
@@ -46,11 +47,11 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     if (courseCount['UK/EU'] === 0) {
       // International courses only
       li.addClass('is-international-only');
-      li.append('&nbsp;<small class="c-clearing-list__comment">Places for international students only</small>')
+      li.append('&nbsp;<small class="c-clearing-list__comment">Places for international students only</small>');
     } else if (courseCount.International === 0) {
       // UK/EU courses only
-      li.addClass('is-ukeu-only')
-      li.append('&nbsp;<small class="c-clearing-list__comment">Places for UK/EU students only</small>')
+      li.addClass('is-ukeu-only');
+      li.append('&nbsp;<small class="c-clearing-list__comment">Places for UK/EU students only</small>');
     }
     return li;
   };
@@ -168,14 +169,14 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
             if (thisCourse.Subject !== currentCourse.Subject) {
 
               // Make link with previous course
-              if (currentCourse !== false && (that.courseCount[currentCourse.Subject]['UK/EU'] > 0 || that.courseCount[currentCourse.Subject]['International'] > 0)) {
+              if (currentCourse !== false && (that.courseCount[currentCourse.Subject]['UK/EU'] > 0 || that.courseCount[currentCourse.Subject].International > 0)) {
                 var li = makeLink(currentCourse, that.courseCount[currentCourse.Subject]);
                 that.list.append(li);
               }
               currentCourse = thisCourse;
             }
             if (i === that.data.length - 1) {
-              if (currentCourse.Subject !== false && (thisCourse.Subject['UK/EU'] > 0 || thisCourse.Subject['International'] > 0)) {
+              if (currentCourse.Subject !== false && (thisCourse.Subject['UK/EU'] > 0 || thisCourse.Subject.International > 0)) {
                 var lastLi = makeLink(thisCourse, that.courseCount[thisCourse.Subject]);
                 that.list.append(lastLi);
               }
@@ -190,7 +191,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
           that.container.append(that.table);
           $(window).trigger('content.updated');
 
-          if (that.data.length > searchLimit) {
+          if ((that.courseCount['UK/EU'] > searchLimit) || (that.courseCount.International > searchLimit)) {
             // Make table searchable
             that.makeSearchable();
           }
@@ -203,7 +204,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
           // Add toggle switch if type is 'Both' (and there are some courses to toggle!)
           if (that.type === 'Both') {
             var gb1 = $('<div>').addClass('o-grid__box o-grid__box--half');
-            var boxContent;
+            var boxContent = '';
             if (that.courseCount['UK/EU'] !== 0 && that.courseCount.International !== 0) {
               boxContent = that.createToggle();
             } else if (that.courseCount.International > 0) {
@@ -379,7 +380,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
       isAdjustmentOnly = true;
     }
     var courseCell =$('<td>');
-    var courseCellContent = '<p class="c-clearing-table__title"><a href="'+course['Link to course page']+'">'+course['Title of course']+' ('+course['Qualification earned']+')</a></p>'+
+    var courseCellContent = '<p class="c-clearing-table__title"><a href="'+course['Link to course page']+'">'+course['Qualification earned']+' '+course['Title of course']+'</a></p>'+
       '<ul class="u-two-columns">'+
       '<li class="c-clearing-table__entry-requirements"><strong>'+course['Entry requirements']+'</strong> or equivalent tariff points from three A levels. Other qualifications are also accepted.';
 
