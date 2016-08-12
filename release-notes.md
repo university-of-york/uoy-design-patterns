@@ -4,7 +4,7 @@ v1.4.0 (next minor)
 * [Update to new logo](../../tree/update/logo)
 * [Add divided grid rows](../../tree/component/bordered-grid)
 
-v1.3.8 (next patch)
+v1.3.8 (released 12 Aug 2016)
 * Fixed clearing tables search box so it counts number of _available_ courses not _total_ courses
 
 v1.3.7 (released 2 Aug 2016)
