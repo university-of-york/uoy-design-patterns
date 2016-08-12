@@ -255,6 +255,18 @@ The selected level 2 title will appear in larger text (this will be something li
 </div>
 ```
 
+On pages without a main nav bar, add a `bordered` modifier to the page title for consistency.
+
+<div class="c-page-title c-page-title--bordered">
+  <h1 class="c-page-title__header"><a class="c-page-title__link" href="#">Navigation</a></h1>
+</div>
+
+```markup
+<div class="c-page-title c-page-title--bordered">
+  <h1 class="c-page-title__header"><a class="c-page-title__link" href="#">Navigation</a></h1>
+</div>
+```
+
 ### Menu navigation
 
 Unopened, the main navigation shows the pages currently in this section. Open it up and you can see the "In this section" and "Other sections".
