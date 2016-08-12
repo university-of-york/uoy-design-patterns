@@ -204,7 +204,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
           if ((that.courseCount['UK/EU'] == 0) && (that.courseCount.International == 0)) {
 
             var noCourseBox = $('<div>').addClass('o-grid__box o-grid__box--full');
-            var noCourseBoxContent = that.createPanel('<p>There are currently no vacancies in this department</p>');
+            var noCourseBoxContent = that.createPanel('<p>There are no vacancies in this department for September 2016. <a href="//www.york.ac.uk/study/undergraduate/courses/all">Explore your options for 2017 entry.</a></p>');
             noCourseBox.append(noCourseBoxContent);
             gr.append(noCourseBox);
 
