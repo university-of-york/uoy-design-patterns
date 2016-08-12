@@ -6,6 +6,8 @@ v1.4.0 (next minor)
 
 v1.3.8 (released 12 Aug 2016)
 * Fixed clearing tables search box so it counts number of _available_ courses not _total_ courses
+* [Updated clearing tables tariff point text](../../tree/module/clearing-tables)
+* Added message when there are no courses in clearing
 
 v1.3.7 (released 2 Aug 2016)
 * [Keep checkboxes/radios and their labels on the same line](../../tree/component/forms) - this requires new markup for forms
