@@ -201,7 +201,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
           var gr = $('<div>').addClass('o-grid__row').appendTo(g);
           that.container.prepend(g);
 
-          if ((that.courseCount['UK/EU'] == 0) && (that.courseCount.International == 0)) {
+          if ((that.courseCount['UK/EU'] === 0) && (that.courseCount.International === 0)) {
 
             var noCourseBox = $('<div>').addClass('o-grid__box o-grid__box--full');
             var noCourseBoxContent = that.createPanel('<p>There are no vacancies in this department for September 2016. <a href="//www.york.ac.uk/study/undergraduate/courses/all">Explore your options for 2017 entry.</a></p>');
@@ -297,7 +297,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     var fl = $('<label>').addClass('c-form__label')
                          .attr('for', inputName)
                          .text(this.label);
-    var fg_ukeu = $('<div>').addClass('c-form__radio-group');;
+    var fg_ukeu = $('<div>').addClass('c-form__radio-group');
     var fi_ukeu = $('<input>').addClass('c-form__radio')
                               .attr({'type': 'radio', 'id': inputName+'-ukeu', 'name': inputName })
                               .val('ukeu')
@@ -305,7 +305,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     var fl_ukeu = $('<label>').addClass('c-form__label')
                               .attr({'for': inputName+'-ukeu'})
                               .text('Courses for UK/EU students');
-    var fg_intl = $('<div>').addClass('c-form__radio-group');;
+    var fg_intl = $('<div>').addClass('c-form__radio-group');
     var fi_intl = $('<input>').addClass('c-form__radio')
                               .attr({'type': 'radio', 'id': inputName+'-intl', 'name': inputName })
                               .val('international')
