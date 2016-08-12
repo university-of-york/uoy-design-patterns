@@ -323,6 +323,8 @@ component("form", { "type":"stacked", "method":"get", "legend": "Fill in this fo
   * **type**: one of _text_ (default), _file_, _hidden_, _password_, _email_, _url_ and _tel_
   * **value**: the default `value` of the `input`
   * **placeholder**: placeholder text (don't rely on this text being there - it's not supported in **&lt;IE10**)
+  * **required** TODO
+  * **validation** TODO
 
 * **option**
   * **label**: the text in the option field **(required)**
@@ -362,6 +364,6 @@ component("form", { "type":"stacked", "method":"get", "legend": "Fill in this fo
 
 ### TODO
 
-* Add validation options? (as `data-validation` option)
+* Add validation options? (as `data-validation` option?)
 * Fancy select boxes?
 * Fancy file input?

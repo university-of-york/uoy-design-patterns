@@ -6,6 +6,7 @@ v1.4.0 (next minor)
 
 v1.3.9 (next patch)
 * [Added a `--bordered` modifier to the `page-title` component](../../tree/component/page-title)
+* [Allowed any york.ac.uk subdomain to access font files](../../tree/fix/icon-fonts)
 
 v1.3.8 (released 12 Aug 2016)
 * Fixed clearing tables search box so it counts number of _available_ courses not _total_ courses

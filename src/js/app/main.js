@@ -2,13 +2,15 @@ define(
   ['jquery', 'es5shim', 'picturefill', 'iframeResizer',
    'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav',
    'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/prioritised-tables',
-   'app/toggle', 'app/utility-toggle', 'app/wrapper-height', 'app/youtube-embed', 'app/soundcloud-embed',
+   'app/toggle', 'app/utility-toggle', 'app/wrapper-height', 'app/form-validation',
+   'app/youtube-embed', 'app/soundcloud-embed',
    'app/searchables', 'app/filterable-tables', 'app/equal-height-row', 'app/google-map'],
   function (
     $, ES5SHIM, PICTUREFILL, IFRAMERESIZER,
     UTILS, MODALLINK, ACCORDION, STICKYNAV,
     TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
-    TOGGLE, UTILITYTOGGLE, WRAPPERHEIGHT, YOUTUBE, SOUNDCLOUD,
+    TOGGLE, UTILITYTOGGLE, WRAPPERHEIGHT, FORM,
+    YOUTUBE, SOUNDCLOUD,
     SEARCHABLE, FILTERABLE, EQUALHEIGHT, GOOGLEMAP) {
 
   $(function(){
@@ -217,6 +219,13 @@ define(
     UTILS.eachIfExists('.js-equal-height-row', function (i, a) {
       var e = new EQUALHEIGHT({
         row: $(a)
+      });
+    });
+
+    // Add form validation
+    UTILS.eachIfExists('.js-form', function (i, form) {
+      new FORM({
+        form: form
       });
     });
 
