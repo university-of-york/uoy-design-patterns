@@ -113,6 +113,20 @@ define(
       });
     });
 
+    // Add dismissable alert action
+    UTILS.eachIfExists('.js-alert-close', function (i, button) {
+      var $b = $(button);
+      var $c = $($b.closest('.c-alert'));
+      new TOGGLE({
+        container: $c,
+        button: $b,
+        className:'is-hidden',
+        onComplete: function($c, $b) {
+          $c.remove();
+        }
+      });
+    });
+
     // Use anchors to submit forms
     UTILS.eachIfExists('.js-submit-form', function (i, a) {
       var $a = $(a);
