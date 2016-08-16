@@ -156,7 +156,7 @@ component("form", { "type":"stacked", "method":"get", "legend": "Fill in this fo
 
   { "grid-row": { "atoms":
     { "grid-box": { "size": "full", "atoms":
-      { "button": { "text": "Submit" } }
+      { "button": { "text": "Submit", "submit": true } }
     } }
   } }
 
@@ -218,7 +218,7 @@ component("form", { "type":"inline", "method":"get", "legend": "Fill in this for
     { "form-element": { "label": "Textarea", "name": "ij", "atoms": { "textarea": { } } } }
   } } } },
   { "grid-row": { "atoms": { "grid-box": { "size": "full", "atoms":
-    { "button": { "text": "Submit" } }
+    { "button": { "text": "Submit", "submit": true } }
   } } } }
 ]});
 </script>
@@ -308,7 +308,7 @@ component("form", { "type":"stacked", "method":"get", "legend": "Fill in this fo
 
   { "grid-row": { "atoms":
     { "grid-box": { "size": "full", "atoms":
-      { "button": { "text": "Submit" } }
+      { "button": { "text": "Submit", "submit": true } }
     } }
   } }
 

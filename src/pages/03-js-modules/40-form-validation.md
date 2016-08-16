@@ -9,7 +9,7 @@ id: form-validation-module-page
 
 ---
 
-<div class="lead"><p>To add form validation to a form and it's inputs, add a `js-form` class to the `form` element. By defauly, it will validate inputs according to their `type` and whether they are `required`, plus add some functionality to the form itself.</p></div>
+<div class="lead"><p>To add form validation to a form and it's inputs, add a `js-form` class to the `form` element. By default, it will validate inputs according to their `type` and whether they are `required`, plus add some functionality to the form itself.</p></div>
 
 ### Use
 
@@ -85,7 +85,7 @@ component("form", { "type":"stacked", "method":"get", "legend": "Fill in this fo
 
   { "grid-row": { "atoms":
     { "grid-box": { "size": "full", "atoms":
-      { "button": { "text": "Submit" } }
+      { "button": { "text": "Submit", "submit": true } }
     } }
   } }
 

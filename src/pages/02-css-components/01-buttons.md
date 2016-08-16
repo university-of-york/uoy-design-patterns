@@ -96,4 +96,5 @@ A block button takes 100% of the width of the containing element. They're useful
   * **icon-after**: the type of [icon](icons.html) to appear at the end of the button (doesn't work with input[type=submit], input[type=reset] or input[type=button])
   * **href**: the URL to visit when clicked (only for button-link, defaults to "#")
   * **block**: (Boolean) defaults to false
-  * **disabled**: is the button disabled? (Boolean) defaults to false
+  * **disabled**: (Boolean) is the button disabled? Defaults to false
+  * **submit**: (Boolean) only needed when using a _button_ on a form. Does this button submit the form? Defaults to false
