@@ -5,6 +5,8 @@ v1.4.0 (next minor)
 * [Add divided grid rows](../../tree/component/bordered-grid)
 
 v1.3.10 (next patch)
+* [Add labels to component library](../../tree/component/label)
+* [Allow CORS for fonts from any york.ac.uk subdomain](../../tree/fix/icon-fonts)
 
 v1.3.9 (released 17 Aug 2016)
 * [Added a `--bordered` modifier to the `page-title` component](../../tree/component/page-title)
