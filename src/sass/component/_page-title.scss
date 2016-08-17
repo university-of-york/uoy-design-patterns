@@ -26,3 +26,6 @@
     color:$c-page-title__link-color;
   }
 }
+.c-page-title--bordered {
+  border-bottom:3px solid $c-nav-border-color;
+}
