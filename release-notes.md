@@ -4,11 +4,14 @@ v1.4.0 (next minor)
 * [Update to new logo](../../tree/update/logo)
 * [Add divided grid rows](../../tree/component/bordered-grid)
 
-v1.3.9 (next patch)
+v1.3.10 (next patch)
+
+v1.3.9 (released 17 Aug 2016)
 * [Added a `--bordered` modifier to the `page-title` component](../../tree/component/page-title)
 * [Updated `alert` component to include a `dismissable` option](../../tree/component/alert)
 * [Fixed margin overflow on multi-column list items](../../tree/fix/multi-column)
 * Grunt bump now commits and pushes the version tag automatically
+* [Fixed tel: links in clearing table](../../tree/module/clearing-tables)
 
 v1.3.8 (released 12 Aug 2016)
 * Fixed clearing tables search box so it counts number of _available_ courses not _total_ courses
