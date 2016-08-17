@@ -1,13 +1,15 @@
 //
 // ALERTS
 //
+$c-alert-padding:$base-spacing*0.75;
 .c-alert {
   @include component;
   border-left:0.8em solid $c-alert-border;
   background-color:$c-alert-background;
   border-radius:4px;
-  padding:0.8em;
+  padding:$c-alert-padding;
   position:relative;
+  overflow:hidden;
 }
 .c-alert--dismissable {
   padding-right:40px;
@@ -31,8 +33,8 @@
 .c-alert__close {
   @include font-size(20px, 1);
   position:absolute;
-  right:10px;
-  top:14px;
+  right:$c-alert-padding;
+  top:$c-alert-padding;
   width:20px;
   height:20px;
   padding:0;
