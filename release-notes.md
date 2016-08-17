@@ -8,7 +8,6 @@ v1.3.7 (next patch)
 * [Keep checkboxes/radios and their labels on the same line](../../tree/component/forms) - this requires new markup for forms
 * [Amend utility nav spacing and link appearance](../../tree/component/utility-nav)
 * [Update colour on page title when it's not a link](../../tree/fix/page-title)
-* [Allow CORS for fonts from any york.ac.uk subdomain](../../tree/fix/icon-fonts)
 
 v1.3.6 (released 21 July 2016)
 * [New clearing course lists and departmental lists for Clearing 2016](../../tree/module/clearing-tables)
