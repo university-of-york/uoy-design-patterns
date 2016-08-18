@@ -4,9 +4,10 @@ v1.4.0 (next minor)
 * [Update to new logo](../../tree/update/logo)
 * [Add divided grid rows](../../tree/component/bordered-grid)
 
-v1.3.10 (next patch)
+v1.3.10 (released 18 Aug 2016)
 * [Add labels to component library](../../tree/component/label)
 * [Allow CORS for fonts from any york.ac.uk subdomain](../../tree/fix/icon-fonts)
+* [Add 'No grades' text to clearing table](../../tree/module/clearing-tables)
 
 v1.3.9 (released 17 Aug 2016)
 * [Added a `--bordered` modifier to the `page-title` component](../../tree/component/page-title)
