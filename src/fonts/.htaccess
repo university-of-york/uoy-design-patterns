@@ -2,8 +2,8 @@
 # Allow loading of external fonts
 # ----------------------------------------------------------------------
 <FilesMatch "\.(ttf|otf|eot|woff|woff2|svg)$">
-    <IfModule mod_headers.c>
-        SetEnvIf Origin "http(s)?://(www.york.ac.uk|cms.york.ac.uk|cmstest.york.ac.uk|blogs.york.ac.uk|uoy.staging.wpengine.com|uni_york.formstack.com)$" AccessControlAllowOrigin=$0
-        Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
-    </IfModule>
+  <IfModule mod_headers.c>
+    SetEnvIf Origin "http(s)?://(.+\.)?(york.ac.uk|uoy.staging.wpengine.com|uni_york.formstack.com)$" AccessControlAllowOrigin=$0
+    Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
+  </IfModule>
 </FilesMatch>
