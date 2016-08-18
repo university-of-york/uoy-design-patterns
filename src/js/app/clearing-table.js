@@ -395,20 +395,30 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     }
     var courseCell =$('<td>');
     var courseCellContent = '<p class="c-clearing-table__title"><a href="'+course['Link to course page']+'">'+course['Qualification earned']+' '+course['Title of course']+'</a></p>'+
-      '<ul class="u-two-columns">'+
-      '<li class="c-clearing-table__entry-requirements"><strong>'+course['Entry requirements']+'</strong> or equivalent tariff points from three A levels. Other qualifications are also accepted.';
+      '<ul class="u-two-columns">';
 
-      if (course['Bullet 1'] || course['Bullet 2'] || course['Bullet 3']) {
-        courseCellContent+= '    <br>';
-        courseCellContent+= '    <small class="c-clearing-table__bullets">Must include: ';
+    console.log(course['No grades']);
+
+    if (course['No grades'] !== '') {
+
+        courseCellContent+= '<li class="c-clearing-table__entry-requirements">'+course['No grades']+'</li>';
+
+    } else if (course['Entry requirements'] !== '') {
+
+        courseCellContent+= '<li class="c-clearing-table__entry-requirements"><strong>'+course['Entry requirements']+'</strong> or equivalent tariff points from three A levels. Other qualifications are also accepted.';
+
+        if (course['Bullet 1'] || course['Bullet 2'] || course['Bullet 3']) {
+          courseCellContent+= '    <br>';
+          courseCellContent+= '    <small class="c-clearing-table__bullets">Must include: ';
+        }
+        if (course['Bullet 1']) courseCellContent+= course['Bullet 1'];
+        if (course['Bullet 2']) courseCellContent+= '; '+course['Bullet 2'];
+        if (course['Bullet 3']) courseCellContent+= '; '+course['Bullet 3']+'';
+        if (course['Bullet 1'] || course['Bullet 2'] || course['Bullet 3']) courseCellContent+= '</small>';
+
+        courseCellContent+= '</li>';
       }
-      if (course['Bullet 1']) courseCellContent+= course['Bullet 1'];
-      if (course['Bullet 2']) courseCellContent+= '; '+course['Bullet 2'];
-      if (course['Bullet 3']) courseCellContent+= '; '+course['Bullet 3']+'';
-      if (course['Bullet 1'] || course['Bullet 2'] || course['Bullet 3']) courseCellContent+= '</small>';
-
-      courseCellContent+= '</li>'+
-      '<li class="c-clearing-table__ucas-code">UCAS code '+course['UCAS code']+'</li>'+
+      courseCellContent+= '<li class="c-clearing-table__ucas-code">UCAS code '+course['UCAS code']+'</li>'+
       '<li class="c-clearing-table__course-length">'+course['Course length']+'</li>'+
       '<li class="c-clearing-table__phone-numbers">Call '+numbers+' to apply</li>';
     if (isAdjustmentOnly === true) courseCellContent+= '<li class="c-clearing-table__adjustment-only">Adjustment places only</li>';
