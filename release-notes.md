@@ -4,6 +4,9 @@ v1.4.0 (next minor)
 * [Update to new logo](../../tree/update/logo)
 * [Add divided grid rows](../../tree/component/bordered-grid)
 
+v1.3.11 (next patch)
+* [Moved the `bordered` modifier to the `c-page-title__wrapper`](../../tree/component/page-title)
+
 v1.3.10 (released 18 Aug 2016)
 * [Add labels to component library](../../tree/component/label)
 * [Allow CORS for fonts from any york.ac.uk subdomain](../../tree/fix/icon-fonts)
