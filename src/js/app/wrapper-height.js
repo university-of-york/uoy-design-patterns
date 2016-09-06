@@ -7,19 +7,32 @@ category: Javascript
 ---
 
  */
-define(['jquery'], function ($) {
+define(['jquery', 'app/utils'], function ($, UTILS) {
 
   var WRAPPERHEIGHT = function (options) {
 
-    this.resize();
+    this.wrapper = $('.js-wrapper--main');
+
+    if (!this.wrapper) return false;
+
+    this.measure();
+
+    // recheck on window resize
+    var that = this;
+    $window.on('resize', UTILS.debounce(function(e) {
+      that.measure.apply(that);
+    }, 250));
 
   };
 
-  WRAPPERHEIGHT.prototype.resize = function () {
+  WRAPPERHEIGHT.prototype.measure = function () {
+
+    console.log('Measuring');
 
     var windowHeight = $(window).height();
     var bodyChildren = $('body').children();
     var nonMainWrapperHeight = 0;
+    var thisWrapper = this.wrapper;
     bodyChildren.each(function (i,v) {
 
       var $v = $(v);
@@ -30,8 +43,12 @@ define(['jquery'], function ($) {
         nonMainWrapperHeight+= $(v).outerHeight(true);
       }
       if (i == bodyChildren.length - 1) {
-        var minHeight = windowHeight - nonMainWrapperHeight;
-        $('.js-wrapper--main').css('min-height', minHeight);
+        // must remove wrapper margin height
+        var wrapperMargin = parseInt(thisWrapper.css('margin-top'), 10) + parseInt(thisWrapper.css('margin-bottom'), 10);
+        var minHeight = windowHeight - nonMainWrapperHeight - wrapperMargin;
+        if (minHeight > 0) {
+          thisWrapper.css('min-height', minHeight);
+        }
 
       }
 
