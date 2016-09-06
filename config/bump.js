@@ -4,7 +4,7 @@ module.exports = {
     updateConfigs: ['package'],
     commit: true,
     commitMessage: 'Release v%VERSION%',
-    commitFiles: ['package.json', 'bower.json'],
+    commitFiles: ['package.json', 'bower.json', 'release-notes.md'],
     push: true
   }
 };
