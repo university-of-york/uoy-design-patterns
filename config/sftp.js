@@ -25,17 +25,17 @@ module.exports = function(grunt) {
     },
     cdn: {
       files: {
-        src: ["build/css/**/*","build/fonts/**/*","build/img/**/*","build/js/**/*"]
+        src: ["release/**"]
       },
       options: {
         path: "/usr/yorkweb/web/static/test/a/",
         host: secret.cdn.host,
         username: secret.cdn.username,
         password: secret.cdn.password,
-        srcBasePath: "build/",
+        srcBasePath: "release/",
         createDirectories: true,
         showProgress: true
       }
     }
-  }
+  };
 };
