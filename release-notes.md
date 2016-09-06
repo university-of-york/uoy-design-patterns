@@ -5,6 +5,7 @@ v1.4.0 (next minor)
 * [Add divided grid rows](../../tree/component/bordered-grid)
 
 v1.3.12 (next patch)
+* [Make linked news items display:block](../../tree/component/news)
 
 v1.3.11 (released 6 Sep 2016)
 * [Moved the `bordered` modifier to the `c-page-title__wrapper`](../../tree/component/page-title)
