@@ -6,6 +6,9 @@
 .c-page-title__wrapper {
   background-color:$c-page-title__background-color;
 }
+.c-page-title__wrapper--bordered {
+  border-bottom:3px solid $c-nav-border-color;
+}
 .c-page-title {
   min-height:2.75em;
   overflow:hidden;
@@ -25,7 +28,4 @@
   &:hover {
     color:$c-page-title__link-color;
   }
-}
-.c-page-title--bordered {
-  border-bottom:3px solid $c-nav-border-color;
 }
