@@ -4,8 +4,11 @@ v1.4.0 (next minor)
 * [Update to new logo](../../tree/update/logo)
 * [Add divided grid rows](../../tree/component/bordered-grid)
 
-v1.3.11 (next patch)
+v1.3.12 (next patch)
+
+v1.3.11 (released 6 Sep 2016)
 * [Moved the `bordered` modifier to the `c-page-title__wrapper`](../../tree/component/page-title)
+* [Set min-height on wrapper properly and on resize](../../tree/module/wrapper-height)
 
 v1.3.10 (released 18 Aug 2016)
 * [Add labels to component library](../../tree/component/label)
