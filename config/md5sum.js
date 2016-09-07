@@ -10,7 +10,7 @@ module.exports = {
         var cwd = process.cwd();
         contentArray.forEach(function(file, i) {
           if (!file) return;
-          output+= util.format('%s  %s\n', file.hash, file.file.replace(cwd, ''));
+          output+= util.format('%s  %s\n', file.hash, file.file.replace(cwd+'/release/', ''));
         });
         return output;
       }

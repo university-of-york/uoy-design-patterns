@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 
     // Run with --dry-run when testing
     // TODO Add sftp:cdn
-    grunt.task.run('confirm', 'bump:'+type, 'build', 'copy:release', 'md5sum');
+    grunt.task.run('confirm:release:'+type, 'bump:'+type, 'build', 'copy:release', 'md5sum');
 
   });
 
