@@ -57,6 +57,13 @@
   margin-right:$base-spacing/2;
 }
 
+// Video content
+.c-figure {
+  .c-video {
+    margin-bottom:0;
+  }
+}
+
 // Image content
 .c-figure__content {
   @include image-caption;
