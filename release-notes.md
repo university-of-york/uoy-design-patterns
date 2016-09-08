@@ -9,6 +9,7 @@ v1.3.12 (next patch)
 * [Automate releases, add a checksum](../../tree/feature/release-process)
 * [Remove bottom margin from videos in figures](../../tree/component/figure)
 * [Update to block link style](../../tree/component/block-link)
+* [Remove top padding from docs pages](../../tree/fix/docs)
 
 v1.3.11 (released 6 Sep 2016)
 * [Moved the `bordered` modifier to the `c-page-title__wrapper`](../../tree/component/page-title)
