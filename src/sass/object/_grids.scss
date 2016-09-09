@@ -225,6 +225,13 @@ $box-padding:$base-spacing;
   position:relative;
 }
 
+.o-grid__box--centred {
+  max-width: $container-width;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
 .o-grid__box--full {
   width:100%;
 }
