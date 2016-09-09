@@ -16,7 +16,6 @@
 .c-figure__image--rounded {
   @include round;
 }
-
 // Image captions
 .c-figure__caption {
   @include image-caption;
@@ -32,6 +31,9 @@
   background: transparent;
   color:lighten($charcoal,20);
   padding: $base-spacing/2 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   .o-grid__row--alt1 &,
   .o-grid__row--alt2 & {
     color:darken($light,20);
@@ -91,6 +93,8 @@
     }
   }
 }
+.c-figure__content--left {
+}
 .c-figure__content--right {
   float:right;
 }
@@ -123,44 +127,87 @@
 
 //
 .c-figure--banner {
-  @include mq('large', '+') {
-    @include center-image('y');
-    .csstransforms & {
-      padding:$base-spacing;
-      .c-figure__image {
-        width:auto;
-      }
-      .c-figure__content {
-        position:relative;
-        top:0;
+  //@include center-image('xy');
+  padding:$base-spacing;
+  .csstransforms & {
+    .c-figure__image {
+      left:50%;
+      margin-top:0;
+      transform: translate(-50%, -50%)
+    }
+  }
+  @include mq('small', '-') {
+    padding:$base-spacing/2;
+  }
+  @include mq('tiny', '-') {
+    padding:0;
+  }
+  .c-figure__image {
+    z-index:10;
+    min-height:100%;
+    width:auto;
+    position:absolute;
+    top:50%;
+    margin-top:-25%;
+    @include mq('large', '+') {
+      width:100%;
+    }
+    @include mq('small', '~') {
+      top:50%;
+      margin-top:-25%;
+    }
+    @include mq('tiny', '-') {
+      position:static;
+      .csstransforms & {
+        position:static;
+        transform:translate(0, 0);
         left:0;
       }
     }
   }
-  .c-figure__image {
-    z-index:10;
-    min-width:100%;
-  }
   .c-figure__content {
-    position:absolute;
     display:inline-block;
+    position:relative;
     z-index:12;
     width:50%;
-    left:$base-spacing;
+    max-width:($container-width/2) - ($base-spacing*2);
+    left:50%;
+    margin-left:-50%;
+    top:0;
     bottom:$base-spacing;
     background-color:transparentize($teal, 0.1);
-    @include mq('medium', '-') {
+    @include mq('small', '-') {
       width:100%;
+      max-width:none;
+      margin:0;
+      left:0;
+      display:block;
+    }
+    @include mq('tiny', '-') {
+      width:100%;
+      max-width:none;
       position:static;
       display:block;
-      background-color:$teal;
     }
+  }
+  .c-figure__content--left {
+    @include mq('medium', '+') {
+      transform:translateX(-100%);
+      margin-left:0;
+    }
+  }
+  .c-figure__content--right {
+    float:none;
+    margin-left:0;
   }
   .c-figure__caption {
     z-index:12;
     max-width:45%;
     max-width:calc(50% - #{$base-spacing});
-    @include mq('medium', '-') {
+    @include mq('small', '~') {
+      display:none;
+    }
+    @include mq('tiny', '-') {
       width:100%;
       max-width: none;
       position:static;

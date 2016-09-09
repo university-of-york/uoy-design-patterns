@@ -11,7 +11,9 @@ id: figures-page
 
 <div class="lead"><p>Figures are structured markup for displaying images with additional content and/or captions. We use the `figure` element, with `figcaption` used for captions.</p></div>
 
-In most cases, figures are sized by the size of the image (with the notable exception of [banners](#banner-figures))
+In most cases, figures are sized by the size of the image (with the notable exception of [banners](#banner-figures)).
+
+Theres a special page for [full-width figures](../full-width-figures.html).
 
 ### Captions
 
