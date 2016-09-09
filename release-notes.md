@@ -7,7 +7,7 @@ v1.4.0 (next minor)
 v1.3.12 (next patch)
 * [Make linked news items display:block](../../tree/component/news)
 * [Automate releases, add a checksum](../../tree/feature/release-process)
-* [Remove bottom margin from videos in figures](../../tree/component/figure)
+* [Remove bottom margin from videos in figures, added full-width figure examples](../../tree/component/figure)
 * [Update to block link style](../../tree/component/block-link)
 * [Remove top padding from docs pages](../../tree/fix/docs)
 
