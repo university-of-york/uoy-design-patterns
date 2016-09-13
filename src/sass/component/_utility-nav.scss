@@ -14,6 +14,9 @@
   width:100%;
   text-align:right;
   position:relative;
+  @include mq(tiny, '-') {
+    text-align:left;
+  }
 }
 
 .c-utility-nav__item {
@@ -22,13 +25,21 @@
   margin-top:0;
   margin-bottom:0;
   font-size:14px;
+  @include mq(tiny, '-') {
+    &:first-of-type {
+      // So text lines up with edge of box
+      .c-utility-nav__link {
+        margin-left:-$base-spacing/4;
+      }
+    }
+  }
 }
 
 .c-utility-nav__link {
   @include transition('color');
   display:block;
   position:relative;
-  padding:0.5em 10px;
+  padding:0.5em $base-spacing/2;
   font-weight:bold;
   text-decoration:none;
   color:$c-utility-nav__link-color;
@@ -51,6 +62,16 @@
       // Down arrow
       content: "\f0d7";
     }
+    @include mq(tiny, '-') {
+      padding-right:1.1em;
+      &:after {
+        right:0.3em;
+      }
+    }
+  }
+  @include mq(tiny, '-') {
+    padding-left:$base-spacing/4;
+    padding-right:$base-spacing/4;
   }
   .c-utility-nav__item--parent.c-utility-nav__item.is-open &,
   .c-utility-nav__item--parent &:focus {
