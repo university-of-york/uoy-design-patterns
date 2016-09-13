@@ -192,6 +192,7 @@
     }
     @include mq('small', '-') {
       position:static;
+      min-height:0;
       .csstransforms & {
         position:static;
         transform:translate(0, 0);
