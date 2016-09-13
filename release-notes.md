@@ -11,6 +11,7 @@ v1.3.12 (next patch)
 * [Update to block link style](../../tree/component/block-link)
 * [Remove top padding from docs pages](../../tree/fix/docs)
 * [Remove bottom margin from last item in main wrapper](../../tree/fix/footer-margin)
+* [Use a mixin to reduce left/right padding on tiny screens](../../tree/fix/padding)
 
 v1.3.11 (released 6 Sep 2016)
 * [Moved the `bordered` modifier to the `c-page-title__wrapper`](../../tree/component/page-title)
