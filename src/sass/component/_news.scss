@@ -4,6 +4,7 @@
 $thumbnail_size:100px;
 .c-news {
   @include component;
+  display:block;
   width:100%;
   text-decoration:none;
   color:$charcoal;
