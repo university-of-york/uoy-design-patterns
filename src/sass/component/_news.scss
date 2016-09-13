@@ -25,10 +25,13 @@ $thumbnail_size:100px;
   .o-grid__row--alt1 &,
   .o-grid__row--alt2 &,
   .o-grid__row--alt3 & {
-    @include tiny-padding();
+    @include tiny-padding;
     padding-top:$base-spacing;
     padding-bottom:$base-spacing;
     background-color: #fff;
+    @include mg(tiny, '-') {
+      padding-top:10px;
+    }
   }
 }
 
