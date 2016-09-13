@@ -94,7 +94,7 @@
   min-width:100%;
   padding:$base-spacing/2;
   background-color:$c-utility-nav__subnav-background-color;
-  z-index:2;
+  z-index:12; // Above mobile search
   .c-utility-nav__item.is-open &,
   .c-utility-nav__link:focus ~ & {
     display:block;
