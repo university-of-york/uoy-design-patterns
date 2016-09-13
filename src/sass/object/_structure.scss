@@ -13,6 +13,6 @@
   padding:0;
 }
 .o-wrapper--main {
-  // Only element to have margin-top!
+  // Only this and c-footer--main have margin-top!
   margin-top:$base-spacing;
 }
