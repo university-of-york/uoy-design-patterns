@@ -31,6 +31,9 @@
       .c-utility-nav__link {
         margin-left:-$base-spacing/4;
       }
+      .c-utility-nav__subnav {
+        left:-$base-spacing/4;
+      }
     }
   }
 }
@@ -95,10 +98,6 @@
   .c-utility-nav__item.is-open &,
   .c-utility-nav__link:focus ~ & {
     display:block;
-  }
-  @include mq(tiny, '-') {
-    // So text lines up with edge of box
-    left:-$base-spacing/4;
   }
 }
 
