@@ -171,12 +171,13 @@
     display:block;
   }
 }
-#navigation-page {
-  .o-grid__box[role="main"] {
-    p, h2, h3 {
+#navigation-page,
+#full-width-figures-page {
+  .o-grid__box[role="main"] > {
+    p, h2, h3, .lead {
       padding:0 $base-spacing;
     }
-    p, h2, h3, pre {
+    p, h2, h3, .lead,  pre {
       max-width:1200px;
       margin-left:auto;
       margin-right:auto;
