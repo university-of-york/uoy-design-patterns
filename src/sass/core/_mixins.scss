@@ -3,6 +3,18 @@
 //
 
 //
+// Tiny padding - reduce left and right padding on tiny screens
+//
+@mixin tiny-padding() {
+  padding-left:$base-spacing;
+  padding-right:$base-spacing;
+  @include mq(tiny, '-') {
+    padding-left:$base-spacing/2;
+    padding-right:$base-spacing/2;
+  }
+}
+
+//
 // Media query mixin
 // Pass it a size (tiny, small, medium, large, huge)
 // And scope ('~' [1], '+' [2], '-' [3])
