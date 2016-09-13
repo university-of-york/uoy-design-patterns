@@ -96,6 +96,10 @@
   .c-utility-nav__link:focus ~ & {
     display:block;
   }
+  @include mq(tiny, '-') {
+    // So text lines up with edge of box
+    left:-$base-spacing/4;
+  }
 }
 
 // Left aligned
