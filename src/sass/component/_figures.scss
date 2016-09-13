@@ -176,9 +176,6 @@
     }
   }
   @include mq('small', '-') {
-    padding:$base-spacing/2;
-  }
-  @include mq('tiny', '-') {
     padding:0;
   }
   .c-figure__image {
@@ -191,11 +188,7 @@
     @include mq('large', '+') {
       width:100%;
     }
-    @include mq('small', '~') {
-      top:50%;
-      margin-top:-25%;
-    }
-    @include mq('tiny', '-') {
+    @include mq('small', '-') {
       position:static;
       .csstransforms & {
         position:static;
@@ -215,13 +208,6 @@
     @include mq('small', '-') {
       width:100%;
       max-width:none;
-      margin:0;
-      left:0;
-      display:block;
-    }
-    @include mq('tiny', '-') {
-      width:100%;
-      max-width:none;
       position:static;
       display:block;
     }
@@ -236,23 +222,11 @@
       @include getOffset(4);
     }
   }
-  .c-figure__content--right {
-    // float:none;
-    // margin-left:0;
-  }
-  // .c-figure__content--left {
-  //   @include mq('medium', '+') {
-  //     transform:translateX(-100%);
-  //   }
-  // }
   .c-figure__caption {
     z-index:12;
     max-width:45%;
     max-width:calc(50% - #{$base-spacing});
-    @include mq('small', '~') {
-      display:none;
-    }
-    @include mq('tiny', '-') {
+    @include mq('small', '-') {
       width:100%;
       max-width: none;
       position:static;

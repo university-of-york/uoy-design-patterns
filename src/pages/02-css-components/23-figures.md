@@ -13,7 +13,7 @@ id: figures-page
 
 In most cases, figures are sized by the size of the image (with the notable exception of [banners](#banner-figures)).
 
-Theres a special page for [full-width figures](../full-width-figures.html).
+Theres a special page for [full-width figures](./full-width-figures.html).
 
 ### Captions
 
