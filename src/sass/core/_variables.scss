@@ -18,7 +18,7 @@ $s3:#f0f1f4;
 //Utility colours - for warnings, errors, etc
 $red:#b62d2d;
 $green:#54b62d;
-$grey:#ccc;
+$lightgrey:#ccc;
 
 
 // Fonts
@@ -147,7 +147,7 @@ $o-grid__row--alt2-link-color:lighten($blue,5);
 $o-grid__row--alt2-link-hover-color:lighten($blue,15);
 $o-grid__row--alt3-background-color:$s2;
 $o-grid__row--alt3-border-color:$s1;
-$o-grid__row--divider-color:$grey;
+$o-grid__row--divider-color:$lightgrey;
 
 // Skip link
 $o-skip-link-color:$light;
