@@ -10,7 +10,9 @@
   display:block;
 }
 .c-panel__content {
-  padding:1em 20px;
+  @include tiny-padding;
+  padding-top:$base-spacing;
+  padding-bottom:$base-spacing;
   :first-child {
     margin-top:0;
   }
