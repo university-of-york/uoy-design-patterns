@@ -11,7 +11,9 @@ id: figures-page
 
 <div class="lead"><p>Figures are structured markup for displaying images with additional content and/or captions. We use the `figure` element, with `figcaption` used for captions.</p></div>
 
-In most cases, figures are sized by the size of the image (with the notable exception of [banners](#banner-figures))
+In most cases, figures are sized by the size of the image (with the notable exception of [banners](#banner-figures)).
+
+Theres a special page for [full-width figures](./full-width-figures.html).
 
 ### Captions
 
@@ -66,6 +68,17 @@ component("figure", { "type":"banner", "image": "https://unsplash.it/1200/600/?i
 </script>
 <script>
 component("figure", { "type":"banner", "image": "https://unsplash.it/1200/600/?image=984", "content": { "text" :"<h3>Here's some content</h3>\n<p>Here is some content. The height of the banner will fit to the content size.</p>\n<p>So if you have loads and loads of content, the banner will get taller and taller and taller.</p>\n<p>And taller.</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>\n<p class=\"cta\"><a href=\"#\">Button using .cta</a></p>\n</div>", "position": "right" } } );
+</script>
+
+A banner's `figure__content` can be `half` (default), `third` or `quarter` sizes. These sizes only apply at _huge_ sizes - they all go to half size at _large_ and 100% at _medium_ and below.
+
+<script>
+component("figure", { "type":"banner", "image": "https://unsplash.it/1200/600/?image=881", "content": { "text" : "<h3>Here's some content</h3>\n<p>Here is some content. The height of the banner will fit to the content size.</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a></div>", "position": "left", "size": "half" } } )+
+component("figure", { "type":"banner", "image": "https://unsplash.it/1200/600/?image=882", "content": { "text" : "<h3>Here's some content</h3>\n<p>Here is some content. The height of the banner will fit to the content size.</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a></div>", "position": "right", "size": "half" } } )+
+component("figure", { "type":"banner", "image": "https://unsplash.it/1200/600/?image=883", "content": { "text" : "<h3>Here's some content</h3>\n<p>Here is some content. The height of the banner will fit to the content size.</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a></div>", "position": "left", "size": "third" } } )+
+component("figure", { "type":"banner", "image": "https://unsplash.it/1200/600/?image=884", "content": { "text" : "<h3>Here's some content</h3>\n<p>Here is some content. The height of the banner will fit to the content size.</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a></div>", "position": "right", "size": "third" } } )+
+component("figure", { "type":"banner", "image": "https://unsplash.it/1200/600/?image=885", "content": { "text" : "<h3>Here's some content</h3>\n<p>Here is some content. The height of the banner will fit to the content size.</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a></div>", "position": "left", "size": "quarter" } } )+
+component("figure", { "type":"banner", "image": "https://unsplash.it/1200/600/?image=886", "content": { "text" : "<h3>Here's some content</h3>\n<p>Here is some content. The height of the banner will fit to the content size.</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a></div>", "position": "right", "size": "quarter" } } );
 </script>
 
 You can also include `caption`s on banner figures:

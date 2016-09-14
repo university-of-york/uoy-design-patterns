@@ -1,6 +1,46 @@
 //
 // FIGURES & CAPTIONS
 //
+
+// Mixin used to get pixel offsets for banner figures
+@mixin getOffset($fraction:2) {
+  @include mq('huge', '+') {
+    // For bigger than huge screens, use pixel amounts
+    $width:($container-width/$fraction) - ($base-spacing*2);
+    $margin:($container-width/2) - $base-spacing - $width;
+    width:$width;
+    left:50%;
+    &.c-figure__content--left {
+      margin-left:-($margin + $width);
+    }
+    &.c-figure__content--right {
+      margin-left:$margin;
+      float:none;
+    }
+  }
+  // Override the above settings for 'huge' itself
+  @include mq('huge', '-') {
+    $width:100%/$fraction;
+    width:$width;
+    left:0;
+    &.c-figure__content--left {
+      margin-left:0;
+    }
+    &.c-figure__content--right {
+      margin-left:0;
+      float:right;
+    }
+  }
+  @include mq('large', '-') {
+  }
+  @include mq('medium', '~') {
+    width:50%;
+  }
+  @include mq('small', '-') {
+    width:100%;
+  }
+}
+
 .c-figure {
   @include component;
   position:relative;
@@ -16,7 +56,6 @@
 .c-figure__image--rounded {
   @include round;
 }
-
 // Image captions
 .c-figure__caption {
   @include image-caption;
@@ -32,6 +71,9 @@
   background: transparent;
   color:lighten($charcoal,20);
   padding: $base-spacing/2 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   .o-grid__row--alt1 &,
   .o-grid__row--alt2 & {
     color:darken($light,20);
@@ -55,6 +97,13 @@
 }
 .c-figure__caption-icon {
   margin-right:$base-spacing/2;
+}
+
+// Video content
+.c-figure {
+  .c-video {
+    margin-bottom:0;
+  }
 }
 
 // Image content
@@ -83,6 +132,8 @@
       }
     }
   }
+}
+.c-figure__content--left {
 }
 .c-figure__content--right {
   float:right;
@@ -116,44 +167,67 @@
 
 //
 .c-figure--banner {
-  @include mq('large', '+') {
-    @include center-image('y');
-    .csstransforms & {
-      padding:$base-spacing;
-      .c-figure__image {
-        width:auto;
-      }
-      .c-figure__content {
-        position:relative;
-        top:0;
+  padding:$base-spacing;
+  .csstransforms & {
+    .c-figure__image {
+      left:50%;
+      margin-top:0;
+      transform: translate(-50%, -50%)
+    }
+  }
+  @include mq('small', '-') {
+    padding:0;
+  }
+  .c-figure__image {
+    z-index:10;
+    min-height:100%;
+    width:auto;
+    position:absolute;
+    top:50%;
+    margin-top:-25%;
+    @include mq('large', '+') {
+      width:100%;
+    }
+    @include mq('small', '-') {
+      position:static;
+      min-height:0;
+      .csstransforms & {
+        position:static;
+        transform:translate(0, 0);
         left:0;
       }
     }
   }
-  .c-figure__image {
-    z-index:10;
-    min-width:100%;
-  }
   .c-figure__content {
-    position:absolute;
     display:inline-block;
+    position:relative;
     z-index:12;
-    width:50%;
-    left:$base-spacing;
+    max-width:($container-width/2) - ($base-spacing*2);
+    top:0;
     bottom:$base-spacing;
     background-color:transparentize($teal, 0.1);
-    @include mq('medium', '-') {
+    @include mq('small', '-') {
       width:100%;
+      max-width:none;
       position:static;
       display:block;
-      background-color:$teal;
+    }
+    @include getOffset(2);
+    &.c-figure__content--half {
+      @include getOffset(2);
+    }
+    &.c-figure__content--third {
+      @include getOffset(3);
+    }
+    &.c-figure__content--quarter {
+      @include getOffset(4);
     }
   }
   .c-figure__caption {
     z-index:12;
     max-width:45%;
     max-width:calc(50% - #{$base-spacing});
-    @include mq('medium', '-') {
+    @include mq('small', '-') {
       width:100%;
       max-width: none;
       position:static;
