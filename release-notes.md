@@ -2,9 +2,9 @@
 
 v1.4.0 (next minor)
 * [Update to new logo](../../tree/update/logo)
-* [Add divided grid rows](../../tree/component/bordered-grid)
 
 v1.3.12 (next patch)
+* [Add divided grid rows](../../tree/component/bordered-grid)
 * [Make linked news items display:block](../../tree/component/news)
 * [Automate releases, add a checksum](../../tree/feature/release-process)
 * [Remove bottom margin from videos in figures, added full-width figure examples](../../tree/component/figure)
