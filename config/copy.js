@@ -25,5 +25,14 @@ module.exports = {
       src: ['fonts/**', 'media/**', 'js/prism.js', 'js/iframeResizer.contentWindow.min.js'],
       dest: 'build/'
     }]
+  },
+  release: {
+    files: [{
+      expand: true,
+      dot: true,
+      cwd: 'build/',
+      src: ['css/**', 'fonts/**', 'img/**', 'js/**'],
+      dest: 'release/'
+    }]
   }
 };
