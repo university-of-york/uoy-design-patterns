@@ -3,7 +3,9 @@
 v1.4.0 (next minor)
 * [Update to new logo](../../tree/update/logo)
 
-v1.3.12 (next patch)
+v1.3.13 (next patch)
+
+v1.3.12 (released 14 Sep 2016)
 * [Add divided grid rows](../../tree/component/bordered-grid)
 * [Make linked news items display:block](../../tree/component/news)
 * [Automate releases, add a checksum](../../tree/feature/release-process)
