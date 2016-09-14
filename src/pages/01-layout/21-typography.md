@@ -3,6 +3,7 @@
 title: Typography
 name: typography
 category: layout
+subcategory: General
 layout: q+tq
 id: typography-page
 

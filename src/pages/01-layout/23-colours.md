@@ -3,6 +3,7 @@
 title: Colours
 name: colours
 category: layout
+subcategory: General
 layout: q+tq
 id: colours-page
 

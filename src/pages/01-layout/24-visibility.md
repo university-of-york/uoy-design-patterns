@@ -3,6 +3,7 @@
 title: Visibility
 name: visibility
 category: layout
+subcategory: General
 layout: q+tq
 id: visibility-page
 

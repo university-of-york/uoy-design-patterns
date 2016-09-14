@@ -3,6 +3,7 @@
 title: Navigation
 name: navigation
 category: layout
+subcategory: General
 layout: wide
 id: navigation-page
 
@@ -245,33 +246,13 @@ The selected level 2 title will appear in larger text (this will be something li
 
 ### Page title
 
-<div class="c-page-title__wrapper">
-  <div class="c-page-title">
-    <h1 class="c-page-title__header"><a class="c-page-title__link" href="#">Navigation</a></h1>
-  </div>
+<div class="c-page-title">
+  <h1 class="c-page-title__header"><a class="c-page-title__link" href="#">Navigation</a></h1>
 </div>
 
 ```markup
-<div class="c-page-title__wrapper">
-  <div class="c-page-title">
-    <h1 class="c-page-title__header"><a class="c-page-title__link" href="#">Navigation</a></h1>
-  </div>
-</div>
-```
-
-On pages without a main nav bar, add a `bordered` modifier to the page title wrapper for consistency.
-
-<div class="c-page-title__wrapper c-page-title__wrapper--bordered">
-  <div class="c-page-title">
-    <h1 class="c-page-title__header"><a class="c-page-title__link" href="#">Navigation</a></h1>
-  </div>
-</div>
-
-```markup
-<div class="c-page-title__wrapper c-page-title__wrapper--bordered">
-  <div class="c-page-title">
-    <h1 class="c-page-title__header"><a class="c-page-title__link" href="#">Navigation</a></h1>
-  </div>
+<div class="c-page-title">
+  <h1 class="c-page-title__header"><a class="c-page-title__link" href="#">Navigation</a></h1>
 </div>
 ```
 

@@ -3,6 +3,7 @@
 title: Breadcrumb
 name: breadcrumb
 category: layout
+subcategory: General
 layout: q+tq
 id: breadcrumb-page
 
