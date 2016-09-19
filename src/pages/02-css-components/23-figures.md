@@ -17,7 +17,7 @@ Figures are sized by the size of the image.
 
 There is a separate page for examples of [full-width figures](./full-width-figures.html).
 
-### Figure captions
+## Figure captions
 
 The usual caption is positioned in the corner of the image:
 
@@ -39,59 +39,59 @@ It can also be positioned below the image:
 component("figure", { "image": "https://unsplash.it/800/400/?image=972", "caption": { "text" : "A plain caption below an image", "position": "below" } } );
 </script>
 
-### Figure content
+## Figure content
 
 The default width of the caption is a 50% at huge/large/medium sizes. On small/tiny screens the caption moves to be below the image. Banner content (like captions) can be positioned _top-left_, _top-right_, _bottom-left_ or _bottom-right_, and can be _half_, _third_ or _quarter_ size.
 
-#### Positions
+### Positions
 
-##### Top left (default)
+#### Top left (default)
 
 <script>
 component("figure", { "image": "https://unsplash.it/1200/600/?image=983", "content": { "text" : "<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "position": "top-left" } } );
 </script>
 
-##### Top right
+#### Top right
 
 <script>
 component("figure", { "image": "https://unsplash.it/1200/600/?image=984", "content": { "text" :"<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "position": "top-right" } } );
 </script>
 
-##### Bottom right
+#### Bottom right
 
 <script>
 component("figure", { "image": "https://unsplash.it/1200/600/?image=985", "content": { "text" : "<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "position": "bottom-right" } } );
 </script>
 
-##### Bottom left
+#### Bottom left
 
 <script>
 component("figure", { "image": "https://unsplash.it/1200/600/?image=986", "content": { "text" :"<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "position": "bottom-left" } } );
 </script>
 
-#### Sizes
+### Sizes
 
-##### Half (default)
+#### Half (default)
 
 <script>
 component("figure", { "image": "https://unsplash.it/1200/600/?image=882", "content": { "text" : "<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "size": "half" } } );
 </script>
 
-##### Third
+#### Third
 
 <script>
 component("figure", { "image": "https://unsplash.it/1200/600/?image=884", "content": { "text" : "<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "size": "third" } } );
 </script>
 
-##### Quarter
+#### Quarter
 
 <script>
 component("figure", { "image": "https://unsplash.it/1200/600/?image=886", "content": { "text" : "<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "size": "quarter" } } );
 </script>
 
-### Edge cases
+## Edge cases
 
-#### Caption and content
+### Caption and content
 
 You can include both `content` and a `caption` on figures:
 
@@ -99,7 +99,7 @@ You can include both `content` and a `caption` on figures:
 component("figure", { "image": "https://unsplash.it/1200/600/?image=985", "content": { "text" : "<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "position": "top-left" }, "caption": { "text" : "<i class=\"c-icon c-icon--camera c-figure__caption-icon\"></i> Simple text caption that might end up crashing into the content", "position": "bottom-right" } } );
 </script>
 
-#### Really huge content in a small box
+### Really huge content in a small box
 
 If the content is too big for the image...
 

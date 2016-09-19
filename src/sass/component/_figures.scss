@@ -5,46 +5,52 @@
 // Mixin used to get offsets for banner figures
 // $fraction is the denominator of the fraction (i.e. 2 for 1/2, 3 for 1/3 etc.)
 @mixin figureContent($fraction:2) {
-  $width:100%/$fraction;
-  width:$width;
-  width:calc(#{$width} - #{$base-spacing*2});
-  // @include mq('huge', '+') {
-  //   // // For bigger than huge screens, use pixel amounts
-  //   // $width:($container-width/$fraction) - ($base-spacing*2);
-  //   // $margin:($container-width/2) - $base-spacing - $width;
-  //   // width:$width;
-  //   // left:50%;
-  //   // &.c-figure__content--left {
-  //   //   margin-left:-($margin + $width);
-  //   // }
-  //   // &.c-figure__content--right {
-  //   //   margin-left:$margin;
-  //   //   float:none;
-  //   // }
-  // }
-  // // Override the above settings for 'huge' itself
-  // @include mq('huge', '-') {
-  //   $width:100%/$fraction;
-  //   width:$width;
-  //   left:0;
-  //   &.c-figure__content--left {
-  //     margin-left:0;
-  //   }
-  //   &.c-figure__content--right {
-  //     margin-left:0;
-  //     float:right;
-  //   }
-  // }
-  // @include mq('large', '-') {
-  // }
+  // Special case for content in full width figures on bigger than huge
+  @include mq('huge', '++') {
+    .c-figure--full-width &,
+    .c-figure--full-width.c-figure--banner & { // needed to extra specificity
+      // For bigger than huge screens, use pixel amounts
+      $width:($container-width/$fraction) - ($base-spacing*2);
+      $margin:($container-width/2) - $base-spacing - $width;
+      width:$width;
+      left:50%;
+      &.c-figure__content--left,
+      &.c-figure__content--top-left,
+      &.c-figure__content--bottom-left {
+        margin-left:-($margin + $width);
+        float:none;
+      }
+      &.c-figure__content--right,
+      &.c-figure__content--top-right,
+      &.c-figure__content--bottom-right {
+        margin-left:$margin;
+        float:none;
+      }
+    }
+  }
+  @include mq('huge', '-') {
+    $width:100%/$fraction;
+    width:$width;
+    width:calc(#{$width} - #{$base-spacing*2});
+  }
   @include mq('medium', '~') {
     width:50%;
+    width:calc(50% - #{$base-spacing});
   }
   @include mq('small', '-') {
-    width:100%;
-    max-width:none;
-    position:static;
-    display:block;
+    &,
+    &.c-figure__content--left,
+    &.c-figure__content--top-left,
+    &.c-figure__content--bottom-left,
+    &.c-figure__content--right,
+    &.c-figure__content--top-right,
+    &.c-figure__content--bottom-right {
+      width:100%;
+      max-width:none;
+      position:static;
+      display:block;
+      float:none;
+    }
   }
 }
 
@@ -123,6 +129,7 @@
 
 // Figure content
 .c-figure__content {
+  @include demarginalise;
   @include tiny-padding;
   padding-top:$base-spacing;
   padding-bottom:$base-spacing;
@@ -239,7 +246,10 @@
   }
   .c-figure__image {
     z-index:10;
-    width:100%;
+    width:auto;
+    height:auto;
+    min-width:100%;
+    min-height:100%;
     position:absolute;
     top:50%;
     right:0;
@@ -288,6 +298,7 @@
     bottom: 0;
     left: 0;
     right: 0;
+    top:auto;
     width: 100%;
     @include mq('tiny') {
       position:static;
