@@ -4,6 +4,7 @@ v1.4.0 (next minor)
 * [Update to new logo](../../tree/update/logo)
 
 v1.3.13 (next patch)
+* [More figure fun, separated out into different pages and added --full-width modifier](../../tree/component/figure)
 
 v1.3.12 (released 14 Sep 2016)
 * [Add divided grid rows](../../tree/component/bordered-grid)
