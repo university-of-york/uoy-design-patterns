@@ -28,11 +28,9 @@
       }
     }
   }
-  @include mq('huge', '-') {
-    $width:100%/$fraction;
-    width:$width;
-    width:calc(#{$width} - #{$base-spacing*2});
-  }
+  $width:100%/$fraction;
+  width:$width;
+  width:calc(#{$width} - #{$base-spacing*2});
   @include mq('medium', '~') {
     width:50%;
     width:calc(50% - #{$base-spacing});
@@ -58,13 +56,26 @@
   @include component;
   position:relative;
   display:block;
-  //overflow:hidden;
+  overflow:hidden;
   max-width:100%;
 }
 .c-figure__image,
 .c-figure img {
   display:block;
   width:100%;
+  position: relative;
+  // HELPER CLASSES FOR IMAGES (used by JS)
+  // Image must fit vertically
+  &.is-fitY {
+    width: auto;
+    height: 100%;
+    max-width: none;
+    .csstransforms & {
+      left: 50%;
+      top:0;
+      transform: translateX(-50%);
+    }
+  }
 }
 .c-figure__image--rounded {
   @include round;
@@ -249,7 +260,6 @@
     width:auto;
     height:auto;
     min-width:100%;
-    min-height:100%;
     position:absolute;
     top:50%;
     right:0;

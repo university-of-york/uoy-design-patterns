@@ -48,6 +48,8 @@ define(
 
     UTILS.breakEmailAddresses();
 
+    UTILS.fixTallFigures();
+
     // Add Google map functionality
     UTILS.eachIfExists('.js-map', function (i, map) {
       var $map = $(map);

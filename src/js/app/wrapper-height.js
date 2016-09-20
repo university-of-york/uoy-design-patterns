@@ -27,7 +27,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
   WRAPPERHEIGHT.prototype.measure = function () {
 
-    console.log('Measuring');
+    //console.log('Measuring');
 
     var windowHeight = $(window).height();
     var bodyChildren = $('body').children();
