@@ -203,8 +203,6 @@ define(
           includeCols = $a.attr('data-include-cols') ? $a.attr('data-include-cols').split(',') : false ,
           excludeCols = $a.attr('data-exclude-cols') ? $a.attr('data-exclude-cols').split(',') : false ;
 
-      console.log(dataLabel);
-
       var s = new SEARCHABLE({
         container: $a.children('ul, table'),
         header: hasHeader,
