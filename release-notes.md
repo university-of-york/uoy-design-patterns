@@ -5,6 +5,7 @@ v1.4.0 (next minor)
 
 v1.3.13 (next patch)
 * [More figure fun, separated out into different pages and added --full-width modifier](../../tree/component/figure)
+* [Add a custom GTM event when you search a searchable](../../tree/module/searchables)
 
 v1.3.12 (released 14 Sep 2016)
 * [Add divided grid rows](../../tree/component/bordered-grid)
