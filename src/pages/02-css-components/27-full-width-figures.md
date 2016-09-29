@@ -34,4 +34,12 @@ component("figure", { "type":"banner c-figure--full-width", "image": "https://un
 component("figure", { "type":"banner c-figure--full-width", "image": "https://unsplash.it/1200/600/?image=985", "content": { "text" : "<h3>Here's some content</h3>\n<p>Here is some content. The height of the banner will fit to the content size.</p>\n<p>This content should be some information, which is illustrated well by the image beneath.</p>\n<p>The caption down there in the corner could be a description of the image, or a copyright notice relating to the image itself.</p><a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a></div>", "position": "left", "size": "half" }, "caption": { "text" : "<i class=\"c-icon c-icon--camera c-figure__caption-icon\"></i> Simple text caption that might end up crashing into the content", "position": "bottom-right" } } );
 </script>
 
+### Full-width clickables
+
+<script>
+component("figure", { "image": "https://unsplash.it/1200/600/?image=986", "type":"full-width", "url": "https://www.york.ac.uk", "content": { "text" : "<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And the <span class=\"u-link\">Gryphon</span> added 'Come, let's hear some of YOUR adventures.'</p>\n<button class=\"c-btn c-btn--medium c-btn--block c-btn--primary\">Click here for more</button>" } } )+
+component("figure", { "image": "https://unsplash.it/1200/600/?image=987", "type":"banner c-figure--full-width", "url": "https://www.york.ac.uk", "content": { "text" : "<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And the <span class=\"u-link\">Gryphon</span> added 'Come, let's hear some of YOUR adventures.'</p>\n<button class=\"c-btn c-btn--medium c-btn--block c-btn--primary\">Click here for more</button>" } } );
+</script>
+
+
 ### Options (see [figures page](./css-components/figures.html))

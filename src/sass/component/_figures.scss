@@ -110,6 +110,12 @@
   .o-grid__row--alt2 & {
     color:darken($light,20);
   }
+  .c-figure--full-width & {
+    padding-left:$base-spacing/2;
+    @include mq(small, '-') {
+      padding-left:$base-spacing/4;
+    }
+  }
 }
 .c-figure__caption--bottom-left {
   bottom:0;

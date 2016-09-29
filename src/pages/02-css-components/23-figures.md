@@ -13,7 +13,7 @@ id: figures-page
 
 We use the `figure` element, with `figcaption` used for [captions](#figure-captions). A `c-figure__content` element is used to add [content](#figure-content) to a figure, which is usually 50% wide but can be modified to be a _third_ or _quarter_ size.
 
-Figures are sized by the size of the image.
+Figures are sized by the size of the image. If you add a `url` option it will stop being a `figure` element and become a linked anchor. This means the `figcaption` should switch to being a normal `div` and any links inside the content must be utility links (i.e. a `<span class="u-link">`) rather than an anchor.
 
 There is a separate page for examples of [full-width figures](./full-width-figures.html).
 
@@ -89,6 +89,14 @@ component("figure", { "image": "https://unsplash.it/1200/600/?image=884", "conte
 component("figure", { "image": "https://unsplash.it/1200/600/?image=886", "content": { "text" : "<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "size": "quarter" } } );
 </script>
 
+### Clickable figures
+
+Buttons in clickable figures should be `<button>`s and any links in the text should be `<span>`s with a class of `u-link` (they will all link to the same location as the main clickable URL).
+
+<script>
+component("figure", { "image": "https://unsplash.it/1200/600/?image=890", "url": "https://www.york.ac.uk", "content": { "text" : "<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And the <span class=\"u-link\">Gryphon</span> added 'Come, let's hear some of YOUR adventures.'</p>\n<button class=\"c-btn c-btn--medium c-btn--block c-btn--primary\">Click here for more</button>" } } );
+</script>
+
 ## Edge cases
 
 ### Caption and content
@@ -108,14 +116,13 @@ component("figure", { "image": "https://unsplash.it/1200/400/?image=888", "conte
 component("figure", { "image": "https://unsplash.it/1200/400/?image=889", "content": { "text" : "<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "size": "quarter", "position": "bottom-right" } } );
 </script>
 
-**TODO**
-
 ### Options
 
 #### Atoms
 
 * **figure**
   * **image**: the URL of an image **(required)**
+  * **url**: the URL to link the figure to
   * **caption**:
     * **text**: the text to appear in the caption (string)
     * **position**: the position of the caption

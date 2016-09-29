@@ -46,6 +46,14 @@ Captions work in the same way as with [regular figures](./figures.html#figure-ca
 component("figure", { "image": "https://unsplash.it/800/400/?image=777", "type": "banner", "content": { "text" : "<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>" }, "caption": { "text" : "<i class=\"c-icon c-icon--camera c-figure__caption-icon\"></i> Simple text caption", "position": "bottom-right" } } );
 </script>
 
+### Clickable banners
+
+As with [figures](./figures.html#clickable-figures), buttons in clickable figures should be `<button>`s and any links in the text should be `<span>`s with a class of `u-link` (they will all link to the same location as the main clickable URL).
+
+<script>
+component("figure", { "image": "https://unsplash.it/1200/600/?image=780", "type":"banner", "url": "https://www.york.ac.uk", "content": { "text" : "<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And the <span class=\"u-link\">Gryphon</span> added 'Come, let's hear some of YOUR adventures.'</p>\n<button class=\"c-btn c-btn--medium c-btn--block c-btn--primary\">Click here for more</button>" } } );
+</script>
+
 ### Edge cases
 
 #### Loads and loads of content
