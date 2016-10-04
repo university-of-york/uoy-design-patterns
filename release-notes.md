@@ -3,7 +3,9 @@
 v1.4.0 (next minor)
 * [Update to new logo](../../tree/update/logo)
 
-v1.3.13 (next patch)
+v1.3.14 (next patch)
+
+v1.3.13 (released 4 Oct 2016)
 * [More figure fun, separated out into different pages, added --full-width modifier and added a 'clickable' type](../../tree/component/figure)
 * [Add a custom GTM event when you search a searchable](../../tree/module/searchables)
 * [Update the list of icons](../../tree/update/font-awesome)
