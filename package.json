@@ -5,7 +5,7 @@
   "main": "gruntfile.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/university-of-york/uoy-design-patterns"
+    "url": "https://github.com/university-of-york/design-patterns"
   },
   "license": "UNLICENSED",
   "author": {
