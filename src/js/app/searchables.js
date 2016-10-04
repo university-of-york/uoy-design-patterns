@@ -125,6 +125,8 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       $row.toggleClass('is-hidden', hideIt);
     });
     that.container.trigger('search.updated');
+    // Push custom event to GTM
+    if (dataLayer) dataLayer.push({'event':'searchable-text', 'search-text': inputContent});
   };
 
   return SEARCHABLE;
