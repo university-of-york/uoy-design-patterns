@@ -5,6 +5,7 @@ v1.4.0 (next minor)
 
 v1.3.14 (next patch)
 * [Add accessibility features to utility navigation](../../tree/component/utility-nav)
+* [Add accessibility features to icons](../../tree/component/icons)
 
 v1.3.13 (released 4 Oct 2016)
 * [More figure fun, separated out into different pages, added --full-width modifier and added a 'clickable' type](../../tree/component/figure)
