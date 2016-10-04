@@ -3,6 +3,7 @@
 title: Wrapper
 name: wrapper
 category: layout
+subcategory: General
 layout: q+tq
 id: wrapper-page
 

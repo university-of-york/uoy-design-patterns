@@ -3,6 +3,7 @@
 title: Accessibility
 name: accessibility
 category: layout
+subcategory: General
 layout: q+tq
 id: accessibility-page
 

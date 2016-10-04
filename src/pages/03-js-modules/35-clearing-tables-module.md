@@ -57,10 +57,18 @@ This example has a relatively small list of courses for only UK/EU students.
 This example has a larger list (>25) of courses for both UK/EU and International students.
 
 ```markup
-<div class="js-clearing-table" data-department="Electronics"></div>
+<div class="js-clearing-table" data-department="Physics"></div>
 ```
 
-<div class="js-clearing-table" data-department="Electronics"></div>
+<div class="js-clearing-table" data-department="Physics"></div>
+
+And this example has a no courses available.
+
+```markup
+<div class="js-clearing-table" data-department="Health Sciences"></div>
+```
+
+<div class="js-clearing-table" data-department="Health Sciences"></div>
 
 ### Example using department name and specific type
 

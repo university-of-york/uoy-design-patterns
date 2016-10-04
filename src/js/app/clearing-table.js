@@ -7,6 +7,7 @@ category: Javascript
 ---
 
  */
+
 define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function ($, GOOGLEDOC, SEARCHABLE, UTILS) {
 
   var $window = $(window);
@@ -18,8 +19,9 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     var output = '';
     $.each(numbers, function (i, v) {
       var vt = v.trim();
+      var vl = vt.replace(' ', '').replace('(0)', '');
       if (i == numbers.length - 1 && i !== 0) output+= ' or ';
-      output+= '<a class="c-clearing-table__phone-number" href="tel:'+vt+'">'+vt+'</a>';
+      output+= '<a class="c-clearing-table__phone-number" href="tel:'+vl+'">'+vt+'</a>';
       if (i < numbers.length - 2) output+= ', ';
     });
     return output;
@@ -190,7 +192,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
           that.container.append(that.table);
           $(window).trigger('content.updated');
 
-          if (that.data.length > searchLimit) {
+          if ((that.courseCount['UK/EU'] > searchLimit) || (that.courseCount.International > searchLimit)) {
             // Make table searchable
             that.makeSearchable();
           }
@@ -200,31 +202,42 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
           var gr = $('<div>').addClass('o-grid__row').appendTo(g);
           that.container.prepend(g);
 
-          // Add toggle switch if type is 'Both' (and there are some courses to toggle!)
-          if (that.type === 'Both') {
-            var gb1 = $('<div>').addClass('o-grid__box o-grid__box--half');
-            var boxContent;
-            if (that.courseCount['UK/EU'] !== 0 && that.courseCount.International !== 0) {
-              boxContent = that.createToggle();
-            } else if (that.courseCount.International > 0) {
-              boxContent = that.createPanel('<p>The following courses only have places available for International students.</p>');
-            } else if (that.courseCount['UK/EU'] > 0) {
-              boxContent = that.createPanel('<p>The following courses only have places available for UK/EU students.</p>');
-            }
-            gb1.append(boxContent);
-            gr.append(gb1);
-          }
+          if ((that.courseCount['UK/EU'] === 0) && (that.courseCount.International === 0)) {
 
-          // Add A to Z or remove header rows
-          if (that.letterCount < letterLimit) {
-            // Remove letter headers
-            that.table.find('.c-clearing-table__letter-header').remove();
+            var noCourseBox = $('<div>').addClass('o-grid__box o-grid__box--full');
+            var noCourseBoxContent = that.createPanel('<p>There are no vacancies in this department for September 2016. <a href="//www.york.ac.uk/study/undergraduate/courses/all">Explore your options for 2017 entry.</a></p>');
+            noCourseBox.append(noCourseBoxContent);
+            gr.append(noCourseBox);
+
           } else {
-            // Add A-Z links
-            var ul = that.createLetterLinks();
-            var gb2 = $('<div>').addClass('o-grid__box o-grid__box--half');
-            gb2.append(ul);
-            gr.append(gb2);
+
+            // Add toggle switch if type is 'Both' (and there are some courses to toggle!)
+            if (that.type === 'Both') {
+              var gb1 = $('<div>').addClass('o-grid__box o-grid__box--half');
+              var boxContent = '';
+              if (that.courseCount['UK/EU'] !== 0 && that.courseCount.International !== 0) {
+                boxContent = that.createToggle();
+              } else if (that.courseCount.International > 0) {
+                boxContent = that.createPanel('<p>The following courses only have places available for International students.</p>');
+              } else if (that.courseCount['UK/EU'] > 0) {
+                boxContent = that.createPanel('<p>The following courses only have places available for UK/EU students.</p>');
+              }
+              gb1.append(boxContent);
+              gr.append(gb1);
+            }
+
+            // Add A to Z or remove header rows
+            if (that.letterCount < letterLimit) {
+              // Remove letter headers
+              that.table.find('.c-clearing-table__letter-header').remove();
+            } else {
+              // Add A-Z links
+              var ul = that.createLetterLinks();
+              var gb2 = $('<div>').addClass('o-grid__box o-grid__box--half');
+              gb2.append(ul);
+              gr.append(gb2);
+            }
+
           }
 
           // Click UK/EU toggle
@@ -285,7 +298,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     var fl = $('<label>').addClass('c-form__label')
                          .attr('for', inputName)
                          .text(this.label);
-    var fg = $('<div>').addClass('c-form__element-group').attr('id', inputName);
+    var fg_ukeu = $('<div>').addClass('c-form__radio-group');
     var fi_ukeu = $('<input>').addClass('c-form__radio')
                               .attr({'type': 'radio', 'id': inputName+'-ukeu', 'name': inputName })
                               .val('ukeu')
@@ -293,6 +306,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     var fl_ukeu = $('<label>').addClass('c-form__label')
                               .attr({'for': inputName+'-ukeu'})
                               .text('Courses for UK/EU students');
+    var fg_intl = $('<div>').addClass('c-form__radio-group');
     var fi_intl = $('<input>').addClass('c-form__radio')
                               .attr({'type': 'radio', 'id': inputName+'-intl', 'name': inputName })
                               .val('international')
@@ -302,8 +316,9 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
                               .text('Courses for International students');
 
     // Join it all together
-    fg.append(fi_ukeu, '&nbsp;', fl_ukeu, '<br>', fi_intl, '&nbsp;', fl_intl);
-    fe.append(fl, fg);
+    fg_ukeu.append(fi_ukeu, '&nbsp;', fl_ukeu);
+    fg_intl.append(fi_intl, '&nbsp;', fl_intl);
+    fe.append(fl, fg_ukeu, fg_intl);
     fs.append(fe);
     f.append(fs);
 
@@ -380,20 +395,30 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     }
     var courseCell =$('<td>');
     var courseCellContent = '<p class="c-clearing-table__title"><a href="'+course['Link to course page']+'">'+course['Qualification earned']+' '+course['Title of course']+'</a></p>'+
-      '<ul class="u-two-columns">'+
-      '<li class="c-clearing-table__entry-requirements"><strong>'+course['Entry requirements']+'</strong> or equivalent tarrif points required';
+      '<ul class="u-two-columns">';
 
-      if (course['Bullet 1'] || course['Bullet 2'] || course['Bullet 3']) {
-        courseCellContent+= '    <br>';
-        courseCellContent+= '    <small class="c-clearing-table__bullets">Must include: ';
+    console.log(course['No grades']);
+
+    if (course['No grades'] !== '') {
+
+        courseCellContent+= '<li class="c-clearing-table__entry-requirements">'+course['No grades']+'</li>';
+
+    } else if (course['Entry requirements'] !== '') {
+
+        courseCellContent+= '<li class="c-clearing-table__entry-requirements"><strong>'+course['Entry requirements']+'</strong> or equivalent tariff points from three A levels. Other qualifications are also accepted.';
+
+        if (course['Bullet 1'] || course['Bullet 2'] || course['Bullet 3']) {
+          courseCellContent+= '    <br>';
+          courseCellContent+= '    <small class="c-clearing-table__bullets">Must include: ';
+        }
+        if (course['Bullet 1']) courseCellContent+= course['Bullet 1'];
+        if (course['Bullet 2']) courseCellContent+= '; '+course['Bullet 2'];
+        if (course['Bullet 3']) courseCellContent+= '; '+course['Bullet 3']+'';
+        if (course['Bullet 1'] || course['Bullet 2'] || course['Bullet 3']) courseCellContent+= '</small>';
+
+        courseCellContent+= '</li>';
       }
-      if (course['Bullet 1']) courseCellContent+= course['Bullet 1'];
-      if (course['Bullet 2']) courseCellContent+= '; '+course['Bullet 2'];
-      if (course['Bullet 3']) courseCellContent+= '; '+course['Bullet 3']+'';
-      if (course['Bullet 1'] || course['Bullet 2'] || course['Bullet 3']) courseCellContent+= '</small>';
-
-      courseCellContent+= '</li>'+
-      '<li class="c-clearing-table__ucas-code">UCAS code '+course['UCAS code']+'</li>'+
+      courseCellContent+= '<li class="c-clearing-table__ucas-code">UCAS code '+course['UCAS code']+'</li>'+
       '<li class="c-clearing-table__course-length">'+course['Course length']+'</li>'+
       '<li class="c-clearing-table__phone-numbers">Call '+numbers+' to apply</li>';
     if (isAdjustmentOnly === true) courseCellContent+= '<li class="c-clearing-table__adjustment-only">Adjustment places only</li>';

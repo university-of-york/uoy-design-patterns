@@ -1,7 +1,11 @@
 module.exports = {
   options: {
+    files: ['package.json', 'bower.json'],
     updateConfigs: ['package'],
-    commit: false,
-    push: false
+    commit: true,
+    commitMessage: 'Release v%VERSION%',
+    commitFiles: ['package.json', 'bower.json', 'release-notes.md'],
+    push: true,
+    pushTo: 'origin'
   }
 };

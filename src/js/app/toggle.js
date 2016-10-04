@@ -16,6 +16,7 @@ define(['jquery'], function ($) {
     this.container = options.container;
     this.button = options.button;
     this.className = options.className || 'is-open';
+    this.onComplete = options.onComplete || false;
 
     var that = this;
 
@@ -31,7 +32,7 @@ define(['jquery'], function ($) {
 
   };
 
-  // Like jQuery's toggleClass, turns tiggle on or off. Passing a Boolean make it definitely on (true) or off (false)
+  // Like jQuery's toggleClass, turns toggle on or off. Passing a Boolean make it definitely on (true) or off (false)
   TOGGLE.prototype.toggle = function(c) {
     this.container.toggleClass(this.className, c);
     if (this.container.hasClass(this.className) === false) {
@@ -39,6 +40,10 @@ define(['jquery'], function ($) {
       this.button.trigger('blur');
     }
     $(window).trigger('toggle', this);
+    // When toggle is finished, run 'onComplete' if available
+    if (this.onComplete !== false && typeof this.onComplete === 'function') {
+      this.onComplete(this.container, this.button);
+    }
   };
 
   return TOGGLE;

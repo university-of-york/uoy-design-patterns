@@ -1,0 +1,18 @@
+//
+// LABEL
+//
+.c-label {
+  @include font-size(12px);
+  display:block;
+  color:$c-label-color;
+  text-transform:uppercase;
+  margin:0 0 $base-spacing/2;
+}
+// Only for links
+a.c-label {
+  @include transition;
+  text-decoration:none;
+  &:hover {
+    color:$c-label-color-hover;
+  }
+}

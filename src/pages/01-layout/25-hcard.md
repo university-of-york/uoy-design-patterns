@@ -3,6 +3,7 @@
 title: hCard
 name: hcard
 category: layout
+subcategory: General
 layout: q+tq
 id: hcard-page
 

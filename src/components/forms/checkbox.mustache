@@ -1,1 +1,4 @@
-<input class="c-form__checkbox" type="checkbox" id="{{parentConfig.name}}-{{value}}" name="{{parentConfig.name}}" value="{{value}}"{{#checked}} checked{{/checked}}/>{{#label}}&nbsp;<label for="{{@root.parentConfig.name}}-{{@root.value}}" class="c-form__label">{{this}}</label>{{/label}}
+<div class="c-form__checkbox-group">
+  <input class="c-form__checkbox" type="checkbox" id="{{parentConfig.name}}-{{value}}" name="{{parentConfig.name}}" value="{{value}}"{{#checked}} checked{{/checked}}/>{{#label}}
+  <label for="{{@root.parentConfig.name}}-{{@root.value}}" class="c-form__label">{{this}}</label>{{/label}}
+</div>
