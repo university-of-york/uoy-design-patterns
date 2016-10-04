@@ -15,6 +15,8 @@ id: icons-page
 component("icon", { "type": "heart" } );
 </script>
 
+### Icon sizes
+
 There are 6 alternative sizes of icon: `hf` is half the size of standard icons, `lg` is 33% bigger than standard, then there are `2x`, `3x`, `4x` and `5x` versions of the icon.
 
 <script>
@@ -27,6 +29,19 @@ component("icon", { "type": "heart", "size":"5x" } );
 </script>
 
 See the [Font Awesome documentation](http://fortawesome.github.io/Font-Awesome/examples/) for details of all the different things that you can do with them.
+
+### Accessibility
+
+Empty `<i>` elements aren't very friendly to screen readers or assistive technologies. So make sure they have `aria-hidden="true"`, and if they are standalone icons (for example the social media links in the footer), add some text for screen readers to access. This appears both as the `title` of the icon and as hidden text.
+
+See the [Font Awesome docs](http://fontawesome.io/accessibility/) for more details.
+
+<script>
+component("icon", { "type": "heart", "sr-text":"All you need is love" } )+
+component("icon", { "type": "calendar", "sr-text":"Eight days a week" } );
+</script>
+
+### List of icons
 
 Here's a comprehensive list of icons.
 
@@ -1435,3 +1450,4 @@ component("icon", { "type": "500px", "style": "inverse" } )
 * icon
   * **type**: the type of option you want **(required)**
   * **style**: can be _dark_ (default) or _light_
+  * **sr-text**: text for screen readers to access (default _false_)

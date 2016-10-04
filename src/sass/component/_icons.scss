@@ -38,3 +38,7 @@ $fa-inverse:          $light;
   display: block;
   margin: 0.4em auto 0;
 }
+
+.c-icon__sr-text {
+  @include is-invisible;
+}
