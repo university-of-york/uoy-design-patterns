@@ -269,10 +269,10 @@
     // or on font load event
     fontsActive: function(fn, ths) {
       if ($('html').hasClass('wf-active')) {
-        fn.apply(ths);
+        fn.apply(ths, ['fonts']);
       } else {
         $window.on('fonts.active', function() {
-          fn.apply(ths);
+          fn.apply(ths, ['fonts']);
         });
       }
     },
