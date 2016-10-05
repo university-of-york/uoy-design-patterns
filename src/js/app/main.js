@@ -48,6 +48,8 @@ define(
 
     UTILS.breakEmailAddresses();
 
+    UTILS.fixTallFigures();
+
     // Add Google map functionality
     UTILS.eachIfExists('.js-map', function (i, map) {
       var $map = $(map);
@@ -110,6 +112,20 @@ define(
       var $n = $(nav);
       new UTILITYTOGGLE({
         container: $n
+      });
+    });
+
+    // Add dismissable alert action
+    UTILS.eachIfExists('.js-alert-close', function (i, button) {
+      var $b = $(button);
+      var $c = $($b.closest('.c-alert'));
+      new TOGGLE({
+        container: $c,
+        button: $b,
+        className:'is-hidden',
+        onComplete: function($c, $b) {
+          $c.remove();
+        }
       });
     });
 

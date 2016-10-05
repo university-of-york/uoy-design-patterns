@@ -3,6 +3,7 @@
 title: Navigation
 name: navigation
 category: layout
+subcategory: General
 layout: wide
 id: navigation-page
 

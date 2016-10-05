@@ -58,6 +58,16 @@
   padding:0;
   border:0;
 }
+
+.c-form__checkbox-group,
+.c-form__radio-group {
+  white-space: nowrap;
+  display:inline-block;
+  margin-right:8px;
+  .c-form__label {
+    margin-left:4px;
+  }
+}
 .c-form__radio,
 .c-form__checkbox {
 
@@ -99,18 +109,7 @@
     pointer-events:none;
   }
 }
-.c-form__element-group {
-  min-height:2em;
-  min-height:calc(2em + 2px);
-  line-height:2em;
-  //height:2em;
-  // Higher specificity - same in all types of form
-  .c-form__label.c-form__label {
-    display:inline-block; // Only first .c-form__label is block-level
-    // margin-left:4px; // Not needed - should be joined with &nbsp;
-    margin-right:8px;
-  }
-}
+
 // Stacked form
 .c-form--stacked {
   .c-form__label {

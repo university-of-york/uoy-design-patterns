@@ -4,18 +4,21 @@
 @import "core/extends";
 
 // Style the grid examples
-#grid-page {
+#grid-page,
+#alt-grid-page,
+#image-grid-page,
+#divided-grid-page {
   .o-wrapper > .o-grid__row > .o-grid__box--full {
     .o-grid__row {
     }
     .o-grid__box {
-      min-height:240px;
+      min-height:180px;
       background-color:#eee;
       background-color:rgba(180,180,180,0.5);
       background-clip: content-box;
-      margin:0 0 $base-spacing;
+      margin-bottom:$base-spacing;
       .o-grid__box {
-        min-height:40px;
+        margin-bottom:0;
       }
     }
   }
@@ -166,12 +169,14 @@
     display:block;
   }
 }
-#navigation-page {
-  .o-grid__box[role="main"] {
-    p, h2, h3 {
+#navigation-page,
+#image-grid-page,
+#full-width-figures-page {
+  .o-grid__box[role="main"] > {
+    p, h2, h3, .lead {
       padding:0 $base-spacing;
     }
-    p, h2, h3, pre {
+    p, h2, h3, .lead,  pre {
       max-width:1200px;
       margin-left:auto;
       margin-right:auto;

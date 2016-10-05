@@ -1,6 +1,6 @@
 ---
 
-title: Clearing Tables
+title: Clearing tables
 name: clearing-tables-module
 category: modules
 subcategory: Component modules
@@ -28,7 +28,7 @@ The data for the clearing courses is fetched from the Google Doc using the [goog
 
 This is automatically done by adding a `js-clearing-table` class to the containing div. Options can be added using `data-` attributes: `data-department` for department; `data-type` for UK/EU or International; `data-layout` for a list of Departments or Courses. Leaving these blank will default to a  Course list, with all departments and both UK/EU and International, with a radio button to toggle between the two.
 
-If there are more than 25 courses in the list then a search box will appear, and if there are three or more different letters then letter header rows will appear and an A to Z listing.
+If there are more than 25 courses in the list then a search box will appear, and if there are five or more different letters then letter header rows will appear and an A to Z listing.
 
 As you search or toggle between the two the A to Z listing and headers will (dis)appear depending on the results of the search/toggle.
 
@@ -57,10 +57,18 @@ This example has a relatively small list of courses for only UK/EU students.
 This example has a larger list (>25) of courses for both UK/EU and International students.
 
 ```markup
-<div class="js-clearing-table" data-department="Electronics"></div>
+<div class="js-clearing-table" data-department="Physics"></div>
 ```
 
-<div class="js-clearing-table" data-department="Electronics"></div>
+<div class="js-clearing-table" data-department="Physics"></div>
+
+And this example has a no courses available.
+
+```markup
+<div class="js-clearing-table" data-department="Health Sciences"></div>
+```
+
+<div class="js-clearing-table" data-department="Health Sciences"></div>
 
 ### Example using department name and specific type
 

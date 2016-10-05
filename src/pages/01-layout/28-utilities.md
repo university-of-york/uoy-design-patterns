@@ -3,6 +3,7 @@
 title: Utilities
 name: utilities
 category: layout
+subcategory: General
 layout: q+tq
 id: utilities-page
 

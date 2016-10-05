@@ -54,3 +54,12 @@ ul.u-four-columns {
     margin-left:1em;
   }
 }
+// and margins don't encroach
+.u-two-columns,
+.u-three-columns,
+.u-four-columns {
+  li {
+    margin-bottom:0;
+    padding-bottom:$base-spacing/2;
+  }
+}

@@ -1,8 +1,9 @@
 ---
 
-title: Grid
+title: Basic grid
 name: grid
 category: layout
+subcategory: Grid
 layout: default
 id: grid-page
 
@@ -177,57 +178,6 @@ component("grid", { "atoms":[
 ] } );
 </script>
 
-### Fancy alternative coloured rows
-
-You can make a whole row go blue, teal or light grey (including the space going off the screen on either side) by defining the row as `.o-grid__row--alt1`, `.o-grid__row--alt2` or `.o-grid__row--alt3`.
-
-<script>
-component("grid", { "atoms":[
-  { "grid-row": { "type": "alt1", "atoms": [
-    { "grid-box": { "size": "full", "atoms": { "text": " .o-grid__box--full" } } }
-  ] } },
-  { "grid-row": { "type": "alt2", "atoms": [
-    { "grid-box": { "size": "full", "atoms": { "text": " .o-grid__box--full" } } }
-  ] } },
-  { "grid-row": { "type": "alt3", "atoms": [
-    { "grid-box": { "size": "full", "atoms": { "text": " .o-grid__box--full" } } }
-  ] } }
-] } );
-</script>
-
-### Bordered rows
-
-Add a thick border to the bottom of the row by using the class `.o-grid__row--bordered`. It works especially well on _alt_ rows.
-
-<script>
-component("grid", { "atoms":[
-  { "grid-row": { "type": "bordered", "atoms": [
-    { "grid-box": { "size": "full", "atoms": { "text": " .o-grid__box--full" } } }
-  ] } },
-  { "grid-row": { "type": "alt1 o-grid__row--bordered", "atoms": [
-    { "grid-box": { "size": "full", "atoms": { "text": " .o-grid__box--full" } } }
-  ] } },
-  { "grid-row": { "type": "alt2 o-grid__row--bordered", "atoms": [
-    { "grid-box": { "size": "full", "atoms": { "text": " .o-grid__box--full" } } }
-  ] } },
-  { "grid-row": { "type": "alt3 o-grid__row--bordered", "atoms": [
-    { "grid-box": { "size": "full", "atoms": { "text": " .o-grid__box--full" } } }
-  ] } }
-] } );
-</script>
-
-### Image rows
-
-Add an `image` value to put a background image in. This works best inside an `o-wrapper--wide` wrapper component, otherwise it will just fill the available wrapper.
-
-<script>
-component("grid", { "atoms":[
-  { "grid-row": { "image": "/media/wide-image.jpg", "atoms": [
-    { "grid-box": { "size": "full", "atoms": { "text": " .o-grid__box--full" } } }
-  ] } }
-] } );
-</script>
-
 ### Options
 
 #### Atoms
@@ -241,7 +191,7 @@ component("grid", { "atoms":[
 
 * **grid-row**
   * **atoms**: an array of `grid-box`es. The sizes of the `grid-box`es should add up to one. Duh.
-  * **type**: either _alt1_,  _alt2_,  _alt3_ for alternative styles of row
+  * **type**: either _alt1_,  _alt2_,  _alt3_ for alternative styles of row. Also _divided-rows_ or _divided-columns_
   * **image**: what image should fill the row?
 
 #### Organisms
