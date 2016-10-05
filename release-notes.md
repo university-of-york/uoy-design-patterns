@@ -8,6 +8,7 @@ v1.3.14 (next patch)
 * [Add accessibility features to icons](../../tree/component/icons)
 * [Standardise content.updated event which resizes accordions when content changes (e.g. with YoTube embed loading)](../../tree/fix/accordions)
 * [Update to block link style](../../tree/component/block-link)
+* [Stop breaking figures with no content](../../tree/component/figure)
 
 v1.3.13 (released 4 Oct 2016)
 * [More figure fun, separated out into different pages, added --full-width modifier and added a 'clickable' type](../../tree/component/figure)
