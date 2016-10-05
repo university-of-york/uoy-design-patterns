@@ -108,6 +108,8 @@
       $fs.each(function(i, figure) {
         var $f = $(figure);
         var $fc = $f.find('.c-figure__content');
+        // Only if there's some content
+        if ($fc.length === 0) return;
         var $fi = $f.find('.c-figure__image');
         // Reset height
         $f.height('auto');
