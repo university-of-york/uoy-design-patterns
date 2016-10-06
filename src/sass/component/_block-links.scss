@@ -8,19 +8,25 @@
   padding:$base-spacing/2 $base-spacing*3 $base-spacing/2 $base-spacing; // To make space for icon
   position:relative;
   background-color:$c-block-link-background-color;
-  border: 1px solid $c-block-link-border-color;
-  border-left-width:10px;
+  border-left: 10px solid $c-block-link-border-color;
   text-decoration: none;
+  font-weight: bold;
   &:hover {
     cursor:pointer;
   }
   .o-grid__row--alt1 & {
     background-color:$o-grid__row--alt2-background-color;
+    border-color: $o-grid__row--alt2-background-color;
     color:$o-grid__row--alt1-color;
   }
   .o-grid__row--alt2 & {
     background-color:$o-grid__row--alt1-background-color;
+    border-color: $o-grid__row--alt1-background-color;
     color:$o-grid__row--alt2-color;
+  }
+  .o-grid__row--alt3 & {
+    border:1px solid $c-block-link-border-color;
+    border-left-width: 10px;
   }
 }
 .c-block-link__content {
