@@ -2,14 +2,16 @@ define(
   ['jquery', 'es5shim', 'picturefill', 'iframeResizer',
    'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav',
    'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/prioritised-tables',
-   'app/toggle', 'app/utility-toggle', 'app/wrapper-height', 'app/youtube-embed', 'app/soundcloud-embed',
-   'app/searchables', 'app/filterable-tables', 'app/equal-height-row', 'app/google-map'],
+   'app/toggle', 'app/utility-toggle', 'app/wrapper-height', 'app/youtube-embed',
+   'app/soundcloud-embed', 'app/searchables', 'app/filterable-tables', 'app/equal-height-row',
+   'app/google-map'],
   function (
     $, ES5SHIM, PICTUREFILL, IFRAMERESIZER,
     UTILS, MODALLINK, ACCORDION, STICKYNAV,
     TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
-    TOGGLE, UTILITYTOGGLE, WRAPPERHEIGHT, YOUTUBE, SOUNDCLOUD,
-    SEARCHABLE, FILTERABLE, EQUALHEIGHT, GOOGLEMAP) {
+    TOGGLE, UTILITYTOGGLE, WRAPPERHEIGHT, YOUTUBE,
+    SOUNDCLOUD, SEARCHABLE, FILTERABLE, EQUALHEIGHT,
+    GOOGLEMAP) {
 
   $(function(){
 
