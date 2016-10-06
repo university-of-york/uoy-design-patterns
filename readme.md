@@ -6,11 +6,12 @@ This repository holds the design patterns used on the [University of York's webs
 
 You will need to have NodeJS (including NPM), Git, Ruby (including RubyGems) and Compass installed on your machine. On Windows, the easiest way to do this is with [Chocolatey](https://chocolatey.org/) and on Mac you can use [Homebrew](http://brew.sh/).
 
-You'll also need a global install of Grunt (a task runner) and Bower (a package manager), which you can do by typing:
+You'll also need a global install of Grunt (a task runner), Bower (a package manager) and BackstopJS (a visual regression tester), which you can do by typing:
 
 ```bash
 npm install -g grunt-cli
 npm install -g bower
+npm install -g backstopjs
 ```
 
 ## Getting ready
