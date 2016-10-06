@@ -109,6 +109,105 @@ component("accordion", { "collapse": true, "atoms": [
 
 If an accordion content has an ID, then a cookie will be set to remember the state of the accordion, so revisiting the page in the same session will keep the same accordions open.
 
+### Edge cases
+
+#### `content.updated` event
+
+When there's a YouTube embed inside an accordion, the [YouTube embed module](/js-modules/youtube-embed.html) fires the `content.updated` event after it's loaded, which triggers the accordion to reset its height.
+
+This event is also fired by the [searchables module](/js-modules/searchables-module.html), the [clearing tables module](/js-modules/searchables-module.html) and the [tabs module](/js-modules/tabs-module.html).
+
+The function to reset the accordion height is also triggered by the `font.loaded` event.
+
+<script>
+component("accordion", { "atoms": [
+  { "accordion-item": {
+    "title": "YouTube video embed",
+    "id": "accordion-4a",
+    "content": "<p><a class=\"youtube-video-embed\" href=\"https://www.youtube.com/watch?v=s67Nb0wpcbE\">Watch the video here</a></p>"
+  } },
+  { "accordion-item": {
+    "title": "Searchable",
+    "id": "accordion-4b",
+    "content":  "<div class=\"js-searchable\" data-label=\"Enter your search term here\">"+
+                "  <table>"+
+                "    <thead>"+
+                "      <tr>"+
+                "        <th>Programme</th>"+
+                "        <th>Home/EU</th>"+
+                "        <th>Overseas</th>"+
+                "      </tr>"+
+                "    </thead>"+
+                "    <tbody>"+
+                "      <tr>"+
+                "        <td><a href=\"http://www.york.ac.uk/chemistry/postgraduate/taught/\">Green Chemistry &amp; Sustainable Industrial Technology (PG Diploma)</a></td>"+
+                "        <td>&pound;4,830</td>"+
+                "        <td>&pound;14,390</td>"+
+                "      </tr>"+
+                "      <tr>"+
+                "        <td><a href=\"http://www.cs.york.ac.uk/postgraduate/taught-courses/msc-scse/\">Safety Critical Systems Engineering</a> (MSc)</td>"+
+                "        <td>&pound;17,420</td>"+
+                "        <td>&pound;19,500</td>"+
+                "      </tr>"+
+                "      <tr>"+
+                "        <td>"+
+                "          <p><a href=\"http://maths.york.ac.uk/www/MscfinMscmathfin\">Mathematical Finance</a> (MSc)</p>"+
+                "          <p>The fees for the MSc in Mathematical Finance (Online) vary, please refer to the Online/Distance tab.</p>"+
+                "        </td>"+
+                "        <td>&pound;18,060</td>"+
+                "        <td>&pound;23,490</td>"+
+                "      </tr>"+
+                "      <tr>"+
+                "        <td><a href=\"http://www.york.ac.uk/inst/cws/prospective/dip.htm\">Postgraduate Diploma in Women&#39;s Studies (Social Research)</a></td>"+
+                "        <td>&pound;4,830</td>"+
+                "        <td>&pound;11,360</td>"+
+                "      </tr>"+
+                "    </tbody>"+
+                "  </table>"+
+                "</div>"
+  } },
+  { "accordion-item": {
+    "title": "Clearing tables",
+    "id": "accordion-4c",
+    "content": "<div class=\"js-clearing-table\" data-department=\"Management\" data-type=\"UK/EU\"></div>"
+  } },
+  { "accordion-item": {
+    "title": "Tabs",
+    "id": "accordion-4d",
+    "content":  "<div class=\"c-tabs c-tabs--horizontal js-tabs\">"+
+                "  <ul class=\"c-tabs__nav\">"+
+                "    <li class=\"c-tabs__tab is-active\"><a class=\"c-tabs__link\" href=\"#about\">About the university</a></li>"+
+                "    <li class=\"c-tabs__tab\"><a class=\"c-tabs__link\" href=\"#excellence\">Academic excellence</a></li>"+
+                "    <li class=\"c-tabs__tab\"><a class=\"c-tabs__link\" href=\"#investing\">Investing in our campus</a></li>"+
+                "  </ul>"+
+                "  <div class=\"c-tabs__container\">"+
+                "    <div class=\"c-tabs__content is-active\" id=\"about\">"+
+                "      <h3>Founded on principles of excellence</h3>"+
+                "      <p>Founded on principles of excellence, equality and opportunity for all, the University of York opened in 1963 with just 230 students.</p>"+
+                "      <p>Since then we have become one of the world's leading universities, carving out a reputation as an academic powerhouse where a clear focus on excellence has secured national and international recognition alongside longer established institutions.</p>"+
+                "    </div>"+
+                "    <div class=\"c-tabs__content\" id=\"excellence\">"+
+                "      <h3>A member of the elite Russell Group of universities</h3>"+
+                "      <p>We are a dynamic, research-intensive university committed to the development of life-saving discoveries and new technologies to tackle some of the most pressing global challenges.</p>"+
+                "      <p>There are now over 30 academic departments and research centres and the student body has expanded to nearly 16,000.</p>"+
+                "      <ul>"+
+                "        <li><a href=\"#\">Research at York</a></li>"+
+                "        <li><a href=\"#\">Studying at York</a></li>"+
+                "        <li><a href=\"#\">Mission and strategies: the University Plan 2009-19</a></li>"+
+                "      </ul>"+
+                "    </div>"+
+                "    <div class=\"c-tabs__content\" id=\"investing\">"+
+                "      <h3>Vision for a 21st-century campus</h3>"+
+                "      <p>The University is in the middle of an unprecedented period of expansion and renewal. Since 2000, we have invested in 20 new buildings on the original Heslington West campus and have completed the first and second phases of a £750m campus expansion"+
+                "        at Heslington East.</p>"+
+                "      <p>Our investment in new colleges, teaching and learning space, laboratories, research facilities and a new sport village mean it has never been a better time to join our student body or research groups at York.</p>"+
+                "    </div>"+
+                "  </div>"+
+                "</div>"
+  } }
+] } );
+</script>
+
 ### Options
 
 #### Atoms

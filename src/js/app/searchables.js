@@ -45,7 +45,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     // Add above container
     this.container.before(form);
     // Fire event (for e.g. resizing accordion)
-    $(window).trigger('content.updated');
+    $(window).trigger('content.updated', ['searchable', this]);
 
     console.info(this);
 
