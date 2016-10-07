@@ -42,27 +42,31 @@ var viewports = [
     "height": 768
   }
 ];
-
+// Hide BrowserSync notice
 var hideSelectors = [
-  "#__bs_notify__"
+  "#__bs_notify__",
 ];
-// Get the whole page
+// Take out markup samples
+var removeSelectors = [
+  ".language-markup"
+];
+// Just get #Main-Content
 var selectors = [
-  "document"
+  "#Main-Content"
 ];
 var scenariosArray = [];
-var htmlFiles = glob.sync("build/@(layout|css-components)/*.html");
+var htmlFiles = glob.sync("dev/@(layout|css-components)/*.html");
 
 console.info(htmlFiles.length+' files found!');
 
 // Loop through all *.html pages in /dev and push to scenariosArray
 htmlFiles.forEach(function(file, i) {
-  // if (i > 5) return;
-  var filename = file.substr(5);
+  var filename = file.substr(3);
   scenariosArray.push({
-    "label": file,
+    "label": filename,
     "url": "http://localhost:1723"+filename,
     "hideSelectors": hideSelectors,
+    "removeSelectors": removeSelectors,
     "selectors": selectors
   });
 });
