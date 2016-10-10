@@ -70,4 +70,26 @@ component("grid", { "atoms":[
 ] });
 </script>
 
+## Edge cases
+
+If there's too much content in a link figure, JS kicks in and makes the image fit vertically.
+
+<script>
+component("grid", { "atoms":[
+  { "grid-row": { "atoms": [
+    { "grid-box": { "size": "quarter", "atoms": {
+      "figure-link": { "color":"pink", "image": "https://unsplash.it/600/400/?image=991", "url":"http://google.com", "content": { "text": "<p>Here is some content.</p>\n<p>Here is some content.</p>\n<p>Here is some content.</p>\n<p>Here is some content.</p>" } }
+    } } },
+    { "grid-box": { "size": "quarter", "atoms": {
+      "figure-link": { "color":"teal", "image": "https://unsplash.it/600/400/?image=992", "url":"http://google.com", "content": { "text": "<p>Here is some content.</p>\n<p>Here is some content.</p>\n<p>Here is some content.</p>\n<p>Here is some content.</p>\n<p>Here is some content.</p>" } }
+    } } },
+    { "grid-box": { "size": "quarter", "atoms": {
+      "figure-link": { "color":"gold", "image": "https://unsplash.it/600/400/?image=993", "url":"http://google.com", "content": { "text": "<p>Here is some content.</p>\n<p>Here is some content.</p>\n<p>Here is some content.</p>\n<p>Here is some content.</p>\n<p>Here is some content.</p>\n<p>Here is some content.</p>" } }
+    } } },
+    { "grid-box": { "size": "quarter", "atoms": {
+      "figure-link": { "color":"blue", "image": "https://unsplash.it/600/400/?image=994", "url":"http://google.com", "content": { "text" : "<p>Here is some content.</p>\n<p>Here is some content.</p>\n<p>Here is some content.</p>\n<p>Here is some content.</p>\n<p>Here is some content.</p>\n<p>Here is some content.</p>\n<p>Here is some content.</p>" } }
+    } } }
+  ] } }] });
+</script>
+
 ### Options (see [figures page](./css-components/figures.html))
