@@ -4,6 +4,7 @@ v1.4.0 (next minor)
 * [Update to new logo](../../tree/update/logo)
 
 v1.3.15 (next patch)
+* [Wait until image has loaded before measuring its height](../../tree/component/figure)
 
 v1.3.14 (released 6 Oct 2016)
 * [Add accessibility features to utility navigation and tweakpositioning on small screens](../../tree/component/utility-nav)
