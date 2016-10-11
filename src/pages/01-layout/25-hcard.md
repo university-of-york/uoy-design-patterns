@@ -28,7 +28,7 @@ component("hcard", {
   "name": "Chris Marsh",
   "email": "chris.marsh@york.ac.uk",
   "tel": "+44 (0)1904 324107",
-  "image": "media/chris.jpg",
+  "image": "/media/chris.jpg",
   "url": "http://www-users.york.ac.uk/~cm1438/",
   "bio": "<p>Chris is a front-end developer at the University of York. He's been developing websites for over ten years and started working at the university in early 2015.</p>"
 });
@@ -41,7 +41,7 @@ component("hcard", {
   "name": "Chris Marsh",
   "email": "chris.marsh@york.ac.uk",
   "tel": "+44 (0)1904 324107",
-  "image": "media/chris.jpg",
+  "image": "/media/chris.jpg",
   "url": "http://www-users.york.ac.uk/~cm1438/",
   "bio": "<p>Chris is a front-end developer at the University of York. He's been developing websites for over ten years and started working at the university in early 2015.</p>",
   "position": "Front-end web developer",
@@ -75,7 +75,7 @@ Or here, with a few more options:
 component("hcard-mini", {
   "title": "Featured researcher",
   "name": "Chris Marsh",
-  "image": "media/chris.jpg",
+  "image": "/media/chris.jpg",
   "email": "chris.marsh@york.ac.uk",
   "url": "http://www-users.york.ac.uk/~cm1438/",
   "position": "Front-end web developer",
@@ -94,7 +94,7 @@ Use under stories or on intro pages where you need a name, position and image to
 <script>
 component("hcard-byline", {
   "name": "Chris Marsh",
-  "image": "media/chris.jpg",
+  "image": "/media/chris.jpg",
   "position": "Front-end web developer"
 });
 </script>
@@ -107,7 +107,7 @@ A slightly different layout to display the card like it is shown on the news art
 component("hcard-article", {
   "title": "Featured researcher",
   "name": "Chris Marsh",
-  "image": "media/chris.jpg",
+  "image": "/media/chris.jpg",
   "email": "chris.marsh@york.ac.uk",
   "url": "http://www-users.york.ac.uk/~cm1438/",
   "position": "Front-end web developer",

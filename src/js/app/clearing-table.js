@@ -190,7 +190,6 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
         if (that.layout === 'Courses') {
           // Add table to container
           that.container.append(that.table);
-          $(window).trigger('content.updated');
 
           if ((that.courseCount['UK/EU'] > searchLimit) || (that.courseCount.International > searchLimit)) {
             // Make table searchable
@@ -244,12 +243,18 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
           var ukeuToggle = $('#clearing-table-'+that.id+'-toggle-input-ukeu');
           ukeuToggle.click();
 
+          console.log(that.container, that.container.outerHeight());
+          $(window).trigger('content.updated', ['clearing-table', that]);
+
         } else {
 
           // Add list to container
           that.container.append($('<h3>').text('Vacancies by subject area'));
           that.container.append(that.list);
-          $(window).trigger('content.updated');
+
+          console.log(that.container, that.container.outerHeight());
+          $(window).trigger('content.updated', ['clearing-table', that]);
+
         }
 
       }

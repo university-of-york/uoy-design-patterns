@@ -152,90 +152,90 @@ The top-level **structural navigation** (Study, Research, Business) can be kept 
 
 **Utility navigation** is links that aren't directly related to page content, but are important for general site navigation. This includes _Jobs_, _Staff and students_, _Alumni_ and a general _A-Z_ listing. These are kept in a top banner on the homepage but hidden elsewhere.
 
-<nav class="c-utility-nav">
-  <ul class="c-utility-nav__list">
-    <li class="c-utility-nav__item c-utility-nav__item--parent" id="staff-and-students">
+<nav class="c-utility-nav" role="navigation" aria-label="Utility navigation">
+  <ul class="c-utility-nav__list" role="menubar" aria-hidden="false">
+    <li class="c-utility-nav__item c-utility-nav__item--parent" id="staff-and-students" role="menuitem" aria-haspopup="true">
       <a class="c-utility-nav__link js-utility-toggle" href="#staff-and-students">Staff and students</a>
-      <div class="c-utility-nav__subnav">
+      <div class="c-utility-nav__subnav" aria-hidden="true" role="menu">
         <ul class="c-utility-nav__sublist">
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Staff homepage</a></li>
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Student homepage</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Staff homepage</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Student homepage</a></li>
         </ul>
         <ul class="c-utility-nav__sublist">
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Term dates</a></li>
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Timetables</a></li>
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Library</a></li>
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Yorkshare VLE</a></li>
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">e:Vision</a></li>
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Directory</a></li>
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Email</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Term dates</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Timetables</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Library</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Yorkshare VLE</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">e:Vision</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Directory</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Email</a></li>
         </ul>
       </div>
     </li>
-    <li class="c-utility-nav__item c-utility-nav__item--parent" id="a-to-z">
+    <li class="c-utility-nav__item c-utility-nav__item--parent" id="a-to-z" role="menuitem" aria-haspopup="true">
       <a class="c-utility-nav__link js-utility-toggle" href="#a-to-z">A-Z</a>
-      <div class="c-utility-nav__subnav">
+      <div class="c-utility-nav__subnav" aria-hidden="true" role="menu">
         <ul class="c-utility-nav__sublist">
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Undergraduate courses</a></li>
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Postgraduate courses</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Undergraduate courses</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Postgraduate courses</a></li>
         </ul>
         <ul class="c-utility-nav__sublist">
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Departments and centres</a></li>
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Support services</a></li>
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Staff directory</a></li>
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Maps and directions</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Departments and centres</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Support services</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Staff directory</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Maps and directions</a></li>
         </ul>
         <ul class="c-utility-nav__sublist">
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Full A-Z</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Full A-Z</a></li>
         </ul>
       </div>
     </li>
-    <li class="c-utility-nav__item"><a class="c-utility-nav__link" href="#">Jobs</a></li>
-    <li class="c-utility-nav__item"><a class="c-utility-nav__link" href="#">Alumni</a></li>
+    <li class="c-utility-nav__item" role="menuitem" aria-haspopup="false"><a class="c-utility-nav__link" href="#">Jobs</a></li>
+    <li class="c-utility-nav__item" role="menuitem" aria-haspopup="false"><a class="c-utility-nav__link" href="#">Alumni</a></li>
   </ul>
 </nav>
 
 ```markup
-<nav class="c-utility-nav">
-  <ul class="c-utility-nav__list">
-    <li class="c-utility-nav__item c-utility-nav__item--parent" id="staff-and-students">
+<nav class="c-utility-nav js-accessible-nav" role="navigation" aria-label="Utility navigation">
+  <ul class="c-utility-nav__list" role="menubar" aria-hidden="false">
+    <li class="c-utility-nav__item c-utility-nav__item--parent" id="staff-and-students" role="menuitem" aria-haspopup="true">
       <a class="c-utility-nav__link js-utility-toggle" href="#staff-and-students">Staff and students</a>
-      <div class="c-utility-nav__subnav">
+      <div class="c-utility-nav__subnav" aria-hidden="true" role="menu">
         <ul class="c-utility-nav__sublist">
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Staff homepage</a></li>
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Student homepage</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Staff homepage</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Student homepage</a></li>
         </ul>
         <ul class="c-utility-nav__sublist">
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Term dates</a></li>
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Timetables</a></li>
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Library</a></li>
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Yorkshare VLE</a></li>
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">e:Vision</a></li>
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Directory</a></li>
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Email</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Term dates</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Timetables</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Library</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Yorkshare VLE</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">e:Vision</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Directory</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Email</a></li>
         </ul>
       </div>
     </li>
-    <li class="c-utility-nav__item c-utility-nav__item--parent" id="a-to-z">
+    <li class="c-utility-nav__item c-utility-nav__item--parent" id="a-to-z" role="menuitem" aria-haspopup="true">
       <a class="c-utility-nav__link js-utility-toggle" href="#a-to-z">A-Z</a>
-      <div class="c-utility-nav__subnav">
+      <div class="c-utility-nav__subnav" aria-hidden="true" role="menu">
         <ul class="c-utility-nav__sublist">
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Undergraduate courses</a></li>
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Postgraduate courses</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Undergraduate courses</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Postgraduate courses</a></li>
         </ul>
         <ul class="c-utility-nav__sublist">
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Departments and centres</a></li>
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Support services</a></li>
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Staff directory</a></li>
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Maps and directions</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Departments and centres</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Support services</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Staff directory</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Maps and directions</a></li>
         </ul>
         <ul class="c-utility-nav__sublist">
-          <li class="c-utility-nav__subitem"><a class="c-utility-nav__sublink" href="#">Full A-Z</a></li>
+          <li class="c-utility-nav__subitem" role="menuitem"><a class="c-utility-nav__sublink" href="#" tabindex="-1">Full A-Z</a></li>
         </ul>
       </div>
     </li>
-    <li class="c-utility-nav__item"><a class="c-utility-nav__link" href="#">Jobs</a></li>
-    <li class="c-utility-nav__item"><a class="c-utility-nav__link" href="#">Alumni</a></li>
+    <li class="c-utility-nav__item" role="menuitem" aria-haspopup="false"><a class="c-utility-nav__link" href="#">Jobs</a></li>
+    <li class="c-utility-nav__item" role="menuitem" aria-haspopup="false"><a class="c-utility-nav__link" href="#">Alumni</a></li>
   </ul>
 </nav>
 ```

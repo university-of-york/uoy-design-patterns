@@ -63,12 +63,19 @@ define(['jquery', 'app/toggle', 'app/utils'], function ($, TOGGLE, UTILS) {
         className: toggleClassName
       });
 
-      // Close other toggles
+      // Close other toggles and update ARIA labels
       $button.on('click', function() {
+        if ($parent.hasClass('is-open')) {
+          $subnav.attr('aria-hidden', false);
+        } else {
+          $subnav.attr('aria-hidden', true);
+        }
         var otherButtons = buttons.not($button);
         otherButtons.each(function(i, v) {
           var otherContainer = $($(v).attr('href'));
           otherContainer.removeClass(toggleClassName);
+          // change ARIA labels on subnavs
+          otherContainer.find('.c-utility-nav__subnav').attr('aria-hidden', 'true');
         });
         $window.off('click.toggle');
         // Clicking outside window closes open toggle

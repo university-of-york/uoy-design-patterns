@@ -71,6 +71,9 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       height: videoDimensions.height
     });
 
+    // Fire update event
+    $(window).trigger('content.updated', ['youtube', this]);
+
   };
 
   YOUTUBE.prototype.createIframe = function () {
@@ -85,6 +88,8 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     });
     // add to container
     this.container.html(iframe);
+    // Fire update event
+    $(window).trigger('content.updated', ['youtube', this]);
     return iframe;
   };
 
