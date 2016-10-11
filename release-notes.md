@@ -3,11 +3,13 @@
 v1.4.0 (next minor)
 * [Update to new logo](../../tree/update/logo)
 
-v1.3.15 (next patch)
+v1.3.16 (next patch)
+
+v1.3.15 (released 11 Oct 2016)
 * [Wait until image has loaded before measuring its height](../../tree/component/figure)
 
 v1.3.14 (released 6 Oct 2016)
-* [Add accessibility features to utility navigation and tweakpositioning on small screens](../../tree/component/utility-nav)
+* [Add accessibility features to utility navigation and tweak positioning on small screens](../../tree/component/utility-nav)
 * [Add accessibility features to icons](../../tree/component/icons)
 * [Standardise content.updated event which resizes accordions when content changes (e.g. with YoTube embed loading)](../../tree/fix/accordions)
 * [Update to block link style](../../tree/component/block-link)
