@@ -111,34 +111,46 @@
         // Only if there's some content
         if ($fc.length === 0) return;
         var $fi = $f.find('.c-figure__image');
-        // Reset height
-        $f.height('auto');
-        if (isSmallMinus === true) {
-          $fi.removeClass('is-fitY');
-          return;
-        }
-        if ($fc.length > 0) {
-          var fh = $f.outerHeight();
-          if ($f.hasClass('c-figure--banner')) {
-            // Banners - check for images that don't fit
-            var fih = $fi.outerHeight();
-            if (fh > fih) {
-              $fi.addClass('is-fitY');
-            }
-          } else {
-            // Figures - check for content that overflows
-            var fch = $fc.outerHeight();
-            if (fh < fch) {
-              // 'Padding' is twice positive measurement
-              var fcpTop = parseFloat($fc.css('top'));
-              fcpTop = isNaN(fcpTop) ? 0 : fcpTop ;
-              var fcpBottom = parseFloat($fc.css('bottom'));
-              fcpBottom = isNaN(fcpTop) ? 0 : fcpBottom ;
-              var fcp = 2*(Math.max(fcpTop, fcpBottom));
-              $f.height(fch + fcp);
-              $fi.addClass('is-fitY');
+        // Add random query string to make IE fire the load event?
+        // var fiSrc = $fi.attr('src');
+        // $fi.attr("src", fiSrc+"?"+new Date().getTime());
+        // Only fire when image is loaded
+        var setHeight = function() {
+          console.log("Image loaded!");
+          // Reset height
+          $f.height('auto');
+          if (isSmallMinus === true) {
+            $fi.removeClass('is-fitY');
+            return;
+          }
+          if ($fc.length > 0) {
+            var fh = $f.outerHeight();
+            if ($f.hasClass('c-figure--banner')) {
+              // Banners - check for images that don't fit
+              var fih = $fi.outerHeight();
+              if (fh > fih) {
+                $fi.addClass('is-fitY');
+              }
+            } else {
+              // Figures - check for content that overflows
+              var fch = $fc.outerHeight();
+              if (fh < fch) {
+                // 'Padding' is twice positive measurement
+                var fcpTop = parseFloat($fc.css('top'));
+                fcpTop = isNaN(fcpTop) ? 0 : fcpTop ;
+                var fcpBottom = parseFloat($fc.css('bottom'));
+                fcpBottom = isNaN(fcpTop) ? 0 : fcpBottom ;
+                var fcp = 2*(Math.max(fcpTop, fcpBottom));
+                $f.height(fch + fcp);
+                $fi.addClass('is-fitY');
+              }
             }
           }
+        };
+        if ($fi.height() > 0) {
+          setHeight();
+        } else {
+          $fi.load(setHeight);
         }
       });
 
