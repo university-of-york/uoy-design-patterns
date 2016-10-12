@@ -1,5 +1,4 @@
-
-module.exports = function(grunt) {
+module.exports = function(grunt, options) {
 
   var filename = 'secret.json';
   if (!grunt.file.exists(filename)) {
@@ -25,10 +24,13 @@ module.exports = function(grunt) {
     },
     cdn: {
       files: {
-        src: ["release/**"]
+        src: ["release/**/*"]
       },
       options: {
-        path: "/usr/yorkweb/web/static/test/a/",
+        path: function() {
+          var versionDir = grunt.task.current.args[0] || "dev";
+          return "/usr/yorkweb/web/static/"+versionDir+"/";
+        },
         host: secret.cdn.host,
         username: secret.cdn.username,
         password: secret.cdn.password,

@@ -12,6 +12,14 @@ module.exports = function (grunt) {
         },
         input: '_key:y'
       }
+    },
+    ftp: {
+      options: {
+        question: function(files) {
+          return 'This will upload files to the live CDN. Are you sure (y/n)? ';
+        },
+        input: '_key:y'
+      }
     }
   };
 };

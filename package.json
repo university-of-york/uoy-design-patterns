@@ -46,7 +46,7 @@
     "grunt-modernizr": "^1.0.2",
     "grunt-newer": "^1.1.0",
     "grunt-postcss": "^0.6.0",
-    "grunt-ssh": "^0.12.6",
+    "grunt-ssh": "chris5marsh/grunt-ssh",
     "load-grunt-config": "^0.16.0",
     "semver": "^5.3.0",
     "time-grunt": "^1.2.1"
