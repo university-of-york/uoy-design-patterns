@@ -44,6 +44,14 @@ To build for live deployment, run `grunt live`. It will run a build process just
 
 A minified stylesheet for TinyMCE is created as part of the build process. To create a non-minified stylesheet for upload to the CMS without running the entire build task, run `grunt tinymce` and the stylesheet will be created in `build/css/tinymce.css`.
 
+## Visual regression testing
+
+We use BackstopJS to run visual regression tests. The reference images are checked in to the repository (in `src/backstop/reference`), and should be updated after each successful release by running `grunt run:reference`.
+
+Before releasing a new version of the repo, you should run `grunt run:test` and it will test all pages in `dev/layout` and `dev/css-components` and prepare a report of how many differences there are between the new pages and the reference pages. Scan this carefully for any unwanted effects that your changes might have had.
+
+These tests can take a while, so go and make yourself a cup of tea whilst it's running. :coffee:
+
 ## A note about development
 
 The `master` branch of this repository is the one we use to build our CSS and JS for front-end deployment. Most new work should be started in a new branch in Git. To set up a new branch, type:

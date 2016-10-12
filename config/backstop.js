@@ -1,6 +1,6 @@
 var glob = require('glob');
 
-// Viewports are based on our breakpoints
+// Viewports are based on our most-used breakpoints
 // tiny: <30em (480px), small: <40em (640px), medium: <52.5em (840px), large:<64em (1024px), huge: <77.5em (1240px), hugeplus: >77.5em
 // and on our most-used screen resolutions (from Analytics, 5/9/16 to 5/10/16)
 //
@@ -16,35 +16,37 @@ var viewports = [
     "width": 375,
     "height": 667
   },
-  {
-    "name": "small",
-    "width": 480,
-    "height": 800
-  },
+  // {
+  //   "name": "small",
+  //   "width": 480,
+  //   "height": 800
+  // },
   {
     "name": "medium",
     "width": 768,
     "height": 1024
   },
-  {
-    "name": "large",
-    "width": 962,
-    "height": 601
-  },
-  {
-    "name": "huge",
-    "width": 1024,
-    "height": 768
-  },
+  // {
+  //   "name": "large",
+  //   "width": 962,
+  //   "height": 601
+  // },
+  // {
+  //   "name": "huge",
+  //   "width": 1024,
+  //   "height": 768
+  // },
   {
     "name": "hugeplus",
     "width": 1366,
     "height": 768
   }
 ];
-// Hide BrowserSync notice
+// Hide BrowserSync notice, KIS widget and videos
 var hideSelectors = [
   "#__bs_notify__",
+  ".c-panel--kis-widget__content",
+  ".c-video"
 ];
 // Take out markup samples
 var removeSelectors = [
@@ -76,11 +78,11 @@ module.exports = {
   "viewports": viewports,
   "scenarios": scenariosArray,
   "paths": {
-    "bitmaps_reference": "backstop_data/bitmaps_reference",
-    "bitmaps_test": "backstop_data/bitmaps_test",
-    "casper_scripts": "backstop_data/casper_scripts",
-    "html_report": "backstop_data/html_report",
-    "ci_report": "backstop_data/ci_report"
+    "bitmaps_reference": "src/backstop/reference",
+    "bitmaps_test": "src/backstop/test",
+    "casper_scripts": "src/backstop/casper_scripts",
+    "html_report": "src/backstop/html_report",
+    "ci_report": "src/backstop/ci_report"
   },
   "casperFlags": [],
   "engine": "phantomjs",

@@ -20,7 +20,7 @@ Here's an example with all the bits filled in:
 component("media", {
   "type": "top",
   "picture": {
-    "image": "https://unsplash.it/200/200/?random",
+    "image": "https://unsplash.it/200/200/?image=200",
     "caption": "A caption for the image",
     "width": "200px"
   },
@@ -38,7 +38,7 @@ The `picture` can be vertically-aligned to the top (as above), middle or bottom 
 component("media", {
   "type": "middle",
   "picture": {
-    "image": "https://unsplash.it/200/200/?random",
+    "image": "https://unsplash.it/200/200/?image=201",
     "caption": "A caption for the image",
     "width": "200px"
   },
@@ -53,7 +53,7 @@ component("media", {
 component("media", {
   "type": "bottom",
   "picture": {
-    "image": "https://unsplash.it/200/200/?random",
+    "image": "https://unsplash.it/200/200/?image=202",
     "caption": "A caption for the image",
     "width": "200px"
   },
@@ -69,7 +69,7 @@ The media image and body _can_ contain any arbitrary content (but the `figure` e
 
 <script>
 component("media", {
-  "picture": { "content": "<img src=\"https://unsplash.it/400/300/?random\">" },
+  "picture": { "content": "<img src=\"https://unsplash.it/400/300/?image=203\">" },
   "body": { "content": "<p>Ah, look, some <abbr title=\"HyperText Markup Language\">HTML</abbr> content.</p>" }
 });
 </script>

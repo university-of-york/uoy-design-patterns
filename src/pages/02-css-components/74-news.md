@@ -35,7 +35,7 @@ component("news-excerpt", {
   "title": "Vehicle for success",
   "date": "1 October 2015",
   "teaser": "Our computer scientists are driving the latest advances in car electronics.",
-  "poster": "media/traffic-banner.jpg",
+  "poster": "../media/traffic-banner.jpg",
   "link":"#"
 });
 </script>
@@ -51,7 +51,7 @@ component("news-listing", {
   "title": "Vehicle for success",
   "lead": "Millions of cars across the world owe the efficiency and reliability of their electronic systems to research carried out by our computer scientists.",
   "date": "8 September 2015",
-  "thumbnail": "media/traffic-thumbnail.jpg",
+  "thumbnail": "../media/traffic-thumbnail.jpg",
   "link":"#"
 });
 </script>
@@ -64,21 +64,21 @@ component("news-list", { "atoms":[
     "title": "Vehicle for success",
     "lead": "Millions of cars across the world owe the efficiency and reliability of their electronic systems to research carried out by our computer scientists.",
     "date": "8 September 2015",
-    "thumbnail": "media/traffic-thumbnail.jpg",
+    "thumbnail": "../media/traffic-thumbnail.jpg",
   "link":"#"
   } },
   { "news-listing": {
     "title": "Vehicle for success",
     "lead": "Millions of cars across the world owe the efficiency and reliability of their electronic systems to research carried out by our computer scientists.",
     "date": "8 September 2015",
-    "thumbnail": "media/traffic-thumbnail.jpg",
+    "thumbnail": "../media/traffic-thumbnail.jpg",
   "link":"#"
   } },
   { "news-listing": {
     "title": "Vehicle for success",
     "lead": "Millions of cars across the world owe the efficiency and reliability of their electronic systems to research carried out by our computer scientists.",
     "date": "8 September 2015",
-    "thumbnail": "media/traffic-thumbnail.jpg",
+    "thumbnail": "../media/traffic-thumbnail.jpg",
   "link":"#"
   } }
 ]});
@@ -97,7 +97,7 @@ component("news-article", {
   "title": "How research at York fuelled a revolution in automotive electronics",
   "lead": "Millions of cars across the world owe the efficiency and reliability of their electronic systems to research carried out by our computer scientists.",
   "date": "8 September 2015",
-  "banner": "media/traffic-banner.jpg",
+  "banner": "../media/traffic-banner.jpg",
   "license": "The text of this article is licensed under a <a href=\"http://creativecommons.org/licenses/by-nc-sa/4.0/\">Creative Commons Licence</a>. You're free to republish it, as long as you link back to this page and credit us.",
   "content": "<p>Work by experts in our pioneering Real-Time Systems Research Group ensures the smooth running of programmes that control everything from fuel injection to brake lights.</p>\n<p>And with new innovations such as driverless cars just around the corner, the demand for their specialist skills is accelerating.</p>\n<p>&ldquo;Car brakes are a simple example of the real time behaviour studied at York,&rdquo; explains Dr Rob Davis, a Senior Research Fellow who joined the real time systems group as a PhD student shortly after its launch in the early 90s. &ldquo;If you imagine approaching traffic lights – you put your foot on the brake, the brake lights go on and you slow to a stop. But there’s a lot more going on than that.</p>\n<p><a class=\"youtube-video-embed\" href=\"https://www.youtube.com/watch?v=zPBBHo3NiYs\">Watch the video here</a></p>\n<p>&ldquo;Pressing the brake pedal closes a switch. This is detected by an Electronic Control Unit, also known as an ECU. The ECU passes a message over the network to another control unit at the back of the car. This message is then decoded, causing the brake lights to go on - this all happens in a fraction of a second.</p>\n<p>&ldquo;Now imagine similar events and responses happening hundreds of times a second throughout your car controlling everything from gear changes to fuel injection – and each action has to be executed within a strict time limit.&rdquo;</p>"
 });

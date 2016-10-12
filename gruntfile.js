@@ -26,4 +26,4 @@ module.exports = function (grunt) {
   grunt.registerTask('publish', ['build', 'sftp:patternlibrary']);
   //grunt.registerTask('live', ['build', 'bump:major', 'header:live', 'clean:live']);
 
-}
+};
