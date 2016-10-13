@@ -167,8 +167,11 @@
 
 // (Search) form in the header
 .c-form--header {
-  margin-top:17px;
+  margin-top:39px;
   margin-bottom:0;
+  @include mq(medium, '-') {
+    display:none;
+  }
 }
 
 // Form validation

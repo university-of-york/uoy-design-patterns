@@ -259,8 +259,8 @@ define(
 
     // Broadcast window events
     if (UTILS.isDev) {
-      $window.on('data,font,nav,content,toggle', function(e) {
-        console.log(this);
+      $window.on('data font nav content toggle', function(e) {
+        console.info(this);
       });
     }
 
