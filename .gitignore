@@ -1,4 +1,6 @@
 .sass-cache
+src/backstop
+!src/backstop/reference
 bower_components
 build
 dev
