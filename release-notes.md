@@ -3,8 +3,6 @@
 v1.4.0 (next minor)
 * [Update to new logo](../../tree/update/logo)
 * [Add BackstopJS to release process](../../tree/feature/backstop)
-
-v1.3.16 (next patch)
 * [Accessibility features for signpost icons](../../tree/component/signpost)
 
 v1.3.15 (released 11 Oct 2016)
