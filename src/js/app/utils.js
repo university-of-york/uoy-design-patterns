@@ -99,6 +99,12 @@
       return (document.location.hostname === 'localhost' || document.location.hostname === '10.0.2.2');
     },
 
+    // Fixes logo where SVG isn't supported
+    fixLogo: function() {
+      if (Modernizr.svg) return;
+      $('.c-main-header__logo').attr('src', 'https://www.york.ac.uk/static/1.4/img/logo.png');
+    },
+
     // Fixes figures where the content is overspilling (figures)
     // or where the image doesn't fit (banners)
     fixTallFigures: function() {

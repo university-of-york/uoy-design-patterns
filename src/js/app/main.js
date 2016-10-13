@@ -50,6 +50,8 @@ define(
 
     UTILS.fixTallFigures();
 
+    UTILS.fixLogo();
+
     // Add Google map functionality
     UTILS.eachIfExists('.js-map', function (i, map) {
       var $map = $(map);
