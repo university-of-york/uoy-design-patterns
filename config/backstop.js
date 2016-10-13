@@ -59,7 +59,7 @@ var selectors = [
 var scenariosArray = [];
 var htmlFiles = glob.sync("dev/@(layout|css-components)/*.html");
 
-console.info(htmlFiles.length+' files found!');
+// console.info(htmlFiles.length+' files found!');
 
 // Loop through all *.html pages in /dev and push to scenariosArray
 htmlFiles.forEach(function(file, i) {
