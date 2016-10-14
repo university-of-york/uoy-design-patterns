@@ -15,4 +15,7 @@
 .o-wrapper--main {
   // Only this and c-footer--main have margin-top!
   margin-top:$base-spacing;
+  .c-breadcrumb + & {
+    margin-top:0;
+  }
 }
