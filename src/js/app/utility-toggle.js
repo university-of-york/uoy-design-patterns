@@ -63,19 +63,24 @@ define(['jquery', 'app/toggle', 'app/utils'], function ($, TOGGLE, UTILS) {
         className: toggleClassName
       });
 
-      // Close other toggles and update ARIA labels
-      $button.on('click', function() {
-        if ($parent.hasClass('is-open')) {
+      // Close other toggles and update ARIA labels and tabIndex on .c-utility-nav__sublink
+      var doToggle = function(state) {
+        var sublinks = $subnav.find('.c-utility-nav__sublink');
+        if (state) $parent.toggleClass(toggleClassName, state);
+        if ($parent.hasClass(toggleClassName)) {
           $subnav.attr('aria-hidden', false);
+          sublinks.attr('tabIndex', 0);
         } else {
           $subnav.attr('aria-hidden', true);
+          sublinks.attr('tabIndex', -1);
         }
         var otherButtons = buttons.not($button);
         otherButtons.each(function(i, v) {
           var otherContainer = $($(v).attr('href'));
           otherContainer.removeClass(toggleClassName);
-          // change ARIA labels on subnavs
+          // change ARIA labels on subnavs and tabIndexes on links
           otherContainer.find('.c-utility-nav__subnav').attr('aria-hidden', 'true');
+          otherContainer.find('.c-utility-nav__sublink').attr('tabIndex', -1);
         });
         $window.off('click.toggle');
         // Clicking outside window closes open toggle
@@ -87,7 +92,21 @@ define(['jquery', 'app/toggle', 'app/utils'], function ($, TOGGLE, UTILS) {
             }
           });
         }
+      };
+
+      // $button.on('click', function() {
+      //   console.log($button.text()+" button click");
+      //   if ($subnav.length === 0) return true;
+      //   doToggle();
+      // });
+      $button.on('focus click', function() {
+        console.log($button.text()+" button focus/click");
+        doToggle(true);
       });
+      // $button.on('blur', function() {
+      //   console.log($button.text()+" button blur");
+      //   doToggle(false);
+      // });
 
     });
 
