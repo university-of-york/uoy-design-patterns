@@ -4,6 +4,7 @@ v1.5.0 (next minor)
 
 v1.4.1 (next patch)
 * [tweaks to main wrapper margin after breadcrumb on small screens, plus adding SVGs to imagemin](../../tree/master)
+* [Add markup for interactive icons](../../tree/component/icons)
 
 v1.4.0 (released 13 Oct 2016)
 * [Update to new logo](../../tree/update/logo)
