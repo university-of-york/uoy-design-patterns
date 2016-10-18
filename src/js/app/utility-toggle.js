@@ -23,6 +23,7 @@ define(['jquery', 'app/toggle', 'app/utils'], function ($, TOGGLE, UTILS) {
       var $button = $(button);
       var $parent = $($button.attr('href'));
       var $subnav = $parent.find('.c-utility-nav__subnav');
+      var $sublinks = $subnav.find('.c-utility-nav__sublink');
       var toggleClassName = 'is-open';
 
       // Check to see if it should be left-, right- or block-aligned
@@ -57,7 +58,7 @@ define(['jquery', 'app/toggle', 'app/utils'], function ($, TOGGLE, UTILS) {
         updateSubnavPosition();
       }, 250));
 
-      var t = new TOGGLE({
+      var toggle = new TOGGLE({
         container: $parent,
         button: $button,
         className: toggleClassName
@@ -65,15 +66,15 @@ define(['jquery', 'app/toggle', 'app/utils'], function ($, TOGGLE, UTILS) {
 
       // Close other toggles and update ARIA labels and tabIndex on .c-utility-nav__sublink
       var doToggle = function(state) {
-        var sublinks = $subnav.find('.c-utility-nav__sublink');
-        if (state) $parent.toggleClass(toggleClassName, state);
+        $parent.toggleClass(toggleClassName, state);
         if ($parent.hasClass(toggleClassName)) {
           $subnav.attr('aria-hidden', false);
-          sublinks.attr('tabIndex', 0);
+          $sublinks.attr('tabIndex', 0);
         } else {
           $subnav.attr('aria-hidden', true);
-          sublinks.attr('tabIndex', -1);
+          $sublinks.attr('tabIndex', -1);
         }
+        // Disable other subnavs
         var otherButtons = buttons.not($button);
         otherButtons.each(function(i, v) {
           var otherContainer = $($(v).attr('href'));
@@ -88,25 +89,16 @@ define(['jquery', 'app/toggle', 'app/utils'], function ($, TOGGLE, UTILS) {
           $window.on('click.toggle', function(e) {
             var utilityNavParent = $(e.target).closest('.c-utility-nav__subnav');
             if (utilityNavParent.length === 0) {
-              t.toggle(false);
+              toggle.toggle(false);
             }
           });
         }
       };
 
-      // $button.on('click', function() {
-      //   console.log($button.text()+" button click");
-      //   if ($subnav.length === 0) return true;
-      //   doToggle();
-      // });
-      $button.on('focus click', function() {
-        console.log($button.text()+" button focus/click");
-        doToggle(true);
-      });
-      // $button.on('blur', function() {
-      //   console.log($button.text()+" button blur");
-      //   doToggle(false);
-      // });
+      $parent.on('focusin focusout', UTILS.debounce(function(e) {
+        var state = e.type === 'focusin' ? true : false ;
+        doToggle(state);
+      }, 20));
 
     });
 

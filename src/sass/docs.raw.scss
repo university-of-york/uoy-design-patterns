@@ -199,6 +199,13 @@
     display:block;
   }
 }
+#navigation-page {
+  // Alert at bottom of page...
+  .c-alert {
+    margin-left:20px;
+    margin-right:20px;
+  }
+}
 
 // Code blocks after grid examples
 .o-grid + pre[class*="language-"] {
