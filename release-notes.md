@@ -6,6 +6,7 @@ v1.4.1 (next patch)
 * [tweaks to main wrapper margin after breadcrumb on small screens, plus adding SVGs to imagemin](../../tree/master)
 * [Add markup for interactive icons](../../tree/component/icons)
 * [Accessibility functionality for the utility nav](../../tree/component/utility-nav)
+* [Use tiny-padding mixin for page title, nav and breadcrumb](../../tree/fix/padding)
 
 v1.4.0 (released 13 Oct 2016)
 * [Update to new logo](../../tree/update/logo)
