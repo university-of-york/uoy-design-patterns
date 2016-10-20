@@ -218,10 +218,12 @@
 // We can't add classes to 'a' tags in Site Manager
 .c-nav__item a {
   @include transition('background-color, color');
+  @include tiny-padding;
+  padding-top:$base-spacing/2;
+  padding-bottom:$base-spacing/2;
   color:$c-nav__link-color;
   background-color:$c-nav__link-background-color;
   display:block;
-  padding:0.75em $base-spacing;
   line-height:1.15;
   text-decoration:none;
   position:relative;
