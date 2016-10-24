@@ -1,10 +1,13 @@
-<a class="c-news c-news--excerpt" href="{{link}}">{{#if poster}}
+<a class="c-news c-news--excerpt{{#if type}} c-news--{{type}}{{/if}}" href="{{link}}">{{#if poster}}
   <figure class="c-news__poster">
     <img src="{{poster}}" alt="{{title}}">
-  </figure>{{/if}}
-  <h4 class="c-news__title">{{title}}</h4>
+  </figure>{{/if}}{{#if label}}
+  <div class="c-label">{{label}}</div>
+  {{/if}}
+  <h4 class="c-news__title">{{title}}</h4>{{#if eventDate}}
+  <p class="c-news__event-date"><time datetime="{{eventDate}}" class="c-news__date">{{eventDate}}</time></p>{{/if}}
   <div class="c-news__teaser">
     <p>{{teaser}}</p>
-  </div>
-  <p class="c-news__meta">Posted on <time datetime="{{date}}" class="c-news__date">{{date}}</time>{{#if category}} in <span class="c-news__category">{{category}}</span>{{/if}}</p>
+  </div>{{#if publishDate}}
+  <p class="c-news__meta">Posted on <time datetime="{{publishDate}}" class="c-news__date">{{publishDate}}</time>{{#if category}} in <span class="c-news__category">{{category}}</span>{{/if}}</p>{{/if}}
 </a>
