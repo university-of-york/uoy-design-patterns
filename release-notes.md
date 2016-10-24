@@ -2,7 +2,9 @@
 
 v1.5.0 (next minor)
 
-v1.4.1 (next patch)
+v1.4.2 (next patch)
+
+v1.4.1 (released 24 Oct 2016)
 * [tweaks to main wrapper margin after breadcrumb on small screens, plus adding SVGs to imagemin](../../tree/master)
 * [Add markup for interactive icons](../../tree/component/icons)
 * [Accessibility functionality for the utility nav](../../tree/component/utility-nav)
