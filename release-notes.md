@@ -7,6 +7,7 @@ v1.4.1 (next patch)
 * [Add markup for interactive icons](../../tree/component/icons)
 * [Accessibility functionality for the utility nav](../../tree/component/utility-nav)
 * [Use tiny-padding mixin for page title, nav and breadcrumb](../../tree/fix/padding)
+* [Add in eventDate as an option in a news excerpt](../../tree/component/news)
 
 v1.4.0 (released 13 Oct 2016)
 * [Update to new logo](../../tree/update/logo)
