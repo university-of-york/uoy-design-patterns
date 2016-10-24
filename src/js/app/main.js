@@ -262,7 +262,7 @@ define(
     // Broadcast window events
     if (UTILS.isDev) {
       $window.on('data font nav content toggle', function(e) {
-        console.info(this);
+        console.info(e.target);
       });
     }
 
