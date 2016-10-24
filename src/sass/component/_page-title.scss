@@ -18,7 +18,10 @@
 }
 .c-page-title__header {
   @include font-size(24px, 1.25);
-  margin:$base-spacing/2 $base-spacing;
+  @include tiny-padding;
+  padding-top:$base-spacing/2;
+  padding-bottom:$base-spacing/2;
+  margin:0;
   color:$c-page-title__link-color;
 }
 .c-page-title__link.c-page-title__link {

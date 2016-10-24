@@ -174,7 +174,7 @@
 #full-width-figures-page {
   .o-grid__box[role="main"] > {
     p, h2, h3, .lead {
-      padding:0 $base-spacing;
+      @include tiny-padding;
     }
     p, h2, h3, .lead,  pre {
       max-width:1200px;
