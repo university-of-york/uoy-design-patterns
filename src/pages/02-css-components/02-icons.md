@@ -32,14 +32,22 @@ See the [Font Awesome documentation](http://fortawesome.github.io/Font-Awesome/e
 
 ### Accessibility
 
-Empty `<i>` elements aren't very friendly to screen readers or assistive technologies. So make sure they have `aria-hidden="true"`, and if they are standalone icons (for example the social media links in the footer), add some text for screen readers to access. This appears both as the `title` of the icon and as hidden text.
-
-See the [Font Awesome docs](http://fontawesome.io/accessibility/) for more details.
+Empty `<i>` elements aren't very friendly to screen readers or assistive technologies. So make sure they have `aria-hidden="true"`, and if they are standalone non-interactive icons, add some text for screen readers to access. This appears both as the `title` of the icon and as hidden text.
 
 <script>
 component("icon", { "type": "heart", "sr-text":"All you need is love" } )+
 component("icon", { "type": "calendar", "sr-text":"Eight days a week" } );
 </script>
+
+For interactive elements (such as an `<a>` element) you should add an `aria-label` to the anchor.
+
+<a href="https://twitter.com/uniofyork" aria-label="Follow us on Twitter"><i class="c-icon c-icon--twitter" title="Follow us on Twitter" aria-hidden="true"></i></a>
+
+```markup
+<a href="https://twitter.com/uniofyork" aria-label="Follow us on Twitter"><i class="c-icon c-icon--twitter" title="Follow us on Twitter" aria-hidden="true"></i></a>
+```
+
+See the [Font Awesome docs](http://fontawesome.io/accessibility/) for more details.
 
 ### List of icons
 
