@@ -169,6 +169,14 @@
     display:block;
   }
 }
+// Stop font enlarging on nav pages
+#navigation-page {
+  .c-nav {
+    @include mq(huge, '++') {
+      font-size:16px;
+    }
+  }
+}
 #navigation-page,
 #image-grid-page,
 #full-width-figures-page {

@@ -334,8 +334,7 @@ Unopened, the main navigation shows the pages currently in this section. Open it
       </div>
     </div>
   </div>
-</header>
-<form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--mobile-search" id="Mobile-Search-3">
+</header><form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--mobile-search" id="Mobile-Search-3">
   <fieldset class="c-form__fieldset">
     <legend class="c-form__legend">Search york.ac.uk</legend>
     <div class="o-grid">
@@ -350,8 +349,7 @@ Unopened, the main navigation shows the pages currently in this section. Open it
       </div>
     </div>
   </fieldset>
-</form>
-<nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation">
+</form><nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation">
   <ul class="c-nav__list c-nav__list--structural">
     <li class="c-nav__item"><a href="https://www.york.ac.uk/study/">Study</a></li>
     <li class="c-nav__item"><a href="https://www.york.ac.uk/research/">Research</a></li>
@@ -532,8 +530,7 @@ Unopened, the main navigation shows the pages currently in this section. Open it
       </div>
     </div>
   </div>
-</header>
-<form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--mobile-search" id="Mobile-Search-5">
+</header><form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--mobile-search" id="Mobile-Search-5">
   <fieldset class="c-form__fieldset">
     <legend class="c-form__legend">Search york.ac.uk</legend>
     <div class="o-grid">
@@ -557,8 +554,7 @@ Unopened, the main navigation shows the pages currently in this section. Open it
       </div>
     </div>
   </div>
-</div>
-<nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation-4">
+</div><nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation-4">
   <h4 class="c-nav__header">In this section</h4>
   <ul class="c-nav__list c-nav__list--structural">
     <li class="c-nav__item"><a href="#">Courses</a></li><li class="c-nav__item"><a href="#">Applying</a></li><li class="c-nav__item"><a href="#">Open days and visits</a></li><li class="c-nav__item"><a href="#">Student finance</a></li><li class="c-nav__item"><a href="#">Accommodation</a></li><li class="c-nav__item"><a href="#">Study and work abroad</a></li><li class="c-nav__item"><a href="#">Careers and skills</a></li><li class="c-nav__item"><a href="#">Prospectus</a></li><li class="c-nav__item c-nav__item--more"><a class="c-nav__link js-toggle-button" href="#Main-Navigation-4">More…</a></li>
