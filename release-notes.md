@@ -3,6 +3,7 @@
 v1.5.0 (next minor)
 
 v1.4.2 (next patch)
+* [Update nav heights](../../tree/fix/nav-padding)
 
 v1.4.1 (released 24 Oct 2016)
 * [tweaks to main wrapper margin after breadcrumb on small screens, plus adding SVGs to imagemin](../../tree/master)
