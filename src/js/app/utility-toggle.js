@@ -98,7 +98,7 @@ define(['jquery', 'app/toggle', 'app/utils'], function ($, TOGGLE, UTILS) {
       $parent.on('focusin focusout', UTILS.debounce(function(e) {
         var state = e.type === 'focusin' ? true : false ;
         doToggle(state);
-      }, 20));
+      }, 250));
 
     });
 
