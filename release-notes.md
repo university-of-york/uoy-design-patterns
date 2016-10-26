@@ -6,6 +6,7 @@ v1.4.3 (next patch)
 
 v1.4.2 (released 26 Oct 2016)
 * [Update nav heights](../../tree/fix/nav-padding)
+* [News date font size updated](../../tree/fix/component/news)
 
 v1.4.1 (released 24 Oct 2016)
 * [tweaks to main wrapper margin after breadcrumb on small screens, plus adding SVGs to imagemin](../../tree/master)
