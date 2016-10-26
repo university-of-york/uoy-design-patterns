@@ -2,7 +2,9 @@
 
 v1.5.0 (next minor)
 
-v1.4.2 (next patch)
+v1.4.3 (next patch)
+
+v1.4.2 (released 26 Oct 2016)
 * [Update nav heights](../../tree/fix/nav-padding)
 
 v1.4.1 (released 24 Oct 2016)
