@@ -3,7 +3,8 @@
 v1.5.0 (next minor)
 
 v1.4.3 (next patch)
-* Updated tinymce stylesheet (added to master)
+* Update tinymce stylesheet (added to master)
+* [Add opensearch data](../../tree/feature/opensearch)
 
 v1.4.2 (released 26 Oct 2016)
 * [Update nav heights](../../tree/fix/nav-padding)
