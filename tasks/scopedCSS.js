@@ -8,13 +8,19 @@ module.exports = function(grunt) {
 
   'use strict';
 
-  var getStyles = function(pathToFile, callback) {
+  var getStyles = function(pathToFile, removeRegular, callback) {
     fs.readFile(pathToFile, 'utf-8', function(err, data) {
       if (err) throw err;
-      // Remove @extend, @include and regular lines, only include Sass-style commented lines
+      // Remove @extend and @include lines (and maybe regular lines too)
       // Declaration lines must have a trailing semicolon - it's what differentiates them from selectors
-      var removeRegex = /(\n\s*[a-zA-Z0-9!@.:;$_()\-\s]*;)/g;
-      var data2 = data.replace(removeRegex, '');
+      var sassRegex = /(\n\s*@[a-zA-Z0-9!@.:;$_()\-\s]*;)/g;
+      var regRegex = /(\n\s*[a-zA-Z0-9!@.:;$_()\-\s]*;)/g;
+      var data2;
+      if (removeRegular === true) {
+        data2 = data.replace(regRegex, '');
+      } else {
+        data2 = data.replace(sassRegex, '');
+      }
       var commentRegex = /\/\/\s*/g;
       var data3 = data2.replace(commentRegex, '');
       var parsedStyles = css.parse(data3);
@@ -38,17 +44,19 @@ module.exports = function(grunt) {
   };
 
   var addRules = function(styles, stylesheetPath, list, done) {
-    grunt.log.writeln('includeExtends', includeExtends);
     styles.stylesheet.rules.forEach(function(rule, i, allRules) {
       if (rule.type === 'rule') {
+        // console.log(rule.selectors[0], rule.declarations.length);
+        // console.log(rule.position.start.line, rule.position.start.column, rule.position.end.line, rule.position.end.column);
         rule.selectors.forEach(function(selector, j, allSelectors) {
           if (!list || list.indexOf(selector) > -1) {
+            //console.log(selector, rule.declarations.length);
             var ruleText = selector+' {\n';
             // Don't write declaration-less selectors!
             var declarationCount = 0;
             rule.declarations.forEach(function(declaration, k, allDeclarations) {
               // Skip declaration if it contains a variable
-              // grunt.log.writeln(declaration.type, declaration.value);
+              //console.log(declaration.value);
               if (declaration.type === "declaration" && declaration.value.indexOf('$') === -1) {
                 declarationCount++;
                 ruleText+= '  '+declaration.property+':'+declaration.value+';\n';
@@ -91,7 +99,7 @@ module.exports = function(grunt) {
     }
 
     // Find the styles we need to match first
-    getStyles(srcPath, function(parsedStyles1) {
+    getStyles(srcPath, true, function(parsedStyles1) {
 
       // Write the additional editor styles to the stylesheet
       addRules(parsedStyles1, buildPath);
@@ -100,7 +108,7 @@ module.exports = function(grunt) {
       getSelectorList(parsedStyles1, function(selectorList) {
 
         // Get the matchable styles
-        getStyles(fullStylesheet, function(parsedStyles2) {
+        getStyles(fullStylesheet, false, function(parsedStyles2) {
 
           // Add rules (if selector matches our list)
           addRules(parsedStyles2, buildPath, selectorList, done);

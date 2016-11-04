@@ -1,7 +1,8 @@
 module.exports = {
   tinymce: {
     srcPath: 'src/sass/scopes/_tinymce.scss',
-    buildPath: 'build/css/tinymce.css'
+    buildPath: 'build/css/tinymce.css',
+    includeExtends: true
   // },
   // formstack: {
   //   srcPath: 'src/sass/scopes/formstack.scss',
