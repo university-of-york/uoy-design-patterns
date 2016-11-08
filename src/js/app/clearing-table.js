@@ -243,7 +243,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
           var ukeuToggle = $('#clearing-table-'+that.id+'-toggle-input-ukeu');
           ukeuToggle.click();
 
-          console.log(that.container, that.container.outerHeight());
+          //console.log(that.container, that.container.outerHeight());
           $(window).trigger('content.updated', ['clearing-table', that]);
 
         } else {
