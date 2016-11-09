@@ -6,6 +6,7 @@ v1.4.3 (next patch)
 * Update tinymce stylesheet (added to master)
 * [Add opensearch data](../../tree/feature/opensearch)
 * [Fix accordion height calculation](../../tree/fix/accordion)
+* [Update equal height rows on image load](../../tree/fix/equal-height-rows)
 
 v1.4.2 (released 26 Oct 2016)
 * [Update nav heights](../../tree/fix/nav-padding)
