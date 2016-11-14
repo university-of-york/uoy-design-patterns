@@ -7,6 +7,7 @@ v1.4.3 (next patch)
 * [Add opensearch data](../../tree/feature/opensearch)
 * [Fix accordion height calculation](../../tree/fix/accordion)
 * [Update equal height rows on image load](../../tree/fix/equal-height-rows)
+* [Add white version of logo](../../tree/update/logo)
 
 v1.4.2 (released 26 Oct 2016)
 * [Update nav heights](../../tree/fix/nav-padding)
