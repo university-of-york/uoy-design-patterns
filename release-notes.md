@@ -8,6 +8,7 @@ v1.4.3 (next patch)
 * [Fix accordion height calculation](../../tree/fix/accordion)
 * [Update equal height rows on image load](../../tree/fix/equal-height-rows)
 * [Add white version of logo](../../tree/update/logo)
+* [Added webkit prefix for transforms (autoprefixer doesn't like PhantomJS)](../../tree/feature/postcss)
 
 v1.4.2 (released 26 Oct 2016)
 * [Update nav heights](../../tree/fix/nav-padding)
