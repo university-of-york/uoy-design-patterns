@@ -74,7 +74,8 @@
     .csstransforms & {
       left: 50%;
       top:0;
-      transform: translateX(-50%);
+      transform:translateX(-50%);
+      -webkit-transform:translateX(-50%);
     }
   }
 }
@@ -256,7 +257,8 @@
     .c-figure__image {
       left:50%;
       margin-top:0;
-      transform: translate(-50%, -50%)
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
     }
   }
   @include mq('small', '-') {
@@ -278,6 +280,7 @@
       min-height:0;
       .csstransforms & {
         transform:translate(0, 0);
+        -webkit-transform:translate(0, 0);
       }
     }
   }
