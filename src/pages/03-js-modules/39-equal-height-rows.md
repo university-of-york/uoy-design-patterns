@@ -48,6 +48,33 @@ component("grid-row", { "class":"js-equal-height-row", "atoms": [
 ] });
 </script>
 
+### Example with images
+
+The resize function fires again if the window changes size, and when any images inside the row have loaded (reload the page with _Network throttling_ set to _3G_ in the _Network conditions_ tab of Chrome Developer Tools).
+
+<script>
+component("grid-row", { "class":"js-equal-height-row", "type": "alt1", "atoms": [
+  { "grid-box": { "size": "third", "atoms": { "news-excerpt": {
+    "title": "Axe marks the spot",
+    "teaser": "Buried in a grave over 9,000 years ago, what can a stone adze tell us about the beliefs of our ancestors?",
+    "poster": "https://www.york.ac.uk/static/data/homepage/images/bog-axe-399.jpg",
+    "link":"#"
+  } } } },
+  { "grid-box": { "size": "third", "atoms": { "news-excerpt": {
+    "title": "In Pictures: Tackling contaminated waters in Vanuatu",
+    "teaser": "We're working with rural communities in the South Pacific, developing sophisticated sensors which could save lives.",
+    "poster": "https://www.york.ac.uk/static/data/homepage/images/cyclone-pam-399.jpg",
+    "link":"#"
+  } } } },
+  { "grid-box": { "size": "third", "atoms": { "news-excerpt": {
+    "title": "The lost birthplace of political debate",
+    "teaser": "As the tabloids call democracy into question, explore Parliament's architectural roots through digital technology.",
+    "poster": "https://www.york.ac.uk/static/data/homepage/images/the-house-of-commons-1793-94-by-karl-anton-hickel-oil-on-canvas-1793-1795-credit-national-portrait-gallery-399.jpg",
+    "link":"#"
+  } } } }
+] });
+</script>
+
 ### Options
 
  * **row** - an `o-grid__row`-classed element. The script automatically parses for tables with the class `.js-equal-height-row`.
