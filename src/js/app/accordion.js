@@ -68,6 +68,7 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
 
     // Reset the itemContent
     this.itemContent.addClass('is-ghost');
+    this.itemContent.removeClass('is-ready');
     this.itemContent.height('auto');
     this.item.removeClass('is-closed');
 
@@ -88,6 +89,7 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
     this.itemContent.css('height', contentHeight);
 
     this.itemContent.removeClass('is-ghost');
+    this.itemContent.addClass('is-ready');
 
   };
 
