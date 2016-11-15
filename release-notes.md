@@ -2,10 +2,12 @@
 
 v1.5.0 (next minor)
 
-v1.4.3 (next patch)
+v1.4.4 (next patch)
+
+v1.4.3 (released 15 Nov 2016)
 * Update tinymce stylesheet (added to master)
 * [Add opensearch data](../../tree/feature/opensearch)
-* [Fix accordion height calculation](../../tree/fix/accordion)
+* [Fix accordion height calculation](../../tree/fix/accordions)
 * [Update equal height rows on image load](../../tree/fix/equal-height-rows)
 * [Add white version of logo](../../tree/update/logo)
 * [Added webkit prefix for transforms (autoprefixer doesn't like PhantomJS)](../../tree/feature/postcss)
