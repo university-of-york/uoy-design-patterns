@@ -28,13 +28,3 @@
 .youtube-video-embed {
   // zoom:1;
 }
-.c-figure__content h1 + * {
-  background-color:red;
-}
-.c-figure__content h2 + * {
-  background-color:#123456;
-}
-.c-figure__content h3 + * {
-  transform:translateX(-50%);
-  -webkit-transform:translateX(-50%);
-}
