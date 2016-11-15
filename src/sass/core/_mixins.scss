@@ -179,6 +179,7 @@
       top:$top;
       left:$left;
       transform:$transform;
+      -webkit-transform:$transform;
     }
   }
 }
