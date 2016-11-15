@@ -27,7 +27,12 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     // Fire on load or trigger load if already loaded
     var rowImages = this.boxes.find('img');
     rowImages.each(function() {
-      if (this.complete === true) resizeFn();
+      if (this.complete === true) {
+        resizeFn();
+      }
+      $(this).on('load', function() {
+        resizeFn();
+      });
     });
 
     console.info(this);
