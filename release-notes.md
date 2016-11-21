@@ -2,7 +2,10 @@
 
 v1.5.0 (next minor)
 
-v1.4.4 (next patch)
+v1.4.5 (next patch)
+
+v1.4.4 (released 21 Nov 2016)
+* Include Formstack styles (added to master)
 
 v1.4.3 (released 15 Nov 2016)
 * Update tinymce stylesheet (added to master)
