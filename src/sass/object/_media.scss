@@ -27,6 +27,8 @@
   @include demarginalise;
   display:table-cell;
   vertical-align:top;
+  // Ensures picture is as small as it can be even if content in body is minimal
+  width: 100%;
 }
 .o-media__title {
   margin-bottom:0;
