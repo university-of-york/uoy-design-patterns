@@ -3,6 +3,7 @@
 v1.5.0 (next minor)
 
 v1.4.5 (next patch)
+* [Media body fills available space; media picture shrinks to content size](../../tree/fix/component/key-fact)
 
 v1.4.4 (released 21 Nov 2016)
 * Include Formstack styles (added to master)
