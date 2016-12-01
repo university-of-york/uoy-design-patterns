@@ -28,6 +28,7 @@
 }
 .c-form__label {
   cursor:pointer;
+  font-weight: bold;
 }
 .c-form__hint {
   display:block;
@@ -63,9 +64,10 @@
 .c-form__radio-group {
   white-space: nowrap;
   display:inline-block;
-  margin-right:8px;
+  margin-right:$base-spacing;
   .c-form__label {
-    margin-left:4px;
+    margin-left:$base-spacing/4;
+    font-weight: normal;
   }
 }
 .c-form__radio,
@@ -115,6 +117,12 @@
   .c-form__label {
     display:block;
   }
+  .c-form__radio-group,
+  .c-form__checkbox-group {
+    .c-form__label {
+      display:inline-block;
+    }
+  }
 }
 // Inline form
 .c-form--inline {
@@ -136,6 +144,7 @@
     .c-form__label {
       width:auto;
       padding:0;
+      display:inline-block;
     }
   }
 }
