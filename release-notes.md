@@ -5,6 +5,7 @@ v1.5.0 (next minor)
 v1.4.5 (next patch)
 * [Tidy up Formstack - remove imports, take out separate files](../../tree/fix/formstack)
 * [Media body fills available space; media picture shrinks to content size](../../tree/component/key-fact)
+* [Form label style updates](../../tree/component/forms)
 
 v1.4.4 (released 21 Nov 2016)
 * Include Formstack styles (added to master)
