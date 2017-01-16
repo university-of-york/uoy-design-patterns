@@ -3,6 +3,7 @@
 v1.5.0 (next minor)
 
 v1.4.6 (next patch)
+* [Fix for banner classname not updating on resize](../../tree/fix/figure)
 
 v1.4.5 (released 1 Dec 2016)
 * [Tidy up Formstack - remove imports, take out separate files](../../tree/fix/formstack)
