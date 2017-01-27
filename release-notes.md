@@ -9,6 +9,7 @@ v1.4.5 (released 1 Dec 2016)
 * [Tidy up Formstack - remove imports, take out separate files](../../tree/fix/formstack)
 * [Media body fills available space; media picture shrinks to content size](../../tree/component/key-fact)
 * [Form label style updates](../../tree/component/forms)
+* White PNG version of logo (added retrospectively)
 
 v1.4.4 (released 21 Nov 2016)
 * Include Formstack styles (added to master)
