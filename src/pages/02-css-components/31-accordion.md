@@ -113,9 +113,9 @@ If an accordion content has an ID, then a cookie will be set to remember the sta
 
 #### `content.updated` event
 
-When there's a YouTube embed inside an accordion, the [YouTube embed module](/js-modules/youtube-embed.html) fires the `content.updated` event after it's loaded, which triggers the accordion to reset its height.
+When there's a YouTube embed inside an accordion, the [YouTube embed module](../js-modules/youtube-embed.html) fires the `content.updated` event after it's loaded, which triggers the accordion to reset its height.
 
-This event is also fired by the [searchables module](/js-modules/searchables-module.html), the [clearing tables module](/js-modules/searchables-module.html) and the [tabs module](/js-modules/tabs-module.html).
+This event is also fired by the [searchables module](../js-modules/searchables-module.html), the [clearing tables module](../js-modules/searchables-module.html) and the [tabs module](../js-modules/tabs-module.html).
 
 The function to reset the accordion height is also triggered by the `font.loaded` event.
 

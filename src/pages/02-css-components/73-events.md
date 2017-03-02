@@ -9,7 +9,7 @@ id: events-page
 
 ---
 
-<div class="lead"><p>Each event in a list is made up of an `event` atom (which uses the [media object](media.html) markup).</p></div>
+<div class="lead"><p>Each event in a list is made up of an `event` atom (which uses the [media object](../css-components/media.html) markup).</p></div>
 
 <script>
 component("event", {

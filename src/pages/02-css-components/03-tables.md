@@ -224,7 +224,7 @@ There are several techniques that can be used to ensure that your tables remain 
 
 #### Prioritised columns
 
-Add a `.js-prioritised-table` class to the table and a `colgroup` containing `col`s with appropriate [visibility classes](visibility.html) to make the table fit on smaller screens by hiding columns. You can use `span` attributes if required.
+Add a `.js-prioritised-table` class to the table and a `colgroup` containing `col`s with appropriate [visibility classes](../layout/visibility.html) to make the table fit on smaller screens by hiding columns. You can use `span` attributes if required.
 
 <table class="js-prioritised-table">
   <caption>Showcasing a prioritised responsive table</caption>

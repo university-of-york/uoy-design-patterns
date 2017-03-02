@@ -29,6 +29,6 @@ Obviously, the element with `id="Main-Content"` should be the main part of the p
 
 ## ARIA roles
 
-[Tabs](css-components/tabs.html), [accordions](css-components/accordion.html) and [buttons](css-components/buttons.html) are already using ARIA roles to describe their purpose to screen readers.
+[Tabs](../css-components/tabs.html), [accordions](../css-components/accordion.html) and [buttons](../css-components/buttons.html) are already using ARIA roles to describe their purpose to screen readers.
 
 When developing new components, check [the Accessibility Project](http://a11yproject.com/patterns/) to see if there is a simple ARIA role you can assign to it. Remember that ARIA roles may need to be updated by Javascript when objects are changed.

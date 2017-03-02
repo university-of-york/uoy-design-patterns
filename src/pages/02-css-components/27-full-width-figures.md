@@ -42,4 +42,4 @@ component("figure", { "image": "https://unsplash.it/1200/600/?image=987", "type"
 </script>
 
 
-### Options (see [figures page](./css-components/figures.html))
+### Options (see [figures page](../css-components/figures.html))

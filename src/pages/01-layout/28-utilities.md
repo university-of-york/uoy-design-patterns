@@ -13,7 +13,7 @@ id: utilities-page
 
 ## Look like a link
 
-Since you can't nest an anchor tag `<a>` within another `<a>`, add this class to a `<span>` within a link to make some text look link-like. Used in [blockquotes](./css-components/blockquotes.html).
+Since you can't nest an anchor tag `<a>` within another `<a>`, add this class to a `<span>` within a link to make some text look link-like. Used in [blockquotes](../css-components/blockquotes.html).
 
 <a href="#" style="color:#333; text-decoration:none;">This text is all clickable but has been styled to look normal. <span class="u-link">But this looks and acts like a link.</span></a>
 

@@ -15,7 +15,7 @@ We use the `figure` element, with `figcaption` used for [captions](#figure-capti
 
 Figures are sized by the size of the image. If you add a `url` option it will stop being a `figure` element and become a linked anchor. This means the `figcaption` should switch to being a normal `div` and any links inside the content must be utility links (i.e. a `<span class="u-link">`) rather than an anchor.
 
-There is a separate page for examples of [full-width figures](./full-width-figures.html).
+There is a separate page for examples of [full-width figures](../css-components/full-width-figures.html).
 
 ## Figure captions
 
