@@ -15,6 +15,9 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
     if (!this.wrapper) return false;
 
+    // Don't resize if there's nothing in the main wrapper
+    if (this.wrapper.children().length === 0) return false;
+
     this.measure();
 
     // recheck on window resize
