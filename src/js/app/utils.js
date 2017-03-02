@@ -134,9 +134,7 @@
             if ($f.hasClass('c-figure--banner')) {
               // Banners - check for images that don't fit
               var fih = $fi.outerHeight();
-              if (fh > fih) {
-                $fi.addClass('is-fitY');
-              }
+              $fi.toggleClass('is-fitY', fh > fih);
             } else {
               // Figures - check for content that overflows
               var fch = $fc.outerHeight();
@@ -148,8 +146,8 @@
                 fcpBottom = isNaN(fcpTop) ? 0 : fcpBottom ;
                 var fcp = 2*(Math.max(fcpTop, fcpBottom));
                 $f.height(fch + fcp);
-                $fi.addClass('is-fitY');
               }
+              $fi.toggleClass('is-fitY', fh < fch);
             }
           }
         };
