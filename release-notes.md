@@ -2,7 +2,9 @@
 
 v1.5.0 (next minor)
 
-v1.4.6 (next patch)
+v1.4.7 (next patch)
+
+v1.4.6 (released 2 Mar 2017)
 * [Fix for banner classname not updating on resize](../../tree/fix/figure)
 * [Fix for main wrapper not resizing when empty](../../tree/fix/js-wrapper-height)
 
