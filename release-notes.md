@@ -4,6 +4,7 @@ v1.5.0 (next minor)
 
 v1.4.7 (next patch)
 * [Updated links on documentation pages to be relative](../../tree/feature/nav-process)
+* Updated opensearch.xml to new marketing-support email address (added to master)
 
 v1.4.6 (released 2 Mar 2017)
 * [Fix for banner classname not updating on resize](../../tree/fix/figure)
