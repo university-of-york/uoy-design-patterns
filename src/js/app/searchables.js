@@ -126,7 +126,11 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     });
     that.container.trigger('search.updated');
     // Push custom event to GTM
-    if (dataLayer) dataLayer.push({'event':'searchable-text', 'search-text': inputContent});
+    try {
+      dataLayer.push({'event':'searchable-text', 'search-text': inputContent});
+    } catch(e) {
+      console.warn('Could not add event to GTM');
+    }
   };
 
   return SEARCHABLE;
