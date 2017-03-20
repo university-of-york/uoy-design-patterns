@@ -252,7 +252,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
           that.container.append($('<h3>').text('Vacancies by subject area'));
           that.container.append(that.list);
 
-          console.log(that.container, that.container.outerHeight());
+          //console.log(that.container, that.container.outerHeight());
           $(window).trigger('content.updated', ['clearing-table', that]);
 
         }
@@ -300,29 +300,28 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     var fs = $('<fieldset>');
     var fe = $('<div>').addClass('c-form__element');
     var inputName = 'clearing-table-'+this.id+'-toggle-input';
+    var that = this;
+    var makeRadioGroup = function(type, text) {
+      var thisGroup = $('<div>').addClass('c-form__radio-group');
+      var thisInput = $('<input>').addClass('c-form__radio')
+                                  .attr({'type': 'radio', 'id': inputName+'-'+type, 'name': inputName })
+                                  .val(type)
+                                  .on('change', { that: that }, that.checkTable);
+      var thisLabel = $('<label>').addClass('c-form__label')
+                                  .attr({'for': inputName+'-'+type})
+                                  .text(text);
+      thisGroup.append(thisInput, '&nbsp;', thisLabel);
+      return thisGroup;
+    };
+
     var fl = $('<label>').addClass('c-form__label')
                          .attr('for', inputName)
                          .text(this.label);
-    var fg_ukeu = $('<div>').addClass('c-form__radio-group');
-    var fi_ukeu = $('<input>').addClass('c-form__radio')
-                              .attr({'type': 'radio', 'id': inputName+'-ukeu', 'name': inputName })
-                              .val('ukeu')
-                              .on('change', { that: this }, this.checkTable);
-    var fl_ukeu = $('<label>').addClass('c-form__label')
-                              .attr({'for': inputName+'-ukeu'})
-                              .text('Courses for UK/EU students');
-    var fg_intl = $('<div>').addClass('c-form__radio-group');
-    var fi_intl = $('<input>').addClass('c-form__radio')
-                              .attr({'type': 'radio', 'id': inputName+'-intl', 'name': inputName })
-                              .val('international')
-                              .on('change', { that: this }, this.checkTable);
-    var fl_intl = $('<label>').addClass('c-form__label')
-                              .attr({'for': inputName+'-intl'})
-                              .text('Courses for International students');
+
+    var fg_ukeu = makeRadioGroup('ukeu', 'Courses for UK/EU students');
+    var fg_intl = makeRadioGroup('international', 'Courses for International students');
 
     // Join it all together
-    fg_ukeu.append(fi_ukeu, '&nbsp;', fl_ukeu);
-    fg_intl.append(fi_intl, '&nbsp;', fl_intl);
     fe.append(fl, fg_ukeu, fg_intl);
     fs.append(fe);
     f.append(fs);
@@ -402,7 +401,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     var courseCellContent = '<p class="c-clearing-table__title"><a href="'+course['Link to course page']+'">'+course['Qualification earned']+' '+course['Title of course']+'</a></p>'+
       '<ul class="u-two-columns">';
 
-    console.log(course['No grades']);
+    //console.log(course['No grades']);
 
     if (course['No grades'] !== '') {
 
