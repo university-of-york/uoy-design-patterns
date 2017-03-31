@@ -59,6 +59,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     navHeight = that.getNavHeight();
     that.getOffsetPosition();
     that.getNavWidth();
+    console.log(that);
     that.isCentered = that.navWidth > windowWidth;
     // console.log('Container start position is '+that.containerStartPosition);
     that.container.toggleClass('is-centered', that.isCentered);
@@ -91,10 +92,14 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     if (!that.isSticky || !that.isCentered) return false;
     var $navUl = $(that.container.children('ul')),
         $currentNav = $(that.container.find('li.is-current')),
-        hasCurrent = $currentNav.length === 0,
-        currentLeft = hasCurrent ? 0 : $currentNav.position().left,
-        currentWidth = hasCurrent ? 0 : $currentNav.width(),
-        newOffset = hasCurrent ? 0 : windowWidth/2 - currentLeft - currentWidth/2;
+        hasCurrent = $currentNav.length > 0,
+        isFirst = $currentNav.index() === 0,
+        newOffset = 0;
+    if (hasCurrent !== false && isFirst !== true) {
+      var currentLeft = $currentNav.position().left,
+          currentWidth = $currentNav.width();
+      newOffset = windowWidth/2 - currentLeft - currentWidth/2;
+    }
     $navUl.css('left', newOffset);
   };
 
