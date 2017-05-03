@@ -95,7 +95,7 @@ The main header has a button, hidden on larger screens, that pops out the search
 
 ### Sticky nav
 
-The sticky nav strays in place on the page until it hits the top of the screen, at which point it stays fixed to the top, highlighting the nearest section fragment as it goes.
+The sticky nav stays in place on the page until it hits the top of the screen, at which point it stays fixed to the top, highlighting the nearest section fragment as it goes.
 
 <div class="c-nav__wrapper">
   <nav class="c-nav c-nav--sticky js-sticky-nav js-targeted-nav">
