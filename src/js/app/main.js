@@ -259,10 +259,10 @@ define(
       });
     });
 
-    // Broadcast window events
-    if (UTILS.isDev) {
-      $window.on('data font nav content toggle', function(e) {
-        console.info(e.target);
+    // Broadcast custom window events
+    if (UTILS.isDev() === true) {
+      $window.on('data.loaded fonts.active nav.new-targeted-current search.updated content.updated resized.height resized.width toggle', function(e) {
+        console.info(e.type+'.'+e.namespace+' fired', e);
       });
     }
 

@@ -115,7 +115,7 @@ If an accordion content has an ID, then a cookie will be set to remember the sta
 
 When there's a YouTube embed inside an accordion, the [YouTube embed module](/js-modules/youtube-embed.html) fires the `content.updated` event after it's loaded, which triggers the accordion to reset its height.
 
-This event is also fired by the [searchables module](/js-modules/searchables-module.html), the [clearing tables module](/js-modules/searchables-module.html) and the [tabs module](/js-modules/tabs-module.html).
+This event is also fired by the [searchables module](/js-modules/searchables-module.html), the [clearing tables module](/js-modules/searchables-module.html), the [tabs module](/js-modules/tabs-module.html) and also by the `load` event on any images within an accordion.
 
 The function to reset the accordion height is also triggered by the `font.loaded` event.
 
@@ -204,7 +204,39 @@ component("accordion", { "atoms": [
                 "    </div>"+
                 "  </div>"+
                 "</div>"
-  } }
+  } },
+  { "accordion-item": {
+    "title": "Images",
+    "id": "accordion-4e",
+    "content": "<p>Throttle the bandwidth in Chrome Dev Tools in order to make these images load slowly.</p>"+
+               "<p><img src=\"../media/massive-image.jpg\" alt=\"\" /> "+
+               "<p><img src=\"https://unsplash.it/100/100/?image=200\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=201\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=202\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=203\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=204\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=206\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=208\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=209\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=210\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=211\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=212\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=213\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=214\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=215\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=216\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=217\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=218\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=219\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=220\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=221\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=222\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=223\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=225\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=227\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=228\" alt=\"\" /> "+
+               "<img src=\"https://unsplash.it/100/100/?image=229\" alt=\"\" /> </p>"
+  } },
 ] } );
 </script>
 
