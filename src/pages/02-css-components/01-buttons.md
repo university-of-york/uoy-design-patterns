@@ -91,9 +91,9 @@ A block button takes 100% of the width of the containing element. They're useful
   * **text**: the text on the button **(required)**
   * **type**: one of _default_ (default), _cancel_, _primary_ and _highlight_
   * **size**: one of _tiny_, _small_, _medium_ (default), _large_ or _huge_
-  * **icon-above**: the type of [icon](icons.html) to go above the text (or replace it if there is no text) (doesn't work with input[type=submit], input[type=reset] or input[type=button])
-  * **icon-before**: the type of [icon](icons.html) to appear at the front of the button (doesn't work with input[type=submit], input[type=reset] or input[type=button])
-  * **icon-after**: the type of [icon](icons.html) to appear at the end of the button (doesn't work with input[type=submit], input[type=reset] or input[type=button])
+  * **icon-above**: the type of [icon](../css-components/icons.html) to go above the text (or replace it if there is no text) (doesn't work with input[type=submit], input[type=reset] or input[type=button])
+  * **icon-before**: the type of [icon](../css-components/icons.html) to appear at the front of the button (doesn't work with input[type=submit], input[type=reset] or input[type=button])
+  * **icon-after**: the type of [icon](../css-components/icons.html) to appear at the end of the button (doesn't work with input[type=submit], input[type=reset] or input[type=button])
   * **href**: the URL to visit when clicked (only for button-link, defaults to "#")
   * **block**: (Boolean) defaults to false
   * **disabled**: is the button disabled? (Boolean) defaults to false

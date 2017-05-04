@@ -30,10 +30,10 @@ module.exports = function (grunt) {
               var catTitle = page.category.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
               categories[page.category].page = { dest:'#', title:catTitle };
             }
-            if (typeof categories[page.category]['children'] === 'undefined') {
-              categories[page.category]['children'] = [];
+            if (typeof categories[page.category].children === 'undefined') {
+              categories[page.category].children = [];
             }
-            categories[page.category]['children'].push(page);
+            categories[page.category].children.push(page);
           }
           if (i === pages.length - 1) {
             // Main nav, subnav and associative nav (to go alongside main nav)
@@ -48,12 +48,12 @@ module.exports = function (grunt) {
               var catPath = dirPrefix+path.relative(path.resolve(process.cwd(), target+'/'), cat.page.dest);
               output+= '  <li class="c-nav__item">\n';
               output+= '    <a class="c-nav__link" href="'+catPath+'">'+cat.page.title+'</a>\n';
-              if (typeof cat['children'] !== 'undefined') {
+              if (typeof cat.children !== 'undefined') {
                 var currentSubcategory = '';
                 suboutput+= '    <ul class="c-subnav__list c-subnav--'+cat.page.name+'">\n';
                 assocOutput+= '    <ul class="c-nav__list c-nav__list--associative c-subnav--'+cat.page.name+'">\n';
                 // Loop through category pages
-                cat['children'].forEach(function(p, j) {
+                cat.children.forEach(function(p, j) {
                   // Get path relative to cwd/dev or cwd/build
                   var thisPath = dirPrefix+path.relative(path.resolve(process.cwd(), target+'/'), p.dest);
                   if (p.subcategory && p.subcategory !== currentSubcategory) {
@@ -114,5 +114,5 @@ module.exports = function (grunt) {
         }
       ]
     }
-  }
+  };
 };

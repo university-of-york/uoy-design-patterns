@@ -11,7 +11,7 @@ id: link-figures-page
 
 <div class="lead"><p>Link figures are used as an 'in-page' navigation - often on landing pages where we're using a full-width page and there's no subnavigation.</p></div>
 
-Use the [grid system](./layout/grid.html) to arrange them on a page.
+Use the [grid system](../layout/grid.html) to arrange them on a page.
 
 Available in a range of colours, for better or for worse. Use wisely.
 
@@ -92,4 +92,4 @@ component("grid", { "atoms":[
   ] } }] });
 </script>
 
-### Options (see [figures page](./css-components/figures.html))
+### Options (see [figures page](../css-components/figures.html))
