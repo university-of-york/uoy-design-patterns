@@ -3,7 +3,9 @@
 v1.5.0 (next minor)
 * [Changes to sticky nav functionality](../../tree/component/sticky-nav)
 
-v1.4.7 (next patch)
+v1.4.8 (next patch)
+
+v1.4.7 (released 4 May 2017)
 * [Updated links on documentation pages to be relative](../../tree/feature/nav-process)
 * Updated opensearch.xml to new marketing-support email address (added to master)
 * [Remeasure accordions on image load](../../tree/fix/accordions)
