@@ -249,12 +249,18 @@ define(
     // Set min-height on wrapper (to ensure footer is (at least) at bottom of page)
     var w = new WRAPPERHEIGHT();
 
-    UTILS.eachIfExists('#Course-Search', function(i, a) {
+    // Update course search when radio buttons are clicked
+    // Inputs are called 'level-undergraduate', 'level-postgraduate-research' and 'level-postgraduate-taught'
+    UTILS.eachIfExists('#Course-Search, .js-course-search', function(i, a) {
       var $a = $(a),
-          inputs = $a.find('input[type=radio]');
+          inputs = $a.find('input[type=radio]'),
+          $modeInput = $a.find('#mode');
       inputs.change(function(e) {
-        var level = $(this).attr('id').substr(6),
-            action = '/study/'+level+'/courses/search/';
+        var parts = $(this).attr('id').split('-');
+        var level = parts[1];
+        var mode = parts[2] || "";
+        var action = '/study/'+level+'/courses/search/';
+        $modeInput.val(mode);
         $a.attr('action', action);
       });
     });
