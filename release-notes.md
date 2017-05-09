@@ -3,7 +3,9 @@
 v1.5.0 (next minor)
 * [Changes to sticky nav functionality](../../tree/component/sticky-nav)
 
-v1.4.8 (next patch)
+v1.4.9 (next patch)
+
+v1.4.8 (released 9 May 2017)
 * [Update course search for PGT/PGR](../../tree/module/course-search)
 
 v1.4.7 (released 4 May 2017)
