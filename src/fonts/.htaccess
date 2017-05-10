@@ -3,7 +3,7 @@
 # ----------------------------------------------------------------------
 <FilesMatch "\.(ttf|otf|eot|woff|woff2|svg)$">
   <IfModule mod_headers.c>
-    SetEnvIf Origin "http(s)?://(.+\.)?(york.ac.uk|uoy.staging.wpengine.com|uni_york.formstack.com)$" AccessControlAllowOrigin=$0
+    SetEnvIf Origin "http(s)?://(.+\.)?(york.ac.uk|uoy.staging.wpengine.com|uni_york.formstack.com|localhost)$" AccessControlAllowOrigin=$0
     Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
   </IfModule>
 </FilesMatch>
