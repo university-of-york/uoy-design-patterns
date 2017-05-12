@@ -1,1 +1,3 @@
-<div class="c-show-more js-show-more" data-height="200">{{text}}</div>
+<div class="c-show-more js-show-more"{{#height}} data-default-height="{{this}}"{{/height}}{{#moreText}} data-more-text="{{this}}"{{/moreText}}{{#lessText}} data-less-text="{{this}}"{{/lessText}}>
+  <div class="c-show-more__content">{{text}}</div>
+</div>

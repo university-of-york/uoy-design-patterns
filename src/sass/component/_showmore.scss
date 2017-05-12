@@ -1,0 +1,33 @@
+//
+// ACCORDION LIST
+//
+
+.c-show-more {
+  @include component;
+}
+.c-show-more__content {
+  // @include demarginalise;
+  // padding:$base-spacing;
+  overflow:hidden;
+  position:static;
+  width: 100%;
+  .c-show-more__item.is-closed & {
+    // padding-top:0;
+    // padding-bottom:0;
+    // Height is added by JS
+    // height:0;
+  }
+  // Starting class - added by JS to hide the content but still be able to get the height
+  &.is-ghost {
+    .c-show-more.is-closed & {
+      // padding-top:$base-spacing;
+      // padding-bottom:$base-spacing;
+    }
+  }
+}
+.csstransforms {
+  // 'is-ready' class added by JS after preparation
+  .c-show-more__content.is-ready {
+    @include transition('height');
+  }
+}

@@ -4,14 +4,14 @@ define(
    'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/prioritised-tables',
    'app/toggle', 'app/utility-toggle', 'app/wrapper-height', 'app/youtube-embed',
    'app/soundcloud-embed', 'app/searchables', 'app/filterable-tables', 'app/equal-height-row',
-   'app/google-map'],
+   'app/google-map', 'app/show-more'],
   function (
     $, ES5SHIM, PICTUREFILL, IFRAMERESIZER,
     UTILS, MODALLINK, ACCORDION, STICKYNAV,
     TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
     TOGGLE, UTILITYTOGGLE, WRAPPERHEIGHT, YOUTUBE,
     SOUNDCLOUD, SEARCHABLE, FILTERABLE, EQUALHEIGHT,
-    GOOGLEMAP) {
+    GOOGLEMAP, SHOWMORE) {
 
   $(function(){
 
@@ -231,10 +231,20 @@ define(
       });
     });
 
-    // Make a table filterable
+    // Make equal height rows
     UTILS.eachIfExists('.js-equal-height-row', function (i, a) {
       var e = new EQUALHEIGHT({
         row: $(a)
+      });
+    });
+
+    // Set up 'Show more' containers
+    UTILS.eachIfExists('.js-show-more', function (i, a) {
+      var $a = $(a);
+      var defaultHeight = parseInt($a.attr('data-default-height'), 10);
+      var e = new SHOWMORE({
+        container: $a,
+        defaultHeight: defaultHeight
       });
     });
 
