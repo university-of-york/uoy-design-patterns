@@ -37,6 +37,12 @@ A button can also be _disabled_ (even _link_ type buttons):
 component("button", { "text": "Don't click this!", "type": "disabled", "disabled": true });
 </script>
 
+A button can also be _selectable_:
+
+<script>
+component("button-selectable", { "text": "Click me!", "type": "selectable"});
+</script>
+
 You can define the size of the button too:
 
 <script>

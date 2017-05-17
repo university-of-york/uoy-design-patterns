@@ -106,6 +106,18 @@
     float:right;
   }
 }
+// Selectable button
+.c-btn--selectable {
+  display: none;
+  + label {
+    user-select: none;
+    transition: 0s;
+  }
+  &:checked + label {
+    background-color:lighten(map-get(map-get($c-btn, default), bg), 15);
+    color: map-get(map-get($c-btn, default), text);
+  }
+}
 // Button groups
 .c-btn-group {
   display:table;
