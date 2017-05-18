@@ -4,18 +4,21 @@
 @import "core/extends";
 
 // Style the grid examples
-#grid-page {
+#grid-page,
+#alt-grid-page,
+#image-grid-page,
+#divided-grid-page {
   .o-wrapper > .o-grid__row > .o-grid__box--full {
     .o-grid__row {
     }
     .o-grid__box {
-      min-height:240px;
+      min-height:180px;
       background-color:#eee;
       background-color:rgba(180,180,180,0.5);
       background-clip: content-box;
-      margin:0 0 $base-spacing;
+      margin-bottom:$base-spacing;
       .o-grid__box {
-        min-height:40px;
+        margin-bottom:0;
       }
     }
   }
@@ -166,11 +169,20 @@
     display:block;
   }
 }
+// Stop font enlarging on nav pages
+#navigation-page {
+  .c-nav {
+    @include mq(huge, '++') {
+      font-size:16px;
+    }
+  }
+}
 #navigation-page,
+#image-grid-page,
 #full-width-figures-page {
   .o-grid__box[role="main"] > {
     p, h2, h3, .lead {
-      padding:0 $base-spacing;
+      @include tiny-padding;
     }
     p, h2, h3, .lead,  pre {
       max-width:1200px;
@@ -195,7 +207,13 @@
     display:block;
   }
 }
-
+#navigation-page {
+  // Alert at bottom of page...
+  .c-alert {
+    margin-left:20px;
+    margin-right:20px;
+  }
+}
 // Code blocks after grid examples
 .o-grid + pre[class*="language-"] {
   margin-top:$base-spacing;

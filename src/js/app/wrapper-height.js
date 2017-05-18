@@ -15,6 +15,9 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
     if (!this.wrapper) return false;
 
+    // Don't resize if there's nothing in the main wrapper
+    if (this.wrapper.children().length === 0) return false;
+
     this.measure();
 
     // recheck on window resize
@@ -27,7 +30,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
   WRAPPERHEIGHT.prototype.measure = function () {
 
-    console.log('Measuring');
+    //console.log('Measuring');
 
     var windowHeight = $(window).height();
     var bodyChildren = $('body').children();

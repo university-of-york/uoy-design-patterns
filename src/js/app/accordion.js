@@ -35,15 +35,29 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
     this.itemTitle.on('click', { that: this }, this.toggleState);
 
     var that = this;
-    $window.on('content.updated', function() {
-      that.setAccordionHeight.apply(that);
+    $window.on('content.updated', function(e, type, obj) {
+      // Only reset height if updated content was within this accordion
+      if (!obj.container) return;
+      var $closestContainer = obj.container.closest('.c-accordion__content');
+      if ($closestContainer.is(that.itemContent) === true) {
+        that.setAccordionHeight.apply(that, [type, obj]);
+      }
     });
+
     $window.on('resized.width', UTILS.debounce(function(e) {
-      that.setAccordionHeight.apply(that);
+      that.setAccordionHeight.apply(that, ['resize']);
     }, 250));
 
+    // Fire content.updated on images within accordions
+    this.itemContent.find('img').each(function(i, img) {
+      var $img = $(img);
+      $img.load(function(e) {
+        that.setAccordionHeight.apply(that, ['imageload', $img]);
+      });
+    });
+
     // Initial load
-    that.setAccordionHeight.apply(that);
+    that.setAccordionHeight.apply(that, ['initial']);
 
     console.info(this);
 
@@ -53,27 +67,39 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
   ACCORDION.prototype.isToggling = false;
 
   // Set the height of the hidden accordion content
-  ACCORDION.prototype.setAccordionHeight = function() {
+  ACCORDION.prototype.setAccordionHeight = function(type, obj) {
+
+    // console.log('Accordion height set', type, obj);
+
+    // type is the type of thing triggering the update event
+    // obj is the object that triggers it (if needed)
+
+    var isClosed = this.item.hasClass('is-closed');
 
     // Reset the itemContent
-    this.itemContent.addClass('is-ghost').height('auto');
+    this.itemContent.addClass('is-ghost');
+    this.itemContent.removeClass('is-ready');
+    this.itemContent.height('auto');
+    this.item.removeClass('is-closed');
 
-    // Get content height
+    // // Get content height
     var contentHeight = this.itemContent.outerHeight();
 
     this.itemContent.attr('data-height', contentHeight);
 
     var thisId = this.itemContent.attr('id') || false;
     if (thisId !== false && COOKIES.get(thisId) === 'open') {
-      this.item.removeClass('is-closed');
+      isClosed = false;
     }
-    if (this.item.hasClass('is-closed')) {
+    if (isClosed === true) {
       contentHeight = 0;
+      this.item.addClass('is-closed');
     }
 
     this.itemContent.css('height', contentHeight);
 
     this.itemContent.removeClass('is-ghost');
+    this.itemContent.addClass('is-ready');
 
   };
 

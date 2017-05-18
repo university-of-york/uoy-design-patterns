@@ -22,7 +22,7 @@ module.exports = {
       expand: true,
       dot: true,
       cwd: 'src/',
-      src: ['fonts/**', 'media/**', 'js/prism.js', 'js/iframeResizer.contentWindow.min.js'],
+      src: ['fonts/**', 'media/**', 'js/prism.js', 'js/iframeResizer.contentWindow.min.js', 'opensearch.xml'],
       dest: 'build/'
     }]
   },
@@ -31,7 +31,7 @@ module.exports = {
       expand: true,
       dot: true,
       cwd: 'build/',
-      src: ['css/**', 'fonts/**', 'img/**', 'js/**'],
+      src: ['css/**', 'fonts/**', 'img/**', 'js/**', 'opensearch.xml'],
       dest: 'release/'
     }]
   }

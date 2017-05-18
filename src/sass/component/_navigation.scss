@@ -6,7 +6,7 @@
 // MENU NAVIGATION
 //
 .c-nav {
-  height:2.8125em;
+  height:42px;
   background-color:$c-nav-background-color;
   border-bottom:3px solid $c-nav-border-color;
   border-top:1px solid lighten($c-nav-background-color,10);
@@ -15,6 +15,9 @@
   width:100%;
   &.is-open {
     height:auto;
+  }
+  @include mq(small, '-') {
+    height:38px;
   }
 }
 .c-nav--main {
@@ -26,10 +29,10 @@
   @include component-margin;
   // Placeholder for when sticky nav goes AWOL
   height:auto;
-  min-height:2.75em;
+  min-height:39px;
   overflow:hidden;
   @include mq(large, '-') {
-    min-height:2.28515625em;
+    min-height:32px;
   }
 }
 .c-nav--sticky {
@@ -38,6 +41,7 @@
   text-align:center;
   @include mq(large, '-') {
     @include font-size(13px);
+    height:38px;
   }
   &.is-sticky {
     position:fixed;
@@ -218,10 +222,12 @@
 // We can't add classes to 'a' tags in Site Manager
 .c-nav__item a {
   @include transition('background-color, color');
+  @include tiny-padding;
+  padding-top:$base-spacing/2;
+  padding-bottom:$base-spacing/2;
   color:$c-nav__link-color;
   background-color:$c-nav__link-background-color;
   display:block;
-  padding:0.75em $base-spacing;
   line-height:1.15;
   text-decoration:none;
   position:relative;

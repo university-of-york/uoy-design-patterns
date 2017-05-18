@@ -1,0 +1,61 @@
+//
+// ACCORDION LIST
+//
+
+.c-show-more {
+  @include component;
+  // Make sure button is higher than content:after
+  .c-btn {
+    position:relative;
+    z-index:8;
+  }
+}
+.c-show-more__content {
+  @include transition('opacity');
+  overflow:hidden;
+  position:relative;
+  width: 100%;
+  &:after {
+    content:'';
+    display:block;
+    width:100%;
+    height:$base-spacing * 2; // half is opaque, half is gradient to transparent
+    background-image:linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%);
+    position:absolute;
+    bottom:0;
+    left:0;
+    opacity:0;
+  }
+  .c-show-more.is-closed &:after {
+    opacity:1;
+  }
+}
+// Different colour gradients for use in alt rows
+.o-grid__row--alt1 {
+  .c-show-more__content {
+    &:after {
+      background-image:linear-gradient(to bottom, transparentize($o-grid__row--alt1-background-color, 1) 0%, $o-grid__row--alt1-background-color 50%);
+    }
+  }
+}
+.o-grid__row--alt2 {
+  .c-show-more__content {
+    &:after {
+      background-image:linear-gradient(to bottom, transparentize($o-grid__row--alt2-background-color, 1) 0%, $o-grid__row--alt2-background-color 50%);
+    }
+  }
+}
+.o-grid__row--alt3 {
+  .c-show-more__content {
+    &:after {
+      background-image:linear-gradient(to bottom, transparentize($o-grid__row--alt3-background-color, 1) 0%, $o-grid__row--alt3-background-color 50%);
+    }
+  }
+}
+
+.csstransforms {
+  // 'is-ready' class added by JS after preparation
+  .c-show-more__content.is-ready {
+    @include transition('height');
+  }
+}

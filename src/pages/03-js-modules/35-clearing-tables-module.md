@@ -24,7 +24,7 @@ var c = new CLEARINGTABLE({
 });
 ```
 
-The data for the clearing courses is fetched from the Google Doc using the [google-docs module](google-docs-module.html), then inserted into the container div.
+The data for the clearing courses is fetched from the Google Doc using the [google-docs module](../js-modules/google-docs-module.html), then inserted into the container div.
 
 This is automatically done by adding a `js-clearing-table` class to the containing div. Options can be added using `data-` attributes: `data-department` for department; `data-type` for UK/EU or International; `data-layout` for a list of Departments or Courses. Leaving these blank will default to a  Course list, with all departments and both UK/EU and International, with a radio button to toggle between the two.
 

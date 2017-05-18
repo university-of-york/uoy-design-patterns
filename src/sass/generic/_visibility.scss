@@ -27,12 +27,7 @@
 }
 // Not shown on screen, but still accessible to screen readers etc.
 .is-invisible {
-  color:transparent;
-  text-decoration:none;
-  z-index:0;
-  overflow:hidden;
-  width:0;
-  height:0;
+  @include is-invisible;
 }
 
 @each $name, $size in $width {

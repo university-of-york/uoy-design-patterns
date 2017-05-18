@@ -7,6 +7,9 @@ module.exports = {
     },
     "options": [
       "setClasses"
+    ],
+    "excludeTests": [
+      "hidden"
     ]
-   }
+  }
 };

@@ -1,10 +1,10 @@
 <header class="c-main-header" role="banner">
   <div class="o-wrapper o-grid">
     <div class="o-grid__row">
-      <div class="o-grid__box o-grid__box--threequarters">
-        <h2 class="c-main-header__title"><a href="http://www.york.ac.uk"><img class="c-main-header__logo" src="https://www.york.ac.uk/static/1.2/img/logo.png" alt="University of York logo" width="250" height="40"></a> - Design Patterns</h2>
+      <div class="o-grid__box o-grid__box--threequarters o-grid__box--threequarters@medium o-grid__box--threequarters@small o-grid__box--threequarters@tiny">
+        <h2 class="c-main-header__title"><a class="c-main-header__link" href="http://www.york.ac.uk"><img class="c-main-header__logo" src="{{#if build}}https://www.york.ac.uk/static/1.4/img/logo.svg{{else}}/img/logo.svg{{/if}}" alt="University of York logo"></a></h2>
       </div>
-      <div class="o-grid__box o-grid__box--quarter is-hidden@medium-">
+      <div class="o-grid__box o-grid__box--quarter o-grid__box--quarter@medium o-grid__box--quarter@small o-grid__box--quarter@tiny">
         <form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--header">
           <fieldset>
             <div class="c-form__element">
@@ -14,9 +14,9 @@
             </div>
           </fieldset>
         </form>
+        <a href="#Mobile-Search" class="c-mobile-search-button js-toggle-button"><i class="c-icon c-icon--search"></i></a>
       </div>
     </div>
-    <a href="#Mobile-Search" class="c-mobile-search-button js-toggle-button"><i class="c-icon c-icon--search"></i></a>
   </div>
 </header>
 <form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--mobile-search" id="Mobile-Search">

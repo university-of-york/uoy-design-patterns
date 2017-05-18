@@ -20,7 +20,7 @@ By adding a `js-filterable-table` class to the table, the script will automatica
 
 You can define which columns are to be filtered using a `colgroup`, with each `col` given a `data-` attribute relevant to the filter option. Further options can be assigned to the filter using these `data-` attributes. You can add `span` attributes to the `col` elements to save space.
 
-As with [searchable tables](searchable-tables-module.html), you can choose to ignore the first row of the `tbody` by adding `data-header="true"` to the `table` element.
+As with [searchable tables](../js-modules/searchable-tables-module.html), you can choose to ignore the first row of the `tbody` by adding `data-header="true"` to the `table` element.
 
 ### Use
 

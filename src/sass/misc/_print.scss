@@ -41,7 +41,7 @@
   }
   img.icon,
   .c-main-header__logo {
-    display:inline;
+    display:inline-block;
   }
 
   @page {
@@ -85,15 +85,15 @@
   /*
    * Reduce header spacing
    */
-   .c-main-header__title,
-   .c-page-title__header,
-   .c-breadcrumb {
-     margin-bottom:0;
-   }
+  .c-main-header__title,
+  .c-page-title__header,
+  .c-breadcrumb {
+    margin-bottom:0;
+  }
 
-   .c-breadcrumb__separator {
+  .c-breadcrumb__separator {
     padding: 0 5px;
-}
+  }
 
   /*
    * Get rid of a load of unnecessary stuff

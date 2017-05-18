@@ -97,6 +97,12 @@ $thumbnail_size:100px;
     display:block;
   }
 }
+.c-news__event-date {
+  @include font-size(14px);
+  margin-bottom:10px;
+  color:$c-news--event__meta-color;
+  font-weight: bold;
+}
 .c-news__teaser {
   .c-news--excerpt & {
     @include demarginalise;

@@ -9,7 +9,7 @@ id: modal-module-page
 
 ---
 
-<div class="lead"><p>[Modal windows](modal.html) can be used to show the user a message, or to showcase an image, anything that requires the rest of the screen to be of secondary importance to the content in the modal.</p></div>
+<div class="lead"><p>[Modal windows](../css-components/modal.html) can be used to show the user a message, or to showcase an image, anything that requires the rest of the screen to be of secondary importance to the content in the modal.</p></div>
 
 When a new modal window is called, it will check to see if the modal window is already set up and, if not, will add it to the page. All subsequent calls for a new modal will close the existing modal (if it is still open) and reuse the modal markup.
 

@@ -9,6 +9,8 @@ category: Javascript
  */
 define(['jquery', 'app/utils'], function ($, UTILS) {
 
+  var $window = $(window);
+
   var EQUALHEIGHT = function (options) {
     if (!options.row) return false;
     this.row = options.row;
@@ -20,7 +22,18 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       that.setMaxHeight();
     }, 250);
 
-    $(window).on('resize', resizeFn);
+    $window.on('resize', resizeFn);
+
+    // Fire on load or trigger load if already loaded
+    var rowImages = this.boxes.find('img');
+    rowImages.each(function() {
+      if (this.complete === true) {
+        resizeFn();
+      }
+      $(this).on('load', function() {
+        resizeFn();
+      });
+    });
 
     console.info(this);
 

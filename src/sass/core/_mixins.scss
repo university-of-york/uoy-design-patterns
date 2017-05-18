@@ -3,6 +3,22 @@
 //
 
 //
+// Invisible visually but still accessible for screen readers
+//
+@mixin is-invisible() {
+  color:transparent;
+  text-decoration:none;
+  z-index:0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+//
 // Tiny padding - reduce left and right padding on tiny screens
 //
 @mixin tiny-padding() {
@@ -17,7 +33,7 @@
 //
 // Media query mixin
 // Pass it a size (tiny, small, medium, large, huge)
-// And scope ('~' [1], '+' [2], '-' [3])
+// And scope ('~' [1], '+' [2], '++' [3], '-' [4], '--' [5])
 // No need for mq with (tiny, '+') - it includes everything!
 @mixin mq($size, $scope:'~') {
 
@@ -48,9 +64,19 @@
     @media only screen and (min-width: $min) {
       @content;
     }
+  } @else if $scope == '++' {
+    // [3] Bigger than this size
+    @media only screen and (min-width: $max) {
+      @content;
+    }
   } @else if $scope == '-' {
-    // [3] This size and smaller
+    // [4] This size and smaller
     @media only screen and (max-width: $max) {
+      @content;
+    }
+  } @else if $scope == '--' {
+    // [5] Smaller than this size
+    @media only screen and (max-width: $min) {
       @content;
     }
   }
@@ -153,6 +179,7 @@
       top:$top;
       left:$left;
       transform:$transform;
+      -webkit-transform:$transform;
     }
   }
 }

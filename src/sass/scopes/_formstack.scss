@@ -1,0 +1,190 @@
+/*
+ * Formstack styles
+ */
+
+/* Base styles */
+textarea {
+  @extend .c-form__input--textarea !optional;
+}
+
+.hidden {
+  @extend .is-invisible;
+  display: block;
+}
+.fsSubField {
+  margin-top:5px;
+}
+.fieldset-content {
+  @extend .c-form__element-group;
+  height:auto;
+}
+.fsOptionLabel {
+  @extend .c-form__label.c-form__label;
+  &.vertical {
+    display: block;
+  }
+  input {
+    margin-right:0.25em;
+  }
+}
+
+.fsBody {
+  .fsHidden,
+  .fsHiddenPage {
+    padding: 0!important;
+    margin: 0!important;
+    display: none
+  }
+  .fsHiddenPage {
+    height: 0;
+  }
+}
+.fsHiddenByFieldSetting {
+  display: none
+}
+
+// This could be grouped by ID to allow different extensions for warning, success etc.
+div.fsError {
+  @extend .c-alert !optional;
+  @extend .c-alert--danger !optional;
+  @include responsive-font-size($default-font-sizes);
+  text-align:left;
+  color:$charcoal;
+}
+.fsForm,
+.fsInput,
+.fsLabel,
+label.fsOptionLabel {
+  @include responsive-font-size($default-font-sizes);
+}
+.fsForm {
+  @extend .c-form !optional;
+  font-family:$font-default;
+  margin:0 auto;
+  padding:2px;
+  border:0;
+}
+.fsboxshadow .fsForm {
+  box-shadow:none;
+}
+.fsborderradius .fsForm,
+.fsborderradius .fsSectionHeader {
+  border-radius:0;
+}
+
+.fsSectionHeader {
+  background:none;
+  padding:0;
+  margin:$base-spacing/2 0 $base-spacing;
+}
+.fsborderradius .fsSectionHeader {
+  margin:$base-spacing/2 0 $base-spacing;
+}
+
+.fsSectionHeading {
+  font-family:$font-title;
+}
+
+.fsSectionText {
+}
+.fsSelectParent {
+  @extend .c-form__input--select !optional;
+}
+.fsSupporting {
+  @extend small;
+  @extend .c-form__hint !optional;
+}
+
+.fsCallout {
+}
+
+.fsRow {
+}
+.fsRowBody {
+}
+.fsFieldRow {
+}
+
+.fsCell {
+  @extend .c-form__element !optional;
+}
+
+.fsSectionCell {
+}
+
+.fsSection {
+}
+
+.fsForm .fsLabel {
+  @extend .c-form__label !optional;
+}
+.fsBody .fsLabel {
+}
+
+select,
+textarea,
+input[type=email],
+input[type=number],
+input[type=tel],
+input[type=text] {
+  @extend .c-form__input !optional;
+}
+
+.fsRequiredLabel {
+  @extend .c-form__element--required !optional;
+}
+
+#fsFooterImage {
+}
+
+#fsHeaderImage {
+}
+
+.fsFieldFocused {
+}
+
+.fsReadOnly {
+}
+.fsRequiredMarker {
+  @include responsive-font-size($default-font-sizes);
+  font-family:$font-default;
+  color:$charcoal;
+  font-weight:400;
+}
+.fsValidationError .fsRequiredMarker {
+  color:$red;
+}
+.fsValidationError {
+  @extend .is-invalid !optional;
+  background-color:transparent!important;
+}
+.fsValidationError .fsLabel {
+  background-image:none;
+  padding-left:0;
+}
+.fsForm .fsSubmit {
+  background-color:transparent;
+}
+.fs-btn2,
+.fsSubmit input.fsSubmitButton,
+.fsSubmit input.fsNextButton,
+.fsSubmit input.fsPreviousButton,
+.fsSubmit input.fsSubmitMultipage {
+  @extend .c-btn !optional;
+  @extend .c-btn--medium !optional;
+}
+#fsSubmissionCheckmark {
+  @extend .c-icon !optional;
+  @extend .c-icon--check !optional;
+  @extend .c-icon--3x !optional;
+  float:left;
+}
+// Make text next top checkmark padded to line up
+#fsSubmissionCheckmark + * {
+  padding-top:14px;
+}
+// Dialog
+.fs-form-dialog--hidden {
+  display: none;
+  opacity: 0;
+}

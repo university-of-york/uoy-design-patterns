@@ -19,6 +19,7 @@ $s3:#f0f1f4;
 $red:#b62d2d;
 $green:#54b62d;
 $grey:#666;
+$lightgrey:#ccc;
 
 // Fonts
 $font-default: 'museo-sans', Helvetica, Arial, sans-serif;
@@ -146,6 +147,7 @@ $o-grid__row--alt2-link-color:lighten($blue,5);
 $o-grid__row--alt2-link-hover-color:lighten($blue,15);
 $o-grid__row--alt3-background-color:$s2;
 $o-grid__row--alt3-border-color:$s1;
+$o-grid__row--divider-color:$lightgrey;
 
 // Skip link
 $o-skip-link-color:$light;
@@ -159,6 +161,7 @@ $c-blockquote--pull-quote-color: $pink;
 // Mobile search
 $c-mobile-search-button-color:$charcoal;
 $c-mobile-search-button-hover-color:lighten($c-mobile-search-button-color,10);
+$c-mobile-search-button-background-color:#fff;
 $c-mobile-search-form-background-color:$teal;
 
 // Page title
@@ -234,7 +237,7 @@ $c-alert--danger-border:$red;
 $c-alert--danger-background:lighten($red, 45);
 
 // Block links
-$c-block-link-background-color:transparent;
+$c-block-link-background-color:$s2;
 $c-block-link-border-color:lighten($s1,5);
 
 // Footer
@@ -268,5 +271,6 @@ $c-news--excerpt__title-color:$link-color;
 $c-news--excerpt__title-hover-color:$blue;
 $c-news--excerpt__category-color:lighten($charcoal, 10);
 $c-news--excerpt__meta-color:lighten($charcoal,30);
+$c-news--event__meta-color:$charcoal;
 $c-news--listing__title-color:$link-color;
 $c-news--listing__title-hover-color:$blue;

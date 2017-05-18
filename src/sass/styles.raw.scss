@@ -59,6 +59,7 @@
  * Key facts...............Key facts boxes
  * Tags....................Tag lists
  * Labels..................Labels
+ * Show more...............Toggleable 'Show More' component
  *
  * - Organisms
  * Events..................Event listings
@@ -141,6 +142,7 @@
 @import "component/key-fact";
 @import "component/tag";
 @import "component/label";
+@import "component/showmore";
 
 @import "component/events";
 @import "component/forms";
@@ -151,7 +153,7 @@
 // SCOPES
 //@import "scopes/test";
 @import "scopes/tinymce";
-//@import "scopes/formstack";
+@import "scopes/formstack";
 
 // THEMES
 //@import "themes/404";

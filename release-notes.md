@@ -1,14 +1,80 @@
 # Release notes
 
-v1.4.0 (next minor)
-* [Update to new logo](../../tree/update/logo)
-* [Add divided grid rows](../../tree/component/bordered-grid)
+v1.5.0 (next minor)
+* [Changes to sticky nav functionality](../../tree/component/sticky-nav)
 
-v1.3.12 (next patch)
+v1.4.10 (next patch)
+
+v1.4.9 (released 18 May 2017)
+* Updated .htaccess in /fonts to allow localhost domains (added to master)
+* [Create a new 'Show more' component](../../tree/component/show-more)
+
+v1.4.8 (released 9 May 2017)
+* [Update course search for PGT/PGR](../../tree/module/course-search)
+
+v1.4.7 (released 4 May 2017)
+* [Updated links on documentation pages to be relative](../../tree/feature/nav-process)
+* Updated opensearch.xml to new marketing-support email address (added to master)
+* [Remeasure accordions on image load](../../tree/fix/accordions)
+
+v1.4.6 (released 2 Mar 2017)
+* [Fix for banner classname not updating on resize](../../tree/fix/figure)
+* [Fix for main wrapper not resizing when empty](../../tree/fix/js-wrapper-height)
+
+v1.4.5 (released 1 Dec 2016)
+* [Tidy up Formstack - remove imports, take out separate files](../../tree/fix/formstack)
+* [Media body fills available space; media picture shrinks to content size](../../tree/component/key-fact)
+* [Form label style updates](../../tree/component/forms)
+* White PNG version of logo (added retrospectively)
+
+v1.4.4 (released 21 Nov 2016)
+* Include Formstack styles (added to master)
+* Modernizr config updated to exclude 'hidden' test (added to master)
+
+v1.4.3 (released 15 Nov 2016)
+* Update tinymce stylesheet (added to master)
+* [Add opensearch data](../../tree/feature/opensearch)
+* [Fix accordion height calculation](../../tree/fix/accordions)
+* [Update equal height rows on image load](../../tree/fix/equal-height-rows)
+* [Add white version of logo](../../tree/update/logo)
+* [Added webkit prefix for transforms (autoprefixer doesn't like PhantomJS)](../../tree/feature/postcss)
+
+v1.4.2 (released 26 Oct 2016)
+* [Update nav heights](../../tree/fix/nav-padding)
+* [News date font size updated](../../tree/fix/component/news)
+
+v1.4.1 (released 24 Oct 2016)
+* [tweaks to main wrapper margin after breadcrumb on small screens, plus adding SVGs to imagemin](../../tree/master)
+* [Add markup for interactive icons](../../tree/component/icons)
+* [Accessibility functionality for the utility nav](../../tree/component/utility-nav)
+* [Use tiny-padding mixin for page title, nav and breadcrumb](../../tree/fix/padding)
+* [Add in eventDate as an option in a news excerpt](../../tree/component/news)
+
+v1.4.0 (released 13 Oct 2016)
+* [Update to new logo](../../tree/update/logo)
+* [Add BackstopJS to release process](../../tree/feature/backstop)
+* [Accessibility features for signpost icons](../../tree/component/signpost)
+
+v1.3.15 (released 11 Oct 2016)
+* [Wait until image has loaded before measuring its height](../../tree/component/figure)
+
+v1.3.14 (released 6 Oct 2016)
+* [Add accessibility features to utility navigation and tweak positioning on small screens](../../tree/component/utility-nav)
+* [Add accessibility features to icons](../../tree/component/icons)
+* [Standardise content.updated event which resizes accordions when content changes (e.g. with YoTube embed loading)](../../tree/fix/accordions)
+* [Update to block link style](../../tree/component/block-link)
+* [Stop breaking figures with no content](../../tree/component/figure)
+
+v1.3.13 (released 4 Oct 2016)
+* [More figure fun, separated out into different pages, added --full-width modifier and added a 'clickable' type](../../tree/component/figure)
+* [Add a custom GTM event when you search a searchable](../../tree/module/searchables)
+* [Update the list of icons](../../tree/update/font-awesome)
+
+v1.3.12 (released 14 Sep 2016)
+* [Add divided grid rows](../../tree/component/bordered-grid)
 * [Make linked news items display:block](../../tree/component/news)
 * [Automate releases, add a checksum](../../tree/feature/release-process)
 * [Remove bottom margin from videos in figures, added full-width figure examples](../../tree/component/figure)
-* [Update to block link style](../../tree/component/block-link)
 * [Remove top padding from docs pages](../../tree/fix/docs)
 * [Remove bottom margin from last item in main wrapper](../../tree/fix/footer-margin)
 * [Use a mixin to reduce left/right padding on tiny screens](../../tree/fix/padding)
