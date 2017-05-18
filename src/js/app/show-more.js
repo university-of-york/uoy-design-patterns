@@ -21,11 +21,6 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   // Define other variables for use throughout
   var $window = $(window);
 
-  // "Private" functions (only available inside this file)
-  var colorSwap = function (a, b) {
-    // Remember to return something
-  };
-
   // Define your 'class'
   // Better to pass an options object instead of multiple arguments
   var SHOWMORE = function (options) {
@@ -53,7 +48,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     // On resize or content updated, reset height
     var that = this;
     $window.on('content.updated', function(e, type, obj) {
-      // Only reset height if updated content was within this accordion
+      // Only reset height if updated content was within this showmore
       if (!obj.container) return;
       var $closestContainer = obj.container.closest('.c-show-more__content');
       if ($closestContainer.is(that.content) === true) {
@@ -103,9 +98,6 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
     this.content.attr('data-original-height', contentHeight);
     var thisId = this.content.attr('id') || false;
-    if (thisId !== false && COOKIES.get(thisId) === 'open') {
-      isClosed = false;
-    }
 
     if (isClosed === true) {
       contentHeight = this.defaultHeight;
