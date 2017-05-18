@@ -11,7 +11,7 @@ id: fullscreen-module-page
 
 <div class="lead"><p>The fullscreen module is mostly for use within another module. It allows a button to be created that, when clicked, toggles the classname `is-fullscreen` on its `target` element.</p></div>
 
-Used within the [map module](map-module.html).
+Used within the [map module](../js-modules/map-module.html).
 
 ### Use
 

@@ -1,9 +1,25 @@
 # Release notes
 
 v1.5.0 (next minor)
+* [Changes to sticky nav functionality](../../tree/component/sticky-nav)
 
-v1.4.6 (next patch)
+v1.4.10 (next patch)
+
+v1.4.9 (released 18 May 2017)
+* Updated .htaccess in /fonts to allow localhost domains (added to master)
+* [Create a new 'Show more' component](../../tree/component/show-more)
+
+v1.4.8 (released 9 May 2017)
+* [Update course search for PGT/PGR](../../tree/module/course-search)
+
+v1.4.7 (released 4 May 2017)
+* [Updated links on documentation pages to be relative](../../tree/feature/nav-process)
+* Updated opensearch.xml to new marketing-support email address (added to master)
+* [Remeasure accordions on image load](../../tree/fix/accordions)
+
+v1.4.6 (released 2 Mar 2017)
 * [Fix for banner classname not updating on resize](../../tree/fix/figure)
+* [Fix for main wrapper not resizing when empty](../../tree/fix/js-wrapper-height)
 
 v1.4.5 (released 1 Dec 2016)
 * [Tidy up Formstack - remove imports, take out separate files](../../tree/fix/formstack)

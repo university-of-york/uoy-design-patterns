@@ -11,9 +11,9 @@ id: divided-grid-page
 
 <div class="lead"><p>The classes `o-grid__row--divided-rows` and `o-grid__row--divided-column` can be added to the grid row to put a subtle divider between rows and/or colums.</p></div>
 
-It looks better when you combine it with an [equal height row](/js-modules/equal-height-rows.html).
+It looks better when you combine it with an [equal height row](../js-modules/equal-height-rows.html).
 
-Because of the enormous complexity involved, please don't use [responsive overrides](/layout/grid.html#responsive-override-classes) on grid sizes
+Because of the enormous complexity involved, please don't use [responsive overrides](../layout/grid.html#responsive-override-classes) on grid sizes
 
 ### Divided rows
 

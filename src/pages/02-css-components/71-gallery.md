@@ -9,7 +9,7 @@ id: gallery-page
 
 ---
 
-<div class="lead"><p>A gallery is simply a row of square thumbnails whose modal popups are linked together. More complicated galleries can use a [grid layout](grid.html) to create a two-, three- or four-column layout and add `c-gallery-item` components to each grid box.</p></div>
+<div class="lead"><p>A gallery is simply a row of square thumbnails whose modal popups are linked together. More complicated galleries can use a [grid layout](../css-components/grid.html) to create a two-, three- or four-column layout and add `c-gallery-item` components to each grid box.</p></div>
 
 If a collection of items on a page all have the `js-modal--gallery` class, then they will automatically be scrollable when popped up in a modal window.
 
