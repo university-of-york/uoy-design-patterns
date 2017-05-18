@@ -3,7 +3,9 @@
 v1.5.0 (next minor)
 * [Changes to sticky nav functionality](../../tree/component/sticky-nav)
 
-v1.4.9 (next patch)
+v1.4.10 (next patch)
+
+v1.4.9 (released 18 May 2017)
 * Updated .htaccess in /fonts to allow localhost domains (added to master)
 * [Create a new 'Show more' component](../../tree/component/show-more)
 
