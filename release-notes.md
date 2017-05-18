@@ -5,6 +5,7 @@ v1.5.0 (next minor)
 
 v1.4.9 (next patch)
 * Updated .htaccess in /fonts to allow localhost domains (added to master)
+* [Create a new 'Show more' component](../../tree/component/show-more)
 
 v1.4.8 (released 9 May 2017)
 * [Update course search for PGT/PGR](../../tree/module/course-search)
