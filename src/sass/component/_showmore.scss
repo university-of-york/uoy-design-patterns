@@ -4,27 +4,55 @@
 
 .c-show-more {
   @include component;
+  // Make sure button is higher than content:after
+  .c-btn {
+    position:relative;
+    z-index:8;
+  }
 }
 .c-show-more__content {
-  // @include demarginalise;
-  // padding:$base-spacing;
+  @include transition('opacity');
   overflow:hidden;
-  position:static;
+  position:relative;
   width: 100%;
-  .c-show-more__item.is-closed & {
-    // padding-top:0;
-    // padding-bottom:0;
-    // Height is added by JS
-    // height:0;
+  &:after {
+    content:'';
+    display:block;
+    width:100%;
+    height:$base-spacing * 2; // half is opaque, half is gradient to transparent
+    background-image:linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%);
+    position:absolute;
+    bottom:0;
+    left:0;
+    opacity:0;
   }
-  // Starting class - added by JS to hide the content but still be able to get the height
-  &.is-ghost {
-    .c-show-more.is-closed & {
-      // padding-top:$base-spacing;
-      // padding-bottom:$base-spacing;
+  .c-show-more.is-closed &:after {
+    opacity:1;
+  }
+}
+// Different colour gradients for use in alt rows
+.o-grid__row--alt1 {
+  .c-show-more__content {
+    &:after {
+      background-image:linear-gradient(to bottom, transparentize($o-grid__row--alt1-background-color, 1) 0%, $o-grid__row--alt1-background-color 50%);
     }
   }
 }
+.o-grid__row--alt2 {
+  .c-show-more__content {
+    &:after {
+      background-image:linear-gradient(to bottom, transparentize($o-grid__row--alt2-background-color, 1) 0%, $o-grid__row--alt2-background-color 50%);
+    }
+  }
+}
+.o-grid__row--alt3 {
+  .c-show-more__content {
+    &:after {
+      background-image:linear-gradient(to bottom, transparentize($o-grid__row--alt3-background-color, 1) 0%, $o-grid__row--alt3-background-color 50%);
+    }
+  }
+}
+
 .csstransforms {
   // 'is-ready' class added by JS after preparation
   .c-show-more__content.is-ready {

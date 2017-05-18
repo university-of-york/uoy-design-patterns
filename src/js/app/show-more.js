@@ -41,7 +41,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     this.buttonTextLess = options.buttonTextLess || Default.buttonTextLess;
 
     // Hide content
-    // this.content.addClass('is-closed');
+    this.container.addClass('is-closed');
 
     // Enable transition
     var iC = this.content;
@@ -80,7 +80,8 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
   };
 
-  // "Public" functions (accessible outside this file)
+  // Boolean to see if animation is still underway
+  SHOWMORE.prototype.isToggling = false;
 
   SHOWMORE.prototype.setShowMoreHeight = function (type, obj) {
 
@@ -107,7 +108,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     }
 
     if (isClosed === true) {
-      contentHeight = 0;
+      contentHeight = this.defaultHeight;
       this.container.addClass('is-closed');
     }
 
@@ -120,12 +121,51 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
   SHOWMORE.prototype.addButton = function () {
 
-    var buttonIcon = $('<i>').addClass('c-icon c-icon--chevron-down c-icon--after');
-    this.button = $('<button>').addClass('c-btn c-btn--medium c-btn--secondary').text(this.buttonTextMore).append(buttonIcon);
+    this.buttonIcon = $('<i>').addClass('c-icon c-icon--chevron-down c-icon--after');
+    this.button = $('<button>').addClass('c-btn c-btn--medium c-btn--secondary')
+                               .text(this.buttonTextMore).append(this.buttonIcon)
+                               .on('click', { that: this }, this.toggleState);
 
-    this.container.append(this.button);
+    return this.container.append(this.button);
 
-    console.log('Adding button...');
+  };
+
+  SHOWMORE.prototype.toggleState = function (e) {
+
+    e.preventDefault();
+
+    // Temp this-holder
+    var that = e.data && e.data.that ? e.data.that : this ;
+
+    // Things are still moving
+    if (that.isToggling) return false;
+
+    that.isToggling = true;
+
+    var contentHeight = that.content.outerHeight();
+    var newContentHeight = that.defaultHeight;
+
+    if (contentHeight === that.defaultHeight) {
+      newContentHeight = that.content.attr('data-original-height');
+    }
+
+    that.content.css('height', newContentHeight);
+    that.container.toggleClass('is-closed');
+
+    // Update button text
+    var isClosed = that.container.hasClass('is-closed');
+    if (isClosed === true) {
+      that.buttonIcon.addClass('c-icon--chevron-down').removeClass('c-icon--chevron-up');
+      that.button.text(that.buttonTextMore).append(that.buttonIcon);
+    } else {
+      that.buttonIcon.addClass('c-icon--chevron-up').removeClass('c-icon--chevron-down');
+      that.button.text(that.buttonTextLess).append(that.buttonIcon);
+    }
+
+    that.isToggling = false;
+
+    // Returns true if open, false if closed
+    return !isClosed;
 
   };
 

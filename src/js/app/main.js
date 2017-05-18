@@ -192,7 +192,7 @@ define(
       });
     });
 
-    // Add youtube video to embed links
+    // Add Soundcloud audio to embed links
     UTILS.eachIfExists('.soundcloud-audio-embed', function (i, a) {
       new SOUNDCLOUD({
         link: $(a)
@@ -242,9 +242,13 @@ define(
     UTILS.eachIfExists('.js-show-more', function (i, a) {
       var $a = $(a);
       var defaultHeight = parseInt($a.attr('data-default-height'), 10);
+      var buttonTextMore = $a.attr('data-more-text') || false;
+      var buttonTextLess = $a.attr('data-less-text') || false;
       var e = new SHOWMORE({
         container: $a,
-        defaultHeight: defaultHeight
+        defaultHeight: defaultHeight,
+        buttonTextMore: buttonTextMore,
+        buttonTextLess: buttonTextLess
       });
     });
 
