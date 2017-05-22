@@ -14,6 +14,7 @@
   cursor: pointer;
   transition: all 0.2s ease-out;
   vertical-align: top;
+  text-align:center;
   // Just some default colors
   background-color:map-get(map-get($c-btn, default), bg);
   color:map-get(map-get($c-btn, default), text);
@@ -60,6 +61,10 @@
       background-color: $bgFocusColor;
       outline-color: $bgFocusColor;
     }
+  }
+  .c-btn.c-btn--selectable#{$name}:checked + .c-btn--selectable__label {
+    background-color:lighten(map-get(map-get($c-btn, default), bg), 15);
+    color: map-get(map-get($c-btn, default), text);
   }
 }
 .c-btn--disabled {
@@ -109,14 +114,15 @@
 // Selectable button
 .c-btn--selectable {
   display: none;
-  + label {
+  + .c-btn--selectable__label{
     user-select: none;
     transition: 0s;
   }
-  &:checked + label {
-    background-color:lighten(map-get(map-get($c-btn, default), bg), 15);
-    color: map-get(map-get($c-btn, default), text);
-  }
+  // Checked colors can be found in the loop for button types
+  // &:checked + .c-btn--selectable__label {
+  //   background-color:lighten(map-get(map-get($c-btn, default), bg), 15);
+  //   color: map-get(map-get($c-btn, default), text);
+  // }
 }
 // Button groups
 .c-btn-group {

@@ -37,10 +37,22 @@ A button can also be _disabled_ (even _link_ type buttons):
 component("button", { "text": "Don't click this!", "type": "disabled", "disabled": true });
 </script>
 
-A button can also be _selectable_:
+A button can also be _selectable_, either as a _checkbox_ (default) or a _radio_.
+
+See [button groups](./button-groups.html) for how these work in practice. 
 
 <script>
-component("button-selectable", { "text": "Click me!", "type": "selectable"});
+component("button-selectable", { "text": "Selectable", "checkbox": true, "id": "chk1" })
++component("button-selectable", { "text": "Another selectable", "radio": true, "id": "rad1" });
+</script>
+
+They can be combined with _size_, _type_ and _icons_.
+<!-- perhaps add in a script to change text/icon on select? -->
+
+<script>
+component("button-selectable", { "text": "Stop", "checkbox": true, "id": "chk2", "size": "large", "type": "secondary", "icon-before": "stop" })
++component("button-selectable", { "text": "Tweet this", "radio": true, "id": "rad2", "size": "small", "type": "danger", "icon-above": "twitter" })
++component("button-selectable", { "checkbox": true, "id": "chk3", "size": "huge", "type": "success", "icon": "twitter" });
 </script>
 
 You can define the size of the button too:
@@ -94,6 +106,7 @@ A block button takes 100% of the width of the containing element. They're useful
 * **button-input**
 * **button-submit**
 * **button-reset**
+* **button-selectable**
   * **text**: the text on the button **(required)**
   * **type**: one of _default_ (default), _cancel_, _primary_ and _highlight_
   * **size**: one of _tiny_, _small_, _medium_ (default), _large_ or _huge_
@@ -103,3 +116,6 @@ A block button takes 100% of the width of the containing element. They're useful
   * **href**: the URL to visit when clicked (only for button-link, defaults to "#")
   * **block**: (Boolean) defaults to false
   * **disabled**: is the button disabled? (Boolean) defaults to false
+* **button-selectable** *only*
+  * **checkbox/radio**: (Boolean) defaults to _checkbox_
+  * **id**: (String) (required)
