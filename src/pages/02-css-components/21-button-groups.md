@@ -96,7 +96,29 @@ component("button-group", { "block": true, "atoms": [
   { "button": { "text": "Eye", "icon-above": "eye" } },
   { "button": { "text": "Music", "icon-above": "music" } },
   { "button": { "text": "Newspaper", "icon-above": "newspaper-o" } }
+]})
+</script>
+
+## Selectable buttons groups
+
+checkbox and radio
+
+<script>
+component("button-group", { "block": true, "name": "checkboxExample","atoms": [
+  { "button-selectable": { "text": "Car Parks", "checkbox": true, "id": "chk1", "type": "secondary", "icon-above": "car" } },
+  { "button-selectable": { "text": "Bike Racks", "checkbox": true, "id": "chk2", "type": "secondary", "icon-above": "bicycle" } },
+  { "button-selectable": { "text": "Bus Stops", "checkbox": true, "id": "chk3", "type": "secondary", "icon-above": "bus" } },
+  { "button-selectable": { "text": "Cash Points", "checkbox": true, "id": "chk4", "type": "secondary", "icon-above": "money" } },
+  { "button-selectable": { "text": "Available PC's", "checkbox": true, "id": "chk5", "type": "secondary", "icon-above": "desktop" } },
+  { "button-selectable": { "text": "Shops", "checkbox": true, "id": "chk6", "type": "secondary", "icon-above": "shopping-basket" } }
+
+]})
++component("button-group", { "name": "radioExample", "atoms": [
+  { "button-selectable": { "text": "Yes", "radio": true, "id": "rd2", "type": "success", "icon-above": "check" } },
+  { "button-selectable": { "text": "Maybe", "radio": true, "id": "rd3", "type": "secondary", "icon-above": "question" } },
+  { "button-selectable": { "text": "No", "radio": true, "id": "rd4", "type": "danger", "icon-above": "close" } }
 ]});
+
 </script>
 
 ### Options

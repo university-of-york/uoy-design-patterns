@@ -39,7 +39,7 @@ component("button", { "text": "Don't click this!", "type": "disabled", "disabled
 
 A button can also be _selectable_, either as a _checkbox_ (default) or a _radio_.
 
-See [button groups](./button-groups.html) for how these work in practice. 
+See [button groups](./button-groups.html) for how these work in practice.
 
 <script>
 component("button-selectable", { "text": "Selectable", "checkbox": true, "id": "chk1" })
