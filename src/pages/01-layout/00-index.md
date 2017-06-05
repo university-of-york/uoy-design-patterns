@@ -8,7 +8,7 @@ id: layout-page
 
 ---
 
-<div class="lead"><p>This is how we put the site together. Top-level items, like the [grid system](layout/grid.html), typography and navigation.</p></div>
+<div class="lead"><p>This is how we put the site together. Top-level items, like the [grid system](../layout/grid.html), typography and navigation.</p></div>
 
 ## Basic page structure
 
@@ -41,7 +41,7 @@ Then in the head section:
 </head>
 ```
 
-The `body` of the page should contain a main [_header_](/navigation.html#main-header), _wrapper_ and _footer_, and can optionally include a [_page title_](/navigation.html#page-title), a [_main nav_](/navigation.html#menu-navigation) and a [_breadcrumb_](/breadcrumb.html).
+The `body` of the page should contain a main [_header_](../layout/navigation.html#main-header), _wrapper_ and _footer_, and can optionally include a [_page title_](../layout/navigation.html#page-title), a [_main nav_](../layout/navigation.html#menu-navigation) and a [_breadcrumb_](../layout/breadcrumb.html).
 
 ```markup
 <body>

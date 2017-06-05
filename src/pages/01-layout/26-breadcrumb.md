@@ -41,7 +41,7 @@ If the bread crumb becomes unmanageably large (I'm talking to you, departmental 
 </div>
 ```
 
-There is also a [JS fix](utils.html#utils-cleanbreadcrumbs-) which removes the last item if it is called "Header".
+There is also a [JS fix](../js-modules/utils.html#utils-cleanbreadcrumbs-) which removes the last item if it is called "Header".
 
 <div class="c-breadcrumb">
   <div class="c-breadcrumb__items">

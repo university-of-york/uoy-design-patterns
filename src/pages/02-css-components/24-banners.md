@@ -9,9 +9,9 @@ id: banners-page
 
 ---
 
-<div class="lead"><p>Banners act in a similar was to [figures](./figures.html). The biggest difference is that, in a banner, the figure is resized to fit the content, rather than the size of the image. So a banner _must_ have some `c-figure__content` or it will be very small.</p></div>
+<div class="lead"><p>Banners act in a similar was to [figures](../css-components/figures.html). The biggest difference is that, in a banner, the figure is resized to fit the content, rather than the size of the image. So a banner _must_ have some `c-figure__content` or it will be very small.</p></div>
 
-Theres a special page for [full-width figures](./full-width-figures.html).
+Theres a special page for [full-width figures](../css-components/full-width-figures.html).
 
 ### Position
 
@@ -40,7 +40,7 @@ component("figure", { "type":"banner", "image": "https://unsplash.it/1200/600/?i
 
 ### Captions
 
-Captions work in the same way as with [regular figures](./figures.html#figure-captions).
+Captions work in the same way as with [regular figures](../css-components/figures.html#figure-captions).
 
 <script>
 component("figure", { "image": "https://unsplash.it/800/400/?image=777", "type": "banner", "content": { "text" : "<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>" }, "caption": { "text" : "<i class=\"c-icon c-icon--camera c-figure__caption-icon\"></i> Simple text caption", "position": "bottom-right" } } );
@@ -48,7 +48,7 @@ component("figure", { "image": "https://unsplash.it/800/400/?image=777", "type":
 
 ### Clickable banners
 
-As with [figures](./figures.html#clickable-figures), buttons in clickable figures should be `<button>`s and any links in the text should be `<span>`s with a class of `u-link` (they will all link to the same location as the main clickable URL).
+As with [figures](../css-components/figures.html#clickable-figures), buttons in clickable figures should be `<button>`s and any links in the text should be `<span>`s with a class of `u-link` (they will all link to the same location as the main clickable URL).
 
 <script>
 component("figure", { "image": "https://unsplash.it/1200/600/?image=780", "type":"banner", "url": "https://www.york.ac.uk", "content": { "text" : "<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And the <span class=\"u-link\">Gryphon</span> added 'Come, let's hear some of YOUR adventures.'</p>\n<button class=\"c-btn c-btn--medium c-btn--block c-btn--primary\">Click here for more</button>" } } );
@@ -70,4 +70,4 @@ If you don't put any content in a `banner`, it will be 20px high (because of the
 component("figure", { "image": "https://unsplash.it/800/400/?image=779", "type": "banner" } );
 </script>
 
-### Options (see [figures page](./css-components/figures.html))
+### Options (see [figures page](../css-components/figures.html))

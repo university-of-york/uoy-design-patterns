@@ -40,7 +40,7 @@ component("news-excerpt", {
 });
 </script>
 
-When it's within an `alt` row the background will be white and the box will be padded. You can see this in action on the [demo research front page](/templates/research/index.html)
+When it's within an `alt` row the background will be white and the box will be padded. You can see this in action on the [research front page](https://www.york.ac.uk/research/)
 
 ## News event with labels and event dates
 
@@ -100,7 +100,7 @@ component("news-list", { "atoms":[
 ]});
 </script>
 
-You can see this in action on the [demo research front page](/templates/research/index.html)
+You can see this in action on the [research front page](https://www.york.ac.uk/research/)
 
 ## News article
 
@@ -119,7 +119,7 @@ component("news-article", {
 });
 </script>
 
-You can see this in action on the [demo research article](/research/themes/car-electronics/index.html)
+You can see this in action on a [research article](https://www.york.ac.uk/research/themes/business-social-responsible/)
 
 ### Options
 

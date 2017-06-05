@@ -17,7 +17,7 @@ The main header has a button, hidden on larger screens, that pops out the search
   <div class="o-wrapper o-grid">
     <div class="o-grid__row">
       <div class="o-grid__box o-grid__box--threequarters o-grid__box--threequarters@medium o-grid__box--threequarters@small o-grid__box--threequarters@tiny">
-        <h2 class="c-main-header__title"><a class="c-main-header__link" href="http://www.york.ac.uk"><img class="c-main-header__logo" src="/img/logo.svg" alt="University of York logo"></a></h2>
+        <h2 class="c-main-header__title"><a class="c-main-header__link" href="https://www.york.ac.uk"><img class="c-main-header__logo" src="https://www.york.ac.uk/static/stable/img/logo.svg" alt="University of York logo"></a></h2>
       </div>
       <div class="o-grid__box o-grid__box--quarter o-grid__box--quarter@medium o-grid__box--quarter@small o-grid__box--quarter@tiny">
         <form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--header">
@@ -56,7 +56,7 @@ The main header has a button, hidden on larger screens, that pops out the search
   <div class="o-wrapper o-grid">
     <div class="o-grid__row">
       <div class="o-grid__box o-grid__box--threequarters o-grid__box--threequarters@medium o-grid__box--threequarters@small o-grid__box--threequarters@tiny">
-        <h2 class="c-main-header__title"><a class="c-main-header__link" href="http://www.york.ac.uk"><img class="c-main-header__logo" src="/img/logo.svg" alt="University of York logo"></a></h2>
+        <h2 class="c-main-header__title"><a class="c-main-header__link" href="https://www.york.ac.uk"><img class="c-main-header__logo" src="https://www.york.ac.uk/static/stable/img/logo.svg" alt="University of York logo"></a></h2>
       </div>
       <div class="o-grid__box o-grid__box--quarter o-grid__box--quarter@medium o-grid__box--quarter@small o-grid__box--quarter@tiny">
         <form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--header">
@@ -95,11 +95,11 @@ The main header has a button, hidden on larger screens, that pops out the search
 
 ### Sticky nav
 
-The sticky nav strays in place on the page until it hits the top of the screen, at which point it stays fixed to the top, highlighting the nearest section fragment as it goes.
+The sticky nav stays in place on the page until it hits the top of the screen, at which point it stays fixed to the top, highlighting the nearest section fragment as it goes.
 
 <div class="c-nav__wrapper">
   <nav class="c-nav c-nav--sticky js-sticky-nav js-targeted-nav">
-    <ul class="c-nav__list"><li class="c-nav__item"><a class="c-nav__link" href="#sticky-navigation">Sticky nav</a></li><li class="c-nav__item"><a class="c-nav__link" href="#utility-navigation">Utility nav</a></li><li class="c-nav__item"><a class="c-nav__link" href="#page-title">Page title</a></li><li class="c-nav__item"><a class="c-nav__link" href="#menu-navigation">Menu nav</a></li><li class="c-nav__item"><a class="c-nav__link" href="#breadcrumb-navigation">Breadcrumb</a></li><li class="c-nav__item"><a class="c-nav__link" href="#putting-it-all-together">Putting it all together</a></li></ul>
+    <ul class="c-nav__list"><li class="c-nav__item"><a class="c-nav__link" href="#sticky-nav">Sticky nav</a></li><li class="c-nav__item"><a class="c-nav__link" href="#utility-navigation">Utility nav</a></li><li class="c-nav__item"><a class="c-nav__link" href="#page-title">Page title</a></li><li class="c-nav__item"><a class="c-nav__link" href="#menu-navigation">Menu nav</a></li><li class="c-nav__item"><a class="c-nav__link" href="#breadcrumb-navigation">Breadcrumb</a></li><li class="c-nav__item"><a class="c-nav__link" href="#putting-it-all-together">Putting it all together</a></li></ul>
   </nav>
 </div>
 
@@ -514,7 +514,7 @@ Unopened, the main navigation shows the pages currently in this section. Open it
   <div class="o-wrapper o-grid">
     <div class="o-grid__row">
       <div class="o-grid__box o-grid__box--threequarters o-grid__box--threequarters@medium o-grid__box--threequarters@small o-grid__box--threequarters@tiny">
-        <h2 class="c-main-header__title"><a class="c-main-header__link" href="http://www.york.ac.uk"><img class="c-main-header__logo" src="/img/logo.svg" alt="University of York logo"></a></h2>
+        <h2 class="c-main-header__title"><a class="c-main-header__link" href="https://www.york.ac.uk"><img class="c-main-header__logo" src="https://www.york.ac.uk/static/stable/img/logo.svg" alt="University of York logo"></a></h2>
       </div>
       <div class="o-grid__box o-grid__box--quarter o-grid__box--quarter@medium o-grid__box--quarter@small o-grid__box--quarter@tiny">
         <form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--header">
@@ -575,7 +575,7 @@ Unopened, the main navigation shows the pages currently in this section. Open it
   <div class="o-wrapper o-grid">
     <div class="o-grid__row">
       <div class="o-grid__box o-grid__box--threequarters o-grid__box--threequarters@medium o-grid__box--threequarters@small o-grid__box--threequarters@tiny">
-        <h2 class="c-main-header__title"><a class="c-main-header__link" href="http://www.york.ac.uk"><img class="c-main-header__logo" src="/img/logo.svg" alt="University of York logo"></a></h2>
+        <h2 class="c-main-header__title"><a class="c-main-header__link" href="https://www.york.ac.uk"><img class="c-main-header__logo" src="https://www.york.ac.uk/static/stable/img/logo.svg" alt="University of York logo"></a></h2>
       </div>
       <div class="o-grid__box o-grid__box--quarter o-grid__box--quarter@medium o-grid__box--quarter@small o-grid__box--quarter@tiny">
         <form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--header">

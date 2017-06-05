@@ -4,14 +4,14 @@ define(
    'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/prioritised-tables',
    'app/toggle', 'app/utility-toggle', 'app/wrapper-height', 'app/youtube-embed',
    'app/soundcloud-embed', 'app/searchables', 'app/filterable-tables', 'app/equal-height-row',
-   'app/google-map'],
+   'app/google-map', 'app/show-more'],
   function (
     $, ES5SHIM, PICTUREFILL, IFRAMERESIZER,
     UTILS, MODALLINK, ACCORDION, STICKYNAV,
     TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
     TOGGLE, UTILITYTOGGLE, WRAPPERHEIGHT, YOUTUBE,
     SOUNDCLOUD, SEARCHABLE, FILTERABLE, EQUALHEIGHT,
-    GOOGLEMAP) {
+    GOOGLEMAP, SHOWMORE) {
 
   $(function(){
 
@@ -192,7 +192,7 @@ define(
       });
     });
 
-    // Add youtube video to embed links
+    // Add Soundcloud audio to embed links
     UTILS.eachIfExists('.soundcloud-audio-embed', function (i, a) {
       new SOUNDCLOUD({
         link: $(a)
@@ -231,10 +231,24 @@ define(
       });
     });
 
-    // Make a table filterable
+    // Make equal height rows
     UTILS.eachIfExists('.js-equal-height-row', function (i, a) {
       var e = new EQUALHEIGHT({
         row: $(a)
+      });
+    });
+
+    // Set up 'Show more' containers
+    UTILS.eachIfExists('.js-show-more', function (i, a) {
+      var $a = $(a);
+      var defaultHeight = parseInt($a.attr('data-default-height'), 10);
+      var buttonTextMore = $a.attr('data-more-text') || false;
+      var buttonTextLess = $a.attr('data-less-text') || false;
+      var e = new SHOWMORE({
+        container: $a,
+        defaultHeight: defaultHeight,
+        buttonTextMore: buttonTextMore,
+        buttonTextLess: buttonTextLess
       });
     });
 
@@ -249,20 +263,26 @@ define(
     // Set min-height on wrapper (to ensure footer is (at least) at bottom of page)
     var w = new WRAPPERHEIGHT();
 
-    UTILS.eachIfExists('#Course-Search', function(i, a) {
+    // Update course search when radio buttons are clicked
+    // Inputs are called 'level-undergraduate', 'level-postgraduate-research' and 'level-postgraduate-taught'
+    UTILS.eachIfExists('#Course-Search, .js-course-search', function(i, a) {
       var $a = $(a),
-          inputs = $a.find('input[type=radio]');
+          inputs = $a.find('input[type=radio]'),
+          $modeInput = $a.find('#mode');
       inputs.change(function(e) {
-        var level = $(this).attr('id').substr(6),
-            action = '/study/'+level+'/courses/search/';
+        var parts = $(this).attr('id').split('-');
+        var level = parts[1];
+        var mode = parts[2] || "";
+        var action = '/study/'+level+'/courses/search/';
+        $modeInput.val(mode);
         $a.attr('action', action);
       });
     });
 
-    // Broadcast window events
-    if (UTILS.isDev) {
-      $window.on('data font nav content toggle', function(e) {
-        console.info(e.target);
+    // Broadcast custom window events
+    if (UTILS.isDev() === true) {
+      $window.on('data.loaded fonts.active nav.new-targeted-current search.updated content.updated resized.height resized.width toggle', function(e) {
+        console.info(e.type+'.'+e.namespace+' fired', e);
       });
     }
 

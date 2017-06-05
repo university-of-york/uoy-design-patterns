@@ -1,10 +1,26 @@
 # Release notes
 
-v1.5.0 (next minor)
+v1.6.0 (next minor release)
 
-v1.4.7 (next patch)
+v1.5.1 (next patch release)
+
+v1.5.0 (released 5 Jun 2017)
+* [Changes to sticky nav functionality](../../tree/component/sticky-nav)
+* [Update to Font Awesome 4.7](../../tree/update/font-awesome)
+* [Remove text-decoration from abbr](../../tree/fix/abbr)
+
+v1.4.10-0 (released 18 May 2017)
+v1.4.9 (released 18 May 2017)
+* Updated .htaccess in /fonts to allow localhost domains (added to master)
+* [Create a new 'Show more' component](../../tree/component/show-more)
+
+v1.4.8 (released 9 May 2017)
+* [Update course search for PGT/PGR](../../tree/module/course-search)
+
+v1.4.7 (released 4 May 2017)
 * [Updated links on documentation pages to be relative](../../tree/feature/nav-process)
 * Updated opensearch.xml to new marketing-support email address (added to master)
+* [Remeasure accordions on image load](../../tree/fix/accordions)
 
 v1.4.6 (released 2 Mar 2017)
 * [Fix for banner classname not updating on resize](../../tree/fix/figure)

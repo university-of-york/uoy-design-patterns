@@ -48,6 +48,14 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
       that.setAccordionHeight.apply(that, ['resize']);
     }, 250));
 
+    // Fire content.updated on images within accordions
+    this.itemContent.find('img').each(function(i, img) {
+      var $img = $(img);
+      $img.load(function(e) {
+        that.setAccordionHeight.apply(that, ['imageload', $img]);
+      });
+    });
+
     // Initial load
     that.setAccordionHeight.apply(that, ['initial']);
 
@@ -60,6 +68,8 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
 
   // Set the height of the hidden accordion content
   ACCORDION.prototype.setAccordionHeight = function(type, obj) {
+
+    // console.log('Accordion height set', type, obj);
 
     // type is the type of thing triggering the update event
     // obj is the object that triggers it (if needed)
