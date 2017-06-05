@@ -20,7 +20,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     $.each(numbers, function (i, v) {
       var vt = v.trim();
       var vl = vt.replace(' ', '').replace('(0)', '');
-      if (i == numbers.length - 1 && i !== 0) output+= ' or ';
+      if (i === numbers.length - 1 && i !== 0) output+= ' or ';
       output+= '<a class="c-clearing-table__phone-number" href="tel:'+vl+'">'+vt+'</a>';
       if (i < numbers.length - 2) output+= ', ';
     });

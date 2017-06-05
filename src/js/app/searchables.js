@@ -128,7 +128,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     // Push custom event to GTM
     try {
       dataLayer.push({'event':'searchable-text', 'search-text': inputContent});
-    } catch(e) {
+    } catch(err) {
       console.warn('Could not add event to GTM');
     }
   };
