@@ -2,8 +2,7 @@
 
 v1.5.0 (next minor)
 * [Changes to sticky nav functionality](../../tree/component/sticky-nav)
-
-v1.4.10 (next patch)
+* [Update to Font Awesome 4.7](../../tree/update/font-awesome)
 * [Remove text-decoration from abbr](../../tree/fix/abbr)
 
 v1.4.10-0 (released 18 May 2017)
