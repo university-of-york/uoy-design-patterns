@@ -1,6 +1,10 @@
 # Release notes
 
-v1.5.0 (next minor)
+v1.6.0 (next minor release)
+
+v1.5.1 (next patch release)
+
+v1.5.0 (released 5 Jun 2017)
 * [Changes to sticky nav functionality](../../tree/component/sticky-nav)
 * [Update to Font Awesome 4.7](../../tree/update/font-awesome)
 * [Remove text-decoration from abbr](../../tree/fix/abbr)
