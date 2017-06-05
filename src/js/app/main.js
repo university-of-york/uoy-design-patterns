@@ -84,14 +84,14 @@ define(
 
     // Add prioritised tables functionality
     UTILS.eachIfExists('.js-prioritised-table', function (i, table) {
-      new TABLE({
+      TABLE({
         container: table
       });
     });
 
     // Add tab functionality
     UTILS.eachIfExists('.js-tabs', function (i, tabs) {
-      new TABS({
+      TABS({
         container: tabs
       });
     });
@@ -104,7 +104,7 @@ define(
     UTILS.eachIfExists('.js-toggle-button', function (i, button) {
       var $b = $(button);
       var $c = $($b.attr('href'));
-      new TOGGLE({
+      TOGGLE({
         container: $c,
         button: $b,
         className:'is-open'
@@ -114,7 +114,7 @@ define(
     // Add utility nav toggle functionality
     UTILS.eachIfExists('.c-utility-nav', function (i, nav) {
       var $n = $(nav);
-      new UTILITYTOGGLE({
+      UTILITYTOGGLE({
         container: $n
       });
     });
@@ -123,7 +123,7 @@ define(
     UTILS.eachIfExists('.js-alert-close', function (i, button) {
       var $b = $(button);
       var $c = $($b.closest('.c-alert'));
-      new TOGGLE({
+      TOGGLE({
         container: $c,
         button: $b,
         className:'is-hidden',
