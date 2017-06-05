@@ -26,6 +26,10 @@
 
 // Lay out the icons nicely
 #icons-page {
+  // Headers after icons
+  i + h3 {
+    margin-top:28px;
+  }
   .o-wrapper--main .c-icon {
     width:96%;
     width:calc(100% - 24px);

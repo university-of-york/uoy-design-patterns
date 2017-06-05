@@ -52,1401 +52,945 @@ See the [Font Awesome docs](http://fontawesome.io/accessibility/) for more detai
 ### List of icons
 
 Here's a comprehensive list of icons.
-
+, "style": "inverse"
 <script>
-component("icon", { "type": "500px" } )
-+component("icon", { "type": "adjust" } )
-+component("icon", { "type": "adn" } )
-+component("icon", { "type": "align-center" } )
-+component("icon", { "type": "align-justify" } )
-+component("icon", { "type": "align-left" } )
-+component("icon", { "type": "align-right" } )
-+component("icon", { "type": "amazon" } )
-+component("icon", { "type": "ambulance" } )
-+component("icon", { "type": "anchor" } )
-+component("icon", { "type": "android" } )
-+component("icon", { "type": "angellist" } )
-+component("icon", { "type": "angle-double-down" } )
-+component("icon", { "type": "angle-double-left" } )
-+component("icon", { "type": "angle-double-right" } )
-+component("icon", { "type": "angle-double-up" } )
-+component("icon", { "type": "angle-down" } )
-+component("icon", { "type": "angle-left" } )
-+component("icon", { "type": "angle-right" } )
-+component("icon", { "type": "angle-up" } )
-+component("icon", { "type": "apple" } )
-+component("icon", { "type": "archive" } )
-+component("icon", { "type": "area-chart" } )
-+component("icon", { "type": "arrow-circle-down" } )
-+component("icon", { "type": "arrow-circle-left" } )
-+component("icon", { "type": "arrow-circle-o-down" } )
-+component("icon", { "type": "arrow-circle-o-left" } )
-+component("icon", { "type": "arrow-circle-o-right" } )
-+component("icon", { "type": "arrow-circle-o-up" } )
-+component("icon", { "type": "arrow-circle-right" } )
-+component("icon", { "type": "arrow-circle-up" } )
-+component("icon", { "type": "arrow-down" } )
-+component("icon", { "type": "arrow-left" } )
-+component("icon", { "type": "arrow-right" } )
-+component("icon", { "type": "arrow-up" } )
-+component("icon", { "type": "arrows" } )
-+component("icon", { "type": "arrows-alt" } )
-+component("icon", { "type": "arrows-h" } )
-+component("icon", { "type": "arrows-v" } )
-+component("icon", { "type": "asterisk" } )
-+component("icon", { "type": "at" } )
-+component("icon", { "type": "automobile" } )
-+component("icon", { "type": "backward" } )
-+component("icon", { "type": "balance-scale" } )
-+component("icon", { "type": "ban" } )
-+component("icon", { "type": "bank" } )
-+component("icon", { "type": "bar-chart" } )
-+component("icon", { "type": "bar-chart-o" } )
-+component("icon", { "type": "barcode" } )
-+component("icon", { "type": "bars" } )
-+component("icon", { "type": "battery-0" } )
-+component("icon", { "type": "battery-1" } )
-+component("icon", { "type": "battery-2" } )
-+component("icon", { "type": "battery-3" } )
-+component("icon", { "type": "battery-4" } )
-+component("icon", { "type": "battery-empty" } )
-+component("icon", { "type": "battery-full" } )
-+component("icon", { "type": "battery-half" } )
-+component("icon", { "type": "battery-quarter" } )
-+component("icon", { "type": "battery-three-quarters" } )
-+component("icon", { "type": "bed" } )
-+component("icon", { "type": "beer" } )
-+component("icon", { "type": "behance" } )
-+component("icon", { "type": "behance-square" } )
-+component("icon", { "type": "bell" } )
-+component("icon", { "type": "bell-o" } )
-+component("icon", { "type": "bell-slash" } )
-+component("icon", { "type": "bell-slash-o" } )
-+component("icon", { "type": "bicycle" } )
-+component("icon", { "type": "binoculars" } )
-+component("icon", { "type": "birthday-cake" } )
-+component("icon", { "type": "bitbucket" } )
-+component("icon", { "type": "bitbucket-square" } )
-+component("icon", { "type": "bitcoin" } )
-+component("icon", { "type": "black-tie" } )
-+component("icon", { "type": "bluetooth" } )
-+component("icon", { "type": "bluetooth-b" } )
-+component("icon", { "type": "bold" } )
-+component("icon", { "type": "bolt" } )
-+component("icon", { "type": "bomb" } )
-+component("icon", { "type": "book" } )
-+component("icon", { "type": "bookmark" } )
-+component("icon", { "type": "bookmark-o" } )
-+component("icon", { "type": "briefcase" } )
-+component("icon", { "type": "btc" } )
-+component("icon", { "type": "bug" } )
-+component("icon", { "type": "building" } )
-+component("icon", { "type": "building-o" } )
-+component("icon", { "type": "bullhorn" } )
-+component("icon", { "type": "bullseye" } )
-+component("icon", { "type": "bus" } )
-+component("icon", { "type": "buysellads" } )
-+component("icon", { "type": "cab" } )
-+component("icon", { "type": "calculator" } )
-+component("icon", { "type": "calendar" } )
-+component("icon", { "type": "calendar-check-o" } )
-+component("icon", { "type": "calendar-minus-o" } )
-+component("icon", { "type": "calendar-o" } )
-+component("icon", { "type": "calendar-plus-o" } )
-+component("icon", { "type": "calendar-times-o" } )
-+component("icon", { "type": "camera" } )
-+component("icon", { "type": "camera-retro" } )
-+component("icon", { "type": "car" } )
-+component("icon", { "type": "caret-down" } )
-+component("icon", { "type": "caret-left" } )
-+component("icon", { "type": "caret-right" } )
-+component("icon", { "type": "caret-square-o-down" } )
-+component("icon", { "type": "caret-square-o-left" } )
-+component("icon", { "type": "caret-square-o-right" } )
-+component("icon", { "type": "caret-square-o-up" } )
-+component("icon", { "type": "caret-up" } )
-+component("icon", { "type": "cart-arrow-down" } )
-+component("icon", { "type": "cart-plus" } )
-+component("icon", { "type": "cc" } )
-+component("icon", { "type": "cc-amex" } )
-+component("icon", { "type": "cc-diners-club" } )
-+component("icon", { "type": "cc-discover" } )
-+component("icon", { "type": "cc-jcb" } )
-+component("icon", { "type": "cc-mastercard" } )
-+component("icon", { "type": "cc-paypal" } )
-+component("icon", { "type": "cc-stripe" } )
-+component("icon", { "type": "cc-visa" } )
-+component("icon", { "type": "certificate" } )
-+component("icon", { "type": "chain" } )
-+component("icon", { "type": "chain-broken" } )
-+component("icon", { "type": "check" } )
-+component("icon", { "type": "check-circle" } )
-+component("icon", { "type": "check-circle-o" } )
-+component("icon", { "type": "check-square" } )
-+component("icon", { "type": "check-square-o" } )
-+component("icon", { "type": "chevron-circle-down" } )
-+component("icon", { "type": "chevron-circle-left" } )
-+component("icon", { "type": "chevron-circle-right" } )
-+component("icon", { "type": "chevron-circle-up" } )
-+component("icon", { "type": "chevron-down" } )
-+component("icon", { "type": "chevron-left" } )
-+component("icon", { "type": "chevron-right" } )
-+component("icon", { "type": "chevron-up" } )
-+component("icon", { "type": "child" } )
-+component("icon", { "type": "chrome" } )
-+component("icon", { "type": "circle" } )
-+component("icon", { "type": "circle-o" } )
-+component("icon", { "type": "circle-o-notch" } )
-+component("icon", { "type": "circle-thin" } )
-+component("icon", { "type": "clipboard" } )
-+component("icon", { "type": "clock-o" } )
-+component("icon", { "type": "clone" } )
-+component("icon", { "type": "close" } )
-+component("icon", { "type": "cloud" } )
-+component("icon", { "type": "cloud-download" } )
-+component("icon", { "type": "cloud-upload" } )
-+component("icon", { "type": "cny" } )
-+component("icon", { "type": "code" } )
-+component("icon", { "type": "code-fork" } )
-+component("icon", { "type": "codepen" } )
-+component("icon", { "type": "codiepie" } )
-+component("icon", { "type": "coffee" } )
-+component("icon", { "type": "cog" } )
-+component("icon", { "type": "cogs" } )
-+component("icon", { "type": "columns" } )
-+component("icon", { "type": "comment" } )
-+component("icon", { "type": "comment-o" } )
-+component("icon", { "type": "commenting" } )
-+component("icon", { "type": "commenting-o" } )
-+component("icon", { "type": "comments" } )
-+component("icon", { "type": "comments-o" } )
-+component("icon", { "type": "compass" } )
-+component("icon", { "type": "compress" } )
-+component("icon", { "type": "connectdevelop" } )
-+component("icon", { "type": "contao" } )
-+component("icon", { "type": "copy" } )
-+component("icon", { "type": "copyright" } )
-+component("icon", { "type": "creative-commons" } )
-+component("icon", { "type": "credit-card" } )
-+component("icon", { "type": "credit-card-alt" } )
-+component("icon", { "type": "crop" } )
-+component("icon", { "type": "crosshairs" } )
-+component("icon", { "type": "css3" } )
-+component("icon", { "type": "cube" } )
-+component("icon", { "type": "cubes" } )
-+component("icon", { "type": "cut" } )
-+component("icon", { "type": "cutlery" } )
-+component("icon", { "type": "dashboard" } )
-+component("icon", { "type": "dashcube" } )
-+component("icon", { "type": "database" } )
-+component("icon", { "type": "dedent" } )
-+component("icon", { "type": "delicious" } )
-+component("icon", { "type": "desktop" } )
-+component("icon", { "type": "deviantart" } )
-+component("icon", { "type": "diamond" } )
-+component("icon", { "type": "digg" } )
-+component("icon", { "type": "dollar" } )
-+component("icon", { "type": "dot-circle-o" } )
-+component("icon", { "type": "download" } )
-+component("icon", { "type": "dribbble" } )
-+component("icon", { "type": "dropbox" } )
-+component("icon", { "type": "drupal" } )
-+component("icon", { "type": "edge" } )
-+component("icon", { "type": "edit" } )
-+component("icon", { "type": "eject" } )
-+component("icon", { "type": "ellipsis-h" } )
-+component("icon", { "type": "ellipsis-v" } )
-+component("icon", { "type": "empire" } )
-+component("icon", { "type": "envelope" } )
-+component("icon", { "type": "envelope-o" } )
-+component("icon", { "type": "envelope-square" } )
-+component("icon", { "type": "eraser" } )
-+component("icon", { "type": "eur" } )
-+component("icon", { "type": "euro" } )
-+component("icon", { "type": "exchange" } )
-+component("icon", { "type": "exclamation" } )
-+component("icon", { "type": "exclamation-circle" } )
-+component("icon", { "type": "exclamation-triangle" } )
-+component("icon", { "type": "expand" } )
-+component("icon", { "type": "expeditedssl" } )
-+component("icon", { "type": "external-link" } )
-+component("icon", { "type": "external-link-square" } )
-+component("icon", { "type": "eye" } )
-+component("icon", { "type": "eye-slash" } )
-+component("icon", { "type": "eyedropper" } )
-+component("icon", { "type": "facebook" } )
-+component("icon", { "type": "facebook-f" } )
-+component("icon", { "type": "facebook-official" } )
-+component("icon", { "type": "facebook-square" } )
-+component("icon", { "type": "fast-backward" } )
-+component("icon", { "type": "fast-forward" } )
-+component("icon", { "type": "fax" } )
-+component("icon", { "type": "feed" } )
-+component("icon", { "type": "female" } )
-+component("icon", { "type": "fighter-jet" } )
-+component("icon", { "type": "file" } )
-+component("icon", { "type": "file-archive-o" } )
-+component("icon", { "type": "file-audio-o" } )
-+component("icon", { "type": "file-code-o" } )
-+component("icon", { "type": "file-excel-o" } )
-+component("icon", { "type": "file-image-o" } )
-+component("icon", { "type": "file-movie-o" } )
-+component("icon", { "type": "file-o" } )
-+component("icon", { "type": "file-pdf-o" } )
-+component("icon", { "type": "file-photo-o" } )
-+component("icon", { "type": "file-picture-o" } )
-+component("icon", { "type": "file-powerpoint-o" } )
-+component("icon", { "type": "file-sound-o" } )
-+component("icon", { "type": "file-text" } )
-+component("icon", { "type": "file-text-o" } )
-+component("icon", { "type": "file-video-o" } )
-+component("icon", { "type": "file-word-o" } )
-+component("icon", { "type": "file-zip-o" } )
-+component("icon", { "type": "files-o" } )
-+component("icon", { "type": "film" } )
-+component("icon", { "type": "filter" } )
-+component("icon", { "type": "fire" } )
-+component("icon", { "type": "fire-extinguisher" } )
-+component("icon", { "type": "firefox" } )
-+component("icon", { "type": "flag" } )
-+component("icon", { "type": "flag-checkered" } )
-+component("icon", { "type": "flag-o" } )
-+component("icon", { "type": "flash" } )
-+component("icon", { "type": "flask" } )
-+component("icon", { "type": "flickr" } )
-+component("icon", { "type": "floppy-o" } )
-+component("icon", { "type": "folder" } )
-+component("icon", { "type": "folder-o" } )
-+component("icon", { "type": "folder-open" } )
-+component("icon", { "type": "folder-open-o" } )
-+component("icon", { "type": "font" } )
-+component("icon", { "type": "fonticons" } )
-+component("icon", { "type": "fort-awesome" } )
-+component("icon", { "type": "forumbee" } )
-+component("icon", { "type": "forward" } )
-+component("icon", { "type": "foursquare" } )
-+component("icon", { "type": "frown-o" } )
-+component("icon", { "type": "futbol-o" } )
-+component("icon", { "type": "gamepad" } )
-+component("icon", { "type": "gavel" } )
-+component("icon", { "type": "gbp" } )
-+component("icon", { "type": "ge" } )
-+component("icon", { "type": "gear" } )
-+component("icon", { "type": "gears" } )
-+component("icon", { "type": "genderless" } )
-+component("icon", { "type": "get-pocket" } )
-+component("icon", { "type": "gg" } )
-+component("icon", { "type": "gg-circle" } )
-+component("icon", { "type": "gift" } )
-+component("icon", { "type": "git" } )
-+component("icon", { "type": "git-square" } )
-+component("icon", { "type": "github" } )
-+component("icon", { "type": "github-alt" } )
-+component("icon", { "type": "github-square" } )
-+component("icon", { "type": "gittip" } )
-+component("icon", { "type": "glass" } )
-+component("icon", { "type": "globe" } )
-+component("icon", { "type": "google" } )
-+component("icon", { "type": "google-plus" } )
-+component("icon", { "type": "google-plus-square" } )
-+component("icon", { "type": "google-wallet" } )
-+component("icon", { "type": "graduation-cap" } )
-+component("icon", { "type": "gratipay" } )
-+component("icon", { "type": "group" } )
-+component("icon", { "type": "h-square" } )
-+component("icon", { "type": "hacker-news" } )
-+component("icon", { "type": "hand-grab-o" } )
-+component("icon", { "type": "hand-lizard-o" } )
-+component("icon", { "type": "hand-o-down" } )
-+component("icon", { "type": "hand-o-left" } )
-+component("icon", { "type": "hand-o-right" } )
-+component("icon", { "type": "hand-o-up" } )
-+component("icon", { "type": "hand-paper-o" } )
-+component("icon", { "type": "hand-peace-o" } )
-+component("icon", { "type": "hand-pointer-o" } )
-+component("icon", { "type": "hand-rock-o" } )
-+component("icon", { "type": "hand-scissors-o" } )
-+component("icon", { "type": "hand-spock-o" } )
-+component("icon", { "type": "hand-stop-o" } )
-+component("icon", { "type": "hashtag" } )
-+component("icon", { "type": "hdd-o" } )
-+component("icon", { "type": "header" } )
-+component("icon", { "type": "headphones" } )
-+component("icon", { "type": "heart" } )
-+component("icon", { "type": "heart-o" } )
-+component("icon", { "type": "heartbeat" } )
-+component("icon", { "type": "history" } )
-+component("icon", { "type": "home" } )
-+component("icon", { "type": "hospital-o" } )
-+component("icon", { "type": "hotel" } )
-+component("icon", { "type": "hourglass" } )
-+component("icon", { "type": "hourglass-1" } )
-+component("icon", { "type": "hourglass-2" } )
-+component("icon", { "type": "hourglass-3" } )
-+component("icon", { "type": "hourglass-end" } )
-+component("icon", { "type": "hourglass-half" } )
-+component("icon", { "type": "hourglass-o" } )
-+component("icon", { "type": "hourglass-start" } )
-+component("icon", { "type": "houzz" } )
-+component("icon", { "type": "html5" } )
-+component("icon", { "type": "i-cursor" } )
-+component("icon", { "type": "ils" } )
-+component("icon", { "type": "image" } )
-+component("icon", { "type": "inbox" } )
-+component("icon", { "type": "indent" } )
-+component("icon", { "type": "industry" } )
-+component("icon", { "type": "info" } )
-+component("icon", { "type": "info-circle" } )
-+component("icon", { "type": "inr" } )
-+component("icon", { "type": "instagram" } )
-+component("icon", { "type": "institution" } )
-+component("icon", { "type": "internet-explorer" } )
-+component("icon", { "type": "intersex" } )
-+component("icon", { "type": "ioxhost" } )
-+component("icon", { "type": "italic" } )
-+component("icon", { "type": "joomla" } )
-+component("icon", { "type": "jpy" } )
-+component("icon", { "type": "jsfiddle" } )
-+component("icon", { "type": "key" } )
-+component("icon", { "type": "keyboard-o" } )
-+component("icon", { "type": "krw" } )
-+component("icon", { "type": "language" } )
-+component("icon", { "type": "laptop" } )
-+component("icon", { "type": "lastfm" } )
-+component("icon", { "type": "lastfm-square" } )
-+component("icon", { "type": "leaf" } )
-+component("icon", { "type": "leanpub" } )
-+component("icon", { "type": "legal" } )
-+component("icon", { "type": "lemon-o" } )
-+component("icon", { "type": "level-down" } )
-+component("icon", { "type": "level-up" } )
-+component("icon", { "type": "life-bouy" } )
-+component("icon", { "type": "life-buoy" } )
-+component("icon", { "type": "life-ring" } )
-+component("icon", { "type": "life-saver" } )
-+component("icon", { "type": "lightbulb-o" } )
-+component("icon", { "type": "line-chart" } )
-+component("icon", { "type": "link" } )
-+component("icon", { "type": "linkedin" } )
-+component("icon", { "type": "linkedin-square" } )
-+component("icon", { "type": "linux" } )
-+component("icon", { "type": "list" } )
-+component("icon", { "type": "list-alt" } )
-+component("icon", { "type": "list-ol" } )
-+component("icon", { "type": "list-ul" } )
-+component("icon", { "type": "location-arrow" } )
-+component("icon", { "type": "lock" } )
-+component("icon", { "type": "long-arrow-down" } )
-+component("icon", { "type": "long-arrow-left" } )
-+component("icon", { "type": "long-arrow-right" } )
-+component("icon", { "type": "long-arrow-up" } )
-+component("icon", { "type": "magic" } )
-+component("icon", { "type": "magnet" } )
-+component("icon", { "type": "mail-forward" } )
-+component("icon", { "type": "mail-reply" } )
-+component("icon", { "type": "mail-reply-all" } )
-+component("icon", { "type": "male" } )
-+component("icon", { "type": "map" } )
-+component("icon", { "type": "map-marker" } )
-+component("icon", { "type": "map-o" } )
-+component("icon", { "type": "map-pin" } )
-+component("icon", { "type": "map-signs" } )
-+component("icon", { "type": "mars" } )
-+component("icon", { "type": "mars-double" } )
-+component("icon", { "type": "mars-stroke" } )
-+component("icon", { "type": "mars-stroke-h" } )
-+component("icon", { "type": "mars-stroke-v" } )
-+component("icon", { "type": "maxcdn" } )
-+component("icon", { "type": "meanpath" } )
-+component("icon", { "type": "medium" } )
-+component("icon", { "type": "medkit" } )
-+component("icon", { "type": "meh-o" } )
-+component("icon", { "type": "mercury" } )
-+component("icon", { "type": "microphone" } )
-+component("icon", { "type": "microphone-slash" } )
-+component("icon", { "type": "minus" } )
-+component("icon", { "type": "minus-circle" } )
-+component("icon", { "type": "minus-square" } )
-+component("icon", { "type": "minus-square-o" } )
-+component("icon", { "type": "mixcloud" } )
-+component("icon", { "type": "mobile" } )
-+component("icon", { "type": "mobile-phone" } )
-+component("icon", { "type": "modx" } )
-+component("icon", { "type": "money" } )
-+component("icon", { "type": "moon-o" } )
-+component("icon", { "type": "mortar-board" } )
-+component("icon", { "type": "motorcycle" } )
-+component("icon", { "type": "mouse-pointer" } )
-+component("icon", { "type": "music" } )
-+component("icon", { "type": "navicon" } )
-+component("icon", { "type": "neuter" } )
-+component("icon", { "type": "newspaper-o" } )
-+component("icon", { "type": "object-group" } )
-+component("icon", { "type": "object-ungroup" } )
-+component("icon", { "type": "odnoklassniki" } )
-+component("icon", { "type": "odnoklassniki-square" } )
-+component("icon", { "type": "opencart" } )
-+component("icon", { "type": "openid" } )
-+component("icon", { "type": "opera" } )
-+component("icon", { "type": "optin-monster" } )
-+component("icon", { "type": "outdent" } )
-+component("icon", { "type": "pagelines" } )
-+component("icon", { "type": "paint-brush" } )
-+component("icon", { "type": "paper-plane" } )
-+component("icon", { "type": "paper-plane-o" } )
-+component("icon", { "type": "paperclip" } )
-+component("icon", { "type": "paragraph" } )
-+component("icon", { "type": "paste" } )
-+component("icon", { "type": "pause" } )
-+component("icon", { "type": "pause-circle" } )
-+component("icon", { "type": "pause-circle-o" } )
-+component("icon", { "type": "paw" } )
-+component("icon", { "type": "paypal" } )
-+component("icon", { "type": "pencil" } )
-+component("icon", { "type": "pencil-square" } )
-+component("icon", { "type": "pencil-square-o" } )
-+component("icon", { "type": "percent" } )
-+component("icon", { "type": "phone" } )
-+component("icon", { "type": "phone-square" } )
-+component("icon", { "type": "photo" } )
-+component("icon", { "type": "picture-o" } )
-+component("icon", { "type": "pie-chart" } )
-+component("icon", { "type": "pied-piper" } )
-+component("icon", { "type": "pied-piper-alt" } )
-+component("icon", { "type": "pinterest" } )
-+component("icon", { "type": "pinterest-p" } )
-+component("icon", { "type": "pinterest-square" } )
-+component("icon", { "type": "plane" } )
-+component("icon", { "type": "play" } )
-+component("icon", { "type": "play-circle" } )
-+component("icon", { "type": "play-circle-o" } )
-+component("icon", { "type": "plug" } )
-+component("icon", { "type": "plus" } )
-+component("icon", { "type": "plus-circle" } )
-+component("icon", { "type": "plus-square" } )
-+component("icon", { "type": "plus-square-o" } )
-+component("icon", { "type": "power-off" } )
-+component("icon", { "type": "print" } )
-+component("icon", { "type": "product-hunt" } )
-+component("icon", { "type": "puzzle-piece" } )
-+component("icon", { "type": "qq" } )
-+component("icon", { "type": "qrcode" } )
-+component("icon", { "type": "question" } )
-+component("icon", { "type": "question-circle" } )
-+component("icon", { "type": "quote-left" } )
-+component("icon", { "type": "quote-right" } )
-+component("icon", { "type": "ra" } )
-+component("icon", { "type": "random" } )
-+component("icon", { "type": "rebel" } )
-+component("icon", { "type": "recycle" } )
-+component("icon", { "type": "reddit" } )
-+component("icon", { "type": "reddit-alien" } )
-+component("icon", { "type": "reddit-square" } )
-+component("icon", { "type": "refresh" } )
-+component("icon", { "type": "registered" } )
-+component("icon", { "type": "remove" } )
-+component("icon", { "type": "renren" } )
-+component("icon", { "type": "reorder" } )
-+component("icon", { "type": "repeat" } )
-+component("icon", { "type": "reply" } )
-+component("icon", { "type": "reply-all" } )
-+component("icon", { "type": "retweet" } )
-+component("icon", { "type": "rmb" } )
-+component("icon", { "type": "road" } )
-+component("icon", { "type": "rocket" } )
-+component("icon", { "type": "rotate-left" } )
-+component("icon", { "type": "rotate-right" } )
-+component("icon", { "type": "rouble" } )
-+component("icon", { "type": "rss" } )
-+component("icon", { "type": "rss-square" } )
-+component("icon", { "type": "rub" } )
-+component("icon", { "type": "ruble" } )
-+component("icon", { "type": "rupee" } )
-+component("icon", { "type": "safari" } )
-+component("icon", { "type": "save" } )
-+component("icon", { "type": "scissors" } )
-+component("icon", { "type": "scribd" } )
-+component("icon", { "type": "search" } )
-+component("icon", { "type": "search-minus" } )
-+component("icon", { "type": "search-plus" } )
-+component("icon", { "type": "sellsy" } )
-+component("icon", { "type": "send" } )
-+component("icon", { "type": "send-o" } )
-+component("icon", { "type": "server" } )
-+component("icon", { "type": "share" } )
-+component("icon", { "type": "share-alt" } )
-+component("icon", { "type": "share-alt-square" } )
-+component("icon", { "type": "share-square" } )
-+component("icon", { "type": "share-square-o" } )
-+component("icon", { "type": "shekel" } )
-+component("icon", { "type": "sheqel" } )
-+component("icon", { "type": "shield" } )
-+component("icon", { "type": "ship" } )
-+component("icon", { "type": "shirtsinbulk" } )
-+component("icon", { "type": "shopping-bag" } )
-+component("icon", { "type": "shopping-basket" } )
-+component("icon", { "type": "shopping-cart" } )
-+component("icon", { "type": "sign-in" } )
-+component("icon", { "type": "sign-out" } )
-+component("icon", { "type": "signal" } )
-+component("icon", { "type": "simplybuilt" } )
-+component("icon", { "type": "sitemap" } )
-+component("icon", { "type": "skyatlas" } )
-+component("icon", { "type": "skype" } )
-+component("icon", { "type": "slack" } )
-+component("icon", { "type": "sliders" } )
-+component("icon", { "type": "slideshare" } )
-+component("icon", { "type": "smile-o" } )
-+component("icon", { "type": "soccer-ball-o" } )
-+component("icon", { "type": "sort" } )
-+component("icon", { "type": "sort-alpha-asc" } )
-+component("icon", { "type": "sort-alpha-desc" } )
-+component("icon", { "type": "sort-amount-asc" } )
-+component("icon", { "type": "sort-amount-desc" } )
-+component("icon", { "type": "sort-asc" } )
-+component("icon", { "type": "sort-desc" } )
-+component("icon", { "type": "sort-down" } )
-+component("icon", { "type": "sort-numeric-asc" } )
-+component("icon", { "type": "sort-numeric-desc" } )
-+component("icon", { "type": "sort-up" } )
-+component("icon", { "type": "soundcloud" } )
-+component("icon", { "type": "space-shuttle" } )
-+component("icon", { "type": "spinner" } )
-+component("icon", { "type": "spoon" } )
-+component("icon", { "type": "spotify" } )
-+component("icon", { "type": "square" } )
-+component("icon", { "type": "square-o" } )
-+component("icon", { "type": "stack-exchange" } )
-+component("icon", { "type": "stack-overflow" } )
-+component("icon", { "type": "star" } )
-+component("icon", { "type": "star-half" } )
-+component("icon", { "type": "star-half-empty" } )
-+component("icon", { "type": "star-half-full" } )
-+component("icon", { "type": "star-half-o" } )
-+component("icon", { "type": "star-o" } )
-+component("icon", { "type": "steam" } )
-+component("icon", { "type": "steam-square" } )
-+component("icon", { "type": "step-backward" } )
-+component("icon", { "type": "step-forward" } )
-+component("icon", { "type": "stethoscope" } )
-+component("icon", { "type": "sticky-note" } )
-+component("icon", { "type": "sticky-note-o" } )
-+component("icon", { "type": "stop" } )
-+component("icon", { "type": "stop-circle" } )
-+component("icon", { "type": "stop-circle-o" } )
-+component("icon", { "type": "street-view" } )
-+component("icon", { "type": "strikethrough" } )
-+component("icon", { "type": "stumbleupon" } )
-+component("icon", { "type": "stumbleupon-circle" } )
-+component("icon", { "type": "subscript" } )
-+component("icon", { "type": "subway" } )
-+component("icon", { "type": "suitcase" } )
-+component("icon", { "type": "sun-o" } )
-+component("icon", { "type": "superscript" } )
-+component("icon", { "type": "support" } )
-+component("icon", { "type": "table" } )
-+component("icon", { "type": "tablet" } )
-+component("icon", { "type": "tachometer" } )
-+component("icon", { "type": "tag" } )
-+component("icon", { "type": "tags" } )
-+component("icon", { "type": "tasks" } )
-+component("icon", { "type": "taxi" } )
-+component("icon", { "type": "television" } )
-+component("icon", { "type": "tencent-weibo" } )
-+component("icon", { "type": "terminal" } )
-+component("icon", { "type": "text-height" } )
-+component("icon", { "type": "text-width" } )
-+component("icon", { "type": "th" } )
-+component("icon", { "type": "th-large" } )
-+component("icon", { "type": "th-list" } )
-+component("icon", { "type": "thumb-tack" } )
-+component("icon", { "type": "thumbs-down" } )
-+component("icon", { "type": "thumbs-o-down" } )
-+component("icon", { "type": "thumbs-o-up" } )
-+component("icon", { "type": "thumbs-up" } )
-+component("icon", { "type": "ticket" } )
-+component("icon", { "type": "times" } )
-+component("icon", { "type": "times-circle" } )
-+component("icon", { "type": "times-circle-o" } )
-+component("icon", { "type": "tint" } )
-+component("icon", { "type": "toggle-down" } )
-+component("icon", { "type": "toggle-left" } )
-+component("icon", { "type": "toggle-off" } )
-+component("icon", { "type": "toggle-on" } )
-+component("icon", { "type": "toggle-right" } )
-+component("icon", { "type": "toggle-up" } )
-+component("icon", { "type": "trademark" } )
-+component("icon", { "type": "train" } )
-+component("icon", { "type": "transgender" } )
-+component("icon", { "type": "transgender-alt" } )
-+component("icon", { "type": "trash" } )
-+component("icon", { "type": "trash-o" } )
-+component("icon", { "type": "tree" } )
-+component("icon", { "type": "trello" } )
-+component("icon", { "type": "tripadvisor" } )
-+component("icon", { "type": "trophy" } )
-+component("icon", { "type": "truck" } )
-+component("icon", { "type": "try" } )
-+component("icon", { "type": "tty" } )
-+component("icon", { "type": "tumblr" } )
-+component("icon", { "type": "tumblr-square" } )
-+component("icon", { "type": "turkish-lira" } )
-+component("icon", { "type": "tv" } )
-+component("icon", { "type": "twitch" } )
-+component("icon", { "type": "twitter" } )
-+component("icon", { "type": "twitter-square" } )
-+component("icon", { "type": "umbrella" } )
-+component("icon", { "type": "underline" } )
-+component("icon", { "type": "undo" } )
-+component("icon", { "type": "university" } )
-+component("icon", { "type": "unlink" } )
-+component("icon", { "type": "unlock" } )
-+component("icon", { "type": "unlock-alt" } )
-+component("icon", { "type": "unsorted" } )
-+component("icon", { "type": "upload" } )
-+component("icon", { "type": "usb" } )
-+component("icon", { "type": "usd" } )
-+component("icon", { "type": "user" } )
-+component("icon", { "type": "user-md" } )
-+component("icon", { "type": "user-plus" } )
-+component("icon", { "type": "user-secret" } )
-+component("icon", { "type": "user-times" } )
-+component("icon", { "type": "users" } )
-+component("icon", { "type": "venus" } )
-+component("icon", { "type": "venus-double" } )
-+component("icon", { "type": "venus-mars" } )
-+component("icon", { "type": "viacoin" } )
-+component("icon", { "type": "video-camera" } )
-+component("icon", { "type": "vimeo" } )
-+component("icon", { "type": "vimeo-square" } )
-+component("icon", { "type": "vine" } )
-+component("icon", { "type": "vk" } )
-+component("icon", { "type": "volume-down" } )
-+component("icon", { "type": "volume-off" } )
-+component("icon", { "type": "volume-up" } )
-+component("icon", { "type": "warning" } )
-+component("icon", { "type": "wechat" } )
-+component("icon", { "type": "weibo" } )
-+component("icon", { "type": "weixin" } )
-+component("icon", { "type": "whatsapp" } )
-+component("icon", { "type": "wheelchair" } )
-+component("icon", { "type": "wifi" } )
-+component("icon", { "type": "wikipedia-w" } )
-+component("icon", { "type": "windows" } )
-+component("icon", { "type": "won" } )
-+component("icon", { "type": "wordpress" } )
-+component("icon", { "type": "wrench" } )
-+component("icon", { "type": "xing" } )
-+component("icon", { "type": "xing-square" } )
-+component("icon", { "type": "y-combinator" } )
-+component("icon", { "type": "y-combinator-square" } )
-+component("icon", { "type": "yahoo" } )
-+component("icon", { "type": "yc" } )
-+component("icon", { "type": "yc-square" } )
-+component("icon", { "type": "yelp" } )
-+component("icon", { "type": "yen" } )
-+component("icon", { "type": "youtube" } )
-+component("icon", { "type": "youtube-play" } )
-+component("icon", { "type": "youtube-square" } );
-</script>
-
-You can also specify `.c-icon--inverse` for a white version of each icon:
-
-<script>
-component("icon", { "type": "500px", "style": "inverse" } )
-+component("icon", { "type": "adjust", "style": "inverse" } )
-+component("icon", { "type": "adn", "style": "inverse" } )
-+component("icon", { "type": "align-center", "style": "inverse" } )
-+component("icon", { "type": "align-justify", "style": "inverse" } )
-+component("icon", { "type": "align-left", "style": "inverse" } )
-+component("icon", { "type": "align-right", "style": "inverse" } )
-+component("icon", { "type": "amazon", "style": "inverse" } )
-+component("icon", { "type": "ambulance", "style": "inverse" } )
-+component("icon", { "type": "anchor", "style": "inverse" } )
-+component("icon", { "type": "android", "style": "inverse" } )
-+component("icon", { "type": "angellist", "style": "inverse" } )
-+component("icon", { "type": "angle-double-down", "style": "inverse" } )
-+component("icon", { "type": "angle-double-left", "style": "inverse" } )
-+component("icon", { "type": "angle-double-right", "style": "inverse" } )
-+component("icon", { "type": "angle-double-up", "style": "inverse" } )
-+component("icon", { "type": "angle-down", "style": "inverse" } )
-+component("icon", { "type": "angle-left", "style": "inverse" } )
-+component("icon", { "type": "angle-right", "style": "inverse" } )
-+component("icon", { "type": "angle-up", "style": "inverse" } )
-+component("icon", { "type": "apple", "style": "inverse" } )
-+component("icon", { "type": "archive", "style": "inverse" } )
-+component("icon", { "type": "area-chart", "style": "inverse" } )
-+component("icon", { "type": "arrow-circle-down", "style": "inverse" } )
-+component("icon", { "type": "arrow-circle-left", "style": "inverse" } )
-+component("icon", { "type": "arrow-circle-o-down", "style": "inverse" } )
-+component("icon", { "type": "arrow-circle-o-left", "style": "inverse" } )
-+component("icon", { "type": "arrow-circle-o-right", "style": "inverse" } )
-+component("icon", { "type": "arrow-circle-o-up", "style": "inverse" } )
-+component("icon", { "type": "arrow-circle-right", "style": "inverse" } )
-+component("icon", { "type": "arrow-circle-up", "style": "inverse" } )
-+component("icon", { "type": "arrow-down", "style": "inverse" } )
-+component("icon", { "type": "arrow-left", "style": "inverse" } )
-+component("icon", { "type": "arrow-right", "style": "inverse" } )
-+component("icon", { "type": "arrow-up", "style": "inverse" } )
-+component("icon", { "type": "arrows", "style": "inverse" } )
-+component("icon", { "type": "arrows-alt", "style": "inverse" } )
-+component("icon", { "type": "arrows-h", "style": "inverse" } )
-+component("icon", { "type": "arrows-v", "style": "inverse" } )
-+component("icon", { "type": "asterisk", "style": "inverse" } )
-+component("icon", { "type": "at", "style": "inverse" } )
-+component("icon", { "type": "automobile", "style": "inverse" } )
-+component("icon", { "type": "backward", "style": "inverse" } )
-+component("icon", { "type": "balance-scale", "style": "inverse" } )
-+component("icon", { "type": "ban", "style": "inverse" } )
-+component("icon", { "type": "bank", "style": "inverse" } )
-+component("icon", { "type": "bar-chart", "style": "inverse" } )
-+component("icon", { "type": "bar-chart-o", "style": "inverse" } )
-+component("icon", { "type": "barcode", "style": "inverse" } )
-+component("icon", { "type": "bars", "style": "inverse" } )
-+component("icon", { "type": "battery-0", "style": "inverse" } )
-+component("icon", { "type": "battery-1", "style": "inverse" } )
-+component("icon", { "type": "battery-2", "style": "inverse" } )
-+component("icon", { "type": "battery-3", "style": "inverse" } )
-+component("icon", { "type": "battery-4", "style": "inverse" } )
-+component("icon", { "type": "battery-empty", "style": "inverse" } )
-+component("icon", { "type": "battery-full", "style": "inverse" } )
-+component("icon", { "type": "battery-half", "style": "inverse" } )
-+component("icon", { "type": "battery-quarter", "style": "inverse" } )
-+component("icon", { "type": "battery-three-quarters", "style": "inverse" } )
-+component("icon", { "type": "bed", "style": "inverse" } )
-+component("icon", { "type": "beer", "style": "inverse" } )
-+component("icon", { "type": "behance", "style": "inverse" } )
-+component("icon", { "type": "behance-square", "style": "inverse" } )
-+component("icon", { "type": "bell", "style": "inverse" } )
-+component("icon", { "type": "bell-o", "style": "inverse" } )
-+component("icon", { "type": "bell-slash", "style": "inverse" } )
-+component("icon", { "type": "bell-slash-o", "style": "inverse" } )
-+component("icon", { "type": "bicycle", "style": "inverse" } )
-+component("icon", { "type": "binoculars", "style": "inverse" } )
-+component("icon", { "type": "birthday-cake", "style": "inverse" } )
-+component("icon", { "type": "bitbucket", "style": "inverse" } )
-+component("icon", { "type": "bitbucket-square", "style": "inverse" } )
-+component("icon", { "type": "bitcoin", "style": "inverse" } )
-+component("icon", { "type": "black-tie", "style": "inverse" } )
-+component("icon", { "type": "bluetooth", "style": "inverse" } )
-+component("icon", { "type": "bluetooth-b", "style": "inverse" } )
-+component("icon", { "type": "bold", "style": "inverse" } )
-+component("icon", { "type": "bolt", "style": "inverse" } )
-+component("icon", { "type": "bomb", "style": "inverse" } )
-+component("icon", { "type": "book", "style": "inverse" } )
-+component("icon", { "type": "bookmark", "style": "inverse" } )
-+component("icon", { "type": "bookmark-o", "style": "inverse" } )
-+component("icon", { "type": "briefcase", "style": "inverse" } )
-+component("icon", { "type": "btc", "style": "inverse" } )
-+component("icon", { "type": "bug", "style": "inverse" } )
-+component("icon", { "type": "building", "style": "inverse" } )
-+component("icon", { "type": "building-o", "style": "inverse" } )
-+component("icon", { "type": "bullhorn", "style": "inverse" } )
-+component("icon", { "type": "bullseye", "style": "inverse" } )
-+component("icon", { "type": "bus", "style": "inverse" } )
-+component("icon", { "type": "buysellads", "style": "inverse" } )
-+component("icon", { "type": "cab", "style": "inverse" } )
-+component("icon", { "type": "calculator", "style": "inverse" } )
-+component("icon", { "type": "calendar", "style": "inverse" } )
-+component("icon", { "type": "calendar-check-o", "style": "inverse" } )
-+component("icon", { "type": "calendar-minus-o", "style": "inverse" } )
-+component("icon", { "type": "calendar-o", "style": "inverse" } )
-+component("icon", { "type": "calendar-plus-o", "style": "inverse" } )
-+component("icon", { "type": "calendar-times-o", "style": "inverse" } )
-+component("icon", { "type": "camera", "style": "inverse" } )
-+component("icon", { "type": "camera-retro", "style": "inverse" } )
-+component("icon", { "type": "car", "style": "inverse" } )
-+component("icon", { "type": "caret-down", "style": "inverse" } )
-+component("icon", { "type": "caret-left", "style": "inverse" } )
-+component("icon", { "type": "caret-right", "style": "inverse" } )
-+component("icon", { "type": "caret-square-o-down", "style": "inverse" } )
-+component("icon", { "type": "caret-square-o-left", "style": "inverse" } )
-+component("icon", { "type": "caret-square-o-right", "style": "inverse" } )
-+component("icon", { "type": "caret-square-o-up", "style": "inverse" } )
-+component("icon", { "type": "caret-up", "style": "inverse" } )
-+component("icon", { "type": "cart-arrow-down", "style": "inverse" } )
-+component("icon", { "type": "cart-plus", "style": "inverse" } )
-+component("icon", { "type": "cc", "style": "inverse" } )
-+component("icon", { "type": "cc-amex", "style": "inverse" } )
-+component("icon", { "type": "cc-diners-club", "style": "inverse" } )
-+component("icon", { "type": "cc-discover", "style": "inverse" } )
-+component("icon", { "type": "cc-jcb", "style": "inverse" } )
-+component("icon", { "type": "cc-mastercard", "style": "inverse" } )
-+component("icon", { "type": "cc-paypal", "style": "inverse" } )
-+component("icon", { "type": "cc-stripe", "style": "inverse" } )
-+component("icon", { "type": "cc-visa", "style": "inverse" } )
-+component("icon", { "type": "certificate", "style": "inverse" } )
-+component("icon", { "type": "chain", "style": "inverse" } )
-+component("icon", { "type": "chain-broken", "style": "inverse" } )
-+component("icon", { "type": "check", "style": "inverse" } )
-+component("icon", { "type": "check-circle", "style": "inverse" } )
-+component("icon", { "type": "check-circle-o", "style": "inverse" } )
-+component("icon", { "type": "check-square", "style": "inverse" } )
-+component("icon", { "type": "check-square-o", "style": "inverse" } )
-+component("icon", { "type": "chevron-circle-down", "style": "inverse" } )
-+component("icon", { "type": "chevron-circle-left", "style": "inverse" } )
-+component("icon", { "type": "chevron-circle-right", "style": "inverse" } )
-+component("icon", { "type": "chevron-circle-up", "style": "inverse" } )
-+component("icon", { "type": "chevron-down", "style": "inverse" } )
-+component("icon", { "type": "chevron-left", "style": "inverse" } )
-+component("icon", { "type": "chevron-right", "style": "inverse" } )
-+component("icon", { "type": "chevron-up", "style": "inverse" } )
-+component("icon", { "type": "child", "style": "inverse" } )
-+component("icon", { "type": "chrome", "style": "inverse" } )
-+component("icon", { "type": "circle", "style": "inverse" } )
-+component("icon", { "type": "circle-o", "style": "inverse" } )
-+component("icon", { "type": "circle-o-notch", "style": "inverse" } )
-+component("icon", { "type": "circle-thin", "style": "inverse" } )
-+component("icon", { "type": "clipboard", "style": "inverse" } )
-+component("icon", { "type": "clock-o", "style": "inverse" } )
-+component("icon", { "type": "clone", "style": "inverse" } )
-+component("icon", { "type": "close", "style": "inverse" } )
-+component("icon", { "type": "cloud", "style": "inverse" } )
-+component("icon", { "type": "cloud-download", "style": "inverse" } )
-+component("icon", { "type": "cloud-upload", "style": "inverse" } )
-+component("icon", { "type": "cny", "style": "inverse" } )
-+component("icon", { "type": "code", "style": "inverse" } )
-+component("icon", { "type": "code-fork", "style": "inverse" } )
-+component("icon", { "type": "codepen", "style": "inverse" } )
-+component("icon", { "type": "codiepie", "style": "inverse" } )
-+component("icon", { "type": "coffee", "style": "inverse" } )
-+component("icon", { "type": "cog", "style": "inverse" } )
-+component("icon", { "type": "cogs", "style": "inverse" } )
-+component("icon", { "type": "columns", "style": "inverse" } )
-+component("icon", { "type": "comment", "style": "inverse" } )
-+component("icon", { "type": "comment-o", "style": "inverse" } )
-+component("icon", { "type": "commenting", "style": "inverse" } )
-+component("icon", { "type": "commenting-o", "style": "inverse" } )
-+component("icon", { "type": "comments", "style": "inverse" } )
-+component("icon", { "type": "comments-o", "style": "inverse" } )
-+component("icon", { "type": "compass", "style": "inverse" } )
-+component("icon", { "type": "compress", "style": "inverse" } )
-+component("icon", { "type": "connectdevelop", "style": "inverse" } )
-+component("icon", { "type": "contao", "style": "inverse" } )
-+component("icon", { "type": "copy", "style": "inverse" } )
-+component("icon", { "type": "copyright", "style": "inverse" } )
-+component("icon", { "type": "creative-commons", "style": "inverse" } )
-+component("icon", { "type": "credit-card", "style": "inverse" } )
-+component("icon", { "type": "credit-card-alt", "style": "inverse" } )
-+component("icon", { "type": "crop", "style": "inverse" } )
-+component("icon", { "type": "crosshairs", "style": "inverse" } )
-+component("icon", { "type": "css3", "style": "inverse" } )
-+component("icon", { "type": "cube", "style": "inverse" } )
-+component("icon", { "type": "cubes", "style": "inverse" } )
-+component("icon", { "type": "cut", "style": "inverse" } )
-+component("icon", { "type": "cutlery", "style": "inverse" } )
-+component("icon", { "type": "dashboard", "style": "inverse" } )
-+component("icon", { "type": "dashcube", "style": "inverse" } )
-+component("icon", { "type": "database", "style": "inverse" } )
-+component("icon", { "type": "dedent", "style": "inverse" } )
-+component("icon", { "type": "delicious", "style": "inverse" } )
-+component("icon", { "type": "desktop", "style": "inverse" } )
-+component("icon", { "type": "deviantart", "style": "inverse" } )
-+component("icon", { "type": "diamond", "style": "inverse" } )
-+component("icon", { "type": "digg", "style": "inverse" } )
-+component("icon", { "type": "dollar", "style": "inverse" } )
-+component("icon", { "type": "dot-circle-o", "style": "inverse" } )
-+component("icon", { "type": "download", "style": "inverse" } )
-+component("icon", { "type": "dribbble", "style": "inverse" } )
-+component("icon", { "type": "dropbox", "style": "inverse" } )
-+component("icon", { "type": "drupal", "style": "inverse" } )
-+component("icon", { "type": "edge", "style": "inverse" } )
-+component("icon", { "type": "edit", "style": "inverse" } )
-+component("icon", { "type": "eject", "style": "inverse" } )
-+component("icon", { "type": "ellipsis-h", "style": "inverse" } )
-+component("icon", { "type": "ellipsis-v", "style": "inverse" } )
-+component("icon", { "type": "empire", "style": "inverse" } )
-+component("icon", { "type": "envelope", "style": "inverse" } )
-+component("icon", { "type": "envelope-o", "style": "inverse" } )
-+component("icon", { "type": "envelope-square", "style": "inverse" } )
-+component("icon", { "type": "eraser", "style": "inverse" } )
-+component("icon", { "type": "eur", "style": "inverse" } )
-+component("icon", { "type": "euro", "style": "inverse" } )
-+component("icon", { "type": "exchange", "style": "inverse" } )
-+component("icon", { "type": "exclamation", "style": "inverse" } )
-+component("icon", { "type": "exclamation-circle", "style": "inverse" } )
-+component("icon", { "type": "exclamation-triangle", "style": "inverse" } )
-+component("icon", { "type": "expand", "style": "inverse" } )
-+component("icon", { "type": "expeditedssl", "style": "inverse" } )
-+component("icon", { "type": "external-link", "style": "inverse" } )
-+component("icon", { "type": "external-link-square", "style": "inverse" } )
-+component("icon", { "type": "eye", "style": "inverse" } )
-+component("icon", { "type": "eye-slash", "style": "inverse" } )
-+component("icon", { "type": "eyedropper", "style": "inverse" } )
-+component("icon", { "type": "facebook", "style": "inverse" } )
-+component("icon", { "type": "facebook-f", "style": "inverse" } )
-+component("icon", { "type": "facebook-official", "style": "inverse" } )
-+component("icon", { "type": "facebook-square", "style": "inverse" } )
-+component("icon", { "type": "fast-backward", "style": "inverse" } )
-+component("icon", { "type": "fast-forward", "style": "inverse" } )
-+component("icon", { "type": "fax", "style": "inverse" } )
-+component("icon", { "type": "feed", "style": "inverse" } )
-+component("icon", { "type": "female", "style": "inverse" } )
-+component("icon", { "type": "fighter-jet", "style": "inverse" } )
-+component("icon", { "type": "file", "style": "inverse" } )
-+component("icon", { "type": "file-archive-o", "style": "inverse" } )
-+component("icon", { "type": "file-audio-o", "style": "inverse" } )
-+component("icon", { "type": "file-code-o", "style": "inverse" } )
-+component("icon", { "type": "file-excel-o", "style": "inverse" } )
-+component("icon", { "type": "file-image-o", "style": "inverse" } )
-+component("icon", { "type": "file-movie-o", "style": "inverse" } )
-+component("icon", { "type": "file-o", "style": "inverse" } )
-+component("icon", { "type": "file-pdf-o", "style": "inverse" } )
-+component("icon", { "type": "file-photo-o", "style": "inverse" } )
-+component("icon", { "type": "file-picture-o", "style": "inverse" } )
-+component("icon", { "type": "file-powerpoint-o", "style": "inverse" } )
-+component("icon", { "type": "file-sound-o", "style": "inverse" } )
-+component("icon", { "type": "file-text", "style": "inverse" } )
-+component("icon", { "type": "file-text-o", "style": "inverse" } )
-+component("icon", { "type": "file-video-o", "style": "inverse" } )
-+component("icon", { "type": "file-word-o", "style": "inverse" } )
-+component("icon", { "type": "file-zip-o", "style": "inverse" } )
-+component("icon", { "type": "files-o", "style": "inverse" } )
-+component("icon", { "type": "film", "style": "inverse" } )
-+component("icon", { "type": "filter", "style": "inverse" } )
-+component("icon", { "type": "fire", "style": "inverse" } )
-+component("icon", { "type": "fire-extinguisher", "style": "inverse" } )
-+component("icon", { "type": "firefox", "style": "inverse" } )
-+component("icon", { "type": "flag", "style": "inverse" } )
-+component("icon", { "type": "flag-checkered", "style": "inverse" } )
-+component("icon", { "type": "flag-o", "style": "inverse" } )
-+component("icon", { "type": "flash", "style": "inverse" } )
-+component("icon", { "type": "flask", "style": "inverse" } )
-+component("icon", { "type": "flickr", "style": "inverse" } )
-+component("icon", { "type": "floppy-o", "style": "inverse" } )
-+component("icon", { "type": "folder", "style": "inverse" } )
-+component("icon", { "type": "folder-o", "style": "inverse" } )
-+component("icon", { "type": "folder-open", "style": "inverse" } )
-+component("icon", { "type": "folder-open-o", "style": "inverse" } )
-+component("icon", { "type": "font", "style": "inverse" } )
-+component("icon", { "type": "fonticons", "style": "inverse" } )
-+component("icon", { "type": "fort-awesome", "style": "inverse" } )
-+component("icon", { "type": "forumbee", "style": "inverse" } )
-+component("icon", { "type": "forward", "style": "inverse" } )
-+component("icon", { "type": "foursquare", "style": "inverse" } )
-+component("icon", { "type": "frown-o", "style": "inverse" } )
-+component("icon", { "type": "futbol-o", "style": "inverse" } )
-+component("icon", { "type": "gamepad", "style": "inverse" } )
-+component("icon", { "type": "gavel", "style": "inverse" } )
-+component("icon", { "type": "gbp", "style": "inverse" } )
-+component("icon", { "type": "ge", "style": "inverse" } )
-+component("icon", { "type": "gear", "style": "inverse" } )
-+component("icon", { "type": "gears", "style": "inverse" } )
-+component("icon", { "type": "genderless", "style": "inverse" } )
-+component("icon", { "type": "get-pocket", "style": "inverse" } )
-+component("icon", { "type": "gg", "style": "inverse" } )
-+component("icon", { "type": "gg-circle", "style": "inverse" } )
-+component("icon", { "type": "gift", "style": "inverse" } )
-+component("icon", { "type": "git", "style": "inverse" } )
-+component("icon", { "type": "git-square", "style": "inverse" } )
-+component("icon", { "type": "github", "style": "inverse" } )
-+component("icon", { "type": "github-alt", "style": "inverse" } )
-+component("icon", { "type": "github-square", "style": "inverse" } )
-+component("icon", { "type": "gittip", "style": "inverse" } )
-+component("icon", { "type": "glass", "style": "inverse" } )
-+component("icon", { "type": "globe", "style": "inverse" } )
-+component("icon", { "type": "google", "style": "inverse" } )
-+component("icon", { "type": "google-plus", "style": "inverse" } )
-+component("icon", { "type": "google-plus-square", "style": "inverse" } )
-+component("icon", { "type": "google-wallet", "style": "inverse" } )
-+component("icon", { "type": "graduation-cap", "style": "inverse" } )
-+component("icon", { "type": "gratipay", "style": "inverse" } )
-+component("icon", { "type": "group", "style": "inverse" } )
-+component("icon", { "type": "h-square", "style": "inverse" } )
-+component("icon", { "type": "hacker-news", "style": "inverse" } )
-+component("icon", { "type": "hand-grab-o", "style": "inverse" } )
-+component("icon", { "type": "hand-lizard-o", "style": "inverse" } )
-+component("icon", { "type": "hand-o-down", "style": "inverse" } )
-+component("icon", { "type": "hand-o-left", "style": "inverse" } )
-+component("icon", { "type": "hand-o-right", "style": "inverse" } )
-+component("icon", { "type": "hand-o-up", "style": "inverse" } )
-+component("icon", { "type": "hand-paper-o", "style": "inverse" } )
-+component("icon", { "type": "hand-peace-o", "style": "inverse" } )
-+component("icon", { "type": "hand-pointer-o", "style": "inverse" } )
-+component("icon", { "type": "hand-rock-o", "style": "inverse" } )
-+component("icon", { "type": "hand-scissors-o", "style": "inverse" } )
-+component("icon", { "type": "hand-spock-o", "style": "inverse" } )
-+component("icon", { "type": "hand-stop-o", "style": "inverse" } )
-+component("icon", { "type": "hashtag", "style": "inverse" } )
-+component("icon", { "type": "hdd-o", "style": "inverse" } )
-+component("icon", { "type": "header", "style": "inverse" } )
-+component("icon", { "type": "headphones", "style": "inverse" } )
-+component("icon", { "type": "heart", "style": "inverse" } )
-+component("icon", { "type": "heart-o", "style": "inverse" } )
-+component("icon", { "type": "heartbeat", "style": "inverse" } )
-+component("icon", { "type": "history", "style": "inverse" } )
-+component("icon", { "type": "home", "style": "inverse" } )
-+component("icon", { "type": "hospital-o", "style": "inverse" } )
-+component("icon", { "type": "hotel", "style": "inverse" } )
-+component("icon", { "type": "hourglass", "style": "inverse" } )
-+component("icon", { "type": "hourglass-1", "style": "inverse" } )
-+component("icon", { "type": "hourglass-2", "style": "inverse" } )
-+component("icon", { "type": "hourglass-3", "style": "inverse" } )
-+component("icon", { "type": "hourglass-end", "style": "inverse" } )
-+component("icon", { "type": "hourglass-half", "style": "inverse" } )
-+component("icon", { "type": "hourglass-o", "style": "inverse" } )
-+component("icon", { "type": "hourglass-start", "style": "inverse" } )
-+component("icon", { "type": "houzz", "style": "inverse" } )
-+component("icon", { "type": "html5", "style": "inverse" } )
-+component("icon", { "type": "i-cursor", "style": "inverse" } )
-+component("icon", { "type": "ils", "style": "inverse" } )
-+component("icon", { "type": "image", "style": "inverse" } )
-+component("icon", { "type": "inbox", "style": "inverse" } )
-+component("icon", { "type": "indent", "style": "inverse" } )
-+component("icon", { "type": "industry", "style": "inverse" } )
-+component("icon", { "type": "info", "style": "inverse" } )
-+component("icon", { "type": "info-circle", "style": "inverse" } )
-+component("icon", { "type": "inr", "style": "inverse" } )
-+component("icon", { "type": "instagram", "style": "inverse" } )
-+component("icon", { "type": "institution", "style": "inverse" } )
-+component("icon", { "type": "internet-explorer", "style": "inverse" } )
-+component("icon", { "type": "intersex", "style": "inverse" } )
-+component("icon", { "type": "ioxhost", "style": "inverse" } )
-+component("icon", { "type": "italic", "style": "inverse" } )
-+component("icon", { "type": "joomla", "style": "inverse" } )
-+component("icon", { "type": "jpy", "style": "inverse" } )
-+component("icon", { "type": "jsfiddle", "style": "inverse" } )
-+component("icon", { "type": "key", "style": "inverse" } )
-+component("icon", { "type": "keyboard-o", "style": "inverse" } )
-+component("icon", { "type": "krw", "style": "inverse" } )
-+component("icon", { "type": "language", "style": "inverse" } )
-+component("icon", { "type": "laptop", "style": "inverse" } )
-+component("icon", { "type": "lastfm", "style": "inverse" } )
-+component("icon", { "type": "lastfm-square", "style": "inverse" } )
-+component("icon", { "type": "leaf", "style": "inverse" } )
-+component("icon", { "type": "leanpub", "style": "inverse" } )
-+component("icon", { "type": "legal", "style": "inverse" } )
-+component("icon", { "type": "lemon-o", "style": "inverse" } )
-+component("icon", { "type": "level-down", "style": "inverse" } )
-+component("icon", { "type": "level-up", "style": "inverse" } )
-+component("icon", { "type": "life-bouy", "style": "inverse" } )
-+component("icon", { "type": "life-buoy", "style": "inverse" } )
-+component("icon", { "type": "life-ring", "style": "inverse" } )
-+component("icon", { "type": "life-saver", "style": "inverse" } )
-+component("icon", { "type": "lightbulb-o", "style": "inverse" } )
-+component("icon", { "type": "line-chart", "style": "inverse" } )
-+component("icon", { "type": "link", "style": "inverse" } )
-+component("icon", { "type": "linkedin", "style": "inverse" } )
-+component("icon", { "type": "linkedin-square", "style": "inverse" } )
-+component("icon", { "type": "linux", "style": "inverse" } )
-+component("icon", { "type": "list", "style": "inverse" } )
-+component("icon", { "type": "list-alt", "style": "inverse" } )
-+component("icon", { "type": "list-ol", "style": "inverse" } )
-+component("icon", { "type": "list-ul", "style": "inverse" } )
-+component("icon", { "type": "location-arrow", "style": "inverse" } )
-+component("icon", { "type": "lock", "style": "inverse" } )
-+component("icon", { "type": "long-arrow-down", "style": "inverse" } )
-+component("icon", { "type": "long-arrow-left", "style": "inverse" } )
-+component("icon", { "type": "long-arrow-right", "style": "inverse" } )
-+component("icon", { "type": "long-arrow-up", "style": "inverse" } )
-+component("icon", { "type": "magic", "style": "inverse" } )
-+component("icon", { "type": "magnet", "style": "inverse" } )
-+component("icon", { "type": "mail-forward", "style": "inverse" } )
-+component("icon", { "type": "mail-reply", "style": "inverse" } )
-+component("icon", { "type": "mail-reply-all", "style": "inverse" } )
-+component("icon", { "type": "male", "style": "inverse" } )
-+component("icon", { "type": "map", "style": "inverse" } )
-+component("icon", { "type": "map-marker", "style": "inverse" } )
-+component("icon", { "type": "map-o", "style": "inverse" } )
-+component("icon", { "type": "map-pin", "style": "inverse" } )
-+component("icon", { "type": "map-signs", "style": "inverse" } )
-+component("icon", { "type": "mars", "style": "inverse" } )
-+component("icon", { "type": "mars-double", "style": "inverse" } )
-+component("icon", { "type": "mars-stroke", "style": "inverse" } )
-+component("icon", { "type": "mars-stroke-h", "style": "inverse" } )
-+component("icon", { "type": "mars-stroke-v", "style": "inverse" } )
-+component("icon", { "type": "maxcdn", "style": "inverse" } )
-+component("icon", { "type": "meanpath", "style": "inverse" } )
-+component("icon", { "type": "medium", "style": "inverse" } )
-+component("icon", { "type": "medkit", "style": "inverse" } )
-+component("icon", { "type": "meh-o", "style": "inverse" } )
-+component("icon", { "type": "mercury", "style": "inverse" } )
-+component("icon", { "type": "microphone", "style": "inverse" } )
-+component("icon", { "type": "microphone-slash", "style": "inverse" } )
-+component("icon", { "type": "minus", "style": "inverse" } )
-+component("icon", { "type": "minus-circle", "style": "inverse" } )
-+component("icon", { "type": "minus-square", "style": "inverse" } )
-+component("icon", { "type": "minus-square-o", "style": "inverse" } )
-+component("icon", { "type": "mixcloud", "style": "inverse" } )
-+component("icon", { "type": "mobile", "style": "inverse" } )
-+component("icon", { "type": "mobile-phone", "style": "inverse" } )
-+component("icon", { "type": "modx", "style": "inverse" } )
-+component("icon", { "type": "money", "style": "inverse" } )
-+component("icon", { "type": "moon-o", "style": "inverse" } )
-+component("icon", { "type": "mortar-board", "style": "inverse" } )
-+component("icon", { "type": "motorcycle", "style": "inverse" } )
-+component("icon", { "type": "mouse-pointer", "style": "inverse" } )
-+component("icon", { "type": "music", "style": "inverse" } )
-+component("icon", { "type": "navicon", "style": "inverse" } )
-+component("icon", { "type": "neuter", "style": "inverse" } )
-+component("icon", { "type": "newspaper-o", "style": "inverse" } )
-+component("icon", { "type": "object-group", "style": "inverse" } )
-+component("icon", { "type": "object-ungroup", "style": "inverse" } )
-+component("icon", { "type": "odnoklassniki", "style": "inverse" } )
-+component("icon", { "type": "odnoklassniki-square", "style": "inverse" } )
-+component("icon", { "type": "opencart", "style": "inverse" } )
-+component("icon", { "type": "openid", "style": "inverse" } )
-+component("icon", { "type": "opera", "style": "inverse" } )
-+component("icon", { "type": "optin-monster", "style": "inverse" } )
-+component("icon", { "type": "outdent", "style": "inverse" } )
-+component("icon", { "type": "pagelines", "style": "inverse" } )
-+component("icon", { "type": "paint-brush", "style": "inverse" } )
-+component("icon", { "type": "paper-plane", "style": "inverse" } )
-+component("icon", { "type": "paper-plane-o", "style": "inverse" } )
-+component("icon", { "type": "paperclip", "style": "inverse" } )
-+component("icon", { "type": "paragraph", "style": "inverse" } )
-+component("icon", { "type": "paste", "style": "inverse" } )
-+component("icon", { "type": "pause", "style": "inverse" } )
-+component("icon", { "type": "pause-circle", "style": "inverse" } )
-+component("icon", { "type": "pause-circle-o", "style": "inverse" } )
-+component("icon", { "type": "paw", "style": "inverse" } )
-+component("icon", { "type": "paypal", "style": "inverse" } )
-+component("icon", { "type": "pencil", "style": "inverse" } )
-+component("icon", { "type": "pencil-square", "style": "inverse" } )
-+component("icon", { "type": "pencil-square-o", "style": "inverse" } )
-+component("icon", { "type": "percent", "style": "inverse" } )
-+component("icon", { "type": "phone", "style": "inverse" } )
-+component("icon", { "type": "phone-square", "style": "inverse" } )
-+component("icon", { "type": "photo", "style": "inverse" } )
-+component("icon", { "type": "picture-o", "style": "inverse" } )
-+component("icon", { "type": "pie-chart", "style": "inverse" } )
-+component("icon", { "type": "pied-piper", "style": "inverse" } )
-+component("icon", { "type": "pied-piper-alt", "style": "inverse" } )
-+component("icon", { "type": "pinterest", "style": "inverse" } )
-+component("icon", { "type": "pinterest-p", "style": "inverse" } )
-+component("icon", { "type": "pinterest-square", "style": "inverse" } )
-+component("icon", { "type": "plane", "style": "inverse" } )
-+component("icon", { "type": "play", "style": "inverse" } )
-+component("icon", { "type": "play-circle", "style": "inverse" } )
-+component("icon", { "type": "play-circle-o", "style": "inverse" } )
-+component("icon", { "type": "plug", "style": "inverse" } )
-+component("icon", { "type": "plus", "style": "inverse" } )
-+component("icon", { "type": "plus-circle", "style": "inverse" } )
-+component("icon", { "type": "plus-square", "style": "inverse" } )
-+component("icon", { "type": "plus-square-o", "style": "inverse" } )
-+component("icon", { "type": "power-off", "style": "inverse" } )
-+component("icon", { "type": "print", "style": "inverse" } )
-+component("icon", { "type": "product-hunt", "style": "inverse" } )
-+component("icon", { "type": "puzzle-piece", "style": "inverse" } )
-+component("icon", { "type": "qq", "style": "inverse" } )
-+component("icon", { "type": "qrcode", "style": "inverse" } )
-+component("icon", { "type": "question", "style": "inverse" } )
-+component("icon", { "type": "question-circle", "style": "inverse" } )
-+component("icon", { "type": "quote-left", "style": "inverse" } )
-+component("icon", { "type": "quote-right", "style": "inverse" } )
-+component("icon", { "type": "ra", "style": "inverse" } )
-+component("icon", { "type": "random", "style": "inverse" } )
-+component("icon", { "type": "rebel", "style": "inverse" } )
-+component("icon", { "type": "recycle", "style": "inverse" } )
-+component("icon", { "type": "reddit", "style": "inverse" } )
-+component("icon", { "type": "reddit-alien", "style": "inverse" } )
-+component("icon", { "type": "reddit-square", "style": "inverse" } )
-+component("icon", { "type": "refresh", "style": "inverse" } )
-+component("icon", { "type": "registered", "style": "inverse" } )
-+component("icon", { "type": "remove", "style": "inverse" } )
-+component("icon", { "type": "renren", "style": "inverse" } )
-+component("icon", { "type": "reorder", "style": "inverse" } )
-+component("icon", { "type": "repeat", "style": "inverse" } )
-+component("icon", { "type": "reply", "style": "inverse" } )
-+component("icon", { "type": "reply-all", "style": "inverse" } )
-+component("icon", { "type": "retweet", "style": "inverse" } )
-+component("icon", { "type": "rmb", "style": "inverse" } )
-+component("icon", { "type": "road", "style": "inverse" } )
-+component("icon", { "type": "rocket", "style": "inverse" } )
-+component("icon", { "type": "rotate-left", "style": "inverse" } )
-+component("icon", { "type": "rotate-right", "style": "inverse" } )
-+component("icon", { "type": "rouble", "style": "inverse" } )
-+component("icon", { "type": "rss", "style": "inverse" } )
-+component("icon", { "type": "rss-square", "style": "inverse" } )
-+component("icon", { "type": "rub", "style": "inverse" } )
-+component("icon", { "type": "ruble", "style": "inverse" } )
-+component("icon", { "type": "rupee", "style": "inverse" } )
-+component("icon", { "type": "safari", "style": "inverse" } )
-+component("icon", { "type": "save", "style": "inverse" } )
-+component("icon", { "type": "scissors", "style": "inverse" } )
-+component("icon", { "type": "scribd", "style": "inverse" } )
-+component("icon", { "type": "search", "style": "inverse" } )
-+component("icon", { "type": "search-minus", "style": "inverse" } )
-+component("icon", { "type": "search-plus", "style": "inverse" } )
-+component("icon", { "type": "sellsy", "style": "inverse" } )
-+component("icon", { "type": "send", "style": "inverse" } )
-+component("icon", { "type": "send-o", "style": "inverse" } )
-+component("icon", { "type": "server", "style": "inverse" } )
-+component("icon", { "type": "share", "style": "inverse" } )
-+component("icon", { "type": "share-alt", "style": "inverse" } )
-+component("icon", { "type": "share-alt-square", "style": "inverse" } )
-+component("icon", { "type": "share-square", "style": "inverse" } )
-+component("icon", { "type": "share-square-o", "style": "inverse" } )
-+component("icon", { "type": "shekel", "style": "inverse" } )
-+component("icon", { "type": "sheqel", "style": "inverse" } )
-+component("icon", { "type": "shield", "style": "inverse" } )
-+component("icon", { "type": "ship", "style": "inverse" } )
-+component("icon", { "type": "shirtsinbulk", "style": "inverse" } )
-+component("icon", { "type": "shopping-bag", "style": "inverse" } )
-+component("icon", { "type": "shopping-basket", "style": "inverse" } )
-+component("icon", { "type": "shopping-cart", "style": "inverse" } )
-+component("icon", { "type": "sign-in", "style": "inverse" } )
-+component("icon", { "type": "sign-out", "style": "inverse" } )
-+component("icon", { "type": "signal", "style": "inverse" } )
-+component("icon", { "type": "simplybuilt", "style": "inverse" } )
-+component("icon", { "type": "sitemap", "style": "inverse" } )
-+component("icon", { "type": "skyatlas", "style": "inverse" } )
-+component("icon", { "type": "skype", "style": "inverse" } )
-+component("icon", { "type": "slack", "style": "inverse" } )
-+component("icon", { "type": "sliders", "style": "inverse" } )
-+component("icon", { "type": "slideshare", "style": "inverse" } )
-+component("icon", { "type": "smile-o", "style": "inverse" } )
-+component("icon", { "type": "soccer-ball-o", "style": "inverse" } )
-+component("icon", { "type": "sort", "style": "inverse" } )
-+component("icon", { "type": "sort-alpha-asc", "style": "inverse" } )
-+component("icon", { "type": "sort-alpha-desc", "style": "inverse" } )
-+component("icon", { "type": "sort-amount-asc", "style": "inverse" } )
-+component("icon", { "type": "sort-amount-desc", "style": "inverse" } )
-+component("icon", { "type": "sort-asc", "style": "inverse" } )
-+component("icon", { "type": "sort-desc", "style": "inverse" } )
-+component("icon", { "type": "sort-down", "style": "inverse" } )
-+component("icon", { "type": "sort-numeric-asc", "style": "inverse" } )
-+component("icon", { "type": "sort-numeric-desc", "style": "inverse" } )
-+component("icon", { "type": "sort-up", "style": "inverse" } )
-+component("icon", { "type": "soundcloud", "style": "inverse" } )
-+component("icon", { "type": "space-shuttle", "style": "inverse" } )
-+component("icon", { "type": "spinner", "style": "inverse" } )
-+component("icon", { "type": "spoon", "style": "inverse" } )
-+component("icon", { "type": "spotify", "style": "inverse" } )
-+component("icon", { "type": "square", "style": "inverse" } )
-+component("icon", { "type": "square-o", "style": "inverse" } )
-+component("icon", { "type": "stack-exchange", "style": "inverse" } )
-+component("icon", { "type": "stack-overflow", "style": "inverse" } )
-+component("icon", { "type": "star", "style": "inverse" } )
-+component("icon", { "type": "star-half", "style": "inverse" } )
-+component("icon", { "type": "star-half-empty", "style": "inverse" } )
-+component("icon", { "type": "star-half-full", "style": "inverse" } )
-+component("icon", { "type": "star-half-o", "style": "inverse" } )
-+component("icon", { "type": "star-o", "style": "inverse" } )
-+component("icon", { "type": "steam", "style": "inverse" } )
-+component("icon", { "type": "steam-square", "style": "inverse" } )
-+component("icon", { "type": "step-backward", "style": "inverse" } )
-+component("icon", { "type": "step-forward", "style": "inverse" } )
-+component("icon", { "type": "stethoscope", "style": "inverse" } )
-+component("icon", { "type": "sticky-note", "style": "inverse" } )
-+component("icon", { "type": "sticky-note-o", "style": "inverse" } )
-+component("icon", { "type": "stop", "style": "inverse" } )
-+component("icon", { "type": "stop-circle", "style": "inverse" } )
-+component("icon", { "type": "stop-circle-o", "style": "inverse" } )
-+component("icon", { "type": "street-view", "style": "inverse" } )
-+component("icon", { "type": "strikethrough", "style": "inverse" } )
-+component("icon", { "type": "stumbleupon", "style": "inverse" } )
-+component("icon", { "type": "stumbleupon-circle", "style": "inverse" } )
-+component("icon", { "type": "subscript", "style": "inverse" } )
-+component("icon", { "type": "subway", "style": "inverse" } )
-+component("icon", { "type": "suitcase", "style": "inverse" } )
-+component("icon", { "type": "sun-o", "style": "inverse" } )
-+component("icon", { "type": "superscript", "style": "inverse" } )
-+component("icon", { "type": "support", "style": "inverse" } )
-+component("icon", { "type": "table", "style": "inverse" } )
-+component("icon", { "type": "tablet", "style": "inverse" } )
-+component("icon", { "type": "tachometer", "style": "inverse" } )
-+component("icon", { "type": "tag", "style": "inverse" } )
-+component("icon", { "type": "tags", "style": "inverse" } )
-+component("icon", { "type": "tasks", "style": "inverse" } )
-+component("icon", { "type": "taxi", "style": "inverse" } )
-+component("icon", { "type": "television", "style": "inverse" } )
-+component("icon", { "type": "tencent-weibo", "style": "inverse" } )
-+component("icon", { "type": "terminal", "style": "inverse" } )
-+component("icon", { "type": "text-height", "style": "inverse" } )
-+component("icon", { "type": "text-width", "style": "inverse" } )
-+component("icon", { "type": "th", "style": "inverse" } )
-+component("icon", { "type": "th-large", "style": "inverse" } )
-+component("icon", { "type": "th-list", "style": "inverse" } )
-+component("icon", { "type": "thumb-tack", "style": "inverse" } )
-+component("icon", { "type": "thumbs-down", "style": "inverse" } )
-+component("icon", { "type": "thumbs-o-down", "style": "inverse" } )
-+component("icon", { "type": "thumbs-o-up", "style": "inverse" } )
-+component("icon", { "type": "thumbs-up", "style": "inverse" } )
-+component("icon", { "type": "ticket", "style": "inverse" } )
-+component("icon", { "type": "times", "style": "inverse" } )
-+component("icon", { "type": "times-circle", "style": "inverse" } )
-+component("icon", { "type": "times-circle-o", "style": "inverse" } )
-+component("icon", { "type": "tint", "style": "inverse" } )
-+component("icon", { "type": "toggle-down", "style": "inverse" } )
-+component("icon", { "type": "toggle-left", "style": "inverse" } )
-+component("icon", { "type": "toggle-off", "style": "inverse" } )
-+component("icon", { "type": "toggle-on", "style": "inverse" } )
-+component("icon", { "type": "toggle-right", "style": "inverse" } )
-+component("icon", { "type": "toggle-up", "style": "inverse" } )
-+component("icon", { "type": "trademark", "style": "inverse" } )
-+component("icon", { "type": "train", "style": "inverse" } )
-+component("icon", { "type": "transgender", "style": "inverse" } )
-+component("icon", { "type": "transgender-alt", "style": "inverse" } )
-+component("icon", { "type": "trash", "style": "inverse" } )
-+component("icon", { "type": "trash-o", "style": "inverse" } )
-+component("icon", { "type": "tree", "style": "inverse" } )
-+component("icon", { "type": "trello", "style": "inverse" } )
-+component("icon", { "type": "tripadvisor", "style": "inverse" } )
-+component("icon", { "type": "trophy", "style": "inverse" } )
-+component("icon", { "type": "truck", "style": "inverse" } )
-+component("icon", { "type": "try", "style": "inverse" } )
-+component("icon", { "type": "tty", "style": "inverse" } )
-+component("icon", { "type": "tumblr", "style": "inverse" } )
-+component("icon", { "type": "tumblr-square", "style": "inverse" } )
-+component("icon", { "type": "turkish-lira", "style": "inverse" } )
-+component("icon", { "type": "tv", "style": "inverse" } )
-+component("icon", { "type": "twitch", "style": "inverse" } )
-+component("icon", { "type": "twitter", "style": "inverse" } )
-+component("icon", { "type": "twitter-square", "style": "inverse" } )
-+component("icon", { "type": "umbrella", "style": "inverse" } )
-+component("icon", { "type": "underline", "style": "inverse" } )
-+component("icon", { "type": "undo", "style": "inverse" } )
-+component("icon", { "type": "university", "style": "inverse" } )
-+component("icon", { "type": "unlink", "style": "inverse" } )
-+component("icon", { "type": "unlock", "style": "inverse" } )
-+component("icon", { "type": "unlock-alt", "style": "inverse" } )
-+component("icon", { "type": "unsorted", "style": "inverse" } )
-+component("icon", { "type": "upload", "style": "inverse" } )
-+component("icon", { "type": "usb", "style": "inverse" } )
-+component("icon", { "type": "usd", "style": "inverse" } )
-+component("icon", { "type": "user", "style": "inverse" } )
-+component("icon", { "type": "user-md", "style": "inverse" } )
-+component("icon", { "type": "user-plus", "style": "inverse" } )
-+component("icon", { "type": "user-secret", "style": "inverse" } )
-+component("icon", { "type": "user-times", "style": "inverse" } )
-+component("icon", { "type": "users", "style": "inverse" } )
-+component("icon", { "type": "venus", "style": "inverse" } )
-+component("icon", { "type": "venus-double", "style": "inverse" } )
-+component("icon", { "type": "venus-mars", "style": "inverse" } )
-+component("icon", { "type": "viacoin", "style": "inverse" } )
-+component("icon", { "type": "video-camera", "style": "inverse" } )
-+component("icon", { "type": "vimeo", "style": "inverse" } )
-+component("icon", { "type": "vimeo-square", "style": "inverse" } )
-+component("icon", { "type": "vine", "style": "inverse" } )
-+component("icon", { "type": "vk", "style": "inverse" } )
-+component("icon", { "type": "volume-down", "style": "inverse" } )
-+component("icon", { "type": "volume-off", "style": "inverse" } )
-+component("icon", { "type": "volume-up", "style": "inverse" } )
-+component("icon", { "type": "warning", "style": "inverse" } )
-+component("icon", { "type": "wechat", "style": "inverse" } )
-+component("icon", { "type": "weibo", "style": "inverse" } )
-+component("icon", { "type": "weixin", "style": "inverse" } )
-+component("icon", { "type": "whatsapp", "style": "inverse" } )
-+component("icon", { "type": "wheelchair", "style": "inverse" } )
-+component("icon", { "type": "wifi", "style": "inverse" } )
-+component("icon", { "type": "wikipedia-w", "style": "inverse" } )
-+component("icon", { "type": "windows", "style": "inverse" } )
-+component("icon", { "type": "won", "style": "inverse" } )
-+component("icon", { "type": "wordpress", "style": "inverse" } )
-+component("icon", { "type": "wrench", "style": "inverse" } )
-+component("icon", { "type": "xing", "style": "inverse" } )
-+component("icon", { "type": "xing-square", "style": "inverse" } )
-+component("icon", { "type": "y-combinator", "style": "inverse" } )
-+component("icon", { "type": "y-combinator-square", "style": "inverse" } )
-+component("icon", { "type": "yahoo", "style": "inverse" } )
-+component("icon", { "type": "yc", "style": "inverse" } )
-+component("icon", { "type": "yc-square", "style": "inverse" } )
-+component("icon", { "type": "yelp", "style": "inverse" } )
-+component("icon", { "type": "yen", "style": "inverse" } )
-+component("icon", { "type": "youtube", "style": "inverse" } )
-+component("icon", { "type": "youtube-play", "style": "inverse" } )
-+component("icon", { "type": "youtube-square", "style": "inverse" } );
+component("text", { "content": "<h3>Web Application Icons</h3>" } )+
+component("icon", { "type": "address-book" } )+
+component("icon", { "type": "address-book-o" } )+
+component("icon", { "type": "address-card" } )+
+component("icon", { "type": "address-card-o" } )+
+component("icon", { "type": "adjust" } )+
+component("icon", { "type": "american-sign-language-interpreting" } )+
+component("icon", { "type": "anchor" } )+
+component("icon", { "type": "archive" } )+
+component("icon", { "type": "area-chart" } )+
+component("icon", { "type": "arrows" } )+
+component("icon", { "type": "arrows-h" } )+
+component("icon", { "type": "arrows-v" } )+
+component("icon", { "type": "asl-interpreting" } )+
+component("icon", { "type": "assistive-listening-systems" } )+
+component("icon", { "type": "asterisk" } )+
+component("icon", { "type": "at" } )+
+component("icon", { "type": "audio-description" } )+
+component("icon", { "type": "automobile" } )+
+component("icon", { "type": "balance-scale" } )+
+component("icon", { "type": "ban" } )+
+component("icon", { "type": "bank" } )+
+component("icon", { "type": "bar-chart" } )+
+component("icon", { "type": "bar-chart-o" } )+
+component("icon", { "type": "barcode" } )+
+component("icon", { "type": "bars" } )+
+component("icon", { "type": "bath" } )+
+component("icon", { "type": "bathtub" } )+
+component("icon", { "type": "battery" } )+
+component("icon", { "type": "battery-0" } )+
+component("icon", { "type": "battery-1" } )+
+component("icon", { "type": "battery-2" } )+
+component("icon", { "type": "battery-3" } )+
+component("icon", { "type": "battery-4" } )+
+component("icon", { "type": "battery-empty" } )+
+component("icon", { "type": "battery-full" } )+
+component("icon", { "type": "battery-half" } )+
+component("icon", { "type": "battery-quarter" } )+
+component("icon", { "type": "battery-three-quarters" } )+
+component("icon", { "type": "bed" } )+
+component("icon", { "type": "beer" } )+
+component("icon", { "type": "bell" } )+
+component("icon", { "type": "bell-o" } )+
+component("icon", { "type": "bell-slash" } )+
+component("icon", { "type": "bell-slash-o" } )+
+component("icon", { "type": "bicycle" } )+
+component("icon", { "type": "binoculars" } )+
+component("icon", { "type": "birthday-cake" } )+
+component("icon", { "type": "blind" } )+
+component("icon", { "type": "bluetooth" } )+
+component("icon", { "type": "bluetooth-b" } )+
+component("icon", { "type": "bolt" } )+
+component("icon", { "type": "bomb" } )+
+component("icon", { "type": "book" } )+
+component("icon", { "type": "bookmark" } )+
+component("icon", { "type": "bookmark-o" } )+
+component("icon", { "type": "braille" } )+
+component("icon", { "type": "briefcase" } )+
+component("icon", { "type": "bug" } )+
+component("icon", { "type": "building" } )+
+component("icon", { "type": "building-o" } )+
+component("icon", { "type": "bullhorn" } )+
+component("icon", { "type": "bullseye" } )+
+component("icon", { "type": "bus" } )+
+component("icon", { "type": "cab" } )+
+component("icon", { "type": "calculator" } )+
+component("icon", { "type": "calendar" } )+
+component("icon", { "type": "calendar-check-o" } )+
+component("icon", { "type": "calendar-minus-o" } )+
+component("icon", { "type": "calendar-o" } )+
+component("icon", { "type": "calendar-plus-o" } )+
+component("icon", { "type": "calendar-times-o" } )+
+component("icon", { "type": "camera" } )+
+component("icon", { "type": "camera-retro" } )+
+component("icon", { "type": "car" } )+
+component("icon", { "type": "caret-square-o-down" } )+
+component("icon", { "type": "caret-square-o-left" } )+
+component("icon", { "type": "caret-square-o-right" } )+
+component("icon", { "type": "caret-square-o-up" } )+
+component("icon", { "type": "cart-arrow-down" } )+
+component("icon", { "type": "cart-plus" } )+
+component("icon", { "type": "cc" } )+
+component("icon", { "type": "certificate" } )+
+component("icon", { "type": "check" } )+
+component("icon", { "type": "check-circle" } )+
+component("icon", { "type": "check-circle-o" } )+
+component("icon", { "type": "check-square" } )+
+component("icon", { "type": "check-square-o" } )+
+component("icon", { "type": "child" } )+
+component("icon", { "type": "circle" } )+
+component("icon", { "type": "circle-o" } )+
+component("icon", { "type": "circle-o-notch" } )+
+component("icon", { "type": "circle-thin" } )+
+component("icon", { "type": "clock-o" } )+
+component("icon", { "type": "clone" } )+
+component("icon", { "type": "close" } )+
+component("icon", { "type": "cloud" } )+
+component("icon", { "type": "cloud-download" } )+
+component("icon", { "type": "cloud-upload" } )+
+component("icon", { "type": "code" } )+
+component("icon", { "type": "code-fork" } )+
+component("icon", { "type": "coffee" } )+
+component("icon", { "type": "cog" } )+
+component("icon", { "type": "cogs" } )+
+component("icon", { "type": "comment" } )+
+component("icon", { "type": "comment-o" } )+
+component("icon", { "type": "commenting" } )+
+component("icon", { "type": "commenting-o" } )+
+component("icon", { "type": "comments" } )+
+component("icon", { "type": "comments-o" } )+
+component("icon", { "type": "compass" } )+
+component("icon", { "type": "copyright" } )+
+component("icon", { "type": "creative-commons" } )+
+component("icon", { "type": "credit-card" } )+
+component("icon", { "type": "credit-card-alt" } )+
+component("icon", { "type": "crop" } )+
+component("icon", { "type": "crosshairs" } )+
+component("icon", { "type": "cube" } )+
+component("icon", { "type": "cubes" } )+
+component("icon", { "type": "cutlery" } )+
+component("icon", { "type": "dashboard" } )+
+component("icon", { "type": "database" } )+
+component("icon", { "type": "deaf" } )+
+component("icon", { "type": "deafness" } )+
+component("icon", { "type": "desktop" } )+
+component("icon", { "type": "diamond" } )+
+component("icon", { "type": "dot-circle-o" } )+
+component("icon", { "type": "download" } )+
+component("icon", { "type": "drivers-license" } )+
+component("icon", { "type": "drivers-license-o" } )+
+component("icon", { "type": "edit" } )+
+component("icon", { "type": "ellipsis-h" } )+
+component("icon", { "type": "ellipsis-v" } )+
+component("icon", { "type": "envelope" } )+
+component("icon", { "type": "envelope-o" } )+
+component("icon", { "type": "envelope-open" } )+
+component("icon", { "type": "envelope-open-o" } )+
+component("icon", { "type": "envelope-square" } )+
+component("icon", { "type": "eraser" } )+
+component("icon", { "type": "exchange" } )+
+component("icon", { "type": "exclamation" } )+
+component("icon", { "type": "exclamation-circle" } )+
+component("icon", { "type": "exclamation-triangle" } )+
+component("icon", { "type": "external-link" } )+
+component("icon", { "type": "external-link-square" } )+
+component("icon", { "type": "eye" } )+
+component("icon", { "type": "eye-slash" } )+
+component("icon", { "type": "eyedropper" } )+
+component("icon", { "type": "fax" } )+
+component("icon", { "type": "feed" } )+
+component("icon", { "type": "female" } )+
+component("icon", { "type": "fighter-jet" } )+
+component("icon", { "type": "file-archive-o" } )+
+component("icon", { "type": "file-audio-o" } )+
+component("icon", { "type": "file-code-o" } )+
+component("icon", { "type": "file-excel-o" } )+
+component("icon", { "type": "file-image-o" } )+
+component("icon", { "type": "file-movie-o" } )+
+component("icon", { "type": "file-pdf-o" } )+
+component("icon", { "type": "file-photo-o" } )+
+component("icon", { "type": "file-picture-o" } )+
+component("icon", { "type": "file-powerpoint-o" } )+
+component("icon", { "type": "file-sound-o" } )+
+component("icon", { "type": "file-video-o" } )+
+component("icon", { "type": "file-word-o" } )+
+component("icon", { "type": "file-zip-o" } )+
+component("icon", { "type": "film" } )+
+component("icon", { "type": "filter" } )+
+component("icon", { "type": "fire" } )+
+component("icon", { "type": "fire-extinguisher" } )+
+component("icon", { "type": "flag" } )+
+component("icon", { "type": "flag-checkered" } )+
+component("icon", { "type": "flag-o" } )+
+component("icon", { "type": "flash" } )+
+component("icon", { "type": "flask" } )+
+component("icon", { "type": "folder" } )+
+component("icon", { "type": "folder-o" } )+
+component("icon", { "type": "folder-open" } )+
+component("icon", { "type": "folder-open-o" } )+
+component("icon", { "type": "frown-o" } )+
+component("icon", { "type": "futbol-o" } )+
+component("icon", { "type": "gamepad" } )+
+component("icon", { "type": "gavel" } )+
+component("icon", { "type": "gear" } )+
+component("icon", { "type": "gears" } )+
+component("icon", { "type": "gift" } )+
+component("icon", { "type": "glass" } )+
+component("icon", { "type": "globe" } )+
+component("icon", { "type": "graduation-cap" } )+
+component("icon", { "type": "group" } )+
+component("icon", { "type": "hand-grab-o" } )+
+component("icon", { "type": "hand-lizard-o" } )+
+component("icon", { "type": "hand-paper-o" } )+
+component("icon", { "type": "hand-peace-o" } )+
+component("icon", { "type": "hand-pointer-o" } )+
+component("icon", { "type": "hand-rock-o" } )+
+component("icon", { "type": "hand-scissors-o" } )+
+component("icon", { "type": "hand-spock-o" } )+
+component("icon", { "type": "hand-stop-o" } )+
+component("icon", { "type": "handshake-o" } )+
+component("icon", { "type": "hard-of-hearing" } )+
+component("icon", { "type": "hashtag" } )+
+component("icon", { "type": "hdd-o" } )+
+component("icon", { "type": "headphones" } )+
+component("icon", { "type": "heart" } )+
+component("icon", { "type": "heart-o" } )+
+component("icon", { "type": "heartbeat" } )+
+component("icon", { "type": "history" } )+
+component("icon", { "type": "home" } )+
+component("icon", { "type": "hotel" } )+
+component("icon", { "type": "hourglass" } )+
+component("icon", { "type": "hourglass-1" } )+
+component("icon", { "type": "hourglass-2" } )+
+component("icon", { "type": "hourglass-3" } )+
+component("icon", { "type": "hourglass-end" } )+
+component("icon", { "type": "hourglass-half" } )+
+component("icon", { "type": "hourglass-o" } )+
+component("icon", { "type": "hourglass-start" } )+
+component("icon", { "type": "i-cursor" } )+
+component("icon", { "type": "id-badge" } )+
+component("icon", { "type": "id-card" } )+
+component("icon", { "type": "id-card-o" } )+
+component("icon", { "type": "image" } )+
+component("icon", { "type": "inbox" } )+
+component("icon", { "type": "industry" } )+
+component("icon", { "type": "info" } )+
+component("icon", { "type": "info-circle" } )+
+component("icon", { "type": "institution" } )+
+component("icon", { "type": "key" } )+
+component("icon", { "type": "keyboard-o" } )+
+component("icon", { "type": "language" } )+
+component("icon", { "type": "laptop" } )+
+component("icon", { "type": "leaf" } )+
+component("icon", { "type": "legal" } )+
+component("icon", { "type": "lemon-o" } )+
+component("icon", { "type": "level-down" } )+
+component("icon", { "type": "level-up" } )+
+component("icon", { "type": "life-bouy" } )+
+component("icon", { "type": "life-buoy" } )+
+component("icon", { "type": "life-ring" } )+
+component("icon", { "type": "life-saver" } )+
+component("icon", { "type": "lightbulb-o" } )+
+component("icon", { "type": "line-chart" } )+
+component("icon", { "type": "location-arrow" } )+
+component("icon", { "type": "lock" } )+
+component("icon", { "type": "low-vision" } )+
+component("icon", { "type": "magic" } )+
+component("icon", { "type": "magnet" } )+
+component("icon", { "type": "mail-forward" } )+
+component("icon", { "type": "mail-reply" } )+
+component("icon", { "type": "mail-reply-all" } )+
+component("icon", { "type": "male" } )+
+component("icon", { "type": "map" } )+
+component("icon", { "type": "map-marker" } )+
+component("icon", { "type": "map-o" } )+
+component("icon", { "type": "map-pin" } )+
+component("icon", { "type": "map-signs" } )+
+component("icon", { "type": "meh-o" } )+
+component("icon", { "type": "microchip" } )+
+component("icon", { "type": "microphone" } )+
+component("icon", { "type": "microphone-slash" } )+
+component("icon", { "type": "minus" } )+
+component("icon", { "type": "minus-circle" } )+
+component("icon", { "type": "minus-square" } )+
+component("icon", { "type": "minus-square-o" } )+
+component("icon", { "type": "mobile" } )+
+component("icon", { "type": "mobile-phone" } )+
+component("icon", { "type": "money" } )+
+component("icon", { "type": "moon-o" } )+
+component("icon", { "type": "mortar-board" } )+
+component("icon", { "type": "motorcycle" } )+
+component("icon", { "type": "mouse-pointer" } )+
+component("icon", { "type": "music" } )+
+component("icon", { "type": "navicon" } )+
+component("icon", { "type": "newspaper-o" } )+
+component("icon", { "type": "object-group" } )+
+component("icon", { "type": "object-ungroup" } )+
+component("icon", { "type": "paint-brush" } )+
+component("icon", { "type": "paper-plane" } )+
+component("icon", { "type": "paper-plane-o" } )+
+component("icon", { "type": "paw" } )+
+component("icon", { "type": "pencil" } )+
+component("icon", { "type": "pencil-square" } )+
+component("icon", { "type": "pencil-square-o" } )+
+component("icon", { "type": "percent" } )+
+component("icon", { "type": "phone" } )+
+component("icon", { "type": "phone-square" } )+
+component("icon", { "type": "photo" } )+
+component("icon", { "type": "picture-o" } )+
+component("icon", { "type": "pie-chart" } )+
+component("icon", { "type": "plane" } )+
+component("icon", { "type": "plug" } )+
+component("icon", { "type": "plus" } )+
+component("icon", { "type": "plus-circle" } )+
+component("icon", { "type": "plus-square" } )+
+component("icon", { "type": "plus-square-o" } )+
+component("icon", { "type": "podcast" } )+
+component("icon", { "type": "power-off" } )+
+component("icon", { "type": "print" } )+
+component("icon", { "type": "puzzle-piece" } )+
+component("icon", { "type": "qrcode" } )+
+component("icon", { "type": "question" } )+
+component("icon", { "type": "question-circle" } )+
+component("icon", { "type": "question-circle-o" } )+
+component("icon", { "type": "quote-left" } )+
+component("icon", { "type": "quote-right" } )+
+component("icon", { "type": "random" } )+
+component("icon", { "type": "recycle" } )+
+component("icon", { "type": "refresh" } )+
+component("icon", { "type": "registered" } )+
+component("icon", { "type": "remove" } )+
+component("icon", { "type": "reorder" } )+
+component("icon", { "type": "reply" } )+
+component("icon", { "type": "reply-all" } )+
+component("icon", { "type": "retweet" } )+
+component("icon", { "type": "road" } )+
+component("icon", { "type": "rocket" } )+
+component("icon", { "type": "rss" } )+
+component("icon", { "type": "rss-square" } )+
+component("icon", { "type": "s15" } )+
+component("icon", { "type": "search" } )+
+component("icon", { "type": "search-minus" } )+
+component("icon", { "type": "search-plus" } )+
+component("icon", { "type": "send" } )+
+component("icon", { "type": "send-o" } )+
+component("icon", { "type": "server" } )+
+component("icon", { "type": "share" } )+
+component("icon", { "type": "share-alt" } )+
+component("icon", { "type": "share-alt-square" } )+
+component("icon", { "type": "share-square" } )+
+component("icon", { "type": "share-square-o" } )+
+component("icon", { "type": "shield" } )+
+component("icon", { "type": "ship" } )+
+component("icon", { "type": "shopping-bag" } )+
+component("icon", { "type": "shopping-basket" } )+
+component("icon", { "type": "shopping-cart" } )+
+component("icon", { "type": "shower" } )+
+component("icon", { "type": "sign-in" } )+
+component("icon", { "type": "sign-language" } )+
+component("icon", { "type": "sign-out" } )+
+component("icon", { "type": "signal" } )+
+component("icon", { "type": "signing" } )+
+component("icon", { "type": "sitemap" } )+
+component("icon", { "type": "sliders" } )+
+component("icon", { "type": "smile-o" } )+
+component("icon", { "type": "snowflake-o" } )+
+component("icon", { "type": "soccer-ball-o" } )+
+component("icon", { "type": "sort" } )+
+component("icon", { "type": "sort-alpha-asc" } )+
+component("icon", { "type": "sort-alpha-desc" } )+
+component("icon", { "type": "sort-amount-asc" } )+
+component("icon", { "type": "sort-amount-desc" } )+
+component("icon", { "type": "sort-asc" } )+
+component("icon", { "type": "sort-desc" } )+
+component("icon", { "type": "sort-down" } )+
+component("icon", { "type": "sort-numeric-asc" } )+
+component("icon", { "type": "sort-numeric-desc" } )+
+component("icon", { "type": "sort-up" } )+
+component("icon", { "type": "space-shuttle" } )+
+component("icon", { "type": "spinner" } )+
+component("icon", { "type": "spoon" } )+
+component("icon", { "type": "square" } )+
+component("icon", { "type": "square-o" } )+
+component("icon", { "type": "star" } )+
+component("icon", { "type": "star-half" } )+
+component("icon", { "type": "star-half-empty" } )+
+component("icon", { "type": "star-half-full" } )+
+component("icon", { "type": "star-half-o" } )+
+component("icon", { "type": "star-o" } )+
+component("icon", { "type": "sticky-note" } )+
+component("icon", { "type": "sticky-note-o" } )+
+component("icon", { "type": "street-view" } )+
+component("icon", { "type": "suitcase" } )+
+component("icon", { "type": "sun-o" } )+
+component("icon", { "type": "support" } )+
+component("icon", { "type": "tablet" } )+
+component("icon", { "type": "tachometer" } )+
+component("icon", { "type": "tag" } )+
+component("icon", { "type": "tags" } )+
+component("icon", { "type": "tasks" } )+
+component("icon", { "type": "taxi" } )+
+component("icon", { "type": "television" } )+
+component("icon", { "type": "terminal" } )+
+component("icon", { "type": "thermometer" } )+
+component("icon", { "type": "thermometer-0" } )+
+component("icon", { "type": "thermometer-1" } )+
+component("icon", { "type": "thermometer-2" } )+
+component("icon", { "type": "thermometer-3" } )+
+component("icon", { "type": "thermometer-4" } )+
+component("icon", { "type": "thermometer-empty" } )+
+component("icon", { "type": "thermometer-full" } )+
+component("icon", { "type": "thermometer-half" } )+
+component("icon", { "type": "thermometer-quarter" } )+
+component("icon", { "type": "thermometer-three-quarters" } )+
+component("icon", { "type": "thumb-tack" } )+
+component("icon", { "type": "thumbs-down" } )+
+component("icon", { "type": "thumbs-o-down" } )+
+component("icon", { "type": "thumbs-o-up" } )+
+component("icon", { "type": "thumbs-up" } )+
+component("icon", { "type": "ticket" } )+
+component("icon", { "type": "times" } )+
+component("icon", { "type": "times-circle" } )+
+component("icon", { "type": "times-circle-o" } )+
+component("icon", { "type": "times-rectangle" } )+
+component("icon", { "type": "times-rectangle-o" } )+
+component("icon", { "type": "tint" } )+
+component("icon", { "type": "toggle-down" } )+
+component("icon", { "type": "toggle-left" } )+
+component("icon", { "type": "toggle-off" } )+
+component("icon", { "type": "toggle-on" } )+
+component("icon", { "type": "toggle-right" } )+
+component("icon", { "type": "toggle-up" } )+
+component("icon", { "type": "trademark" } )+
+component("icon", { "type": "trash" } )+
+component("icon", { "type": "trash-o" } )+
+component("icon", { "type": "tree" } )+
+component("icon", { "type": "trophy" } )+
+component("icon", { "type": "truck" } )+
+component("icon", { "type": "tty" } )+
+component("icon", { "type": "tv" } )+
+component("icon", { "type": "umbrella" } )+
+component("icon", { "type": "universal-access" } )+
+component("icon", { "type": "university" } )+
+component("icon", { "type": "unlock" } )+
+component("icon", { "type": "unlock-alt" } )+
+component("icon", { "type": "unsorted" } )+
+component("icon", { "type": "upload" } )+
+component("icon", { "type": "user" } )+
+component("icon", { "type": "user-circle" } )+
+component("icon", { "type": "user-circle-o" } )+
+component("icon", { "type": "user-o" } )+
+component("icon", { "type": "user-plus" } )+
+component("icon", { "type": "user-secret" } )+
+component("icon", { "type": "user-times" } )+
+component("icon", { "type": "users" } )+
+component("icon", { "type": "vcard" } )+
+component("icon", { "type": "vcard-o" } )+
+component("icon", { "type": "video-camera" } )+
+component("icon", { "type": "volume-control-phone" } )+
+component("icon", { "type": "volume-down" } )+
+component("icon", { "type": "volume-off" } )+
+component("icon", { "type": "volume-up" } )+
+component("icon", { "type": "warning" } )+
+component("icon", { "type": "wheelchair" } )+
+component("icon", { "type": "wheelchair-alt" } )+
+component("icon", { "type": "wifi" } )+
+component("icon", { "type": "window-close" } )+
+component("icon", { "type": "window-close-o" } )+
+component("icon", { "type": "window-maximize" } )+
+component("icon", { "type": "window-minimize" } )+
+component("icon", { "type": "window-restore" } )+
+component("icon", { "type": "wrench" } )+
+component("text", { "content": "<h3>Accessibility Icons</h3>" } )+
+component("icon", { "type": "american-sign-language-interpreting" } )+
+component("icon", { "type": "asl-interpreting" } )+
+component("icon", { "type": "assistive-listening-systems" } )+
+component("icon", { "type": "audio-description" } )+
+component("icon", { "type": "blind" } )+
+component("icon", { "type": "braille" } )+
+component("icon", { "type": "cc" } )+
+component("icon", { "type": "deaf" } )+
+component("icon", { "type": "deafness" } )+
+component("icon", { "type": "hard-of-hearing" } )+
+component("icon", { "type": "low-vision" } )+
+component("icon", { "type": "question-circle-o" } )+
+component("icon", { "type": "sign-language" } )+
+component("icon", { "type": "signing" } )+
+component("icon", { "type": "tty" } )+
+component("icon", { "type": "universal-access" } )+
+component("icon", { "type": "volume-control-phone" } )+
+component("icon", { "type": "wheelchair" } )+
+component("icon", { "type": "wheelchair-alt" } )+
+component("text", { "content": "<h3>Hand Icons</h3>" } )+
+component("icon", { "type": "hand-grab-o" } )+
+component("icon", { "type": "hand-lizard-o" } )+
+component("icon", { "type": "hand-o-down" } )+
+component("icon", { "type": "hand-o-left" } )+
+component("icon", { "type": "hand-o-right" } )+
+component("icon", { "type": "hand-o-up" } )+
+component("icon", { "type": "hand-paper-o" } )+
+component("icon", { "type": "hand-peace-o" } )+
+component("icon", { "type": "hand-pointer-o" } )+
+component("icon", { "type": "hand-rock-o" } )+
+component("icon", { "type": "hand-scissors-o" } )+
+component("icon", { "type": "hand-spock-o" } )+
+component("icon", { "type": "hand-stop-o" } )+
+component("icon", { "type": "thumbs-down" } )+
+component("icon", { "type": "thumbs-o-down" } )+
+component("icon", { "type": "thumbs-o-up" } )+
+component("icon", { "type": "thumbs-up" } )+
+component("text", { "content": "<h3>Transportation Icons</h3>" } )+
+component("icon", { "type": "ambulance" } )+
+component("icon", { "type": "automobile" } )+
+component("icon", { "type": "bicycle" } )+
+component("icon", { "type": "bus" } )+
+component("icon", { "type": "cab" } )+
+component("icon", { "type": "car" } )+
+component("icon", { "type": "fighter-jet" } )+
+component("icon", { "type": "motorcycle" } )+
+component("icon", { "type": "plane" } )+
+component("icon", { "type": "rocket" } )+
+component("icon", { "type": "ship" } )+
+component("icon", { "type": "space-shuttle" } )+
+component("icon", { "type": "subway" } )+
+component("icon", { "type": "taxi" } )+
+component("icon", { "type": "train" } )+
+component("icon", { "type": "truck" } )+
+component("icon", { "type": "wheelchair" } )+
+component("icon", { "type": "wheelchair-alt" } )+
+component("text", { "content": "<h3>Gender Icons</h3>" } )+
+component("icon", { "type": "genderless" } )+
+component("icon", { "type": "intersex" } )+
+component("icon", { "type": "mars" } )+
+component("icon", { "type": "mars-double" } )+
+component("icon", { "type": "mars-stroke" } )+
+component("icon", { "type": "mars-stroke-h" } )+
+component("icon", { "type": "mars-stroke-v" } )+
+component("icon", { "type": "mercury" } )+
+component("icon", { "type": "neuter" } )+
+component("icon", { "type": "transgender" } )+
+component("icon", { "type": "transgender-alt" } )+
+component("icon", { "type": "venus" } )+
+component("icon", { "type": "venus-double" } )+
+component("icon", { "type": "venus-mars" } )+
+component("text", { "content": "<h3>File Type Icons</h3>" } )+
+component("icon", { "type": "file" } )+
+component("icon", { "type": "file-archive-o" } )+
+component("icon", { "type": "file-audio-o" } )+
+component("icon", { "type": "file-code-o" } )+
+component("icon", { "type": "file-excel-o" } )+
+component("icon", { "type": "file-image-o" } )+
+component("icon", { "type": "file-movie-o" } )+
+component("icon", { "type": "file-o" } )+
+component("icon", { "type": "file-pdf-o" } )+
+component("icon", { "type": "file-photo-o" } )+
+component("icon", { "type": "file-picture-o" } )+
+component("icon", { "type": "file-powerpoint-o" } )+
+component("icon", { "type": "file-sound-o" } )+
+component("icon", { "type": "file-text" } )+
+component("icon", { "type": "file-text-o" } )+
+component("icon", { "type": "file-video-o" } )+
+component("icon", { "type": "file-word-o" } )+
+component("icon", { "type": "file-zip-o" } )+
+component("text", { "content": "<h3>Spinner Icons</h3>" } )+
+component("text", { "content": "<p>Note: These icons work great with the fa-spin class. Check out the spinning icons example.</p>" } )+
+component("icon", { "type": "circle-o-notch" } )+
+component("icon", { "type": "cog" } )+
+component("icon", { "type": "gear" } )+
+component("icon", { "type": "refresh" } )+
+component("icon", { "type": "spinner" } )+
+component("text", { "content": "<h3>Form Control Icons</h3>" } )+
+component("icon", { "type": "check-square" } )+
+component("icon", { "type": "check-square-o" } )+
+component("icon", { "type": "circle" } )+
+component("icon", { "type": "circle-o" } )+
+component("icon", { "type": "dot-circle-o" } )+
+component("icon", { "type": "minus-square" } )+
+component("icon", { "type": "minus-square-o" } )+
+component("icon", { "type": "plus-square" } )+
+component("icon", { "type": "plus-square-o" } )+
+component("icon", { "type": "square" } )+
+component("icon", { "type": "square-o" } )+
+component("text", { "content": "<h3>Payment Icons</h3>" } )+
+component("icon", { "type": "cc-amex" } )+
+component("icon", { "type": "cc-diners-club" } )+
+component("icon", { "type": "cc-discover" } )+
+component("icon", { "type": "cc-jcb" } )+
+component("icon", { "type": "cc-mastercard" } )+
+component("icon", { "type": "cc-paypal" } )+
+component("icon", { "type": "cc-stripe" } )+
+component("icon", { "type": "cc-visa" } )+
+component("icon", { "type": "credit-card" } )+
+component("icon", { "type": "credit-card-alt" } )+
+component("icon", { "type": "google-wallet" } )+
+component("icon", { "type": "paypal" } )+
+component("text", { "content": "<h3>Chart Icons</h3>" } )+
+component("icon", { "type": "area-chart" } )+
+component("icon", { "type": "bar-chart" } )+
+component("icon", { "type": "bar-chart-o" } )+
+component("icon", { "type": "line-chart" } )+
+component("icon", { "type": "pie-chart" } )+
+component("text", { "content": "<h3>Currency Icons</h3>" } )+
+component("icon", { "type": "bitcoin" } )+
+component("icon", { "type": "btc" } )+
+component("icon", { "type": "cny" } )+
+component("icon", { "type": "dollar" } )+
+component("icon", { "type": "eur" } )+
+component("icon", { "type": "euro" } )+
+component("icon", { "type": "gbp" } )+
+component("icon", { "type": "gg" } )+
+component("icon", { "type": "gg-circle" } )+
+component("icon", { "type": "ils" } )+
+component("icon", { "type": "inr" } )+
+component("icon", { "type": "jpy" } )+
+component("icon", { "type": "krw" } )+
+component("icon", { "type": "money" } )+
+component("icon", { "type": "rmb" } )+
+component("icon", { "type": "rouble" } )+
+component("icon", { "type": "rub" } )+
+component("icon", { "type": "ruble" } )+
+component("icon", { "type": "rupee" } )+
+component("icon", { "type": "shekel" } )+
+component("icon", { "type": "sheqel" } )+
+component("icon", { "type": "try" } )+
+component("icon", { "type": "turkish-lira" } )+
+component("icon", { "type": "usd" } )+
+component("icon", { "type": "won" } )+
+component("icon", { "type": "yen" } )+
+component("text", { "content": "<h3>Text Editor Icons</h3>" } )+
+component("icon", { "type": "align-center" } )+
+component("icon", { "type": "align-justify" } )+
+component("icon", { "type": "align-left" } )+
+component("icon", { "type": "align-right" } )+
+component("icon", { "type": "bold" } )+
+component("icon", { "type": "chain" } )+
+component("icon", { "type": "chain-broken" } )+
+component("icon", { "type": "clipboard" } )+
+component("icon", { "type": "columns" } )+
+component("icon", { "type": "copy" } )+
+component("icon", { "type": "cut" } )+
+component("icon", { "type": "dedent" } )+
+component("icon", { "type": "eraser" } )+
+component("icon", { "type": "file" } )+
+component("icon", { "type": "file-o" } )+
+component("icon", { "type": "file-text" } )+
+component("icon", { "type": "file-text-o" } )+
+component("icon", { "type": "files-o" } )+
+component("icon", { "type": "floppy-o" } )+
+component("icon", { "type": "font" } )+
+component("icon", { "type": "header" } )+
+component("icon", { "type": "indent" } )+
+component("icon", { "type": "italic" } )+
+component("icon", { "type": "link" } )+
+component("icon", { "type": "list" } )+
+component("icon", { "type": "list-alt" } )+
+component("icon", { "type": "list-ol" } )+
+component("icon", { "type": "list-ul" } )+
+component("icon", { "type": "outdent" } )+
+component("icon", { "type": "paperclip" } )+
+component("icon", { "type": "paragraph" } )+
+component("icon", { "type": "paste" } )+
+component("icon", { "type": "repeat" } )+
+component("icon", { "type": "rotate-left" } )+
+component("icon", { "type": "rotate-right" } )+
+component("icon", { "type": "save" } )+
+component("icon", { "type": "scissors" } )+
+component("icon", { "type": "strikethrough" } )+
+component("icon", { "type": "subscript" } )+
+component("icon", { "type": "superscript" } )+
+component("icon", { "type": "table" } )+
+component("icon", { "type": "text-height" } )+
+component("icon", { "type": "text-width" } )+
+component("icon", { "type": "th" } )+
+component("icon", { "type": "th-large" } )+
+component("icon", { "type": "th-list" } )+
+component("icon", { "type": "underline" } )+
+component("icon", { "type": "undo" } )+
+component("icon", { "type": "unlink" } )+
+component("text", { "content": "<h3>Directional Icons</h3>" } )+
+component("icon", { "type": "angle-double-down" } )+
+component("icon", { "type": "angle-double-left" } )+
+component("icon", { "type": "angle-double-right" } )+
+component("icon", { "type": "angle-double-up" } )+
+component("icon", { "type": "angle-down" } )+
+component("icon", { "type": "angle-left" } )+
+component("icon", { "type": "angle-right" } )+
+component("icon", { "type": "angle-up" } )+
+component("icon", { "type": "arrow-circle-down" } )+
+component("icon", { "type": "arrow-circle-left" } )+
+component("icon", { "type": "arrow-circle-o-down" } )+
+component("icon", { "type": "arrow-circle-o-left" } )+
+component("icon", { "type": "arrow-circle-o-right" } )+
+component("icon", { "type": "arrow-circle-o-up" } )+
+component("icon", { "type": "arrow-circle-right" } )+
+component("icon", { "type": "arrow-circle-up" } )+
+component("icon", { "type": "arrow-down" } )+
+component("icon", { "type": "arrow-left" } )+
+component("icon", { "type": "arrow-right" } )+
+component("icon", { "type": "arrow-up" } )+
+component("icon", { "type": "arrows" } )+
+component("icon", { "type": "arrows-alt" } )+
+component("icon", { "type": "arrows-h" } )+
+component("icon", { "type": "arrows-v" } )+
+component("icon", { "type": "caret-down" } )+
+component("icon", { "type": "caret-left" } )+
+component("icon", { "type": "caret-right" } )+
+component("icon", { "type": "caret-square-o-down" } )+
+component("icon", { "type": "caret-square-o-left" } )+
+component("icon", { "type": "caret-square-o-right" } )+
+component("icon", { "type": "caret-square-o-up" } )+
+component("icon", { "type": "caret-up" } )+
+component("icon", { "type": "chevron-circle-down" } )+
+component("icon", { "type": "chevron-circle-left" } )+
+component("icon", { "type": "chevron-circle-right" } )+
+component("icon", { "type": "chevron-circle-up" } )+
+component("icon", { "type": "chevron-down" } )+
+component("icon", { "type": "chevron-left" } )+
+component("icon", { "type": "chevron-right" } )+
+component("icon", { "type": "chevron-up" } )+
+component("icon", { "type": "exchange" } )+
+component("icon", { "type": "hand-o-down" } )+
+component("icon", { "type": "hand-o-left" } )+
+component("icon", { "type": "hand-o-right" } )+
+component("icon", { "type": "hand-o-up" } )+
+component("icon", { "type": "long-arrow-down" } )+
+component("icon", { "type": "long-arrow-left" } )+
+component("icon", { "type": "long-arrow-right" } )+
+component("icon", { "type": "long-arrow-up" } )+
+component("icon", { "type": "toggle-down" } )+
+component("icon", { "type": "toggle-left" } )+
+component("icon", { "type": "toggle-right" } )+
+component("icon", { "type": "toggle-up" } )+
+component("text", { "content": "<h3>Video Player Icons</h3>" } )+
+component("icon", { "type": "arrows-alt" } )+
+component("icon", { "type": "backward" } )+
+component("icon", { "type": "compress" } )+
+component("icon", { "type": "eject" } )+
+component("icon", { "type": "expand" } )+
+component("icon", { "type": "fast-backward" } )+
+component("icon", { "type": "fast-forward" } )+
+component("icon", { "type": "forward" } )+
+component("icon", { "type": "pause" } )+
+component("icon", { "type": "pause-circle" } )+
+component("icon", { "type": "pause-circle-o" } )+
+component("icon", { "type": "play" } )+
+component("icon", { "type": "play-circle" } )+
+component("icon", { "type": "play-circle-o" } )+
+component("icon", { "type": "random" } )+
+component("icon", { "type": "step-backward" } )+
+component("icon", { "type": "step-forward" } )+
+component("icon", { "type": "stop" } )+
+component("icon", { "type": "stop-circle" } )+
+component("icon", { "type": "stop-circle-o" } )+
+component("icon", { "type": "youtube-play" } )+
+component("text", { "content": "<h3>Brand Icons</h3>" } )+
+component("icon", { "type": "500px" } )+
+component("icon", { "type": "adn" } )+
+component("icon", { "type": "amazon" } )+
+component("icon", { "type": "android" } )+
+component("icon", { "type": "angellist" } )+
+component("icon", { "type": "apple" } )+
+component("icon", { "type": "bandcamp" } )+
+component("icon", { "type": "behance" } )+
+component("icon", { "type": "behance-square" } )+
+component("icon", { "type": "bitbucket" } )+
+component("icon", { "type": "bitbucket-square" } )+
+component("icon", { "type": "bitcoin" } )+
+component("icon", { "type": "black-tie" } )+
+component("icon", { "type": "bluetooth" } )+
+component("icon", { "type": "bluetooth-b" } )+
+component("icon", { "type": "btc" } )+
+component("icon", { "type": "buysellads" } )+
+component("icon", { "type": "cc-amex" } )+
+component("icon", { "type": "cc-diners-club" } )+
+component("icon", { "type": "cc-discover" } )+
+component("icon", { "type": "cc-jcb" } )+
+component("icon", { "type": "cc-mastercard" } )+
+component("icon", { "type": "cc-paypal" } )+
+component("icon", { "type": "cc-stripe" } )+
+component("icon", { "type": "cc-visa" } )+
+component("icon", { "type": "chrome" } )+
+component("icon", { "type": "codepen" } )+
+component("icon", { "type": "codiepie" } )+
+component("icon", { "type": "connectdevelop" } )+
+component("icon", { "type": "contao" } )+
+component("icon", { "type": "css3" } )+
+component("icon", { "type": "dashcube" } )+
+component("icon", { "type": "delicious" } )+
+component("icon", { "type": "deviantart" } )+
+component("icon", { "type": "digg" } )+
+component("icon", { "type": "dribbble" } )+
+component("icon", { "type": "dropbox" } )+
+component("icon", { "type": "drupal" } )+
+component("icon", { "type": "edge" } )+
+component("icon", { "type": "eercast" } )+
+component("icon", { "type": "empire" } )+
+component("icon", { "type": "envira" } )+
+component("icon", { "type": "etsy" } )+
+component("icon", { "type": "expeditedssl" } )+
+component("icon", { "type": "fa" } )+
+component("icon", { "type": "facebook" } )+
+component("icon", { "type": "facebook-f" } )+
+component("icon", { "type": "facebook-official" } )+
+component("icon", { "type": "facebook-square" } )+
+component("icon", { "type": "firefox" } )+
+component("icon", { "type": "first-order" } )+
+component("icon", { "type": "flickr" } )+
+component("icon", { "type": "font-awesome" } )+
+component("icon", { "type": "fonticons" } )+
+component("icon", { "type": "fort-awesome" } )+
+component("icon", { "type": "forumbee" } )+
+component("icon", { "type": "foursquare" } )+
+component("icon", { "type": "free-code-camp" } )+
+component("icon", { "type": "ge" } )+
+component("icon", { "type": "get-pocket" } )+
+component("icon", { "type": "gg" } )+
+component("icon", { "type": "gg-circle" } )+
+component("icon", { "type": "git" } )+
+component("icon", { "type": "git-square" } )+
+component("icon", { "type": "github" } )+
+component("icon", { "type": "github-alt" } )+
+component("icon", { "type": "github-square" } )+
+component("icon", { "type": "gitlab" } )+
+component("icon", { "type": "gittip" } )+
+component("icon", { "type": "glide" } )+
+component("icon", { "type": "glide-g" } )+
+component("icon", { "type": "google" } )+
+component("icon", { "type": "google-plus" } )+
+component("icon", { "type": "google-plus-circle" } )+
+component("icon", { "type": "google-plus-official" } )+
+component("icon", { "type": "google-plus-square" } )+
+component("icon", { "type": "google-wallet" } )+
+component("icon", { "type": "gratipay" } )+
+component("icon", { "type": "grav" } )+
+component("icon", { "type": "hacker-news" } )+
+component("icon", { "type": "houzz" } )+
+component("icon", { "type": "html5" } )+
+component("icon", { "type": "imdb" } )+
+component("icon", { "type": "instagram" } )+
+component("icon", { "type": "internet-explorer" } )+
+component("icon", { "type": "ioxhost" } )+
+component("icon", { "type": "joomla" } )+
+component("icon", { "type": "jsfiddle" } )+
+component("icon", { "type": "lastfm" } )+
+component("icon", { "type": "lastfm-square" } )+
+component("icon", { "type": "leanpub" } )+
+component("icon", { "type": "linkedin" } )+
+component("icon", { "type": "linkedin-square" } )+
+component("icon", { "type": "linode" } )+
+component("icon", { "type": "linux" } )+
+component("icon", { "type": "maxcdn" } )+
+component("icon", { "type": "meanpath" } )+
+component("icon", { "type": "medium" } )+
+component("icon", { "type": "meetup" } )+
+component("icon", { "type": "mixcloud" } )+
+component("icon", { "type": "modx" } )+
+component("icon", { "type": "odnoklassniki" } )+
+component("icon", { "type": "odnoklassniki-square" } )+
+component("icon", { "type": "opencart" } )+
+component("icon", { "type": "openid" } )+
+component("icon", { "type": "opera" } )+
+component("icon", { "type": "optin-monster" } )+
+component("icon", { "type": "pagelines" } )+
+component("icon", { "type": "paypal" } )+
+component("icon", { "type": "pied-piper" } )+
+component("icon", { "type": "pied-piper-alt" } )+
+component("icon", { "type": "pied-piper-pp" } )+
+component("icon", { "type": "pinterest" } )+
+component("icon", { "type": "pinterest-p" } )+
+component("icon", { "type": "pinterest-square" } )+
+component("icon", { "type": "product-hunt" } )+
+component("icon", { "type": "qq" } )+
+component("icon", { "type": "quora" } )+
+component("icon", { "type": "ra" } )+
+component("icon", { "type": "ravelry" } )+
+component("icon", { "type": "rebel" } )+
+component("icon", { "type": "reddit" } )+
+component("icon", { "type": "reddit-alien" } )+
+component("icon", { "type": "reddit-square" } )+
+component("icon", { "type": "renren" } )+
+component("icon", { "type": "resistance" } )+
+component("icon", { "type": "safari" } )+
+component("icon", { "type": "scribd" } )+
+component("icon", { "type": "sellsy" } )+
+component("icon", { "type": "share-alt" } )+
+component("icon", { "type": "share-alt-square" } )+
+component("icon", { "type": "shirtsinbulk" } )+
+component("icon", { "type": "simplybuilt" } )+
+component("icon", { "type": "skyatlas" } )+
+component("icon", { "type": "skype" } )+
+component("icon", { "type": "slack" } )+
+component("icon", { "type": "slideshare" } )+
+component("icon", { "type": "snapchat" } )+
+component("icon", { "type": "snapchat-ghost" } )+
+component("icon", { "type": "snapchat-square" } )+
+component("icon", { "type": "soundcloud" } )+
+component("icon", { "type": "spotify" } )+
+component("icon", { "type": "stack-exchange" } )+
+component("icon", { "type": "stack-overflow" } )+
+component("icon", { "type": "steam" } )+
+component("icon", { "type": "steam-square" } )+
+component("icon", { "type": "stumbleupon" } )+
+component("icon", { "type": "stumbleupon-circle" } )+
+component("icon", { "type": "superpowers" } )+
+component("icon", { "type": "telegram" } )+
+component("icon", { "type": "tencent-weibo" } )+
+component("icon", { "type": "themeisle" } )+
+component("icon", { "type": "trello" } )+
+component("icon", { "type": "tripadvisor" } )+
+component("icon", { "type": "tumblr" } )+
+component("icon", { "type": "tumblr-square" } )+
+component("icon", { "type": "twitch" } )+
+component("icon", { "type": "twitter" } )+
+component("icon", { "type": "twitter-square" } )+
+component("icon", { "type": "usb" } )+
+component("icon", { "type": "viacoin" } )+
+component("icon", { "type": "viadeo" } )+
+component("icon", { "type": "viadeo-square" } )+
+component("icon", { "type": "vimeo" } )+
+component("icon", { "type": "vimeo-square" } )+
+component("icon", { "type": "vine" } )+
+component("icon", { "type": "vk" } )+
+component("icon", { "type": "wechat" } )+
+component("icon", { "type": "weibo" } )+
+component("icon", { "type": "weixin" } )+
+component("icon", { "type": "whatsapp" } )+
+component("icon", { "type": "wikipedia-w" } )+
+component("icon", { "type": "windows" } )+
+component("icon", { "type": "wordpress" } )+
+component("icon", { "type": "wpbeginner" } )+
+component("icon", { "type": "wpexplorer" } )+
+component("icon", { "type": "wpforms" } )+
+component("icon", { "type": "xing" } )+
+component("icon", { "type": "xing-square" } )+
+component("icon", { "type": "y-combinator" } )+
+component("icon", { "type": "y-combinator-square" } )+
+component("icon", { "type": "yahoo" } )+
+component("icon", { "type": "yc" } )+
+component("icon", { "type": "yc-square" } )+
+component("icon", { "type": "yelp" } )+
+component("icon", { "type": "yoast" } )+
+component("icon", { "type": "youtube" } )+
+component("icon", { "type": "youtube-play" } )+
+component("icon", { "type": "youtube-square" } )+
+component("text", { "content": "<h3>Medical Icons</h3>" } )+
+component("icon", { "type": "ambulance" } )+
+component("icon", { "type": "h-square" } )+
+component("icon", { "type": "heart" } )+
+component("icon", { "type": "heart-o" } )+
+component("icon", { "type": "heartbeat" } )+
+component("icon", { "type": "hospital-o" } )+
+component("icon", { "type": "medkit" } )+
+component("icon", { "type": "plus-square" } )+
+component("icon", { "type": "stethoscope" } )+
+component("icon", { "type": "user-md" } )+
+component("icon", { "type": "wheelchair" } )+
+component("icon", { "type": "wheelchair-alt" } )
 </script>
 
 ### Options
