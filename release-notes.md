@@ -3,6 +3,7 @@
 v1.6.0 (next minor release)
 
 v1.5.1 (next patch release)
+* [Added new scope for the Conversation embeds](../../tree/scope/conversation)
 
 v1.5.0 (released 5 Jun 2017)
 * [Changes to sticky nav functionality](../../tree/component/sticky-nav)
