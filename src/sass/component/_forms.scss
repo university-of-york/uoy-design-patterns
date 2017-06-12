@@ -27,8 +27,7 @@
   font-size:24px;
 }
 .c-form__label {
-  cursor:pointer;
-  font-weight: bold;
+  font-weight: 700;
 }
 .c-form__hint {
   display:block;
@@ -68,6 +67,7 @@
   .c-form__label {
     margin-left:$base-spacing/4;
     font-weight: normal;
+    cursor:pointer;
   }
 }
 .c-form__radio,

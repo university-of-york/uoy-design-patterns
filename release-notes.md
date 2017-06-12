@@ -2,7 +2,9 @@
 
 v1.6.0 (next minor release)
 
-v1.5.1 (next patch release)
+v1.5.2 (next patch release)
+
+v1.5.1 (released 12 Jun 2017)
 * [Added new scope for the Conversation embeds](../../tree/scope/conversation)
 * [Moved Formstack CSS into standalone](../../tree/update/formstack)
 
