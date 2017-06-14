@@ -154,6 +154,9 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       that.button.text(that.buttonTextLess).append(that.buttonIcon);
     }
 
+    // Remove focus state
+    that.button.blur();
+
     that.isToggling = false;
 
     // Returns true if open, false if closed
