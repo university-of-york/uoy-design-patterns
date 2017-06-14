@@ -69,9 +69,8 @@
  * Maps....................Map module styles and controls
  *
  * SCOPES
- * Test....................Test stylesheet - remove for live
  * TinyMCE.................Stylesheet for TinyMCE - extends other styles
- * Formstack...............Stylesheet for Formstack - extends other styles
+ * Conversation............Scope elements within Conversation articles
  *
  * THEMES
  * 404.....................404 theme
@@ -151,9 +150,8 @@
 @import "component/map";
 
 // SCOPES
-//@import "scopes/test";
 @import "scopes/tinymce";
-@import "scopes/formstack";
+@import "scopes/conversation";
 
 // THEMES
 //@import "themes/404";
