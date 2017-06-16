@@ -2,73 +2,19 @@
 // CLEARING TABLES
 //
 
+.c-clearing-container {
+}
 .c-clearing-table {
-  @include component-margin;
-  border-top:0.8em solid lighten($teal,10);
-  background-color:$s2;
-  border-radius:4px;
-  position:relative;
-  padding:16px;
-  @include mq(small, '~') {
-    padding:12px;
-  }
 }
 .c-clearing-table__title {
-  margin-top:4px;
-  margin-bottom:0;
-  font-size:24px;
-  font-size:1.5rem;
+  font-weight:bold;
 }
 .c-clearing-table__adjustment-only {
   font-weight:bold;
-  margin-top:4px;
-  margin-bottom:0;
-}
-.c-clearing-table__requirements {
-  float:left;
-  clear:left;
-  width:160px;
-  max-width:160px;
-  background:$teal;
-  color:$light;
-  padding:12px 6px;
-  text-align:center;
-  margin:20px 20px 20px 0;
-  font-size:36px;
-  font-size:2.25rem;
-  font-family:$font-title;
-  line-height:1.1;
-  small {
-    display:block;
-    line-height:1;
-  }
-  @include mq(tiny, '~') {
-    max-width:inherit;
-    width:100%;
-    float:none;
-  }
-}
-.c-clearing-table__ucas-code,
-.c-clearing-table__adjustment,
-.c-clearing-table__course-length {
-  margin-bottom:10px;
-  clear:left;
-}
-.c-clearing-table__phone-numbers {
-  margin-top:20px;
-  margin-bottom:0;
 }
 .c-clearing-table__phone-number {
   white-space: nowrap;
   font-weight: bold;
-}
-.c-clearing-table__additional-requirements {
-  margin-top:20px;
-  margin-bottom:4px;
-  padding-left:180px;
-  @include mq(tiny, '~') {
-    padding-left:0;
-  }
 }
 .c-clearing-table__list {
   margin-bottom:10px;
@@ -77,6 +23,13 @@
     padding-left:1.8em;
   }
 }
-.c-clearing-table__list-item {
-  margin-bottom:0;
+.c-clearing-table__top-link {
+  float:right;
+  font-size:0.8em;
+  line-height:1.25;
+}
+.c-clearing-table__course {
+  &.is-off {
+    display:none;
+  }
 }

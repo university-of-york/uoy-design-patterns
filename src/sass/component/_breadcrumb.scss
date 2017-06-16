@@ -1,6 +1,12 @@
 //
 // BREADCRUMB
 //
+@mixin breadcrumb-separator-padding() {
+  padding:0 $base-spacing/2;
+  @include mq(small, '-') {
+    padding:0 $base-spacing/4;
+  }
+}
 .c-breadcrumb {
   @include component;
   width:100%;
@@ -10,12 +16,57 @@
     @include font-size(13px);
     margin:0;
   }
+  // Closed breadcrumb hides all but home, level 1, level n-1 and level n
+  &.is-closed {
+    .c-breadcrumb__link,
+    a {
+      width:0;
+      overflow:hidden;
+      display:inline-block;
+      white-space:nowrap;
+      &:first-of-type,
+      &:nth-of-type(2),
+      &:nth-last-of-type(2),
+      &:last-of-type {
+        width:auto;
+      }
+      // Make third link read '...'
+      &:nth-of-type(3) {
+        padding:0 0 0 20px;
+        position:relative;
+        &:after {
+          content:'...';
+          width:20px;
+          height:100%;
+          position:absolute;
+          top:0;
+          left:0;
+          text-align:center;
+        }
+      }
+    }
+    .c-breadcrumb__separator {
+      width:0;
+      padding:0;
+      overflow:hidden;
+      display:inline-block;
+      &:first-of-type,
+      &:nth-of-type(2),
+      &:nth-last-of-type(2),
+      &:last-of-type {
+        @include breadcrumb-separator-padding;
+        width:auto;
+      }
+    }
+  }
 }
 
 .c-breadcrumb__items {
+  @include tiny-padding;
+  padding-top:$base-spacing/2;
+  padding-bottom:$base-spacing/2;
   max-width:$container-width;
   margin:0 auto;
-  padding:$base-spacing/2 $base-spacing;
 }
 
 .c-breadcrumb__link,
@@ -27,8 +78,6 @@
 }
 
 .c-breadcrumb__separator {
-  padding:0 $base-spacing/2;
-  @include mq(small, '-') {
-    padding:0 $base-spacing/4;
-  }
+  @include breadcrumb-separator-padding;
+  word-break: break-all;
 }

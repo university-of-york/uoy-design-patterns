@@ -8,19 +8,23 @@
   @extend .c-alert--info !optional;
   @extend .c-alert !optional;
   /* Additional styles for TinyMCE editor only - use Sass-style comments */
-  // font-weight:bold;
-  // font-family:Arial;
+  // font-weight:normal;
 }
 
 /* Need the root selector for TinyMCE to use */
 .cta {
   // display:block;
 }
-.cta a {
+.cta.cta a {
   @extend .c-btn !optional;
   @extend .c-btn--medium !optional;
 }
 
 /* Already a selector elsewhere - no need to extend */
+/* Must include a declaration or it will be stripped out */
 .lead {
+  // zoom:1;
+}
+.youtube-video-embed {
+  // zoom:1;
 }

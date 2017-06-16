@@ -29,6 +29,7 @@ $img_size:140px;
     width:$img_size;
     height:$img_size;
     overflow:hidden;
+    z-index:1; // Stops Chrome removing border-radius when other stuff aniamtes on the page
 }
 .h-card__bio {
 

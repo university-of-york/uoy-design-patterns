@@ -2,10 +2,10 @@
 // TABLES
 //
 table {
+  @include component-margin;
   border-collapse: collapse;
   border:0;
   width:100%;
-  margin:$base-spacing 0;
 }
 
 caption {
@@ -15,6 +15,7 @@ caption {
 }
 
 th {
+  @include demarginalise;
   font-weight:bold;
   text-align:left;
   padding:10px;
@@ -38,6 +39,7 @@ tbody tr:last-child th {
 }
 
 td {
+  @include demarginalise;
   padding:10px;
   border-bottom:1px dotted lighten($blue,15);
   vertical-align:top;

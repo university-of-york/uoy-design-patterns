@@ -22,37 +22,6 @@
     page-break-before: avoid !important;
     page-break-after: auto !important;
   }
-  a,
-  a:visited {
-    text-decoration: none;
-  }
-
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-
-  /*
-   * Don't show links for images, or javascript/internal/mailto/tel links
-   */
-
-  .c-breadcrumb a,
-  .c-main-header__title a,
-  a.c-page-title__link,
-  a[href^="javascript:"],
-  a[href^="/"],
-  a[href*="www.york.ac.uk"],
-  a[href^="#"],
-  a[href^="mailto:"],
-  a[href^="tel:"],
-  a[href=""] {
-    &:after {
-      content: "";
-    }
-  }
 
   thead {
     display: table-header-group; /* h5bp.com/t */
@@ -72,7 +41,7 @@
   }
   img.icon,
   .c-main-header__logo {
-    display:inline;
+    display:inline-block;
   }
 
   @page {
@@ -91,18 +60,40 @@
     page-break-after: avoid;
   }
 
+  a {
+    text-decoration:none;
+  }
+  // Add external links afterwards
+  a[href^="http"]:not([href*="york.ac.uk"]) {
+    &:after {
+      content:" (" attr(href) ") ";
+      font-size:0.8em;
+      font-weight:normal;
+    }
+  }
+
+  // Add link to Youtube video
+  .c-video {
+    &:before {
+      content:"Watch the video at https://youtu.be/"attr(data-video-id);
+    }
+    iframe {
+      display:none;
+    }
+  }
+
   /*
    * Reduce header spacing
    */
-   .c-main-header__title,
-   .c-page-title__header,
-   .c-breadcrumb {
-     margin-bottom:0;
-   }
+  .c-main-header__title,
+  .c-page-title__header,
+  .c-breadcrumb {
+    margin-bottom:0;
+  }
 
-   .c-breadcrumb__separator {
+  .c-breadcrumb__separator {
     padding: 0 5px;
-}
+  }
 
   /*
    * Get rid of a load of unnecessary stuff
@@ -210,13 +201,14 @@
     }
   }
   .c-figure--link {
-    overflow:visible;
-    .c-figure__caption {
+    .c-figure__content {
       position:static;
       padding:0;
-      margin-top:$base-spacing;
       display:block;
     }
+  }
+  .c-figure--no-margin {
+    margin-bottom:$base-spacing;
   }
   /*
    * Quote blockquotes don't need speech bubbles

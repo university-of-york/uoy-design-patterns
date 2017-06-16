@@ -9,19 +9,33 @@ module.exports = function(grunt) {
   var secret = grunt.file.readJSON(filename);
 
   return {
-    build: {
+    patternlibrary: {
       files: {
         src: ["build/**/*"]
       },
       options: {
-        path: '/usr/yorkweb/web/pattern-library/',
-        host: secret.host,
-        username: secret.username,
-        password: secret.password,
+        path: "/usr/yorkweb/web/pattern-library/",
+        host: secret.patternlibrary.host,
+        username: secret.patternlibrary.username,
+        password: secret.patternlibrary.password,
         srcBasePath: "build/",
         createDirectories: true,
         showProgress: true
       }
+    },
+    cdn: {
+      files: {
+        src: ["release/**"]
+      },
+      options: {
+        path: "/usr/yorkweb/web/static/test/a/",
+        host: secret.cdn.host,
+        username: secret.cdn.username,
+        password: secret.cdn.password,
+        srcBasePath: "release/",
+        createDirectories: true,
+        showProgress: true
+      }
     }
-  }
+  };
 };

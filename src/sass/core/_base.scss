@@ -11,6 +11,7 @@ body,select,textarea,input {
 }
 body {
   color:$charcoal;
+  background:#fff;
 }
 a {
   color:$link-color;
@@ -20,6 +21,10 @@ a {
   &:active,
   &:visited {
     outline: 0px;
+  }
+  &:focus {
+    outline:$link-focus-outline-color auto 5px;
+    outline-offset:-2px;
   }
   &:hover {
     color:$link-hover-color;
@@ -94,6 +99,7 @@ ol {
 }
 li {
   margin: 0 0 $base-spacing/2 0;
+  break-inside:avoid;
 }
 li > {
   // No margins in sub lists!
@@ -116,7 +122,16 @@ ol {
 }
 form {
 }
+input,
+select,
+textarea {
+  &:focus {
+    outline:$blue auto 5px;
+    outline-offset:-2px;
+  }
+}
 fieldset {
+  @include demarginalise;
   border:0;
   margin:0;
   padding:0;

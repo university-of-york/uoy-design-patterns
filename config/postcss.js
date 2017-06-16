@@ -8,18 +8,20 @@ module.exports = {
     files: [{
       expand: true,
       cwd: 'dev/css/',
-      src: ['*.raw.css'],
+      src: ['**/*.raw.css'],
       dest: 'dev/css',
-      ext: '.css'
+      ext: '.css',
+      flatten: true
     }]
   },
   build: {
     files: [{
       expand: true,
       cwd: 'build/css/',
-      src: ['*.raw.css'],
+      src: ['**/*.raw.css'],
       dest: 'build/css',
-      ext: '.css'
+      ext: '.css',
+      flatten: true
     }]
   }
 };

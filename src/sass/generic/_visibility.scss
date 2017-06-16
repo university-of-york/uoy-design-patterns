@@ -9,6 +9,14 @@
 .is-hidden {
   display:none;
 }
+// Transparent and out of flow, but still able to measure dimensions
+// Used in accordions, utility toggles...
+.is-ghost {
+    transition-duration:0s;
+    visibility: hidden;
+    position: absolute;
+    display:block;
+}
 .is-fullscreen {
   position: fixed !important;
   top: 0 !important;
@@ -16,6 +24,10 @@
   width:100% !important;
   height:100% !important;
   z-index: 121 !important;
+}
+// Not shown on screen, but still accessible to screen readers etc.
+.is-invisible {
+  @include is-invisible;
 }
 
 @each $name, $size in $width {

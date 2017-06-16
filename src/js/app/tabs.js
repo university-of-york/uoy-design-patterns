@@ -30,8 +30,10 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       }, this);
     }
 
+    var that = this;
+
     tabLinks.on('click', function (e) {
-      //e.preventDefault();
+      e.preventDefault();
       var $this = $(this);
       var $thisTab = $this.parent();
       var thisHref = $this.attr('href');
@@ -57,7 +59,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
         document.body.scrollLeft = scrollH;
       }
       // Fire update event
-      $(window).trigger('content.updated');
+      $(window).trigger('content.updated', ['tabs', that]);
 
     });
 

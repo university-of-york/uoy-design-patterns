@@ -1,28 +1,180 @@
 //
 // FIGURES & CAPTIONS
 //
+
+// Mixin used to get offsets for banner figures
+// $fraction is the denominator of the fraction (i.e. 2 for 1/2, 3 for 1/3 etc.)
+@mixin figureContent($fraction:2) {
+  // Special case for content in full width figures on bigger than huge
+  @include mq('huge', '++') {
+    .c-figure--full-width &,
+    .c-figure--full-width.c-figure--banner & { // needed to extra specificity
+      // For bigger than huge screens, use pixel amounts
+      $width:($container-width/$fraction) - ($base-spacing*2);
+      $margin:($container-width/2) - $base-spacing - $width;
+      width:$width;
+      left:50%;
+      &.c-figure__content--left,
+      &.c-figure__content--top-left,
+      &.c-figure__content--bottom-left {
+        margin-left:-($margin + $width);
+        float:none;
+      }
+      &.c-figure__content--right,
+      &.c-figure__content--top-right,
+      &.c-figure__content--bottom-right {
+        margin-left:$margin;
+        float:none;
+      }
+    }
+  }
+  $width:100%/$fraction;
+  width:$width;
+  width:calc(#{$width} - #{$base-spacing*2});
+  @include mq('medium', '~') {
+    width:50%;
+    width:calc(50% - #{$base-spacing});
+  }
+  @include mq('small', '-') {
+    &,
+    &.c-figure__content--left,
+    &.c-figure__content--top-left,
+    &.c-figure__content--bottom-left,
+    &.c-figure__content--right,
+    &.c-figure__content--top-right,
+    &.c-figure__content--bottom-right {
+      width:100%;
+      max-width:none;
+      position:static;
+      display:block;
+      float:none;
+    }
+  }
+}
+
 .c-figure {
   @include component;
   position:relative;
   display:block;
   overflow:hidden;
   max-width:100%;
+  text-decoration:none;
 }
 .c-figure__image,
 .c-figure img {
   display:block;
   width:100%;
+  position: relative;
+  // HELPER CLASSES FOR IMAGES (used by JS)
+  // Image must fit vertically
+  &.is-fitY {
+    width: auto;
+    height: 100%;
+    max-width: none;
+    .csstransforms & {
+      left: 50%;
+      top:0;
+      transform:translateX(-50%);
+      -webkit-transform:translateX(-50%);
+    }
+  }
 }
 .c-figure__image--rounded {
   @include round;
 }
+// Image captions
 .c-figure__caption {
   @include image-caption;
+  @include font-size(14px);
+  max-width:50%;
+  background:$blue;
+  background:transparentize($blue, 0.15);
+  color:$light;
+  padding:$base-spacing/2 $base-spacing;
+  @include mq(small, '-') {
+    position:static;
+    max-width:100%;
+    display:block;
+    padding:$base-spacing/4 $base-spacing/2;
+    background:$blue;
+  }
+}
+.c-figure__caption--below {
+  display: block;
+  position: static;
+  background: transparent;
+  color:lighten($charcoal,20);
+  padding: $base-spacing/2 0;
+  max-width: $container-width;
+  margin-left: auto;
+  margin-right: auto;
+  .o-grid__row--alt1 &,
+  .o-grid__row--alt2 & {
+    color:darken($light,20);
+  }
+  .c-figure--full-width & {
+    padding-left:$base-spacing/2;
+    @include mq(small, '-') {
+      padding-left:$base-spacing/4;
+    }
+  }
+}
+.c-figure__caption--bottom-left {
+  bottom:0;
+  left:0;
+}
+.c-figure__caption--top-left {
+  top:0;
+  left:0;
+}
+.c-figure__caption--top-right {
+  top:0;
+  right:0;
+}
+.c-figure__caption--bottom-right {
+  bottom:0;
+  right:0;
+}
+.c-figure__caption-icon {
+  margin-right:$base-spacing/2;
+}
+
+// Video content
+.c-figure {
+  .c-video {
+    margin-bottom:0;
+  }
+}
+
+// Figure content
+.c-figure__content {
+  @include demarginalise;
+  @include tiny-padding;
+  padding-top:$base-spacing;
+  padding-bottom:$base-spacing;
+  // Half is default size
+  @include figureContent(2);
+  // Top left is default position
+  top:$base-spacing;
+  right:auto;
+  bottom:auto;
+  left:$base-spacing;
+  display:inline-block;
+  position:absolute;
+  background:$teal;
+  background:transparentize($teal, 0.15);
+  color:$light;
   h2, h3, h4, h5 {
     line-height:1;
   }
+  a {
+    color:lighten($blue,10);
+    &:hover {
+      color:lighten($blue,25);
+    }
+  }
   @include mq('small', '-') {
-    padding:$base-spacing/2;
+    background:$teal;
     .o-grid__box--half\@small &,
     .o-grid__box--third\@small & {
       h3 {
@@ -33,158 +185,157 @@
   }
 }
 
-// Caption positions
-.c-figure__caption--below {
-  display: block;
-  position: static;
-  background: transparent;
-  color:lighten($charcoal,20);
-  padding: $base-spacing/2 0;
-  @include font-size(14px);
+// Content size
+.c-figure__content--half {
+  //@include figureContent(2);
+}
+.c-figure__content--third {
+  @include figureContent(3);
+}
+.c-figure__content--quarter {
+  @include figureContent(4);
 }
 
-.c-figure__caption--bottom-left {
+// Content position
+.c-figure__content--bottom-left {
+  top:auto;
+  right:auto;
   bottom:$base-spacing;
   left:$base-spacing;
-  margin-right:25%;
-  @include mq('medium', '-') {
-    margin-right:20px;
-  }
-  @include mq('small', '-') {
-    margin-right:$base-spacing/2;
-    bottom:$base-spacing/2;
-    left:$base-spacing/2;
-  }
 }
-.c-figure__caption--top-left {
+.c-figure__content--top-left {
   top:$base-spacing;
+  right:auto;
+  bottom:auto;
   left:$base-spacing;
-  margin-right:25%;
-  @include mq('medium', '~') {
-    margin-right:$base-spacing;
-  }
-  @include mq('small', '-') {
-    margin-right:$base-spacing/2;
-    top:$base-spacing/2;
-    left:$base-spacing/2;
-  }
 }
-.c-figure__caption--top-right {
+.c-figure__content--top-right {
   top:$base-spacing;
   right:$base-spacing;
-  margin-left:25%;
-  @include mq('medium', '-') {
-    margin-left:20px;
-  }
-  @include mq('small', '-') {
-    margin-left:$base-spacing/2;
-    top:$base-spacing/2;
-    right:$base-spacing/2;
-  }
+  bottom:auto;
+  left:auto;
 }
-.c-figure__caption--bottom-right {
-  bottom:$base-spacing;
+.c-figure__content--bottom-right {
+  top:auto;
   right:$base-spacing;
-  margin-left:25%;
-  @include mq('medium', '-') {
-    margin-left:20px;
-  }
-  @include mq('small', '-') {
-    margin-left:$base-spacing/2;
-    bottom:$base-spacing/2;
-    right:$base-spacing/2;
-  }
+  bottom:$base-spacing;
+  left:auto;
 }
-.c-figure__caption--right {
-  float:right;
-}
-// Caption colours
-.c-figure__caption--blue {
+
+// Content colours
+.c-figure__content--blue {
   background-color:$blue;
   background-color:transparentize($blue, 0.25);
 }
-.c-figure__caption--pink {
+.c-figure__content--pink {
   background-color:$pink;
   background-color:transparentize($pink, 0.25);
 }
-.c-figure__caption--teal {
+.c-figure__content--teal {
   background-color:$teal;
   background-color:transparentize($teal, 0.25);
 }
-.c-figure__caption--gold {
+.c-figure__content--gold {
   background-color:$gold;
   background-color:transparentize($gold, 0.25);
 }
-.c-figure__caption--charcoal {
+.c-figure__content--charcoal {
   background-color:$charcoal;
   background-color:transparentize($charcoal, 0.25);
 }
 
-// DEMARGINED FIGURE (SO NAV CAN BE CLOSER)
+// DEMARGINED FIGURE (SO STICKY NAV CAN BE CLOSER)
 .c-figure--no-margin {
   margin:0;
 }
 
-// BANNER
+//
 .c-figure--banner {
-  @include center-image('y');
-  .c-figure__image {
-    display:block;
-    z-index:10;
-    min-height:100%;
-    min-width:100%;
+  padding:$base-spacing;
+  overflow:hidden;
+  .csstransforms & {
+    .c-figure__image {
+      left:50%;
+      margin-top:0;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+    }
   }
-  .c-figure__caption {
+  @include mq('small', '-') {
+    padding:0;
+  }
+  .c-figure__image {
+    z-index:10;
+    width:auto;
+    height:auto;
+    min-width:100%;
     position:absolute;
-    display:inline-block;
-    z-index:12;
-    width:33.333%;
-    left:$base-spacing;
-    bottom:$base-spacing;
-    @include mq('medium', '~') {
-      width:50%;
+    top:50%;
+    right:0;
+    margin-top:-25%;
+    @include mq('large', '+') {
     }
     @include mq('small', '-') {
-      width:100%;
+      position:static;
+      min-height:0;
+      .csstransforms & {
+        transform:translate(0, 0);
+        -webkit-transform:translate(0, 0);
+      }
     }
   }
-  .csstransforms & {
-    padding:$base-spacing;
-    .c-figure__image {
+  .c-figure__content {
+    position:relative;
+    z-index:12;
+    max-width:50%;
+    top:auto;
+    right:auto;
+    bottom:auto;
+    left:auto;
+    @include mq('small', '-') {
+      max-width:none;
     }
-    .c-figure__caption {
-      position:relative;
-      top:0;
-      left:0;
-    }
+  }
+  .c-figure__caption {
+    z-index:12;
+  }
+  .c-figure__content--left,
+  .c-figure__content--bottom-left,
+  .c-figure__content--top-left {
+    float:left;
+  }
+  .c-figure__content--right,
+  .c-figure__content--bottom-right,
+  .c-figure__content--top-right {
+    float:right;
   }
 }
-
 // LINK
 .c-figure--link {
   text-decoration:none;
-  .c-figure__caption {
+  .c-figure__content {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
+    top:auto;
     width: 100%;
     @include mq('tiny') {
       position:static;
       display:block;
-      &.c-figure__caption--blue {
+      &.c-figure__content--blue {
         background-color:$blue;
       }
-      &.c-figure__caption--pink {
+      &.c-figure__content--pink {
         background-color:$pink;
       }
-      &.c-figure__caption--teal {
+      &.c-figure__content--teal {
         background-color:$teal;
       }
-      &.c-figure__caption--gold {
+      &.c-figure__content--gold {
         background-color:$gold;
       }
-      &.c-figure__caption--charcoal {
+      &.c-figure__content--charcoal {
         background-color:$charcoal;
       }
 

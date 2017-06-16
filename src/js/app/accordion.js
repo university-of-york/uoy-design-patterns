@@ -10,7 +10,9 @@ category: modules
 
 */
 
-define(['jquery', 'jscookie'], function ($, COOKIES) {
+define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
+
+  var $window = $(window);
 
   // Define your 'class'
   var ACCORDION = function (options) {
@@ -22,19 +24,40 @@ define(['jquery', 'jscookie'], function ($, COOKIES) {
     this.itemTitle = this.item.children('.c-accordion__title');
     this.itemContent = this.item.children('.c-accordion__content');
 
-    // Hide content (unless cookie says no)
-    var thisId = this.item.attr('id') || false;
-    if (thisId === false || COOKIES.get(thisId) !== 'open') {
-      this.item.addClass('is-closed');
-    }
+    // Hide content
+    this.item.addClass('is-closed');
+
+    // Enable transition
+    var iC = this.itemContent;
+    setTimeout(function() { iC.addClass('is-ready'); }, 400);
 
     // Add click event on title
     this.itemTitle.on('click', { that: this }, this.toggleState);
 
     var that = this;
-    $(window).on('content.updated', function() {
-      that.setAccordionHeight.apply(that);
+    $window.on('content.updated', function(e, type, obj) {
+      // Only reset height if updated content was within this accordion
+      if (!obj.container) return;
+      var $closestContainer = obj.container.closest('.c-accordion__content');
+      if ($closestContainer.is(that.itemContent) === true) {
+        that.setAccordionHeight.apply(that, [type, obj]);
+      }
     });
+
+    $window.on('resized.width', UTILS.debounce(function(e) {
+      that.setAccordionHeight.apply(that, ['resize']);
+    }, 250));
+
+    // Fire content.updated on images within accordions
+    this.itemContent.find('img').each(function(i, img) {
+      var $img = $(img);
+      $img.load(function(e) {
+        that.setAccordionHeight.apply(that, ['imageload', $img]);
+      });
+    });
+
+    // Initial load
+    that.setAccordionHeight.apply(that, ['initial']);
 
     console.info(this);
 
@@ -44,17 +67,39 @@ define(['jquery', 'jscookie'], function ($, COOKIES) {
   ACCORDION.prototype.isToggling = false;
 
   // Set the height of the hidden accordion content
-  ACCORDION.prototype.setAccordionHeight = function() {
+  ACCORDION.prototype.setAccordionHeight = function(type, obj) {
 
-    // Get content height
-    var contentHeight = 0;
-    this.itemContent.children().each(function(i, v) {
-      contentHeight+= $(v).outerHeight(true);
-    });
+    // console.log('Accordion height set', type, obj);
+
+    // type is the type of thing triggering the update event
+    // obj is the object that triggers it (if needed)
+
+    var isClosed = this.item.hasClass('is-closed');
+
+    // Reset the itemContent
+    this.itemContent.addClass('is-ghost');
+    this.itemContent.removeClass('is-ready');
+    this.itemContent.height('auto');
+    this.item.removeClass('is-closed');
+
+    // // Get content height
+    var contentHeight = this.itemContent.outerHeight();
+
     this.itemContent.attr('data-height', contentHeight);
-    if (!this.item.hasClass('is-closed')) {
-      this.itemContent.css('height', contentHeight);
+
+    var thisId = this.itemContent.attr('id') || false;
+    if (thisId !== false && COOKIES.get(thisId) === 'open') {
+      isClosed = false;
     }
+    if (isClosed === true) {
+      contentHeight = 0;
+      this.item.addClass('is-closed');
+    }
+
+    this.itemContent.css('height', contentHeight);
+
+    this.itemContent.removeClass('is-ghost');
+    this.itemContent.addClass('is-ready');
 
   };
 
@@ -117,7 +162,7 @@ define(['jquery', 'jscookie'], function ($, COOKIES) {
   // Open the content in item
   ACCORDION.prototype.setCookie = function (item, isOpen) {
 
-    var itemId = $(item).attr('id') || false;
+    var itemId = $(item).children('.c-accordion__content').attr('id') || false;
     if (itemId === false) return false;
     if (isOpen === true) {
       COOKIES.set(itemId, 'open');

@@ -5,3 +5,61 @@
 // This class ensures sticky nav doesn't hide the top of anchors
 //.u-sticky-anchor {
 //}
+
+// Make a span look like a link (to create fake links inside block -level anchors)
+.u-link {
+  @extend a;
+}
+
+// Use a div for semantics, have a margin like a paragraph
+.u-paragraph {
+  @include component-margin;
+}
+
+// Break text into columns (useful for long lists)
+// All multi-columns go to (at most) 3 cols at large, 2 at medium and 1 at small and lower
+.u-two-columns {
+  column-count: 2;
+  @include mq('small', '-') {
+    column-count: 1;
+  }
+}
+.u-three-columns {
+  column-count: 3;
+  @include mq('medium', '~') {
+    column-count: 2;
+  }
+  @include mq('small', '-') {
+    column-count: 1;
+  }
+}
+.u-four-columns {
+  column-count: 4;
+  @include mq('large', '~') {
+    column-count: 3;
+  }
+  @include mq('medium', '~') {
+    column-count: 2;
+  }
+  @include mq('small', '-') {
+    column-count: 1;
+  }
+}
+// To make sure bullets appear
+ul.u-two-columns,
+ul.u-three-columns,
+ul.u-four-columns {
+  padding-left:1em;
+  li {
+    margin-left:1em;
+  }
+}
+// and margins don't encroach
+.u-two-columns,
+.u-three-columns,
+.u-four-columns {
+  li {
+    margin-bottom:0;
+    padding-bottom:$base-spacing/2;
+  }
+}

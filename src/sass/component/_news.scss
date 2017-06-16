@@ -1,8 +1,10 @@
 //
 // NEWS
 //
+$thumbnail_size:100px;
 .c-news {
   @include component;
+  display:block;
   width:100%;
   text-decoration:none;
   color:$charcoal;
@@ -24,8 +26,13 @@
   .o-grid__row--alt1 &,
   .o-grid__row--alt2 &,
   .o-grid__row--alt3 & {
+    @include tiny-padding;
+    padding-top:$base-spacing;
+    padding-bottom:$base-spacing;
     background-color: #fff;
-    padding:$base-spacing;
+    @include mq(tiny, '-') {
+      padding-top:10px;
+    }
   }
 }
 
@@ -34,16 +41,22 @@
     @include font-size(22px, 1.1);
     color:$c-news--excerpt__title-color;
     margin-top:0;
+    @include mq(large, '-') {
+      @include font-size(18px, 1.1);
+    }
   }
   .c-news--excerpt:hover & {
     color:$c-news--excerpt__title-hover-color;
   }
   .c-news--listing & {
-    @include font-size(24px, 1.1);
+    @include font-size(22px, 1.1);
     color:$c-news--listing__title-color;
     margin-bottom:$base-spacing/4;
     .o-grid__row--alt1 & {
       color:$light;
+    }
+    @include mq(large, '-') {
+      @include font-size(18px, 1.1);
     }
   }
   .c-news--listing:hover & {
@@ -60,17 +73,17 @@
 .c-news__meta {
   .c-news--excerpt & {
     @include font-size(14px);
+    margin-top:$base-spacing/2;
     color:$c-news--excerpt__meta-color;
   }
 }
-
 .c-news__author {
 
 }
 .c-news__date {
   .c-news--listing & {
-    display:block;
     @include font-size(14px);
+    display:block;
     margin-bottom:$base-spacing/4;
     color:lighten($charcoal,30);
     .o-grid__row--alt1 &,
@@ -84,9 +97,16 @@
     display:block;
   }
 }
+.c-news__event-date {
+  @include font-size(14px);
+  margin-bottom:10px;
+  color:$c-news--event__meta-color;
+  font-weight: bold;
+}
 .c-news__teaser {
   .c-news--excerpt & {
-    @include font-size(16px);
+    @include demarginalise;
+    @include font-size(14px);
     color:lighten($charcoal,5);
     p {
       margin-bottom:$base-spacing/2;
@@ -99,7 +119,7 @@
     @extend .lead;
   }
   .c-news--listing & {
-    @include font-size(16px);
+    @include font-size(14px);
   }
 }
 .c-news__share {
@@ -115,9 +135,10 @@
   border-bottom:1px solid $s3;
 }
 .c-news__thumbnail {
-  width:100px;
+  width:$thumbnail_size;
   img {
     @include round;
+    max-width:$thumbnail_size;
   }
 }
 .c-news__poster {

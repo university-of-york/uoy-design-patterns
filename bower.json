@@ -1,6 +1,6 @@
 {
   "name": "UoYDesignPatterns",
-  "version": "0.0.0",
+  "version": "1.5.1",
   "devDependencies": {
     "jquery": "~1.11.2",
     "modernizr": "~2.8.3",
@@ -8,6 +8,7 @@
     "picturefill": "~2.3.0",
     "es5-shim": "~4.1.1",
     "js-cookie": "~2.1.0",
-    "select2": "~4.0.1"
+    "select2": "~4.0.1",
+    "iframe-resizer": "~3.5.5"
   }
 }

@@ -6,11 +6,12 @@ This repository holds the design patterns used on the [University of York's webs
 
 You will need to have NodeJS (including NPM), Git, Ruby (including RubyGems) and Compass installed on your machine. On Windows, the easiest way to do this is with [Chocolatey](https://chocolatey.org/) and on Mac you can use [Homebrew](http://brew.sh/).
 
-You'll also need a global install of Grunt (a task runner) and Bower (a package manager), which you can do by typing:
+You'll also need a global install of Grunt (a task runner), Bower (a package manager) and BackstopJS (a visual regression tester), which you can do by typing:
 
 ```bash
 npm install -g grunt-cli
 npm install -g bower
+npm install -g backstopjs
 ```
 
 ## Getting ready
@@ -43,6 +44,14 @@ To build for live deployment, run `grunt live`. It will run a build process just
 
 A minified stylesheet for TinyMCE is created as part of the build process. To create a non-minified stylesheet for upload to the CMS without running the entire build task, run `grunt tinymce` and the stylesheet will be created in `build/css/tinymce.css`.
 
+## Visual regression testing
+
+We use BackstopJS to run visual regression tests. The reference images are checked in to the repository (in `src/backstop/reference`), and should be updated after each successful release by running `grunt run:reference`.
+
+Before releasing a new version of the repo, you should run `grunt run:test` and it will test all pages in `dev/layout` and `dev/css-components` and prepare a report of how many differences there are between the new pages and the reference pages. Scan this carefully for any unwanted effects that your changes might have had.
+
+These tests can take a while, so go and make yourself a cup of tea whilst it's running. :coffee:
+
 ## A note about development
 
 The `master` branch of this repository is the one we use to build our CSS and JS for front-end deployment. Most new work should be started in a new branch in Git. To set up a new branch, type:
@@ -58,6 +67,7 @@ There is a standardised way to name branches using slash syntax (taken from http
 * `feature/` - adding new features to the build process
 * `fix/` - changes that are to fix bugs, whether layout, Javascript or anything else
 * `update/` - using a new version of e.g. FontAwesome, Grunt etc.
+* `themes/` - new theme colours and variants
 
 So for a new component you would use `component/component-name`, for new JS modules use `module/module-name`, and so on.
 
@@ -67,4 +77,4 @@ This will create, and switch to, a new branch in Git. Make your changes as usual
 git push -u origin new-branch-name
 ```
 
-We will merge any signed-off branches into `master` and they will be deployed in the next build.
+We will merge any signed-off branches into `master` and they will be deployed in the next release. When you create a new branch you must add a line to [release-notes.md](release-notes.md) to clarify what the new feature/fix/component does, so it can be documented for the next release. There are two _next_ releases, _next patch_ and _next minor_.

@@ -1,0 +1,19 @@
+/*
+ * EMBEDDED ARTICLES FROM THE CONVERSATION
+ */
+.s-conversation {
+  figure {
+    @extend .c-figure;
+    img {
+      @extend .c-figure__image;
+    }
+    // This is to get rid of the <span> containing the authors' profile links after the main figure
+    + span {
+      display:none;
+    }
+  }
+  figcaption {
+    @extend .c-figure__caption;
+    @extend .c-figure__caption--below;
+  }
+}

@@ -32,6 +32,7 @@
   top:33%;
   right:$base-spacing;
   transform:rotate(45deg);
+  -webkit-transform:rotate(45deg);
   @each $name, $size in $icons {
     // Overwrite specificity of demarginalise above
     &.c-icon--#{$name} {
@@ -41,30 +42,33 @@
 }
 .c-accordion__content {
   @include demarginalise;
-  @include transition;
-  box-sizing:content-box;
-  // iOS <=4 needs prefix
-  -webkit-box-sizing:content-box;
   padding:$base-spacing;
   overflow:hidden;
   position:static;
-  //width: 100%;
+  width: 100%;
   .c-accordion__item.is-closed & {
     padding-top:0;
     padding-bottom:0;
-    height:0;
+    // Height is added by JS
+    // height:0;
   }
   // Starting class - added by JS to hide the content but still be able to get the height
-  &.is-hidden {
-    visibility: hidden;
-    position: absolute;
-    // display:block;
+  &.is-ghost {
+    .c-accordion__item.is-closed & {
+      padding-top:$base-spacing;
+      padding-bottom:$base-spacing;
+    }
   }
 }
 .csstransforms {
+  // 'is-ready' class added by JS after preparation
+  .c-accordion__content.is-ready {
+    @include transition('height, padding-top, padding-bottom');
+  }
   .c-accordion__item.is-closed {
     .c-accordion__icon {
         transform:rotate(0deg);
+        -webkit-transform:rotate(0deg);
     }
   }
 }

@@ -18,17 +18,18 @@ $s3:#f0f1f4;
 //Utility colours - for warnings, errors, etc
 $red:#b62d2d;
 $green:#54b62d;
-
+$grey:#666;
+$lightgrey:#ccc;
 
 // Fonts
 $font-default: 'museo-sans', Helvetica, Arial, sans-serif;
-$font-title: 'chaparral-pro', Georgia, 'Times New Roman', Times, serif;
+$font-title: 'chaparral-pro', 'Times New Roman', Times, serif;
 $font-monospace: Consolas, Monaco, 'Andale Mono', monospace;
 
 // Typography
-$base-font-size:    16px;
-$base-line-height:  1.5;
-$base-spacing:      20px;
+$base-font-size:   16px;
+$base-line-height: 1.5;
+$base-spacing:     20px;
 
 // Varying typographic scales for different breakpoints
 // http://typecast.com/blog/a-more-modern-scale-for-web-typography
@@ -129,14 +130,38 @@ $c-btn: (
   )
 );
 
+// Grid colours
+$o-grid__row-background-color:transparent;
+$o-grid__row-border-color:$charcoal;
+$o-grid__row--alt1-background-color:$teal;
+$o-grid__row--alt1-border-color:$blue;
+$o-grid__row--alt1-color:$light;
+$o-grid__row--alt1-hr-color:$blue;
+$o-grid__row--alt1-link-color:lighten($blue,5);
+$o-grid__row--alt1-link-hover-color:lighten($blue,15);
+$o-grid__row--alt2-background-color:darken($teal,5);
+$o-grid__row--alt2-border-color:$teal;
+$o-grid__row--alt2-color:$light;
+$o-grid__row--alt2-hr-color:$blue;
+$o-grid__row--alt2-link-color:lighten($blue,5);
+$o-grid__row--alt2-link-hover-color:lighten($blue,15);
+$o-grid__row--alt3-background-color:$s2;
+$o-grid__row--alt3-border-color:$s1;
+$o-grid__row--divider-color:$lightgrey;
+
+// Skip link
+$o-skip-link-color:$light;
+$o-skip-link-background-color:$blue;
+
 // Blockquotes
-$c-blockquote--image-quote-background-color: $teal;
+$c-blockquote--image-quote-background-color: lighten($teal,10);
 $c-blockquote--image-quote-color: $light;
 $c-blockquote--pull-quote-color: $pink;
 
 // Mobile search
 $c-mobile-search-button-color:$charcoal;
 $c-mobile-search-button-hover-color:lighten($c-mobile-search-button-color,10);
+$c-mobile-search-button-background-color:#fff;
 $c-mobile-search-form-background-color:$teal;
 
 // Page title
@@ -163,6 +188,15 @@ $c-nav__link-hover-background-color:darken($blue, 20);
 // Subnavigation
 $c-subnav__link-color:lighten($charcoal,20);
 
+// Utility navigation
+$c-utility-nav__link-color:$charcoal;
+$c-utility-nav__link-hover-color:$blue;
+$c-utility-nav__link-is-open-color:$light;
+$c-utility-nav__link-is-open-background-color:lighten($teal,10);
+$c-utility-nav__subnav-background-color:lighten($teal,10);
+$c-utility-nav__sublink-color:$light;
+$c-utility-nav__sublink-hover-color:lighten($blue, 10);
+
 // Panels
 $c-panel-background-color:$s2;
 $c-panel-border-color:$s1;
@@ -178,13 +212,33 @@ $c-modal__close-hover-background-color:lighten($charcoal, 10);
 $c-modal__close-hover-color:$blue;
 
 // Key facts
-$c-key-fact-background-color:$teal;
-$c-key-fact-background-hover-color:lighten($teal,5);
-$c-key-fact-color:darken($light,10);
-$c-key-fact-hover-color:darken($light,10);
+$c-key-fact-color:$teal;
+$c-key-fact-hover-color:$teal;
 $c-key-fact__icon-color:lighten($teal,15);
 $c-key-fact__icon-hover-color:lighten($teal,25);
-$c-key-fact__title-color:$light;
+$c-key-fact__title-color:$teal;
+$c-key-fact__title-highlight-color:$blue;
+$c-key-fact-alt-color:darken($light,10);
+$c-key-fact-alt-hover-color:darken($light,10);
+$c-key-fact-alt-background-color:$teal;
+$c-key-fact-alt-background-hover-color:lighten($teal,5);
+$c-key-fact-alt__title-color:$light;
+
+// Alerts
+$c-alert-border:$charcoal;
+$c-alert-background:darken($light, 5);
+$c-alert--success-border:$green;
+$c-alert--success-background:lighten($green, 45);
+$c-alert--info-border:$blue;
+$c-alert--info-background:lighten($blue, 45);
+$c-alert--warning-border:$gold;
+$c-alert--warning-background:lighten($gold, 35);
+$c-alert--danger-border:$red;
+$c-alert--danger-background:lighten($red, 45);
+
+// Block links
+$c-block-link-background-color:$s2;
+$c-block-link-border-color:lighten($s1,5);
 
 // Footer
 $c-footer-background-color:$charcoal;
@@ -196,6 +250,7 @@ $c-footer-main__link--edit-color:lighten($charcoal,10);
 // Links
 $link-color:darken($blue,10);
 $link-hover-color:$blue;
+$link-focus-outline-color:$blue;
 
 // Tags
 $c-tag-background-color:$pink;
@@ -207,10 +262,15 @@ $c-tag-background-color-alt2-hover:darken($pink,25);
 $c-tag-color:$light;
 $c-tag-color-hover:darken($light,5);
 
+// Labels
+$c-label-color:$grey;
+$c-label-color-hover:lighten($c-label-color,10);
+
 // News
 $c-news--excerpt__title-color:$link-color;
 $c-news--excerpt__title-hover-color:$blue;
 $c-news--excerpt__category-color:lighten($charcoal, 10);
 $c-news--excerpt__meta-color:lighten($charcoal,30);
+$c-news--event__meta-color:$charcoal;
 $c-news--listing__title-color:$link-color;
 $c-news--listing__title-hover-color:$blue;

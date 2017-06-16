@@ -1,5 +1,5 @@
-<blockquote class="c-blockquote{{#type}} c-blockquote--{{this}}{{/type}}">{{#if image}}
-  <img class="c-blockquote__image c-blockquote__image--{{#if imagefloat}}{{imagefloat}}{{else}}right{{/if}}" src="{{image}}" alt="{{#if cite}}{{cite}}{{else}}{{content}}{{/if}}">{{/if}}
+<{{#if link}}a href="{{link}}"{{else}}blockquote{{/if}} class="c-blockquote{{#type}} c-blockquote--{{this}}{{/type}}{{#size}} c-blockquote--{{this}}{{/size}}">{{#if image}}
+  <img class="c-blockquote__image c-blockquote__image--{{#if imagefloat}}{{imagefloat}}{{else}}right{{/if}}" src="{{image}}" alt="">{{/if}}
   <div class="c-blockquote__content">{{content}}</div>{{#cite}}
   <cite class="c-blockquote__cite">{{this}}</cite>{{/cite}}
-</blockquote>
+</<{{#if link}}a{{else}}blockquote{{/if}}>

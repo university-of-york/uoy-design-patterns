@@ -7,23 +7,30 @@
     display:block;
   }
   @include mq(tiny, '-') {
-    height: 36px;
-    width: 36px;
-    padding: 6px;
-    font-size:16px;
+    height:36px;
+    width:36px;
+    padding:6px;
+    font-size:24px;
+    margin-top:26px;
+    margin-right:0;
   }
   display:none;
-  position:absolute;
   z-index:10;
-  top:10px;
-  right:10px;
+  float:right;
   height:58px;
   width:58px;
+  margin-top:29px;
+  margin-right:-$base-spacing/2;
   padding:13px;
-  font-size:24px;
+  font-size:32px;
   color:$c-mobile-search-button-color;
+  background-color:$c-mobile-search-button-background-color;
+  box-shadow:0 0 7px 2px $c-mobile-search-button-background-color;
   &:hover {
     color:$c-mobile-search-button-hover-color;
+  }
+  .c-icon {
+    vertical-align: top;
   }
 }
 .c-form--mobile-search {

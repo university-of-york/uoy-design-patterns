@@ -13,13 +13,30 @@ $c-blockquote__image-tiny-ratio:0.75;
   position:absolute;
   top:$c-blockquote__image-size/2;
   @include mq(tiny, '~') {
-    border-width:$base-spacing;
-    top:($c-blockquote__image-size*$c-blockquote__image-tiny-ratio)/2;
+    // Middle top positioning
+    top:-$base-spacing;
+    border-style:solid;
+    border-width:0 $base-spacing $base-spacing;
+    border-color:$c-blockquote--image-quote-background-color transparent;
+    z-index:24;
+    left:50%;
+    right:auto;
+    margin-left:-$base-spacing;
+  }
+}
+@mixin tinyfullwidth {
+  @include mq(tiny, '~') {
+    width:100%;
+    float:none;
   }
 }
 .c-blockquote {
   @include component;
+  @include font-size(18px);
   overflow:hidden;
+  display:block;
+  // To override underlining
+  text-decoration:none;
 }
 .c-blockquote--image-quote {
   .c-blockquote__content {
@@ -42,16 +59,39 @@ $c-blockquote__image-tiny-ratio:0.75;
       @include font-size(48px);
       content: open-quote;
       position:absolute;
-      top:-$base-spacing;
+      top:-$base-spacing/2;
       left:0;
     }
     &:after {
       content: no-close-quote;
     }
+    .o-grid__row--alt1 &,
+    .o-grid__row--alt2 & {
+      color:#fff;
+    }
   }
   .c-blockquote__cite {
     padding:0 $base-spacing * 1.5;
   }
+}
+.c-blockquote--large {
+  .c-blockquote__content {
+    @include font-size(32px, 1.25);
+  }
+  &.c-blockquote--pull-quote {
+    .c-blockquote__content:before {
+      @include font-size(60px);
+    }
+  }
+  &.c-blockquote--image-quote {
+    .c-blockquote__content {
+      @include font-size(22px, 1.13636364);
+    }
+  }
+  .c-blockquote__cite {
+    @include font-size(16px, 1.5);
+  }
+
 }
 .c-blockquote__image {
   @include round;
@@ -60,26 +100,30 @@ $c-blockquote__image-tiny-ratio:0.75;
   margin-bottom:$base-spacing;
   position:relative;
   @include mq(tiny, '~') {
-    z-index:12;
-    width:$c-blockquote__image-size * $c-blockquote__image-tiny-ratio;
-    height:$c-blockquote__image-size * $c-blockquote__image-tiny-ratio;
+    &.c-blockquote__image {
+      float:none;
+      z-index:12;
+      display:block;
+      margin:0 auto $base-spacing*1.5;
+    }
   }
 }
 .c-blockquote__image--right {
   float:right;
   margin-left:$base-spacing*2.5;
-  @include mq(small, '-') {
+  @include mq(small, '~') {
     margin-left:$base-spacing/2;
   }
 }
 .c-blockquote__image--left {
   float:left;
   margin-right:$base-spacing*2.5;
-  @include mq(small, '-') {
+  @include mq(small, '~') {
     margin-right:$base-spacing/2;
- }
+  }
 }
 .c-blockquote__content {
+  @include demarginalise;
   position:relative;
 }
 // So that the background doesn't extend behind the image
@@ -87,13 +131,9 @@ $c-blockquote__image-tiny-ratio:0.75;
 // And is at least wide enough to fit in the column properly.
 .c-blockquote__image + .c-blockquote__content,
 .c-blockquote__image ~ .c-blockquote__cite {
+  @include tinyfullwidth;
   width:70%;
   width:calc(100% - #{$c-blockquote__image-size + ($base-spacing*2.5)});
-  // min-width:70%;
-  @include mq(tiny, '~') {
-    width:80%;
-    width:calc(100% - #{$c-blockquote__image-size*$c-blockquote__image-tiny-ratio + ($base-spacing*1.5)});
-  }
 }
 .c-blockquote--image-quote {
   .c-blockquote__image + .c-blockquote__content {
@@ -104,47 +144,53 @@ $c-blockquote__image-tiny-ratio:0.75;
     }
   }
 }
-.c-blockquote__image--right + .c-blockquote__content {
-  margin-bottom:$base-spacing/2;
-  float:left;
-}
-.c-blockquote--image-quote {
-  .c-blockquote__image--right + .c-blockquote__content:after {
-    left:100%;
-    border-right:$base-spacing*2 solid transparent;
-    @include mq(tiny, '~') {
-      border-width:$base-spacing;
-    }
-  }
-}
-.c-blockquote__image--left + .c-blockquote__content {
-  margin-bottom:$base-spacing/2;
-  float:right;
-}
-.c-blockquote--image-quote {
-  .c-blockquote__image--left + .c-blockquote__content:after {
-    left:-$base-spacing*2;
-    border-left:$base-spacing*2 solid transparent;
-    @include mq(tiny, '~') {
-      border-width:$base-spacing;
-      left:-$base-spacing;
-    }
-  }
-}
 .c-blockquote__cite {
+  @include demarginalise;
   @include font-size(14px);
   font-style: normal;
   display:block;
   margin-top:$base-spacing/2;
+  color:$charcoal;
+  .o-grid__row--alt1 &,
+  .o-grid__row--alt2 & {
+    color:$light;
+  }
 }
 .c-blockquote__image--right ~ .c-blockquote__cite {
   text-align:right;
-  clear:left;
 }
 .c-blockquote__image--left ~ .c-blockquote__cite {
   text-align:left;
-  clear:right;
-  float:right;
+}
+@include mq(small, '+') {
+  .c-blockquote__image--right + .c-blockquote__content {
+    margin-bottom:$base-spacing/2;
+    float:left;
+  }
+  .c-blockquote--image-quote {
+    .c-blockquote__image--right + .c-blockquote__content:after {
+      left:100%;
+      border-right:$base-spacing*2 solid transparent;
+    }
+  }
+  .c-blockquote__image--left + .c-blockquote__content {
+    margin-bottom:$base-spacing/2;
+    float:right;
+  }
+  .c-blockquote--image-quote {
+    .c-blockquote__image--left + .c-blockquote__content:after {
+      left:-$base-spacing*2;
+      border-left:$base-spacing*2 solid transparent;
+    }
+  }
+  .c-blockquote__image--right ~ .c-blockquote__cite {
+    clear:left;
+  }
+  .c-blockquote__image--left ~ .c-blockquote__cite {
+    clear:right;
+    float:right;
+    margin-top:0; // Floated elements don't collapse margins
+  }
 }
 
 // When an image quote is in a quarter col at medium+

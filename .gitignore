@@ -1,12 +1,17 @@
 .sass-cache
+src/backstop
+!src/backstop/reference
 bower_components
 build
 dev
 node_modules
 secret.json
+npm-debug.log
+release
 src/js/vendor
 src/partials/assocnav.mustache
 src/partials/subnav.mustache
+src/partials/nav.mustache
 
 **/*.zip
 **/.DS_Store

@@ -2,14 +2,16 @@ module.exports = {
   dev: {
     files: [{
       expand: true,
+      dot: true,
       cwd: 'src/',
-      src: ['favicon.ico', 'js/**', 'img/**', 'fonts/**', 'media/**'],
+      src: ['js/**', 'img/**', 'fonts/**', 'media/**'],
       dest: 'dev/'
     }]
   },
   templates: {
     files: [{
       expand: true,
+      dot: true,
       cwd: 'src/',
       src: ['templates/**'],
       dest: 'dev/'
@@ -18,9 +20,19 @@ module.exports = {
   build: {
     files: [{
       expand: true,
+      dot: true,
       cwd: 'src/',
-      src: ['favicon.ico', 'fonts/**', 'media/**', 'js/prism.js', 'js/usabilla.js'],
+      src: ['fonts/**', 'media/**', 'js/prism.js', 'js/iframeResizer.contentWindow.min.js', 'opensearch.xml'],
       dest: 'build/'
+    }]
+  },
+  release: {
+    files: [{
+      expand: true,
+      dot: true,
+      cwd: 'build/',
+      src: ['css/**', 'fonts/**', 'img/**', 'js/**', 'opensearch.xml'],
+      dest: 'release/'
     }]
   }
 };

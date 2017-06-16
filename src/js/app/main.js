@@ -1,25 +1,28 @@
 define(
-  ['jquery', 'es5shim', 'picturefill', 'select2',
+  ['jquery', 'es5shim', 'picturefill', 'select2', 'iframeResizer',
    'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav',
    'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/prioritised-tables',
-   'app/toggle', 'app/wrapper-height', 'app/youtube-embed', 'app/soundcloud-embed',
-   'app/searchable-tables', 'app/filterable-tables', 'app/equal-height-row', 'app/google-map'],
+   'app/toggle', 'app/utility-toggle', 'app/wrapper-height', 'app/youtube-embed',
+   'app/soundcloud-embed', 'app/searchables', 'app/filterable-tables', 'app/equal-height-row',
+   'app/google-map', 'app/show-more'],
   function (
-    $, ES5SHIM, PICTUREFILL, SELECT2,
+    $, ES5SHIM, PICTUREFILL, SELECT2, IFRAMERESIZER,
     UTILS, MODALLINK, ACCORDION, STICKYNAV,
     TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
-    TOGGLE, WRAPPERHEIGHT, YOUTUBE, SOUNDCLOUD,
-    SEARCHABLE, FILTERABLE, EQUALHEIGHT, GOOGLEMAP) {
+    TOGGLE, UTILITYTOGGLE, WRAPPERHEIGHT, YOUTUBE,
+    SOUNDCLOUD, SEARCHABLE, FILTERABLE, EQUALHEIGHT,
+    GOOGLEMAP, SHOWMORE) {
 
   $(function(){
 
     if (typeof window.console === 'undefined') {
       console = {};
-      console.log = function (a) { /*alert(a);*/ };
+      console.log = function(a) { /*alert(a);*/ };
+      console.info = function(a) { /*alert(a);*/ };
     }
 
     // Select elements
-    $.fn.select2.defaults.set("theme", "uoy")
+    $.fn.select2.defaults.set("theme", "uoy");
     $('select').select2();
 
     // Disable buttons
@@ -39,9 +42,21 @@ define(
       }
     }, 15);
 
+    UTILS.axisResize();
+
     //UTILS.preventOrphans();
 
+    UTILS.dontBreakSpaces('.c-utility-nav__sublink');
+
     UTILS.cleanBreadcrumb();
+
+    UTILS.fixLongBreadcrumb();
+
+    UTILS.breakEmailAddresses();
+
+    UTILS.fixTallFigures();
+
+    UTILS.fixLogo();
 
     // Add Google map functionality
     UTILS.eachIfExists('.js-map', function (i, map) {
@@ -55,6 +70,11 @@ define(
         type: $map.data('type'),
         fullscreen: $map.data('fullscreen')
       });
+    });
+
+    // Resize iframes
+    UTILS.eachIfExists('.js-iframe-resize', function (i, iframe) {
+      IFRAMERESIZER(null, iframe);
     });
 
     // Add accordion functionality
@@ -82,16 +102,38 @@ define(
 
     // Go to tab if hash is set
     UTILS.scrollToHash();
+    $window.on('hashchange', UTILS.scrollToHash);
 
     // Add menu toggle functionality
     UTILS.eachIfExists('.js-toggle-button', function (i, button) {
       var $b = $(button);
       var $c = $($b.attr('href'));
-      // console.log($b.attr('href'));
       new TOGGLE({
         container: $c,
         button: $b,
         className:'is-open'
+      });
+    });
+
+    // Add utility nav toggle functionality
+    UTILS.eachIfExists('.c-utility-nav', function (i, nav) {
+      var $n = $(nav);
+      new UTILITYTOGGLE({
+        container: $n
+      });
+    });
+
+    // Add dismissable alert action
+    UTILS.eachIfExists('.js-alert-close', function (i, button) {
+      var $b = $(button);
+      var $c = $($b.closest('.c-alert'));
+      new TOGGLE({
+        container: $c,
+        button: $b,
+        className:'is-hidden',
+        onComplete: function($c, $b) {
+          $c.remove();
+        }
       });
     });
 
@@ -113,17 +155,16 @@ define(
     });
 
     // Clearing tables
-    UTILS.eachIfExists('#clearing-courses-uk-eu', function (i, a) {
+    UTILS.eachIfExists('.js-clearing-table', function (i, a) {
+      var $a = $(a),
+          type = $a.attr('data-type'),
+          layout = $a.attr('data-layout'),
+          department = $a.attr('data-department');
       new CLEARINGTABLE({
-        type: 'Home/EU',
-        container: $(a)
-      });
-    });
-
-    UTILS.eachIfExists('#clearing-courses-international', function (i, a) {
-      new CLEARINGTABLE({
-        type: 'International',
-        container: $(a)
+        type: type,
+        layout: layout,
+        department: department,
+        container: $a
       });
     });
 
@@ -155,15 +196,16 @@ define(
       });
     });
 
-    // Add youtube video to embed links
+    // Add Soundcloud audio to embed links
     UTILS.eachIfExists('.soundcloud-audio-embed', function (i, a) {
       new SOUNDCLOUD({
         link: $(a)
       });
     });
 
-    // Make a table searchable
-    UTILS.eachIfExists('.js-searchable-table', function (i, a) {
+    // Make a table or list searchable
+    UTILS.eachIfExists('.js-searchable', function (i, a) {
+
       var $a = $(a),
           hasHeader = $a.attr('data-header') == 'true' ? true : false ,
           isCaseSensitive = $a.attr('data-case-sensitive') == 'true' ? true : false ,
@@ -172,7 +214,7 @@ define(
           excludeCols = $a.attr('data-exclude-cols') ? $a.attr('data-exclude-cols').split(',') : false ;
 
       var s = new SEARCHABLE({
-        table: $a,
+        container: $a.children('ul, table'),
         header: hasHeader,
         cols: {
           include: includeCols,
@@ -193,10 +235,24 @@ define(
       });
     });
 
-    // Make a table filterable
+    // Make equal height rows
     UTILS.eachIfExists('.js-equal-height-row', function (i, a) {
       var e = new EQUALHEIGHT({
         row: $(a)
+      });
+    });
+
+    // Set up 'Show more' containers
+    UTILS.eachIfExists('.js-show-more', function (i, a) {
+      var $a = $(a);
+      var defaultHeight = parseInt($a.attr('data-default-height'), 10);
+      var buttonTextMore = $a.attr('data-more-text') || false;
+      var buttonTextLess = $a.attr('data-less-text') || false;
+      var e = new SHOWMORE({
+        container: $a,
+        defaultHeight: defaultHeight,
+        buttonTextMore: buttonTextMore,
+        buttonTextLess: buttonTextLess
       });
     });
 
@@ -211,20 +267,26 @@ define(
     // Set min-height on wrapper (to ensure footer is (at least) at bottom of page)
     var w = new WRAPPERHEIGHT();
 
-    UTILS.eachIfExists('#Course-Search', function(i, a) {
+    // Update course search when radio buttons are clicked
+    // Inputs are called 'level-undergraduate', 'level-postgraduate-research' and 'level-postgraduate-taught'
+    UTILS.eachIfExists('#Course-Search, .js-course-search', function(i, a) {
       var $a = $(a),
-          inputs = $a.find('input[type=radio]');
+          inputs = $a.find('input[type=radio]'),
+          $modeInput = $a.find('#mode');
       inputs.change(function(e) {
-        var level = $(this).attr('id').substr(6),
-            action = '/study/'+level+'/courses/search/';
+        var parts = $(this).attr('id').split('-');
+        var level = parts[1];
+        var mode = parts[2] || "";
+        var action = '/study/'+level+'/courses/search/';
+        $modeInput.val(mode);
         $a.attr('action', action);
       });
     });
 
-    // Broadcast window events
-    if (UTILS.isDev) {
-      $window.on('data,font,nav,content', function(e) {
-        console.log(this);
+    // Broadcast custom window events
+    if (UTILS.isDev() === true) {
+      $window.on('data.loaded fonts.active nav.new-targeted-current search.updated content.updated resized.height resized.width toggle', function(e) {
+        console.info(e.type+'.'+e.namespace+' fired', e);
       });
     }
 

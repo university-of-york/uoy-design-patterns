@@ -4,17 +4,18 @@
 
 .o-wrapper {
   @include clearfix;
+  @include tiny-padding;
   margin:0 auto;
   max-width:$container-width;
-  padding:0 $base-spacing;
 }
 .o-wrapper--wide {
   max-width:100%;
   padding:0;
 }
 .o-wrapper--main {
-  // Last row is padded to space away from the footer
-  > .o-grid__row:last-of-type {
-    padding-bottom:$base-spacing;
+  // Only this and c-footer--main have margin-top!
+  margin-top:$base-spacing;
+  .c-breadcrumb + & {
+    margin-top:0;
   }
 }

@@ -16,22 +16,29 @@
   <meta property="og:description" content="">
 
   <link rel="shortcut icon" href="favicon.ico">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="canonical" href="">
 
   {{#build}}
-  <link rel="stylesheet" href="css/styles.min.css">
-  <link rel="stylesheet" href="css/docs.min.css">
+  <link rel="shortcut icon" href="https://www.york.ac.uk/static/1.4/img/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://www.york.ac.uk/static/1.4/img/favicon.ico">
 
-  <script src="js/modernizr.min.js"></script>
-  <script src="js/app.min.js"></script>
+  <link rel="stylesheet" href="https://www.york.ac.uk/static/1.4/css/styles.min.css">
+  <link rel="stylesheet" href="https://www.york.ac.uk/static/1.4/css/docs.min.css">
+
+  <script async src="https://www.york.ac.uk/static/1.4/js/modernizr.min.js"></script>
+  <script async src="https://www.york.ac.uk/static/1.4/js/app.min.js"></script>
+
   {{/build}}
   {{^build}}
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/docs.css">
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
-  <script src="js/vendor/modernizr/modernizr.js"></script>
-  <script src="js/vendor/requirejs/require.js" data-main="js/app"></script>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/docs.css">
+
+  <script async src="/js/vendor/modernizr/modernizr.js"></script>
+  <script async src="/js/vendor/requirejs/require.js" data-main="/js/app"></script>
+
   {{/build}}
 
   <!-- External, third party scripts -->
@@ -41,3 +48,5 @@
 </head>
 
 <body id="{{id}}" class="docs category-{{category}}">
+
+  <a href="#Main-Content" class="o-skip-link">Skip to content</a>

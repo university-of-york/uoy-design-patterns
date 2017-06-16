@@ -1,0 +1,47 @@
+/*
+ * Styles for regex testing
+ * N.B. can't use Sass style nesting
+ */
+
+/* Sass comments are included in standalone Stylesheet, not in main stylesheet */
+.sassComment {
+  //background:red;
+  // color: blue;
+  //  border-color:  green;
+}
+/* Normal declarations are included in main stylesheet, not in standalone */
+.normalDeclarations {
+  background:red;
+  color:  blue;
+  border-color:  green;
+}
+/* Extends, includes and variables are included in main stylesheet, not in standalone */
+.sassDeclarations {
+  @include responsive-font-size($default-font-sizes);
+  @extend .c-form__element !optional;
+  font-family:$font-default;
+  margin:$base-spacing/2 0 $base-spacing;
+}
+/* Single line declarations work */
+.oneLine {
+  background:red;  color:  blue;   border-color:  green;
+}
+/* And commenting halfway along the line works too */
+.oneLinePlusComment {
+  background:red; color:  blue; // border-color:  green;
+}
+/* All in one place */
+.combined {
+  //background:red;
+  // color: blue;
+  //  border-color:  green;
+  background:red;
+  color:  blue;
+  border-color:  green;
+  @include responsive-font-size($default-font-sizes);
+  @extend .c-form__element--required !optional;
+  font-family:$font-default;
+  background:red;  color:  blue;   border-color:  green;
+  background:red; color:  blue; // border-color:  green;
+  margin:$base-spacing/2 0 $base-spacing;
+}

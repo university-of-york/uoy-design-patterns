@@ -9,6 +9,17 @@
   border:2px solid $blue;
   padding:$base-spacing;
 }
+.c-form--panel {
+  border-top:0.8em solid $c-panel--highlight-border-color;
+  background-color: $c-panel--highlight-background-color;
+  border-radius:3px;
+  display:block;
+  padding:$base-spacing/2 $base-spacing;
+  color:$light;
+  & a {
+    color:$light;
+  }
+}
 .c-form__legend {
   @include component;
   padding:0;
@@ -16,7 +27,10 @@
   font-size:24px;
 }
 .c-form__label {
-  cursor:pointer;
+  font-weight: 700;
+}
+.c-form__hint {
+  display:block;
 }
 .c-form__input {
   width:100%;
@@ -44,6 +58,18 @@
   padding:0;
   border:0;
 }
+
+.c-form__checkbox-group,
+.c-form__radio-group {
+  white-space: nowrap;
+  display:inline-block;
+  margin-right:$base-spacing;
+  .c-form__label {
+    margin-left:$base-spacing/4;
+    font-weight: normal;
+    cursor:pointer;
+  }
+}
 .c-form__radio,
 .c-form__checkbox {
 
@@ -52,14 +78,29 @@
   position:relative;
   margin-bottom:10px;
 }
-.c-form__element--select {
+// This styles the select box inside the container
+.c-form__select {
+  width:100%;
+  line-height:1.5;
+  height:1.99em;
+  height:calc(2em - 2px); // minus top/bottom border
+  border:none;
+  padding:0.25em 8px;
+  border-radius:3px;
+  background-color:#fff;
+  color:$charcoal;
+  -webkit-appearance:none;
+}
+.c-form__input--select {
+  position:relative;
+  padding:0;
   &:after {
     line-height:2;
     content:'\25bc';
     display:block;
     position:absolute;
-    right:0;
-    bottom:0;
+    right:-1px;
+    bottom:-1px;
     border-top-right-radius:3px;
     border-bottom-right-radius:3px;
     height:2em;
@@ -70,23 +111,17 @@
     pointer-events:none;
   }
 }
-.c-form__element-group {
-  min-height:2em;
-  min-height:calc(2em + 2px);
-  line-height:2em;
-  height:2em;
-  // Higher specificity - same in all types of form
-  .c-form__label.c-form__label {
-    display:inline-block; // Only first .c-form__label is block-level
-    // margin-left:4px; // Not needed - should be joined with &nbsp;
-    margin-right:8px;
-  }
 
-}
 // Stacked form
 .c-form--stacked {
   .c-form__label {
     display:block;
+  }
+  .c-form__radio-group,
+  .c-form__checkbox-group {
+    .c-form__label {
+      display:inline-block;
+    }
   }
 }
 // Inline form
@@ -109,6 +144,7 @@
     .c-form__label {
       width:auto;
       padding:0;
+      display:inline-block;
     }
   }
 }
@@ -140,6 +176,21 @@
 
 // (Search) form in the header
 .c-form--header {
-  margin-top:17px;
+  margin-top:39px;
   margin-bottom:0;
+  @include mq(medium, '-') {
+    display:none;
+  }
+}
+
+// Form validation
+.is-invalid {
+  .c-form__input {
+    border-color:$red;
+  }
+  .c-form__label,
+  &.c-form__hint {
+    color:$red;
+  }
+
 }

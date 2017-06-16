@@ -3,7 +3,7 @@
 //
 
 // Font-awesome variables
-$fa-font-path:        "../fonts";
+//$fa-font-path:        "https://www.york.ac.uk/static/stable/fonts";
 $fa-font-size-base:   16px;
 $fa-css-prefix:       'c-icon-';
 // $fa-border-color:     #eee !default;
@@ -37,4 +37,8 @@ $fa-inverse:          $light;
 .c-icon--above {
   display: block;
   margin: 0.4em auto 0;
+}
+
+.c-icon__sr-text {
+  @include is-invisible;
 }
