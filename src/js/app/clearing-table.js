@@ -11,8 +11,8 @@ category: Javascript
 define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function ($, GOOGLEDOC, SEARCHABLE, UTILS) {
 
   var $window = $(window);
-  var docID = '1M6mKYo2YAyIuEbePfFXWKaTKM7mZrM9f5eB-G43c';
-  var backupDoc = 'http://www.york.ac.uk/static/data/clearing/2016.json';
+  var docID = '1nhthkj0qS27faSb_mmFZAjNfZKvIPc0KOmfYHEiL';
+  var backupDoc = 'http://www.york.ac.uk/static/data/clearing/2017.json';
   var letterLimit = 5;
   var searchLimit = 20;
   var trimAndAdd = function (numbers) {
@@ -204,7 +204,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
           if ((that.courseCount['UK/EU'] === 0) && (that.courseCount.International === 0)) {
 
             var noCourseBox = $('<div>').addClass('o-grid__box o-grid__box--full');
-            var noCourseBoxContent = that.createPanel('<p>There are no vacancies in this department for September 2016. <a href="//www.york.ac.uk/study/undergraduate/courses/all">Explore your options for 2017 entry.</a></p>');
+            var noCourseBoxContent = that.createPanel('<p>There are no vacancies in this department for September 2017. <a href="//www.york.ac.uk/study/undergraduate/courses/all">Explore your options for 2018 entry.</a></p>');
             noCourseBox.append(noCourseBoxContent);
             gr.append(noCourseBox);
 
@@ -402,7 +402,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     var courseCellContent = '<p class="c-clearing-table__title"><a href="'+course['Link to course page']+'">'+course['Qualification earned']+' '+course['Title of course']+'</a></p>'+
       '<ul class="u-two-columns">';
 
-    console.log(course['No grades']);
+    //console.log(course['No grades']);
 
     if (course['No grades'] !== '') {
 
