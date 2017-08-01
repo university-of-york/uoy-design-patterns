@@ -4,6 +4,7 @@ v1.6.0 (next minor release)
 
 v1.5.2 (next patch release)
 * [Fixed calculation of Show More height](../../tree/component/show-more)
+* [Updated clearing tables to use the new Google Fusion table, and updated text to 2017](../../tree/module/clearing-table)
 
 v1.5.1 (released 12 Jun 2017)
 * [Added new scope for the Conversation embeds](../../tree/scope/conversation)
