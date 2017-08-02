@@ -117,7 +117,7 @@
     color:$c-modal__close-hover-color;
   }
   @include mq('medium', '-') {
-    display:none;
+    //display:none;
   }
 }
 .c-modal__nav {

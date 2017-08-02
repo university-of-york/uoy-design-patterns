@@ -8,7 +8,8 @@ category: Javascript
 
  */
 
-define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function ($, GOOGLEDOC, SEARCHABLE, UTILS) {
+define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-link'],
+  function ($, GOOGLEDOC, SEARCHABLE, UTILS, MODALLINK) {
 
   var $window = $(window);
   var docID = '1nhthkj0qS27faSb_mmFZAjNfZKvIPc0KOmfYHEiL';
@@ -64,6 +65,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
     this.type = options.type || 'Both';
     this.department = options.department || 'All';
     this.layout = options.layout || 'Courses';
+    this.course = options.course || false;
     this.container = options.container;
     this.data = [];
     this.dataLoaded = false;
@@ -74,6 +76,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
       this.container.attr('id', 'clearing-container-'+this.id);
     }
     this.container.addClass('c-clearing-container');
+    this.container.empty();
 
     if (this.layout === 'Courses') {
       this.courseCount['UK/EU'] = 0;
@@ -86,6 +89,9 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
       this.table.on('search.updated', { that: this }, this.updateAtoZ);
     } else if (this.layout === 'Departments') {
       this.list = $('<ul>').addClass('c-clearing-list');
+      this.modalLink = false;
+    } else if (this.layout === 'Course panel') {
+      this.panel = $('<div>').addClass('c-panel c-panel--highlight').attr({'role':'alert'});
     }
 
     var t = new GOOGLEDOC({
@@ -101,10 +107,15 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
         // Only load it once, even if there's more than one table on a page!
         that.dataLoaded = true;
 
-        // Filter by department
         if (that.department !== 'All') {
+          // Filter by department
           $.grep(data, function(a) {
             if (a.Department === that.department) that.data.push(a);
+          });
+        } else if (that.course !== false) {
+          // Filter by course
+          $.grep(data, function(a) {
+            if (a['UCAS code'] === that.course) that.data.push(a);
           });
         } else {
           that.data = data;
@@ -152,6 +163,61 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
               that.addCourseRow(thisCourse);
 
             }
+
+          // Course panel layout
+          } else if (that.layout === "Course panel") {
+
+            var panelContent = $('<div>').addClass('c-panel__content');
+            that.modalLink = $('<a>').attr({'href': '#modal-content-'+that.id}).text('Adjustment and clearing information for this course');
+
+            panelContent.append('<p><strong>Places are available on this course through Adjustment and Clearing</strong></p>');
+            panelContent.append($('<p>').append(that.modalLink));
+
+            var modalContent = $('<div>').addClass('is-hidden').attr({'id':'modal-content-'+that.id});
+
+            // Course title
+            modalContent.append('<h2>'+thisCourse['Qualification earned']+' '+thisCourse['Title of course']+'</h2>');
+
+            // Availability text
+            modalAvailabilityText = 'Adjustment and Clearing places are available for <strong>';
+
+            if (thisCourse['Home/EU'] === 'y') modalAvailabilityText+= 'UK/EU students';
+            if (thisCourse['Home/EU'] === 'y' && thisCourse.International === 'y') modalAvailabilityText+= ' and ';
+            if (thisCourse.International === 'y') modalAvailabilityText+= 'international students';
+
+            modalAvailabilityText = '</strong>';
+
+            modalContent.append('<p>'+modalAvailabilityText+'</p>');
+            modalContent.append('<h3>Entry requirements</h3>');
+            modalContent.append('<p><strong>'+thisCourse['Entry requirements']+'</strong> or equivalent tariff points from three A levels. Other qualifications are also accepted.</p>');
+            if (thisCourse['Bullet 1'] || thisCourse['Bullet 2'] || thisCourse['Bullet 3']) {
+              var modalBullets = $('<ul>');
+              if (thisCourse['Bullet 1']) {
+                modalBullets.append('<li>'+thisCourse['Bullet 1']+'</li>');
+              }
+              if (thisCourse['Bullet 2']) {
+                modalBullets.append('<li>'+thisCourse['Bullet 2']+'</li>');
+              }
+              if (thisCourse['Bullet 3']) {
+                modalBullets.append('<li>'+thisCourse['Bullet 3']+'</li>');
+              }
+              modalContent.append('<p>Must include:</p>');
+              modalContent.append(modalBullets);
+            }
+            modalContent.append('<h3>How to apply</h3>');
+            var numbers = trimAndAdd(thisCourse['Phone number(s)'].split(','));
+            modalContent.append('<p>To apply for this course, call us on <strong>'+numbers+'</strong>.</p>');
+            modalContent.append('<p>Before you call:</p>');
+            var modalList = $('<ul>');
+            modalList.append('<li>Research the course(s) you\'re interested in and be ready to tell us why you want to apply.</li>');
+            modalList.append('<li>Pick up your results and make sure you meet the entry requirements. We\'ll need the details of your results in order to make our decision.</li>');
+            modalList.append('<li>Have your UCAS ID number to hand and a number we can call you back on.</li>');
+            modalList.append('<li>If your first language is not English you must also provide evidence of your <a href=&quot;https://www.york.ac.uk/study/undergraduate/applying/entry/english-language/&quot;>English language ability.</a></li>');
+            modalContent.append(modalList);
+            modalContent.append('<p><a class="c-btn c-btn--secondary c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/vacancies/">Find out more about Adjustment and Clearing</a></p>');
+
+            that.panel.append(panelContent);
+            that.panel.append(modalContent);
 
           // Department layout
           } else if (that.layout === "Departments") {
@@ -246,13 +312,25 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils'], function (
           //console.log(that.container, that.container.outerHeight());
           $(window).trigger('content.updated', ['clearing-table', that]);
 
-        } else {
+        // Course panel layout
+        } else if (that.layout === "Course panel") {
+
+          that.container.append(that.panel);
+          console.log(that.container, that.container.outerHeight());
+          $(window).trigger('content.updated', ['clearing-table', that]);
+
+          new MODALLINK({
+            link: that.modalLink
+          });
+
+        // Department layout
+        } else if (that.layout === "Departments") {
 
           // Add list to container
           that.container.append($('<h3>').text('Vacancies by subject area'));
           that.container.append(that.list);
 
-          console.log(that.container, that.container.outerHeight());
+          //console.log(that.container, that.container.outerHeight());
           $(window).trigger('content.updated', ['clearing-table', that]);
 
         }
