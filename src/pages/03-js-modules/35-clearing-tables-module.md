@@ -83,7 +83,7 @@ And this example has a no courses available.
 Any content wrapped in the `js-clearing-table` div will be overwritten if the course is in clearing.
 
 ```markup
-<div class="js-clearing-table" data-layout="Course panel" data-course="G400">
+<div class="js-clearing-table" data-layout="Course panel" data-course="F3F8">
   <div class="c-panel c-panel--highlight">
     <div class="c-panel__content">
       <h3>Results 2017</h3>
@@ -94,7 +94,7 @@ Any content wrapped in the `js-clearing-table` div will be overwritten if the co
 </div>
 ```
 
-<div class="js-clearing-table" data-layout="Course panel" data-course="G400">
+<div class="js-clearing-table" data-layout="Course panel" data-course="F3F8">
   <div class="c-panel c-panel--highlight">
     <div class="c-panel__content">
       <h3>Results 2017</h3>

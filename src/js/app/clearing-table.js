@@ -189,7 +189,18 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
 
             modalContent.append('<p>'+modalAvailabilityText+'</p>');
             modalContent.append('<h3>Entry requirements</h3>');
-            modalContent.append('<p><strong>'+thisCourse['Entry requirements']+'</strong> or equivalent tariff points from three A levels. Other qualifications are also accepted.</p>');
+            if (thisCourse['No grades'] !== '' || thisCourse['Entry requirements'] !== '') {
+              var entryReqText = '';
+              if (thisCourse['No grades'] !== '') {
+
+                  entryReqText+= thisCourse['No grades'];
+
+              } else if (thisCourse['Entry requirements'] !== '') {
+
+                  entryReqText+= '<strong>'+thisCourse['Entry requirements']+'</strong> or equivalent tariff points from three A levels. Other qualifications are also accepted.';
+              }
+              modalContent.append('<p>'+entryReqText+'</p>');
+            }
             if (thisCourse['Bullet 1'] || thisCourse['Bullet 2'] || thisCourse['Bullet 3']) {
               var modalBullets = $('<ul>');
               if (thisCourse['Bullet 1']) {
@@ -210,7 +221,11 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
             modalContent.append('<p>Before you call:</p>');
             var modalList = $('<ul>');
             modalList.append('<li>Research the course(s) you\'re interested in and be ready to tell us why you want to apply.</li>');
-            modalList.append('<li>Pick up your results and make sure you meet the entry requirements. We\'ll need the details of your results in order to make our decision.</li>');
+            if (thisCourse['No grades'] !== '') {
+              modalList.append('<li>Pick up your results - we\'ll need the details in order to make our decision.</li>');
+            } else {
+              modalList.append('<li>Pick up your results and make sure you meet the entry requirements. We\'ll need the details of your results in order to make our decision.</li>');
+            }
             modalList.append('<li>Have your UCAS ID number to hand and a number we can call you back on.</li>');
             modalList.append('<li>If your first language is not English you must also provide evidence of your <a href=&quot;https://www.york.ac.uk/study/undergraduate/applying/entry/english-language/&quot;>English language ability.</a></li>');
             modalContent.append(modalList);
