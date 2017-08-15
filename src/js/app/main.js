@@ -153,12 +153,14 @@ define(
     // Clearing tables
     UTILS.eachIfExists('.js-clearing-table', function (i, a) {
       var $a = $(a),
-          type = $a.attr('data-type'),
-          layout = $a.attr('data-layout'),
-          department = $a.attr('data-department');
+          type = $a.attr('data-type') || false,
+          layout = $a.attr('data-layout') || false,
+          course = $a.attr('data-course') || false,
+          department = $a.attr('data-department') || false;
       new CLEARINGTABLE({
         type: type,
         layout: layout,
+        course: course,
         department: department,
         container: $a
       });
