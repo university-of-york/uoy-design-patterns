@@ -250,6 +250,8 @@ define(
         buttonTextMore: buttonTextMore,
         buttonTextLess: buttonTextLess
       });
+      // Wait till fonts are loaded
+      UTILS.fontsActive(e.setShowMoreHeight, e);
     });
 
     // Update 'More' text
