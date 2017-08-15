@@ -2,7 +2,9 @@
 
 v1.6.0 (next minor release)
 
-v1.5.2 (next patch release)
+v1.5.3 (next patch release)
+
+v1.5.2 (released 15 Aug 2017)
 * [Fixed calculation of Show More height](../../tree/component/show-more)
 * [Updated clearing tables to use the new Google Fusion table, and updated text to 2017](../../tree/module/clearing-table)
 
