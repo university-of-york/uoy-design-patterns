@@ -14,6 +14,7 @@
   cursor: pointer;
   transition: all 0.2s ease-out;
   vertical-align: top;
+  text-align:center;
   // Just some default colors
   background-color:map-get(map-get($c-btn, default), bg);
   color:map-get(map-get($c-btn, default), text);
@@ -61,6 +62,10 @@
       outline-color: $bgFocusColor;
     }
   }
+  .c-btn--selectable:checked + .c-btn.c-btn--selectable__label.c-btn#{$name} {
+    background-color:$bgActiveColor;
+    color: $textColor;
+  }
 }
 .c-btn--disabled {
   opacity: 0.5;
@@ -106,6 +111,19 @@
     float:right;
   }
 }
+// Selectable button
+.c-btn--selectable {
+  display: none;
+  + .c-btn--selectable__label{
+    user-select: none;
+    transition: 0s;
+  }
+  // Checked colors can be found in the loop for button types
+  // &:checked + .c-btn--selectable__label {
+  //   background-color:lighten(map-get(map-get($c-btn, default), bg), 15);
+  //   color: map-get(map-get($c-btn, default), text);
+  // }
+}
 // Button groups
 .c-btn-group {
   display:table;
@@ -116,10 +134,10 @@
     border-radius: 0;
     margin-bottom:0;
     margin-right:0;
-    + .c-btn {
+    ~ .c-btn {
       border-left: 1px solid rgba(255,255,255,0.15);
     }
-    &:first-child {
+    &:first-of-type {
       border-left-width: 1px;
       &.c-btn--tiny {
         border-top-left-radius: 2px;
@@ -142,7 +160,7 @@
         border-bottom-left-radius: 6px;
       }
     }
-    &:last-child {
+    &:last-of-type {
       &.c-btn--tiny {
         border-top-right-radius: 2px;
         border-bottom-right-radius: 2px;
