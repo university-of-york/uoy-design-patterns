@@ -237,6 +237,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
           // Department layout
           } else if (that.layout === "Departments") {
 
+
             // Set up subject counts
             if (typeof that.courseCount[thisCourse.Subject] === 'undefined') {
               that.courseCount[thisCourse.Subject] = {
@@ -258,7 +259,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
               currentCourse = thisCourse;
             }
             if (i === that.data.length - 1) {
-              if (currentCourse.Subject !== false && (thisCourse.Subject['UK/EU'] > 0 || thisCourse.Subject.International > 0)) {
+              if (currentCourse.Subject !== false && (that.courseCount[currentCourse.Subject]['UK/EU'] > 0 || that.courseCount[currentCourse.Subject].International > 0)) {
                 var lastLi = makeLink(thisCourse, that.courseCount[thisCourse.Subject]);
                 that.list.append(lastLi);
               }

@@ -2,7 +2,9 @@
 
 v1.6.0 (next minor release)
 
-v1.5.3 (next patch release)
+v1.5.3 (released 16 Aug 2017)
+* Update number counts in clearing department list(added to master)
+* [Added selectable buttons component](../../tree/component/buttons)
 
 v1.5.2 (released 15 Aug 2017)
 * [Fixed calculation of Show More height](../../tree/component/show-more)
