@@ -13,5 +13,7 @@ src/partials/assocnav.mustache
 src/partials/subnav.mustache
 src/partials/nav.mustache
 
+**/*.sublime-project
+**/*.sublime-workspace
 **/*.zip
 **/.DS_Store
