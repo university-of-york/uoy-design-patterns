@@ -3,6 +3,7 @@
 v1.6.0 (next minor release)
 
 v1.5.4 (next patch release)
+* [Fix for hrefs containing slashes](../../tree/fix/ids-with-slashes)
 
 v1.5.3 (released 16 Aug 2017)
 * Update number counts in clearing department list(added to master)
