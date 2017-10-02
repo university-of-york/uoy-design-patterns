@@ -37,7 +37,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       var $this = $(this);
       var $thisTab = $this.parent();
       var thisHref = $this.attr('href');
-      var $thisContainer = $(thisHref);
+      var $thisContainer = $(UTILS.fixSelector(thisHref));
 
       if ($thisTab.hasClass('is-active')) return false;
 
