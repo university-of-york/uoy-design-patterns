@@ -91,6 +91,31 @@ component("grid-row", {"type": "alt2", "class":"js-equal-height-row", "atoms": [
 
 </script>
 
+### Edge cases
+
+Non-linked facts in alt rows need to _not_ have a hover colour:
+
+<script>
+component("grid-row", {"type": "alt2", "class":"js-equal-height-row", "atoms": [
+  { "grid-box": { "size": "third", "atoms": { "key-fact": {
+    "title": "<strong>10th</strong> for research impact in the REF 2014",
+    "content": "<p>Research performance</p>",
+    "icon": "book"
+  } } } },
+  { "grid-box": { "size": "third", "atoms": { "key-fact": {
+    "title": "<strong>&pound;500 million</strong> invested in facilities",
+    "content": "<p>World-class resources available to staff and partners</p>",
+    "icon": "money"
+  } } } },
+  { "grid-box": { "size": "third", "atoms": { "key-fact": {
+    "title": "A community of <strong>2,000+</strong> research students",
+    "content": "supported by the York Graduate Research School",
+    "icon": "graduation-cap"
+  } } } }
+] });
+
+</script>
+
 
 ### Options
 

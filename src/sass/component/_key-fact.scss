@@ -10,28 +10,28 @@
   .o-media__picture img {
     min-width:45px;
   }
-  &:hover{
-    color:$c-key-fact-hover-color;
-    .c-key-fact__icon{
-      color:$c-key-fact__icon-hover-color;
-    }
-  }
   .o-grid__row--alt1 &,
   .o-grid__row--alt2 & {
     background-color:$c-key-fact-alt-background-color;
     color:$c-key-fact-alt-color;
     padding:$base-spacing;
-    &:hover {
-      background-color:$c-key-fact-alt-background-hover-color
-    }
   }
 }
-
-// Override change in link text colour
-.o-grid__row--alt1,
-.o-grid__row--alt2 {
-  a.c-key-fact {
+a.c-key-fact:hover{
+  color:$c-key-fact-hover-color;
+  .c-key-fact__icon{
+    color:$c-key-fact__icon-hover-color;
+  }
+  .c-key-fact__title {
+    color:$c-key-fact__title-hover-color;
+  }
+  .o-grid__row--alt1 &,
+  .o-grid__row--alt2 & {
     color:$c-key-fact-alt-color;
+    background-color:$c-key-fact-alt-background-hover-color;
+    .c-key-fact__title {
+      color:$c-key-fact-alt-color;
+    }
   }
 }
 
