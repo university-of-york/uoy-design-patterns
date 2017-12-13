@@ -5,6 +5,7 @@ v1.6.0 (next minor release)
 v1.5.4 (next patch release)
 * [Added font-display property](../../tree/update/webfonts)
 * [Fix for hrefs containing slashes](../../tree/fix/ids-with-slashes)
+* [Fix key facts that aren't links](../../tree/fix/key-messages)
 
 v1.5.3 (released 16 Aug 2017)
 * Update number counts in clearing department list (added to master)
