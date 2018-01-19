@@ -21,7 +21,8 @@ And these `pages` are built up in a _molecule_ called `pagination`:
 
 <script>
 component("pagination", { "atoms": [
-  { "page": { "href": "?page=1", "value": "Previous", "position": "previous", "icon-before": "chevron-left" } },
+  { "page": { "href": "?", "value": "Previous", "position": "previous", "icon-before": "chevron-left" } },
+  { "page": { "href": "?page=1", "value": "1" } },
   { "page": { "href": "?page=2", "value": "2" } },
   { "page": { "href": false, "value": "..." } },
   { "page": { "href": "?page=24", "value": "24" } },
@@ -30,8 +31,8 @@ component("pagination", { "atoms": [
   { "page": { "href": "?page=27", "value": "27" } },
   { "page": { "href": "?page=28", "value": "28" } },
   { "page": { "href": false, "value": "..." } },
-  { "page": { "href": "?page=49", "value": "49" } },
-  { "page": { "href": "?page=50", "value": "Next", "position": "next", "icon-after": "chevron-right" } }
+  { "page": { "href": "?page=50", "value": "50" } },
+  { "page": { "href": "?", "value": "Next", "position": "next", "icon-after": "chevron-right" } }
 ]});
 </script>
 
