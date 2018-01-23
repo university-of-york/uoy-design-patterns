@@ -8,6 +8,7 @@ v1.5.4 (next patch release)
 * [Fix key facts that aren't links](../../tree/fix/key-messages)
 * [Updated NPM modules](../../tree/update/npm)
 * [New news article](../../tree/component/news)
+* [Updated pagination component](../../tree/component/pagination)
 
 v1.5.3 (released 16 Aug 2017)
 * Update number counts in clearing department list (added to master)
