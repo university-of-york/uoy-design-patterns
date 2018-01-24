@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="University of York">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>What's on in this area</title>
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <script src="/js/vendor/modernizr/modernizr.js"></script>
+    <script src="/js/vendor/requirejs/require.js" data-main="/js/app"></script>
+
+    <!-- External, third party scripts -->
+    <script src="//use.typekit.net/dvj8rpp.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
+    <script>
+
+    require(['vendor/jquery/jquery'], function () {
+      //console.time('What\'s on');
+      // Remove '?'
+      var queryString = document.location.search.substr(1);
+      // Split into queries
+      var queryArray = queryString.split('&');
+      var queryObject = {};
+      // Assign each query key=val
+      $.each(queryArray, function(i, q) {
+        var thisQuery = q.split('=');
+        queryObject[thisQuery[0]] = thisQuery[1] || true;
+      });
+      //console.log(queryObject);
+      if (!queryObject.rooms) return;
+      if (!queryObject.show) queryObject.show = 'now';
+      var roomsArray = queryObject.rooms.split(',');
+      var apiURL = 'https://www.york.ac.uk/api/campus/';
+
+      // Update page title
+      var pageTitle = $('.c-page-title--header');
+      var pageTitleText = pageTitle.text();
+      if (queryObject.show === 'now' || queryObject.show === 'next') {
+        pageTitle.text(pageTitleText+' '+queryObject.show);
+      }
+
+      // Group of deferred functions to process array of rooms
+      function processRooms(roomsArray) {
+        return $.when.apply($, $.map(roomsArray, function(roomCode, i) {
+          return getRoomData(roomCode);
+        })).promise();
+      }
+
+      // Group of deferred functions to process array of room events
+      function processEvents(eventsArray) {
+        return $.when.apply($, $.map(eventsArray, function(event, i) {
+          return getEventData(event);
+        })).promise();
+      }
+
+      // Deferred function - resolves after API call is successful
+      function getRoomData(roomCode) {
+        return $.Deferred(function(dfd) {
+          // Get room data
+          //console.time('Get room '+roomCode);
+          var roomURL = apiURL.replace('{+roomId}', roomCode);
+          var roomDetails;
+          $.get(roomURL).then(function (roomData) {
+            //console.log('Successfully got data for '+roomCode);
+            roomDetails = roomData;
+            //console.timeEnd('Get room '+roomCode);
+            var todayURL = roomData._links['campus:today'].href;
+            return $.get(todayURL);
+          }).then(function(todayData) {
+            // Get events info
+            var events = todayData._links.item;
+            return processEvents(events);
+          }).then(function() {
+            // Use 'arguments' variable as we don't know how many events there are
+            var eventData = $.makeArray(arguments);
+            // Sort events by start date (just in case)
+            eventData.sort(function(a,b) {
+              var aBegin = new Date(a.begin);
+              var bBegin = new Date(b.begin);
+              return aBegin > bBegin ? 1 : -1 ;
+            });
+            var roomData = makeRoomData(roomDetails, eventData[0], eventData[1]);
+            dfd.resolve({
+              roomCode: roomCode,
+              roomDOM: roomData
+            });
+          }).fail(function(err) {
+            //console.log('Unknown room code?');
+            dfd.resolve({
+              roomCode: roomCode,
+              roomDOM: false
+            });
+            // Don't fail whole thing if API call fails
+            // dfd.reject(err);
+          });
+        }).promise();
+      }
+
+      // Deferred function - resolves after API call is successful
+      function getEventData(event) {
+        return $.Deferred(function(dfd) {
+          // Get event data
+          //console.time('Get event '+event.name);
+          var eventURL = event.href;
+          $.get(eventURL).then(function (eventData) {
+            //console.log('Successfully got data for event '+event.name);
+            //console.timeEnd('Get event '+event.name);
+            dfd.resolve(eventData);
+          }).fail(function(err) {
+            dfd.resolve(false);
+            // Don't fail if no event data
+            // dfd.reject(err);
+          });
+        }).promise();
+      }
+
+      function makeRoomData(roomDetails, firstEventData, secondEventData) {
+
+        //console.log(roomDetails, nowEventData, nextEventData);
+
+        // Template
+        // <div class="room-data">
+        //   <h2 class="room-code">P/X/001 <em class="room-name">P/X/001 Lecture Theatre - tiered</em></h2>
+        //   <div class="event event-now">
+        //     <h3 class="event-title">Understanding Difficult Problems</h3>
+        //     <p class="event-time"><time>9:30am &ndash; 10:30am</time></p>
+        //     <p class="event-type"><em>Room booking</em></p>
+        //   </div>
+        //   <!-- OR -->
+        //   <div class="event event-next">
+        //     <h3 class="event-title">Answering Impossible Questions</h3>
+        //     <p class="event-time"><time>11:30am &ndash; 12:30am</time></p>
+        //     <p class="event-type"><em>Room booking</em></p>
+        //   </div>
+        // </div>
+
+        var nowEventData = firstEventData;
+        var nextEventData = secondEventData;
+
+        // If there is no now event...
+        if (!nowEventData) {
+          nowEventData = {
+            "begin": false,
+            "end": false,
+            "summary": "This room is unoccupied today"
+          };
+          nextEventData = nowEventData;
+        } else {
+          // If 'now' event data isn't happening right now (i.e. start time isn't in the past, then create 'Nothing happening in this room' as now event and put first event as next event)
+          var now = new Date();
+          var firstEventBegin = new Date(firstEventData.begin);
+          if (now < firstEventBegin) {
+            var nextBegin = makeReadableDate(firstEventBegin);
+            nowEventData = {
+              "begin": false,
+              "end": false,
+              "summary": "Room unoccupied until "+nextBegin
+            };
+            nextEventData = firstEventData;
+          }
+          // If there is no next event...
+          if (!nextEventData) {
+            var previousEnd = makeReadableDate(firstEventData.end);
+            nextEventData = {
+              "begin": false,
+              "end": false,
+              "summary": "From "+previousEnd+" room unoccupied for the rest of the day."
+            };
+          }
+        }
+
+        // Set up DOM elements
+        // Room Data
+        var rData = $('<div>').addClass('room-data is-transparent');
+        var rCode = $('<h2>').addClass('room-code').text(roomDetails.id).appendTo(rData);
+        var eContainer = $('<div>').addClass('event').appendTo(rData);
+        // Take room code off from description
+        var fixedName = roomDetails.name.replace(roomDetails.id+' ', '');
+        if (fixedName !== '') {
+          var rName = $('<em>').addClass('room-name').text(fixedName).appendTo(rCode);
+        }
+        if (queryObject.show === 'now' || queryObject.show === 'both') {
+          // Now event
+          var eNow = $('<div>').addClass('event-now').appendTo(eContainer);
+          var eNowTitle = $('<h3>').addClass('event-title').text(nowEventData.summary).appendTo(eNow);
+          var eNowDate = makeDate(nowEventData);
+          var eNowTime = $('<p>').addClass('event-time').html(eNowDate).appendTo(eNow);
+          // On current booking form but not in API?
+          //var eNowType = $('<p>').addClass('event-type').html('<em>Room booking</em>').appendTo(eNext);
+        }
+        if (queryObject.show === 'next' || queryObject.show === 'both') {
+          // Next event
+          var eNext = $('<div>').addClass('event-next').appendTo(eContainer);
+          var eNextTitle = $('<h3>').addClass('event-title').text(nextEventData.summary).appendTo(eNext);
+          var eNextDate = makeDate(nextEventData);
+          var eNextTime = $('<p>').addClass('event-time').html(eNextDate).appendTo(eNext);
+          // On current booking form but not in API?
+          //var eNextType = $('<p>').addClass('event-type').html('<em>Room booking</em>').appendTo(eNext);
+        }
+        return rData;
+      }
+
+      function makeDate(eventData) {
+        if (eventData.begin === false || eventData.end === false) return "Call 01904 324500 to book";
+        var beginTime = makeReadableDate(eventData.begin);
+        var endTime = makeReadableDate(eventData.end);
+        var t = $('<time>').html(beginTime+' &ndash; '+endTime);
+        return t;
+      }
+
+      function makeReadableDate(data) {
+        var date = new Date(data);
+        var marker = 'am';
+        var minutes = date.getMinutes();
+        // Some times go from e.g. 10:00 - 10:59
+        // Normalise it
+        if (minutes === 29 || minutes === 59) {
+          date.setMinutes(minutes+1);
+          minutes = date.getMinutes();
+        }
+        // Pad single digit minutes
+        if (minutes < 10) minutes = '0'+minutes;
+        var hours = date.getHours();
+        // Change to PM from 12pm to 11pm
+        if (hours > 11 && hours < 24) marker = 'pm';
+        // Chagne to 12-hour clock
+        if (hours > 12) hours = hours - 12;
+
+        var time = hours+'.'+minutes+marker;
+        return time;
+      }
+
+      $.get(apiURL).then(function(data) {
+        apiURL = data._links['campus:room'].href;
+        return processRooms(roomsArray);
+      }).then(function() {
+        var roomDivs = $.makeArray(arguments);
+        var i = 0;
+        var l = roomDivs.length;
+        var $roomList = $('.room-list');
+        var addAndShowRoom = function(i) {
+          var thisDiv = roomDivs[i].roomDOM;
+          $roomList.append(thisDiv);
+          setTimeout(function() {
+            thisDiv.removeClass('is-transparent');
+          }, i*200);
+        };
+        for (;i < l; i++) {
+          if (roomDivs[i].roomDOM === false) continue;
+          addAndShowRoom(i);
+        }
+
+      }).fail(function(err) {
+        //console.error('Something went wrong',err);
+      }).done(function() {
+        //console.timeEnd('What\'s on');
+      });
+
+    });
+    </script>
+    <style>
+    html {
+      font-size:32px;
+    }
+    @media only screen and (max-width: 80em) {
+      html {
+        font-size:24px;
+      }
+    }
+    .c-main-header--alt {
+      background-color:#333;
+      color:#fff;
+      border-bottom:2px solid #00b3eb;
+    }
+    .u-push-left {
+      float:left;
+      text-align:left;
+    }
+    .u-push-right {
+      float:right;
+      text-align:right;
+    }
+    .u-demarginalised {
+      margin:0;
+    }
+    .c-page-title--header {
+      font-size:32px;
+      font-size:2rem;
+      margin:20px 0;
+      min-height:1.1875em; /* Matches logo */
+      line-height:1.1875em;
+    }
+    @media only screen and (max-width: 80em) {
+      .c-page-title--header {
+        min-height: 1.2em;
+        line-height: 1.2em;
+      }
+    }
+    @media only screen and (max-width: 63.9375em) {
+      .c-page-title--header {
+        font-size:24px;
+        font-size:1.5rem;
+        min-height: 1.6em;
+        line-height: 1.6em;
+      }
+    }
+    .c-main-header--wide {
+      padding-left:20px;
+      padding-right:20px;
+      /* Add padding for small screens too */
+    }
+    .c-footer-main--wide {
+      padding-left:20px;
+      padding-right:20px;
+      /* Add padding for small screens too */
+    }
+    .c-footer-main--wide .o-grid__box {
+      font-size:0.8rem;
+    }
+    @media only screen and (max-width: 80em) {
+      .c-main-header__logo {
+        width: 160px;
+      }
+    }
+    .room-list {
+      padding:0 20px;
+      /* Add padding for small screens too */
+    }
+    .room-data {
+      margin-bottom:32px;
+      display:table;
+      transition:opacity 0.5s ease-in;
+      width:100%;
+    }
+    @media only screen and (max-width: 80em) {
+      .room-data {
+        margin-bottom: 16px;
+      }
+    }
+    .room-data:last-child {
+      margin-bottom:0;
+    }
+    .room-code {
+      margin-bottom:0;
+      padding-right:16px;
+      display:table-cell;
+      vertical-align:middle;
+      width:25%;
+      font-size:2rem;
+    }
+    .room-name {
+      font-size:0.5em;
+      color:#999;
+      display:block;
+      font-weight:normal;
+    }
+    .event {
+      display:table-cell;
+      vertical-align:middle;
+      width:75%;
+    }
+    .event-title {
+      margin-bottom:0;
+      font-size:1.4rem;
+    }
+    .event-time {
+      margin-bottom:0;
+      font-size:0.9rem;
+    }
+    .event-type {
+      margin-bottom:0;
+    }
+    .is-transparent {
+      opacity:0;
+    }
+    .c-page-title {
+      min-height:0;
+    }
+    </style>
+
+  </head>
+
+  <body class="t-signage">
+
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WXLX54" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WXLX54');</script>
+
+    <header class="c-main-header c-main-header--wide c-main-header--alt" role="banner">
+      <div class="o-wrapper o-wrapper--wide o-grid">
+        <div class="o-grid__row">
+          <div class="o-grid__box o-grid__box--threequarters">
+            <h1 class="c-page-title--header">What's on in this area</h1>
+          </div>
+          <div class="o-grid__box o-grid__box--quarter">
+            <h2 class="c-main-header__title u-push-right"><a href="http://www.york.ac.uk/"><img class="c-main-header__logo" src="https://www.york.ac.uk/static/1.4/img/logo-white.svg" alt="University of York" width="200" height="76"></a></h2>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="o-grid o-wrapper o-wrapper--main o-wrapper--wide js-wrapper--main">
+      <div class="o-grid__row">
+        <div class="o-grid__box o-grid__box--full">
+          <div class="room-list">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="c-footer-main c-footer-main--wide" role="contentinfo">
+      <div class="o-grid o-wrapper o-wrapper--wide">
+        <div class="o-grid__row">
+          <div class="o-grid__box o-grid__box--half">
+            <p class="u-demarginalised">Need to book a room?<br>Call 01904 32 4500 or visit york.ac.uk/bookaroom</p>
+          </div>
+          <div class="o-grid__box o-grid__box--half">
+            <p class="u-push-right u-demarginalised">Space Management, <br>Estates and Campus Services</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
