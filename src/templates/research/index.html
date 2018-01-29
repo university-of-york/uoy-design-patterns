@@ -29,24 +29,23 @@
 
 <header class="c-main-header" role="banner">
   <div class="o-wrapper o-grid">
-  <div class="o-grid__row">
-      <div class="o-grid__box o-grid__box--threequarters">
+    <div class="o-grid__row">
+      <div class="o-grid__box o-grid__box--threequarters o-grid__box--threequarters@medium o-grid__box--threequarters@small o-grid__box--threequarters@tiny">
         <h2 class="c-main-header__title"><img class="c-main-header__logo" src="/img/logo.png" alt="University of York logo" width="264" height="41"></h2>
       </div>
-      <div class="o-grid__box o-grid__box--quarter is-hidden@medium-">
+      <div class="o-grid__box o-grid__box--quarter o-grid__box--quarter@medium o-grid__box--quarter@small o-grid__box--quarter@tiny">
         <form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--header">
           <fieldset>
             <div class="c-form__element">
-              <input class="c-form__input c-form__input--text" type="text" id="q" name="q" placeholder="Search york.ac.uk" />
+              <input class="c-form__input c-form__input--text" type="text" id="q" name="q" placeholder="Search york.ac.uk">
               <input type="hidden" name="site" value="yorkweb">
               <a class="c-btn c-btn--medium js-submit-form" href="https://www.york.ac.uk/search" role="button"><i class="c-icon c-icon--search"></i></a>
             </div>
           </fieldset>
         </form>
+        <a href="#Mobile-Search" class="c-mobile-search-button js-toggle-button"><i class="c-icon c-icon--search"></i></a>
       </div>
     </div>
-    <!-- Mobile search -->
-    <a href="#Mobile-Search" class="c-mobile-search-button js-toggle-button"><i class="c-icon c-icon--search"></i></a>
   </div>
 </header>
 
@@ -82,7 +81,7 @@
 <!-- Main nav -->
 <nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation">
   <ul class="c-nav__list c-nav__list--structural">
-    <li class="c-nav__item"><a href="#">Themes</a></li><li class="c-nav__item"><a href="#/">Research performance</a></li><li class="c-nav__item"><a href="#">Research strategy</a></li><li class="c-nav__item"><a href="#">Expertise</a></li><li class="c-nav__item"><a href="#">Commercial facilities</a></li><li class="c-nav__item"><a href="#">Research units</a></li><li class="c-nav__item"><a href="#">Women in science</a></li><li class="c-nav__item"><a href="#">Contact us</a></li>
+    <li class="c-nav__item"><a href="#">Themes</a></li><li class="c-nav__item"><a href="#/">Research performance</a></li><li class="c-nav__item"><a href="#">Research strategy</a></li><li class="c-nav__item"><a href="#">Expertise</a></li><li class="c-nav__item"><a href="#">Commercial facilities</a></li><li class="c-nav__item"><a href="#">Research units</a></li><li class="c-nav__item"><a href="#">Women in science</a></li><li class="c-nav__item"><a href="#">Contact us</a></li><li class="c-nav__item c-nav__item--more"><a class="c-nav__link js-toggle-button" href="#Main-Navigation">More&hellip;</a></li>
   </ul>
 </nav>
 
@@ -105,7 +104,6 @@
           <form method="get" action="https://pure.york.ac.uk/portal/en/searchall.html" class="c-form c-form--joined">
             <fieldset>
               <div class="c-form__element">
-
                 <input class="c-form__input c-form__input--text" type="text" name="searchall" placeholder="Search for publications, researchers, projects, departments and units"><a class="c-btn  c-btn--block c-btn--medium" role="button">Search<i class="c-icon c-icon--after c-icon--search"></i></a>
               </div>
             </fieldset>
