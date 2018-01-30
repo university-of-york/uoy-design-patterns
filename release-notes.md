@@ -9,6 +9,7 @@ v1.5.4 (next patch release)
 * [Updated NPM modules](../../tree/update/npm)
 * [New news article](../../tree/component/news)
 * [Updated pagination component](../../tree/component/pagination)
+* [Tweaks to 'more' nav item and open layout](../../tree/component/nav)
 
 v1.5.3 (released 16 Aug 2017)
 * Update number counts in clearing department list (added to master)
