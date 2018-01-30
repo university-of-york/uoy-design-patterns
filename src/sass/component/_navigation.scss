@@ -121,12 +121,19 @@
   min-height:2.75em;
   list-style:none;
   overflow:hidden;
-  //position:relative;
+  // Hide if no nav items inside
+  &:empty {
+    display:none;
+  }
   .c-nav.is-open & {
     color:$c-nav__list-color;
+    margin-bottom:$base-spacing/2;
     @include mq(large, '-') {
       padding-right: 100px; // To make sure nothing goes off edge of page when open
       //padding-right: calc(100px + 5rem); // To stop menu items going behind the "More" button
+    }
+    @include mq(tiny, '-') {
+      margin-bottom:$base-spacing/4;
     }
   }
   @include mq(large, '-') {
@@ -137,16 +144,20 @@
   display:none;
   .c-nav.is-open & {
     display:block;
-    min-height:0; // In case it's empty
+    min-height:0; // In case it's empty and :empty not supported
+    // Hide if no nav items inside
+    &:empty {
+      display:none;
+    }
   }
 }
 .c-nav__list--structural {
   // Site Manager uses 'currentbranchN' classes
   span[class^="currentbranch"] {
     font-weight: bold;
-    /*.c-nav.is-open & {
+    .c-nav.is-open & {
       display:none;
-    }*/
+    }
   }
 }
 
@@ -183,7 +194,8 @@
   .c-nav.is-open & {
     border-color:$c-nav-background-color;
     min-height:0;
-    li {
+    float:none;
+        li {
       margin:0;
     }
   }
@@ -217,7 +229,7 @@
   }
   @include mq(huge, '++') {
     right:50%; // line it up with right-hand edge when >1200px
-    margin-right:-600px;
+    margin-right:-580px;
   }
 }
 .c-nav__link,
@@ -238,8 +250,6 @@
     background-color:$c-nav__link-hover-background-color;
   }
   .c-nav.is-open & {
-    display:inline-block;
-    //padding:0.4rem 0;
     &:hover {
       color:lighten($blue,10);
       background-color:transparent;
@@ -247,11 +257,11 @@
   }
 }
 .c-nav__header {
+  @include tiny-padding;
   display:none;
   max-width:$container-width;
   margin:$base-spacing auto $base-spacing/2;
   color:$c-nav__header-color;
-  padding:0 $base-spacing;
   .c-nav.is-open & {
     display:block;
     a {
@@ -261,9 +271,5 @@
         color:$c-nav__link-hover-color;
       }
     }
-  }
-  @include mq(large, '-') {
-    padding-left:$base-spacing/2;
-    padding-right:$base-spacing/2;
   }
 }
