@@ -185,10 +185,10 @@
 #image-grid-page,
 #full-width-figures-page {
   .o-grid__box[role="main"] > {
-    p, h2, h3, .lead {
+    p, h2, h3, h4, .lead {
       @include tiny-padding;
     }
-    p, h2, h3, .lead,  pre {
+    p, h2, h3, h4, .lead,  pre {
       max-width:1200px;
       margin-left:auto;
       margin-right:auto;

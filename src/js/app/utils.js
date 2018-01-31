@@ -134,6 +134,8 @@
             if ($f.hasClass('c-figure--banner')) {
               // Banners - check for images that don't fit
               var fih = $fi.outerHeight();
+              // Resize image if image height is bigger than container
+              console.log($f, 'Figure height is '+fh+'; image height is '+fih);
               $fi.toggleClass('is-fitY', fh > fih);
             } else {
               // Figures - check for content that overflows
@@ -147,6 +149,8 @@
                 var fcp = 2*(Math.max(fcpTop, fcpBottom));
                 $f.height(fch + fcp);
               }
+              // Resize image if content height is bigger than container
+              console.log($f, 'Figure height is '+fh+'; content height is '+fch);
               $fi.toggleClass('is-fitY', fh < fch);
             }
           }
