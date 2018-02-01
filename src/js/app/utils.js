@@ -266,10 +266,18 @@
       }
     },
 
+    // Replaces funny characters in selectors (especially '/')
+    fixSelector: function(hash) {
+      return hash.replace(/(\/|:|\.|\[|\]|,|=|@)/g, "\\$1" );
+    },
+
     // If the page hash is set on load, scroll to and show the appropriate tab/accordion
     scrollToHash: function () {
       var hash = document.location.hash;
       if (hash === '') return;
+      // Fix slashes in hash
+      hash = this.fixSelector(hash);
+      console.log(hash);
       var container = $(hash).parents('.js-tabs, .js-accordion__item');
       if (container.length === 0) return;
       var link = $('a[href='+hash+']');
