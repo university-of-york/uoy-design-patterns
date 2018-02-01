@@ -2,7 +2,9 @@
 
 v1.6.0 (next minor release)
 
-v1.5.4 (next patch release)
+v1.5.5 (next patch release)
+
+v1.5.4 (released 1 Feb 2018)
 * [Added font-display property](../../tree/update/webfonts)
 * [Fix for hrefs containing slashes](../../tree/fix/ids-with-slashes)
 * [Fix key facts that aren't links](../../tree/fix/key-messages)
