@@ -86,7 +86,7 @@ $container-width: 1200px;
 
 // Our breakpoints - specified in 16px-based ems
 // http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/
-$width: (
+$breakpoints: (
   tiny:   30em,
   small:  40em,
   medium: 52.5em,

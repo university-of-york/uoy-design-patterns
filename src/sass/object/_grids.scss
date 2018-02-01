@@ -301,7 +301,7 @@ $box-padding:$base-spacing;
 // e.g. .o-grid__box--third@small will go to 33.333% width on small screens and lower
 // (even if it would normally go to 100% width)
 //
-$htdiw:mapReverse($width);
+$htdiw:mapReverse($breakpoints);
 @each $size, $measurement in $htdiw {
 
   @include mq(#{$size}) {

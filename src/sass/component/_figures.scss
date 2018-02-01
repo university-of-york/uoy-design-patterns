@@ -10,27 +10,27 @@
     .c-figure--full-width &,
     .c-figure--full-width.c-figure--banner & { // needed to extra specificity
       // For bigger than huge screens, use pixel amounts
-      $width:($container-width/$fraction) - ($base-spacing*2);
-      $margin:($container-width/2) - $base-spacing - $width;
-      width:$width;
+      $cWidth:($container-width/$fraction) - ($base-spacing*2);
+      $cMargin:($container-width/2) - $base-spacing - $cWidth;
+      width:$cWidth;
       left:50%;
       &.c-figure__content--left,
       &.c-figure__content--top-left,
       &.c-figure__content--bottom-left {
-        margin-left:-($margin + $width);
+        margin-left:-($cMargin + $cWidth);
         float:none;
       }
       &.c-figure__content--right,
       &.c-figure__content--top-right,
       &.c-figure__content--bottom-right {
-        margin-left:$margin;
+        margin-left:$cMargin;
         float:none;
       }
     }
   }
-  $width:100%/$fraction;
-  width:$width;
-  width:calc(#{$width} - #{$base-spacing*2});
+  $cWidth:100%/$fraction;
+  width:$cWidth;
+  width:calc(#{$cWidth} - #{$base-spacing*2});
   @include mq('medium', '~') {
     width:50%;
     width:calc(50% - #{$base-spacing});

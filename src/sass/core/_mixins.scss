@@ -38,20 +38,20 @@
 @mixin mq($size, $scope:'~') {
 
   // Max size is one pixel (1/16em) under $size
-  $max: map-get($width, $size) - 0.0625em;
+  $max: map-get($breakpoints, $size) - 0.0625em;
   $min: 0;
 
   // Min size is next size down
   @if $size == tiny {
     $min: 0;
   } @else if $size == small {
-    $min: map-get($width, tiny);
+    $min: map-get($breakpoints, tiny);
   } @else if $size == medium {
-    $min: map-get($width, small);
+    $min: map-get($breakpoints, small);
   } @else if $size == large {
-    $min: map-get($width, medium);
+    $min: map-get($breakpoints, medium);
   } @else if $size == huge {
-    $min: map-get($width, large);
+    $min: map-get($breakpoints, large);
   }
 
   @if $scope == '~' {
@@ -223,7 +223,7 @@
 // Generate font sizes from a map for each breakpoint
 // http://www.smashingmagazine.com/2015/06/17/responsive-typography-with-sass-maps/
 //
-@mixin responsive-font-size($fs-map,$fs-breakpoints: $width){
+@mixin responsive-font-size($fs-map, $fs-breakpoints: $breakpoints){
   @each $fs-breakpoint, $fs-font-size in $fs-map {
     @if $fs-breakpoint == null {
       @include make-font-size($fs-font-size);
