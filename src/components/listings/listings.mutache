@@ -1,7 +1,7 @@
    <ul class="c-listings">
     <li class="c-listings__item">
         <a class=" c-listings__item-link" href="{{link}}">
-            <div class="c-listings__item-label"><i class="c-icon c-icon--before c-icon--{{icon}}"></i> {{type}}</div>
+            {{#if type}}<div class="c-listings__item-label"><i class="c-icon c-icon--before c-icon--{{icon}}"></i> {{type}}</div>{{/if}}
             {{#if date}}<time datetime="{{date}}" class="c-listings__item-date"><i class="c-icon c-icon--before c-icon--clock-o"></i> {{date}}</time>{{/if}}
             <h2 class="c-listings__item-title">{{title}}</h2>
                 <div class="c-listings__item-description">
