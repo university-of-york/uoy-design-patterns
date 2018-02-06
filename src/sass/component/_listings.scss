@@ -1,0 +1,42 @@
+//
+// Listings
+//
+.c-listings {
+    @include component;
+    list-style: none;
+    &__item {
+        border-bottom: 1px dotted $blue;
+        margin-bottom: $base-spacing;
+        padding-bottom: $base-spacing/4;
+    }
+
+    &__item-label {
+        color: $grey;
+    }
+
+    &__item-link {
+        text-decoration: none;
+    }
+
+    &__item-link:hover {
+        color:$c-news--excerpt__title-hover-color;
+      }
+
+    &__item-title {
+        font-size: 1.35rem;
+        font-weight: 400;
+    }
+
+    &__item-description {
+        color: #000;
+        font-size: 1.125rem;
+        text-decoration: none;
+    }
+
+    &__item-url {
+        font-size: 1rem;
+        color: $grey;
+        margin-top: $base-spacing/2;
+        text-decoration: none;
+    }
+}
