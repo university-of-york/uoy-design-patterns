@@ -22,6 +22,27 @@ component("listings", {
  });
 </script>
 
+<script>
+component("listings", {
+    type: "event",
+    icon: "calendar-o",
+    date: "Tuesday 6 February 2018 10:00am",
+    title: "An example news listing",
+    description: "a description of some sort which gives the reader an idea of what the listing is about.",
+    link: "#"
+ });
+</script>
+
+<script>
+component("listings-media", {
+    type: "news",
+    icon: "newspaper-o",
+    title: "An example news listing",
+    description: "a description of some sort which gives the reader an idea of what the listing is about.",
+    link: "#"
+ });
+</script>
+
 
 ### Options
 
