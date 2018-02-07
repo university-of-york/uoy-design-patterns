@@ -1,6 +1,7 @@
 //
 // Listings
 //
+$thumbnail_size:100px;
 .c-listings {
     @include component;
     list-style: none;
@@ -60,5 +61,12 @@
         @include font-size(16px, 1.1);
         color: $grey;
         text-decoration: none;
+    }
+
+    &__thumbnail {
+      width:$thumbnail_size;
+      img {
+        max-width:$thumbnail_size;
+      }
     }
 }

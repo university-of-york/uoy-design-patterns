@@ -105,8 +105,6 @@ component("listings", {
 </script>
 
 
-
-
 #### Required
 
 * **title**: the title of the list (required)

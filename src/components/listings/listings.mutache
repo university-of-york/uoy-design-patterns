@@ -5,7 +5,7 @@
             <h2 class="c-listings__item-title">{{title}}</h2>
             {{#if date}}<time datetime="{{date}}" class="c-listings__item-date">{{date}}</time>{{/if}}
             <div class="c-listings__item-description">
-            {{#if media}}<figure class="c-news__thumbnail o-media__picture">
+            {{#if media}}<figure class="c-listings__thumbnail o-media__picture">
                 <img src="../media/{{media}}" alt="{{mediaText}}">
             </figure>
             <div class="o-media__body">{{/if}}
