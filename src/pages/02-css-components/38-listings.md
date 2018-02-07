@@ -42,6 +42,7 @@ component("listings", {
 component("listings", {
     type: "news",
     icon: "newspaper-o",
+    date: "27 January 2018",
     title: "An example news listing",
     media: "traffic-thumbnail.jpg",
     mediaText: "Vehicle for success",
