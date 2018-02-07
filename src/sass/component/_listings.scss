@@ -13,6 +13,7 @@
     &__item-date {
         color: #000;
         @include font-size(14px, 1.1);
+        font-weight: bold;
         margin-top:0;
         margin-bottom: $base-spacing;
 
