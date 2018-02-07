@@ -7,7 +7,7 @@
     &__item {
         border-bottom: 1px dotted $blue;
         margin-bottom: $base-spacing;
-
+        padding-bottom: $base-spacing/3;
     }
 
     &__item-date {
@@ -50,17 +50,14 @@
         font-size: inherit !important;
         color:lighten($charcoal,5);
         margin-top:$base-spacing/2;
-        margin-bottom:$base-spacing;
-        p {
-          margin-bottom:$base-spacing/2;
-        }
+        margin-bottom:$base-spacing/2;
+
       }
 
 
     &__item-url {
-        font-size: 1rem;
+        @include font-size(16px, 1.1);
         color: $grey;
-        margin-top: $base-spacing/2;
         text-decoration: none;
     }
 }
