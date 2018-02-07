@@ -12,15 +12,17 @@
 
     &__item-date {
         color: #000;
-        font-size: 1rem;
+        @include font-size(14px, 1.1);
+        margin-top:0;
+        margin-bottom:$base-spacing;
     }
 
     &__item-label {
         color: $grey;
-        @include font-size(12px, 1.5);
+        @include font-size(12px, 1.1);
         text-transform: uppercase;
-        margin: 0 0 10px;
-    
+        margin-top:0;
+        margin-bottom:$base-spacing/2;
     }
 
     &__item-link {
@@ -32,6 +34,7 @@
         @include font-size(22px, 1.1);
         color:$c-news--excerpt__title-color;
         margin-top:0;
+        margin-bottom:0;
         @include mq(large, '-') {
           @include font-size(18px, 1.1);
         }
@@ -45,6 +48,7 @@
         @include demarginalise;
         font-size: inherit !important;
         color:lighten($charcoal,5);
+        margin-top:$base-spacing/2;
         p {
           margin-bottom:$base-spacing/2;
         }
