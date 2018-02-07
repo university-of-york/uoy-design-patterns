@@ -7,7 +7,7 @@
     &__item {
         border-bottom: 1px dotted $blue;
         margin-bottom: $base-spacing;
-        padding-bottom: $base-spacing/4;
+        padding-bottom: $base-spacing;
     }
 
     &__item-date {
@@ -17,26 +17,39 @@
 
     &__item-label {
         color: $grey;
+        @include font-size(12px, 1.5);
+        text-transform: uppercase;
+        margin: 0 0 10px;
+    
     }
 
     &__item-link {
         text-decoration: none;
     }
 
-    &__item-link:hover {
+    &__item-title {
+        font-weight: 400;
+        @include font-size(22px, 1.1);
+        color:$c-news--excerpt__title-color;
+        margin-top:0;
+        @include mq(large, '-') {
+          @include font-size(18px, 1.1);
+        }
+    }
+
+    &__item-title:hover {
         color:$c-news--excerpt__title-hover-color;
       }
 
-    &__item-title {
-        font-size: 1.35rem;
-        font-weight: 400;
-    }
-
     &__item-description {
-        color: #000;
-        font-size: 1.125rem;
-        text-decoration: none;
-    }
+        @include demarginalise;
+        font-size: inherit !important;
+        color:lighten($charcoal,5);
+        p {
+          margin-bottom:$base-spacing/2;
+        }
+      }
+
 
     &__item-url {
         font-size: 1rem;
