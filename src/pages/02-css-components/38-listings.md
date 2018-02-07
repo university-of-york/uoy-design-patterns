@@ -51,7 +51,7 @@ component("listings", {
  });
 </script>
 
-### Event with date and time example
+### Event example
 
 <script>
 component("listings", {
@@ -59,6 +59,21 @@ component("listings", {
     icon: "calendar-o",
     date: "6 February 2018 10:00am",
     title: "An example news listing",
+    description: "A description of some sort which gives the reader an idea of what the listing is about.",
+    link: "#"
+ });
+</script>
+
+### Event with media example
+
+<script>
+component("listings", {
+    type: "event",
+    icon: "calendar-o",
+    date: "6 February 2018 10:00am",
+    title: "An example news listing",
+    media: "traffic-thumbnail.jpg",
+    mediaText: "Vehicle for success",
     description: "A description of some sort which gives the reader an idea of what the listing is about.",
     link: "#"
  });
