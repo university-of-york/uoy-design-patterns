@@ -18,6 +18,15 @@ id: listings-page
 <script>
 component("listings", {
     title: "An example listing",
+    link: "#"
+ });
+</script>
+
+### Simple example
+
+<script>
+component("listings", {
+    title: "An example listing",
     description: "A description of some sort which gives the reader an idea of what the listing is about.",
     link: "#"
  });
@@ -44,9 +53,11 @@ component("listings", {
     icon: "newspaper-o",
     date: "27 January 2018",
     title: "An example news listing",
-    media: "traffic-thumbnail.jpg",
-    mediaText: "Vehicle for success",
-    description: "A description of some sort which gives the reader an idea of what the listing is about.",
+    media: {
+      object: "traffic-thumbnail.jpg",
+      text: "Vehicle for success"
+    },
+    description: "A description of some sort which gives the reader an idea of what the listing is about. A major public lecture in York's historic Merchant Adventurers' Hall will explore the explosive and exciting combination of the visual arts and the sport of wrestling.",
     link: "#"
  });
 </script>
@@ -58,8 +69,8 @@ component("listings", {
     type: "event",
     icon: "calendar-o",
     date: "6 February 2018 10:00am",
-    title: "An example news listing",
-    description: "A description of some sort which gives the reader an idea of what the listing is about.",
+    title: "An example event listing",
+    description: "A description of some sort of event that is happening somewhere and is about something.",
     link: "#"
  });
 </script>
@@ -72,8 +83,10 @@ component("listings", {
     icon: "calendar-o",
     date: "6 February 2018 10:00am",
     title: "An example news listing",
-    media: "traffic-thumbnail.jpg",
-    mediaText: "Vehicle for success",
+    media: {
+      object: "traffic-thumbnail.jpg",
+      text: "Vehicle for success"
+    },
     description: "A description of some sort which gives the reader an idea of what the listing is about.",
     link: "#"
  });
@@ -109,11 +122,12 @@ component("listings", {
 
 * **title**: the title of the list (required)
 * **link**: the URL of the listing target (required)
-* **description**: a description of the listing (required)
+
 
 
 ### Options
 
+* **description**: a description of the listing
 * **type**: what kind of listing is it?  News, Event, Search result, etc.
 * **icon**: an icon to display before 'type'
 * **date**: the date and time of an event or a news article published date

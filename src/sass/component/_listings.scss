@@ -5,16 +5,17 @@ $thumbnail_size:100px;
 .c-listings {
     @include component;
     list-style: none;
+    margin-left:0;
+    padding-left:0;
     &__item {
         border-bottom: 1px dotted $blue;
         margin-bottom: $base-spacing;
-        padding-bottom: $base-spacing/3;
+        padding-bottom: $base-spacing/2;
     }
 
     &__item-date {
-        color: #000;
-        @include font-size(14px, 1.1);
-        font-weight: bold;
+        color: lighten($charcoal,4);
+        @include font-size(14px, 1.2);
         margin-top:0;
         margin-bottom: $base-spacing;
 
@@ -25,7 +26,7 @@ $thumbnail_size:100px;
         @include font-size(12px, 1.1);
         text-transform: uppercase;
         margin-top:0;
-        margin-bottom:$base-spacing/2;
+        margin-bottom:$base-spacing/3;
     }
 
     &__item-link {
@@ -34,12 +35,12 @@ $thumbnail_size:100px;
 
     &__item-title {
         font-weight: 400;
-        @include font-size(22px, 1.1);
+        @include font-size(24px, 1.2);
         color:$c-news--excerpt__title-color;
         margin-top:0;
         margin-bottom:0;
         @include mq(large, '-') {
-          @include font-size(18px, 1.1);
+          @include font-size(20px, 1.1);
         }
     }
 
@@ -49,16 +50,16 @@ $thumbnail_size:100px;
 
     &__item-description {
         @include demarginalise;
-        font-size: inherit !important;
-        color:lighten($charcoal,5);
-        margin-top:$base-spacing/2;
+        @include font-size(16px, 1.2);
+        color: #000;
+        margin-top:$base-spacing/4;
         margin-bottom:$base-spacing/2;
 
       }
 
 
     &__item-url {
-        @include font-size(16px, 1.1);
+        @include font-size(14px, 1.1);
         color: $grey;
         text-decoration: none;
     }

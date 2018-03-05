@@ -1,18 +1,18 @@
    <ul class="c-listings">
     <li class="c-listings__item">
-        <a class=" c-listings__item-link" href="{{link}}">
-            {{#if type}}<div class="c-listings__item-label"><i class="c-icon c-icon--before c-icon--{{icon}}"></i> {{type}}</div>{{/if}}
-            <h2 class="c-listings__item-title">{{title}}</h2>
-            {{#if date}}<time datetime="{{date}}" class="c-listings__item-date">{{date}}</time>{{/if}}
-            <div class="c-listings__item-description">
-            {{#if media}}<figure class="c-listings__thumbnail o-media__picture">
-                <img src="../media/{{media}}" alt="{{mediaText}}">
+        <a class=" c-listings__item-link" href="{{link}}">{{#if media}}
+          <figure class="c-listings__thumbnail o-media__picture">
+                <img src="../media/{{media.object}}" alt="{{media.text}}">
             </figure>
-            <div class="o-media__body">{{/if}}
-                {{description}}
-            {{#if media}}</div>{{/if}}
-            </div>
-            {{#if url}}<p class="c-listings__item-url">{{url}}</p>{{/if}}
+            <div class="o-media__body">{{/if}}  {{#if type}}
+              <div class="c-listings__item-label"><i class="c-icon c-icon--before c-icon--{{icon}}"></i> {{type}}</div>{{/if}}
+            <h2 class="c-listings__item-title">{{title}}</h2>{{#if date}}
+            <time datetime="{{date}}" class="c-listings__item-date">{{date}}</time>{{/if}}{{#if description}}
+            <div class="c-listings__item-description">
+              {{description}}
+            </div>{{/if}}{{#if media}}
+          </div>{{/if}}{{#if url}}
+          <p class="c-listings__item-url">{{url}}</p>{{/if}}
         </a>
     </li>
    </ul>
