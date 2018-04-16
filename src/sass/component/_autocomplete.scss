@@ -1,0 +1,64 @@
+//
+// AUTOCOMPLETE
+//
+
+.c-autocomplete {
+  position:absolute;
+  left:0;
+  top:100%;
+  z-index:99;
+  width:100%;
+}
+
+.c-autocomplete__list {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.c-autocomplete__item {
+  margin:0;
+}
+
+.c-autocomplete__link {
+  display:block;
+  line-height: 1.1;
+  padding: 0.8em 10px;
+  background-color:#fff;
+  text-decoration:none;
+  .c-autocomplete__item:nth-of-type(even) & {
+    background-color:#f4f6ef;
+  }
+  .c-autocomplete__item &:hover {
+    color:#fff;
+    background-color:#006585;
+  }
+  .c-autocomplete__item.is-selected & {
+    background-color:#333;
+    color:#f9f9f9;
+    &:hover {
+      background-color:#444;
+    }
+  }
+}
+
+.c-autocomplete__title {
+  font-weight:bold;
+}
+
+.c-autocomplete__subtitle {
+  color:#333;
+  display:block;
+  .c-autocomplete__item.is-selected & {
+    color:#ddd;
+  }
+  .c-autocomplete__link:hover & {
+    color:#fff;
+  }
+}
+
+@media (max-width: 767px) and (orientation: portrait) {
+     .c-autocomplete {
+         width: 155%;
+     }
+ }

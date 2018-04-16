@@ -290,6 +290,10 @@ define(
       });
     }
 
+    //if (UTILS.isDev() === true) {
+      //console.log("Load test results data");
+    //}
+
     console.log('Javascript loaded');
 
   });
