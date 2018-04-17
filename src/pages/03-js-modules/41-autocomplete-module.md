@@ -35,7 +35,7 @@ This uses the [Fuse](https://fusejs.io) fuzzy search library. The defaults are s
 require(['app/autocomplete'], function(AUTOCOMPLETE) {
   $(function() {
     var a = new AUTOCOMPLETE({
-      input: $('#example-search-form'),
+      input: $('#example-search-query'),
       results: [
         {
           title: "Alcuin College",
@@ -54,7 +54,6 @@ require(['app/autocomplete'], function(AUTOCOMPLETE) {
         }
       ]
     });
-    console.log(a);
   });
 });
 </script>

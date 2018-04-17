@@ -28,8 +28,6 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
 
   var AUTOCOMPLETE = function (options) {
 
-    console.log(FUSE);
-
     if (!options.input) return false;
     if (!options.results) return false;
     if (options.results.length === 0) return false;
@@ -38,7 +36,6 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
     this.form = this.input.closest('form');
     this.list = $('.c-autocomplete__list', this.form);
     this.fuse = new FUSE(this.results, fuseOptions);
-
 
     // this.blah();
 
@@ -110,10 +107,11 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
       that.list.empty();
       return false;
     }
+    console.log(keyCode, searchTerm);
     switch (keyCode) {
       // Return
       case 13:
-        if (that.list.children().length > 0 && searchTerm != '') {
+        if (that.list.children().length > 0 && searchTerm !== '') {
           // If there's a selected option, update value
           //submitForm();
           stopReturn = true;
