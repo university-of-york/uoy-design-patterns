@@ -6,6 +6,6 @@
   <Tags>university york uk</Tags>
   <Contact>marketing-support@york.ac.uk</Contact>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="32" height="32" type="image/x-icon">https://www.york.ac.uk/static/1.4/img/favicon.ico</Image>
-  <Url type="text/html" template="https://www.york.ac.uk/search/?site=yorkweb&amp;collection=york-uni-web&amp;query={searchTerms}"/>
+  <Image width="32" height="32" type="image/x-icon">https://www.york.ac.uk/static/1.5/img/favicon.ico</Image>
+  <Url type="text/html" template="https://www.york.ac.uk/search/?query={searchTerms}"/>
 </OpenSearchDescription>
