@@ -213,10 +213,11 @@ $c-modal__close-hover-color:$blue;
 
 // Key facts
 $c-key-fact-color:$teal;
-$c-key-fact-hover-color:$teal;
+$c-key-fact-hover-color:lighten($teal,15);
 $c-key-fact__icon-color:lighten($teal,15);
 $c-key-fact__icon-hover-color:lighten($teal,25);
 $c-key-fact__title-color:$teal;
+$c-key-fact__title-hover-color:lighten($teal,15);
 $c-key-fact__title-highlight-color:$blue;
 $c-key-fact-alt-color:darken($light,10);
 $c-key-fact-alt-hover-color:darken($light,10);

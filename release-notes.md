@@ -2,10 +2,19 @@
 
 v1.6.0 (next minor release)
 
-v1.5.4 (next patch release)
+v1.5.5 (next patch release)
+* [New options for figures](../../tree/component/figures)
+* [Adds support for search input types](../../tree/component/forms)
+* [Update opensearch details](../../tree/update/opendsearch)
+
+v1.5.4 (released 1 Feb 2018)
 * [Added font-display property](../../tree/update/webfonts)
 * [Fix for hrefs containing slashes](../../tree/fix/ids-with-slashes)
 * [Fix key facts that aren't links](../../tree/fix/key-messages)
+* [Updated NPM modules](../../tree/update/npm)
+* [New news article](../../tree/component/news)
+* [Updated pagination component](../../tree/component/pagination)
+* [Tweaks to 'more' nav item and open layout](../../tree/component/nav)
 
 v1.5.3 (released 16 Aug 2017)
 * Update number counts in clearing department list (added to master)

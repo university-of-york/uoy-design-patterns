@@ -16,58 +16,44 @@
   float:left;
 }
 .c-pagination__page {
+  line-height: 2;
   display:block;
   width:2em;
   height:2em;
-  line-height:2em;
-  border:1px solid $charcoal;
-  text-align:center;
-  background-color:#fff;
-  color:$charcoal;
+  padding:0;
+  border:1px solid darken($s2,5);
+  border-radius:3px;
+  font-weight: bold;
   margin-right:0.25em;
   margin-bottom:4px;
-  transition:all 0.2s ease-out;
+  text-align:center;
+  background:$s2;
   text-decoration:none;
+  cursor:pointer;
   &:hover {
-    background-color:#aaa;
-    color:#fff;
+    background:$blue;
+    border-color:$blue;
+    color:$light;
   }
   // Don't style ellipsis links
   &:not([href]) {
+    background-color:#fff;
+    border:0;
     &:hover {
       background-color:#fff;
-      color:$charcoal;
+      border:0;
+      color:$blue;
       cursor:default;
     }
   }
-  &.c-pagination__page--first {
-    background-color:#ccc;
-    &:hover {
-      background-color:#666;
-    }
-  }
-  &.c-pagination__page--last {
-    background-color:#ccc;
-    &:hover {
-      background-color:#666;
-    }
+  &.c-pagination__page--current {
+    background-color:$blue;
+    color: #fff;
   }
   &.c-pagination__page--previous {
-    background-color:#ccc;
-    &:hover {
-      background-color:#666;
-    }
+    width:6em;
   }
   &.c-pagination__page--next {
-    background-color:#ccc;
-    &:hover {
-      background-color:#666;
-    }
-  }
-  &.c-pagination__page--current {
-    background-color:#aaa;
-    &:hover {
-      background-color:$charcoal;
-    }
+    width:4.5em;
   }
 }

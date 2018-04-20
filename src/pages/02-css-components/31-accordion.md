@@ -25,7 +25,7 @@ And the `accordion` itself is made up of an array of `accordion-item`s:
 component("accordion", { "atoms": [
   { "accordion-item": {
     "title": "Mandatory for all applicants",
-    "id": "accordion-2a",
+    "id": "test/accordion-2a",
     "content": "<h3>Academic transcripts</h3>"+
                "<h4>If you've completed your studies</h4>"+
                "<p>You need to provide copies of your degree certificates and formal transcripts of your academic record. This should include full details of the degrees, classes, grades you've obtained and the modules/units you have taken.</p>"+
