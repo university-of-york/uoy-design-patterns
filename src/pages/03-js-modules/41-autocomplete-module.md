@@ -165,9 +165,68 @@ var a = new AUTOCOMPLETE({
 });
 ```
 
+### Example using results function
+
+Instead of an array of results, the `results` option can be a function that returns a Fuse results-like array:
+
+```javascript
+[{
+  item: {
+    title:"", // Required
+    subtitle:"" // Optional
+    link:"" // Optional
+  }
+}]
+```
+
+This is useful when using an external autosuggest URL. The function is called on each `keyup` event in the search input (as long as it's not the `up`, `down`, `return` or `escape` key), and should have two arguments: the `searchTerm` from the search input and an `onComplete` function to run when the results are all in.
+
+<form action="https://www.york.ac.uk/search" method="get" class="c-form" id="example-function-form">
+  <fieldset>
+    <div class="c-form__element">
+      <input class="c-form__input c-form__input--text"  type="search" id="example-function-query" name="q" autocomplete="off"/>
+      <div class="c-autocomplete">
+        <ul class="c-autocomplete__list">
+        </ul>
+      </div>
+    </div>
+  </fieldset>
+</form>
+
+<script>
+require(['app/autocomplete'], function(AUTOCOMPLETE) {
+  $(function() {
+    var a = new AUTOCOMPLETE({
+      input: $('#example-function-query'),
+      results: function(searchTerm, onComplete) {
+        if (searchTerm.length < 3) return false;
+        // console.log("Getting results from Funnelback");
+        var fbUrl = "https://york.funnelback.co.uk/s/suggest.json?collection=york-uni-web&show=10&sort=0&alpha=0.5&fmt=json++&partial_query="+searchTerm;
+        $.getJSON(fbUrl, function(r) {
+          var results = [];
+          var rLength = r.length;
+          $.each(r, function(i, v) {
+            results.push({
+              item: {
+                title: v.disp
+              }
+            });
+            if (i === rLength-1) {
+              console.log(results);
+              onComplete(results);
+            }
+          });
+        });
+      },
+      followLinks: false
+    });
+  });
+});
+</script>
+
 ### Options
 
  * **input** - _(required)_ the _text_ or _search_ input that should be used as the anchor for the 
- * **results** - an array of results, with a title, subtitle and link keys
+ * **results** - an array of results, with a title (required), subtitle (optional) and link (optional) keys, or a function that
  * **followLinks** - _(defaults to false)_ Should we follow the link in the autocomplete? The default behaviour is to put the value in the input and submit the form.
  

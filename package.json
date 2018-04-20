@@ -42,7 +42,7 @@
     "grunt-contrib-requirejs": "^0.4.4",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-header": "^1.1.0",
-    "grunt-makedocs": "^2.1.6",
+    "grunt-makedocs": "^2.2.0",
     "grunt-md5sum": "^2.0.1",
     "grunt-modernizr": "^1.0.2",
     "grunt-newer": "^1.3.0",
