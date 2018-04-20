@@ -1,7 +1,12 @@
 module.exports = {
   build: {
     options: {
-      keepSpecialComments: 0
+      level: {
+        1: {
+          all: true,
+          specialComments: 0
+        }
+      }
     },
     files: [{
       expand: true,
