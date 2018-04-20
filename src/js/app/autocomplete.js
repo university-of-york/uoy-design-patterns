@@ -33,6 +33,7 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
     if (options.results.length === 0) return false;
     this.input = options.input;
     this.results = options.results;
+    this.followLinks = options.followLinks || false;
     this.form = this.input.closest('form');
     this.list = $('.c-autocomplete__list', this.form);
     this.fuse = new FUSE(this.results, fuseOptions);
@@ -93,6 +94,18 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
   };
 
    // Update autosuggest on keyup
+  AUTOCOMPLETE.prototype.submitForm = function(e) {
+
+    var that = e.data.that;
+
+    // Update input with query
+    var searchTerm = $('.c-autocomplete__item.is-selected .c-autocomplete__title', that.list).text();
+    that.input.val(searchTerm);
+    that.form.submit();
+
+  };
+
+   // Update autosuggest on keyup
   AUTOCOMPLETE.prototype.suggest = function(e) {
 
     e.preventDefault();
@@ -103,28 +116,29 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
     var keyCode = e.keyCode;
     var stopReturn = false;
     var searchTerm = that.input.val();
+
     if (searchTerm === '') {
       that.list.empty();
       return false;
     }
-    console.log(keyCode, searchTerm);
+
     switch (keyCode) {
       // Return
       case 13:
         if (that.list.children().length > 0 && searchTerm !== '') {
           // If there's a selected option, update value
-          //submitForm();
+          that.submitForm(e);
           stopReturn = true;
         }
         break;
       // Up
       case 38:
-        //selectItem('up');
+        that.navigate('up');
         stopReturn = true;
         break;
       // Down
       case 40:
-        //selectItem('down');
+        that.navigate('down');
         stopReturn = true;
         break;
       // Escape
@@ -141,34 +155,34 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
 
     var fuseResult = that.fuse.search(searchTerm);
 
-    console.log(fuseResult);
+    // console.log(fuseResult);
 
-    // if (fuseResult.length === 0) {
-    //   // Send 'no results' event to GA
-    //   addAnalyticsEvent('Search', 'No results (query: '+searchTerm+')');
-    //   return false;
-    // }
+    if (fuseResult.length === 0) {
+      // Send 'no results' event to GA
+      // addAnalyticsEvent('Search', 'No results (query: '+searchTerm+')');
+      return false;
+    }
 
-    // $.each(fuseResult, function(i, feature) {
-    //   if (i > 9) return false;
-    //   var featureTitle = feature.item.properties.title;
-    //   var featureSubtitle = feature.item.properties.subtitle;
-    //   var featureItem = $('<li>').addClass("c-autocomplete__item");
-    //   var featureLink = $('<a>').addClass("c-autocomplete__link")
-    //                             .attr({
-    //                               "href": "#"+makeHash(featureTitle),
-    //                               "data-category": feature.item.properties.category
-    //                             })
-    //                             .appendTo(featureItem);
-    //   var featureSpan = $('<span>').addClass("c-autocomplete__title")
-    //                                .text(featureTitle)
-    //                                .appendTo(featureLink);
-    //   if (featureSubtitle !== 'null') {
-    //     var featureSmall = $('<small>').addClass("c-autocomplete__subtitle")
-    //                                    .text(featureSubtitle)
-    //                                    .appendTo(featureLink);
-    //   }
-    //   /* This is buggy - needs fixing before we can use it
+    $.each(fuseResult, function(i, feature) {
+      if (i > 9) return false;
+      var featureTitle = feature.item.title;
+      var featureSubtitle = feature.item.subtitle;
+      var featureItem = $('<li>').addClass("c-autocomplete__item");
+      var featureLink = $('<a>').addClass("c-autocomplete__link")
+                                .attr({
+                                  "href": feature.item.link || '#'
+                                })
+                                .appendTo(featureItem);
+      var featureSpan = $('<span>').addClass("c-autocomplete__title")
+                                   .text(featureTitle)
+                                   .appendTo(featureLink);
+      if (featureSubtitle !== 'null') {
+        var featureSmall = $('<small>').addClass("c-autocomplete__subtitle")
+                                       .text(featureSubtitle)
+                                       .appendTo(featureLink);
+      }
+    //   /* Highlighting matches in text
+    //    * This is buggy - needs fixing before we can use it
     //   $.each(feature.matches, function(j, match) {
     //     var newText = pathIndex(feature.item, match.key);
     //     var l = match.indices.length-1;
@@ -186,17 +200,21 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
     //     }
     //   });*/
 
-    //   that.list.append(featureItem);
-    //   featureLink.click(function(e) {
-    //     e.preventDefault();
-    //     // Mark clicked item as is-selected and submit
-    //     var $thisItem = $(this).parent('.c-autocomplete__item');
-    //     $thisItem.siblings().removeClass('is-selected');
-    //     $thisItem.addClass('is-selected');
-    //     submitForm();
-    //   });
+      that.list.append(featureItem);
 
-    // });
+      featureLink.on('click', {that: that }, function(e) {
+        // Should we follow the link or submit the form?
+        if (that.followLinks !== true) {
+          e.preventDefault();
+          // Mark clicked item as is-selected and submit form
+          var $thisItem = $(this).parent('.c-autocomplete__item');
+          $thisItem.siblings().removeClass('is-selected');
+          $thisItem.addClass('is-selected');
+          that.submitForm(e);
+        }
+      });
+
+    });
 
     return true;
   };

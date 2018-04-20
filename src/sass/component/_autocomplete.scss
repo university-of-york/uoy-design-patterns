@@ -18,6 +18,11 @@
 
 .c-autocomplete__item {
   margin:0;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  &:last-of-type {
+    border-bottom: 1px solid #ccc;
+  }
 }
 
 .c-autocomplete__link {
@@ -57,8 +62,8 @@
   }
 }
 
-@media (max-width: 767px) and (orientation: portrait) {
-     .c-autocomplete {
-         width: 155%;
-     }
- }
+// @media (max-width: 767px) and (orientation: portrait) {
+//      .c-autocomplete {
+//          width: 155%;
+//      }
+//  }
