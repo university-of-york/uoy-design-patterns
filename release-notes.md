@@ -6,6 +6,7 @@ v1.5.5 (next patch release)
 * [New options for figures](../../tree/component/figures)
 * [Adds support for search input types](../../tree/component/forms)
 * [Update opensearch details](../../tree/update/opensearch)
+* [Tweaked padding on sublists in navigation](../../tree/fix/navigation)
 * [Separated makedocs and component to separate modules](../../tree/update/decouple-component)
 
 v1.5.4 (released 1 Feb 2018)
