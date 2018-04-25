@@ -13,6 +13,10 @@ $thumbnail_size:100px;
         padding-bottom: $base-spacing/4;
     }
 
+    &__item:last-of-type  {
+        border-bottom: 0;
+    }
+
     &__item-date {
         color: lighten($charcoal,4);
         @include font-size(14px, 1.2);
@@ -71,4 +75,5 @@ $thumbnail_size:100px;
         max-width:$thumbnail_size;
       }
     }
+
 }

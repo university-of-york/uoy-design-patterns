@@ -103,6 +103,17 @@ component("listings", {
  });
 </script>
 
+### Best bet example
+
+<script>
+component("listings-highlighted", {
+    title: "Art on campus - About the University",
+    description: "From the Norman Rea Gallery to the various sculptures, the campus at York provides a wide variety of art, in all its forms.",
+    link: "#",
+    url: "  york.ac.uk/about/campus/art/"
+ });
+</script>
+
 ### Search result (news article) example
 
 <script>
