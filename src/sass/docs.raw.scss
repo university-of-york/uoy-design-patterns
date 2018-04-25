@@ -141,7 +141,8 @@
   &.c-subnav--components,
   &.c-subnav--layout,
   &.c-subnav--modules,
-  &.c-subnav--about {
+  &.c-subnav--about,
+  &.c-subnav--scopes {
     display:none;
   }
 }
@@ -170,6 +171,13 @@
 .category-about {
   .c-nav.is-open .c-nav__list--associative.c-subnav--about,
   .c-subnav__list.c-subnav--about {
+    display:block;
+  }
+}
+#scopes-page,
+.category-scopes {
+  .c-nav.is-open .c-nav__list--associative.c-subnav--scopes,
+  .c-subnav__list.c-subnav--scopes {
     display:block;
   }
 }
