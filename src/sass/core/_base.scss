@@ -8,6 +8,7 @@ html {
 body,select,textarea,input {
   //@include font-size;
   font-family: $font-default;
+  font-display: swap;
 }
 body {
   color:$charcoal;
@@ -61,11 +62,13 @@ p, ul, ol, .lead, pre {
 h1,h2,h3,h4,h5 {
   font-family: $font-title;
   font-weight:600;
+  font-display: swap;
 }
 h6 {
   font-family: $font-default;
   text-transform: uppercase;
   font-weight:600;
+  font-display: swap;
 }
 
 h2,h3,h4,h5,h6 {

@@ -15,10 +15,12 @@ Individual tabs can be referenced by the page hash.
 
 Tabs will automatically expand to fit to 100% of the width of the container.
 
+## Horizontal tabs (default)
+
 <script>
 component("tabbed-content", { "type": "horizontal", "tabs": [
   {
-    "id": "about",
+    "id": "about/test",
     "title": "About the university",
     "content": "<h3>Founded on principles of excellence</h3><p>Founded on principles of excellence, equality and opportunity for all, the University of York opened in 1963 with just 230 students.</p><p>Since then we have become one of the world's leading universities, carving out a reputation as an academic powerhouse where a clear focus on excellence has secured national and international recognition alongside longer established institutions.</p>"
   },
@@ -35,7 +37,7 @@ component("tabbed-content", { "type": "horizontal", "tabs": [
 ]});
 </script>
 
-##Vertical tabs
+## Vertical tabs
 
 You can also place tabs vertically, and just add `.c-tabs--vertical` to the tab container.
 

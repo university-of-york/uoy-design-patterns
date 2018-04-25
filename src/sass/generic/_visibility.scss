@@ -30,7 +30,7 @@
   @include is-invisible;
 }
 
-@each $name, $size in $width {
+@each $name, $size in $breakpoints {
   @media only screen {
     .is-visible\@#{$name},
     .is-visible\@#{$name}\+,
