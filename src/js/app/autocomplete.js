@@ -54,26 +54,15 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
     this.form = this.input.closest('form');
     this.list = $('.c-autocomplete__list', this.form);
 
-    // this.blah();
-
-    // var that = this;
-    // var resizeFn = UTILS.debounce(function () {
-    // that.blah();
-    // }, 250);
-
-    // $window.on('resize', resizeFn);
-
     this.input.on('keyup', { that: this }, this.suggest);
+
+    this.input.on('focus', { that: this }, this.suggest);
 
     console.info(this);
 
     return true;
 
   };
-
-  // AUTOCOMPLETE.prototype.blah = function() {
-  //   return true;
-  // };
 
   AUTOCOMPLETE.prototype.navigate = function(dir) {
     // Move selected item to next
@@ -107,7 +96,6 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
     return true;
   };
 
-   // Update autosuggest on keyup
   AUTOCOMPLETE.prototype.submitForm = function(e) {
 
     var that = e.data.that;
@@ -119,7 +107,6 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
 
   };
 
-   // Update autosuggest on keyup
   AUTOCOMPLETE.prototype.makeFeatureItem = function(feature) {
 
     var featureTitle = feature.item.title;
@@ -232,8 +219,20 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
       if (results.length === 0) {
         // Send 'no results' event to GA
         // addAnalyticsEvent('Search', 'No results (query: '+searchTerm+')');
+        that.makeFeatureItem({ title: "There are no results for that search term" });
         return false;
       }
+
+      // Clicking elsewhere closes autocomplete
+      $window.off('click.list');
+      $window.on('click.list', function(e) {
+        //console.log($(that.list).find($(e.target)));
+        // Find out if click is on autocomplete
+        if ($(that.list).find($(e.target)).length === 0) {
+          that.list.empty();
+        }
+      });
+
 
       $.each(results, function(i, feature) {
         if (i > 9) return false;

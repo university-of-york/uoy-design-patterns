@@ -314,7 +314,7 @@ define(
                 }
               });
               if (i === rLength-1) {
-                console.log(results);
+                //console.log(results);
                 onComplete(results);
               }
             });
@@ -333,10 +333,6 @@ define(
         console.info(e.type+'.'+e.namespace+' fired', e);
       });
     }
-
-    //if (UTILS.isDev() === true) {
-      //console.log("Load test results data");
-    //}
 
     console.log('Javascript loaded');
 
