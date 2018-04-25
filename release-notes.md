@@ -3,7 +3,8 @@
 v1.6.0 (next minor release)
 
 v1.5.5 (next patch release)
-* [New options for figures](../../tree/component/figures)
+* [New options for figure](../../tree/component/figure)
+* [New component for listings](../../tree/component/listings)
 
 v1.5.4 (released 1 Feb 2018)
 * [Added font-display property](../../tree/update/webfonts)
