@@ -10,6 +10,7 @@ v1.5.5 (next patch release)
 * [Tweaked padding on sublists in navigation](../../tree/fix/navigation)
 * [Separated makedocs and component to separate modules](../../tree/update/decouple-component)
 * [Update scopes nav items to work properly](../../tree/update/scopes)
+* [Update default layout to include Typekit](../../tree/fix/layout)
 
 v1.5.4 (released 1 Feb 2018)
 * [Added font-display property](../../tree/update/webfonts)
