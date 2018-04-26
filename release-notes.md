@@ -8,6 +8,7 @@ v1.5.5 (next patch release)
 * [Update opensearch details](../../tree/update/opensearch)
 * [Tweaked padding on sublists in navigation](../../tree/fix/navigation)
 * [Separated makedocs and component to separate modules](../../tree/update/decouple-component)
+* [Added pagination component styles](../../tree/component/pagination)
 
 v1.5.4 (released 1 Feb 2018)
 * [Added font-display property](../../tree/update/webfonts)
