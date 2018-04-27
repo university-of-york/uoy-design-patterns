@@ -1,0 +1,17 @@
+//
+// FUNCTIONS
+//
+
+//
+// Produces list of combinator sibling selectors from a supplied number
+// (helps to get around lack of nth-of-type by class selector)
+// Source: https://medium.com/@MateMarschalko/css-select-nth-element-with-class-a313d080e2bf
+//
+@function select_all_from($n, $selector) {
+  $classes: ();
+  @for $i from 1 through $n {
+    $className: if($i == 1, #{$selector}, #{"~ " + $selector});
+    $classes: join($classes, unquote($className), space);
+  }
+  @return $classes;
+}
