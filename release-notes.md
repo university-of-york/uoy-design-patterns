@@ -3,6 +3,7 @@
 v1.6.0 (next minor release)
 
 v1.5.5 (next patch release)
+* [Tweaks to improve font size of listing descriptions on smaller screens](../../tree/component/listings)
 * [New options for figures](../../tree/component/figures)
 
 v1.5.4 (released 1 Feb 2018)
