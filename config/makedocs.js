@@ -1,12 +1,14 @@
 module.exports = function (grunt) {
 
   var path = require('path');
+  var component = require('../tasks/component');
 
   return {
     options: {
       layoutsDir: 'src/layouts/',
       partialsDir: 'src/partials/',
-      componentsDir: 'src/components/',
+      // componentsDir: 'src/components/',
+      postRender: component,
       nav: function(pages) {
         var navPage = "src/partials/nav.mustache";
         var subNavPage = "src/partials/subnav.mustache";
