@@ -95,6 +95,8 @@ $thumbnail_size:100px;
       @extend .c-alert;
       @extend .c-alert--info;
       @extend .c-alert__content;
+
+      margin-bottom: 0; // This is added by the extended .c-alert class so let's remove it.
     }
   }
 }
