@@ -198,6 +198,13 @@
         li {
       margin:0;
     }
+    // Sub menus in site manager
+    ul {
+      padding-left:$base-spacing * 2;
+      a {
+        padding-left:0;
+      }
+    }
   }
   //Site Manager uses .currentsection span
   .currentsection {

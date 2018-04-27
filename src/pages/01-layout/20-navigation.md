@@ -230,7 +230,8 @@ Unopened, the main navigation shows the pages currently in this section. Open it
   </ul>
   <h4 class="c-nav__header">All sections</h4>
   <ul class="c-nav__list c-nav__list--associative">
-    <li class="c-nav__item"><span class="currentbranch0"><a href="#">Undergraduate study</a></span></li><li class="c-nav__item"><a href="#">Postgraduate study</a></li><li class="c-nav__item"><a href="#">International students</a></li><li class="c-nav__item"><a href="#">Accommodation</a></li><li class="c-nav__item"><a href="#">Student life</a></li><li class="c-nav__item"><a href="#">Careers and skills</a></li>
+    <li class="c-nav__item"><span class="currentbranch0"><a href="#">Undergraduate study</a></span><ul class="multilevel-linkul-0">
+<li><a href="/study/undergraduate/applying/entry/english-language/">English language requirements</a></li><li><a href="/study/undergraduate/applying/entry/a-level-reforms/">Statement on qualifications reform</a></li><li><a href="/study/undergraduate/applying/entry/policies/">Admissions policy</a></li><li><a href="/study/undergraduate/applying/entry/prior-learning/">Credit transfer and recognition of prior learning</a></li></ul></li><li class="c-nav__item"><a href="#">Postgraduate study</a></li><li class="c-nav__item"><a href="#">International students</a></li><li class="c-nav__item"><a href="#">Accommodation</a></li><li class="c-nav__item"><a href="#">Student life</a></li><li class="c-nav__item"><a href="#">Careers and skills</a></li>
   </ul>
 </nav>
 
@@ -242,7 +243,8 @@ Unopened, the main navigation shows the pages currently in this section. Open it
   </ul>
   <h4 class="c-nav__header">All sections</h4>
   <ul class="c-nav__list c-nav__list--associative">
-    <li class="c-nav__item"><span class="currentbranch0"><a href="#">Undergraduate study</a></span></li><li class="c-nav__item"><a href="#">Postgraduate study</a></li><li class="c-nav__item"><a href="#">International students</a></li><li class="c-nav__item"><a href="#">Accommodation</a></li><li class="c-nav__item"><a href="#">Student life</a></li><li class="c-nav__item"><a href="#">Careers and skills</a></li>
+    <li class="c-nav__item"><span class="currentbranch0"><a href="#">Undergraduate study</a></span><ul class="multilevel-linkul-0">
+<li><a href="/study/undergraduate/applying/entry/english-language/">English language requirements</a></li><li><a href="/study/undergraduate/applying/entry/a-level-reforms/">Statement on qualifications reform</a></li><li><a href="/study/undergraduate/applying/entry/policies/">Admissions policy</a></li><li><a href="/study/undergraduate/applying/entry/prior-learning/">Credit transfer and recognition of prior learning</a></li></ul></li><li class="c-nav__item"><a href="#">Postgraduate study</a></li><li class="c-nav__item"><a href="#">International students</a></li><li class="c-nav__item"><a href="#">Accommodation</a></li><li class="c-nav__item"><a href="#">Student life</a></li><li class="c-nav__item"><a href="#">Careers and skills</a></li>
   </ul>
 </nav>
 ```
@@ -349,7 +351,7 @@ Unopened, the main navigation shows the pages currently in this section. Open it
       </div>
     </div>
   </fieldset>
-</form><nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation">
+</form><nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation-3">
   <ul class="c-nav__list c-nav__list--structural">
     <li class="c-nav__item"><a href="https://www.york.ac.uk/study/">Study</a></li>
     <li class="c-nav__item"><a href="https://www.york.ac.uk/research/">Research</a></li>
@@ -358,7 +360,7 @@ Unopened, the main navigation shows the pages currently in this section. Open it
     <li class="c-nav__item"><a href="https://www.york.ac.uk/global/">International</a></li>
     <li class="c-nav__item"><a href="https://www.york.ac.uk/news-and-events/news/">News</a></li>
     <li class="c-nav__item"><a href="https://www.york.ac.uk/news-and-events/events">Events</a></li>
-    <li class="c-nav__item c-nav__item--more"><a class="c-nav__link js-toggle-button" href="#Main-Navigation">More&hellip;</a></li>
+    <li class="c-nav__item c-nav__item--more"><a class="c-nav__link js-toggle-button" href="#Main-Navigation-3">More&hellip;</a></li>
   </ul>
   <h4 class="c-nav__header">Staff and students</h4>
   <ul class="c-nav__list c-nav__list--associative">
@@ -471,7 +473,7 @@ Unopened, the main navigation shows the pages currently in this section. Open it
     </div>
   </fieldset>
 </form>
-<nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation">
+<nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation-3">
   <ul class="c-nav__list c-nav__list--structural">
     <li class="c-nav__item"><a href="https://www.york.ac.uk/study/">Study</a></li>
     <li class="c-nav__item"><a href="https://www.york.ac.uk/research/">Research</a></li>
@@ -480,7 +482,7 @@ Unopened, the main navigation shows the pages currently in this section. Open it
     <li class="c-nav__item"><a href="https://www.york.ac.uk/global/">International</a></li>
     <li class="c-nav__item"><a href="https://www.york.ac.uk/news-and-events/news/">News</a></li>
     <li class="c-nav__item"><a href="https://www.york.ac.uk/news-and-events/events">Events</a></li>
-    <li class="c-nav__item c-nav__item--more"><a class="c-nav__link js-toggle-button" href="#Main-Navigation">More&hellip;</a></li>
+    <li class="c-nav__item c-nav__item--more"><a class="c-nav__link js-toggle-button" href="#Main-Navigation-3">More&hellip;</a></li>
   </ul>
   <h4 class="c-nav__header">Staff and students</h4>
   <ul class="c-nav__list c-nav__list--associative">
