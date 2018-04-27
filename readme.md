@@ -36,21 +36,13 @@ To work on the front-end designs, run `grunt dev` in the terminal. This will cre
 
 Running a `grunt build` task will create a `build` directory, which will contain the minified CSS, the uglified JS, the optimised images and the HTML pages ready to deploy to a server.
 
-## Building for live deployment
+## Building for release
 
-To build for live deployment, run `grunt live`. It will run a build process just with the CSS, JS and images, but no HTML.
+To build a release version, you need to follow the [instructions in our Help Centre](https://universityofyorkmarketing.zendesk.com/hc/en-us/articles/115002713985-Pattern-Library-development-process) (University of York Marketing staff only).
 
-## Custom TinyMCE styles
+## Custom styles
 
-A minified stylesheet for TinyMCE is created as part of the build process. To create a non-minified stylesheet for upload to the CMS without running the entire build task, run `grunt tinymce` and the stylesheet will be created in `build/css/tinymce.css`.
-
-## Visual regression testing
-
-We use BackstopJS to run visual regression tests. The reference images are checked in to the repository (in `src/backstop/reference`), and should be updated after each successful release by running `grunt run:reference`.
-
-Before releasing a new version of the repo, you should run `grunt run:test` and it will test all pages in `dev/layout` and `dev/css-components` and prepare a report of how many differences there are between the new pages and the reference pages. Scan this carefully for any unwanted effects that your changes might have had.
-
-These tests can take a while, so go and make yourself a cup of tea whilst it's running. :coffee:
+Minified stylesheets for TinyMCE and Formstack are created as part of the build process.
 
 ## A note about development
 

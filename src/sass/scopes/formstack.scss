@@ -2,48 +2,55 @@
  * Formstack styles
  */
 
+@import 'core/variables';
+@import 'core/mixins';
+@import 'core/base';
+@import 'component/forms';
+@import 'component/buttons';
+@import 'generic/visibility';
+
 /* Base styles */
 textarea {
   @extend .c-form__input--textarea !optional;
 }
 
 .hidden {
-  @extend .is-invisible;
+  @extend .is-invisible !optional;
   display: block;
 }
 .fsSubField {
   margin-top:5px;
 }
 .fieldset-content {
-  @extend .c-form__element-group;
+  @extend .c-form__element-group !optional;
   height:auto;
 }
 .fsOptionLabel {
-  @extend .c-form__label.c-form__label;
-  &.vertical {
-    display: block;
-  }
-  input {
-    margin-right:0.25em;
-  }
+  font-weight: normal;
+  cursor:pointer;
+}
+.fsOptionLabel.vertical {
+  display: block;
+}
+.fsOptionLabel input {
+  margin-right:0.25em;
 }
 
-.fsBody {
-  .fsHidden,
-  .fsHiddenPage {
-    padding: 0!important;
-    margin: 0!important;
-    display: none
-  }
-  .fsHiddenPage {
-    height: 0;
-  }
+
+.fsBody .fsHidden,
+.fsBody .fsHiddenPage {
+  padding: 0!important;
+  margin: 0!important;
+  display: none
+}
+.fsBody .fsHiddenPage {
+  height: 0;
 }
 .fsHiddenByFieldSetting {
   display: none
 }
 
-// This could be grouped by ID to allow different extensions for warning, success etc.
+/* This could be grouped by ID to allow different extensions for warning, success etc. */
 div.fsError {
   @extend .c-alert !optional;
   @extend .c-alert--danger !optional;
@@ -91,7 +98,7 @@ label.fsOptionLabel {
   @extend .c-form__input--select !optional;
 }
 .fsSupporting {
-  @extend small;
+  @extend small !optional;
   @extend .c-form__hint !optional;
 }
 
@@ -165,6 +172,10 @@ input[type=text] {
 .fsForm .fsSubmit {
   background-color:transparent;
 }
+.fsPagination{
+  text-align: left;
+  margin: 25px 0;
+}
 .fs-btn2,
 .fsSubmit input.fsSubmitButton,
 .fsSubmit input.fsNextButton,
@@ -179,11 +190,11 @@ input[type=text] {
   @extend .c-icon--3x !optional;
   float:left;
 }
-// Make text next top checkmark padded to line up
+/* Make text next top checkmark padded to line up */
 #fsSubmissionCheckmark + * {
   padding-top:14px;
 }
-// Dialog
+/* Dialog */
 .fs-form-dialog--hidden {
   display: none;
   opacity: 0;

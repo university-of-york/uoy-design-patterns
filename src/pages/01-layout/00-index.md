@@ -38,6 +38,10 @@ Then in the head section:
 <script src="https://www.york.ac.uk/static/stable/js/modernizr.min.js"></script>
 <script src="https://www.york.ac.uk/static/stable/js/app.min.js"></script>
 
+<!-- Typekit script -->
+<script src="//use.typekit.net/dvj8rpp.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
+
 </head>
 ```
 

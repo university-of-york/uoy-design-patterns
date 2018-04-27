@@ -1,10 +1,44 @@
 # Release notes
 
-v1.5.0 (next minor)
+v1.6.0 (next minor release)
+
+v1.5.5 (next patch release)
+* [New options for figure](../../tree/component/figure)
+* [New component for listings](../../tree/component/listings)
+* [Adds support for search input types](../../tree/component/forms)
+* [Update opensearch details](../../tree/update/opensearch)
+* [Tweaked padding on sublists in navigation](../../tree/fix/navigation)
+* [Separated makedocs and component to separate modules](../../tree/update/decouple-component)
+* [Update scopes nav items to work properly](../../tree/update/scopes)
+* [Update default layout to include Typekit](../../tree/fix/layout)
+
+v1.5.4 (released 1 Feb 2018)
+* [Added font-display property](../../tree/update/webfonts)
+* [Fix for hrefs containing slashes](../../tree/fix/ids-with-slashes)
+* [Fix key facts that aren't links](../../tree/fix/key-messages)
+* [Updated NPM modules](../../tree/update/npm)
+* [New news article](../../tree/component/news)
+* [Updated pagination component](../../tree/component/pagination)
+* [Tweaks to 'more' nav item and open layout](../../tree/component/nav)
+
+v1.5.3 (released 16 Aug 2017)
+* Update number counts in clearing department list (added to master)
+* [Added selectable buttons component](../../tree/component/buttons)
+
+v1.5.2 (released 15 Aug 2017)
+* [Fixed calculation of Show More height](../../tree/component/show-more)
+* [Updated clearing tables to use the new Google Fusion table, and updated text to 2017](../../tree/module/clearing-table)
+
+v1.5.1 (released 12 Jun 2017)
+* [Added new scope for the Conversation embeds](../../tree/scope/conversation)
+* [Moved Formstack CSS into standalone](../../tree/update/formstack)
+
+v1.5.0 (released 5 Jun 2017)
 * [Changes to sticky nav functionality](../../tree/component/sticky-nav)
+* [Update to Font Awesome 4.7](../../tree/update/font-awesome)
+* [Remove text-decoration from abbr](../../tree/fix/abbr)
 
-v1.4.10 (next patch)
-
+v1.4.10-0 (released 18 May 2017)
 v1.4.9 (released 18 May 2017)
 * Updated .htaccess in /fonts to allow localhost domains (added to master)
 * [Create a new 'Show more' component](../../tree/component/show-more)

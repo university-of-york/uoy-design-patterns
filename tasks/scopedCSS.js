@@ -11,6 +11,7 @@ module.exports = function(grunt) {
   var getStyles = function(pathToFile, removeRegular, callback) {
     fs.readFile(pathToFile, 'utf-8', function(err, data) {
       if (err) throw err;
+      //grunt.log.ok('data\n'+'====================\n'+data+'====================\n');
       // Remove @extend and @include lines (and maybe regular lines too)
       // Declaration lines must have a trailing semicolon - it's what differentiates them from selectors
       var sassRegex = /(\n\s*@[a-zA-Z0-9!@.:;$_()\-\s]*;)/g;
@@ -21,8 +22,10 @@ module.exports = function(grunt) {
       } else {
         data2 = data.replace(sassRegex, '');
       }
+      //grunt.log.ok('data2\n'+'====================\n'+data2+'====================\n');
       var commentRegex = /\/\/\s*/g;
       var data3 = data2.replace(commentRegex, '');
+      //grunt.log.ok('data3\n'+'====================\n'+data3+'====================\n');
       var parsedStyles = css.parse(data3);
       callback(parsedStyles);
     });

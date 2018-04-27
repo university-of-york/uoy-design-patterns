@@ -5,8 +5,9 @@ module.exports = {
     },
     files: [{
       expand: true,
+      flatten: true,
       cwd: 'build/css/',
-      src: ['*.css'],
+      src: ['**/*.css'],
       dest: 'build/css/',
       ext: '.min.css'
     }]
