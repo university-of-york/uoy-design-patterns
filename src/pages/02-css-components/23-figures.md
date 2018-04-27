@@ -51,42 +51,54 @@ The default width of the caption is a 50% at huge/large/medium sizes. On small/t
 component("figure", { "image": "https://unsplash.it/1200/600/?image=983", "content": { "text" : "<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "position": "top-left" } } );
 </script>
 
+#### Top centre
+
+<script>
+component("figure", { "image": "https://unsplash.it/1200/600/?image=984", "content": { "text" :"<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "position": "top-centre" } } );
+</script>
+
 #### Top right
 
 <script>
-component("figure", { "image": "https://unsplash.it/1200/600/?image=984", "content": { "text" :"<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "position": "top-right" } } );
+component("figure", { "image": "https://unsplash.it/1200/600/?image=985", "content": { "text" :"<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "position": "top-right" } } );
 </script>
 
 #### Bottom right
 
 <script>
-component("figure", { "image": "https://unsplash.it/1200/600/?image=985", "content": { "text" : "<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "position": "bottom-right" } } );
+component("figure", { "image": "https://unsplash.it/1200/600/?image=986", "content": { "text" : "<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "position": "bottom-right" } } );
+</script>
+
+#### Bottom centre
+
+<script>
+component("figure", { "image": "https://unsplash.it/1200/600/?image=987", "content": { "text" :"<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "position": "bottom-centre" } } );
 </script>
 
 #### Bottom left
 
 <script>
-component("figure", { "image": "https://unsplash.it/1200/600/?image=986", "content": { "text" :"<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "position": "bottom-left" } } );
+component("figure", { "image": "https://unsplash.it/1200/600/?image=988", "content": { "text" :"<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "position": "bottom-left" } } );
 </script>
 
 ### Sizes
 
-#### Half (default)
+#### Half (default), position top-right
 
 <script>
-component("figure", { "image": "https://unsplash.it/1200/600/?image=882", "content": { "text" : "<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "size": "half" } } );
+component("figure", { "image": "https://unsplash.it/1200/600/?image=882", "content": { "text" : "<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "size": "half", "position": "top-right" } } );
 </script>
 
-#### Third
+#### Third, position bottom-centre
 
 <script>
-component("figure", { "image": "https://unsplash.it/1200/600/?image=884", "content": { "text" : "<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "size": "third" } } );
+component("figure", { "image": "https://unsplash.it/1200/600/?image=884", "content": { "text" : "<h3>Alice In Wonderland</h3>\n<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "size": "third", "position": "bottom-centre" } } );
 </script>
 
-#### Quarter
+#### Quarter, position bottom-left
 
 <script>
-component("figure", { "image": "https://unsplash.it/1200/600/?image=886", "content": { "text" : "<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "size": "quarter" } } );
+component("figure", { "image": "https://unsplash.it/1200/600/?image=886", "content": { "text" : "<p>'I mean what I say,' the Mock Turtle replied in an offended tone. And  the Gryphon added 'Come, let's hear some of YOUR adventures.'</p>\n<a class=\"c-btn c-btn--medium c-btn--block c-btn--primary\" href=\"#\">Click here for more</a>", "size": "quarter", "position": "bottom-left" } } );
 </script>
 
 ### Clickable figures
