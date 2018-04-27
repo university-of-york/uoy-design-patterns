@@ -1,0 +1,16 @@
+<li class="c-listings-item {{#highlighted}}c-listings-item--highlighted{{/highlighted}}">
+<a class="c-listings-item__link" href="{{link}}">{{#if media}}
+  <figure class="c-listings-item__thumbnail o-media__picture">
+        <img src="../media/{{media.object}}" alt="{{media.text}}">
+    </figure>
+    <div class="o-media__body">{{/if}}  {{#if type}}
+      <div class="c-listings-item__label"><i class="c-icon c-icon--before c-icon--{{icon}}"></i> {{type}}</div>{{/if}}
+    <h2 class="c-listings-item__title">{{title}}</h2>{{#if date}}
+    <time datetime="{{date}}" class="c-listings-item__date">{{date}}</time>{{/if}}{{#if description}}
+    <div class="c-listings-item__description">
+      {{description}}
+    </div>{{/if}}{{#if media}}
+  </div>{{/if}}{{#if url}}
+  <p class="c-listings-item__url">{{url}}</p>{{/if}}
+</a>
+</li>

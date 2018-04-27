@@ -32,6 +32,8 @@ component("pagination", { "atoms": [
   { "page": { "href": "?page=28", "value": "28" } },
   { "page": { "href": false, "value": "..." } },
   { "page": { "href": "?page=50", "value": "50" } },
+  { "page": { "href": false, "value": "..." } },
+  { "page": { "href": "?page=150", "value": "150" } },
   { "page": { "href": "?", "value": "Next", "position": "next", "icon-after": "chevron-right" } }
 ]});
 </script>

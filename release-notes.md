@@ -3,8 +3,8 @@
 v1.6.0 (next minor release)
 
 v1.5.5 (next patch release)
-* [New options for figure](../../tree/component/figure)
-* [New component for listings](../../tree/component/listings)
+* [New options for figures](../../tree/component/figure)
+* [Tweaks to improve font size of listing descriptions on smaller screens](../../tree/component/listings)
 * [Adds support for search input types](../../tree/component/forms)
 * [Update opensearch details](../../tree/update/opensearch)
 * [Tweaked padding on sublists in navigation](../../tree/fix/navigation)
