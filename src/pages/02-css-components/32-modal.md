@@ -42,7 +42,7 @@ There is a _frameless_ version of the modal window, mostly used for images. It d
 component("modal", {
   "type":"frameless",
   "caption": "Hands playing a piano",
-  "content": "<img class=\"c-modal__image\" src=\"media/piano.jpg\" alt=\"Hands playing a piano\" />"
+  "content": "<img class=\"c-modal__image\" src=\"../media/piano.jpg\" alt=\"Hands playing a piano\" />"
 });
 </script>
 
@@ -62,10 +62,10 @@ The second example is used for things like image galleries, and provides a good 
 
 **N.B. Only add in `href`s that point to images! Any other content will not work.**
 
-<a class="c-btn c-btn--medium js-modal js-modal--frameless" href="media/piano.jpg" data-caption="Hands playing a piano">Click here!</a>
+<a class="c-btn c-btn--medium js-modal js-modal--frameless" href="../media/piano.jpg" data-caption="Hands playing a piano">Click here!</a>
 
 ```markup
-<a class="c-btn c-btn--medium js-modal js-modal--frameless" href="media/piano.jpg" data-caption="Hands playing a piano">Click here!</a>
+<a class="c-btn c-btn--medium js-modal js-modal--frameless" href="../media/piano.jpg" data-caption="Hands playing a piano">Click here!</a>
 ```
 
 Lastly, you can hide the modal content on the page and reference the content using a fragment. In the example below, the link has a `data-title` attribute and the href points to the fragment `#framed-modal-content`, a hidden `div` containing ther modal content.

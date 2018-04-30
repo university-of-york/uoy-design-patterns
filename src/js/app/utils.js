@@ -43,13 +43,13 @@
       var minWidth = 0;
 
       // Min size is next size down
-      if (size == "small") {
+      if (size === "small") {
         minWidth = sizes.tiny;
-      } else if (size == "medium") {
+      } else if (size === "medium") {
         minWidth = sizes.small;
-      } else if (size == "large") {
+      } else if (size === "large") {
         minWidth = sizes.medium;
-      } else if (size == "huge") {
+      } else if (size === "huge") {
         minWidth = sizes.large;
       }
 
@@ -57,19 +57,19 @@
         // Clever version
 
         // Build the media query
-        if (scope == "~") {
+        if (scope === "~") {
           // [1] This size only
           mq = ("only screen and (min-width: "+minWidth+"em) and (max-width: "+maxWidth+"em)");
-        } else if (scope == "+") {
+        } else if (scope === "+") {
           // [2] This size and bigger
           mq = ("only screen and (min-width: "+minWidth+"em)");
-        } else if (scope == "++") {
+        } else if (scope === "++") {
           // [3] Bigger than this size
           mq = ("only screen and (min-width: "+maxWidth+"em)");
-        } else if (scope == "-") {
+        } else if (scope === "-") {
           // [4] This size and smaller
           mq = ("only screen and (max-width: "+maxWidth+"em)");
-        } else if (scope == "--") {
+        } else if (scope === "--") {
           // [5] Smaller than this size
           mq = ("only screen and (max-width: "+minWidth+"em)");
         }
@@ -80,15 +80,15 @@
       } else {
         // Dumb version
         var windowWidth = $window.width()/16;
-        if (scope == "~") {
+        if (scope === "~") {
           return (windowWidth > minWidth && windowWidth < maxWidth);
-        } else if (scope == "+") {
+        } else if (scope === "+") {
           return (windowWidth > minWidth);
-        } else if (scope == "++") {
+        } else if (scope === "++") {
           return (windowWidth > maxWidth);
-        } else if (scope == "-") {
+        } else if (scope === "-") {
           return (windowWidth < maxWidth);
-        } else if (scope == "--") {
+        } else if (scope === "--") {
           return (windowWidth < minWidth);
         }
       }
