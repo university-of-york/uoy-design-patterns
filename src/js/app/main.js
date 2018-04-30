@@ -84,14 +84,14 @@ define(
 
     // Add prioritised tables functionality
     UTILS.eachIfExists('.js-prioritised-table', function (i, table) {
-      new TABLE({
+      var a = new TABLE({
         container: table
       });
     });
 
     // Add tab functionality
     UTILS.eachIfExists('.js-tabs', function (i, tabs) {
-      new TABS({
+      var a = new TABS({
         container: tabs
       });
     });
@@ -104,7 +104,7 @@ define(
     UTILS.eachIfExists('.js-toggle-button', function (i, button) {
       var $b = $(button);
       var $c = $($b.attr('href'));
-      new TOGGLE({
+      var a = new TOGGLE({
         container: $c,
         button: $b,
         className:'is-open'
@@ -114,7 +114,7 @@ define(
     // Add utility nav toggle functionality
     UTILS.eachIfExists('.c-utility-nav', function (i, nav) {
       var $n = $(nav);
-      new UTILITYTOGGLE({
+      var a = new UTILITYTOGGLE({
         container: $n
       });
     });
@@ -123,7 +123,7 @@ define(
     UTILS.eachIfExists('.js-alert-close', function (i, button) {
       var $b = $(button);
       var $c = $($b.closest('.c-alert'));
-      new TOGGLE({
+      var a = new TOGGLE({
         container: $c,
         button: $b,
         className:'is-hidden',
@@ -153,11 +153,18 @@ define(
     // Clearing tables
     UTILS.eachIfExists('.js-clearing-table', function (i, a) {
       var $a = $(a),
+<<<<<<< HEAD
           type = $a.attr('data-type') || false,
           layout = $a.attr('data-layout') || false,
           course = $a.attr('data-course') || false,
           department = $a.attr('data-department') || false;
       new CLEARINGTABLE({
+=======
+          type = $a.attr('data-type'),
+          layout = $a.attr('data-layout'),
+          department = $a.attr('data-department');
+      var a = new CLEARINGTABLE({
+>>>>>>> origin/fix/code-climate
         type: type,
         layout: layout,
         course: course,
@@ -168,35 +175,35 @@ define(
 
     // A link with class .js-modal will href modal content
     UTILS.eachIfExists('.js-modal', function (i, a) {
-      new MODALLINK({
+      var a = new MODALLINK({
         link: $(a)
       });
     });
 
     // Add sticky nav functionality to nav
     UTILS.eachIfExists('.js-sticky-nav', function (i, a) {
-      new STICKYNAV({
+      var a = new STICKYNAV({
         container: $(a)
       });
     });
 
     // Add targeted nav functionality to nav
     UTILS.eachIfExists('.js-targeted-nav', function (i, a) {
-      new TARGETEDNAV({
+      var a = new TARGETEDNAV({
         container: $(a)
       });
     });
 
     // Add youtube video to embed links
     UTILS.eachIfExists('.youtube-video-embed', function (i, a) {
-      new YOUTUBE({
+      var a = new YOUTUBE({
         link: $(a)
       });
     });
 
     // Add Soundcloud audio to embed links
     UTILS.eachIfExists('.soundcloud-audio-embed', function (i, a) {
-      new SOUNDCLOUD({
+      var a = new SOUNDCLOUD({
         link: $(a)
       });
     });
