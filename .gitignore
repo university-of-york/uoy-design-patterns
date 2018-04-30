@@ -17,3 +17,5 @@ src/partials/nav.mustache
 **/*.sublime-workspace
 **/*.zip
 **/.DS_Store
+
+.idea/
