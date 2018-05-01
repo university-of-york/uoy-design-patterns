@@ -122,19 +122,20 @@ define(['jquery'], function ($) {
     modalWrapper = $('<div>').addClass('c-modal__wrapper is-hidden').on('click', function (e) {
       currentModal.close();
     });
-
-    var makeModalNavButton = function(type) {
-      var dir = type === 'prev' ? 'left' : 'right' ;
-      return $('<a>').addClass('c-modal__nav c-modal__nav--'+type+' is-hidden')
-                     .html('<i class="c-icon c-icon--3x c-icon--chevron-'+dir+' c-icon--light"></i>')
-                     .on('click', function (e) {
-                       e.stopPropagation();
-                       currentModal.navigate(type);
-                     })
-                     .appendTo(modalWrapper);
-    };
-    modalPrev = makeModalNavButton('prev');
-    modalNext = makeModalNavButton('next');
+    modalPrev = $('<a>').addClass('c-modal__nav c-modal__nav--prev is-hidden')
+                        .html('<i class="c-icon c-icon--3x c-icon--chevron-left c-icon--light"></i>')
+                        .on('click', function (e) {
+                          e.stopPropagation();
+                          currentModal.navigate('prev');
+                        })
+                        .appendTo(modalWrapper);
+    modalNext = $('<a>').addClass('c-modal__nav c-modal__nav--next is-hidden')
+                        .html('<i class="c-icon c-icon--3x c-icon--chevron-right c-icon--light"></i>')
+                        .on('click', function (e) {
+                          e.stopPropagation();
+                          currentModal.navigate('next');
+                        })
+                        .appendTo(modalWrapper);
 
     $('body').append(modalWrapper);
 

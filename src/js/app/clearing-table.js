@@ -21,7 +21,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
     $.each(numbers, function (i, v) {
       var vt = v.trim();
       var vl = vt.replace(' ', '').replace('(0)', '');
-      if (i === numbers.length - 1 && i !== 0) output+= ' or ';
+      if (i == numbers.length - 1 && i !== 0) output+= ' or ';
       output+= '<a class="c-clearing-table__phone-number" href="tel:'+vl+'">'+vt+'</a>';
       if (i < numbers.length - 2) output+= ', ';
     });
@@ -394,28 +394,29 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
     var fs = $('<fieldset>');
     var fe = $('<div>').addClass('c-form__element');
     var inputName = 'clearing-table-'+this.id+'-toggle-input';
-    var that = this;
-    var makeRadioGroup = function(type, text) {
-      var thisGroup = $('<div>').addClass('c-form__radio-group');
-      var thisInput = $('<input>').addClass('c-form__radio')
-                                  .attr({'type': 'radio', 'id': inputName+'-'+type, 'name': inputName })
-                                  .val(type)
-                                  .on('change', { that: that }, that.checkTable);
-      var thisLabel = $('<label>').addClass('c-form__label')
-                                  .attr({'for': inputName+'-'+type})
-                                  .text(text);
-      thisGroup.append(thisInput, '&nbsp;', thisLabel);
-      return thisGroup;
-    };
-
     var fl = $('<label>').addClass('c-form__label')
                          .attr('for', inputName)
                          .text(this.label);
-
-    var fg_ukeu = makeRadioGroup('ukeu', 'Courses for UK/EU students');
-    var fg_intl = makeRadioGroup('international', 'Courses for International students');
+    var fg_ukeu = $('<div>').addClass('c-form__radio-group');
+    var fi_ukeu = $('<input>').addClass('c-form__radio')
+                              .attr({'type': 'radio', 'id': inputName+'-ukeu', 'name': inputName })
+                              .val('ukeu')
+                              .on('change', { that: this }, this.checkTable);
+    var fl_ukeu = $('<label>').addClass('c-form__label')
+                              .attr({'for': inputName+'-ukeu'})
+                              .text('Courses for UK/EU students');
+    var fg_intl = $('<div>').addClass('c-form__radio-group');
+    var fi_intl = $('<input>').addClass('c-form__radio')
+                              .attr({'type': 'radio', 'id': inputName+'-intl', 'name': inputName })
+                              .val('international')
+                              .on('change', { that: this }, this.checkTable);
+    var fl_intl = $('<label>').addClass('c-form__label')
+                              .attr({'for': inputName+'-intl'})
+                              .text('Courses for International students');
 
     // Join it all together
+    fg_ukeu.append(fi_ukeu, '&nbsp;', fl_ukeu);
+    fg_intl.append(fi_intl, '&nbsp;', fl_intl);
     fe.append(fl, fg_ukeu, fg_intl);
     fs.append(fe);
     f.append(fs);

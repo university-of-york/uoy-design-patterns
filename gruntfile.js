@@ -1,13 +1,11 @@
-var path = require('path');
-var timeGrunt = require('time-grunt');
-var loadGruntConfig = require('load-grunt-config');
-
 module.exports = function (grunt) {
 
-  timeGrunt(grunt);
+  var path = require('path');
+
+  require('time-grunt')(grunt);
 
   // Load all the tasks from config/
-  loadGruntConfig(grunt, {
+  require('load-grunt-config')(grunt, {
     configPath: path.join(process.cwd(), 'config')
   });
 
