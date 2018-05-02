@@ -12,6 +12,7 @@ v1.5.5 (next patch release)
 * [Update scopes nav items to work properly](../../tree/update/scopes)
 * [Update default layout to include Typekit](../../tree/fix/layout)
 * [Added pagination component styles](../../tree/component/pagination)
+* [Added scope for Administrate booking form](../../tree/dev)
 
 v1.5.4 (released 1 Feb 2018)
 * [Added font-display property](../../tree/update/webfonts)
