@@ -1,1 +1,7 @@
-<a{{#href}} href="{{this}}"{{/href}} class="c-pagination__page{{#position}} c-pagination__page--{{this}}{{/position}}">{{#icon-before}}<i class="c-icon c-icon--{{this}} c-icon--before"></i>{{/icon-before}}{{value}}{{#icon-after}}<i class="c-icon c-icon--{{this}} c-icon--after"></i>{{/icon-after}}</a>
+{{^stand-alone}}
+<li class="c-pagination__item {{#page-number}} c-pagination__item--type-numeral{{/page-number}}">
+{{/stand-alone}}
+<a{{#href}} href="{{this}}"{{/href}} class="c-pagination__page{{#position}} c-pagination__page--{{this}}{{/position}} {{#page-type}}c-pagination__page--type-{{this}}{{/page-type}}">{{#icon-before}}<i class="c-icon c-icon--{{this}} c-icon--before"></i>{{/icon-before}}{{#hide-text-on-mobile}}<span class="is-hidden@small-">{{/hide-text-on-mobile}}{{value}}{{#hide-text-on-mobile}}</span>{{/hide-text-on-mobile}}{{#icon-after}}<i class="c-icon c-icon--{{this}} c-icon--after"></i>{{/icon-after}}</a>
+{{^stand-alone}}
+</li>
+{{/stand-alone}}
