@@ -133,6 +133,7 @@ textarea,
 input[type=email],
 input[type=number],
 input[type=tel],
+input[type=search],
 input[type=text] {
   @extend .c-form__input !optional;
 }
