@@ -60,6 +60,7 @@
  * Tags....................Tag lists
  * Labels..................Labels
  * Show more...............Toggleable 'Show More' component
+ * Listings................News article, event and search results
  *
  * - Organisms
  * Events..................Event listings
@@ -142,6 +143,7 @@
 @import "component/tag";
 @import "component/label";
 @import "component/showmore";
+@import "component/listings";
 
 @import "component/events";
 @import "component/forms";

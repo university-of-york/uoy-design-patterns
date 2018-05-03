@@ -1,0 +1,100 @@
+//
+// Listings
+//
+$thumbnail_size:100px;
+
+.c-listings {
+    @include component;
+    list-style: none;
+    margin-left:0;
+    padding-left:0;
+}
+
+.c-listings-item {
+  $listings-item-selector: &;
+
+  border-bottom: 1px dotted $blue;
+  margin-bottom: $base-spacing;
+  padding-bottom: $base-spacing/4;
+
+  &:last-of-type  {
+    // Remove border of the very last list item
+    border-bottom: 0;
+  }
+
+  // Elements
+  &__thumbnail {
+    width:$thumbnail_size;
+    img {
+      max-width:$thumbnail_size;
+    }
+  }
+
+  &__title {
+      font-weight: 400;
+      @include font-size(24px, 1.2);
+      color:$c-news--excerpt__title-color;
+      margin-top:0;
+      margin-bottom:0;
+
+      &:hover {
+        color:$c-news--excerpt__title-hover-color;
+      }
+
+      @include mq(large, '-') {
+        @include font-size(20px, 1.1);
+      }
+  }
+
+  &__label {
+    @include font-size(12px, 1.1);
+    color: $grey;
+    text-transform: uppercase;
+    margin-top:0;
+    margin-bottom:$base-spacing/3;
+  }
+
+  &__date {
+    @include font-size(14px, 1.2);
+    color: lighten($charcoal,4);
+    margin-top:0;
+    margin-bottom: $base-spacing;
+  }
+
+  &__description {
+      @include demarginalise;
+      @include font-size(16px, 1.2);
+      color: #000;
+      margin-top:$base-spacing/4;
+      margin-bottom:$base-spacing/2;
+
+      @include mq(large, '-') {
+        @include font-size(14.5px, 1.2);
+      }
+  }
+
+  &__url {
+      @include font-size(14px, 1.1);
+      color: $grey;
+      text-decoration: none;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+  }
+
+  // Modifiers
+  &--highlighted {
+    // Never show a border on highlighted entries
+    border-bottom: 0;
+
+    #{$listings-item-selector}__link {
+
+      // Extend the infomation alert styles as they're the same
+      @extend .c-alert;
+      @extend .c-alert--info;
+      @extend .c-alert__content;
+    }
+  }
+}
