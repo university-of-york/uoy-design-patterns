@@ -2,16 +2,17 @@
 
 v1.6.0 (next minor release)
 
-v1.5.5 (next patch release)
+v1.5.6 (next patch release)
+
+v1.5.5 (released 3 May 2018)
 * [New options for figure](../../tree/component/figure)
-* [New component for listings](../../tree/component/listings)
+* [Tweaks to improve font size of listing descriptions on smaller screens](../../tree/component/listings)
 * [Adds support for search input types](../../tree/component/forms)
 * [Update opensearch details](../../tree/update/opensearch)
 * [Tweaked padding on sublists in navigation](../../tree/fix/navigation)
 * [Separated makedocs and component to separate modules](../../tree/update/decouple-component)
 * [Update scopes nav items to work properly](../../tree/update/scopes)
 * [Update default layout to include Typekit](../../tree/fix/layout)
-* [Tweaks to improve font size of listing descriptions on smaller screens](../../tree/component/listings)
 * [Added pagination component styles](../../tree/component/pagination)
 * [Added scope for Administrate booking form](../../tree/scopes/administrate)
 
