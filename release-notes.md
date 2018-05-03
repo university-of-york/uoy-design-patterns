@@ -116,6 +116,7 @@ v1.3.12 (released 14 Sep 2016)
 * [Remove top padding from docs pages](../../tree/fix/docs)
 * [Remove bottom margin from last item in main wrapper](../../tree/fix/footer-margin)
 * [Use a mixin to reduce left/right padding on tiny screens](../../tree/fix/padding)
+* [Fix utility nav on tiny screens](../../tree/component/utility-nav)
 
 v1.3.11 (released 6 Sep 2016)
 * [Moved the `bordered` modifier to the `c-page-title__wrapper`](../../tree/component/page-title)
