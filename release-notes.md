@@ -2,8 +2,10 @@
 
 v1.6.0 (next minor release)
 
-v1.5.5 (next patch release)
-* [New options for figures](../../tree/component/figure)
+v1.5.6 (next patch release)
+
+v1.5.5 (released 3 May 2018)
+* [New options for figure](../../tree/component/figure)
 * [Tweaks to improve font size of listing descriptions on smaller screens](../../tree/component/listings)
 * [Adds support for search input types](../../tree/component/forms)
 * [Update opensearch details](../../tree/update/opensearch)
@@ -12,7 +14,7 @@ v1.5.5 (next patch release)
 * [Update scopes nav items to work properly](../../tree/update/scopes)
 * [Update default layout to include Typekit](../../tree/fix/layout)
 * [Added pagination component styles](../../tree/component/pagination)
-* [Added scope for Administrate booking form](../../tree/dev)
+* [Added scope for Administrate booking form](../../tree/scopes/administrate)
 
 v1.5.4 (released 1 Feb 2018)
 * [Added font-display property](../../tree/update/webfonts)
@@ -114,7 +116,6 @@ v1.3.12 (released 14 Sep 2016)
 * [Remove top padding from docs pages](../../tree/fix/docs)
 * [Remove bottom margin from last item in main wrapper](../../tree/fix/footer-margin)
 * [Use a mixin to reduce left/right padding on tiny screens](../../tree/fix/padding)
-* [Fix utility nav on tiny screens](../../tree/component/utility-nav)
 
 v1.3.11 (released 6 Sep 2016)
 * [Moved the `bordered` modifier to the `c-page-title__wrapper`](../../tree/component/page-title)
