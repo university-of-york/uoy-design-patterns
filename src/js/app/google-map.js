@@ -95,7 +95,7 @@ define(['jquery', 'app/utils', 'app/fullscreen'], function ($, UTILS, FULLSCREEN
     // Map type for Cloudmade tiles
     var cloudMadeMapType = new google.maps.ImageMapType({
       getTileUrl: function(coord, zoom) {
-        return "https://www.york.ac.uk/about/maps/campus/data/tiles/" +
+        return "https://www.york.ac.uk/map/tiles/" +
           zoom + "/" + coord.x + "/" + coord.y + ".png";
       },
       tileSize: new google.maps.Size(256, 256),
