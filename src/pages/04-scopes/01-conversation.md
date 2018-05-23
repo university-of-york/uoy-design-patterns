@@ -2,7 +2,7 @@
 
 title: Conversation scope
 name: conversation-scope
-category: Scopes
+category: scopes
 layout: q+tq
 id: conversation-scope-page
 

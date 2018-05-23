@@ -1,6 +1,7 @@
 //
 // Pagination
 //
+
 .c-pagination {
   // .c-pagination_pages have 4px bottom margin to separate them if they wrap
   // This makes it up to normal $base-spacing size
@@ -14,13 +15,19 @@
 }
 .c-pagination__item {
   float:left;
+
+  // Only show 5 page items on mobile
+  // uses the .c-pagination__item--type-numeral selector
+  #{select_all_from(6, '&--type-numeral')} {
+    @include mq(small, "-") {
+      display: none;
+    }
+  }
 }
 .c-pagination__page {
   line-height: 2;
   display:block;
-  width:2em;
-  height:2em;
-  padding:0;
+  padding: 0 .5em;
   border:1px solid darken($s2,5);
   border-radius:3px;
   font-weight: bold;
@@ -35,8 +42,8 @@
     border-color:$blue;
     color:$light;
   }
-  // Don't style ellipsis links
-  &:not([href]) {
+  // Don't style ellipsis links, called 'break'
+  &--type-break {
     background-color:#fff;
     border:0;
     &:hover {
@@ -46,14 +53,10 @@
       cursor:default;
     }
   }
-  &.c-pagination__page--current {
+  &--current {
     background-color:$blue;
+    border-color: $blue;
     color: #fff;
-  }
-  &.c-pagination__page--previous {
-    width:6em;
-  }
-  &.c-pagination__page--next {
-    width:4.5em;
+    cursor: default;
   }
 }

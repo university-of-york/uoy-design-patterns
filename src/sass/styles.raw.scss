@@ -9,6 +9,7 @@
  * Fonts...................@font-face declarations (currently empty)
  * Variables...............Variable setup: colours, fonts, measurements etc. Also mapping generic variable names to specific variables
  * Mixins..................Globally available mixins.
+ * Functions...............Helper and utility functions.
  * Extends.................[deprecated] we're trying to remove extends as they cause specificity  issues. DO NOT USE.
  * Normalize...............Levelling the playing field.
  * Reset...................Resetting a few default styles.
@@ -61,6 +62,7 @@
  * Labels..................Labels
  * Show more...............Toggleable 'Show More' component
  * Autocomplete............Styles for autocompleted search results
+ * Listings................News article, event and search results
  *
  * - Organisms
  * Events..................Event listings
@@ -72,6 +74,7 @@
  * SCOPES
  * TinyMCE.................Stylesheet for TinyMCE - extends other styles
  * Conversation............Scope elements within Conversation articles
+ * Administrate............IE fix for Administrate plugin
  *
  * THEMES
  * 404.....................404 theme
@@ -91,6 +94,7 @@
 // @import "core/fonts";
 @import "core/variables";
 @import "core/mixins";
+@import "core/functions";
 @import "core/extends";
 @import "core/normalize";
 @import "core/reset";
@@ -144,6 +148,7 @@
 @import "component/label";
 @import "component/showmore";
 @import "component/autocomplete";
+@import "component/listings";
 
 @import "component/events";
 @import "component/forms";
@@ -154,6 +159,7 @@
 // SCOPES
 @import "scopes/tinymce";
 @import "scopes/conversation";
+@import "scopes/administrate";
 
 // THEMES
 //@import "themes/404";

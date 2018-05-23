@@ -2,9 +2,21 @@
 
 v1.6.0 (next minor release)
 
-v1.5.5 (next patch release)
-* [New options for figures](../../tree/component/figures)
+v1.5.6 (next patch release)
+* [Fixed console error on searchables when GTM isn't used](../../tree/fix/searchables)
+* [Updated URL for map tiles](../../tree/fix/map-tiles)
+
+v1.5.5 (released 3 May 2018)
+* [New options for figure](../../tree/component/figure)
+* [Tweaks to improve font size of listing descriptions on smaller screens](../../tree/component/listings)
 * [Adds support for search input types](../../tree/component/forms)
+* [Update opensearch details](../../tree/update/opensearch)
+* [Tweaked padding on sublists in navigation](../../tree/fix/navigation)
+* [Separated makedocs and component to separate modules](../../tree/update/decouple-component)
+* [Update scopes nav items to work properly](../../tree/update/scopes)
+* [Update default layout to include Typekit](../../tree/fix/layout)
+* [Added pagination component styles](../../tree/component/pagination)
+* [Added scope for Administrate booking form](../../tree/scopes/administrate)
 
 v1.5.4 (released 1 Feb 2018)
 * [Added font-display property](../../tree/update/webfonts)

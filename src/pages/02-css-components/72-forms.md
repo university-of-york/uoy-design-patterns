@@ -33,6 +33,7 @@ component("form-element", { "label": "Name", "name": "a", "atoms": { "input": { 
 +component("form-element", { "label": "Password", "name": "d", "atoms": { "input": { "type": "password" } } })
 +component("form-element", { "label": "Website", "name": "e", "atoms": { "input": { "type": "url", "value":"http://" } } })
 +component("form-element", { "label": "Phone", "name": "f", "atoms": { "input": { "type": "tel" } } })
++component("form-element", { "label": "Search", "name": "f2", "atoms": { "input": { "type": "search" } } })
 +component("form-element", { "label": "Your Comment", "name": "g", "atoms": { "textarea": { "placeholder": "Please add a well-written, grammatically correct comment" } } })
 +component("form-element", { "label": "Your Comment", "name": "g", "atoms": { "textarea": { "placeholder": "Please add a slightly longer well-written, grammatically correct comment", "size": "double" } } })
 +component("form-element", { "label": "Your Comment", "name": "g", "atoms": { "textarea": { "placeholder": "Please add a very long well-written, grammatically correct comment", "size": "treble" } } })
@@ -79,7 +80,7 @@ You can put these together in the usual grid system: a `grid-row` can be `form-e
 <script>
 component("grid-row", { "atoms": [
   { "grid-box": { "size": "third", "atoms":
-	  { "form-element": { "label": "Bippity", "name": "l" } },
+	  { "form-element": { "label": "Bippity", "name": "l2" } },
   } },
   { "grid-box": { "size": "third", "atoms":
 	  { "form-element": { "label": "Boppity", "name": "m" } },
@@ -249,31 +250,31 @@ component("form", { "type":"stacked", "method":"get", "legend": "Fill in this fo
 
   { "grid-row": { "atoms": [
     { "grid-box": { "size": "third", "atoms":
-      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Text input", "name": "sa", "atoms": { "input": { "type":"text" } } } },
+      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Text input", "name": "sa2", "atoms": { "input": { "type":"text" } } } },
     } },
     { "grid-box": { "size": "third", "atoms":
-      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "File input", "name": "sb", "atoms": { "input": { "type":"file" } } } },
+      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "File input", "name": "sb2", "atoms": { "input": { "type":"file" } } } },
     } },
     { "grid-box": { "size": "third", "atoms":
-      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Password", "name": "sc", "hint": "Must contain a letter, a number, a hieroglyph and at least two Cyrillic characters", "atoms": { "input": { "type":"password" } } } }
+      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Password", "name": "sc2", "hint": "Must contain a letter, a number, a hieroglyph and at least two Cyrillic characters", "atoms": { "input": { "type":"password" } } } }
     } }
   ] } },
 
   { "grid-row": { "atoms": [
     { "grid-box": { "size": "third", "atoms":
-      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Email", "name": "sd", "atoms": { "input": { "type":"email" } } } },
+      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Email", "name": "sd2", "atoms": { "input": { "type":"email" } } } },
     } },
     { "grid-box": { "size": "third", "atoms":
-      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "URL", "name": "se", "atoms": { "input": { "type":"url" } } } },
+      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "URL", "name": "se2", "atoms": { "input": { "type":"url" } } } },
     } },
     { "grid-box": { "size": "third", "atoms":
-      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Telephone", "name": "sf", "atoms": { "input": { "type":"tel" } } } }
+      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Telephone", "name": "sf2", "atoms": { "input": { "type":"tel" } } } }
     } }
   ] } },
 
   { "grid-row": { "atoms": [
     { "grid-box": { "size": "third", "atoms":
-      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Select", "select": true, "name": "sg", "atoms":[
+      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Select", "select": true, "name": "sg2", "atoms":[
         { "option": { "label": "Red", "value": "red" } },
         { "option": { "label": "Blue", "value": "blue" } },
         { "option": { "label": "Green", "value": "green" } },
@@ -281,8 +282,8 @@ component("form", { "type":"stacked", "method":"get", "legend": "Fill in this fo
       ] } }
     } },
     { "grid-box": { "size": "third", "atoms":
-      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Radio", "name": "sh", "atoms": [
-        { "form-element-group": { "name": "sh", "atoms":[
+      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Radio", "name": "sh2", "atoms": [
+        { "form-element-group": { "name": "sh2", "atoms":[
           { "radio": { "label": "Yes", "value": "yes" } },
           { "radio": { "label": "No", "value": "no" } },
           { "radio": { "label": "Not sure", "value": "unsure" } }
@@ -290,8 +291,8 @@ component("form", { "type":"stacked", "method":"get", "legend": "Fill in this fo
       ] } }
     } },
     { "grid-box": { "size": "third", "atoms":
-      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Checkbox", "name": "si", "atoms":[
-        { "form-element-group": { "name": "si", "atoms":[
+      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Checkbox", "name": "si2", "atoms":[
+        { "form-element-group": { "name": "si2", "atoms":[
           { "checkbox": { "label": "Ukulele", "value": "ukulele" } },
           { "checkbox": { "label": "Mandolin", "value": "mandolin" } },
           { "checkbox": { "label": "Banjo", "value": "banjo", "checked": true } }
@@ -302,7 +303,7 @@ component("form", { "type":"stacked", "method":"get", "legend": "Fill in this fo
 
   { "grid-row": { "atoms":
     { "grid-box": { "size": "full", "atoms":
-      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Textarea", "name": "sj", "atoms": { "textarea": { } } } }
+      { "form-element": { "invalid": true, "hint-invalid": "This field cannot be empty", "label": "Textarea", "name": "sj2", "atoms": { "textarea": { } } } }
     } }
   } },
 
