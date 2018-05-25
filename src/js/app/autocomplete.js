@@ -42,6 +42,7 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
 
     if (!options.input) return false;
     if (!options.results) return false;
+    this.category = options.category || 'Autocomplete';
     this.input = options.input;
     this.searchFunction = defaultSearchFunction;
     if (typeof options.results === 'function') {
@@ -115,11 +116,15 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
     var featureTitle = feature.item.title;
     var featureSubtitle = feature.item.subtitle;
     var featureItem = $('<li>').addClass("c-autocomplete__item");
-    var featureLink = $('<a>').addClass("c-autocomplete__link")
-                              .attr({
-                                "href": feature.item.link || '#'
-                              })
-                              .appendTo(featureItem);
+    // Create div if link is not set (i.e. it's unclickable)
+    var featureLink;
+    if (feature.item.link) {
+      featureLink = $('<a>').attr({ "href": feature.item.link });
+    } else {
+      featureLink = $('<div>');
+    }
+    featureLink.addClass("c-autocomplete__link")
+               .appendTo(featureItem);
     var featureSpan = $('<span>').addClass("c-autocomplete__title")
                                  .text(featureTitle)
                                  .appendTo(featureLink);
@@ -211,7 +216,7 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
       case 27:
         that.list.empty();
         // Send 'no selection' event to GA
-        //addAnalyticsEvent('Search', 'No selection (query: '+searchTerm+')');
+        UTILS.addAnalyticsEvent(that.category, 'Search', 'No selection (query: '+searchTerm+')');
         stopReturn = true;
         break;
     }
@@ -224,8 +229,8 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
 
       if (results.length === 0) {
         // Send 'no results' event to GA
-        // addAnalyticsEvent('Search', 'No results (query: '+searchTerm+')');
-        that.makeFeatureItem({ title: "There are no results for that search term" });
+        UTILS.addAnalyticsEvent(that.category, 'Search', 'No results (query: '+searchTerm+')');
+        that.makeFeatureItem({ item: { title: "There are no results for that search term", link: false }});
         return false;
       }
 

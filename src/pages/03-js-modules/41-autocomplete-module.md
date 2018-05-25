@@ -65,9 +65,8 @@ require(['app/autocomplete'], function(AUTOCOMPLETE) {
     </div>
   </fieldset>
 </form>
-```
 
-```javascript
+<script>
 var a = new AUTOCOMPLETE({
   input: $('#example-search-query'),
   results: [
@@ -83,6 +82,7 @@ var a = new AUTOCOMPLETE({
   ],
   followLinks: false
 });
+</script>
 ```
 
 ### Example using `followLinks: true`
@@ -121,6 +121,7 @@ require(['app/autocomplete'], function(AUTOCOMPLETE) {
           link: "#derwent-college"
         }
       ],
+      category: 'College search',
       followLinks: true
     });
   });
@@ -139,9 +140,8 @@ require(['app/autocomplete'], function(AUTOCOMPLETE) {
     </div>
   </fieldset>
 </form>
-```
 
-```javascript
+<script>
 var a = new AUTOCOMPLETE({
   input: $('#example-links-form'),
   results: [
@@ -161,8 +161,10 @@ var a = new AUTOCOMPLETE({
       link: "#derwent-college"
     }
   ],
+  category: 'College search',
   followLinks: true
 });
+</script>
 ```
 
 ### Example using results function
@@ -218,6 +220,7 @@ require(['app/autocomplete'], function(AUTOCOMPLETE) {
           });
         });
       },
+      category: 'Search',
       followLinks: false
     });
   });
@@ -262,6 +265,7 @@ require(['app/autocomplete'], function(AUTOCOMPLETE) {
           });
         });
       },
+      category: 'Search',
       followLinks: false
     });
   });
@@ -272,6 +276,7 @@ require(['app/autocomplete'], function(AUTOCOMPLETE) {
 ### Options
 
  * **input** - _(required)_ the _text_ or _search_ input that should be used as the anchor for the 
- * **results** - an array of results, with a title (required), subtitle (optional) and link (optional) keys, or a function that
+ * **results** - an array of results, with a title (required), subtitle (optional) and link (optional) keys, or a function that returns an array with those elements
+ * **category** - the category to use when sending events to GA. Defaults to "Autosuggest"
  * **followLinks** - _(defaults to false)_ Should we follow the link in the autocomplete? The default behaviour is to put the value in the input and submit the form.
  

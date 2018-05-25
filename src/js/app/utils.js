@@ -312,7 +312,26 @@
       if ($elements.length) {
         $elements.each(fn);
       }
+    },
+
+    // Add a Google Analytics event
+    //
+    // Placeholder for the name of the tracker that Tag Manager loads
+    addAnalyticsEvent: function(category, action, label, value) {
+      //var gaTracker = false;
+
+      // Analytics hasn't loaded yet
+      if (typeof ga === 'undefined') return false;
+      // Get the name of the tracker that Tag Manager loads
+      ga(function() {
+        var trackers = ga.getAll();
+        gaTracker = trackers[0].get('name');
+        console.log('Sending event: ', category, action, label, value);
+        ga(gaTracker+'.send', 'event', category, action, label, value);
+      });
+
     }
+
   };
 
   return UTILS;
