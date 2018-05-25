@@ -278,7 +278,7 @@
       if (hash === '') return;
       // Fix slashes in hash
       hash = UTILS.fixSelector(hash);
-      console.log(hash);
+      //console.log(hash);
       var container = $(hash).parents('.js-tabs, .js-accordion__item');
       if (container.length === 0) return;
       var link = $('a[href='+hash+']');

@@ -55,7 +55,10 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
     this.list = $('.c-autocomplete__list', this.form);
 
     this.input.on('keyup', { that: this }, this.suggest);
-
+    // Stop enter submitting form
+    this.input.on('keypress keydown', function(e){
+       if (e.keyCode === 13) { e.preventDefault(); }
+    });
     this.input.on('focus', { that: this }, this.suggest);
 
     console.info(this);
@@ -183,9 +186,10 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
       case 13:
 
         if (that.list.children().length > 0 && searchTerm !== '') {
-          console.log(that.followLinks);
           if (that.followLinks === true) {
             // Go to the link!
+            var $selectedLink = $('.c-autocomplete__item.is-selected a', this.list)[0];
+            window.location = $selectedLink.href;
           } else {
             // If there's a selected option, update value
             that.submitForm(e);
