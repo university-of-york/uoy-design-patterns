@@ -108,17 +108,17 @@ require(['app/autocomplete'], function(AUTOCOMPLETE) {
         {
           title: "Alcuin College",
           subtitle: "Campus West",
-          link: "https://www.york.ac.uk/map#alcuin-college"
+          link: "#alcuin-college"
         },
         {
           title: "Constantine College",
           subtitle: "Campus East",
-          link: "https://www.york.ac.uk/map#constantine-college"
+          link: "#constantine-college"
         },
         {
           title: "Derwent College",
           subtitle: "Campus West",
-          link: "https://www.york.ac.uk/map#derwent-college"
+          link: "#derwent-college"
         }
       ],
       followLinks: true
@@ -148,17 +148,17 @@ var a = new AUTOCOMPLETE({
     {
       title: "Alcuin College",
       subtitle: "Campus West",
-      link: "https://www.york.ac.uk/map#alcuin-college"
+      link: "#alcuin-college"
     },
     {
       title: "Constantine College",
       subtitle: "Campus East",
-      link: "https://www.york.ac.uk/map#constantine-college"
+      link: "#constantine-college"
     },
     {
       title: "Derwent College",
       subtitle: "Campus West",
-      link: "https://www.york.ac.uk/map#derwent-college"
+      link: "#derwent-college"
     }
   ],
   followLinks: true
@@ -223,6 +223,51 @@ require(['app/autocomplete'], function(AUTOCOMPLETE) {
   });
 });
 </script>
+
+```markup
+<form action="https://www.york.ac.uk/search" method="get" class="c-form" id="example-function-form">
+  <fieldset>
+    <div class="c-form__element">
+      <input class="c-form__input c-form__input--text"  type="search" id="example-function-query" name="q" autocomplete="off"/>
+      <div class="c-autocomplete">
+        <ul class="c-autocomplete__list">
+        </ul>
+      </div>
+    </div>
+  </fieldset>
+</form>
+
+<script>
+require(['app/autocomplete'], function(AUTOCOMPLETE) {
+  $(function() {
+    var a = new AUTOCOMPLETE({
+      input: $('#example-function-query'),
+      results: function(searchTerm, onComplete) {
+        if (searchTerm.length < 3) return false;
+        // console.log("Getting results from Funnelback");
+        var fbUrl = "https://york.funnelback.co.uk/s/suggest.json?collection=york-uni-web&show=10&sort=0&alpha=0.5&fmt=json++&partial_query="+searchTerm;
+        $.getJSON(fbUrl, function(r) {
+          var results = [];
+          var rLength = r.length;
+          $.each(r, function(i, v) {
+            results.push({
+              item: {
+                title: v.disp
+              }
+            });
+            if (i === rLength-1) {
+              console.log(results);
+              onComplete(results);
+            }
+          });
+        });
+      },
+      followLinks: false
+    });
+  });
+});
+</script>
+```
 
 ### Options
 

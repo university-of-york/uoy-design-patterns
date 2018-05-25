@@ -272,11 +272,12 @@
     },
 
     // If the page hash is set on load, scroll to and show the appropriate tab/accordion
-    scrollToHash: function () {
+    scrollToHash: function (e) {
+      // N.B. 'this' might not be UTILS
       var hash = document.location.hash;
       if (hash === '') return;
       // Fix slashes in hash
-      hash = this.fixSelector(hash);
+      hash = UTILS.fixSelector(hash);
       console.log(hash);
       var container = $(hash).parents('.js-tabs, .js-accordion__item');
       if (container.length === 0) return;

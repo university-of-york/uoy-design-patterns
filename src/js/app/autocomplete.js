@@ -181,7 +181,9 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
     switch (keyCode) {
       // Return
       case 13:
+
         if (that.list.children().length > 0 && searchTerm !== '') {
+          console.log(that.followLinks);
           if (that.followLinks === true) {
             // Go to the link!
           } else {

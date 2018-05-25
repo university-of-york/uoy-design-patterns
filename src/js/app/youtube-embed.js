@@ -72,7 +72,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     });
 
     // Fire update event
-    $(window).trigger('content.updated', ['youtube', this]);
+    $window.trigger('content.updated', ['youtube', this]);
 
   };
 
@@ -89,7 +89,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     // add to container
     this.container.html(iframe);
     // Fire update event
-    $(window).trigger('content.updated', ['youtube', this]);
+    $window.trigger('content.updated', ['youtube', this]);
     return iframe;
   };
 
