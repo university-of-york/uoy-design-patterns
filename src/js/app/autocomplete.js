@@ -11,6 +11,29 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
 
   var $window = $(window);
 
+  // Function to get property from dot notation
+  // e.g. foo["bar.baz"] -> foo.bar.baz
+  // Because of the way fuse.js returns matches
+  // var multiIndex = function(obj,is) { // obj,['1','2','3'] -> ((obj['1'])['2'])['3']
+  //   return is.length ? multiIndex(obj[is[0]],is.slice(1)) : obj;
+  // };
+
+  // var pathIndex = function(obj,is) {   // obj,'1.2.3' -> multiIndex(obj,['1','2','3'])
+  //   return multiIndex(obj,is.split('.'));
+  // };
+
+  // Takes 'oldText' and adds <b> tags in at 'matches' array
+  // e.g. [0,2] will add <b> at 0th position, </b> at 2nd position
+  var emboldenSearchTerm = function(oldText, indices) {
+    var newText;
+    var startText = oldText.slice(0, indices[0]);
+    var midText = oldText.slice(indices[0], indices[1]+1);
+    var endText = oldText.slice(indices[1]+1);
+    console.log(startText, midText, endText);
+    newText = startText+'<b>'+midText+'</b>'+endText;
+    return newText;
+  };
+
   var defaultSearchFunction = function(searchTerm, onComplete) {
 
     var fuseOptions = {
@@ -133,24 +156,56 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
                                      .text(featureSubtitle)
                                      .appendTo(featureLink);
     }
-    //   /* Highlighting matches in text
-    //    * This is buggy - needs fixing before we can use it
-    //   $.each(feature.matches, function(j, match) {
-    //     var newText = pathIndex(feature.item, match.key);
-    //     var l = match.indices.length-1;
-    //     // Start from the end so you don't disrupt indices
-    //     for (;l > -1; l--) {
-    //       var startText = newText.slice(0, match.indices[l][0]);
-    //       var midText = newText.slice(match.indices[l][0], match.indices[l][1]+1);
-    //       var endText = newText.slice(match.indices[l][1]+1);
-    //       newText = startText+'<b>'+midText+'</b>'+endText;
-    //     }
-    //     if (match.key === "properties.title") {
-    //       featureSpan.html(newText);
-    //     } else if (match.key === "properties.subtitle") {
-    //       featureSmall.html(newText);
-    //     }
-    //   });*/
+
+    // Highlighting matches in text
+    if (feature.matches) {
+      // Version for FuseJS results
+      $.each(feature.matches, function(j, match) {
+        var newText = featureTitle;
+        var newElem = featureSpan;
+        if (match.key === "subtitle") {
+          newText = featureSubtitle;
+          newElem = featureStrong;
+        }
+        var l = match.indices.length-1;
+        // Start from the end so you don't disrupt indices
+        for (;l > -1; l--) {
+          newText = emboldenSearchTerm(newText, match.indices[l]);
+        }
+        newElem.html(newText);
+      });
+    } else {
+      // Manual search using regex
+      // Get search term
+      var searchTerm = this.input.val();
+      var searchre = new RegExp(searchTerm, 'gi');
+      var titleSearch;
+      var newTitleText = featureTitle;
+      var i = 0;
+      while ((titleSearch = searchre.exec(featureTitle)) !== null) {
+        console.log(titleSearch);
+        // Push index forward 7 chars for each match ("<b></b>")
+        var startIndex = titleSearch.index+(i*7);
+        var endIndex = titleSearch.index+searchTerm.length-1+(i*7);
+        var titleIndex = [startIndex, endIndex];
+        newTitleText = emboldenSearchTerm(newTitleText, titleIndex);
+        featureSpan.html(newTitleText);
+        i++;
+      }
+      if (featureSubtitle !== 'null') {
+        var subtitleSearch;
+        var newSubtitleText = featureSubtitle;
+        var j = 0;
+        while ((subtitleSearch = searchre.exec(featureSubtitle)) !== null) {
+          var startSubIndex = subtitleSearch.index+(j*7);
+          var endSubIndex = subtitleSearch.index+searchTerm.length-1+(j*7);
+          var subtitleIndex = [startSubIndex, endSubIndex];
+          newSubtitleText = emboldenSearchTerm(newSubtitleText, subtitleIndex);
+          featureStrong.html(newSubtitleText);
+          j++;
+        }
+      }
+    }
 
     var that = this;
     featureLink.on('click', {that: that }, function(e) {

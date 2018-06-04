@@ -87,11 +87,13 @@ var a = new AUTOCOMPLETE({
 
 ### Example using `followLinks: true`
 
+This also uses the `.c-autocomplete--alt` modifier, which applies the styles seen on the [campus map](http://www.york.ac.uk/map).
+
 <form action="" method="get" class="c-form" id="example-links-form">
   <fieldset>
     <div class="c-form__element">
       <input class="c-form__input c-form__input--text"  type="search" id="example-links-query" name="search-query" autocomplete="off"/>
-      <div class="c-autocomplete">
+      <div class="c-autocomplete c-autocomplete--alt">
         <ul class="c-autocomplete__list">
         </ul>
       </div>
@@ -201,7 +203,7 @@ require(['app/autocomplete'], function(AUTOCOMPLETE) {
     var a = new AUTOCOMPLETE({
       input: $('#example-function-query'),
       results: function(searchTerm, onComplete) {
-        if (searchTerm.length < 3) return false;
+        //if (searchTerm.length < 3) return false;
         // console.log("Getting results from Funnelback");
         var fbUrl = "https://york.funnelback.co.uk/s/suggest.json?collection=york-uni-web&show=10&sort=0&alpha=0.5&fmt=json++&partial_query="+searchTerm;
         $.getJSON(fbUrl, function(r) {
