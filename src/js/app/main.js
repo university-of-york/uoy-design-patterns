@@ -133,6 +133,20 @@ define(
       });
     });
 
+      // Add dismissable global notice action
+      UTILS.eachIfExists('.js-notice-close', function (i, button) {
+          var $b = $(button);
+          var $c = $($b.closest('.c-global-notice'));
+          new TOGGLE({
+              container: $c,
+              button: $b,
+              className:'is-hidden',
+              onComplete: function($c, $b) {
+                  $c.remove();
+              }
+          });
+      });
+
     // Use anchors to submit forms
     UTILS.eachIfExists('.js-submit-form', function (i, a) {
       var $a = $(a);
