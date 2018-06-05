@@ -19,3 +19,4 @@ src/partials/nav.mustache
 **/.DS_Store
 
 .idea/
+.tags

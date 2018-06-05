@@ -37,6 +37,7 @@
  * - Atoms
  * Page title..............Page title
  * Alerts..................Alert box
+ * Global Notices..........Notices added before the page header, cross-site
  * Buttons.................All button styles
  * Icons...................Iconography (imports FontAwesome files)
  * Pagination..............For navigating multiple pages
@@ -124,6 +125,7 @@
 
 @import "component/page-title";
 @import "component/alerts";
+@import "component/global-notices";
 @import "component/buttons";
 @import "component/icons";
 @import "component/pagination";
