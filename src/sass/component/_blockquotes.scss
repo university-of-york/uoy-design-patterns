@@ -50,7 +50,7 @@ $c-blockquote__image-tiny-ratio:0.75;
 .c-blockquote--pull-quote {
   overflow:visible;
   padding-top:$base-spacing/2;
-  .c-blockquote__content {
+  .c-blockquote__content p {
     @include font-size(22px, 1.13636364);
     color:$c-blockquote--pull-quote-color;
     font-family:$font-title;
@@ -63,7 +63,12 @@ $c-blockquote__image-tiny-ratio:0.75;
       left:0;
     }
     &:after {
-      content: no-close-quote;
+      @include font-size(48px);
+      content: close-quote;
+      position:absolute;
+      bottom: -35px;
+      padding-left: $base-spacing/2;
+
     }
     .o-grid__row--alt1 &,
     .o-grid__row--alt2 & {
