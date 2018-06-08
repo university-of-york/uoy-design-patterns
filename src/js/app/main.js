@@ -4,14 +4,14 @@ define(
    'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/prioritised-tables',
    'app/toggle', 'app/utility-toggle', 'app/wrapper-height', 'app/youtube-embed',
    'app/soundcloud-embed', 'app/searchables', 'app/filterable-tables', 'app/equal-height-row',
-   'app/google-map', 'app/show-more'],
+   'app/google-map', 'app/show-more', 'app/autocomplete'],
   function (
     $, ES5SHIM, PICTUREFILL, IFRAMERESIZER,
     UTILS, MODALLINK, ACCORDION, STICKYNAV,
     TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
     TOGGLE, UTILITYTOGGLE, WRAPPERHEIGHT, YOUTUBE,
     SOUNDCLOUD, SEARCHABLE, FILTERABLE, EQUALHEIGHT,
-    GOOGLEMAP, SHOWMORE) {
+    GOOGLEMAP, SHOWMORE, AUTOCOMPLETE) {
 
   $(function(){
 
@@ -296,6 +296,50 @@ define(
         $a.attr('action', action);
       });
     });
+
+    // Fire up autosuggest on main site search
+    var $headerSearch = $('.c-form--header input[name=q]');
+    if ($headerSearch.length > 0) {
+
+      // Add autocomplete if not present
+      // === This can be removed when all the page templates have been updated ===
+      var $headerForm = $headerSearch.closest('form');
+      if ($headerForm.children('.c-autocomplete').length === 0) {
+        var $headerFormElement = $headerSearch.closest('.c-form__element');
+        var $autocompleteList = $('<ul>').addClass('c-autocomplete__list');
+        var $autocomplete = $('<div>').addClass('c-autocomplete').append($autocompleteList);
+        $headerFormElement.append($autocomplete);
+      }
+      // ==========================================================================
+
+      var a = new AUTOCOMPLETE({
+        input: $headerSearch,
+        results: function(searchTerm, onComplete) {
+          if (searchTerm.length < 3) return false;
+          // console.log("Getting results from Funnelback");
+          var fbUrl = "https://york.funnelback.co.uk/s/suggest.json?collection=york-uni-web&show=10&sort=0&alpha=0.5&fmt=json++&partial_query="+searchTerm;
+          $.getJSON(fbUrl, function(r) {
+            var results = [];
+            var rLength = r.length;
+            $.each(r, function(i, v) {
+              results.push({
+                item: {
+                  title: v.disp
+                }
+              });
+              if (i === rLength-1) {
+                //console.log(results);
+                onComplete(results);
+              }
+            });
+          });
+        },
+        followLinks: false
+      });
+
+
+    }
+
 
     // Broadcast custom window events
     if (UTILS.isDev() === true) {

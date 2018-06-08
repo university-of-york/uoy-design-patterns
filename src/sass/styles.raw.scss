@@ -62,6 +62,7 @@
  * Tags....................Tag lists
  * Labels..................Labels
  * Show more...............Toggleable 'Show More' component
+ * Autocomplete............Styles for autocompleted search results
  * Listings................News article, event and search results
  *
  * - Organisms
@@ -149,6 +150,7 @@
 @import "component/tag";
 @import "component/label";
 @import "component/showmore";
+@import "component/autocomplete";
 @import "component/listings";
 
 @import "component/events";

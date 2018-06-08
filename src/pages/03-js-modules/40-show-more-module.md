@@ -16,7 +16,7 @@ id: show-more-module-page
 ```javascript
 var e = new SHOWMORE({
   container: $('#show-more'),
-  defaultHeight: 200
+  defaultHeight: 200,
   buttonTextMore: 'Show more',
   buttonTextLess: 'Show less'
 });

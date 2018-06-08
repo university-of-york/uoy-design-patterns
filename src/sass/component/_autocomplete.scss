@@ -1,0 +1,102 @@
+//
+// AUTOCOMPLETE
+//
+
+.c-autocomplete {
+  position:absolute;
+  left:0;
+  top:100%;
+  z-index:99;
+  width:100%;
+}
+
+.c-autocomplete__list {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.c-autocomplete__item {
+  margin:0;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  &:last-of-type {
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+.c-autocomplete__link {
+  display:block;
+  line-height: 1.1;
+  padding: 0.5em 10px;
+  color:#333;
+  background-color:#fff;
+  text-decoration:none;
+  cursor:pointer;
+  &:hover {
+    color:#00b3eb;
+    background-color:#f0f1f4;
+  }
+  .c-autocomplete__item.is-selected & {
+    color:#00b3eb;
+    background-color:#f0f1f4;
+    &:hover {
+    }
+  }
+}
+
+.c-autocomplete__title {
+  //color:#333;
+}
+
+.c-autocomplete__subtitle {
+  color:#333;
+  display:block;
+  .c-autocomplete__item.is-selected & {
+  }
+  .c-autocomplete__link:hover & {
+  }
+}
+
+// @media (max-width: 767px) and (orientation: portrait) {
+//      .c-autocomplete {
+//          width: 155%;
+//      }
+//  }
+
+.c-autocomplete--alt {
+  .c-autocomplete__title {
+    font-weight:bold;
+  }
+  .c-autocomplete__link {
+    padding: 0.8em 10px;
+    color:#008cb8;
+  }
+  .c-autocomplete__item {
+    &:nth-of-type(even) .c-autocomplete__link {
+      background-color:#f4f6ef;
+    }
+    & .c-autocomplete__link:hover {
+      color:#fff;
+      background-color:#006585;
+      .c-autocomplete__subtitle {
+        color:#fff;
+      }
+    }
+    &.is-selected {
+      .c-autocomplete__link {
+        background-color:#333;
+        color:#f9f9f9;
+        &:hover {
+          background-color:#444;
+        }
+      }
+      .c-autocomplete__subtitle {
+        color:#ddd;
+      }
+    }
+  }
+  .c-autocomplete__subtitle {
+    color:#333;
+  }
+}
