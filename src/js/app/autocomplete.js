@@ -29,7 +29,7 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
     var startText = oldText.slice(0, indices[0]);
     var midText = oldText.slice(indices[0], indices[1]+1);
     var endText = oldText.slice(indices[1]+1);
-    console.log(startText, midText, endText);
+    //console.log(startText, midText, endText);
     newText = startText+'<b>'+midText+'</b>'+endText;
     return newText;
   };
@@ -218,6 +218,10 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
         $thisItem.addClass('is-selected');
         that.submitForm(e);
       }
+      //Close list after a slight pause
+      setTimeout(function() {
+        that.list.empty();
+      }, 400);
     });
 
     this.list.append(featureItem);
