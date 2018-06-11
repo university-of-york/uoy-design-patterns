@@ -298,6 +298,7 @@ define(
     });
 
     // Fire up autosuggest on main site search
+    /*
     var $headerSearch = $('.c-form--header input[name=q]');
     if ($headerSearch.length > 0) {
 
@@ -337,8 +338,8 @@ define(
         followLinks: false
       });
 
-
     }
+    */
 
 
     // Broadcast custom window events
