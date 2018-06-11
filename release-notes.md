@@ -2,7 +2,9 @@
 
 v1.6.0 (next minor release)
 
-v1.5.6 (next patch release)
+v1.5.7 (next patch release)
+
+v1.5.6 (released 11 Jun 2018)
 * [Fixed console error on searchables when GTM isn't used](../../tree/fix/searchables)
 * [Updated URL for map tiles](../../tree/fix/map-tiles)
 * [Abstracted autocomplete out](../../tree/component/autocomplete)
