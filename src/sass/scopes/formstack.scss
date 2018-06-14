@@ -200,3 +200,18 @@ input[type=text] {
   display: none;
   opacity: 0;
 }
+/* make select arrows go to the right place */
+.fsSelectParent:after {
+  bottom:0 !important;
+}
+/* Make date pickers fit on one line */
+[fs-field-type="datetime"] {
+  .fsSelectParent {
+    width:32%;
+    margin-right:2%;
+  }
+  .fsSelectParent:nth-of-type(3n) {
+    margin-right: 0;
+  }
+}
+}
