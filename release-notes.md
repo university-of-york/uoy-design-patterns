@@ -3,6 +3,7 @@
 v1.6.0 (next minor release)
 
 v1.5.7 (next patch release)
+* Updated Formstack styles for _datetime_ selects
 
 v1.5.6 (released 11 Jun 2018)
 * [Fixed console error on searchables when GTM isn't used](../../tree/fix/searchables)
