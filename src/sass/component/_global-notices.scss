@@ -1,0 +1,48 @@
+/* ========================================================================== */
+/* Global notification area (to be abstracted to pattern-library and deleted */
+/* ========================================================================== */
+
+.c-global-notice {
+  @include font-size(16px, 1.2);
+  background-color: $s1;
+  border-bottom:1px solid $grey;
+  color: #000;
+  text-align: center;
+  padding: 15px;
+  z-index: 999;
+  position: relative;
+
+  &--highlighted {
+    background-color: $pink;
+    color: #fff;
+
+    a {
+      color: #fff;
+    }
+  }
+
+  *:last-child {
+    margin-bottom:0;
+  }
+
+  &__title {
+    @include font-size(24px, 1.2);
+
+    @include mq(small, '-') {
+      @include font-size(20px);
+    }
+
+    @include mq(tiny, '-') {
+      @include font-size(18px);
+    }
+  }
+
+
+  @include mq(small, '-') {
+    @include font-size(14px);
+  }
+
+  @include mq(tiny, '-') {
+    @include font-size(12px);
+  }
+}

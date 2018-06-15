@@ -272,12 +272,13 @@
     },
 
     // If the page hash is set on load, scroll to and show the appropriate tab/accordion
-    scrollToHash: function () {
+    scrollToHash: function (e) {
+      // N.B. 'this' might not be UTILS
       var hash = document.location.hash;
       if (hash === '') return;
       // Fix slashes in hash
-      hash = this.fixSelector(hash);
-      console.log(hash);
+      hash = UTILS.fixSelector(hash);
+      //console.log(hash);
       var container = $(hash).parents('.js-tabs, .js-accordion__item');
       if (container.length === 0) return;
       var link = $('a[href='+hash+']');
@@ -311,7 +312,26 @@
       if ($elements.length) {
         $elements.each(fn);
       }
+    },
+
+    // Add a Google Analytics event
+    //
+    // Placeholder for the name of the tracker that Tag Manager loads
+    addAnalyticsEvent: function(category, action, label, value) {
+      //var gaTracker = false;
+
+      // Analytics hasn't loaded yet
+      if (typeof ga === 'undefined') return false;
+      // Get the name of the tracker that Tag Manager loads
+      ga(function() {
+        var trackers = ga.getAll();
+        gaTracker = trackers[0].get('name');
+        console.log('Sending event: ', category, action, label, value);
+        ga(gaTracker+'.send', 'event', category, action, label, value);
+      });
+
     }
+
   };
 
   return UTILS;

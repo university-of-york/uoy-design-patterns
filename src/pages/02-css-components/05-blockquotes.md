@@ -34,7 +34,7 @@ component("blockquote", { "content": "<p>Through being involved with University 
 component("blockquote", { "type": "pull-quote", "content": "<p>Through being involved with University of York cycling club I have discovered almost every village, every landmark, every hill, every Yorkshire oddity within a 30-mile radius of York.</p>"});
 </script>
 <script>
-component("blockquote", { "type": "pull-quote", "content": "<p>Through being involved with University of York cycling club I have discovered almost every village, every landmark, every hill, every Yorkshire oddity within a 30-mile radius of York.</p>", "cite":"<p>Madeline, PhD student.</p>"});
+component("blockquote", { "type": "pull-quote", "content": "<p>Through being involved with University of York cycling club I have discovered almost every village, every landmark, every hill, every Yorkshire oddity within a 30-mile radius of York. </p>", "cite":"<p>Madeline, PhD student. </p>"});
 </script>
 
 ### Image blockquotes

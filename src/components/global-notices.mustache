@@ -1,0 +1,11 @@
+<div class="c-global-notice {{#highlighted}}c-global-notice--highlighted{{/highlighted}}">
+    {{#dismissable}}
+        <button type="button" class="c-alert__close js-notice-close" aria-label="Close">&times;</button>
+    {{/dismissable}}
+    {{#title}}
+        <h2 class="c-global-notice__title">{{this}}</h2>
+    {{/title}}
+    {{#description}}
+        <p>{{this}}</p>
+    {{/description}}
+</div>
