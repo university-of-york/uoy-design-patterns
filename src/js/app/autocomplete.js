@@ -11,17 +11,6 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
 
   var $window = $(window);
 
-  // Function to get property from dot notation
-  // e.g. foo["bar.baz"] -> foo.bar.baz
-  // Because of the way fuse.js returns matches
-  // var multiIndex = function(obj,is) { // obj,['1','2','3'] -> ((obj['1'])['2'])['3']
-  //   return is.length ? multiIndex(obj[is[0]],is.slice(1)) : obj;
-  // };
-
-  // var pathIndex = function(obj,is) {   // obj,'1.2.3' -> multiIndex(obj,['1','2','3'])
-  //   return multiIndex(obj,is.split('.'));
-  // };
-
   // Takes 'oldText' and adds <b> tags in at 'matches' array
   // e.g. [0,2] will add <b> at 0th position, </b> at 2nd position
   var emboldenSearchTerm = function(oldText, indices) {
@@ -157,7 +146,11 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
                                      .appendTo(featureLink);
     }
 
+    // THIS DOESN'T WORK!
+    // Was adding in odd </b>s on searching for "James P"
+    // Please thoroughly test before putting live
     // Highlighting matches in text
+    /*
     if (feature.matches) {
       // Version for FuseJS results
       $.each(feature.matches, function(j, match) {
@@ -206,6 +199,7 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
         }
       }
     }
+    */
 
     var that = this;
     featureLink.on('click', {that: that }, function(e) {
