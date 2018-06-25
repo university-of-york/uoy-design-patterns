@@ -146,12 +146,17 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
     // Update button text
     var isClosed = that.container.hasClass('is-closed');
+    var category = "Show More";
+    // Use ID as a label, or try the first heading, otherwise "unidentified"
+    var label = that.container.attr('id') || that.content.find("h1,h2,h3,h4,h5,h6").first().text() || "unidentified" ;
     if (isClosed === true) {
       that.buttonIcon.addClass('c-icon--chevron-down').removeClass('c-icon--chevron-up');
       that.button.text(that.buttonTextMore).append(that.buttonIcon);
+      UTILS.addAnalyticsEvent(category, "Closed", label);
     } else {
       that.buttonIcon.addClass('c-icon--chevron-up').removeClass('c-icon--chevron-down');
       that.button.text(that.buttonTextLess).append(that.buttonIcon);
+      UTILS.addAnalyticsEvent(category, "Opened", label);
     }
 
     // Remove focus state

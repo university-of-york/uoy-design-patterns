@@ -321,7 +321,10 @@
       //var gaTracker = false;
 
       // Analytics hasn't loaded yet
-      if (typeof ga === 'undefined') return false;
+      if (typeof ga === 'undefined') {
+        console.log('ga is not defined - not sending event', category, action, label, value);
+        return false;
+      }
       // Get the name of the tracker that Tag Manager loads
       ga(function() {
         var trackers = ga.getAll();
