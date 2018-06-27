@@ -59,7 +59,7 @@
     "backstop": "backstop",
     "report": "backstop report",
     "start": "browserify ./src/js/app.js -o ./src/js/bundle.js && grunt dev",
-    "build": "grunt build",
+    "build": "grunt release",
     "release": "semantic-release",
     "build__webpack": "webpack --config webpack.prod.js",
     "start__webpack": "webpack-dev-server --open --config webpack.dev.js",

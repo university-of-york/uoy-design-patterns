@@ -2,7 +2,7 @@
 src/backstop
 !src/backstop/reference
 bower_components
-build
+build/
 dev/
 node_modules
 secret.json
