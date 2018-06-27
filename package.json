@@ -60,6 +60,7 @@
     "report": "backstop report",
     "start": "grunt dev",
     "build": "grunt release",
+    "build:preview": "grunt preview",
     "release": "semantic-release",
     "build__webpack": "webpack --config webpack.prod.js",
     "start__webpack": "webpack-dev-server --open --config webpack.dev.js",

@@ -115,6 +115,24 @@ module.exports = function (grunt) {
           ext: '.html'
         }
       ]
-    }
+    },
+      preview: {
+          options: {
+              build: false
+          },
+          files: [
+              {
+                  expand: true,
+                  cwd: 'src/pages/',
+                  src: ['**/*.md', '!sample.md'],
+                  dest: 'build/',
+                  rename: function(dest, src) {
+                      // remove numbers from start of file and dir
+                      return dest + src.replace(/\d+\-/g, '');
+                  },
+                  ext: '.html'
+              }
+          ]
+      }
   };
 };

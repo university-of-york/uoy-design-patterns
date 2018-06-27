@@ -20,7 +20,39 @@ module.exports = function (grunt) {
   grunt.registerTask('dev', ['makedocs:dev', 'copy:dev', 'copy:templates', 'jshint:dev', 'compass:dev', 'postcss:dev', 'browserSync:dev', 'watch', 'clean:dev']);
 
   // Build process - minified CSS and JS
-  grunt.registerTask('build', ['clean:build', 'makedocs:build', 'copy:build', 'compass:build', 'postcss:build', 'scopedCSS', 'clean:precssmin', 'modernizr', 'cssmin', 'newer:imagemin', 'jshint:dev', 'requirejs', 'header:build', 'clean:postbuild']);
+
+  grunt.registerTask('build', [
+      'clean:build',
+      'makedocs:build',
+      'copy:build',
+      'compass:build',
+      'postcss:build',
+      'scopedCSS',
+      'clean:precssmin',
+      'modernizr',
+      'cssmin',
+      'newer:imagemin',
+      'jshint:dev',
+      'requirejs',
+      'header:build',
+      'clean:postbuild']);
+
+  // Build process for preview
+    grunt.registerTask('preview', [
+        'clean:build',
+        'makedocs:preview',
+        'copy:build',
+        'compass:build',
+        'postcss:build',
+        'scopedCSS',
+        'clean:precssmin',
+        'modernizr',
+        'cssmin',
+        'newer:imagemin',
+        'jshint:dev',
+        'requirejs',
+        'header:build',
+        'clean:postbuild']);
 
   // Release process - copies necessary files to a '/release' folder
     grunt.registerTask('release', ['build', 'copy:release', 'md5sum']);
