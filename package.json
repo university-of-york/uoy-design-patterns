@@ -3,15 +3,9 @@
   "version": "1.5.6",
   "description": "This repository holds the design patterns used on the University of York's website (http://www.york.ac.uk).",
   "main": "gruntfile.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/university-of-york/design-patterns"
-  },
+  "repository": "https://github.com/university-of-york/design-patterns",
   "license": "UNLICENSED",
-  "author": {
-    "name": "University of York Digital Team",
-    "url": "http://yorkwebteam.blogspot.co.uk/"
-  },
+  "author": "University of York Digital Team (http://yorkwebteam.blogspot.co.uk/)",
   "contributors": [
     {
       "name": "Chris Marsh",
@@ -25,10 +19,11 @@
   ],
   "devDependencies": {
     "autoprefixer": "^6.7.7",
-    "css": "^2.2.1",
+    "css": "^2.2.3",
+    "es5-shim": "^4.5.10",
+    "fuse.js": "^3.2.1",
     "glob": "^7.1.0",
     "grunt": "^0.4.5",
-    "grunt-bower-task": "^0.4.0",
     "grunt-browser-sync": "^2.2.0",
     "grunt-bump": "^0.3.4",
     "grunt-confirm": "^1.0.5",
@@ -44,20 +39,35 @@
     "grunt-header": "^1.1.0",
     "grunt-makedocs": "^2.3.0",
     "grunt-md5sum": "^2.0.1",
-    "grunt-modernizr": "^1.0.2",
+    "grunt-modernizr": "^1.0.3",
     "grunt-newer": "^1.3.0",
     "grunt-postcss": "^0.6.0",
-    "grunt-run": "^0.6.0",
+    "grunt-run": "^0.8.1",
     "grunt-ssh": "^0.12.9",
-    "load-grunt-config": "^0.16.0",
-    "semver": "^5.3.0",
-    "time-grunt": "^1.4.0"
+    "iframe-resizer": "^3.6.1",
+    "jquery": "^3.3.1",
+    "js-cookie": "^2.2.0",
+    "load-grunt-config": "^0.19.2",
+    "modernizr": "^3.6.0",
+    "picturefill": "^3.0.2",
+    "requirejs": "^2.3.5",
+    "semantic-release": "^15.6.0",
+    "time-grunt": "^1.4.0",
+    "webpack": "^4.12.2"
   },
   "scripts": {
     "backstop": "backstop",
-    "report": "backstop report"
+    "report": "backstop report",
+    "start": "browserify ./src/js/app.js -o ./src/js/bundle.js && grunt dev",
+    "build": "grunt build",
+    "release": "semantic-release",
+    "build__webpack": "webpack --config webpack.prod.js",
+    "start__webpack": "webpack-dev-server --open --config webpack.dev.js",
+    "release__webpack": "semantic-release",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "compass": "^0.1.1"
-  }
+  },
+  "private": false
 }

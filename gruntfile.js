@@ -12,7 +12,7 @@ module.exports = function (grunt) {
   // Load custom tasks
   grunt.loadTasks('tasks');
 
-  grunt.registerTask('default', ['bower']);
+  //grunt.registerTask('default', ['bower']);
 
   // Build Additional stylesheets
   grunt.registerTask('formstack', ['compass:dev', 'newer:postcss:dev', 'scopedCSS:formstackDev']);
@@ -23,7 +23,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', ['clean:build', 'makedocs:build', 'copy:build', 'compass:build', 'postcss:build', 'scopedCSS', 'clean:precssmin', 'modernizr', 'cssmin', 'newer:imagemin', 'jshint:dev', 'requirejs', 'header:build', 'clean:postbuild']);
   // Publish to york.ac.uk/pattern-library
   //grunt.registerTask('publish', ['build', 'sftp:patternlibrary', 'sftp:cdn']);
-  grunt.registerTask('publish', ['build', 'sftp:patternlibrary']);
+  //grunt.registerTask('publish', ['build', 'sftp:patternlibrary']);
   //grunt.registerTask('live', ['build', 'bump:major', 'header:live', 'clean:live']);
 
 };

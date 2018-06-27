@@ -6,7 +6,7 @@ requirejs.config({
     es5shim: 'vendor/es5-shim/es5-shim',
     jscookie: 'vendor/js-cookie/js.cookie',
     iframeResizer: 'vendor/iframe-resizer/iframeResizer',
-    fuse: 'vendor/fuse/dist/fuse',
+    fuse: 'vendor/fuse/dist/fuse.min',
     jquery: 'vendor/jquery/jquery'
   }
 });
