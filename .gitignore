@@ -9,9 +9,6 @@ secret.json
 npm-debug.log
 release/
 src/js/vendor
-src/partials/assocnav.mustache
-src/partials/subnav.mustache
-src/partials/nav.mustache
 
 **/*.sublime-project
 **/*.sublime-workspace
