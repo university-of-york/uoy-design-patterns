@@ -84,6 +84,9 @@ module.exports = function (grunt) {
       }
     },
     dev: {
+        options: {
+            dev: true
+        },
       files: [
         {
           expand: true,
@@ -118,7 +121,7 @@ module.exports = function (grunt) {
     },
       preview: {
           options: {
-              build: false
+              preview: true
           },
           files: [
               {

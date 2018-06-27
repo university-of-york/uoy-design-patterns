@@ -31,7 +31,20 @@
   <script async src="https://www.york.ac.uk/static/stable/js/app.min.js"></script>
 
   {{/build}}
-  {{^build}}
+    
+    {{#preview}}
+        <link rel="shortcut icon" href="/preview/img/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="/preview/img/favicon.ico">
+
+        <link rel="stylesheet" href="/preview/css/styles.css">
+        <link rel="stylesheet" href="/preview/css/docs.css">
+
+        <script async src="/preview/js/vendor/modernizr/modernizr.js"></script>
+        <script async src="/preview/js/vendor/requirejs/require.js" data-main="/js/app"></script>
+
+    {{/build}}
+
+  {{#dev}}
   <link rel="shortcut icon" href="/img/favicon.ico">
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
