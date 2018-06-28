@@ -51,7 +51,7 @@ module.exports = function (grunt) {
         'newer:imagemin',
         'jshint:dev',
         'requirejs',
-        'header:build',
+        'header:preview',
         'clean:postbuild']);
 
   // Release process - copies necessary files to a '/release' folder

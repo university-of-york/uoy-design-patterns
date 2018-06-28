@@ -7,7 +7,6 @@ module.exports = function (grunt) {
     options: {
       layoutsDir: 'src/layouts/',
       partialsDir: 'src/partials/',
-      // componentsDir: 'src/components/',
       postRender: component,
       nav: function(pages) {
         var navPage = "src/partials/nav.mustache";
@@ -85,57 +84,61 @@ module.exports = function (grunt) {
     },
     dev: {
         options: {
-            dev: true
+            build: false
         },
-      files: [
-        {
-          expand: true,
-          cwd: 'src/pages/',
-          src: ['**/*.md', '!sample.md'],
-          dest: 'dev/',
-          rename: function(dest, src) {
-            // remove numbers from start of file and dir
-            return dest + src.replace(/\d+\-/g, '');
-          },
-          ext: '.html'
-        }
-      ]
+        files: [
+            {
+              expand: true,
+              cwd: 'src/pages/',
+              src: ['**/*.md', '!sample.md'],
+              dest: 'dev/',
+              rename: function(dest, src) {
+                // remove numbers from start of file and dir
+                return dest + src.replace(/\d+\-/g, '');
+              },
+              ext: '.html'
+            }
+        ]
     },
     build: {
-      options: {
-        build: true
-      },
-      files: [
-        {
-          expand: true,
-          cwd: 'src/pages/',
-          src: ['**/*.md', '!sample.md'],
-          dest: 'build/',
-          rename: function(dest, src) {
-            // remove numbers from start of file and dir
-            return dest + src.replace(/\d+\-/g, '');
-          },
-          ext: '.html'
-        }
-      ]
+        options: {
+            build: {
+                release: true
+            }
+        },
+        files: [
+            {
+              expand: true,
+              cwd: 'src/pages/',
+              src: ['**/*.md', '!sample.md'],
+              dest: 'build/',
+              rename: function(dest, src) {
+                // remove numbers from start of file and dir
+                return dest + src.replace(/\d+\-/g, '');
+              },
+              ext: '.html'
+            }
+        ]
     },
-      preview: {
-          options: {
-              preview: true
-          },
-          files: [
-              {
-                  expand: true,
-                  cwd: 'src/pages/',
-                  src: ['**/*.md', '!sample.md'],
-                  dest: 'build/',
-                  rename: function(dest, src) {
-                      // remove numbers from start of file and dir
-                      return dest + src.replace(/\d+\-/g, '');
-                  },
-                  ext: '.html'
-              }
-          ]
-      }
+    preview: {
+        options: {
+            build: {
+                preview: true
+            }
+        },
+        files: [
+            {
+              expand: true,
+              cwd: 'src/pages/',
+              src: ['**/*.md', '!sample.md'],
+              dest: 'build/',
+              rename: function(dest, src) {
+                  // remove numbers from start of file and dir
+                  return dest + src.replace(/\d+\-/g, '');
+              },
+              ext: '.html'
+            }
+        ]
+    }
   };
 };
