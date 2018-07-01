@@ -7,10 +7,12 @@ category: Javascript
 ---
 
  */
-define(['jquery', 'app/utils'], function ($, UTILS) {
+
+import $ from 'jquery';
+
+export default function StickyNav () {
 
   var $window = $(window);
-  var $document = $(document);
   var windowWidth = $window.width();
 
   var STICKYNAV = function (options) {
@@ -111,5 +113,4 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   };
 
   return STICKYNAV;
-
-});
+}

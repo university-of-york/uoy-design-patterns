@@ -7,7 +7,10 @@ category: Javascript
 ---
 
  */
-define(['jquery'], function ($) {
+
+import $ from 'jquery';
+
+export default function GoogleDocs() {
 
   var makeURL = function (id) {
     var api_key = 'AIzaSyCDjI0iMdVB66iHUQVqWC_F9CbvDeaOm5Y';
@@ -70,5 +73,4 @@ define(['jquery'], function ($) {
   };
 
   return GOOGLEDOC;
-
-});
+}

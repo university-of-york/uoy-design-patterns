@@ -8,8 +8,12 @@ category: Javascript
 
  */
 
-define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-link'],
-  function ($, GOOGLEDOC, SEARCHABLE, UTILS, MODALLINK) {
+import $ from 'jquery';
+import GOOGLEDOC from 'google-docs';
+import SEARCHABLE from 'searchables';
+import MODALLINK from 'modal-link';
+
+export default function ClearingTable() {
 
   var $window = $(window);
   var docID = '1nhthkj0qS27faSb_mmFZAjNfZKvIPc0KOmfYHEiL';
@@ -542,5 +546,4 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
   };
 
   return CLEARINGTABLE;
-
-});
+}

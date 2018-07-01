@@ -9,8 +9,11 @@ category: modules
 ---
 
 */
+import $ from 'jquery';
+import UTILS from 'utils';
+import COOKIES from 'js-cookie'
 
-define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
+export default function Accordian() {
 
   var $window = $(window);
 
@@ -173,5 +176,4 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
   };
 
   return ACCORDION;
-
-});
+}

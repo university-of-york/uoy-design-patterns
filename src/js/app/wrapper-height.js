@@ -7,7 +7,11 @@ category: Javascript
 ---
 
  */
-define(['jquery', 'app/utils'], function ($, UTILS) {
+
+import $ from 'jquery';
+import UTILS from 'utils';
+
+export default function WrapperHeight () {
 
   var WRAPPERHEIGHT = function (options) {
 
@@ -60,5 +64,4 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   };
 
   return WRAPPERHEIGHT;
-
-});
+}

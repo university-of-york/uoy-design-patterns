@@ -7,7 +7,10 @@ category: Javascript
 ---
 
  */
-define(['jquery', 'app/utils'], function ($, UTILS) {
+
+import $ from 'jquery';
+
+export default function TargetedNav () {
 
   var $window = $(window);
   var $document = $(document);

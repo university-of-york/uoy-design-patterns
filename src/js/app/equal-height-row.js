@@ -7,7 +7,11 @@ category: Javascript
 ---
 
  */
-define(['jquery', 'app/utils'], function ($, UTILS) {
+
+import $ from 'jquery';
+import UTILS from 'utils';
+
+export default function EqualHeightRows() {
 
   var $window = $(window);
 
@@ -62,5 +66,4 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   };
 
   return EQUALHEIGHT;
-
-});
+}

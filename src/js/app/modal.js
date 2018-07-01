@@ -7,7 +7,10 @@ category: Javascript
 ---
 
  */
-define(['jquery'], function ($) {
+
+import $ from 'jquery';
+
+export default function () {
 
   var currentModal = false;
   var modalWrapper = false;
@@ -162,5 +165,4 @@ define(['jquery'], function ($) {
   };
 
   return MODAL;
-
-});
+}

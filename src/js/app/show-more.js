@@ -7,7 +7,11 @@ category: Javascript
 ---
 
  */
-define(['jquery', 'app/utils'], function ($, UTILS) {
+
+import $ from 'jquery';
+import UTILS from 'utils';
+
+export default function ShowMore() {
 
   // "Private" variables (only available inside the module)
 
@@ -165,5 +169,4 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   };
 
   return SHOWMORE;
-
-});
+}

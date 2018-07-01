@@ -7,6 +7,7 @@ category: Javascript
 ---
 
  */
+
 define(['jquery', 'app/color'], function ($, COLOR) {
 
   // It's good to keep variables at the top of the file for easy access

@@ -8,7 +8,10 @@ category: Javascript
 
  */
 
-define(['jquery', 'app/utils'], function ($, UTILS) {
+
+import $ from 'jquery';
+
+export default function FilterableTables() {
 
   var FILTERABLE = function (options) {
     if (!options.table) return false;
@@ -133,26 +136,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   FILTERABLE.prototype.checkTable = function (e) {
     var that = e.data.that;
     console.log('Checking table');
-    // Check all values
-    // var inputContent = $(this).val();
-    // if (that.caseSensitive !== true) inputContent = inputContent.toLowerCase();
-    // that.searchRows.each(function(i, row) {
-    //   var hideIt = true;
-    //   var $row = $(row);
-    //   $row.children().each(function(j, cell) {
-    //     if (hideIt === false) return;
-    //     var $cell = $(cell);
-    //     var cellText = $cell.text();
-    //     if (that.caseSensitive !== true) cellText = cellText.toLowerCase();
-    //     var searchIndex = cellText.indexOf(inputContent);
-    //     if (searchIndex > -1 || inputContent === '') {
-    //       hideIt = false;
-    //     }
-    //   });
-    //   $row.toggleClass('is-hidden', hideIt);
-    // });
   };
 
   return FILTERABLE;
-
-});
+}

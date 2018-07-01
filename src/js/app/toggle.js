@@ -7,7 +7,10 @@ category: Javascript
 ---
 
  */
-define(['jquery'], function ($) {
+
+import $ from 'jquery';
+
+export default function Toggle() {
 
   var TOGGLE = function (options) {
 
@@ -47,5 +50,4 @@ define(['jquery'], function ($) {
   };
 
   return TOGGLE;
-
-});
+}

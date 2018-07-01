@@ -7,9 +7,10 @@ category: Javascript
 ---
 
  */
-define(['jquery', 'app/utils'], function ($, UTILS) {
 
-  var $window = $(window);
+import $ from 'jquery';
+
+export default function SoundcloudEmbed() {
 
   var SOUNDCLOUD = function (options) {
 
@@ -45,5 +46,4 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   };
 
   return SOUNDCLOUD;
-
-});
+}

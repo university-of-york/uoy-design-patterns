@@ -7,7 +7,10 @@ category: Javascript
 ---
 
  */
-define(['jquery'], function ($) {
+
+import $ from 'jquery';
+
+export default function Fullscreen() {
 
   $window = $(window);
   $html = $('html');
@@ -50,5 +53,4 @@ define(['jquery'], function ($) {
   };
 
   return FULLSCREEN;
-
-});
+}

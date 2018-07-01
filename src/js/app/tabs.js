@@ -7,7 +7,11 @@ category: Javascript
 ---
 
  */
-define(['jquery', 'app/utils'], function ($, UTILS) {
+
+import $ from 'jquery';
+import UTILS from 'utils';
+
+export default function TabsModule () {
 
   // Define your 'class'
   // Better to pass an options object instead of multiple arguments
@@ -70,5 +74,4 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   };
 
   return TABS;
-
-});
+}

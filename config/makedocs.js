@@ -46,7 +46,7 @@ module.exports = function (grunt) {
               var dest = cat.page.dest || '#';
               var title = cat.page.title || '#';
               // Get path relative to cwd/dev or cmd/build
-              var catPath = dirPrefix+path.relative(path.resolve(process.cwd(), target+'/'), cat.page.dest);
+              var catPath = dirPrefix + path.relative(path.resolve(process.cwd(), target+'/'), cat.page.dest);
               output+= '  <li class="c-nav__item">\n';
               output+= '    <a class="c-nav__link" href="'+catPath+'">'+cat.page.title+'</a>\n';
               if (typeof cat.children !== 'undefined') {
@@ -56,7 +56,7 @@ module.exports = function (grunt) {
                 // Loop through category pages
                 cat.children.forEach(function(p, j) {
                   // Get path relative to cwd/dev or cwd/build
-                  var thisPath = dirPrefix+path.relative(path.resolve(process.cwd(), target+'/'), p.dest);
+                  var thisPath = dirPrefix + path.relative(path.resolve(process.cwd(), target+'/'), p.dest);
                   if (p.subcategory && p.subcategory !== currentSubcategory) {
                     currentSubcategory = p.subcategory;
                     suboutput+= '      <li class="c-subnav__item c-subnav__title"><a class="c-subnav__link">'+p.subcategory+'</a></li>\n';
@@ -82,6 +82,27 @@ module.exports = function (grunt) {
         });
       }
     },
+
+      generate: {
+          options: {
+              build: false
+          },
+          files: [
+              {
+                  expand: true,
+                  cwd: 'src/pages/',
+                  src: ['**/*.md', '!sample.md'],
+                  dest: '_site/',
+                  rename: function(dest, src) {
+                      // remove numbers from start of file and dir
+                      return dest + src.replace(/\d+\-/g, '');
+                  },
+                  ext: '.html'
+              }
+          ]
+      },
+
+
     dev: {
         options: {
             build: false

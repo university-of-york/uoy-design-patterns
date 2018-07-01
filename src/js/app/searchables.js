@@ -8,7 +8,9 @@ category: Javascript
 
  */
 
-define(['jquery', 'app/utils'], function ($, UTILS) {
+import $ from 'jquery';
+
+export default function Searchables() {
 
   var SEARCHABLE = function (options) {
     if (!options.container) return false;
@@ -130,5 +132,4 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   };
 
   return SEARCHABLE;
-
-});
+}

@@ -7,7 +7,12 @@ category: Javascript
 ---
 
  */
-define(['jquery', 'app/toggle', 'app/utils'], function ($, TOGGLE, UTILS) {
+
+import $ from 'jquery';
+import UTILS from 'utils';
+import TOGGLE from 'toggle';
+
+export default function UtilityToggle () {
 
   var UTILITYTOGGLE = function (options) {
 
@@ -109,5 +114,4 @@ define(['jquery', 'app/toggle', 'app/utils'], function ($, TOGGLE, UTILS) {
   };
 
   return UTILITYTOGGLE;
-
-});
+}

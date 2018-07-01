@@ -7,7 +7,11 @@ category: Javascript
 ---
 
  */
-define(['jquery', 'app/modal'], function ($, MODAL) {
+
+import $ from 'jquery';
+import MODAL from 'modal';
+
+export default function ModalLink() {
 
   // This doesn't work in IE for relative links - removing for now.
   var validateURL = function (url) {
@@ -69,5 +73,4 @@ define(['jquery', 'app/modal'], function ($, MODAL) {
   };
 
   return MODALLINK;
-
-});
+}

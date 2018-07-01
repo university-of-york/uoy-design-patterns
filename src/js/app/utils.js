@@ -1,4 +1,6 @@
-  define(['jquery'], function ($) {
+import $ from 'jquery';
+
+export default function Utils () {
 
   var $window = $(window);
 
@@ -335,4 +337,4 @@
   };
 
   return UTILS;
-});
+}

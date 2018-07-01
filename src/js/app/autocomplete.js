@@ -7,7 +7,12 @@ category: Javascript
 ---
 
  */
-define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
+
+import $ from 'jquery';
+import UTILS from 'utils';
+import FUSE from 'fuse.js';
+
+export default function Autocomplete() {
 
   var $window = $(window);
 
@@ -315,5 +320,4 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
   };
 
   return AUTOCOMPLETE;
-
-});
+}

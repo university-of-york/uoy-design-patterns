@@ -16,8 +16,23 @@ module.exports = function (grunt) {
   grunt.registerTask('formstack', ['compass:dev', 'newer:postcss:dev', 'scopedCSS:formstackDev']);
   grunt.registerTask('csstest', ['compass:dev', 'newer:postcss:dev', 'scopedCSS:test']);
 
+
+  grunt.registerTask('generate', ['makedocs:webpack']);
+
+
+
   // Local development
-  grunt.registerTask('dev', ['makedocs:dev', 'copy:dev', 'copy:templates', 'jshint:dev', 'compass:dev', 'postcss:dev', 'browserSync:dev', 'watch', 'clean:dev']);
+  grunt.registerTask('dev', [
+      'makedocs:dev',
+      'copy:dev',
+      'copy:templates',
+
+      'jshint:dev',
+      'compass:dev',
+      'postcss:dev',
+      'browserSync:dev',
+      'watch',
+      'clean:dev']);
 
   // Build process - minified CSS and JS
 

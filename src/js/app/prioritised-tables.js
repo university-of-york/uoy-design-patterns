@@ -10,7 +10,9 @@ category: modules
 
 */
 
-define(['jquery'], function ($) {
+import $ from 'jquery';
+
+export default function PrioritisedTables() {
 
   // "Private" variables (only available inside the module)
 
@@ -65,5 +67,4 @@ define(['jquery'], function ($) {
   };
 
   return TABLE;
-
-});
+}

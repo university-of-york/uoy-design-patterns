@@ -7,7 +7,12 @@ category: Javascript
 ---
 
  */
-define(['jquery', 'app/utils', 'app/fullscreen'], function ($, UTILS, FULLSCREEN) {
+
+import $ from 'jquery';
+import UTILS from 'utils';
+import FULLSCREEN from 'fullscreen';
+
+export default function GoogleMap() {
 
   $window = $(window);
   $html = $('html');
@@ -225,5 +230,4 @@ define(['jquery', 'app/utils', 'app/fullscreen'], function ($, UTILS, FULLSCREEN
   };
 
   return GOOGLEMAP;
-
-});
+}
