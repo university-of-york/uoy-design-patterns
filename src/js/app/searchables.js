@@ -10,7 +10,7 @@ category: Javascript
 
 import $ from 'jquery';
 
-export default function Searchables() {
+
 
   var SEARCHABLE = function (options) {
     if (!options.container) return false;
@@ -131,5 +131,4 @@ export default function Searchables() {
     if (typeof dataLayer !== 'undefined') dataLayer.push({'event':'searchable-text', 'search-text': inputContent});
   };
 
-  return SEARCHABLE;
-}
+export default SEARCHABLE;

@@ -11,7 +11,7 @@ category: Javascript
 
 import $ from 'jquery';
 
-export default function FilterableTables() {
+
 
   var FILTERABLE = function (options) {
     if (!options.table) return false;
@@ -138,5 +138,5 @@ export default function FilterableTables() {
     console.log('Checking table');
   };
 
-  return FILTERABLE;
-}
+export default FILTERABLE;
+

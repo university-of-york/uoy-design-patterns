@@ -80,7 +80,7 @@
     "backstop": "backstop",
     "report": "backstop report",
     "generate-site": "grunt makedocs:generate",
-    "develop": "yarn generate-site && webpack-dev-server --config webpack.dev.js",
+    "develop": "yarn generate-site && webpack --config webpack.dev.js",
     "start": "grunt dev",
     "build": "grunt release",
     "build:preview": "grunt preview",

@@ -10,7 +10,7 @@ category: Javascript
 
 import $ from 'jquery';
 
-export default function StickyNav () {
+
 
   var $window = $(window);
   var windowWidth = $window.width();
@@ -112,5 +112,4 @@ export default function StickyNav () {
     $window.scrollTop(scrollPos - navHeight);
   };
 
-  return STICKYNAV;
-}
+export default STICKYNAV;

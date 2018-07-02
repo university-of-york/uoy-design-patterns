@@ -12,10 +12,10 @@ import $ from 'jquery';
 import UTILS from 'utils';
 import FULLSCREEN from 'fullscreen';
 
-export default function GoogleMap() {
 
-  $window = $(window);
-  $html = $('html');
+
+  let $window = $(window);
+  let $html = $('html');
 
   // Global function for callback
   window.gMapsCallback = function(){
@@ -229,5 +229,4 @@ export default function GoogleMap() {
 
   };
 
-  return GOOGLEMAP;
-}
+export default GOOGLEMAP;

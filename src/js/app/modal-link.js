@@ -11,7 +11,7 @@ category: Javascript
 import $ from 'jquery';
 import MODAL from 'modal';
 
-export default function ModalLink() {
+
 
   // This doesn't work in IE for relative links - removing for now.
   var validateURL = function (url) {
@@ -72,5 +72,5 @@ export default function ModalLink() {
 
   };
 
-  return MODALLINK;
-}
+export default MODALLINK;
+

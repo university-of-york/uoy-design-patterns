@@ -12,7 +12,7 @@ category: modules
 
 import $ from 'jquery';
 
-export default function PrioritisedTables() {
+
 
   // "Private" variables (only available inside the module)
 
@@ -66,5 +66,5 @@ export default function PrioritisedTables() {
 
   };
 
-  return TABLE;
-}
+export default TABLE;
+

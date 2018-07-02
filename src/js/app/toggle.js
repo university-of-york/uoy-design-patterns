@@ -10,7 +10,7 @@ category: Javascript
 
 import $ from 'jquery';
 
-export default function Toggle() {
+
 
   var TOGGLE = function (options) {
 
@@ -49,5 +49,4 @@ export default function Toggle() {
     }
   };
 
-  return TOGGLE;
-}
+export default TOGGLE;

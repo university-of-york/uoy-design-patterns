@@ -11,7 +11,7 @@ category: Javascript
 import $ from 'jquery';
 import UTILS from 'utils';
 
-export default function Utils () {
+
 
   var $window = $(window);
 
@@ -97,6 +97,4 @@ export default function Utils () {
     return iframe;
   };
 
-  return YOUTUBE;
-
-}
+export default YOUTUBE;

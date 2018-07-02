@@ -55,6 +55,8 @@ module.exports = merge(common, {
             server: { baseDir: ['./_site'] }
         }),
         new WebpackShellPlugin({
+            // plugin that runs a shell command before webpack's build starts.
+            // In this case, runs the makedocs command.
             onBuildStart:['yarn generate-site'],
         })
     ],

@@ -11,7 +11,7 @@ category: Javascript
 import $ from 'jquery';
 import UTILS from 'utils';
 
-export default function EqualHeightRows() {
+
 
   var $window = $(window);
 
@@ -65,5 +65,4 @@ export default function EqualHeightRows() {
     });
   };
 
-  return EQUALHEIGHT;
-}
+export default EQUALHEIGHT;

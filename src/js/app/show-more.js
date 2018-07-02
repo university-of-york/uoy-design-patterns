@@ -11,7 +11,7 @@ category: Javascript
 import $ from 'jquery';
 import UTILS from 'utils';
 
-export default function ShowMore() {
+
 
   // "Private" variables (only available inside the module)
 
@@ -168,5 +168,4 @@ export default function ShowMore() {
 
   };
 
-  return SHOWMORE;
-}
+export default SHOWMORE;

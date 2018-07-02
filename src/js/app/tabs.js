@@ -11,7 +11,7 @@ category: Javascript
 import $ from 'jquery';
 import UTILS from 'utils';
 
-export default function TabsModule () {
+
 
   // Define your 'class'
   // Better to pass an options object instead of multiple arguments
@@ -73,5 +73,4 @@ export default function TabsModule () {
 
   };
 
-  return TABS;
-}
+export default TABS;

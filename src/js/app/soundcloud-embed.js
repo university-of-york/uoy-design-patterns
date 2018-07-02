@@ -10,7 +10,7 @@ category: Javascript
 
 import $ from 'jquery';
 
-export default function SoundcloudEmbed() {
+
 
   var SOUNDCLOUD = function (options) {
 
@@ -45,5 +45,4 @@ export default function SoundcloudEmbed() {
     });
   };
 
-  return SOUNDCLOUD;
-}
+export default SOUNDCLOUD;

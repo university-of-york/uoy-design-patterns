@@ -13,7 +13,6 @@ import $ from 'jquery';
 import UTILS from 'utils';
 import COOKIES from 'js-cookie'
 
-export default function Accordian() {
 
   var $window = $(window);
 
@@ -175,5 +174,5 @@ export default function Accordian() {
 
   };
 
-  return ACCORDION;
-}
+export default ACCORDION;
+

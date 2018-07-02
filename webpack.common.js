@@ -11,11 +11,14 @@ const ModernizrWebpackPlugin = require('modernizr-webpack-plugin');
 module.exports = {
     entry: {
         vendors: './src/vendors.js',
-        app: './src/main.js'
+        app: './src/app.js'
     },
     output: {
         filename: '[name].bundle.min.js',
         path: path.resolve(__dirname, "./dist"),
+
+        libraryTarget: 'window',
+        libraryExport: 'default'
     },
 
     plugins: [
@@ -61,6 +64,7 @@ module.exports = {
         },
         modules: [
             path.resolve('./src'),
+            path.resolve('./src/js/app'),
             path.resolve('./node_modules')
         ]
     },

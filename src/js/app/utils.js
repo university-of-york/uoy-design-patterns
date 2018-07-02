@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-export default function Utils () {
+
 
   var $window = $(window);
 
@@ -58,6 +58,7 @@ export default function Utils () {
       if (window.matchMedia) {
         // Clever version
 
+          let mq = {};
         // Build the media query
         if (scope == "~") {
           // [1] This size only
@@ -336,5 +337,4 @@ export default function Utils () {
 
   };
 
-  return UTILS;
-}
+export default UTILS;

@@ -11,11 +11,13 @@ category: Javascript
 import $ from 'jquery';
 import UTILS from 'utils';
 
-export default function WrapperHeight () {
+
 
   var WRAPPERHEIGHT = function (options) {
 
     this.wrapper = $('.js-wrapper--main');
+
+    let $window = $(window);
 
     if (!this.wrapper) return false;
 
@@ -63,5 +65,5 @@ export default function WrapperHeight () {
 
   };
 
-  return WRAPPERHEIGHT;
-}
+export default WRAPPERHEIGHT;
+

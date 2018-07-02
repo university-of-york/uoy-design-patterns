@@ -10,7 +10,7 @@ category: Javascript
 
 import $ from 'jquery';
 
-export default function () {
+
 
   var currentModal = false;
   var modalWrapper = false;
@@ -164,5 +164,5 @@ export default function () {
 
   };
 
-  return MODAL;
-}
+export default MODAL;
+

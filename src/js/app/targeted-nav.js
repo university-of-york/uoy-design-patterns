@@ -10,7 +10,7 @@ category: Javascript
 
 import $ from 'jquery';
 
-export default function TargetedNav () {
+
 
   var $window = $(window);
   var $document = $(document);
@@ -76,6 +76,4 @@ export default function TargetedNav () {
     $window.trigger('nav.new-targeted-current');
   };
 
-  return TARGETEDNAV;
-
-});
+export default TARGETEDNAV;

@@ -24,8 +24,9 @@ import SHOWMORE from 'show-more';
 //import AUTOCOMPLETE from 'autocomplete';
 
 
+export default function Main() {
 
-$(function(){
+    console.log('JavaScript loading...');
 
     if (typeof window.console === 'undefined') {
       console = {};
@@ -315,4 +316,4 @@ $(function(){
     }
 
     console.log('Javascript loaded');
-  });
+  }

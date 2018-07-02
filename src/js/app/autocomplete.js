@@ -12,9 +12,8 @@ import $ from 'jquery';
 import UTILS from 'utils';
 import FUSE from 'fuse.js';
 
-export default function Autocomplete() {
 
-  var $window = $(window);
+ var $window = $(window);
 
   // Function to get property from dot notation
   // e.g. foo["bar.baz"] -> foo.bar.baz
@@ -319,5 +318,5 @@ export default function Autocomplete() {
     return true;
   };
 
-  return AUTOCOMPLETE;
-}
+export default AUTOCOMPLETE;
+

@@ -12,7 +12,7 @@ import $ from 'jquery';
 import UTILS from 'utils';
 import TOGGLE from 'toggle';
 
-export default function UtilityToggle () {
+
 
   var UTILITYTOGGLE = function (options) {
 
@@ -113,5 +113,5 @@ export default function UtilityToggle () {
 
   };
 
-  return UTILITYTOGGLE;
-}
+export default UTILITYTOGGLE;
+

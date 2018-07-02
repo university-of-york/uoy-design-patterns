@@ -10,10 +10,10 @@ category: Javascript
 
 import $ from 'jquery';
 
-export default function Fullscreen() {
 
-  $window = $(window);
-  $html = $('html');
+
+  let $window = $(window);
+  let $html = $('html');
 
   // Define your 'class'
   var FULLSCREEN = function (options) {
@@ -52,5 +52,4 @@ export default function Fullscreen() {
     }
   };
 
-  return FULLSCREEN;
-}
+export default FULLSCREEN;
