@@ -129,7 +129,7 @@ input,
 select,
 textarea {
   &:focus {
-    outline:$blue auto 5px;
+    outline:2px solid $blue;
     outline-offset:-2px;
   }
 }
