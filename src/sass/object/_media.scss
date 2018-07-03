@@ -1,35 +1,37 @@
 //
 // MEDIA OBJECT
 //
-.o-media {
-  clear:both;
-  display:table;
-}
-.o-media__picture {
-  display:table-cell;
-  padding-right:20px;
-  .o-media--top & {
+@include mq(medium, '+') {
+  .o-media {
+    clear:both;
+    display:table;
+  }
+  .o-media__picture {
+    display:table-cell;
+    padding-right:20px;
+    .o-media--top & {
+      vertical-align:top;
+    }
+    .o-media--middle & {
+      vertical-align:middle;
+    }
+    .o-media--bottom & {
+      vertical-align:bottom;
+    }
+    // Override these since they screw up the table-cell layout
+    .c-figure__image {
+      width:auto;
+      max-width:none;
+    }
+  }
+  .o-media__body {
+    @include demarginalise;
+    display:table-cell;
     vertical-align:top;
+    // Ensures picture is as small as it can be even if content in body is minimal
+    width: 100%;
   }
-  .o-media--middle & {
-    vertical-align:middle;
+  .o-media__title {
+    margin-bottom:0;
   }
-  .o-media--bottom & {
-    vertical-align:bottom;
-  }
-  // Override these since they screw up the table-cell layout
-  .c-figure__image {
-    width:auto;
-    max-width:none;
-  }
-}
-.o-media__body {
-  @include demarginalise;
-  display:table-cell;
-  vertical-align:top;
-  // Ensures picture is as small as it can be even if content in body is minimal
-  width: 100%;
-}
-.o-media__title {
-  margin-bottom:0;
 }
