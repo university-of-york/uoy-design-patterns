@@ -26,7 +26,7 @@ import MODAL from 'modal';
 
   var MODALLINK = function (options) {
 
-    $a = options.link;
+    let $a = options.link;
 
     var aHref = $a.attr('href');
     var modalContent = false;

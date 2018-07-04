@@ -13,7 +13,7 @@ module.exports = function (grunt) {
         var subNavPage = "src/partials/subnav.mustache";
         var assocNavPage = "src/partials/assocnav.mustache";
         var categories = {};
-        var target = grunt.task.current.target;
+        var target = grunt.task.current.files[0].dest;
         var taskOptions = grunt.task.current.options();
         var dirPrefix = !!taskOptions.build === true ? '/pattern-library/' : '/' ;
         pages.forEach(function(page, i) {
@@ -46,6 +46,20 @@ module.exports = function (grunt) {
               var dest = cat.page.dest || '#';
               var title = cat.page.title || '#';
               // Get path relative to cwd/dev or cmd/build
+
+
+                // output += '<div>';
+                // output += 'dirprefix: ' + dirPrefix;
+                // output += '<br />';
+                // output += 'path resolve: ' + path.resolve(process.cwd());
+                // output += '<br />';
+                // output += 'target: ' + target;
+                // output += '<br />';
+                // output += 'path relative: ' + path.relative(path.resolve(process.cwd(), target+'/'), cat.page.dest);
+                // output += '<br />';
+                // output += 'cat page dest: ' + cat.page.dest;
+                // output += '</div>';
+
               var catPath = dirPrefix + path.relative(path.resolve(process.cwd(), target+'/'), cat.page.dest);
               output+= '  <li class="c-nav__item">\n';
               output+= '    <a class="c-nav__link" href="'+catPath+'">'+cat.page.title+'</a>\n';
@@ -56,7 +70,9 @@ module.exports = function (grunt) {
                 // Loop through category pages
                 cat.children.forEach(function(p, j) {
                   // Get path relative to cwd/dev or cwd/build
-                  var thisPath = dirPrefix + path.relative(path.resolve(process.cwd(), target+'/'), p.dest);
+
+                    var thisPath = dirPrefix + path.relative(path.resolve(process.cwd(), target+'/'), p.dest);
+
                   if (p.subcategory && p.subcategory !== currentSubcategory) {
                     currentSubcategory = p.subcategory;
                     suboutput+= '      <li class="c-subnav__item c-subnav__title"><a class="c-subnav__link">'+p.subcategory+'</a></li>\n';
