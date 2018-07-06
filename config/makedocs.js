@@ -110,7 +110,10 @@ module.exports = function (grunt) {
                 // Loop through category pages
                 cat.children.forEach(function(p, j) {
                   // Get path relative to cwd/dev or cwd/build
-                  var thisPath = dirPrefix+path.relative(path.resolve(process.cwd(), target+'/'), p.dest);
+                  var thisPath = dirPrefix + path.relative(path.resolve(process.cwd(), target+'/'), p.dest);
+
+                    thisPath = thisPath.replace('..', '').replace(/\\/g, '/');
+
                   if (p.subcategory && p.subcategory !== currentSubcategory) {
                     currentSubcategory = p.subcategory;
                     suboutput+= '      <li class="c-subnav__item c-subnav__title"><a class="c-subnav__link">'+p.subcategory+'</a></li>\n';
