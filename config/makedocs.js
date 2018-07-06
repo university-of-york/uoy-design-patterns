@@ -78,28 +78,38 @@ module.exports = function (grunt) {
                     cat page dest: C:\Projects\design-patterns\build\css-components\index.html
                  */
 
-                // output += '<div>';
-                // output += 'dirprefix: ' + dirPrefix;
-                // output += '<br />';
-                // output += 'path resolve: ' + path.resolve(process.cwd());
-                // output += '<br />';
-                // output += 'target: ' + target;
-                // output += '<br />';
-                // output += 'current task target: ' + grunt.task.current.target;
-                // output += '<br />';
-                // output += 'path relative: ' + path.relative(path.resolve(process.cwd(), target+'/'), cat.page.dest);
-                // output += '<br />';
-                // output += 'cat page dest: ' + cat.page.dest;
-                // output += '<br />';
-                // output += 'final path: ' + dirPrefix + path.relative(path.resolve(process.cwd(), target+'/'), cat.page.dest).replace('..', '').replace(/\\/g, '/');
-                // output += '</div>';
+                output += '<div>';
+                output += 'dirprefix: ' + dirPrefix;
+                output += '<br />';
+                output += 'path resolve: ' + path.resolve(process.cwd());
+                output += '<br />';
+                output += 'target: ' + target;
+                output += '<br />';
+                output += 'current task target: ' + grunt.task.current.target;
+                output += '<br />';
+                output += 'path relative: ' + path.relative(path.resolve(process.cwd(), target+'/'), cat.page.dest);
+                output += '<br />';
+                output += 'cat page dest: ' + cat.page.dest;
+                output += '<br />';
+                output += 'final path: ' + dirPrefix + path.relative(path.resolve(process.cwd(), target+'/'), cat.page.dest).replace('..', '').replace(/\\/g, '/');
+                output += '</div>';
 
 
+                /*
+                using - grunt.task.current.files[0].dest
 
-              var catPath = dirPrefix + path.relative(path.resolve(process.cwd(), target+'/'), cat.page.dest);
+                    dirprefix: /preview//pattern-library/
+                    path resolve: C:\Projects\design-patterns
+                    target: build/index.html
+                    path relative: ..\css-components\index.html
+                    cat page dest: C:\Projects\design-patterns\build\css-components\index.html
+                 */
+
+              //var catPath = dirPrefix + path.relative(path.resolve(process.cwd(), target+'/'), cat.page.dest);
 
               // remove '..' and filepath slashes in wrong direction
-              catPath = catPath.replace('..', '').replace(/\\/g, '/');
+                var relativePath = cat.page.dest.replace(path.resolve(process.cwd()), "").replace('build');
+              var catPath = dirPrefix +  relativePath.replace('..', '').replace(/\\/g, '/');
 
               output+= '  <li class="c-nav__item">\n';
               output+= '    <a class="c-nav__link" href="'+catPath+'">'+cat.page.title+'</a>\n';
@@ -110,9 +120,11 @@ module.exports = function (grunt) {
                 // Loop through category pages
                 cat.children.forEach(function(p, j) {
                   // Get path relative to cwd/dev or cwd/build
-                  var thisPath = dirPrefix + path.relative(path.resolve(process.cwd(), target+'/'), p.dest);
+                  //var thisPath = dirPrefix + path.relative(path.resolve(process.cwd(), target+'/'), p.dest);
 
-                    thisPath = thisPath.replace('..', '').replace(/\\/g, '/');
+
+                    var relativePath = p.dest.replace(path.resolve(process.cwd()), "").replace('build');
+                    var thisPath = dirPrefix +  relativePath.replace('..', '').replace(/\\/g, '/');
 
                   if (p.subcategory && p.subcategory !== currentSubcategory) {
                     currentSubcategory = p.subcategory;
