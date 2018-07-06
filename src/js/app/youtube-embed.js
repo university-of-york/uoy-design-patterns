@@ -9,90 +9,100 @@ category: Javascript
  */
 define(['jquery', 'app/utils'], function ($, UTILS) {
 
-  var $window = $(window);
+    var $window = $(window);
 
-  var YOUTUBE = function (options) {
+    var YOUTUBE = function (options) {
 
-    if (!options.link) return false;
-    this.link = options.link;
+        if (!options.link) return false;
+        this.link = options.link;
 
-    // remove wrapper paragraph, if any
-    if (this.link.parent().is("p")) {
-      this.link.unwrap();
-    }
-    // figure out the Youtube ID
-    var url = this.link.attr("href");
-    this.id = url.slice(-11);
-    this.url = '//www.youtube.com/embed/'+this.id+'?rel=0';
-    this.container = $('<div>').addClass('c-video').attr({
-      'data-video-id':this.id
-    });
+        // remove wrapper paragraph, if any
+        if (this.link.parent().is("p")) {
+            this.link.unwrap();
+        }
+        // figure out the Youtube ID, which can be in the following 3 formats:
+        // - [old style] https://www.youtube.com/watch?v=_8pUffDWFlM
+        // - [old style extended] https://www.youtube.com/watch?v=_8pUffDWFlM&index=1&list=PLqL9vrHSa70NmzsSg36tnv0dqEueEbifj
+        // - [new style] https://youtu.be/_8pUffDWFlM
+        var url = this.link.attr("href");
+        var videoId = "";
+        if (url.indexOf("watch") > 0) {
+            videoId = url.substr((url.indexOf("v=") + 2), 11);
+        } else if (url.indexOf("youtu.be") > 0) {
+            videoId = url.slice(-11);
+        } else {
+            // can't find a URL, so let's exit out
+            return false;
+        }
 
-    // replace the original link element with the embed code
-    this.link.replaceWith(this.container);
+        this.id = videoId;
+        this.url = '//www.youtube.com/embed/' + this.id + '?rel=0';
+        this.container = $('<div>').addClass('c-video').attr({
+            'data-video-id': this.id
+        });
 
-    this.iframe = this.createIframe();
+        // replace the original link element with the embed code
+        this.link.replaceWith(this.container);
 
-    var that = this;
-    var resizeFn = UTILS.debounce(function (e) {
-      that.setDimensions();
-    }, 250);
+        this.iframe = this.createIframe();
 
-    $window.on('resize', null, { that: this }, resizeFn);
+        var that = this;
+        var resizeFn = UTILS.debounce(function (e) {
+            that.setDimensions();
+        }, 250);
 
-    console.info(this);
+        $window.on('resize', null, {that: this}, resizeFn);
 
-  };
-
-  YOUTUBE.prototype.getDimensions = function () {
-    var videoWidth = this.container.width();
-    var videoHeight = Math.floor((videoWidth/16)*9);
-    return {
-      width: videoWidth,
-      height: videoHeight
+        console.info(this);
     };
-  };
 
-  YOUTUBE.prototype.setDimensions = function () {
+    YOUTUBE.prototype.getDimensions = function () {
+        var videoWidth = this.container.width();
+        var videoHeight = Math.floor((videoWidth / 16) * 9);
+        return {
+            width: videoWidth,
+            height: videoHeight
+        };
+    };
 
-    // Check to see if it's a fullscreen resize
-    var screenW = screen.width;
-    var screenH = screen.height;
-    var windowW = $window.width();
-    var windowH = $window.height();
-    var isFullscreen = (screenW == windowW) && (screenH == windowH);
+    YOUTUBE.prototype.setDimensions = function () {
 
-    if (isFullscreen === true) return false;
+        // Check to see if it's a fullscreen resize
+        var screenW = screen.width;
+        var screenH = screen.height;
+        var windowW = $window.width();
+        var windowH = $window.height();
+        var isFullscreen = (screenW == windowW) && (screenH == windowH);
 
-    var videoDimensions = this.getDimensions();
+        if (isFullscreen === true) return false;
 
-    this.iframe.attr({
-      width: videoDimensions.width,
-      height: videoDimensions.height
-    });
+        var videoDimensions = this.getDimensions();
 
-    // Fire update event
-    $window.trigger('content.updated', ['youtube', this]);
+        this.iframe.attr({
+            width: videoDimensions.width,
+            height: videoDimensions.height
+        });
 
-  };
+        // Fire update event
+        $window.trigger('content.updated', ['youtube', this]);
+    };
 
-  YOUTUBE.prototype.createIframe = function () {
-    var videoDimensions = this.getDimensions();
-    // create the embed code
-    var iframe = $('<iframe>').attr({
-      width: videoDimensions.width,
-      height: videoDimensions.height,
-      src: this.url,
-      frameborder: 0,
-      allowfullscreen: true
-    });
-    // add to container
-    this.container.html(iframe);
-    // Fire update event
-    $window.trigger('content.updated', ['youtube', this]);
-    return iframe;
-  };
+    YOUTUBE.prototype.createIframe = function () {
+        var videoDimensions = this.getDimensions();
+        // create the embed code
+        var iframe = $('<iframe>').attr({
+            width: videoDimensions.width,
+            height: videoDimensions.height,
+            src: this.url,
+            frameborder: 0,
+            allowfullscreen: true
+        });
+        // add to container
+        this.container.html(iframe);
+        // Fire update event
+        $window.trigger('content.updated', ['youtube', this]);
+        return iframe;
+    };
 
-  return YOUTUBE;
-
+    return YOUTUBE;
 });
