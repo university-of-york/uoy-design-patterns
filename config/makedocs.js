@@ -14,8 +14,20 @@ module.exports = function (grunt) {
         var assocNavPage = "src/partials/assocnav.mustache";
         var categories = {};
         var target = grunt.task.current.files[0].dest;
+        //var target = grunt.task.current.target; //grunt.task.current.files[0].dest;
         var taskOptions = grunt.task.current.options();
-        var dirPrefix = !!taskOptions.build === true ? '/pattern-library/' : '/' ;
+        var dirPrefix = ''; //!!taskOptions.build === true ? '/pattern-library/' : '/' ;
+
+        if(!!taskOptions.build === true) {
+            dirPrefix = '/pattern-library/';
+
+            if(grunt.task.current.target === 'preview') {
+                dirPrefix = '/preview' + dirPrefix;
+            }
+        } else {
+            dirPrefix = '/';
+        }
+
         pages.forEach(function(page, i) {
           // Top level page
           if (page.category === false) {
@@ -46,7 +58,49 @@ module.exports = function (grunt) {
               var dest = cat.page.dest || '#';
               var title = cat.page.title || '#';
               // Get path relative to cwd/dev or cmd/build
-              var catPath = dirPrefix+path.relative(path.resolve(process.cwd(), target+'/'), cat.page.dest);
+
+                /*
+                using - grunt.task.current.target
+
+                    dirprefix: /pattern-library/
+                    path resolve: C:\Projects\design-patterns
+                    target: preview
+                    path relative: ..\build\css-components\index.html
+                    cat page dest: C:\Projects\design-patterns\build\css-components\index.html
+                 */
+                /*
+                using - grunt.task.current.files[0].dest
+
+                    dirprefix: /preview//pattern-library/
+                    path resolve: C:\Projects\design-patterns
+                    target: build/index.html
+                    path relative: ..\css-components\index.html
+                    cat page dest: C:\Projects\design-patterns\build\css-components\index.html
+                 */
+
+                // output += '<div>';
+                // output += 'dirprefix: ' + dirPrefix;
+                // output += '<br />';
+                // output += 'path resolve: ' + path.resolve(process.cwd());
+                // output += '<br />';
+                // output += 'target: ' + target;
+                // output += '<br />';
+                // output += 'current task target: ' + grunt.task.current.target;
+                // output += '<br />';
+                // output += 'path relative: ' + path.relative(path.resolve(process.cwd(), target+'/'), cat.page.dest);
+                // output += '<br />';
+                // output += 'cat page dest: ' + cat.page.dest;
+                // output += '<br />';
+                // output += 'final path: ' + dirPrefix + path.relative(path.resolve(process.cwd(), target+'/'), cat.page.dest).replace('..', '').replace(/\\/g, '/');
+                // output += '</div>';
+
+
+
+              var catPath = dirPrefix + path.relative(path.resolve(process.cwd(), target+'/'), cat.page.dest);
+
+              // remove '..' and filepath slashes in wrong direction
+              catPath = catPath.replace('..', '').replace(/\\/g, '/');
+
               output+= '  <li class="c-nav__item">\n';
               output+= '    <a class="c-nav__link" href="'+catPath+'">'+cat.page.title+'</a>\n';
               if (typeof cat.children !== 'undefined') {

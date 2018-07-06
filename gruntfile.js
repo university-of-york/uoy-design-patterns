@@ -51,10 +51,9 @@ module.exports = function (grunt) {
         'newer:imagemin',
         'jshint:dev',
         'requirejs',
-        'header:preview',
+        'header:build',
         'clean:postbuild']);
 
   // Release process - copies necessary files to a '/release' folder
     grunt.registerTask('release', ['build', 'copy:release', 'md5sum']);
-
 };
