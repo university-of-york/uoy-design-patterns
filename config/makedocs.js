@@ -13,7 +13,7 @@ module.exports = function (grunt) {
         var subNavPage = "src/partials/subnav.mustache";
         var assocNavPage = "src/partials/assocnav.mustache";
         var categories = {};
-        var target = grunt.task.current.target;
+        var target = grunt.task.current.files[0].dest;
         var taskOptions = grunt.task.current.options();
         var dirPrefix = !!taskOptions.build === true ? '/pattern-library/' : '/' ;
         pages.forEach(function(page, i) {
