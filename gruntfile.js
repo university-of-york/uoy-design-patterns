@@ -6,7 +6,8 @@ module.exports = function (grunt) {
 
   // Load all the tasks from config/
   require('load-grunt-config')(grunt, {
-    configPath: path.join(process.cwd(), 'config')
+        configPath: path.join(process.cwd(), 'config'),
+        init: true
   });
 
   // Load custom tasks
@@ -35,7 +36,8 @@ module.exports = function (grunt) {
       'jshint:dev',
       'requirejs',
       'header:build',
-      'clean:postbuild']);
+      'clean:postbuild'
+  ]);
 
   // Build process for preview
     grunt.registerTask('preview', [
@@ -52,7 +54,8 @@ module.exports = function (grunt) {
         'jshint:dev',
         'requirejs',
         'header:build',
-        'clean:postbuild']);
+        'clean:postbuild'
+    ]);
 
   // Release process - copies necessary files to a '/release' folder
     grunt.registerTask('release', ['build', 'copy:release', 'md5sum']);

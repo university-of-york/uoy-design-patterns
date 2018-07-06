@@ -61,7 +61,7 @@
     "report": "backstop report",
     "start": "grunt dev",
     "build": "grunt release",
-    "build:preview": "grunt preview",
+    "build:preview": "grunt preview && grunt preview --verbose",
     "release": "semantic-release",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
