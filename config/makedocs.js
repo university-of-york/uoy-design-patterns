@@ -103,7 +103,7 @@ module.exports = function (grunt) {
 
                     // remove '..' and filepath slashes in wrong direction
                     var relativePath = cat.page.dest.replace(path.resolve(process.cwd()), "").replace('build', '');
-                    var catPath = dirPrefix +  relativePath.replace('..', '').replace(/\\/g, '/').replace('///','/');
+                    var catPath = (dirPrefix +  relativePath.replace('..', '').replace(/\\/g, '/')).replace('///','/');
 
                     output+= '  <li class="c-nav__item">\n';
                     output+= '    <a class="c-nav__link" href="'+catPath+'">'+cat.page.title+'</a>\n';
@@ -118,7 +118,7 @@ module.exports = function (grunt) {
 
 
                             var relativePath = p.dest.replace(path.resolve(process.cwd()), "").replace('build', '');
-                            var thisPath = dirPrefix +  relativePath.replace('..', '').replace(/\\/g, '/').replace('///','/');
+                            var thisPath = (dirPrefix + relativePath.replace('..', '').replace(/\\/g, '/')).replace('///','/');
 
                             if (p.subcategory && p.subcategory !== currentSubcategory) {
                                 currentSubcategory = p.subcategory;
