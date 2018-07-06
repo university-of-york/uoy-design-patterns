@@ -42,6 +42,6 @@ e.g. `https://www.youtube.com/watch?v=_8pUffDWFlM&index=1&list=PLqL9vrHSa70NmzsS
 ## Sharable, short form URL example
 Finally, this example uses the shorter, shareable URL,
 
-e.g. `https://youtu.be/_8pUffDWFlM`
+e.g. `https://youtu.be/_8pUffDWFlM?t=1m`
 
-<p><a class="youtube-video-embed" href="https://youtu.be/_8pUffDWFlM">Watch the video here</a></p>
+<p><a class="youtube-video-embed" href="https://youtu.be/_8pUffDWFlM?t=1m">Watch the video here</a></p>

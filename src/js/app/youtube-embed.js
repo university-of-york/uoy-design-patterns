@@ -23,13 +23,13 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
         // figure out the Youtube ID, which can be in the following 3 formats:
         // - [old style] https://www.youtube.com/watch?v=_8pUffDWFlM
         // - [old style extended] https://www.youtube.com/watch?v=_8pUffDWFlM&index=1&list=PLqL9vrHSa70NmzsSg36tnv0dqEueEbifj
-        // - [new style] https://youtu.be/_8pUffDWFlM
+        // - [new style] https://youtu.be/_8pUffDWFlM - with or without time stamp (t=XYmXYs)
         var url = this.link.attr("href");
         var videoId = "";
         if (url.indexOf("watch") > 0) {
             videoId = url.substr((url.indexOf("v=") + 2), 11);
         } else if (url.indexOf("youtu.be") > 0) {
-            videoId = url.slice(-11);
+            videoId = url.replace(/http(s?):\/\/youtu.be\//,"");
         } else {
             // can't find a URL, so let's exit out
             return false;
