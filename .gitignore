@@ -15,3 +15,6 @@ release/
 
 .idea/
 .tags
+/dist/
+/_site/
+!*.gitkeep
