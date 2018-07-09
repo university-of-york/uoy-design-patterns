@@ -1,3 +1,14 @@
+
+// load the global data from a JSON config file
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        window.PL_DATA = JSON.parse(this.responseText);
+    }
+};
+xhttp.open("GET", "/data/globaldata.json", true);
+xhttp.send();
+
 define(
   ['jquery', 'es5shim', 'picturefill', 'iframeResizer',
    'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav',
@@ -13,6 +24,7 @@ define(
     SOUNDCLOUD, SEARCHABLE, FILTERABLE, EQUALHEIGHT,
     GOOGLEMAP, SHOWMORE, AUTOCOMPLETE) {
 
+
   $(function(){
 
     if (typeof window.console === 'undefined') {
@@ -20,6 +32,7 @@ define(
       console.log = function(a) { /*alert(a);*/ };
       console.info = function(a) { /*alert(a);*/ };
     }
+
 
     // Disable buttons
     $('.btn-disabled').click(function (e) {
@@ -171,11 +184,29 @@ define(
           layout = $a.attr('data-layout') || false,
           course = $a.attr('data-course') || false,
           department = $a.attr('data-department') || false;
+
+      // show requirements can be a "Yes" or "No" value when set in the CMS
+        // so we need to check for those here
+      var showRequirements = true,
+          dataRequirements = $a.attr('data-show-requirements') || "true";
+
+      switch (dataRequirements.toLowerCase()) {
+          case "no":
+          case "false":
+              showRequirements = false;
+          break;
+          default:
+              showRequirements = true;
+              break;
+      }
+
+
       new CLEARINGTABLE({
         type: type,
         layout: layout,
         course: course,
         department: department,
+        showRequirements: showRequirements,
         container: $a
       });
     });
@@ -297,50 +328,6 @@ define(
       });
     });
 
-    // Fire up autosuggest on main site search
-    /*
-    var $headerSearch = $('.c-form--header input[name=q]');
-    if ($headerSearch.length > 0) {
-
-      // Add autocomplete if not present
-      // === This can be removed when all the page templates have been updated ===
-      var $headerForm = $headerSearch.closest('form');
-      if ($headerForm.children('.c-autocomplete').length === 0) {
-        var $headerFormElement = $headerSearch.closest('.c-form__element');
-        var $autocompleteList = $('<ul>').addClass('c-autocomplete__list');
-        var $autocomplete = $('<div>').addClass('c-autocomplete').append($autocompleteList);
-        $headerFormElement.append($autocomplete);
-      }
-      // ==========================================================================
-
-      var a = new AUTOCOMPLETE({
-        input: $headerSearch,
-        results: function(searchTerm, onComplete) {
-          if (searchTerm.length < 3) return false;
-          // console.log("Getting results from Funnelback");
-          var fbUrl = "https://york.funnelback.co.uk/s/suggest.json?collection=york-uni-web&show=10&sort=0&alpha=0.5&fmt=json++&partial_query="+searchTerm;
-          $.getJSON(fbUrl, function(r) {
-            var results = [];
-            var rLength = r.length;
-            $.each(r, function(i, v) {
-              results.push({
-                item: {
-                  title: v.disp
-                }
-              });
-              if (i === rLength-1) {
-                //console.log(results);
-                onComplete(results);
-              }
-            });
-          });
-        },
-        followLinks: false
-      });
-
-    }
-    */
-
 
     // Broadcast custom window events
     if (UTILS.isDev() === true) {
@@ -350,7 +337,5 @@ define(
     }
 
     console.log('Javascript loaded');
-
   });
-
 });

@@ -4,7 +4,7 @@ module.exports = {
       expand: true,
       dot: true,
       cwd: 'src/',
-      src: ['js/**', 'img/**', 'fonts/**', 'media/**'],
+      src: ['js/**', 'img/**', 'fonts/**', 'media/**', 'data/**'],
       dest: 'dev/'
     }]
   },
@@ -22,7 +22,7 @@ module.exports = {
       expand: true,
       dot: true,
       cwd: 'src/',
-      src: ['fonts/**', 'media/**', 'js/prism.js', 'js/iframeResizer.contentWindow.min.js', 'opensearch.xml'],
+      src: ['fonts/**', 'media/**', 'js/prism.js', 'js/iframeResizer.contentWindow.min.js', 'opensearch.xml', 'data/**'],
       dest: 'build/'
     }]
   },
@@ -31,7 +31,7 @@ module.exports = {
       expand: true,
       dot: true,
       cwd: 'build/',
-      src: ['css/**', 'fonts/**', 'img/**', 'js/**', 'opensearch.xml'],
+      src: ['css/**', 'fonts/**', 'img/**', 'js/**', 'opensearch.xml', 'data/**'],
       dest: 'release/'
     }]
   }
