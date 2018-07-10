@@ -136,3 +136,4 @@ This shows all available classes, with a toggle for UK/EU and International stud
   * **layout** - either 'Department', 'Courses' or 'Course panel'. Defaults to 'Courses'.
   * **course** - the UCAS code of the course you wamnt details for. Defaults to `false`
   * **container** - the element into which the courses will go
+  * **showRequirements** - can be 'yes', 'no', `true` or `false`. This will show or hide the course entry requirements. Defaults to `true`
