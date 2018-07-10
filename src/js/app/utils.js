@@ -102,7 +102,7 @@
     // Fixes logo where SVG isn't supported
     fixLogo: function() {
       if (Modernizr.svg) return;
-      $('.c-main-header__logo').attr('src', 'https://www.york.ac.uk/static/1.4/img/logo.png');
+      $('.c-main-header__logo').attr('src', 'https://www.york.ac.uk/static/stable/img/logo.png');
     },
 
     // Fixes figures where the content is overspilling (figures)
