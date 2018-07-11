@@ -8,6 +8,14 @@ category: Javascript
 
  */
 
+/*
+ * Downloading a backup Fusion Table JSON file
+ * Essentially, you can visit the API url below using the data table ID and API key
+ * https://www.googleapis.com/fusiontables/v2/query?sql=SELECT%20*%20FROM%20[TABLE ID]&key=[API KEY]
+ *
+ * Then save it as a JSON file and upload to /static/data/clearing
+ */
+
 define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-link'],
   function ($, GOOGLEDOC, SEARCHABLE, UTILS, MODALLINK) {
 
@@ -145,14 +153,14 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
           if (that.layout === 'Courses') {
 
             // Count UK/EU and Intl courses
-            if (thisCourse['Home/EU'] === 'y') that.courseCount['UK/EU']++;
-            if (thisCourse.International === 'y') that.courseCount.International++;
+            if (thisCourse['Home/EU'].toLowerCase() === 'y') that.courseCount['UK/EU']++;
+            if (thisCourse.International.toLowerCase() === 'y') that.courseCount.International++;
 
             // Add the row to the table?
             var addRow = false;
-            if (that.type === 'Both' && (thisCourse['Home/EU'] === 'y' || thisCourse.International === 'y')) addRow = true;
-            if (that.type === 'UK/EU' && thisCourse['Home/EU'] === 'y') addRow = true;
-            if (that.type === 'International' && thisCourse.International === 'y') addRow = true;
+            if (that.type === 'Both' && (thisCourse['Home/EU'].toLowerCase() === 'y' || thisCourse.International.toLowerCase() === 'y')) addRow = true;
+            if (that.type === 'UK/EU' && thisCourse['Home/EU'].toLowerCase() === 'y') addRow = true;
+            if (that.type === 'International' && thisCourse.International.toLowerCase() === 'y') addRow = true;
             if (addRow === true) {
               // Add letter headers and update letter count
               var thisLetter = thisCourse['Title of course'].substr(0,1);
@@ -183,9 +191,9 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
             // Availability text
             modalAvailabilityText = 'Adjustment and Clearing places are available for <strong>';
 
-            if (thisCourse['Home/EU'] === 'y') modalAvailabilityText+= 'UK/EU students';
-            if (thisCourse['Home/EU'] === 'y' && thisCourse.International === 'y') modalAvailabilityText+= ' and ';
-            if (thisCourse.International === 'y') modalAvailabilityText+= 'international students';
+            if (thisCourse['Home/EU'].toLowerCase() === 'y') modalAvailabilityText+= 'UK/EU students';
+            if (thisCourse['Home/EU'].toLowerCase() === 'y' && thisCourse.International.toLowerCase() === 'y') modalAvailabilityText+= ' and ';
+            if (thisCourse.International.toLowerCase() === 'y') modalAvailabilityText+= 'international students';
 
             modalAvailabilityText = '</strong>';
 
@@ -252,8 +260,8 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
               };
             }
             // Count UK/EU and Intl courses
-            if (thisCourse['Home/EU'] === 'y') that.courseCount[thisCourse.Subject]['UK/EU']++;
-            if (thisCourse.International === 'y') that.courseCount[thisCourse.Subject].International++;
+            if (thisCourse['Home/EU'].toLowerCase() === 'y') that.courseCount[thisCourse.Subject]['UK/EU']++;
+            if (thisCourse.International.toLowerCase() === 'y') that.courseCount[thisCourse.Subject].International++;
 
             if (thisCourse.Subject !== currentCourse.Subject) {
 
@@ -491,11 +499,11 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
 
     var numbers = trimAndAdd(course['Phone number(s)'].split(','));
     var isAdjustmentOnly = false;
-    if (course['Adjustment only'] === 'y') {
+    if (course['Adjustment only'].toLowerCase() === 'y') {
       isAdjustmentOnly = true;
-    } else if (course['Adjustment only'] === 'h' && (this.type === 'Home/EU' || this.type === 'Both')) {
+    } else if (course['Adjustment only'].toLowerCase() === 'h' && (this.type === 'Home/EU' || this.type === 'Both')) {
       isAdjustmentOnly = true;
-    } else if (course['Adjustment only'] === 'i' && (this.type === 'International' || this.type === 'Both')) {
+    } else if (course['Adjustment only'].toLowerCase() === 'i' && (this.type === 'International' || this.type === 'Both')) {
       isAdjustmentOnly = true;
     }
     var courseCell =$('<td>');
@@ -535,10 +543,10 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
     var courseRow = $('<tr>').addClass('c-clearing-table__course');
     courseRow.append(courseCell);
     if (this.type === 'UK/EU' || this.type === 'Both') {
-      courseRow.attr('data-ukeu', course['Home/EU'] === 'y' ? 'true' : 'false');
+      courseRow.attr('data-ukeu', course['Home/EU'].toLowerCase() === 'y' ? 'true' : 'false');
     }
     if (this.type === 'International' || this.type === 'Both') {
-      courseRow.attr('data-international', course.International === 'y' ? 'true' : 'false');
+      courseRow.attr('data-international', course.International.toLowerCase() === 'y' ? 'true' : 'false');
     }
     this.table.append(courseRow);
   };

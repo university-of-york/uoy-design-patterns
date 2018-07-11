@@ -1,13 +1,13 @@
 
 // load the global data from a JSON config file
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        window.PL_DATA = JSON.parse(this.responseText);
-    }
-};
-xhttp.open("GET", "/data/globaldata.json", true);
-xhttp.send();
+// var xhttp = new XMLHttpRequest();
+// xhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//         window.PL_DATA = JSON.parse(this.responseText);
+//     }
+// };
+// xhttp.open("GET", "https://www.york.ac.uk/static/stable/data/globaldata.json", true);
+// xhttp.send();
 
 define(
   ['jquery', 'es5shim', 'picturefill', 'iframeResizer',
@@ -22,8 +22,7 @@ define(
     TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
     TOGGLE, UTILITYTOGGLE, WRAPPERHEIGHT, YOUTUBE,
     SOUNDCLOUD, SEARCHABLE, FILTERABLE, EQUALHEIGHT,
-    GOOGLEMAP, SHOWMORE, AUTOCOMPLETE) {
-
+    GOOGLEMAP, SHOWMORE, AUTOCOMPLETE, GLOBALDATA) {
 
   $(function(){
 
@@ -32,7 +31,6 @@ define(
       console.log = function(a) { /*alert(a);*/ };
       console.info = function(a) { /*alert(a);*/ };
     }
-
 
     // Disable buttons
     $('.btn-disabled').click(function (e) {
