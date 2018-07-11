@@ -11,4 +11,10 @@ requirejs.config({
   }
 });
 
+
+requirejs(['app/globaldata'], function(data) {
+    window.PL_DATA = data;
+});
+
+
 requirejs(['app/main']);
