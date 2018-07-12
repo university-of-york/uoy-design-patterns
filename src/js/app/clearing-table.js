@@ -536,7 +536,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
 
       courseCellContent+= '<li class="c-clearing-table__ucas-code">UCAS code '+course['UCAS code']+'</li>'+
       '<li class="c-clearing-table__course-length">'+course['Course length']+'</li>'+
-      '<li class="c-clearing-table__phone-numbers">Call '+numbers+' to apply</li>';
+      '<li class="c-clearing-table__phone-numbers">' + clearingData.callToApplyText.replace('{0}', numbers) + '</li>';
     if (isAdjustmentOnly === true) courseCellContent+= '<li class="c-clearing-table__adjustment-only">Adjustment places only</li>';
     courseCellContent+= '</ul>';
     courseCell.html(courseCellContent);
