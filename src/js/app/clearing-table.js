@@ -37,7 +37,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
     return output;
   };
   var makeLink = function(dept, courseCount) {
-    var link = './'+dept.Department.toLowerCase().replace(/,/g, '').replace(/\s/g, '-');
+    var link = './'+dept.Department.toLowerCase().replace(/:/g, '').replace(/,/g, '').replace(/\s/g, '-');
     var a;
     if (dept.Department === dept.Subject) {
       // Link is Subject name
@@ -178,9 +178,9 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
           } else if (that.layout === "Course panel") {
 
             var panelContent = $('<div>').addClass('c-panel__content');
-            that.modalLink = $('<a>').attr({'href': '#modal-content-'+that.id}).text('Adjustment and clearing information for this course');
+            that.modalLink = $('<a>').attr({'href': '#modal-content-'+that.id}).text('Clearing and adjustment information for this course');
 
-            panelContent.append('<p><strong>Places are available on this course through Adjustment and Clearing</strong></p>');
+            panelContent.append('<p><strong>Places are available on this course through clearing and adjustment</strong></p>');
             panelContent.append($('<p>').append(that.modalLink));
 
             var modalContent = $('<div>').addClass('is-hidden').attr({'id':'modal-content-'+that.id});
@@ -189,7 +189,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
             modalContent.append('<h2>'+thisCourse['Qualification earned']+' '+thisCourse['Title of course']+'</h2>');
 
             // Availability text
-            modalAvailabilityText = 'Adjustment and Clearing places are available for <strong>';
+            modalAvailabilityText = 'Clearing and adjustment places are available for <strong>';
 
             if (thisCourse['Home/EU'].toLowerCase() === 'y') modalAvailabilityText+= 'UK/EU students';
             if (thisCourse['Home/EU'].toLowerCase() === 'y' && thisCourse.International.toLowerCase() === 'y') modalAvailabilityText+= ' and ';
@@ -243,7 +243,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
             modalList.append('<li>Have your UCAS ID number to hand and a number we can call you back on.</li>');
             modalList.append('<li>If your first language is not English you must also provide evidence of your <a href=&quot;https://www.york.ac.uk/study/undergraduate/applying/entry/english-language/&quot;>English language ability.</a></li>');
             modalContent.append(modalList);
-            modalContent.append('<p><a class="c-btn c-btn--secondary c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/vacancies/">Find out more about Adjustment and Clearing</a></p>');
+            modalContent.append('<p><a class="c-btn c-btn--secondary c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/vacancies/">Find out more about clearing and adjustment</a></p>');
 
             that.panel.append(panelContent);
             that.panel.append(modalContent);
