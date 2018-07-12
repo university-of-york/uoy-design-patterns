@@ -47,11 +47,15 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
     // On resize or content updated, reset height
     var that = this;
-    $window.on('content.updated', function(e, type, obj) {
-      // Only reset height if updated content was within this showmore
-      if (!obj.container) return;
-      var $closestContainer = obj.container.closest('.c-show-more__content');
-      if ($closestContainer.is(that.content) === true) {
+    $window.on('content.updated', function(e, type, obj, clickedTab) {
+
+      if (!obj.container || !clickedTab) return;
+
+      // Find the corresponding tab content whose tab link was clicked.
+      // if it matches the show-more content, update the height
+      var $shownTabContent = obj.container.find(clickedTab.attr('href'));
+      var $showMoreContainer = $shownTabContent.find('.c-show-more__content');
+      if($showMoreContainer.is(that.content) === true) {
         that.setShowMoreHeight.apply(that, [type, obj]);
       }
     });
