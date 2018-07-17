@@ -125,11 +125,11 @@ ol {
 }
 form {
 }
-input,
+input:not([type='radio']):not([type='checkbox']):not([type='range']),
 select,
 textarea {
   &:focus {
-    outline:$blue auto 5px;
+    outline:2px solid $blue;
     outline-offset:-2px;
   }
 }

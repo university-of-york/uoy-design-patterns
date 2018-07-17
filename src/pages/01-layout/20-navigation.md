@@ -319,7 +319,7 @@ Unopened, the main navigation shows the pages currently in this section. Open it
     </div>
     <div class="o-grid__row">
       <div class="o-grid__box o-grid__box--threequarters o-grid__box--threequarters@medium o-grid__box--threequarters@small o-grid__box--threequarters@tiny">
-        <h2 class="c-main-header__title"><a href="https://www.york.ac.uk/"><img class="c-main-header__logo" src="https://www.york.ac.uk/static/1.4/img/logo.svg" alt="University of York"></a></h2>
+        <h2 class="c-main-header__title"><a href="https://www.york.ac.uk/"><img class="c-main-header__logo" src="https://www.york.ac.uk/static/stable/img/logo.svg" alt="University of York"></a></h2>
       </div>
       <div class="o-grid__box o-grid__box--quarter o-grid__box--quarter@medium o-grid__box--quarter@small o-grid__box--quarter@tiny">
         <form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--header is-hidden@medium-">
@@ -439,7 +439,7 @@ Unopened, the main navigation shows the pages currently in this section. Open it
     </div>
     <div class="o-grid__row">
       <div class="o-grid__box o-grid__box--threequarters o-grid__box--threequarters@medium o-grid__box--threequarters@small o-grid__box--threequarters@tiny">
-        <h2 class="c-main-header__title"><a href="https://www.york.ac.uk/"><img class="c-main-header__logo" src="https://www.york.ac.uk/static/1.4/img/logo.svg" alt="University of York"></a></h2>
+        <h2 class="c-main-header__title"><a href="https://www.york.ac.uk/"><img class="c-main-header__logo" src="https://www.york.ac.uk/static/stable/img/logo.svg" alt="University of York"></a></h2>
       </div>
       <div class="o-grid__box o-grid__box--quarter o-grid__box--quarter@medium o-grid__box--quarter@small o-grid__box--quarter@tiny">
         <form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--header is-hidden@medium-">
