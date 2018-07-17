@@ -31,7 +31,7 @@
     "babel-plugin-add-module-exports": "0.2.1",
     "babel-preset-es2015": "6.24.1",
     "babel-preset-stage-2": "6.24.1",
-    "vows": "0.5.x",
+    "vows": "0.8.x",
     "webpack": "^2.4.1"
   }
 }
