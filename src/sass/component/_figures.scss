@@ -65,7 +65,7 @@
 .c-figure__image,
 .c-figure img {
   display:block;
-  width:100%;
+  max-width:100%;
   position: relative;
   // HELPER CLASSES FOR IMAGES (used by JS)
   // Image must fit vertically
