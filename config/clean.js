@@ -4,7 +4,12 @@ module.exports = {
     options: {
       force: true
     },
-    src: ['build/']
+    src: [
+        'build/*',
+        // 'src/partials/assocnav.mustache',
+        // 'src/partials/nav.mustache',
+        // 'src/partials/subnav.mustache'
+    ]
   },
   precssmin: ['build/css/*.raw.css'],
   postbuild: ['build/css/*', '!build/css/*.min.css', '!build/css/*.min.css.map'],

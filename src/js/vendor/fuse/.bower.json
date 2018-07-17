@@ -1,0 +1,13 @@
+{
+  "name": "fuse",
+  "homepage": "https://github.com/chris5marsh/Fuse",
+  "_release": "cdafb022c5",
+  "_resolution": {
+    "type": "branch",
+    "branch": "178",
+    "commit": "cdafb022c5710b2cb799600fa7943a0bf266ef87"
+  },
+  "_source": "https://github.com/chris5marsh/Fuse.git",
+  "_target": "178",
+  "_originalSource": "https://github.com/chris5marsh/Fuse.git"
+}

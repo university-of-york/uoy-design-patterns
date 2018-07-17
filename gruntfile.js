@@ -6,24 +6,57 @@ module.exports = function (grunt) {
 
   // Load all the tasks from config/
   require('load-grunt-config')(grunt, {
-    configPath: path.join(process.cwd(), 'config')
+        configPath: path.join(process.cwd(), 'config'),
+        init: true
   });
 
   // Load custom tasks
   grunt.loadTasks('tasks');
 
-  grunt.registerTask('default', ['bower']);
-
   // Build Additional stylesheets
   grunt.registerTask('formstack', ['compass:dev', 'newer:postcss:dev', 'scopedCSS:formstackDev']);
   grunt.registerTask('csstest', ['compass:dev', 'newer:postcss:dev', 'scopedCSS:test']);
+
   // Local development
   grunt.registerTask('dev', ['makedocs:dev', 'copy:dev', 'copy:templates', 'jshint:dev', 'compass:dev', 'postcss:dev', 'browserSync:dev', 'watch', 'clean:dev']);
-  // Build process - minified CSS and JS
-  grunt.registerTask('build', ['clean:build', 'makedocs:build', 'copy:build', 'compass:build', 'postcss:build', 'scopedCSS', 'clean:precssmin', 'modernizr', 'cssmin', 'newer:imagemin', 'jshint:dev', 'requirejs', 'header:build', 'clean:postbuild']);
-  // Publish to york.ac.uk/pattern-library
-  //grunt.registerTask('publish', ['build', 'sftp:patternlibrary', 'sftp:cdn']);
-  grunt.registerTask('publish', ['build', 'sftp:patternlibrary']);
-  //grunt.registerTask('live', ['build', 'bump:major', 'header:live', 'clean:live']);
 
+  // Build process - minified CSS and JS
+
+  grunt.registerTask('build', [
+      'clean:build',
+      'makedocs:build',
+      'copy:build',
+      'compass:build',
+      'postcss:build',
+      'scopedCSS',
+      'clean:precssmin',
+      'modernizr',
+      'cssmin',
+      'newer:imagemin',
+      'jshint:dev',
+      'requirejs',
+      'header:build',
+      'clean:postbuild'
+  ]);
+
+  // Build process for preview
+    grunt.registerTask('preview', [
+        'clean:build',
+        'makedocs:preview',
+        'copy:build',
+        'compass:build',
+        'postcss:build',
+        'scopedCSS',
+        'clean:precssmin',
+        'modernizr',
+        'cssmin',
+        'newer:imagemin',
+        'jshint:dev',
+        'requirejs',
+        'header:build',
+        'clean:postbuild'
+    ]);
+
+  // Release process - copies necessary files to a '/release' folder
+    grunt.registerTask('release', ['build', 'copy:release', 'md5sum']);
 };

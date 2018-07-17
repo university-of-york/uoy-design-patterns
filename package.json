@@ -3,15 +3,9 @@
   "version": "1.5.6",
   "description": "This repository holds the design patterns used on the University of York's website (http://www.york.ac.uk).",
   "main": "gruntfile.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/university-of-york/design-patterns"
-  },
+  "repository": "https://github.com/university-of-york/design-patterns",
   "license": "UNLICENSED",
-  "author": {
-    "name": "University of York Digital Team",
-    "url": "http://yorkwebteam.blogspot.co.uk/"
-  },
+  "author": "University of York Digital Team (http://yorkwebteam.blogspot.co.uk/)",
   "contributors": [
     {
       "name": "Chris Marsh",
@@ -24,40 +18,53 @@
     }
   ],
   "devDependencies": {
-    "autoprefixer": "^6.7.7",
+    "autoprefixer": "^8.6.4",
+    "compass": "^0.1.1",
     "css": "^2.2.3",
+    "es5-shim": "^4.5.10",
+    "fuse.js": "^3.2.1",
     "glob": "^7.1.0",
-    "grunt": "^0.4.5",
-    "grunt-bower-task": "^0.4.0",
+    "grunt": "^1.0.3",
     "grunt-browser-sync": "^2.2.0",
-    "grunt-bump": "^0.3.4",
-    "grunt-confirm": "^1.0.8",
-    "grunt-contrib-clean": "^0.6.0",
+    "grunt-bump": "^0.8.0",
+    "grunt-confirm": "^1.0.5",
+    "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-compass": "^1.1.1",
-    "grunt-contrib-concat": "^0.5.1",
-    "grunt-contrib-copy": "^0.7.0",
-    "grunt-contrib-cssmin": "^1.0.1",
-    "grunt-contrib-imagemin": "^1.0.0",
-    "grunt-contrib-jshint": "^0.11.3",
-    "grunt-contrib-requirejs": "^0.4.4",
-    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-imagemin": "^2.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-requirejs": "^1.0.0",
+    "grunt-contrib-watch": "^1.1.0",
     "grunt-header": "^1.1.0",
     "grunt-makedocs": "^2.3.0",
     "grunt-md5sum": "^2.0.1",
     "grunt-modernizr": "^1.0.3",
     "grunt-newer": "^1.3.0",
-    "grunt-postcss": "^0.6.0",
-    "grunt-run": "^0.6.0",
+    "grunt-postcss": "^0.9.0",
+    "grunt-run": "^0.8.1",
     "grunt-ssh": "^0.12.9",
-    "load-grunt-config": "^0.16.0",
-    "semver": "^5.5.0",
-    "time-grunt": "^1.4.0"
+    "iframe-resizer": "^3.6.1",
+    "jquery": "^3.3.1",
+    "js-cookie": "^2.2.0",
+    "load-grunt-config": "^0.19.2",
+    "modernizr": "^3.6.0",
+    "picturefill": "^3.0.2",
+    "requirejs": "^2.3.5",
+    "semantic-release": "^15.6.0",
+    "time-grunt": "^1.4.0",
+    "webpack": "^4.12.2"
   },
   "scripts": {
     "backstop": "backstop",
-    "report": "backstop report"
+    "report": "backstop report",
+    "start": "grunt dev",
+    "build": "grunt release",
+    "build:preview": "grunt preview && grunt preview --verbose",
+    "release": "semantic-release",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "compass": "^0.1.1"
-  }
+  "dependencies": {},
+  "private": false
 }
