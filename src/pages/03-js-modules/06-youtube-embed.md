@@ -13,7 +13,13 @@ id: youtube-embed-page
 
 When the page is resized, the iframe dimensions will be resized to fit the parent's width. The video is always set to use a 16:9 aspect ratio.
 
-### Use
+At the time of writing, YouTube video URLs usually come in three flavours:
+
+- Regular form, `https://www.youtube.com/watch?v=_8pUffDWFlM`
+- Long form, `https://www.youtube.com/watch?v=_8pUffDWFlM&index=1&list=...`
+- Short, sharable form, `https://youtu.be/_8pUffDWFlM`
+
+### General use
 
 <p><a class="youtube-video-embed" href="https://www.youtube.com/watch?v=s67Nb0wpcbE">Watch the video here</a></p>
 
@@ -25,3 +31,17 @@ When the page is resized, the iframe dimensions will be resized to fit the paren
 ```markup
 <div class="c-video"><iframe width="730" height="410.625" src="//www.youtube.com/embed/s67Nb0wpcbE?rel=0" frameborder="0" allowfullscreen=""></iframe></div>
 ```
+
+## Long form url example
+The following example uses the longer form URL type with more parameters added to the query string,
+
+e.g. `https://www.youtube.com/watch?v=_8pUffDWFlM&index=1&list=PLqL9vrHSa70NmzsSg36tnv0dqEueEbifj`
+
+<p><a class="youtube-video-embed" href="https://www.youtube.com/watch?v=_8pUffDWFlM&index=1&list=PLqL9vrHSa70NmzsSg36tnv0dqEueEbifj">Watch the video here</a></p>
+
+## Sharable, short form URL example
+Finally, this example uses the shorter, shareable URL,
+
+e.g. `https://youtu.be/_8pUffDWFlM?t=1m`
+
+<p><a class="youtube-video-embed" href="https://youtu.be/_8pUffDWFlM?t=1m">Watch the video here</a></p>

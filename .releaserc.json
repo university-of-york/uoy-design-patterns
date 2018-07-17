@@ -1,0 +1,19 @@
+{
+  "branch": "master",
+  "verifyConditions": ["@semantic-release/github"],
+  "publish": ["@semantic-release/github"],
+  "npmPublish": false,
+  "analyzeCommits": {
+    "preset": "angular",
+    "releaseRules": [
+      {"type": "fix", "release": "patch"},
+      {"type": "Fix", "release": "patch"},
+      {"type": "update", "release": "minor"},
+      {"type": "Update", "release": "minor"},
+      {"type": "feature", "release": "minor"},
+      {"type": "Feature", "release": "minor"},
+      {"type": "performance", "release": "minor"},
+      {"type": "Performance", "release": "minor"}
+    ]
+  }
+}

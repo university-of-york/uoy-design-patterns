@@ -1,7 +1,7 @@
 var path = require('path');
 var css = require('css');
 var fs = require('fs');
-var fullStylesheet = path.resolve('dev/css/styles.css');
+var fullStylesheet = path.resolve('build/css/styles.css');
 var includeExtends = false;
 
 module.exports = function(grunt) {

@@ -18,17 +18,34 @@
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="canonical" href="">
 
+  <link rel="stylesheet" href="https://use.typekit.net/dvj8rpp.css">
+
   {{#build}}
-  <link rel="shortcut icon" href="https://www.york.ac.uk/static/stable/img/favicon.ico">
-  <link rel="icon" type="image/x-icon" href="https://www.york.ac.uk/static/stable/img/favicon.ico">
 
-  <link rel="stylesheet" href="https://www.york.ac.uk/static/stable/css/styles.min.css">
-  <link rel="stylesheet" href="https://www.york.ac.uk/static/stable/css/docs.min.css">
+    {{#preview}}
+        <link rel="shortcut icon" href="/preview/pattern-library/img/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="/preview/pattern-library/img/favicon.ico">
 
-  <script async src="https://www.york.ac.uk/static/stable/js/modernizr.min.js"></script>
-  <script async src="https://www.york.ac.uk/static/stable/js/app.min.js"></script>
+        <link rel="stylesheet" href="/preview/pattern-library/css/styles.min.css">
+        <link rel="stylesheet" href="/preview/pattern-library/css/docs.min.css">
+
+        <script async src="/preview/pattern-library/js/modernizr.min.js"></script>
+        <script async src="/preview/pattern-library/js/app.min.js"></script>
+    {{/preview}}
+
+    {{#release}}
+        <link rel="shortcut icon" href="https://www.york.ac.uk/static/stable/img/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="https://www.york.ac.uk/static/stable/img/favicon.ico">
+
+        <link rel="stylesheet" href="https://www.york.ac.uk/static/stable/css/styles.min.css">
+        <link rel="stylesheet" href="https://www.york.ac.uk/static/stable/css/docs.min.css">
+
+        <script async src="https://www.york.ac.uk/static/stable/js/modernizr.min.js"></script>
+        <script async src="https://www.york.ac.uk/static/stable/js/app.min.js"></script>
+    {{/release}}
 
   {{/build}}
+
   {{^build}}
   <link rel="shortcut icon" href="/img/favicon.ico">
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
@@ -40,11 +57,6 @@
   <script async src="/js/vendor/requirejs/require.js" data-main="/js/app"></script>
 
   {{/build}}
-
-  <!-- External, third party scripts -->
-  <script src="//use.typekit.net/dvj8rpp.js"></script>
-  <script>try{Typekit.load();}catch(e){}</script>
-
 </head>
 
 <body id="{{id}}" class="docs category-{{category}}">

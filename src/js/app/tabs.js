@@ -59,16 +59,12 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
         document.body.scrollLeft = scrollH;
       }
       // Fire update event
-      $(window).trigger('content.updated', ['tabs', that]);
-
+      $(window).trigger('content.updated', ['tabs', that, $this]);
     });
 
     console.info(this);
-
     return true;
-
   };
 
   return TABS;
-
 });

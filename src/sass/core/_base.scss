@@ -125,7 +125,7 @@ ol {
 }
 form {
 }
-input,
+input:not([type='radio']):not([type='checkbox']):not([type='range']),
 select,
 textarea {
   &:focus {
