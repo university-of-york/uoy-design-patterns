@@ -35,6 +35,7 @@ component("show-more", { "content": "<h3>The York approach</h3>"+
 component("show-more", { "height": 120,
                          "moreText": "I'd like to find out more please",
                          "lessText": "Hide",
+                         "id":"PLO",
                          "content": "<h3>The York approach</h3>"+
                                  "<p>EG. Every course at York has a set of learning outcomes. The learning outcomes tell you what you can expect to be able to do when you graduate and will help you to explain what you can offer to employers. </p>"+
                                  "<h4>Students who complete this course will be able to:</h4>"+
