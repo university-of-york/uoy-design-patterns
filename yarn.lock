@@ -511,7 +511,7 @@ autolinker@~0.15.0:
   version "0.15.3"
   resolved "https://registry.yarnpkg.com/autolinker/-/autolinker-0.15.3.tgz#342417d8f2f3461b14cf09088d5edf8791dc9832"
 
-autoprefixer@^9.0.0:
+autoprefixer@9.0.0:
   version "9.0.0"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.0.0.tgz#fce072cb3c9c61374bf6fb7d1906f630afdb2889"
   dependencies:
@@ -1248,7 +1248,7 @@ compare-func@^1.3.1:
     array-ify "^1.0.0"
     dot-prop "^3.0.0"
 
-compass@^0.1.1:
+compass@0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/compass/-/compass-0.1.1.tgz#5c56d5eb442d10c1ad5989ef5c5e925db60c60e1"
 
@@ -1479,7 +1479,7 @@ cson@~3.0.2:
     requirefresh "^2.0.0"
     safefs "^4.0.0"
 
-css@^2.2.3:
+css@2.2.3:
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/css/-/css-2.2.3.tgz#f861f4ba61e79bedc962aa548e5780fd95cbc6be"
   dependencies:
@@ -2023,7 +2023,7 @@ error@^7.0.0:
     string-template "~0.2.1"
     xtend "~4.0.0"
 
-es5-shim@^4.5.10:
+es5-shim@4.5.10:
   version "4.5.10"
   resolved "https://registry.yarnpkg.com/es5-shim/-/es5-shim-4.5.10.tgz#b7e17ef4df2a145b821f1497b50c25cf94026205"
 
@@ -2476,7 +2476,7 @@ fsevents@^1.0.0, fsevents@^1.2.2:
     nan "^2.9.2"
     node-pre-gyp "^0.10.0"
 
-fuse.js@^3.2.1:
+fuse.js@3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-3.2.1.tgz#6320cb94ce56ec9755c89ade775bcdbb0358d425"
 
@@ -2599,7 +2599,7 @@ glob-to-regexp@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/glob-to-regexp/-/glob-to-regexp-0.3.0.tgz#8c5a1494d2066c570cc3bfe4496175acc4d502ab"
 
-glob@7.1.2, glob@^7.0.3, glob@^7.0.5, glob@^7.1.0, glob@^7.1.1, glob@^7.1.2, glob@~7.1.1, glob@~7.1.2:
+glob@7.1.2, glob@^7.0.3, glob@^7.0.5, glob@^7.1.1, glob@^7.1.2, glob@~7.1.1, glob@~7.1.2:
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.2.tgz#c19c9df9a028702d678612384a6552404c636d15"
   dependencies:
@@ -2721,13 +2721,13 @@ growl@1.10.3:
   version "1.10.3"
   resolved "https://registry.yarnpkg.com/growl/-/growl-1.10.3.tgz#1926ba90cf3edfe2adb4927f5880bc22c66c790f"
 
-grunt-browser-sync@^2.2.0:
+grunt-browser-sync@2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/grunt-browser-sync/-/grunt-browser-sync-2.2.0.tgz#a0e9c1fd1ccb5c454c25ec5170113ffff06a4772"
   dependencies:
     browser-sync "^2.6.4"
 
-grunt-bump@^0.8.0:
+grunt-bump@0.8.0:
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/grunt-bump/-/grunt-bump-0.8.0.tgz#d3ffe0cf3cf0b38e09607b78538f42a531eafe55"
   dependencies:
@@ -2742,20 +2742,20 @@ grunt-cli@~1.2.0:
     nopt "~3.0.6"
     resolve "~1.1.0"
 
-grunt-confirm@^1.0.5:
+grunt-confirm@1.0.8:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/grunt-confirm/-/grunt-confirm-1.0.8.tgz#19443a71a0de82c3e7ed4e28890d8f69db93541c"
   dependencies:
     readline-sync "~1.4.9"
 
-grunt-contrib-clean@^1.1.0:
+grunt-contrib-clean@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/grunt-contrib-clean/-/grunt-contrib-clean-1.1.0.tgz#564abf2d0378a983a15b9e3f30ee75b738c40638"
   dependencies:
     async "^1.5.2"
     rimraf "^2.5.1"
 
-grunt-contrib-compass@^1.1.1:
+grunt-contrib-compass@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/grunt-contrib-compass/-/grunt-contrib-compass-1.1.1.tgz#3c25d209e018825aac9fa82315bbe6dfc1c636dc"
   dependencies:
@@ -2766,21 +2766,21 @@ grunt-contrib-compass@^1.1.1:
     tmp "0.0.28"
     which "^1.0.9"
 
-grunt-contrib-concat@^1.0.1:
+grunt-contrib-concat@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/grunt-contrib-concat/-/grunt-contrib-concat-1.0.1.tgz#61509863084e871d7e86de48c015259ed97745bd"
   dependencies:
     chalk "^1.0.0"
     source-map "^0.5.3"
 
-grunt-contrib-copy@^1.0.0:
+grunt-contrib-copy@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/grunt-contrib-copy/-/grunt-contrib-copy-1.0.0.tgz#7060c6581e904b8ab0d00f076e0a8f6e3e7c3573"
   dependencies:
     chalk "^1.1.1"
     file-sync-cmp "^0.1.0"
 
-grunt-contrib-cssmin@^2.2.1:
+grunt-contrib-cssmin@2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/grunt-contrib-cssmin/-/grunt-contrib-cssmin-2.2.1.tgz#64cbebe60134bc1270ca4154514ec4007cc16f7f"
   dependencies:
@@ -2788,7 +2788,7 @@ grunt-contrib-cssmin@^2.2.1:
     clean-css "~4.1.1"
     maxmin "^2.1.0"
 
-grunt-contrib-imagemin@^2.0.1:
+grunt-contrib-imagemin@2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/grunt-contrib-imagemin/-/grunt-contrib-imagemin-2.0.1.tgz#e91e490ad8187dd8e57b09ce2a7ac3d2d2ab7208"
   dependencies:
@@ -2803,7 +2803,7 @@ grunt-contrib-imagemin@^2.0.1:
     imagemin-optipng "^5.1.0"
     imagemin-svgo "^5.1.0"
 
-grunt-contrib-jshint@^1.1.0:
+grunt-contrib-jshint@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/grunt-contrib-jshint/-/grunt-contrib-jshint-1.1.0.tgz#369d909b2593c40e8be79940b21340850c7939ac"
   dependencies:
@@ -2811,13 +2811,13 @@ grunt-contrib-jshint@^1.1.0:
     hooker "^0.2.3"
     jshint "~2.9.4"
 
-grunt-contrib-requirejs@^1.0.0:
+grunt-contrib-requirejs@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/grunt-contrib-requirejs/-/grunt-contrib-requirejs-1.0.0.tgz#ec1670cafc32713902ee53569454715b2e3cbad5"
   dependencies:
     requirejs "^2.1.0"
 
-grunt-contrib-watch@^1.1.0:
+grunt-contrib-watch@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/grunt-contrib-watch/-/grunt-contrib-watch-1.1.0.tgz#c143ca5b824b288a024b856639a5345aedb78ed4"
   dependencies:
@@ -2826,7 +2826,7 @@ grunt-contrib-watch@^1.1.0:
     lodash "^4.17.10"
     tiny-lr "^1.1.1"
 
-grunt-header@^1.1.0:
+grunt-header@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/grunt-header/-/grunt-header-1.1.0.tgz#139383de100d98939ce16ca79c673696e375becb"
   dependencies:
@@ -2864,7 +2864,7 @@ grunt-legacy-util@~1.1.1:
     underscore.string "~3.3.4"
     which "~1.3.0"
 
-grunt-makedocs@^2.3.0:
+grunt-makedocs@2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/grunt-makedocs/-/grunt-makedocs-2.3.0.tgz#881ee0f2c93a1eb87c830226f8a2bcac68b4e1b8"
   dependencies:
@@ -2877,25 +2877,25 @@ grunt-makedocs@^2.3.0:
     marked "^0.3.9"
     yaml-front-matter "^3.2.3"
 
-grunt-md5sum@^2.0.1:
+grunt-md5sum@2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/grunt-md5sum/-/grunt-md5sum-2.0.1.tgz#1b7699fdabb904db8dcb9b13a3bbaa101ae3e0a8"
 
-grunt-modernizr@^1.0.3:
+grunt-modernizr@1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/grunt-modernizr/-/grunt-modernizr-1.0.3.tgz#f197b7830adb096961f112c7625241100c369323"
   dependencies:
     customizr "https://github.com/Modernizr/customizr/tarball/develop"
     lodash.merge "^4.0.1"
 
-grunt-newer@^1.3.0:
+grunt-newer@1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/grunt-newer/-/grunt-newer-1.3.0.tgz#83ccb7a1dda7cbd8ab23b059024ebe614ad2f342"
   dependencies:
     async "^1.5.2"
     rimraf "^2.5.2"
 
-grunt-postcss@^0.9.0:
+grunt-postcss@0.9.0:
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/grunt-postcss/-/grunt-postcss-0.9.0.tgz#fbe5934a6be9eac893af6d057e2318c97fae9da3"
   dependencies:
@@ -2903,13 +2903,13 @@ grunt-postcss@^0.9.0:
     diff "^3.0.0"
     postcss "^6.0.11"
 
-grunt-run@^0.8.1:
+grunt-run@0.8.1:
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/grunt-run/-/grunt-run-0.8.1.tgz#502f988947a59f9ad567e2dcb5eeedec712980ec"
   dependencies:
     strip-ansi "^3.0.0"
 
-grunt-ssh@^0.12.9:
+grunt-ssh@0.12.9:
   version "0.12.9"
   resolved "https://registry.yarnpkg.com/grunt-ssh/-/grunt-ssh-0.12.9.tgz#21551a373981f0ea28dc799d38a769e54cd4d904"
   dependencies:
@@ -2917,7 +2917,7 @@ grunt-ssh@^0.12.9:
     progress "~1.1.3"
     ssh2 "~0.4.6"
 
-grunt@^1.0.3:
+grunt@1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/grunt/-/grunt-1.0.3.tgz#b3c99260c51d1b42835766e796527b60f7bba374"
   dependencies:
@@ -3194,7 +3194,7 @@ iferr@^0.1.5:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/iferr/-/iferr-0.1.5.tgz#c60eed69e6d8fdb6b3104a1fcbca1c192dc5b501"
 
-iframe-resizer@^3.6.1:
+iframe-resizer@3.6.1:
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/iframe-resizer/-/iframe-resizer-3.6.1.tgz#d0bc24009df6c94411382aafb040db36852d67d9"
 
@@ -3665,7 +3665,7 @@ jpegtran-bin@^3.0.0:
     bin-wrapper "^3.0.0"
     logalot "^2.0.0"
 
-jquery@^3.3.1:
+jquery@3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
 
@@ -3678,7 +3678,7 @@ js-beautify@^1.6.2:
     mkdirp "~0.5.0"
     nopt "~3.0.1"
 
-js-cookie@^2.2.0:
+js-cookie@2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-2.2.0.tgz#1b2c279a6eece380a12168b92485265b35b1effb"
 
@@ -3824,7 +3824,7 @@ livereload-js@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/livereload-js/-/livereload-js-2.3.0.tgz#c3ab22e8aaf5bf3505d80d098cbad67726548c9a"
 
-load-grunt-config@^0.19.2:
+load-grunt-config@0.19.2:
   version "0.19.2"
   resolved "https://registry.yarnpkg.com/load-grunt-config/-/load-grunt-config-0.19.2.tgz#52090d4a20c6e63f74a7648f249b19e7b7fcec24"
   dependencies:
@@ -4356,7 +4356,7 @@ mocha@^4.0.1:
     mkdirp "0.5.1"
     supports-color "4.4.0"
 
-modernizr@^3.6.0, modernizr@~3.6.0:
+modernizr@3.6.0, modernizr@~3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/modernizr/-/modernizr-3.6.0.tgz#edabddc1fbef4e9df79347a61c11b5d62eda1a6d"
   dependencies:
@@ -4942,7 +4942,7 @@ pend@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/pend/-/pend-1.2.0.tgz#7a57eb550a6783f9115331fcf4663d5c8e007a50"
 
-picturefill@^3.0.2:
+picturefill@3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/picturefill/-/picturefill-3.0.2.tgz#fa3d35fffbef5ab5300fe2ad9dca8f2e36cba27b"
 
@@ -5397,7 +5397,7 @@ requirejs@2.1.22:
   version "2.1.22"
   resolved "https://registry.yarnpkg.com/requirejs/-/requirejs-2.1.22.tgz#dd78fd2d34180c0d62c724b5b8aebc0664e0366f"
 
-requirejs@^2.1.0, requirejs@^2.3.5:
+requirejs@2.3.5, requirejs@^2.1.0:
   version "2.3.5"
   resolved "https://registry.yarnpkg.com/requirejs/-/requirejs-2.3.5.tgz#617b9acbbcb336540ef4914d790323a8d4b861b0"
 
@@ -5513,7 +5513,7 @@ seek-bzip@^1.0.3:
   dependencies:
     commander "~2.8.1"
 
-semantic-release@^15.6.0:
+semantic-release@15.6.3:
   version "15.6.3"
   resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-15.6.3.tgz#3e336f421b7f7595c991609d6de3ee7f53918f2a"
   dependencies:
@@ -6197,7 +6197,7 @@ through@2, "through@>=2.2.7 <3":
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
 
-time-grunt@^1.4.0:
+time-grunt@1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/time-grunt/-/time-grunt-1.4.0.tgz#062213e660c907e86f440556c01ea6597b712420"
   dependencies:
@@ -6618,7 +6618,7 @@ webpack-sources@^1.0.1, webpack-sources@^1.1.0:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack@^4.12.2:
+webpack@4.15.1:
   version "4.15.1"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.15.1.tgz#dc716779a3b88827c369f18c71a6137fa7e582fd"
   dependencies:
