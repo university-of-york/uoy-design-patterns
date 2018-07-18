@@ -35,9 +35,11 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     this.buttonTextMore = options.buttonTextMore || Default.buttonTextMore;
     this.buttonTextLess = options.buttonTextLess || Default.buttonTextLess;
 
+    this.windowLoaded = false;
+
     // Hide content
     this.container.addClass('is-closed');
-    
+
     // Enable transition
     var iC = this.content;
     setTimeout(function() { iC.addClass('is-ready'); }, 400);
