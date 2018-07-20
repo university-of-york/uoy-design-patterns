@@ -18,27 +18,24 @@
   transition:none !important; /* http://www.lockedowndesign.com/chrome-print-preview-differs-from-dev-tools/ */
 }
 body {
-  //page-break-before: avoid !important;
-  //page-break-after: auto !important;
-  margin: 20px;
+  //margin: 20px;
 }
 
 body, h1, h2, h3, ol, ul, div {
   width: auto;
   border: 0;
-  //margin: 0 5%;
-  //padding: 0;
   float: none;
   position: static;
   overflow: visible;
 }
-* { overflow: visible; }
+* {
+  overflow: visible !important;
+  //float: none !important;
+  height: auto !important;
+}
 @page  {
   size: auto;   /* auto is the initial value */
-  //margin: 1cm;
-  margin: 0 1cm;
-  /* this affects the margin in the printer settings */
-  //margin: 25mm 25mm 25mm 25mm;
+  margin: 1cm 0.5cm;
 }
 
 // controversial...
@@ -46,6 +43,7 @@ iframe {
   display: none;
 }
 
+// Get rid of a load of unnecessary stuff
 // hide the generic page bits, header, footer, etc.
 .o-skip-link,
 header,
@@ -53,12 +51,7 @@ header,
 .c-page-title__wrapper,
 nav,
 .c-breadcrumb,
-footer {
-  display: none;
-}
-/*
-  * Get rid of a load of unnecessary stuff
-  */
+footer,
 .c-nav,
 .c-subnav,
 .c-nav__wrapper,
@@ -72,6 +65,9 @@ footer {
 img {
   max-width: 500px;
   margin: 10px 10px 10px 0;
+  //page-break-before: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+  //page-break-after: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+  //page-break-inside: avoid;
 }
 
 // typography
@@ -83,13 +79,13 @@ h3 {
 }
 
 h2 {
-  display: block;
-  page-break-before: always;
-  page-break-after: avoid;
+  //display: block;
+  //page-break-before: always;
+  //page-break-after: avoid;
 }
 h3,
 h4 {
-  page-break-after: avoid;
+  //page-break-after: avoid;
 }
 
 a {
@@ -128,56 +124,51 @@ img {
 
 // Grid stuff
 .o-wrapper {
-  padding-left: 0;
-  padding-right: 0;
-  margin: 0;
-  max-width: initial;
+  //padding-left: 0;
+  //padding-right: 0;
+  //margin: 0;
+  //max-width: initial;
 }
 .o-grid__row {
-  //margin-left: 0;
   margin: 0 -10px;
-
-  &.o-grid__row--alt1,
-  &.o-grid__row--alt2,
-  &.o-grid__row--alt3 {
-    //padding: 20px 20px 0;
-  }
-}
-.o-grid__box {
-  //padding-left: 0;
-  padding: 0 10px;
-  height:auto!important; // To stop js-equal-height-rows
-}
-
-.o-grid__row--alt1,
-.o-grid__row--alt2,
-.o-grid__row--alt3 {
-  background-color: transparent;
 
   &:before,
   &:after {
     display:none;
   }
-  + .o-grid__row {
-    padding-top:0;
-  }
-  .c-news--excerpt {
-    padding:0;
-  }
 
-  &+ .o-grid__row {
-    padding-top: inherit;
-    border-top: none;
+  &.o-grid__row--alt1,
+  &.o-grid__row--alt2,
+  &.o-grid__row--alt3 {
+    background-color: transparent;
+
+    &:before,
+    &:after {
+      display:none;
+    }
+    &+.o-grid__row {
+      padding-top:0;
+    }
+    .c-news--excerpt {
+      padding:0;
+    }
+
+    &+ .o-grid__row {
+      padding-top: inherit;
+      border-top: none;
+    }
   }
+}
+.o-grid__box {
+  padding: 0 10px;
+  height:auto!important; // To stop js-equal-height-rows
 }
 .o-grid__row--bordered {
   border-bottom: 0;
 }
 
 
-/*
-   * Fix buttons a bit
-   */
+// Buttons
 .c-btn,
 .cta a {
   border:0;
@@ -187,7 +178,7 @@ img {
 
 
 // blockquotes
-blockquote.c-blockquote {
+.c-blockquote {
   margin: 0 0 20px;
   font-size: 18px;
   font-size: 1.125rem;
@@ -208,24 +199,26 @@ blockquote.c-blockquote {
 .c-tabs__nav {
   display: none;
 }
-.c-tabs__container {
-  border:0;
-  padding:0 !important;
-}
-.c-tabs__content {
-  margin-bottom: $base-spacing;
-  //display:block;
-  //display: inline;
-
-  &:last-of-type {
-    margin-bottom:0;
-  }
-}
-.c-tabs--vertical {
-  .c-tabs__container {
-    width:100%;
-  }
-}
+//.c-tabs__container {
+//  border:0;
+//  padding:0 !important;
+//}
+//.c-tabs__content {
+//  margin-bottom: $base-spacing;
+//  display:block;
+//  //display: inline;
+//  overflow: visible;
+//  flex: 1 auto;
+//
+//  &:last-of-type {
+//    //margin-bottom:0;
+//  }
+//}
+//.c-tabs--vertical {
+//  .c-tabs__container {
+//    width:100%;
+//  }
+//}
 
 // show more
 .c-show-more {
@@ -260,9 +253,8 @@ blockquote.c-blockquote {
     margin-bottom:$base-spacing;
   }
 
-  /*
-   * Panels don't need borders
-   */
+
+  //Panels don't need borders
   .c-panel,
   .h-card--article {
     border-top:0;

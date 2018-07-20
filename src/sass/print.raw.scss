@@ -2,7 +2,6 @@
 
   // let's get some default styles for the fonts, etc.
   //CORE
-  // @import "core/fonts";
   @import "core/variables";
   @import "core/mixins";
   @import "core/functions";
@@ -13,11 +12,11 @@
 
   //GENERIC
   @import "generic/typography";
-  @import "generic/utilities";
+  //@import "generic/utilities";
 
   //OBJECTS
   @import "object/structure";
-  @import "object/grids";
+  //@import "object/grids";
   @import "object/media";
   @import "object/accessibility";
 
