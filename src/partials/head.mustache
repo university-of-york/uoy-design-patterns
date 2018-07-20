@@ -26,22 +26,28 @@
         <link rel="shortcut icon" href="/preview/pattern-library/img/favicon.ico">
         <link rel="icon" type="image/x-icon" href="/preview/pattern-library/img/favicon.ico">
 
-        <link rel="stylesheet" href="/preview/pattern-library/css/styles.min.css">
-        <link rel="stylesheet" href="/preview/pattern-library/css/docs.min.css">
+        <link rel="stylesheet" href="/preview/pattern-library/css/styles.min.css" media="screen">
+        <link rel="stylesheet" href="/preview/pattern-library/css/docs.min.css" media="screen">
 
         <script async src="/preview/pattern-library/js/modernizr.min.js"></script>
         <script async src="/preview/pattern-library/js/app.min.js"></script>
+
+        <!-- Print styles -->
+        <link rel="stylesheet" href="/preview/css/print.css" media="print">
     {{/preview}}
 
     {{#release}}
         <link rel="shortcut icon" href="https://www.york.ac.uk/static/stable/img/favicon.ico">
         <link rel="icon" type="image/x-icon" href="https://www.york.ac.uk/static/stable/img/favicon.ico">
 
-        <link rel="stylesheet" href="https://www.york.ac.uk/static/stable/css/styles.min.css">
-        <link rel="stylesheet" href="https://www.york.ac.uk/static/stable/css/docs.min.css">
+        <link rel="stylesheet" href="https://www.york.ac.uk/static/stable/css/styles.min.css"  media="screen">
+        <link rel="stylesheet" href="https://www.york.ac.uk/static/stable/css/docs.min.css"  media="screen">
 
         <script async src="https://www.york.ac.uk/static/stable/js/modernizr.min.js"></script>
         <script async src="https://www.york.ac.uk/static/stable/js/app.min.js"></script>
+
+        <!-- Print styles -->
+        <link rel="stylesheet" href="https://www.york.ac.uk/static/stable/css/print.css" media="print">
     {{/release}}
 
   {{/build}}
@@ -50,11 +56,14 @@
   <link rel="shortcut icon" href="/img/favicon.ico">
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="stylesheet" href="/css/docs.css">
+  <link rel="stylesheet" href="/css/styles.css" media="screen">
+  <link rel="stylesheet" href="/css/docs.css" media="screen">
 
   <script async src="/js/vendor/modernizr/modernizr.js"></script>
   <script async src="/js/vendor/requirejs/require.js" data-main="/js/app"></script>
+
+  <!-- Print styles -->
+  <link rel="stylesheet" href="/css/print.css" media="print">
 
   {{/build}}
 </head>

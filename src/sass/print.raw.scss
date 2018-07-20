@@ -12,11 +12,9 @@
 
   //GENERIC
   @import "generic/typography";
-  //@import "generic/utilities";
 
   //OBJECTS
   @import "object/structure";
-  //@import "object/grids";
   @import "object/media";
   @import "object/accessibility";
 
@@ -29,4 +27,6 @@
 
   // Print specific stuff
   @import "print/base";
+  @import "print/resets";
+  @import "print/grid";
 }

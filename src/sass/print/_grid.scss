@@ -1,0 +1,75 @@
+// Grid resets and using tables instead of floats/inline-block
+.o-wrapper {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+  max-width: initial;
+  width: auto;
+}
+
+.o-wrapper,
+.o-grid__row,
+.o-grid__row--alt1,
+.o-grid__row--alt2,
+.o-grid__row--alt3 {
+
+  &:before,
+  &:after {
+    display:none;
+  }
+}
+
+.o-grid {
+  padding: 0;
+}
+
+.o-grid__row {
+  display: table;
+  width: 100%;
+}
+
+.o-grid__box {
+  height:auto!important; // To stop js-equal-height-rows
+  display: table-cell;
+  padding: 0 10px;
+
+  &.o-grid__box--full {
+    width:100%!important;
+  }
+  &.o-grid__box--half {
+    width:50%!important;
+  }
+  &.o-grid__box--third {
+    width:33.333%!important;
+  }
+  &.o-grid__box--twothirds {
+    width:66.666%!important;
+  }
+  &.o-grid__box--quarter {
+    width:25%!important;
+  }
+  &.o-grid__box--threequarters {
+    width:75%!important;
+  }
+}
+
+.o-grid__row--alt1,
+.o-grid__row--alt2,
+.o-grid__row--alt3 {
+  background-color: transparent;
+
+  &+ .o-grid__row {
+    padding-top:0;
+  }
+  .c-news--excerpt {
+    padding:0;
+  }
+  &+ .o-grid__row {
+    padding-top: inherit;
+    border-top: none;
+  }
+}
+
+.o-grid__row--bordered {
+  border-bottom: 0;
+}

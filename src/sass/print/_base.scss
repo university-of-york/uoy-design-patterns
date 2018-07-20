@@ -1,4 +1,3 @@
-
 @mixin subtle-image {
   max-width:25%!important;
   float:left;
@@ -10,84 +9,20 @@
   margin-right:0;
 }
 
-* {
-  background: transparent !important;
-  color: #000 !important; /* Black prints faster: h5bp.com/s */
-  box-shadow: none !important;
-  text-shadow: none !important;
-  transition:none !important; /* http://www.lockedowndesign.com/chrome-print-preview-differs-from-dev-tools/ */
-}
-body {
-  //margin: 20px;
-}
-
-body, h1, h2, h3, ol, ul, div {
-  width: auto;
-  border: 0;
-  float: none;
-  position: static;
-  overflow: visible;
-}
-* {
-  overflow: visible !important;
-  //float: none !important;
-  height: auto !important;
-}
 @page  {
   size: auto;   /* auto is the initial value */
   margin: 1cm 0.5cm;
 }
 
-// controversial...
-iframe {
-  display: none;
-}
 
-// Get rid of a load of unnecessary stuff
-// hide the generic page bits, header, footer, etc.
-.o-skip-link,
-header,
-#Mobile-Search,
-.c-page-title__wrapper,
-nav,
-.c-breadcrumb,
-footer,
-.c-nav,
-.c-subnav,
-.c-nav__wrapper,
-.c-footer-main,
-.c-form--header,
-.c-news__share,
-#__bs_notify__ {
-  display:none;
-}
-
+// Images
 img {
-  max-width: 500px;
+  max-width: 100%;
   margin: 10px 10px 10px 0;
-  //page-break-before: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
-  //page-break-after: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
-  //page-break-inside: avoid;
 }
 
-// typography
-p,
-h2,
-h3 {
-  //orphans: 3;
-  //widows: 3;
-}
 
-h2 {
-  //display: block;
-  //page-break-before: always;
-  //page-break-after: avoid;
-}
-h3,
-h4 {
-  //page-break-after: avoid;
-}
-
+// Typography
 a {
   text-decoration:none;
 }
@@ -101,6 +36,7 @@ a[href^="http"]:not([href*="york.ac.uk"]) {
   }
 }
 
+
 // Add link to Youtube video
 .c-video {
   &:before {
@@ -111,7 +47,8 @@ a[href^="http"]:not([href*="york.ac.uk"]) {
   }
 }
 
-// tables
+
+// Tables
 thead {
   display: table-header-group; /* h5bp.com/t */
 }
@@ -119,52 +56,6 @@ thead {
 tr,
 img {
   page-break-inside: avoid;
-}
-
-
-// Grid stuff
-.o-wrapper {
-  //padding-left: 0;
-  //padding-right: 0;
-  //margin: 0;
-  //max-width: initial;
-}
-.o-grid__row {
-  margin: 0 -10px;
-
-  &:before,
-  &:after {
-    display:none;
-  }
-
-  &.o-grid__row--alt1,
-  &.o-grid__row--alt2,
-  &.o-grid__row--alt3 {
-    background-color: transparent;
-
-    &:before,
-    &:after {
-      display:none;
-    }
-    &+.o-grid__row {
-      padding-top:0;
-    }
-    .c-news--excerpt {
-      padding:0;
-    }
-
-    &+ .o-grid__row {
-      padding-top: inherit;
-      border-top: none;
-    }
-  }
-}
-.o-grid__box {
-  padding: 0 10px;
-  height:auto!important; // To stop js-equal-height-rows
-}
-.o-grid__row--bordered {
-  border-bottom: 0;
 }
 
 
@@ -177,7 +68,7 @@ img {
 }
 
 
-// blockquotes
+// Blockquotes
 .c-blockquote {
   margin: 0 0 20px;
   font-size: 18px;
@@ -195,32 +86,13 @@ img {
 }
 
 
-// tabs
+// Tabs
 .c-tabs__nav {
   display: none;
 }
-//.c-tabs__container {
-//  border:0;
-//  padding:0 !important;
-//}
-//.c-tabs__content {
-//  margin-bottom: $base-spacing;
-//  display:block;
-//  //display: inline;
-//  overflow: visible;
-//  flex: 1 auto;
-//
-//  &:last-of-type {
-//    //margin-bottom:0;
-//  }
-//}
-//.c-tabs--vertical {
-//  .c-tabs__container {
-//    width:100%;
-//  }
-//}
 
-// show more
+
+// Show more component
 .c-show-more {
 
   .c-show-more__content {
@@ -230,47 +102,49 @@ img {
   .c-btn {
     display: none;
   }
-
-  .c-figure--link,
-  .c-news--excerpt .c-news__poster {
-    img {
-      @include subtle-image;
-    }
-  }
-  .c-figure--link {
-    position: relative;
-    display: block;
-    overflow: hidden;
-    max-width: 100%;
-
-    .c-figure__content {
-      position:static;
-      padding:0;
-      display:block;
-    }
-  }
-  .c-figure--no-margin {
-    margin-bottom:$base-spacing;
-  }
+}
 
 
-  //Panels don't need borders
-  .c-panel,
-  .h-card--article {
-    border-top:0;
-    margin-bottom:0;
+// Figures
+.c-figure--link,
+.c-news--excerpt .c-news__poster {
+  img {
+    //@include subtle-image;
   }
-  .c-panel__header,
-  .c-panel__image,
-  .c-panel__subheader,
-  .c-panel__content,
-  .c-panel__footer {
-    @include component-margin;
+}
+.c-figure--link {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  max-width: 100%;
+
+  .c-figure__content {
+    position:static;
     padding:0;
+    display:block;
   }
-  .c-panel--kis-widget {
-    display:none;
-  }
+}
+.c-figure--no-margin {
+  margin-bottom:$base-spacing;
+}
+
+
+// Panels don't need borders
+.c-panel,
+.h-card--article {
+  border-top:0;
+  margin-bottom:0;
+}
+.c-panel__header,
+.c-panel__image,
+.c-panel__subheader,
+.c-panel__content,
+.c-panel__footer {
+  @include component-margin;
+  padding:0;
+}
+.c-panel--kis-widget {
+  display:none;
 }
 
 
