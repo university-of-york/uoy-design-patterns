@@ -15,14 +15,16 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
   // We need to set the old/new URL's manually as a workaround for non-browser support
   // https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onhashchange
-  if(!window.HashChangeEvent)(function(){
-      var lastURL=document.URL;
-      window.addEventListener("hashchange",function(event){
-          Object.defineProperty(event,"oldURL",{enumerable:true,configurable:true,value:lastURL});
-          Object.defineProperty(event,"newURL",{enumerable:true,configurable:true,value:document.URL});
-          lastURL=document.URL;
-      });
-  }());
+  if(!window.HashChangeEvent) {
+      (function() {
+          var lastURL = document.URL;
+          window.addEventListener('hashchange', function (event) {
+              Object.defineProperty(event, 'oldURL', {enumerable: true, configurable: true, value: lastURL});
+              Object.defineProperty(event, 'newURL', {enumerable: true, configurable: true, value: document.URL});
+              lastURL = document.URL;
+          });
+      }());
+  }
 
 
   var STICKYNAV = function (options) {
@@ -113,6 +115,10 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   };
 
   STICKYNAV.prototype.updateScrollPos = function(e) {
+      var that = e.data.that;
+      var scrollPos = $window.scrollTop();
+      var navHeight = that.getNavHeight();
+      var paddingTop = parseInt($(location.hash).css('padding-top'), 10);
 
       // only update the scroll position if we're looking
       // at a new URL/hash
@@ -120,14 +126,8 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
           return;
       }
 
-      var that = e.data.that;
-      var scrollPos = $window.scrollTop();
-      var navHeight = that.getNavHeight();
-      //var paddingTop = parseInt($(e.target.hash || location.hash).css('padding-top'),10);
-      var paddingTop = parseInt($(location.hash).css('padding-top'), 10);
-      navHeight+= (paddingTop > 0) ? 0 : 10 ;
+      navHeight += (paddingTop > 0) ? 0 : 10 ;
       $window.scrollTop(scrollPos - navHeight);
-
       that.resetLinkHighlight(e);
   };
 
@@ -139,7 +139,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
           currentLink.addClass('is-current');
       } else {
           // need to do some searching
-          var clickedLiItem = that.navItems.filter(function(index){
+          var clickedLiItem = that.navItems.filter(function(){
               return $(this).children('.c-nav__link').attr('href') === location.href;
           });
 
