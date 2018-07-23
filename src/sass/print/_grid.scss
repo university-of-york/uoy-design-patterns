@@ -34,7 +34,11 @@
   padding: 0 10px;
 
   &.o-grid__box--full {
-    width:100%!important;
+    // special case makes this display like a table row to combat
+    // weird edge cases in the grid (e.g. accommodation pages pricing pages)
+    // where you have 3 grid boxes next to each other, the 1st being ful-width
+    width: 100% !important;
+    display: table-row;
   }
   &.o-grid__box--half {
     width:50%!important;
@@ -50,6 +54,15 @@
   }
   &.o-grid__box--threequarters {
     width:75%!important;
+  }
+
+  // this will get rid of any 'sidebar' style navigation
+  // and make main content full-width
+  &[role=complementary] {
+    width: 0 !important;
+  }
+  &[role=complementary] + .o-grid__box {
+    width: 100% !important;
   }
 }
 

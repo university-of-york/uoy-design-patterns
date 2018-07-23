@@ -6,49 +6,65 @@
   <meta name="author" content="University of York">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Derwent - Study at York, University of York</title>
+  <link rel="stylesheet" href="https://use.typekit.net/dvj8rpp.css">
 
-  <meta name="description" content="">
+  <title>Derwent - Accommodation, University of York</title>
+  <!-- Description meta -->
+  <meta name="description" content="Derwent is one of our oldest colleges. It has a mix of houses and open corridors which are great for socialising." />
 
-  <!-- Head end + header -->
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Keywords meta -->
+  <meta name="keywords" content="accommodation, derwent" />
 
-  <link rel="stylesheet" href="/css/styles.css">
+    <!-- Head end + header -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
-  <script src="/js/vendor/modernizr/modernizr.js"></script>
-  <script src="/js/vendor/requirejs/require.js" data-main="/js/app"></script>
+    <link rel="stylesheet" href="/css/styles.css" media="screen">
+    <link rel="stylesheet" href="/css/docs.css" media="screen">
 
-  <!-- External, third party scripts -->
-  <script src="//use.typekit.net/dvj8rpp.js"></script>
-  <script>try{Typekit.load();}catch(e){}</script>
+    <script async src="/js/vendor/modernizr/modernizr.js"></script>
+    <script async src="/js/vendor/requirejs/require.js" data-main="/js/app"></script>
+
+    <!-- Print styles -->
+    <link rel="stylesheet" href="/css/print.css" media="print">
+
+  <!-- stable -->
 
 </head>
 
 <body>
 
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WXLX54" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WXLX54');</script>
+
+
+<a href="#Main-Content" class="o-skip-link">Skip to content</a>
+
 <header class="c-main-header" role="banner">
   <div class="o-wrapper o-grid">
     <div class="o-grid__row">
       <div class="o-grid__box o-grid__box--threequarters o-grid__box--threequarters@medium o-grid__box--threequarters@small o-grid__box--threequarters@tiny">
-        <h2 class="c-main-header__title"><img class="c-main-header__logo" src="/img/logo.png" alt="University of York logo" width="264" height="41"></h2>
+        <h2 class="c-main-header__title"><a href="http://www.york.ac.uk/"><img class="c-main-header__logo" src="https://www.york.ac.uk/static/stable/img/logo.svg" alt="University of York" width="250" height="40"></a></h2>
       </div>
       <div class="o-grid__box o-grid__box--quarter o-grid__box--quarter@medium o-grid__box--quarter@small o-grid__box--quarter@tiny">
-        <form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--header">
+        <form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--header is-hidden@medium-" autocomplete="off">
           <fieldset>
             <div class="c-form__element">
-              <input class="c-form__input c-form__input--text" type="text" id="q" name="q" placeholder="Search york.ac.uk">
+              <input class="c-form__input c-form__input--text" type="text" id="q" aria-label="Search" name="q" placeholder="Search york.ac.uk" />
               <input type="hidden" name="site" value="yorkweb">
-              <a class="c-btn c-btn--medium js-submit-form" href="https://www.york.ac.uk/search" role="button"><i class="c-icon c-icon--search"></i></a>
+              <a class="c-btn c-btn--medium js-submit-form" href="https://www.york.ac.uk/search" role="button" aria-label="Search"><i class="c-icon c-icon--search" aria-hidden="true"></i></a>
             </div>
           </fieldset>
         </form>
-        <a href="#Mobile-Search" class="c-mobile-search-button js-toggle-button"><i class="c-icon c-icon--search"></i></a>
+        <!-- Mobile search -->
+        <a href="#Mobile-Search" class="c-mobile-search-button js-toggle-button is-hidden@large+" aria-label="Search"><i class="c-icon c-icon--search" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>
 </header>
 
+<!-- Mobile search -->
 <form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--mobile-search" id="Mobile-Search">
   <fieldset class="c-form__fieldset">
     <legend class="c-form__legend">Search york.ac.uk</legend>
@@ -56,7 +72,7 @@
       <div class="o-grid__row">
         <div class="o-grid__box o-grid__box--full">
           <div class="c-form__element">
-            <input class="c-form__input c-form__input--text" type="text" id="q" name="q" />
+            <input class="c-form__input c-form__input--text" type="text" id="q-mobile" name="q" aria-label="Search" />
             <input type="hidden" name="site" value="yorkweb">
             <a class="c-btn c-btn--medium js-submit-form" href="https://www.york.ac.uk/search" role="button">Search</a>
           </div>
@@ -66,13 +82,12 @@
   </fieldset>
 </form>
 
-
 <!-- Page title -->
 <div class="o-wrapper o-wrapper--wide c-page-title__wrapper o-grid">
   <div class="o-grid__row">
     <div class="o-grid__box o-grid__box--full">
       <div class="c-page-title">
-        <h1 class="c-page-title__header"><a class="c-page-title__link" href="/study-new/accommodation/">Accommodation</a></h1>
+        <h1 class="c-page-title__header"><a class="c-page-title__link" href="/study/accommodation/">Accommodation</a></h1>
       </div>
     </div>
   </div>
@@ -80,182 +95,289 @@
 
 <!-- Main nav -->
 <nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation">
-  <h4 class="c-nav__header"><a href="/study-new/accommodation/rooms-prices/">Rooms and prices</a></h4>
+  <h4 class="c-nav__header"><a href="/study/accommodation/rooms-prices/">Colleges, rooms and prices</a></h4>
   <ul class="c-nav__list c-nav__list--associative">
-	<li class="c-nav__item"><a href="/study-new/accommodation/rooms-prices/alcuin/">Alcuin</a></li><li class="c-nav__item"><a href="/study-new/accommodation/rooms-prices/constantine/">Constantine</a></li><li class="c-nav__item"><span class="currentsection">Derwent</span></li><li class="c-nav__item"><a href="/study-new/accommodation/rooms-prices/goodricke/">Goodricke</a></li><li class="c-nav__item"><a href="/study-new/accommodation/rooms-prices/halifax/">Halifax</a></li><li class="c-nav__item"><a href="/study-new/accommodation/rooms-prices/james/">James</a></li><li class="c-nav__item"><a href="/study-new/accommodation/rooms-prices/langwith/">Langwith</a></li><li class="c-nav__item"><a href="/study-new/accommodation/rooms-prices/vanbrugh/">Vanbrugh</a></li><li class="c-nav__item"><a href="/study-new/accommodation/rooms-prices/wentworth/">Wentworth</a></li>
+    <li class="c-nav__item"><a href="/study/accommodation/rooms-prices/alcuin/">Alcuin</a></li><li class="c-nav__item"><a href="/study/accommodation/rooms-prices/constantine/">Constantine</a></li><li class="c-nav__item"><span class="currentsection">Derwent</span></li><li class="c-nav__item"><a href="/study/accommodation/rooms-prices/goodricke/">Goodricke</a></li><li class="c-nav__item"><a href="/study/accommodation/rooms-prices/halifax/">Halifax</a></li><li class="c-nav__item"><a href="/study/accommodation/rooms-prices/james/">James</a></li><li class="c-nav__item"><a href="/study/accommodation/rooms-prices/langwith/">Langwith</a></li><li class="c-nav__item"><a href="/study/accommodation/rooms-prices/vanbrugh/">Vanbrugh</a></li><li class="c-nav__item"><a href="/study/accommodation/rooms-prices/wentworth/">Wentworth</a></li>
   </ul>
   <h4 class="c-nav__header">Other sections</h4>
   <ul class="c-nav__list c-nav__list--structural">
-    <li class="c-nav__item"><a href="/study-new/accommodation/undergraduate/">Undergraduate students</a></li><li class="c-nav__item"><a href="/study-new/accommodation/postgraduate/">Postgraduate students</a></li><li class="c-nav__item"><a href="/study-new/accommodation/international/">International students</a></li><li class="c-nav__item"><a href="/study-new/accommodation/visiting/">Visiting students</a></li><li class="c-nav__item"><a href="/study-new/accommodation/families/">Families</a></li><li class="c-nav__item"><a href="/study-new/accommodation/couples/">Couples</a></li><li class="c-nav__item"><span class="currentbranch0"><a href="/study-new/accommodation/rooms-prices/">Rooms and prices</a></span></li><li class="c-nav__item"><a href="/study-new/accommodation/private-sector/">Private sector</a></li><li class="c-nav__item c-nav__item--more"><a class="c-nav__link js-toggle-button" href="#Main-Navigation">More&hellip;</a></li>
+    <li class="c-nav__item"><span class="currentbranch0"><a href="/study/accommodation/rooms-prices/">Colleges, rooms and prices</a></span></li><li class="c-nav__item"><a href="/study/accommodation/undergraduate/">Undergraduates</a></li><li class="c-nav__item"><a href="/study/accommodation/postgraduate/">Postgraduates</a></li><li class="c-nav__item"><a href="/study/accommodation/international/">International students</a></li><li class="c-nav__item"><a href="/study/accommodation/visiting/">Visiting students</a></li><li class="c-nav__item"><a href="/study/accommodation/pre-sessional/">Pre-sessional students</a></li><li class="c-nav__item"><a href="/study/accommodation/families/">Families</a></li><li class="c-nav__item"><a href="/study/accommodation/couples/">Couples</a></li><li class="c-nav__item"><a href="/study/accommodation/private-sector/">Private sector</a></li><li class="c-nav__item"><a href="/study/accommodation/health/">Health, welfare and disability</a></li><li class="c-nav__item"><a href="/study/accommodation/informationforparents/">Information for Parents</a></li><li class="c-nav__item c-nav__item--more"><a class="c-nav__link js-toggle-button" href="#Main-Navigation">More&hellip;</a></li>
   </ul>
 
 </nav>
 
 <!-- Breadcrumb -->
-<div class="c-breadcrumb"><div class="c-breadcrumb__items"><a href="/"><i class="c-icon c-icon--home"></i></a><span class="c-breadcrumb__separator">&gt;</span><a href="/study-new/">Study at York</a><span class="c-breadcrumb__separator">&gt;</span><a href="/study-new/accommodation/">Accommodation</a><span class="c-breadcrumb__separator">&gt;</span><a href="/study-new/accommodation/rooms-prices/">Rooms and prices</a><span class="c-breadcrumb__separator">&gt;</span><a href="/study-new/accommodation/rooms-prices/derwent/">Derwent</a></div></div>
+<div class="c-breadcrumb"><div class="c-breadcrumb__items"><a href="/"><i class="c-icon c-icon--home" title="Home"></i><span class="c-icon__sr-text">Home</span></a><span class="c-breadcrumb__separator">&gt;</span><a href="/study/">Study at York</a><span class="c-breadcrumb__separator">&gt;</span><a href="/study/accommodation/">Accommodation</a><span class="c-breadcrumb__separator">&gt;</span><a href="/study/accommodation/rooms-prices/">Colleges, rooms and prices</a><span class="c-breadcrumb__separator">&gt;</span><a href="/study/accommodation/rooms-prices/derwent/">Derwent</a></div></div>
 
 <div class="o-wrapper o-wrapper--main o-grid js-wrapper--main">
 
-    <div class="o-grid__row">
-      <div class="o-grid__box o-grid__box--quarter" role="complementary">
-        <nav class="c-subnav is-hidden@medium is-hidden@small-">
-  			<ul class="c-subnav__list">
-              <li class="c-subnav__item c-subnav__title"><!-- navigation object : Link to section at level 4 --><a href="/study-new/accommodation/rooms-prices/">Rooms and prices</a></li>
-    	 	   <li class="c-subnav__item"><a href="/study-new/accommodation/rooms-prices/alcuin/">Alcuin</a></li><li class="c-subnav__item"><a href="/study-new/accommodation/rooms-prices/constantine/">Constantine</a></li><li class="c-subnav__item"><span class="currentsection">Derwent</span></li><li class="c-subnav__item"><a href="/study-new/accommodation/rooms-prices/goodricke/">Goodricke</a></li><li class="c-subnav__item"><a href="/study-new/accommodation/rooms-prices/halifax/">Halifax</a></li><li class="c-subnav__item"><a href="/study-new/accommodation/rooms-prices/james/">James</a></li><li class="c-subnav__item"><a href="/study-new/accommodation/rooms-prices/langwith/">Langwith</a></li><li class="c-subnav__item"><a href="/study-new/accommodation/rooms-prices/vanbrugh/">Vanbrugh</a></li><li class="c-subnav__item"><a href="/study-new/accommodation/rooms-prices/wentworth/">Wentworth</a></li>
-    		</ul>
-		</nav>
-        <nav class="c-subnav is-hidden@medium is-hidden@small is-hidden@tiny">
-  <ul class="c-subnav__list c-subnav__list--structural">
-     <li class="c-subnav__title">Other sections</li>
-    <li class="c-subnav__item"><a href="/study-new/accommodation/undergraduate/">Undergraduate students</a></li><li class="c-subnav__item"><a href="/study-new/accommodation/postgraduate/">Postgraduate students</a></li><li class="c-subnav__item"><a href="/study-new/accommodation/international/">International students</a></li><li class="c-subnav__item"><a href="/study-new/accommodation/visiting/">Visiting students</a></li><li class="c-subnav__item"><a href="/study-new/accommodation/families/">Families</a></li><li class="c-subnav__item"><a href="/study-new/accommodation/couples/">Couples</a></li><li class="c-subnav__item"><span class="currentbranch0"><a href="/study-new/accommodation/rooms-prices/">Rooms and prices</a></span></li><li class="c-subnav__item"><a href="/study-new/accommodation/private-sector/">Private sector</a></li></ul>
-</nav>
+  <div class="o-grid__row">
+    <div class="o-grid__box o-grid__box--quarter" role="complementary">
+      <nav class="c-subnav is-hidden@medium is-hidden@small-">
+        <ul class="c-subnav__list">
+          <li class="c-subnav__item c-subnav__title"><!-- navigation object : Link to section at level 4 --><a href="/study/accommodation/rooms-prices/">Colleges, rooms and prices</a></li>
+          <li class="c-subnav__item"><a href="/study/accommodation/rooms-prices/alcuin/">Alcuin</a></li><li class="c-subnav__item"><a href="/study/accommodation/rooms-prices/constantine/">Constantine</a></li><li class="c-subnav__item"><span class="currentsection">Derwent</span></li><li class="c-subnav__item"><a href="/study/accommodation/rooms-prices/goodricke/">Goodricke</a></li><li class="c-subnav__item"><a href="/study/accommodation/rooms-prices/halifax/">Halifax</a></li><li class="c-subnav__item"><a href="/study/accommodation/rooms-prices/james/">James</a></li><li class="c-subnav__item"><a href="/study/accommodation/rooms-prices/langwith/">Langwith</a></li><li class="c-subnav__item"><a href="/study/accommodation/rooms-prices/vanbrugh/">Vanbrugh</a></li><li class="c-subnav__item"><a href="/study/accommodation/rooms-prices/wentworth/">Wentworth</a></li>
+        </ul>
+      </nav>
+      <nav class="c-subnav is-hidden@medium-">
+        <ul class="c-subnav__list c-subnav__list--structural">
+          <li class="c-subnav__title c-subnav__item"><span class="c-subnav__link">Other sections</a></li>
+          <li class="c-subnav__item"><span class="currentbranch0"><a href="/study/accommodation/rooms-prices/">Colleges, rooms and prices</a></span></li><li class="c-subnav__item"><a href="/study/accommodation/undergraduate/">Undergraduates</a></li><li class="c-subnav__item"><a href="/study/accommodation/postgraduate/">Postgraduates</a></li><li class="c-subnav__item"><a href="/study/accommodation/international/">International students</a></li><li class="c-subnav__item"><a href="/study/accommodation/visiting/">Visiting students</a></li><li class="c-subnav__item"><a href="/study/accommodation/pre-sessional/">Pre-sessional students</a></li><li class="c-subnav__item"><a href="/study/accommodation/families/">Families</a></li><li class="c-subnav__item"><a href="/study/accommodation/couples/">Couples</a></li><li class="c-subnav__item"><a href="/study/accommodation/private-sector/">Private sector</a></li><li class="c-subnav__item"><a href="/study/accommodation/health/">Health, welfare and disability</a></li><li class="c-subnav__item"><a href="/study/accommodation/informationforparents/">Information for Parents</a></li></ul>
+      </nav>
 
-      </div>
-      <div class="o-grid__box o-grid__box--threequarters" role="main"><div class="o-grid__row">
-  <div class="o-grid__box o-grid__box--full">
-    <div class="c-figure c-figure--link">
-      <img class="c-figure__image" src="https://www.york.ac.uk/media/study-new/accommodation/img/1110200361-800px.jpg">
-      <div class="c-figure__caption c-figure__caption--charcoal c-figure__caption--centered">
-        <h1>Derwent College</h1>
-       </div>
-      </div>
     </div>
-    <div class="o-grid__box o-grid__box--twothirds o-grid__box--full@medium o-grid__box--main" role="main">
-      <p class="lead">Derwent is one of our oldest colleges. It has a mix of houses and open corridors which are great for socialising.</p>
-      <p>Feel inspired at the student-run Norman Rea Gallery or get involved in volunteering. Derwent students founded Lauriston Lights, a charity which aims to improve communication skills and encourage aspiration in bright children from areas of low academic achievement.</p>
-    </div>
-    <div class="o-grid__box o-grid__box--third o-grid__box--full@medium o-grid__box--main">
-      <div class="c-panel c-panel--highlight">
-        <div class="c-panel__content">
-          <h4>Quick facts</h4>
-          <ul>
-<li>580 rooms</li>
-<li>&pound;103 - 151 per week</li>
-<li>Economy shared bathroom, Standard shared bathroom, Economy ensuite catered, Economy shared bathroom catered</li>
-</ul>
+    <div class="o-grid__box o-grid__box--threequarters" role="main" id="Main-Content"><div class="o-grid__row">
+      <div class="o-grid__box o-grid__box--full">
+        <div class="c-figure c-figure--link">
+          <img class="c-figure__image" src="https://www.york.ac.uk/media/abouttheuniversity/accommodation/Derwent college green.jpg" />
+          <div class="c-figure__content c-figure__content--charcoal c-figure__content--centered">
+            <h1>Derwent College</h1>
+          </div>
+        </div>
+      </div>
+      <div class="o-grid__box o-grid__box--twothirds o-grid__box--full@medium o-grid__box--main" role="main">
+        <p class="lead">Our 1960s buildings feature open corridor layouts which are great for socialising, and we organise numerous events from student-run club nights to ceilidh dancing in our large dining hall and bar.</p>
+        <p>As a Derwent member, you'll embrace tradition and welcome new experiences, fostering a strong sense of identity and college spirit. Our friendly and respectful ethos is reflected in the Derwent Global Community project, which will encourage you to consider world issues in order to make a positive contribution.</p>
+        <p><em>One of our students shared their experiences with us. <a href="https://blogs.york.ac.uk/student-voices/2017/07/31/derwent-college/" target="_blank" title="Student blog">Read their blog here.</a></em></p>
+        <p class="text-highlight">Find out about Derwent College's <a href="/study/accommodation/undergraduate/llc/">Living Learning Community</a></p>
+      </div>
+      <div class="o-grid__box o-grid__box--third o-grid__box--full@medium o-grid__box--main">
+        <div class="c-panel c-panel--highlight">
+          <div class="c-panel__content">
+            <h4>Quick facts</h4>
+            <ul>
+              <li>Campus West</li>
+              <li>580 rooms</li>
+              <li>&pound;106 to &pound;159 per week</li>
+              <li>Economy shared bathroom or ensuite, Standard shared bathroom</li>
+              <li>Catering options available</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-<div class="o-grid__row">
-  <div class="o-grid__box o-grid__box--full">
-    <h2>Prices</h2>
-    <div class="c-accordion__item js-accordion__item"><a href="#" class="c-accordion__title">Undergraduate rooms<i class="c-accordion__icon c-icon c-icon--plus c-icon--after"></i></a><div class="c-accordion__content"><p>All undergraduate rooms are let for 40 weeks, unless stated otherwise.</p><table border="0">
-<thead>
-<tr><th colspan="2">Room type</th><th>Price per week*</th><th>Price per year*</th></tr>
-</thead>
-<tbody>
-<tr><th rowspan="3">Economy</th>
-<td>Shared bathroom, self- catered<small><br /></small></td>
-<td>&pound;103</td>
-<td>&nbsp;&pound;4,120&nbsp;</td>
-</tr>
-<tr>
-<td>Shared bathroom, catered</td>
-<td>&pound;152</td>
-<td>&pound;6,080</td>
-</tr>
-<tr>
-<td>Ensuite, catered</td>
-<td>&pound;128</td>
-<td>&pound;5,120&nbsp;</td>
-</tr>
-<tr><th>Standard</th>
-<td>Shared bathroom, self-catered</td>
-<td>&pound;122</td>
-<td>&pound;4,880</td>
-</tr>
-</tbody>
-</table><p>* Prices have been rounded to the nearest pound.</p></div></div>
+      <div class="o-grid__row  o-grid__row--default">
+        <div class="o-grid__box o-grid__box--full">
+          <blockquote class="c-blockquote c-blockquote--image-quote">
 
-  </div>
-</div>
-<div class="o-grid__row o-grid__row--alt3">
-  <div class="o-grid__box o-grid__box--full">
-    <h2>Gallery</h2>
+            <img class="c-blockquote__image c-blockquote__image--right" alt="" src="https://www.york.ac.uk/media/study-new/accommodation/img/derwent-emma-240.jpg">
+            <div class="c-blockquote__content">
+              <p>Derwent is in a great location, it has a great atmosphere and the people are lovely. My room is really big which means everyone can hang out together in here.</p>
+            </div>
+            <cite class="c-blockquote__cite">Emma</cite>
+          </blockquote>
 
 
 
+        </div>
+      </div>
+
+
+      <div class="o-grid__row">
+        <div class="o-grid__box o-grid__box--full">
+          <h3>Facilities</h3>
+          <ul class="u-three-columns">
+            <li>Common room</li>
+            <li>Computer room</li>
+            <li>Laundry room</li>
+            <li>Bar</li>
+            <li>Caf&eacute;</li>
+            <li>Restaurant</li>
+            <li>Wifi in all rooms</li>
+          </ul>
+          <h2>Rooms and prices</h2>
+          <div class="c-accordion">
+            <div class="c-accordion__item js-accordion__item"><a href="#" class="c-accordion__title">Undergraduate rooms<i class="c-accordion__icon c-icon c-icon--plus c-icon--after"></i></a><div class="c-accordion__content"><p>The yearly prices shown are for 40 weeks unless stated otherwise.</p><p>Prices shown are for 2018/19 and are rounded to the nearest pound.&nbsp;<span>&nbsp;Please note, yearly prices may vary depending on your exact booking dates.</span></p>
+              <table border="0">
+                <thead>
+                <tr><th colspan="2">Room type</th><th>Price per week*</th><th>Price per year*</th></tr>
+                </thead>
+                <tbody>
+                <tr><th rowspan="3">Economy</th>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>Shared bathroom, catered<br />40 weeks</td>
+                  <td>&pound;145</td>
+                  <td>&pound;5,784</td>
+                </tr>
+                <tr>
+                  <td>Ensuite, catered<br />40 weeks</td>
+                  <td>&pound;159</td>
+                  <td>&pound;6,346</td>
+                </tr>
+                <tr><th>Standard</th>
+                  <td>Shared bathroom, self-catered<br />40 weeks</td>
+                  <td>&pound;131</td>
+                  <td>&pound;5,242</td>
+                </tr>
+                </tbody>
+              </table>
+              <h3>How many people will I be sharing with?</h3>
+              <ul>
+                <li>Economy shared bathroom, catered: 15-18 students per kitchen, and&nbsp;<span>around 2 baths or showers and 2 toilets per 10 students</span></li>
+                <li>Economy ensuite, catered: 8-10 students per kitchen</li>
+                <li>Standard shared bathroom: around 20 students per floor, sharing two kitchens, five baths/showers and five toilets</li>
+                <li>Standard shared bathroom, catered: 15 students per house sharing one kitchen, one bath, two showers and five toilets</li>
+                <li>Standard shared bathroom (Eden's Court): up to 10 students per house sharing one kitchen, two showers and two toilets</li>
+              </ul><p>* Prices have been rounded to the nearest pound.</p></div></div>
+
+          </div>
+        </div>
+      </div>
+      <!-- 360 view -->
+
+      <div class="o-grid__row">
+        <div class="o-grid__box o-grid__box--full">
+          <h2>360&deg; view</h2>
+          <p>Click and drag the 360-degree view below to see this accommodation.</p>
+          <iframe width="100%" height="540" src="https://www.york.ac.uk/static/data/360/accommodation/index.html?group=8" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="o-grid__row o-grid__row--default">
+        <div class="o-grid__box o-grid__box--full">
+          <h2>Gallery</h2>
+          <a class="c-gallery-item c-gallery-item--landscape js-modal js-modal--frameless js-modal--gallery" href="https://www.york.ac.uk/media/study-new/accommodation/img/Derwent_D_Standard_shared_bath-2400x1600.jpg" data-caption="Standard accommodation with a shared bathroom, Derwent College">
+            <figure class="c-gallery-item__thumbnail">
+              <img class="c-gallery-item__thumbnail-image" src="https://www.york.ac.uk/media/study-new/accommodation/img/Derwent_D_Standard_shared_bath-420x280.jpg" alt="Standard accommodation with a shared bathroom, Derwent College" />
+            </figure>
+          </a>
+
+          <a class="c-gallery-item c-gallery-item--landscape js-modal js-modal--frameless js-modal--gallery" href="https://www.york.ac.uk/media/study-new/accommodation/img/Derwent_Economy_Ensuite_Catered__P_Block_-2400x1600.jpg" data-caption="Economy accommodation with an ensuite bathroom, Derwent College">
+            <figure class="c-gallery-item__thumbnail">
+              <img class="c-gallery-item__thumbnail-image" src="https://www.york.ac.uk/media/study-new/accommodation/img/Derwent_Economy_Ensuite_Catered__P_Block_-420x280.jpg" alt="Economy accommodation with an ensuite bathroom, Derwent College" />
+            </figure>
+          </a>
+
+          <a class="c-gallery-item c-gallery-item--landscape js-modal js-modal--frameless js-modal--gallery" href="https://www.york.ac.uk/media/abouttheuniversity/accommodation/Web-Res Derwent Economy Ensuite Cat 4(P Block) (Ian-Martindale).jpg" data-caption="Economy room with an ensuite bathroom, Derwent College">
+            <figure class="c-gallery-item__thumbnail">
+              <img class="c-gallery-item__thumbnail-image" src="https://www.york.ac.uk/media/abouttheuniversity/accommodation/Web-Res Derwent Economy Ensuite Cat 4(P Block) (Ian-Martindale)-420x280.jpg" alt="Economy room with an ensuite bathroom, Derwent College" />
+            </figure>
+          </a>
+
+          <a class="c-gallery-item c-gallery-item--landscape js-modal js-modal--frameless js-modal--gallery" href="https://www.york.ac.uk/media/study-new/accommodation/img/High-Res-Derwent-Standard-Shared-Bath-Twin-9-(Ian-Martindale)-2400x1600.jpg" data-caption="Standard twin room accommodation with shared bathroom, Derwent College ">
+            <figure class="c-gallery-item__thumbnail">
+              <img class="c-gallery-item__thumbnail-image" src="https://www.york.ac.uk/media/study-new/accommodation/img/High-Res-Derwent-Standard-Shared-Bath-Twin-9-(Ian-Martindale)-420x280.jpg" alt="Standard twin room accommodation with shared bathroom, Derwent College " />
+            </figure>
+          </a>
+
+          <a class="c-gallery-item c-gallery-item--landscape js-modal js-modal--frameless js-modal--gallery" href="https://www.york.ac.uk/media/abouttheuniversity/accommodation/161020_CampusWest_JohnHoulihan_4180_0337.jpg" data-caption="Derwent accommodation blocks and the big green">
+            <figure class="c-gallery-item__thumbnail">
+              <img class="c-gallery-item__thumbnail-image" src="https://www.york.ac.uk/media/abouttheuniversity/accommodation/161020_CampusWest_JohnHoulihan_4180_0337-421x280.jpg" alt="Derwent accommodation blocks and the big green" />
+            </figure>
+          </a>
+
+          <a class="c-gallery-item c-gallery-item--landscape js-modal js-modal--frameless js-modal--gallery" href="https://www.york.ac.uk/media/study-new/accommodation/img/External_Derwent2-2400x1600.jpg" data-caption="Derwent exterior">
+            <figure class="c-gallery-item__thumbnail">
+              <img class="c-gallery-item__thumbnail-image" src="https://www.york.ac.uk/media/study-new/accommodation/img/External_Derwent2-420x280.jpg" alt="Derwent exterior" />
+            </figure>
+          </a>
+
+          <a class="c-gallery-item c-gallery-item--landscape js-modal js-modal--frameless js-modal--gallery" href="https://www.york.ac.uk/media/abouttheuniversity/accommodation/1110200350.jpg" data-caption="A Derwent College housing block">
+            <figure class="c-gallery-item__thumbnail">
+              <img class="c-gallery-item__thumbnail-image" src="https://www.york.ac.uk/media/abouttheuniversity/accommodation/1110200350-421x280.jpg" alt="A Derwent College housing block" />
+            </figure>
+          </a>
+
+          <a class="c-gallery-item c-gallery-item--landscape js-modal js-modal--frameless js-modal--gallery" href="https://www.york.ac.uk/media/abouttheuniversity/accommodation/160721_CampusWest_MarkWoodward_019.jpg" data-caption="The Courtyard Bar, Derwent College">
+            <figure class="c-gallery-item__thumbnail">
+              <img class="c-gallery-item__thumbnail-image" src="https://www.york.ac.uk/media/abouttheuniversity/accommodation/160721_CampusWest_MarkWoodward_019-420x280.jpg" alt="The Courtyard Bar, Derwent College" />
+            </figure>
+          </a>
+
+          <a class="c-gallery-item c-gallery-item--landscape js-modal js-modal--frameless js-modal--gallery" href="https://www.york.ac.uk/media/abouttheuniversity/accommodation/Derwent F Block- Economy Shared bath 1.jpg" data-caption="Economy room with shared bathroom, Derwent College">
+            <figure class="c-gallery-item__thumbnail">
+              <img class="c-gallery-item__thumbnail-image" src="https://www.york.ac.uk/media/abouttheuniversity/accommodation/Derwent F Block- Economy Shared bath 1-420x280.jpg" alt="Economy room with shared bathroom, Derwent College" />
+            </figure>
+          </a>
+
+          <a class="c-gallery-item c-gallery-item--landscape js-modal js-modal--frameless js-modal--gallery" href="https://www.york.ac.uk/media/abouttheuniversity/accommodation/1110200193.jpg" data-caption="D Bar - Derwent bar and restaurant ">
+            <figure class="c-gallery-item__thumbnail">
+              <img class="c-gallery-item__thumbnail-image" src="https://www.york.ac.uk/media/abouttheuniversity/accommodation/1110200193-421x280.jpg" alt="D Bar - Derwent bar and restaurant " />
+            </figure>
+          </a>
+
+        </div>
+      </div>
+      <div class="o-grid__row o-grid__row--alt3 ">
+        <div class="o-grid__box o-grid__box--full">
+          <h2>Location</h2>
+          <p>Derwent is located in the heart of Campus West.</p>
+        </div>
+      </div>
+      <div class="o-grid__row o-grid__row--alt3 ">
+        <div class="o-grid__box o-grid__box--half">
+          <div class="c-map js-map" data-location="53.947095, -1.048653" style="height:240px; margin-bottom:20px;"></div>
+
+          <ul class="c-icon--ul">
+            <li> <i class="c-icon--li c-icon c-icon--map-marker"></i><a href="http://www.york.ac.uk/about/maps/campus/#derwent-college">View Derwent College on full campus map</a></li>
+          </ul>
+
+        </div>
+        <div class="o-grid__box o-grid__box--half">
+          <h3>Walking distances</h3>
+          <ul>
+            <li>Market Square Shops: 7 minutes walk</li>
+            <li>Library: 7 minutes walk</li>
+            <li>Ron Cooke Hub: 17 minutes walk</li>
+            <li>York Sports Centre: 10 minutes walk</li>
+            <li>York Sport Village: 35 minutes walk</li>
+          </ul>
+
+        </div>
+      </div>
+      <div class="o-grid__row o-grid__row--default ">
+        <div class="o-grid__box o-grid__box--full">
+          <h3>Walk-through tour</h3><a class="youtube-video-embed" href="https://www.youtube.com/watch?v=D6jW2COze5M">Watch the walk-through video</a>
+
+        </div>
+      </div>
 
 
 
-  </div>
-</div>
-  <div class="o-grid__row ">
-    <div class="o-grid__box o-grid__box--twothirds">
-      <h2>Location</h2>
-      <p>Derwent is located in the heart of Heslington West.</p>
-      <ul class="c-icon--ul">
-        <li> <i class="c-icon--li c-icon c-icon--map-marker"></i><a href="http://www.york.ac.uk/about/maps/campus/#derwent-college">Location of Derwent College</a></li>
-      </ul>
-      <h3>Walking distances</h3>
-      <ul>
-<li>Market Square Shops: 0.3 miles / 7 minutes walk</li>
-<li>Library: 0.3 miles / 7 minutes walk</li>
-<li>Ron Cooke Hub: 0.8 miles / 17 minutes walk</li>
-<li>York Sports Centre: 0.6 miles / 11 minutes walk</li>
-<li>York Sport Village: 1.7 miles / 34 minutes walk</li>
-</ul>
+
+
+
+
+
+
+      <div class="o-grid__row">
+        <div class="o-grid__box o-grid__box--twothirds">
+          <h2>Find out more</h2>
+          <p><strong><a href="http://www.york.ac.uk/colleges/derwent/">Derwent College</a></strong><br>
+            <i class="c-icon c-icon--twitter c-icon--before"></i><a href="https://twitter.com/derwentcollege">@derwentcollege</a><br/>
+            <i class="c-icon c-icon--facebook-square c-icon--before"></i><a href="https://www.facebook.com/DerwentCollegeYork">Derwent College</a><br/></p>
+
+
+          <!-- navigation object : Contact details --><div class="c-panel c-panel--compact">
+          <div class="c-panel__content">
+            <h3>Contact us</h3>
+
+            <p>
+              <strong>Accommodation Services</strong><br/>
+              <i class="c-icon c-icon--envelope-o c-icon--before"></i><a href="mailto:accommodation@york.ac.uk">accommodation@york.ac.uk</a><br/>
+              <i class="c-icon c-icon--phone c-icon--before"></i>+44 (0)1904 322165<br/>
+
+              <i class="c-icon c-icon--twitter c-icon--before"></i><a href="https://twitter.com/UoYAccomm">@UoYAccomm</a><br/>
+              <i class="c-icon c-icon--facebook-square c-icon--before"></i><a href="https://www.facebook.com/UoYAccomm">Find us on Facebook</a><br/>
+
+            </p>   </div>
+        </div>
+        </div>
+      </div>
+      <div class="o-grid__row is-visible@small-">
+        <div class="o-grid__box o-grid__box--full">
+          <!-- navigation object : Contact details -->
+          <!-- navigation object : Related links -->
+        </div>
+      </div>
+
+
     </div>
-    <div class="o-grid__box o-grid__box--third">
-      <h2>Facilities</h2>
-      <ul>
-<li>Common Room</li>
-<li>Computer room</li>
-<li>Laundry room</li>
-<li>Bar</li>
-<li>Caf&eacute;</li>
-<li>Restaurant</li>
-<li>Wifi in all rooms</li>
-</ul>
-    </div>
-</div>
-<div class="o-grid__row  o-grid__row--alt3">
-  <div class="o-grid__box o-grid__box--twothirds">
-
-<blockquote class="c-blockquote c-blockquote--image-quote">
-
-<img class="c-blockquote__image c-blockquote__image--left" src="https://www.york.ac.uk/media/study-new/accommodation/img/derwent-emma-240.jpg">
-  <div class="c-blockquote__content">
-                                                                                    <p>Derwent is in a great location, it has a great atmosphere and the people are lovely. My room is really big which means everyone can hang out together in here.</p>
   </div>
-  <cite class="c-blockquote__cite">Emma</cite>
-</blockquote>
-
-
-
-
-  </div>
-  </div>
-  <div class="o-grid__row">
-  <div class="o-grid__box o-grid__box--twothirds">
-                          <h2>Find out more</h2>
-                        <strong><a href="http://www.york.ac.uk/colleges/derwent/">Derwent College</a></strong><br>
-                     <i class="c-icon c-icon--twitter c-icon--before"></i><a href="https://twitter.com/derwentcollege">@derwentcollege</a><br/>
-    <i class="c-icon c-icon--facebook-square c-icon--before"></i><a href="https://www.facebook.com/people/Derwent-Jcrc/100007905585564">Derwent College</a><br/>
-
-
-                <!-- navigation object : Contact details --><div class="c-panel c-panel--compact">
-  <div class="c-panel__content">
-    <h3>Contact us</h3>
-
-    <strong>Accommodation Services</strong><br/>
-    <i class="c-icon c-icon--envelope-o c-icon--before"></i><a href="mailto:accommodation@york.ac.uk">accommodation@york.ac.uk</a><br/>
-	<i class="c-icon c-icon--phone c-icon--before"></i>+44 (0)1904 322165<br/>
-
-    <i class="c-icon c-icon--twitter c-icon--before"></i><a href="https://twitter.com/UoYAccomm">@UoYAccomm</a><br/>
-    <i class="c-icon c-icon--facebook-square c-icon--before"></i><a href="https://www.facebook.com/UoYAccomm">Accommodation Services</a><br/>
-   </div>
-</div>
-                </div>
-    </div>
-
-
-
-
-    </div>
-</div>
 </div>
 
 <footer class="c-footer-main" role="contentinfo">
@@ -276,9 +398,10 @@
         <ul>
           <li><a href="http://www.york.ac.uk/about/">About the University</a></li>
           <li><a href="http://www.york.ac.uk/research/">Research</a></li>
-          <li><a href="http://www.york.ac.uk/business/">Working with us</a></li>
-          <li><a href="http://www.york.ac.uk/about/international-relations/">International relations</a></li>
-          <li><a href="http://www.york.ac.uk/news-and-events/">News and events</a></li>
+          <li><a href="http://www.york.ac.uk/business/">Business</a></li>
+          <li><a href="http://www.york.ac.uk/global">Global</a></li>
+          <li><a href="http://www.york.ac.uk/news-and-events/news/">News</a></li>
+          <li><a href="http://www.york.ac.uk/news-and-events/events/">Events</a></li>
         </ul>
       </div>
       <div class="o-grid__box o-grid__box--quarter o-grid__box--half@small o-grid__box--full@tiny">
@@ -304,13 +427,18 @@
     </div>
     <div class="o-grid__row">
       <div class="o-grid__box o-grid__box--quarter">
-        <p><a href="https://twitter.com/uniofyork"><i class="c-icon c-icon--twitter c-icon--2x c-icon--fw"></i></a> <a  href="https://www.facebook.com/universityofyork"><i class="c-icon c-icon--facebook c-icon--2x c-icon--fw"></i></a> <a href="https://instagram.com/uniofyork"><i class="c-icon c-icon--instagram c-icon--2x  c-icon--fw"></i></a> <a  href="http://www.youtube.com/universityofyorkuk"><i class="c-icon c-icon--youtube c-icon--2x c-icon--fw"></i></a></p>
+        <p>
+          <a href="https://twitter.com/uniofyork" aria-label="Follow us on Twitter"><i class="c-icon c-icon--twitter c-icon--2x c-icon--fw" title="Follow us on Twitter" aria-hidden="true"></i></a>
+          <a  href="https://www.facebook.com/universityofyork" aria-label="Like us on Facebook"><i class="c-icon c-icon--facebook c-icon--2x c-icon--fw" title="Like us on Facebook" aria-hidden="true"></i></a>
+          <a href="https://instagram.com/uniofyork" aria-label="Follow us on Instagramr"><i class="c-icon c-icon--instagram c-icon--2x  c-icon--fw" title="Follow us on Instagram" aria-hidden="true"></i></a>
+          <a  href="http://www.youtube.com/universityofyorkuk" aria-label="Watch our videos on YouTube"><i class="c-icon c-icon--youtube c-icon--2x c-icon--fw" title="Watch our videos on YouTube" aria-hidden="true"></i></a>
+        </p>
       </div>
       <div class="o-grid__box o-grid__box--half">
         <p>&copy; University of York <br /> <a href="http://www.york.ac.uk/about/legal-statements/">Legal statements</a> | <a href="http://www.york.ac.uk/about/legal-statements/#tab-5">Privacy and cookies</a></p>
       </div>
       <div class="o-grid__box o-grid__box--quarter"><!-- Footer start-->
-<p><a class="t4Edit-page" href="https://cms.york.ac.uk/terminalfour/SiteManager?ctfn=content&amp;fnno=30&amp;sid=129874">Modify</a></p>
+        <p><a class="t4Edit-page" href="https://cms.york.ac.uk/terminalfour/SiteManager?ctfn=content&amp;fnno=30&amp;sid=129874">Modify</a></p>
       </div>
     </div>
   </div>

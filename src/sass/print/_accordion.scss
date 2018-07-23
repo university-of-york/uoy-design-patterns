@@ -1,0 +1,19 @@
+/*
+  * Open all accordions
+  */
+.c-accordion__item {
+  border:0;
+}
+.c-accordion__title {
+  @include component-margin;
+  padding:0;
+}
+.c-accordion__content {
+  @include component-margin;
+  padding:0;
+  overflow:visible;
+  height:auto!important;
+}
+.c-accordion__icon {
+  display:none;
+}
