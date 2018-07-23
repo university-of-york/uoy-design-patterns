@@ -18,7 +18,7 @@
     }
   ],
   "devDependencies": {
-    "autoprefixer": "9.0.0",
+    "autoprefixer": "9.0.1",
     "compass": "0.1.1",
     "css": "2.2.3",
     "es5-shim": "4.5.10",
