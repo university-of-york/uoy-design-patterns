@@ -18,7 +18,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   if(!window.HashChangeEvent) {
       (function() {
           var lastURL = document.URL;
-          window.addEventListener('hashchange', function (event) {
+          window.addEventListener('hashchange', function(event) {
               Object.defineProperty(event, 'oldURL', {enumerable: true, configurable: true, value: lastURL});
               Object.defineProperty(event, 'newURL', {enumerable: true, configurable: true, value: document.URL});
               lastURL = document.URL;
@@ -139,7 +139,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
           currentLink.addClass('is-current');
       } else {
           // need to do some searching
-          var clickedLiItem = that.navItems.filter(function(){
+          var clickedLiItem = that.navItems.filter(function() {
               return $(this).children('.c-nav__link').attr('href') === location.href;
           });
 
