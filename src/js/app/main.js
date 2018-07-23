@@ -216,16 +216,16 @@ define(
       });
     });
 
+      // Add targeted nav functionality to nav
+      UTILS.eachIfExists('.js-targeted-nav', function (i, a) {
+          new TARGETEDNAV({
+              container: $(a)
+          });
+      });
+
     // Add sticky nav functionality to nav
     UTILS.eachIfExists('.js-sticky-nav', function (i, a) {
       new STICKYNAV({
-        container: $(a)
-      });
-    });
-
-    // Add targeted nav functionality to nav
-    UTILS.eachIfExists('.js-targeted-nav', function (i, a) {
-      new TARGETEDNAV({
         container: $(a)
       });
     });
