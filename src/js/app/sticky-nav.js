@@ -133,13 +133,14 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
   STICKYNAV.prototype.resetLinkHighlight = function(e, currentLink) {
       var that = e.data.that;
+      var clickedLiItem;
       that.navItems.removeClass('is-current');
 
       if(currentLink) {
           currentLink.addClass('is-current');
       } else {
           // need to do some searching
-          var clickedLiItem = that.navItems.filter(function() {
+          clickedLiItem = that.navItems.filter(function() {
               return $(this).children('.c-nav__link').attr('href') === location.href;
           });
 
