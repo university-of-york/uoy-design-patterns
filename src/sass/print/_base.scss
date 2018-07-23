@@ -10,8 +10,15 @@
 }
 
 @page  {
-  size: auto;   /* auto is the initial value */
+  //size: auto;   /* auto is the initial value */
+  size: A4 landscape;
   margin: 1cm 0.5cm;
+}
+
+@page:right{
+  @bottom-right {
+    content: "Page " counter(page) " of " counter(pages);
+  }
 }
 
 
@@ -49,6 +56,12 @@ a[href^="http"]:not([href*="york.ac.uk"]) {
 
 
 // Tables
+table,
+thead,
+figure {
+  page-break-inside: avoid;
+}
+
 thead {
   display: table-header-group; /* h5bp.com/t */
 }
@@ -127,6 +140,11 @@ img {
 .c-figure--no-margin {
   margin-bottom:$base-spacing;
 }
+.c-figure--banner {
+  .c-figure__image {
+    max-width: 450px;
+  }
+}
 
 
 // Panels don't need borders
@@ -145,6 +163,27 @@ img {
 }
 .c-panel--kis-widget {
   display:none;
+}
+
+// Key facts
+.c-key-fact.o-media  {
+  .o-media__body {
+    page-break-before: always;
+    page-break-inside: avoid;
+  }
+}
+
+// Media objects
+.o-media:not(.c-key-fact) {
+  display: table;
+  width: 100%;
+
+  .o-media__picture,
+  .o-media__body {
+    height:auto !important;
+    display: table-cell;
+    vertical-align: middle;
+  }
 }
 
 
