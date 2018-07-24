@@ -22,11 +22,9 @@ iframe {
 // Get rid of a load of unnecessary stuff
 // hide the generic page bits, header, footer, etc.
 .o-skip-link,
-header,
 #Mobile-Search,
 .c-page-title__wrapper,
 nav,
-.c-breadcrumb,
 footer,
 .c-nav,
 .c-subnav,
@@ -36,6 +34,20 @@ footer,
 .c-news__share,
 #__bs_notify__ {
   display:none;
+}
+
+/*
+   * Reduce header spacing
+   */
+.c-main-header__title,
+.c-page-title__header,
+.c-breadcrumb {
+  margin-bottom:0;
+  padding: 5px 10px;
+}
+
+.c-breadcrumb__separator {
+  padding: 0 5px;
 }
 
 h2 {
