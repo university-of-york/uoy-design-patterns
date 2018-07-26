@@ -231,18 +231,27 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
             }
             modalContent.append('<h3>How to apply</h3>');
             var numbers = trimAndAdd(thisCourse['Phone number(s)'].split(','));
-            modalContent.append('<p>To apply for this course, call us on <strong>'+numbers+'</strong>.</p>');
-            modalContent.append('<p>Before you call:</p>');
-            var modalList = $('<ul>');
-            modalList.append('<li>Research the course(s) you\'re interested in and be ready to tell us why you want to apply.</li>');
-            if (thisCourse['No grades'] !== '') {
-              modalList.append('<li>Pick up your results - we\'ll need the details in order to make our decision.</li>');
-            } else {
-              modalList.append('<li>Pick up your results and make sure you meet the entry requirements. We\'ll need the details of your results in order to make our decision.</li>');
-            }
-            modalList.append('<li>Have your UCAS ID number to hand and a number we can call you back on.</li>');
-            modalList.append('<li>If your first language is not English you must also provide evidence of your <a href=&quot;https://www.york.ac.uk/study/undergraduate/applying/entry/english-language/&quot;>English language ability.</a></li>');
-            modalContent.append(modalList);
+              var modalBullets1 = $('<ul>');
+              var modalBullets2 = $('<ul>');
+
+            modalContent.append('<p>We have limited places available for well qualified students through clearing and adjustment.</p>');
+            modalContent.append('<p>You can apply through clearing now if: </p>');
+
+            // build the first set of bullets
+              modalBullets1.append('<li>you already have your results and have not yet applied to York, and have not formally accepted an offer through UCAS elsewhere</li>');
+              modalBullets1.append('<li>you\'re not currently holding any offers. </li>');
+              modalContent.append(modalBullets1);
+
+              modalContent.append('<p>To discuss your options and find out about entry requirements call  <strong>'+numbers+'</strong>.</p>');
+              modalContent.append('<p>Have your UCAS ID number to hand and a number we can call you back on.</p>');
+              modalContent.append('<p><strong>Opening times:</strong></p>');
+
+              // build the next set of bullets
+              modalBullets2.append('<li>5 July - 9 August - Monday to Friday, 9am - 5pm</li>');
+              modalBullets2.append('<li>10 - 15 August - closed while we prepare for A level results day</li>');
+              modalBullets2.append('<li>16 - 17 August - 8am - 6pm</li>');
+              modalContent.append(modalBullets2);
+
             modalContent.append('<p><a class="c-btn c-btn--secondary c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/vacancies/">Find out more about clearing and adjustment</a></p>');
 
             that.panel.append(panelContent);

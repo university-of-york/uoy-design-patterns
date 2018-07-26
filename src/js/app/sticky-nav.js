@@ -75,7 +75,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
                 count === that.navItems.length) {
                 canScroll = true;
             }
-        })
+        });
     }
 
     // Make nav stick to top of the page
