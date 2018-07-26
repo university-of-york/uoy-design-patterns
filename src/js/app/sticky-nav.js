@@ -29,27 +29,27 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
   var STICKYNAV = function (options) {
 
-    if (!options.container) return false;
+      if (!options.container) return false;
 
-    this.container = options.container;
-    this.navItems = this.container.find('.c-nav__item');
-    this.parent = this.container.parent();
-    this.currentURL = document.URL;
-    this.isSticky = false;
-    this.isCentered = false;
+      this.container = options.container;
+      this.navItems = this.container.find('.c-nav__item');
+      this.parent = this.container.parent();
+      this.currentURL = document.URL;
+      this.isSticky = false;
+      this.isCentered = false;
 
-    // When there's a sticky nav, URL fragments will scroll the page under the navigation
-    // Nudge the scroll by nav height
-    $window.on('hashchange', null, { that: this }, this.updateScrollPos);
-    $window.on('resize', null, { that: this }, this.reset);
-    $window.on('scroll', null, { that: this }, this.check);
-    $window.on('nav.new-targeted-current', null, { that: this }, this.centerCurrentNav);
+      // When there's a sticky nav, URL fragments will scroll the page under the navigation
+      // Nudge the scroll by nav height
+      $window.on('hashchange', null, {that: this}, this.updateScrollPos);
+      $window.on('resize', null, {that: this}, this.reset);
+      $window.on('scroll', null, {that: this}, this.check);
+      $window.on('nav.new-targeted-current', null, {that: this}, this.centerCurrentNav);
 
-    this.container.on('click', '.c-nav__item', { that: this }, this.handleLinkClick);
+      this.container.on('click', '.c-nav__item', {that: this}, this.handleLinkClick);
 
-    $window.trigger('resize');
+      $window.trigger('resize');
 
-    console.info(this);
+      console.info(this);
   };
 
   STICKYNAV.prototype.defaults = {
@@ -58,11 +58,30 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
   STICKYNAV.prototype.check = function (e) {
     var that = e.data.that,
-        scrollTop = $window.scrollTop();
+        scrollTop = $window.scrollTop(),
+        smallScreen = UTILS.mediaQuery('small', '-'),
+        canScroll = false,
+        count = 0;
+
     that.isSticky = scrollTop >= that.containerStartPosition;
+
+    if(smallScreen) {
+        // check to see if we're at the end of the available navigation items
+        // if so, we can hide the faded edge
+
+        that.navItems.each(function() {
+            count++;
+            if($(this).hasClass('is-current') &&
+                count === that.navItems.length) {
+                canScroll = true;
+            }
+        });
+    }
+
     // Make nav stick to top of the page
     that.container.toggleClass('is-sticky', that.isSticky);
     that.container.toggleClass('is-centered', that.isCentered && that.isSticky);
+    that.container.toggleClass('can-scroll', !canScroll);
   };
 
   // Find new position of sticky nav
@@ -100,6 +119,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
   STICKYNAV.prototype.centerCurrentNav = function (e) {
     var that = e.data.that;
+    var smallScreen = UTILS.mediaQuery('small', '-');
     if (!that.isSticky || !that.isCentered) return false;
     var $navUl = $(that.container.children('ul')),
         $currentNav = $(that.container.find('li.is-current')),
@@ -111,6 +131,15 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       // only offset negatively
       newOffset = Math.min(windowWidth/2 - currentLeft - currentWidth/2,0);
     }
+
+    // if this is a mobile, scroll left, don't position left
+    if(smallScreen) {
+        // multiply by negative 1 to turn negative into a positive
+        $navUl.scrollLeft(newOffset * -1);
+        console.log('new scroll left value: ' + (newOffset * -1));
+        return;
+    }
+
     $navUl.css('left', newOffset);
   };
 
