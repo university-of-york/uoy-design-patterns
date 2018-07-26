@@ -88,10 +88,8 @@
 // Stick nav
 .c-nav--sticky {
   @include mq(small, '-') {
-
     position: relative;
     overflow: hidden;
-
     .c-nav__list {
       max-width: 100%;
       width: auto;
@@ -101,9 +99,7 @@
       margin-bottom: -70px;
       padding-bottom: 70px;
     }
-
     &.can-scroll {
-
       &::after {
         position: absolute;
         right: 0;
@@ -116,6 +112,7 @@
         box-shadow: -1px 0px 6px 12px rgba(232, 232, 232, 0.89);
         background-color: #f0f1f4;
       }
+
     }
   }
 }
