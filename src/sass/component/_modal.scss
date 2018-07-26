@@ -23,7 +23,7 @@
     max-width:90%;
     max-height:90%;
     opacity:0;
-    overflow:hidden;
+    overflow-y: auto;
     // Really big screens
     @include mq('huge', '+') {
       width:100%;

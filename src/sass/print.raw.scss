@@ -1,0 +1,33 @@
+@media print {
+
+  // let's get some default styles for the fonts, etc.
+  //CORE
+  @import "core/variables";
+  @import "core/mixins";
+  @import "core/functions";
+  @import "core/extends";
+  @import "core/normalize";
+  @import "core/reset";
+  @import "core/base";
+
+  //GENERIC
+  @import "generic/typography";
+
+  //OBJECTS
+  @import "object/structure";
+  @import "object/media";
+  @import "object/accessibility";
+
+  //COMPONENTS
+  @import "component/alerts";
+  @import "component/tables";
+
+  // SCOPES
+  @import "scopes/tinymce";
+
+  // Print specific stuff
+  @import "print/base";
+  @import "print/resets";
+  @import "print/grid";
+  @import "print/accordion";
+}

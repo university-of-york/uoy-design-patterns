@@ -216,16 +216,16 @@ define(
       });
     });
 
+      // Add targeted nav functionality to nav
+      UTILS.eachIfExists('.js-targeted-nav', function (i, a) {
+          new TARGETEDNAV({
+              container: $(a)
+          });
+      });
+
     // Add sticky nav functionality to nav
     UTILS.eachIfExists('.js-sticky-nav', function (i, a) {
       new STICKYNAV({
-        container: $(a)
-      });
-    });
-
-    // Add targeted nav functionality to nav
-    UTILS.eachIfExists('.js-targeted-nav', function (i, a) {
-      new TARGETEDNAV({
         container: $(a)
       });
     });
@@ -283,21 +283,6 @@ define(
       });
     });
 
-    // Set up 'Show more' containers
-    UTILS.eachIfExists('.js-show-more', function (i, a) {
-      var $a = $(a);
-      var defaultHeight = parseInt($a.attr('data-default-height'), 10);
-      var buttonTextMore = $a.attr('data-more-text') || false;
-      var buttonTextLess = $a.attr('data-less-text') || false;
-      var e = new SHOWMORE({
-        container: $a,
-        defaultHeight: defaultHeight,
-        buttonTextMore: buttonTextMore,
-        buttonTextLess: buttonTextLess
-      });
-      // Wait till fonts are loaded
-      UTILS.fontsActive(e.setShowMoreHeight, e);
-    });
 
     // Update 'More' text
     $window.on('toggle', function(e, options) {
@@ -336,4 +321,27 @@ define(
 
     console.log('Javascript loaded');
   });
+
+
+      // Set up 'Show more' containers
+      // We have to put these outside the typical document.ready function because
+      // Chrome doesn't register the height of the ShowMore container properly until
+      // the window finishes loading
+      $(window).bind('load', function() {
+          //console.log('Window loaded in Show More');
+          UTILS.eachIfExists('.js-show-more', function (i, a) {
+              var $a = $(a);
+              var defaultHeight = parseInt($a.attr('data-default-height'), 10);
+              var buttonTextMore = $a.attr('data-more-text') || false;
+              var buttonTextLess = $a.attr('data-less-text') || false;
+              var e = new SHOWMORE({
+                  container: $a,
+                  defaultHeight: defaultHeight,
+                  buttonTextMore: buttonTextMore,
+                  buttonTextLess: buttonTextLess
+              });
+              // Wait till fonts are loaded
+              UTILS.fontsActive(e.setShowMoreHeight, e);
+          });
+      });
 });

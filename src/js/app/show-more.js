@@ -35,6 +35,8 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     this.buttonTextMore = options.buttonTextMore || Default.buttonTextMore;
     this.buttonTextLess = options.buttonTextLess || Default.buttonTextLess;
 
+    this.windowLoaded = false;
+
     // Hide content
     this.container.addClass('is-closed');
 
@@ -98,10 +100,9 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     this.container.removeClass('is-closed');
 
     // Get content height
-    var contentHeight = this.content.outerHeight();
+    var contentHeight = this.container.find('.c-show-more__content').outerHeight(true);
 
     this.content.attr('data-original-height', contentHeight);
-    var thisId = this.content.attr('id') || false;
 
     if (isClosed === true) {
       contentHeight = this.defaultHeight;
@@ -109,10 +110,8 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     }
 
     this.content.css('height', contentHeight);
-
     this.content.removeClass('is-ghost');
     this.content.addClass('is-ready');
-
   };
 
   SHOWMORE.prototype.addButton = function () {
@@ -123,7 +122,6 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
                                .on('click', { that: this }, this.toggleState);
 
     return this.container.append(this.button);
-
   };
 
   SHOWMORE.prototype.toggleState = function (e) {
@@ -170,9 +168,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
     // Returns true if open, false if closed
     return !isClosed;
-
   };
 
   return SHOWMORE;
-
 });

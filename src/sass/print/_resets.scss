@@ -1,0 +1,55 @@
+* {
+  background: transparent !important;
+  color: #000 !important; /* Black prints faster: h5bp.com/s */
+  box-shadow: none !important;
+  text-shadow: none !important;
+  transition:none !important; /* http://www.lockedowndesign.com/chrome-print-preview-differs-from-dev-tools/ */
+}
+
+body, h1, h2, h3, ol, ul, div {
+  width: auto;
+  border: 0;
+  float: none;
+  position: static;
+  overflow: visible;
+}
+
+// controversial...
+iframe {
+  display: none;
+}
+
+// Get rid of a load of unnecessary stuff
+// hide the generic page bits, header, footer, etc.
+.o-skip-link,
+#Mobile-Search,
+.c-page-title__wrapper,
+nav,
+footer,
+.c-nav,
+.c-subnav,
+.c-nav__wrapper,
+.c-footer-main,
+.c-form--header,
+.c-news__share,
+#__bs_notify__ {
+  display:none;
+}
+
+/*
+   * Reduce header spacing
+   */
+.c-main-header__title,
+.c-page-title__header,
+.c-breadcrumb {
+  margin-bottom:0;
+  padding: 5px 10px;
+}
+
+.c-breadcrumb__separator {
+  padding: 0 5px;
+}
+
+h2 {
+  //page-break-before: always;
+}

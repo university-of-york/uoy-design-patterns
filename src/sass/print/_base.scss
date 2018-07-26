@@ -1,0 +1,203 @@
+@mixin subtle-image {
+  max-width:25%!important;
+  float:left;
+  margin-right:$base-spacing;
+}
+@mixin unsubtle-image {
+  max-width:100%!important;
+  float:none;
+  margin-right:0;
+}
+
+@page  {
+  //size: auto;   /* auto is the initial value */
+  size: A4 portrait;
+  margin: 1cm 0.5cm;
+}
+
+@page:right{
+  @bottom-right {
+    content: "Page " counter(page) " of " counter(pages);
+  }
+}
+
+
+// Images
+img {
+  max-width: 100%;
+  margin: 10px 10px 10px 0;
+}
+
+
+// Typography
+a {
+  text-decoration:none;
+}
+
+// Add external links afterwards
+a[href^="http"]:not([href*="york.ac.uk"]) {
+  &:after {
+    content:" (" attr(href) ") ";
+    font-size:0.8em;
+    font-weight:normal;
+  }
+}
+
+
+// Add link to Youtube video
+.c-video {
+  &:before {
+    content:"Watch the video at https://youtu.be/"attr(data-video-id);
+  }
+  iframe {
+    display:none;
+  }
+}
+
+
+// Tables
+table,
+thead,
+figure {
+  page-break-inside: avoid;
+}
+
+thead {
+  display: table-header-group; /* h5bp.com/t */
+}
+
+tr,
+img {
+  page-break-inside: avoid;
+}
+
+
+// Buttons
+.c-btn,
+.cta a {
+  border:0;
+  padding:0;
+  word-break:break-word;
+}
+
+
+// Blockquotes
+.c-blockquote {
+  margin: 0 0 20px;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+
+  .c-blockquote__image--left {
+    float: left;
+    margin-right: 30px;
+    margin-top: 5px;
+  }
+}
+
+
+// Tabs
+.c-tabs__nav {
+  display: none;
+}
+
+
+// Show more component
+.c-show-more {
+
+  .c-show-more__content {
+    // need !important to override the JS height applied at element style level
+    height: auto !important;
+  }
+  .c-btn {
+    display: none;
+  }
+}
+
+
+// Figures
+.c-figure--link,
+.c-news--excerpt .c-news__poster {
+  img {
+    //@include subtle-image;
+  }
+}
+.c-figure--link {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  max-width: 100%;
+
+  .c-figure__content {
+    position:static;
+    padding:0;
+    display:block;
+  }
+}
+.c-figure--no-margin {
+  margin-bottom:$base-spacing;
+}
+.c-figure--banner {
+  .c-figure__image {
+    max-width: 450px;
+  }
+}
+
+
+// Panels don't need borders
+.c-panel,
+.h-card--article {
+  border-top:0;
+  margin-bottom:0;
+}
+.c-panel__header,
+.c-panel__image,
+.c-panel__subheader,
+.c-panel__content,
+.c-panel__footer {
+  @include component-margin;
+  padding:0;
+}
+.c-panel--kis-widget {
+  display:none;
+}
+
+// Key facts
+.c-key-fact.o-media  {
+  .o-media__body {
+    page-break-before: always;
+    page-break-inside: avoid;
+  }
+}
+
+// Media objects
+.o-media:not(.c-key-fact) {
+  display: table;
+  width: 100%;
+
+  .o-media__picture,
+  .o-media__body {
+    height:auto !important;
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+// Maps
+.c-map {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
