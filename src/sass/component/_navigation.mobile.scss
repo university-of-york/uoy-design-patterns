@@ -87,32 +87,28 @@
 
 // Stick nav
 .c-nav--sticky {
-  @include mq(small, '-') {
+  @include mq(medium, '-') {
+
     position: relative;
     overflow: hidden;
+
     .c-nav__list {
       max-width: 100%;
-      width: auto;
+      //overflow: hidden;
       overflow-x: auto;
-      overflow-y: hidden;
       max-height: 100%;
       margin-bottom: -70px;
       padding-bottom: 70px;
     }
-    &.can-scroll {
-      &::after {
-        position: absolute;
-        right: 0;
-        top: 0;
-        content: '';
-        height: 100%;
-        //width: 0;
-        width: 2px;
-        //box-shadow: 0 0 10px 8px rgba(64, 64, 64, 0.85);
-        box-shadow: -1px 0px 6px 12px rgba(232, 232, 232, 0.89);
-        background-color: #f0f1f4;
-      }
 
+    &::after {
+      position: absolute;
+      right: 0;
+      top: 0;
+      content: '';
+      height: 100%;
+      width: 0;
+      box-shadow: 0 0 10px 8px rgba(64, 64, 64, 0.85);
     }
   }
 }
