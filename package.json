@@ -54,7 +54,7 @@
     "requirejs": "2.3.5",
     "semantic-release": "15.8.1",
     "time-grunt": "1.4.0",
-    "webpack": "4.16.2"
+    "webpack": "4.16.3"
   },
   "scripts": {
     "backstop": "backstop",
