@@ -252,7 +252,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
               modalBullets2.append('<li>16 - 17 August - 8am - 6pm</li>');
               modalContent.append(modalBullets2);
 
-            modalContent.append('<p><a class="c-btn c-btn--secondary c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/vacancies/">Find out more about clearing and adjustment</a></p>');
+            modalContent.append('<p><a class="c-btn c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/vacancies/">Find out how to apply</a></p>');
 
             that.panel.append(panelContent);
             that.panel.append(modalContent);
