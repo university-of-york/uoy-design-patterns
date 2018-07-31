@@ -50,12 +50,11 @@ $c-blockquote__image-tiny-ratio:0.75;
 .c-blockquote--pull-quote {
   overflow:visible;
   padding-top:$base-spacing/2;
-  .c-blockquote__content p {
+  .c-blockquote__content {
     @include font-size(22px, 1.13636364);
     color:$c-blockquote--pull-quote-color;
     font-family:$font-title;
     padding:0 $base-spacing * 1.5;
-  .c-blockquote__content  {
     :first-child:before {
       @include font-size(48px);
       content: open-quote;
@@ -85,8 +84,11 @@ $c-blockquote__image-tiny-ratio:0.75;
     @include font-size(32px, 1.25);
   }
   &.c-blockquote--pull-quote {
-    .c-blockquote__content:before {
-      @include font-size(60px);
+    .c-blockquote__content {
+      :before,
+      :after {
+        @include font-size(60px);
+      }
     }
   }
   &.c-blockquote--image-quote {
