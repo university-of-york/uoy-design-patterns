@@ -178,7 +178,12 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
           } else if (that.layout === "Course panel") {
 
             var panelContent = $('<div>').addClass('c-panel__content');
-            that.modalLink = $('<a>').attr({'href': '#modal-content-'+that.id}).text('Clearing and adjustment information for this course');
+            that.modalLink = $('<a>').attr(
+                {
+                    'href': '#modal-content-'+that.id,
+                    'class': 'c-btn c-btn--medium'
+                }).text('Find out how to apply');
+
 
             panelContent.append('<p><strong>Places are available on this course through clearing and adjustment</strong></p>');
             panelContent.append($('<p>').append(that.modalLink));
@@ -252,7 +257,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
               modalBullets2.append('<li>16 - 17 August - 8am - 6pm</li>');
               modalContent.append(modalBullets2);
 
-            modalContent.append('<p><a class="c-btn c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/vacancies/">Find out how to apply</a></p>');
+              modalContent.append('<p><a class="c-btn c-btn--secondary c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/vacancies/">Find out more about clearing and adjustment</a></p>');
 
             that.panel.append(panelContent);
             that.panel.append(modalContent);
