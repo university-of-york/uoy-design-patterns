@@ -13,6 +13,10 @@ release/
 **/*.zip
 **/.DS_Store
 
+src/partials/assocnav.mustache
+src/partials/nav.mustache
+src/partials/subnav.mustache
+
 .idea/
 .tags
 /dist/
