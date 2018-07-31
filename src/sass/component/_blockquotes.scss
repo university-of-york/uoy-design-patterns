@@ -55,14 +55,15 @@ $c-blockquote__image-tiny-ratio:0.75;
     color:$c-blockquote--pull-quote-color;
     font-family:$font-title;
     padding:0 $base-spacing * 1.5;
-    &:before {
+  .c-blockquote__content  {
+    :first-child:before {
       @include font-size(48px);
       content: open-quote;
       position:absolute;
       top:-$base-spacing/2;
       left:0;
     }
-    &:after {
+    :last-child:after {
       @include font-size(48px);
       content: close-quote;
       position:absolute;
