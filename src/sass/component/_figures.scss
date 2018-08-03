@@ -65,7 +65,9 @@
 .c-figure__image,
 .c-figure img {
   display:block;
-  max-width:100%;
+  @include mq(small, '+') {
+    width:100%;
+  }
   position: relative;
   // HELPER CLASSES FOR IMAGES (used by JS)
   // Image must fit vertically
@@ -94,9 +96,9 @@
   color:$light;
   padding:$base-spacing/2 $base-spacing;
   @include mq(small, '-') {
-    position:static;
-    max-width:100%;
-    display:block;
+    // position:static;
+    // max-width:100%;
+    // display:block;
     padding:$base-spacing/4 $base-spacing/2;
     background:$blue;
   }
