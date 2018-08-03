@@ -86,7 +86,12 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
       this.container.attr('id', 'clearing-container-'+this.id);
     }
     this.container.addClass('c-clearing-container');
-    this.container.empty();
+
+      // need to empty this only if we've NOT got a course panel layout.
+      // this will prevent the default content being replaced
+      if(this.layout !== 'Course panel') {
+          this.container.empty();
+      }
 
     if (this.layout === 'Courses') {
       this.courseCount['UK/EU'] = 0;
@@ -117,6 +122,16 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
         // Only load it once, even if there's more than one table on a page!
         that.dataLoaded = true;
 
+          var tempData = [];
+          $.grep(data, function(a) {
+              if(a['Home/EU'].toLowerCase() === 'y' ||
+                  a.International.toLowerCase() === 'y') {
+                  tempData.push(a);
+              }
+          });
+
+          data = tempData;
+
         if (that.department !== 'All') {
           // Filter by department
           $.grep(data, function(a) {
@@ -145,6 +160,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
 
         var currentLetter = false;
         var currentCourse = false;
+          var inClearing = false;
         for (var i = 0; i < that.data.length; i++) {
 
           var thisCourse = that.data[i];
@@ -175,16 +191,22 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
             }
 
           // Course panel layout
-          } else if (that.layout === "Course panel") {
+          } else if (that.layout === "Course panel" && that.inClearing(thisCourse)) {
+
+              // empty the container
+              that.container.empty();
+              // set the 'inClearing' value so that the modal gets triggered later on
+              inClearing = true;
 
             var panelContent = $('<div>').addClass('c-panel__content');
             that.modalLink = $('<a>').attr(
                 {
                     'href': '#modal-content-'+that.id,
                     'class': 'c-btn c-btn--medium'
-                }).text('Find out how to apply');
+                }).text('Find out more');
 
 
+            panelContent.append('<h3>Clearing and adjustment 2018</h3>');
             panelContent.append('<p><strong>Places are available on this course through clearing and adjustment</strong></p>');
             panelContent.append($('<p>').append(that.modalLink));
 
@@ -357,7 +379,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
           $(window).trigger('content.updated', ['clearing-table', that]);
 
         // Course panel layout
-        } else if (that.layout === "Course panel") {
+        } else if (that.layout === "Course panel" && inClearing) {
 
           that.container.append(that.panel);
           console.log(that.container, that.container.outerHeight());
@@ -410,6 +432,11 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
         }
       });
     });
+  };
+
+  CLEARINGTABLE.prototype.inClearing = function(courseToCheck) {
+      return (courseToCheck['Home/EU'].toLowerCase() === 'y' ||
+          courseToCheck.International.toLowerCase() === 'y');
   };
 
   CLEARINGTABLE.prototype.createToggle = function() {
