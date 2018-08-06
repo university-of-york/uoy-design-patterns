@@ -23,7 +23,10 @@
     max-width:90%;
     max-height:90%;
     opacity:0;
-    overflow-y: auto;
+    overflow: none;
+    @include mq('small', '-') {
+      overflow-y: auto;
+    }
     // Really big screens
     @include mq('huge', '+') {
       width:100%;
@@ -93,10 +96,11 @@
   background:transparentize($blue, 0.15);
   color:$light;
   padding:$base-spacing/2 $base-spacing;
-  @include mq('small') {
+ @include mq('small') {
     position:static;
     display:block;
   }
+ 
 }
 .c-modal__close {
   position:absolute;
