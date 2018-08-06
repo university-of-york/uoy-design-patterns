@@ -90,13 +90,20 @@ $img_size:140px;
     margin-bottom:$base-spacing;
   }
   .h-card__figure {
-    float:left;
+    @include mq(small, '+') {
+      float:left;
+    }
     margin-right:$base-spacing;
     margin-bottom:0;
   }
   .h-card__name {
     @include font-size(20px);
     margin-bottom: 0;
+    margin-top: $base-spacing/2;
+    @include mq(small, '+') {
+      margin-top: 0;
+    }
+
   }
   // Margin to give room for the image
   .h-card__name,
@@ -104,7 +111,10 @@ $img_size:140px;
   .h-card__tel,
   .h-card__url,
   .h-card__bio {
+    @include mq(small, '+') {
     margin-left:$img_size + $base-spacing;
+   
+    }
 
   }
 }
