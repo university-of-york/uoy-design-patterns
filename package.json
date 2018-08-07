@@ -27,10 +27,10 @@
     }
   ],
   "devDependencies": {
-    "@semantic-release/changelog": "^3.0.0",
-    "@semantic-release/git": "^7.0.1",
-    "@semantic-release/github": "^5.0.2",
-    "@semantic-release/release-notes-generator": "^7.0.0",
+    "@semantic-release/changelog": "3.0.0",
+    "@semantic-release/git": "7.0.1",
+    "@semantic-release/github": "5.0.2",
+    "@semantic-release/release-notes-generator": "7.0.0",
     "autoprefixer": "9.1.0",
     "compass": "0.1.1",
     "css": "2.2.3",
