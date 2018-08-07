@@ -5,7 +5,7 @@
   "main": "gruntfile.js",
   "repository": "https://github.com/university-of-york/design-patterns",
   "license": "UNLICENSED",
-  "author": "University of York Digital Team (http://yorkwebteam.blogspot.co.uk/)",
+  "author": "University of York Digital Team (https://university-of-york.github.io/)",
   "contributors": [
     {
       "name": "Chris Marsh",
@@ -15,9 +15,22 @@
     {
       "name": "Paul Kelly",
       "email": "paul.kelly@york.ac.uk"
+    },
+    {
+      "name": "Rob Kendal",
+      "email": "rob.kendal@york.ac.uk",
+      "url": "https://robkendal.co.uk"
+    },
+    {
+      "name": "Dave Hill",
+      "email": "dave.hill@york.ac.uk"
     }
   ],
   "devDependencies": {
+    "@semantic-release/changelog": "^3.0.0",
+    "@semantic-release/git": "^7.0.1",
+    "@semantic-release/github": "^5.0.2",
+    "@semantic-release/release-notes-generator": "^7.0.0",
     "autoprefixer": "9.1.0",
     "compass": "0.1.1",
     "css": "2.2.3",

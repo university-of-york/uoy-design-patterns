@@ -13,12 +13,13 @@ release/
 **/*.zip
 **/.DS_Store
 
-src/partials/assocnav.mustache
-src/partials/nav.mustache
-src/partials/subnav.mustache
+/src/partials/assocnav.mustache
+/src/partials/subnav.mustache
+/src/partials/nav.mustache
 
 .idea/
 .tags
 /dist/
 /_site/
 !*.gitkeep
+
