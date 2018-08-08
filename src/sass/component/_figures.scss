@@ -415,14 +415,14 @@
   margin-left: -50vw;
   margin-right: -50vw;
   overflow: hidden;
-  padding:0;
+ 
 
 }
 
 .c-figure--hero-bg {
   height: 64vh;
-  background-position: 100% 60%;
-  background-size: 95%;
+  background-position: 100% 80%;
+  background-size: cover;
   background-repeat: no-repeat;
   @include mq('medium', '+') {
     height: 32vh;
