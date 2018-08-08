@@ -400,11 +400,7 @@
 }
 
 // Hero 
-.c-figure--hero-bg {
-  height: 64vh;
-  background-position: 100% 60%;
-  background-size: 95%;
-  background-repeat: no-repeat;
+.c-figure--hero {
   position: relative;
   left: 0;
   right: 0;
@@ -413,15 +409,23 @@
   margin-right: -50vw;
   overflow: hidden;
   padding:0!important;
+
+}
+
+.c-figure--hero-bg {
+  height: 64vh;
+  background-position: 100% 60%;
+  background-size: 95%;
+  background-repeat: no-repeat;
   @include mq('medium', '+') {
-   height: 32vh;
-   background-position: 60% 40%;
-   background-size: 80%;
-  }
-  @include mq('large', '+') {
-    height: 75vh;
-    background-size: 90%;
-  }
+    height: 32vh;
+    background-position: 60% 40%;
+    background-size: 80%;
+   }
+   @include mq('large', '+') {
+     height: 75vh;
+     background-size: 90%;
+   }
 }
 
 .c-figure-hero__content {
