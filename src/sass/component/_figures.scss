@@ -145,6 +145,13 @@
   bottom:0;
   right:0;
 }
+.c-figure__caption--bottom-centre {
+  bottom: 0;
+ 
+}
+.c-figure__caption--top-centre {
+  top: 0;
+}
 .c-figure__caption-icon {
   margin-right:$base-spacing/2;
 }
@@ -408,7 +415,7 @@
   margin-left: -50vw;
   margin-right: -50vw;
   overflow: hidden;
-  padding:0!important;
+  padding:0;
 
 }
 
@@ -429,19 +436,23 @@
 }
 
 .c-figure-hero__content {
-    background:#000!important;
+    background:#000;
     background:rgba(0,0,0,0.6)!important;
-    background: linear-gradient(transparent, #000)!important;
-    color: #fff!important;
-    position: absolute!important;
-    left: 50%!important;
-    right: 50%!important;
-    margin-left: -50vw!important;
-    margin-right: -50vw!important;
-    bottom: 0!important;
-    padding:0!important;
-    @include mq('small', '+') {
-      text-align: center;
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5), #000)!important;
+    @include mq('medium', '+') {
+      background: linear-gradient(rgba(0,0,0,0) 58%, rgba(0,0,0,0.5), #000)!important;
+    }
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    bottom: 0;
+    padding: 0;
+    height: 40vh;
+    @include mq('large', '+') {
+      height: 60vh;
     }
     h1 {
       font-size: 32px;
@@ -449,14 +460,21 @@
       margin: $base-spacing/2;
     }
     @include mq('small', '+') {
+      text-align: center;
       h1 {
         font-size: 40px;
         font-size: 2.5rem;
         margin: $base-spacing/4 0;
       }
     }
+   
 }
 .c-figure-hero__content p {
-   margin: $base-spacing/2; 
+   margin: $base-spacing/2 0; 
 }
 
+.c-figure-hero__caption {
+  position:absolute;
+  padding: 0 $base-spacing/2; 
+  width: 100vw;
+}
