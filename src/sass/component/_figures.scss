@@ -20,6 +20,12 @@
         margin-left:-($cMargin + $cWidth);
         float:none;
       }
+      &.c-figure__content--centre,
+      &.c-figure__content--top-centre,
+      &.c-figure__content--bottom-centre {
+        margin-left:-($cWidth/2);
+        float:none;
+      }
       &.c-figure__content--right,
       &.c-figure__content--top-right,
       &.c-figure__content--bottom-right {
@@ -213,6 +219,19 @@
   bottom:auto;
   left:$base-spacing;
 }
+.c-figure__content--top-centre {
+  top:$base-spacing;
+  right:auto;
+  bottom:auto;
+  left:auto;
+}
+.c-figure__content--bottom-centre {
+  top:auto;
+  right:auto;
+  bottom:0!important;
+  left:auto;
+  position: absolute!important;
+}
 .c-figure__content--top-right {
   top:$base-spacing;
   right:$base-spacing;
@@ -379,3 +398,61 @@
     }
   }
 }
+
+// Hero 
+.c-figure--hero-bg {
+  height: 64vh;
+  background-position: 100% 60%;
+  background-size: 95%;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin-bottom: 1em;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  padding:0!important;
+  @include mq('medium', '+') {
+   height: 32vh;
+   background-position: 60% 40%;
+   background-size: 80%;
+  }
+  @include mq('large', '+') {
+    height: 75vh;
+    background-size: 90%;
+  }
+}
+
+.c-figure-hero__content {
+    background:#000!important;
+    background:rgba(0,0,0,0.6)!important;
+    background: linear-gradient(transparent, #000)!important;
+    color: #fff!important;
+    position: absolute!important;
+    left: 50%!important;
+    right: 50%!important;
+    margin-left: -50vw!important;
+    margin-right: -50vw!important;
+    bottom: 0!important;
+    padding:0!important;
+    @include mq('small', '+') {
+      text-align: center;
+    }
+    h1 {
+      font-size: 32px;
+      font-size: 2rem;
+      margin: $base-spacing/2;
+    }
+    @include mq('small', '+') {
+      h1 {
+        font-size: 40px;
+        font-size: 2.5rem;
+        margin: $base-spacing/4 0;
+      }
+    }
+}
+.c-figure-hero__content p {
+   margin: $base-spacing/2; 
+}
+
