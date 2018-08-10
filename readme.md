@@ -66,3 +66,9 @@ git push -u origin new-branch-name
 You can find more about our recommended branching, versioning and naming conventions in our [development docs](https://university-of-york.github.io/version-control/)
 
 We will merge any signed-off branches into `dev` and they will be deployed in the next release. 
+
+## Testing with Browserstack
+
+We are continually improving our testing and QA processes. Part of this means using some great tools to make sure we catch and squash as many bugs as possible. One of those tools is [Browserstack](https://www.browserstack.com/). We use their screenshots tool to check our work in as many browsers, platforms and front-end scenarios as we can. 
+
+![Browserstack](/src/media/browserstack-logo-600x315.png)
