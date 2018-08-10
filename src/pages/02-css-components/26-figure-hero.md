@@ -13,10 +13,16 @@ id: figure-hero-page
 component("figure-hero", { "type":"hero", "image": "https://www.york.ac.uk/preview/pattern-library/media/StainedGlass-HoA-JohnHoulihan-060.jpg", "content": { "text" :"<h1>Undergraduate study</h1>\n<p>Study at York and you'll graduate with more than a qualification.</p>\n<p><a href=\"#\" class=\"c-btn c-btn--small\">Find a course <i class=\"c-icon c-icon--search c-icon-after\"></i> </a><a href=\"#\" class=\"c-btn c-btn--small\">Book an open day</a></p>\n</div>", "position": "bottom-centre" } } )
 </script>
 
-<div class="lead"><p>Figures will stretch full-width when used within an `o-wrapper--wide`. The image takes up the full width of the screen, with the figure content centred on the screen, as if in a container with max-width of 1200px. Add a class of `c-figure--full-width` to the figure for this to work.</p></div>
+<div class="lead"><p>A Figure Hero will stretch the image to the full width of the screen. The caption will be centred at the bottom of the c-figure--hero container.</p></div>
 
-Captions move out to the very edges (top left, bottom right etc) of the image.
 
-*revise above text*
+### Options 
 
-### Options (see [figures page](../css-components/figures.html))
+#### Atoms
+
+* **Figure Hero**
+  * **image**: the URL of an image **(required)**
+  * **content**:
+    * **text**: the text to appear in the caption (string) **(required)**
+    * **cta**: text to be used on the cta button
+    * **href**: target URL for the cta button 
