@@ -421,11 +421,18 @@
 
 .c-figure--hero-bg {
   height: 64vh;
+  @media only screen and (orientation: landscape) {
+    height: 80vh;
+    background-position: 60% 40%;
+  }
   background-position: 100% 80%;
   background-size: cover;
   background-repeat: no-repeat;
   @include mq('medium', '+') {
     height: 32vh;
+    @media only screen and (orientation: landscape) {
+      height: 70vh;
+    }
     background-position: 60% 40%;
     background-size: 80%;
    }
@@ -433,6 +440,7 @@
      height: 75vh;
      background-size: 90%;
    }
+
 }
 
 .c-figure-hero__content {
