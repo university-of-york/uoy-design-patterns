@@ -19,6 +19,10 @@ component("listings", { "atoms": [
   { "listings-item": {
     title: "An example listing",
     link: "#"
+  } },
+  { "listings-item": {
+    title: "An example listing",
+    link: "#"
   } }
 ]});
 </script>
@@ -31,6 +35,11 @@ component("listings", { "atoms": [
     title: "An example listing",
     description: "A description of some sort which gives the reader an idea of what the listing is about.",
     link: "#"
+  } },
+  { "listings-item": {
+    title: "An example listing",
+    description: "A description of some sort which gives the reader an idea of what the listing is about.",
+    link: "#"
   } }
 ]});
 </script>
@@ -39,6 +48,14 @@ component("listings", { "atoms": [
 
 <script>
 component("listings", { "atoms": [
+  { "listings-item": {
+    type: "news",
+    icon: "newspaper-o",
+    date: "27 January 2018",
+    title: "An example news listing",
+    description: "A description of some sort which gives the reader an idea of what the listing is about.",
+    link: "#"
+  } },
   { "listings-item": {
     type: "news",
     icon: "newspaper-o",
@@ -65,6 +82,18 @@ component("listings", { "atoms": [
     },
     description: "A description of some sort which gives the reader an idea of what the listing is about. A major public lecture in York's historic Merchant Adventurers' Hall will explore the explosive and exciting combination of the visual arts and the sport of wrestling.",
     link: "#"
+  } },
+  { "listings-item": {
+    type: "news",
+    icon: "newspaper-o",
+    date: "27 January 2018",
+    title: "An example news listing",
+    media: {
+      object: "traffic-thumbnail.jpg",
+      text: "Vehicle for success"
+    },
+    description: "A description of some sort which gives the reader an idea of what the listing is about. A major public lecture in York's historic Merchant Adventurers' Hall will explore the explosive and exciting combination of the visual arts and the sport of wrestling.",
+    link: "#"
   } }
 ]});
 </script>
@@ -73,6 +102,14 @@ component("listings", { "atoms": [
 
 <script>
 component("listings", { "atoms": [
+  { "listings-item": {
+    type: "event",
+    icon: "calendar-o",
+    date: "6 February 2018 10:00am",
+    title: "An example event listing",
+    description: "A description of some sort of event that is happening somewhere and is about something.",
+    link: "#"
+  } },
   { "listings-item": {
     type: "event",
     icon: "calendar-o",
@@ -99,6 +136,18 @@ component("listings", { "atoms": [
     },
     description: "A description of some sort which gives the reader an idea of what the listing is about.",
     link: "#"
+  } },
+  { "listings-item": {
+    type: "event",
+    icon: "calendar-o",
+    date: "6 February 2018 10:00am",
+    title: "An example news listing",
+    media: {
+      object: "traffic-thumbnail.jpg",
+      text: "Vehicle for success"
+    },
+    description: "A description of some sort which gives the reader an idea of what the listing is about.",
+    link: "#"
   } }
 ]});
 </script>
@@ -107,6 +156,12 @@ component("listings", { "atoms": [
 
 <script>
 component("listings", { "atoms": [
+  { "listings-item": {
+    title: "Art on campus - About the University",
+    description: "From the Norman Rea Gallery to the various sculptures, the campus at York provides a wide variety of art, in all its forms.",
+    link: "#",
+    url: "  york.ac.uk/about/campus/art/"
+  } },
   { "listings-item": {
     title: "Art on campus - About the University",
     description: "From the Norman Rea Gallery to the various sculptures, the campus at York provides a wide variety of art, in all its forms.",
@@ -126,6 +181,13 @@ component("listings", { "atoms": [
       link: "#",
       url: "  york.ac.uk/about/campus/art/",
       highlighted: true
+  } },
+  { "listings-item": {
+      title: "Art on campus - About the University",
+      description: "From the Norman Rea Gallery to the various sculptures, the campus at York provides a wide variety of art, in all its forms.",
+      link: "#",
+      url: "  york.ac.uk/about/campus/art/",
+      highlighted: true
   } }
 ]});
 </script>
@@ -134,6 +196,15 @@ component("listings", { "atoms": [
 
 <script>
 component("listings", { "atoms": [
+  { "listings-item": {
+    type: "news",
+    icon: "newspaper-o",
+    date: "27 January 2018",
+    title: "Wrestling with art",
+    description: "A major public lecture in York's historic Merchant Adventurers' Hall will explore the explosive and exciting combination of the visual arts and the sport of wrestling.",
+    link: "#",
+    url: "  york.ac.uk/news-and-events/news/2012/events/wrestling-with-art/"
+  } },
   { "listings-item": {
     type: "news",
     icon: "newspaper-o",
