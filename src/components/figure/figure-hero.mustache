@@ -1,5 +1,0 @@
-<{{#if url}}a href="{{url}}"{{else}}figure{{/if}} class="{{#type}} c-figure--{{this}}{{/type}}">
-  <div class="c-figure--hero-bg" style="background-image:url('{{image}}');">{{#caption}}</div>
-  <{{#if url}}div{{else}}figcaption{{/if}} class="{{#if position}} c-figure__caption--{{position}}{{/if}}">{{text}}</{{#if url}}div{{else}}figcaption{{/if}}>{{/caption}}{{#content}}
-  <div class="c-figure-hero__content{{#if position}} c-figure__content--{{position}}{{/if}}{{#if size}} c-figure__content--{{size}}{{/if}}"><div class="c-figure-hero__caption {{#if position}} c-figure__caption--{{position}}{{/if}}">{{text}}</div></div>{{/content}}
-{{#if url}}</a>{{else}}</figure>{{/if}}
