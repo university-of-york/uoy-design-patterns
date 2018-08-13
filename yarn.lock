@@ -106,7 +106,22 @@
     read-pkg "^4.0.0"
     registry-auth-token "^3.3.1"
 
-"@semantic-release/release-notes-generator@7.0.0", "@semantic-release/release-notes-generator@^7.0.0":
+"@semantic-release/release-notes-generator@7.0.1":
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-7.0.1.tgz#300c06b56e965a0aec5d7a83f164b0d7e497ea7b"
+  dependencies:
+    conventional-changelog-angular "^5.0.0"
+    conventional-changelog-writer "^4.0.0"
+    conventional-commits-filter "^2.0.0"
+    conventional-commits-parser "^3.0.0"
+    debug "^3.1.0"
+    get-stream "^4.0.0"
+    git-url-parse "^10.0.1"
+    import-from "^2.1.0"
+    into-stream "^3.1.0"
+    lodash "^4.17.4"
+
+"@semantic-release/release-notes-generator@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-7.0.0.tgz#13510bf6403c9c9e6cb20fd3d9e72014d3ee79e2"
   dependencies:
