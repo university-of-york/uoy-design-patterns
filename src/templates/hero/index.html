@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Figure hero :: Design Patterns</title>
+  <meta name="description" content="University of York Design Patterns">
+  <meta name="author" content="University of York">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+
+  <link rel="shortcut icon" href="/css-components/favicon.ico">
+  <link rel="canonical" href="">
+
+  <link rel="stylesheet" href="/css/dvj8rpp.css">
+
+
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+  <link rel="stylesheet" href="/css/styles.css" media="screen">
+  <link rel="stylesheet" href="/css/docs.css" media="screen">
+
+  <script async="" src="/js/vendor/modernizr.js"></script>
+  <script async="" src="/js/vendor/require.js" data-main="/js/app"></script>
+
+  <!-- Print styles -->
+  <link rel="stylesheet" href="/css/print.css" media="print">
+
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app" src="/js/app.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/globaldata" src="figure-hero_files/globaldata.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/main" src="figure-hero_files/main.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="figure-hero_files/jquery.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="es5shim" src="figure-hero_files/es5-shim.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="picturefill" src="figure-hero_files/picturefill.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="iframeResizer" src="figure-hero_files/iframeResizer.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/utils" src="figure-hero_files/utils.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/modal-link" src="figure-hero_files/modal-link.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/accordion" src="figure-hero_files/accordion.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/sticky-nav" src="figure-hero_files/sticky-nav.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/targeted-nav" src="figure-hero_files/targeted-nav.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/clearing-table" src="figure-hero_files/clearing-table.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/tabs" src="figure-hero_files/tabs.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/prioritised-tables" src="figure-hero_files/prioritised-tables.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/toggle" src="figure-hero_files/toggle.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/utility-toggle" src="figure-hero_files/utility-toggle.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/wrapper-height" src="figure-hero_files/wrapper-height.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/youtube-embed" src="figure-hero_files/youtube-embed.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/soundcloud-embed" src="figure-hero_files/soundcloud-embed.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/searchables" src="figure-hero_files/searchables.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/filterable-tables" src="figure-hero_files/filterable-tables.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/equal-height-row" src="figure-hero_files/equal-height-row.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/google-map" src="figure-hero_files/google-map.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/show-more" src="figure-hero_files/show-more.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/autocomplete" src="figure-hero_files/autocomplete.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/modal" src="figure-hero_files/modal.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jscookie" src="figure-hero_files/js.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/google-docs" src="figure-hero_files/google-docs.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/fullscreen" src="figure-hero_files/fullscreen.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="fuse" src="figure-hero_files/fuse.js"></script></head>
+
+<body id="figure-hero-page" class="docs category-components">
+  <a href="#Main-Content" class="o-skip-link">Skip to content</a>
+
+<header class="c-main-header" role="banner">
+  <div class="o-wrapper o-grid">
+    <div class="o-grid__row">
+      <div class="o-grid__box o-grid__box--threequarters o-grid__box--threequarters@medium o-grid__box--threequarters@small o-grid__box--threequarters@tiny">
+        <h2 class="c-main-header__title"><a class="c-main-header__link" href="http://www.york.ac.uk/"><img class="c-main-header__logo" src="/img/logo.svg" alt="University of York logo"></a></h2>
+      </div>
+      <div class="o-grid__box o-grid__box--quarter o-grid__box--quarter@medium o-grid__box--quarter@small o-grid__box--quarter@tiny">
+        <form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--header">
+          <fieldset>
+            <div class="c-form__element">
+              <input class="c-form__input c-form__input--text" id="q" name="q" placeholder="Search york.ac.uk" type="text">
+              <input name="site" value="yorkweb" type="hidden">
+              <a class="c-btn c-btn--medium js-submit-form" href="https://www.york.ac.uk/search" role="button"><i class="c-icon c-icon--search"></i></a>
+            </div>
+          </fieldset>
+        </form>
+        <a href="#Mobile-Search" class="c-mobile-search-button js-toggle-button"><i class="c-icon c-icon--search"></i></a>
+      </div>
+    </div>
+  </div>
+</header>
+<form action="https://www.york.ac.uk/search" method="get" class="c-form c-form--joined c-form--mobile-search" id="Mobile-Search" style="">
+  <fieldset class="c-form__fieldset">
+    <legend class="c-form__legend">Search york.ac.uk</legend>
+    <div class="o-grid">
+      <div class="o-grid__row">
+        <div class="o-grid__box o-grid__box--full">
+          <div class="c-form__element">
+            <input class="c-form__input c-form__input--text" id="q-mobile" name="q" placeholder="Search york.ac.uk" type="text">
+            <input name="site" value="yorkweb" type="hidden">
+            <a class="c-btn c-btn--medium js-submit-form" href="#" role="button">Search</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</form>
+
+<div class="o-wrapper o-wrapper--wide c-page-title__wrapper o-grid">
+  <div class="o-grid__row">
+    <div class="o-grid__box o-grid__box--full">
+      <div class="c-page-title">
+        <h1 class="c-page-title__header"><a class="c-page-title__link" href="#">Figure hero</a></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation">
+  <h4 class="c-nav__header">In this section</h4>
+      <ul class="c-nav__list c-nav__list--associative c-subnav--layout">
+        <li class="c-nav__item c-nav__title"><a class="c-nav__link">Grid</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/layout/grid.html">Basic grid</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/layout/alt-grid.html">Alternative grid</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/layout/image-grid.html">Image grid</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/layout/divided-grid.html">Divided grid</a></li>
+        <li class="c-nav__item c-nav__title"><a class="c-nav__link">General</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/layout/navigation.html">Navigation</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/layout/typography.html">Typography</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/layout/wrapper.html">Wrapper</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/layout/colours.html">Colours</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/layout/visibility.html">Visibility</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/layout/hcard.html">hCard</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/layout/breadcrumb.html">Breadcrumb</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/layout/accessibility.html">Accessibility</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/layout/utilities.html">Utilities</a></li>
+      </ul>
+      <ul class="c-nav__list c-nav__list--associative c-subnav--components">
+        <li class="c-nav__item c-nav__title"><a class="c-nav__link">Atoms</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/buttons.html">Buttons</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/icons.html">Icons</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/tables.html">Tables</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/alerts.html">Alerts</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/blockquotes.html">Blockquotes</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/block-links.html">Block links</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/label.html">Label</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/global-notices.html">Global Notices</a></li>
+        <li class="c-nav__item c-nav__title"><a class="c-nav__link">Molecules</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/media.html">Media object</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/button-groups.html">Button groups</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/tabs.html">Tabs</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/figures.html">Figures</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/banners.html">Banners</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/link-figures.html">Link figures</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/figure-hero.html">Figure hero</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/full-width-figures.html">Full width figures</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/atoz.html">A to Z</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/panels.html">Panels</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/pagination.html">Pagination</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/accordion.html">Accordion</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/modal.html">Modals</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/signposts.html">Signposts</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/clearing-tables.html">Clearing tables</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/key-fact.html">Key facts</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/tag.html">Tag lists</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/show-more.html">Show More</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/listings.html">Listings</a></li>
+        <li class="c-nav__item c-nav__title"><a class="c-nav__link">Organisms</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/gallery.html">Gallery</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/forms.html">Forms</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/events.html">Events</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/css-components/news.html">News</a></li>
+      </ul>
+      <ul class="c-nav__list c-nav__list--associative c-subnav--modules">
+        <li class="c-nav__item c-nav__title"><a class="c-nav__link">General modules</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/js-modules/utils.html">Utilities</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/js-modules/toggle.html">Toggle</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/js-modules/analytics-module.html">Analytics</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/js-modules/course-search.html">Course search</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/js-modules/youtube-embed.html">Youtube embed</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/js-modules/soundcloud-embed.html">Soundcloud embed</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/js-modules/map-module.html">Maps</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/js-modules/fullscreen.html">Fullscreen</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/js-modules/iframe.html">Iframe resizer</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/js-modules/google-docs.html">Google Docs</a></li>
+        <li class="c-nav__item c-nav__title"><a class="c-nav__link">Component modules</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/js-modules/accordion-module.html">Accordion</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/js-modules/responsive-tables.html">Responsive tables</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/js-modules/tabs-module.html">Tabs</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/js-modules/modal-module.html">Modal</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/js-modules/clearing-tables-module.html">Clearing tables</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/js-modules/modal-link-module.html">Modal link</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/js-modules/searchables-module.html">Searchables</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/js-modules/filterable-tables-module.html">Filterable tables</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/js-modules/equal-height-rows.html">Equal height rows</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/js-modules/show-more-module.html">Show More module</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/js-modules/autocomplete-module.html">Autocomplete module</a></li>
+      </ul>
+      <ul class="c-nav__list c-nav__list--associative c-subnav--scopes">
+        <li class="c-nav__item"><a class="c-nav__link" href="/scopes/conversation.html">Conversation scope</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/scopes/formstack.html">Formstack scope</a></li>
+      </ul>
+      <ul class="c-nav__list c-nav__list--associative c-subnav--about">
+        <li class="c-nav__item"><a class="c-nav__link" href="/about/css.html">CSS naming conventions</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/about/js.html">JS modules</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="/about/todo.html">To do</a></li>
+      </ul>
+  <h4 class="c-nav__header">Other sections</h4>
+  <ul class="c-nav__list c-nav__list--structural">
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="/index.html">Homepage</a>
+    </li>
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="/layout/index.html">Layout</a>
+    </li>
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="/css-components/index.html">CSS Components</a>
+    </li>
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="/js-modules/index.html">JS Modules</a>
+    </li>
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="/scopes/index.html">Scopes</a>
+    </li>
+    <li class="c-nav__item">
+      <a class="c-nav__link" href="/about/index.html">About</a>
+    </li>
+    <li class="c-nav__item c-nav__item--more"><a class="c-nav__link js-toggle-button" href="#Main-Navigation">More…</a></li></ul>
+</nav>
+
+<div class="o-wrapper o-wrapper--main o-grid js-wrapper--main" style="min-height: 373px;">
+
+  <div class="o-grid__row">
+
+    
+
+    <div role="main" id="Main-Content" class="o-grid__box o-grid__box--full">
+     
+<!-- 
+<figure class="c-figure--hero">
+
+  <div class="c-figure--hero-bg">
+
+    <img src="https://unsplash.it/3840/2048/?image=128">
+ 
+    <div class="c-figure-hero__content">
+      <h3>Undergraduate study</h3>
+      <p>Study at York and you'll graduate with more than a qualification.</p>
+      <p><a href="#" class="c-btn c-btn--small">Find a course <i class="c-icon c-icon--search c-icon-after"></i> </a><a href="#" class="c-btn c-btn--small">Book an open day</a></p>
+    </div>
+  </div>
+</figure> -->
+
+
+<figure class="c-figure--hero">
+
+    <div class="c-figure--hero-bg" style="background-image:url('StainedGlass-HoA-JohnHoulihan-060.jpg');">
+   
+      <div class="c-figure__content>:first-child c-figure-hero__content">
+        <h1>Undergraduate study</h1>
+        <p>Study at York and you'll graduate with more than a qualification.</p>
+        <p><a href="#" class="c-btn c-btn--small">Find a course <i class="c-icon c-icon--search c-icon-after"></i> </a><a href="#" class="c-btn c-btn--small">Book an open day</a></p>
+      </div>
+    </div>
+  </figure>
+<h3 id="hero-figures">Hero figures</h3>
+
+<div class="lead"><p>Figures will stretch full-width when used within an <code>o-wrapper--wide</code>.
+  The image takes up the full width of the screen, with the figure 
+ content centred on the screen, as if in a container with max-width of 
+ 1200px. Add a class of <code>c-figure--full-width</code> to the figure for this to work.</p></div>
+ 
+ <p>Captions move out to the very edges (top left, bottom right etc) of the image.</p>
+ 
+ 
+
+<pre class=" language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span> c-figure--hero<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>c-figure--hero-bg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://unsplash.it/2400/1200/?image<span class="token punctuation">=</span>128<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>c-figure__content c-figure__content--bottom-centre c-figure__content--half c-figure__content--hero<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>Undergraduate study<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Study at York and you'll graduate with more than a qualification.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>c-btn c-btn--small<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Find a course <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>c-icon c-icon--search c-icon-after<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>c-btn c-btn--small<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Book an open day<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+
+
+
+<h3 id="options-see-figures-page-">Options (see <a href="/css-components/figures.html">figures page</a>)</h3>
+
+    </div>
+
+  </div>
+
+</div>
+
+<footer class="c-footer-main" role="contentinfo">
+  <div class="o-grid o-wrapper">
+    <div class="o-grid__row">
+      <div class="o-grid__box o-grid__box--quarter o-grid__box--half@small o-grid__box--full@tiny">
+        <h3 class="c-footer-main__heading">Information for</h3>
+        <ul>
+          <li><a href="http://www.york.ac.uk/study/">Prospective students</a></li>
+          <li><a href="https://www.york.ac.uk/students/">Current students</a></li>
+          <li><a href="https://www.york.ac.uk/staff/">Staff</a></li>
+          <li><a href="http://www.yorkspace.net/">Alumni</a></li>
+          <li><a href="http://www.york.ac.uk/news-and-events/for-media/">Press and media</a></li>
+        </ul>
+      </div>
+      <div class="o-grid__box o-grid__box--quarter o-grid__box--half@small o-grid__box--full@tiny">
+        <h3 class="c-footer-main__heading">About</h3>
+        <ul>
+          <li><a href="http://www.york.ac.uk/about/">About the University</a></li>
+          <li><a href="http://www.york.ac.uk/research/">Research</a></li>
+          <li><a href="http://www.york.ac.uk/business/">Working with us</a></li>
+          <li><a href="http://www.york.ac.uk/about/international-relations/">International relations</a></li>
+          <li><a href="http://www.york.ac.uk/news-and-events/">News and events</a></li>
+        </ul>
+      </div>
+      <div class="o-grid__box o-grid__box--quarter o-grid__box--half@small o-grid__box--full@tiny">
+        <h3 class="c-footer-main__heading">Quick links</h3>
+        <ul>
+          <li><a href="http://www.york.ac.uk/about/departments/a-to-z/">A-Z</a></li>
+          <li><a href="http://www.york.ac.uk/about/departments/">Departments</a></li>
+          <li><a href="https://www.york.ac.uk/directory/">Staff directory</a></li>
+          <li><a href="http://www.york.ac.uk/about/maps/">Maps and directions</a></li>
+          <li><a href="http://www.york.ac.uk/about/term-dates/">Term dates</a></li>
+          <li><a href="http://jobs.york.ac.uk/">Job vacancies</a></li>
+        </ul>
+      </div>
+      <div class="o-grid__box o-grid__box--quarter o-grid__box--half@small o-grid__box--full@tiny">
+        <h3 class="c-footer-main__heading">Contact us</h3>
+        <p class="c-footer-main__address">University of York<br>
+          York<br>
+          YO10 5DD<br>
+          United Kingdom<br>
+        </p>
+        <p>+44 (0) 1904 320 000</p>
+      </div>
+    </div>
+    <div class="o-grid__row">
+      <div class="o-grid__box o-grid__box--quarter">
+        <p><a href="https://twitter.com/uniofyork"><i class="c-icon c-icon--twitter c-icon--2x c-icon--fw"></i></a> <a href="https://www.facebook.com/universityofyork"><i class="c-icon c-icon--facebook c-icon--2x c-icon--fw"></i></a> <a href="https://instagram.com/uniofyork"><i class="c-icon c-icon--instagram c-icon--2x  c-icon--fw"></i></a> <a href="http://www.youtube.com/universityofyorkuk"><i class="c-icon c-icon--youtube c-icon--2x c-icon--fw"></i></a></p>
+      </div>
+      <div class="o-grid__box o-grid__box--half">
+        <p>© University of York <br> <a href="http://www.york.ac.uk/about/legal-statements/">Legal statements</a> | <a href="http://www.york.ac.uk/about/legal-statements/#tab-5">Privacy and cookies</a></p>
+      </div>
+      <div class="o-grid__box o-grid__box--quarter">
+        <p><a href="#" class="t4Edit-page">Edit</a> </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!--[if gt IE 8]><!-->
+<script src="figure-hero_files/prism.js"></script>
+<!--<[endif]-->
+
+
+
+
+<div style="display: block;"></div></body></html>
