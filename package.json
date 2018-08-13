@@ -31,7 +31,7 @@
     "@semantic-release/git": "7.0.1",
     "@semantic-release/github": "5.0.2",
     "@semantic-release/release-notes-generator": "7.0.1",
-    "autoprefixer": "9.1.0",
+    "autoprefixer": "9.1.1",
     "compass": "0.1.1",
     "css": "2.2.3",
     "es5-shim": "4.5.10",
@@ -65,7 +65,7 @@
     "modernizr": "3.6.0",
     "picturefill": "3.0.2",
     "requirejs": "2.3.5",
-    "semantic-release": "15.9.6",
+    "semantic-release": "15.9.8",
     "time-grunt": "1.4.0",
     "webpack": "4.16.5"
   },
