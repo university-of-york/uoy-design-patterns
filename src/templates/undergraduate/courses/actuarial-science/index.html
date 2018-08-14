@@ -29,19 +29,25 @@
     <script>
         var scriptsToLoad = [
             '/js/vendor/modernizr/modernizr.js',
-            '/js/vendor/requirejs/require.js'
+            '/js/vendor/requirejs/require.js',
         ];
         var stylesToLoad = [
             '/css/styles.css',
             '/css/docs.css',
             '/css/print.css'
         ];
+        var scriptsToLoadPreview = [
+            '/preview/pattern-library/js/modernizr.min.js',
+            '/preview/pattern-library/js/app.min.js',
+        ];
+        var stylesToLoadPreview = [
+            '/preview/pattern-library/css/styles.min.css',
+            '/preview/pattern-library/css/docs.min.css',
+            '/preview/pattern-library/css/print.min.css'
+        ];
 
-        function loadTemplateAssets(isLocalSite, assetType, filename) {
-            var prePath = isLocalSite ? '' : '/preview/pattern-library';
+        function loadTemplateAssets(assetType, filename) {
             var fileref;
-
-            filename = prePath + filename;
 
             if (assetType === "js") { //if filename is a external JavaScript file
                 fileref = document.createElement('script');
@@ -57,6 +63,8 @@
                 fileref.setAttribute("rel", "stylesheet");
                 fileref.setAttribute("type", "text/css");
                 fileref.setAttribute("href", filename);
+
+                fileref.setAttribute("media", filename.indexOf('print') > 0 ? "print" : "screen");
             }
             if (typeof fileref != "undefined") {
                 document.getElementsByTagName("head")[0].appendChild(fileref);
@@ -65,12 +73,13 @@
 
         // load the scripts adn styles
         var isLocalSite = location.href.indexOf('localhost') > 0;
-        for (var i = 0; i < stylesToLoad.length; i++) {
-            loadTemplateAssets(isLocalSite, "css", stylesToLoad[i]);
+        var cssToLoad = isLocalSite ? stylesToLoad : stylesToLoadPreview,
+            jsToLoad = isLocalSite ? scriptsToLoad : scriptsToLoadPreview;
+        for (var i = 0; i < cssToLoad.length; i++) {
+            loadTemplateAssets("css", cssToLoad[i]);
         }
-
         for (var j = 0; j < scriptsToLoad.length; j++) {
-            loadTemplateAssets(isLocalSite, "js", scriptsToLoad[j]);
+            loadTemplateAssets("js", jsToLoad[j]);
         }
     </script>
 </head>
