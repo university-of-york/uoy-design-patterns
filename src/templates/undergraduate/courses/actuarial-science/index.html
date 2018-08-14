@@ -41,6 +41,8 @@
             var prePath = isLocalSite ? '' : '/preview/pattern-library';
             var fileref;
 
+            filename = prePath + filename;
+
             if (assetType === "js") { //if filename is a external JavaScript file
                 fileref = document.createElement('script');
                 fileref.setAttribute("type","text/javascript");
