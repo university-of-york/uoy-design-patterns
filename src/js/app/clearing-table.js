@@ -87,7 +87,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
     }
     this.container.addClass('c-clearing-container');
 
-    // need to empty this only if we've NOT got a course panel layout.
+      // need to empty this only if we've NOT got a course panel layout.
       // this will prevent the default content being replaced
       if(this.layout !== 'Course panel') {
           this.container.empty();
@@ -122,12 +122,11 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
         // Only load it once, even if there's more than one table on a page!
         that.dataLoaded = true;
 
-        // Make sure to only include courses actually IN clearing
           var tempData = [];
           $.grep(data, function(a) {
               if(a['Home/EU'].toLowerCase() === 'y' ||
                   a.International.toLowerCase() === 'y') {
-                tempData.push(a);
+                  tempData.push(a);
               }
           });
 
@@ -161,7 +160,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
 
         var currentLetter = false;
         var currentCourse = false;
-        var inClearing = false;
+          var inClearing = false;
         for (var i = 0; i < that.data.length; i++) {
 
           var thisCourse = that.data[i];
@@ -200,9 +199,15 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
               inClearing = true;
 
             var panelContent = $('<div>').addClass('c-panel__content');
-            that.modalLink = $('<a>').attr({'href': '#modal-content-'+that.id}).text('Clearing and adjustment information for this course');
+            that.modalLink = $('<a>').attr(
+                {
+                    'href': '#modal-content-'+that.id,
+                    'class': 'c-btn c-btn--medium'
+                }).text('Find out more');
 
-            panelContent.append('<p><strong>Places are available on this course through clearing and adjustment</strong></p>');
+
+            panelContent.append('<h3>Clearing and adjustment 2018</h3>');
+            panelContent.append('<p><strong>We expect to have places available on this course through clearing and adjustment</strong></p>');
             panelContent.append($('<p>').append(that.modalLink));
 
             var modalContent = $('<div>').addClass('is-hidden').attr({'id':'modal-content-'+that.id});
@@ -251,30 +256,19 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
                     modalContent.append(modalBullets);
                 }
             }
-            modalContent.append('<h3>How to apply</h3>');
+            
             var numbers = trimAndAdd(thisCourse['Phone number(s)'].split(','));
               var modalBullets1 = $('<ul>');
               var modalBullets2 = $('<ul>');
 
-            modalContent.append('<p>We have limited places available for well qualified students through clearing and adjustment.</p>');
-            modalContent.append('<p>You can apply through clearing now if: </p>');
+              //Our course vacancies are subject to change and will be confirmed here from around 7pm on Wednesday 15 August. Our clearing hotline will then open at 8am on Thursday 16 August. Save the number 01904 234868.
+              //
+              // In the meantime you can sign up for alerts and we'll send you our latest vacancies on Thursday morning.
 
-            // build the first set of bullets
-              modalBullets1.append('<li>you already have your results and have not yet applied to York, and have not formally accepted an offer through UCAS elsewhere</li>');
-              modalBullets1.append('<li>you\'re not currently holding any offers. </li>');
-              modalContent.append(modalBullets1);
+            modalContent.append('<p>Our course vacancies are subject to change and will be confirmed here from around 7pm on Wednesday 15 August. Our clearing hotline will then open at 8am on Thursday 16 August. Save the number <a href="tel:+441904 234868">01904 234868</a></p>');
+            modalContent.append('<p>In the meantime you can sign up for alerts and we\'ll send you our latest vacancies on Thursday morning.</p>');
 
-              modalContent.append('<p>To discuss your options and find out about entry requirements call  <strong>'+numbers+'</strong>.</p>');
-              modalContent.append('<p>Have your UCAS ID number to hand and a number we can call you back on.</p>');
-              modalContent.append('<p><strong>Opening times:</strong></p>');
-
-              // build the next set of bullets
-              modalBullets2.append('<li>5 July - 9 August - Monday to Friday, 9am - 5pm</li>');
-              modalBullets2.append('<li>10 - 15 August - closed while we prepare for A level results day</li>');
-              modalBullets2.append('<li>16 - 17 August - 8am - 6pm</li>');
-              modalContent.append(modalBullets2);
-
-            modalContent.append('<p><a class="c-btn c-btn--secondary c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/vacancies/">Find out more about clearing and adjustment</a></p>');
+            modalContent.append('<p><a class="c-btn c-btn--secondary c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/alert/">Sign up for vacancy alerts</a></p>');
 
             that.panel.append(panelContent);
             that.panel.append(modalContent);
@@ -404,11 +398,6 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
 
   };
 
-  CLEARINGTABLE.prototype.inClearing = function(courseToCheck) {
-      return (courseToCheck['Home/EU'].toLowerCase() === 'y' ||
-          courseToCheck.International.toLowerCase() === 'y');
-  };
-
   CLEARINGTABLE.prototype.updateAtoZ = function(e) {
     var that = e.data.that;
     var atozRows = that.table.find('.c-clearing-table__letter-header');
@@ -432,6 +421,11 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
         }
       });
     });
+  };
+
+  CLEARINGTABLE.prototype.inClearing = function(courseToCheck) {
+      return (courseToCheck['Home/EU'].toLowerCase() === 'y' ||
+          courseToCheck.International.toLowerCase() === 'y');
   };
 
   CLEARINGTABLE.prototype.createToggle = function() {

@@ -17,6 +17,15 @@ module.exports = {
       dest: 'dev/'
     }]
   },
+  preview: {
+      files: [{
+          expand: true,
+          dot: true,
+          cwd: 'src/',
+          src: ['templates/**'],
+          dest: 'build/'
+      }]
+  },
   build: {
     files: [{
       expand: true,

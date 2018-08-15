@@ -11,17 +11,12 @@ module.exports = function (grunt) {
         var target = grunt.task.current.files[0].dest;
         //var target = grunt.task.current.target; //grunt.task.current.files[0].dest;
         var taskOptions = grunt.task.current.options();
-        var dirPrefix = ''; //!!taskOptions.build === true ? '/pattern-library/' : '/' ;
+        var dirPrefix = '/'; //!!taskOptions.build === true ? '/pattern-library/' : '/' ;
 
-        if(!!taskOptions.build === true) {
-            dirPrefix = '/pattern-library/';
-
-            if(grunt.task.current.target === 'preview') {
-                dirPrefix = '/preview' + dirPrefix;
-            }
-        } else {
-            dirPrefix = '/';
+        if(taskOptions.build !== false) {
+            dirPrefix = taskOptions.build.preview ? '/preview/pattern-library/' : '/pattern-library/';
         }
+
 
         pages.forEach(function(page, i) {
             // Top level page
@@ -102,7 +97,9 @@ module.exports = function (grunt) {
                     //var catPath = dirPrefix + path.relative(path.resolve(process.cwd(), target+'/'), cat.page.dest);
 
                     // remove '..' and filepath slashes in wrong direction
-                    var relativePath = cat.page.dest.replace(path.resolve(process.cwd()), "").replace('build', '');
+                    var relativePath = cat.page.dest.replace(path.resolve(process.cwd()), "")
+                        .replace('build', '')
+                        .replace('dev', '');
                     var catPath = (dirPrefix +  relativePath.replace('..', '').replace(/\\/g, '/')).replace('///','/');
 
                     output+= '  <li class="c-nav__item">\n';
@@ -117,7 +114,9 @@ module.exports = function (grunt) {
                             //var thisPath = dirPrefix + path.relative(path.resolve(process.cwd(), target+'/'), p.dest);
 
 
-                            var relativePath = p.dest.replace(path.resolve(process.cwd()), "").replace('build', '');
+                            var relativePath = p.dest.replace(path.resolve(process.cwd()), "")
+                                .replace('build', '')
+                                .replace('dev','');
                             var thisPath = (dirPrefix + relativePath.replace('..', '').replace(/\\/g, '/')).replace('///','/');
 
                             if (p.subcategory && p.subcategory !== currentSubcategory) {

@@ -20,6 +20,12 @@
         margin-left:-($cMargin + $cWidth);
         float:none;
       }
+      &.c-figure__content--centre,
+      &.c-figure__content--top-centre,
+      &.c-figure__content--bottom-centre {
+        margin-left:-($cWidth/2);
+        float:none;
+      }
       &.c-figure__content--right,
       &.c-figure__content--top-right,
       &.c-figure__content--bottom-right {
@@ -65,7 +71,9 @@
 .c-figure__image,
 .c-figure img {
   display:block;
-  max-width:100%;
+  @include mq(small, '+') {
+    width:100%;
+  }
   position: relative;
   // HELPER CLASSES FOR IMAGES (used by JS)
   // Image must fit vertically
@@ -94,9 +102,9 @@
   color:$light;
   padding:$base-spacing/2 $base-spacing;
   @include mq(small, '-') {
-    position:static;
-    max-width:100%;
-    display:block;
+    // position:static;
+    // max-width:100%;
+    // display:block;
     padding:$base-spacing/4 $base-spacing/2;
     background:$blue;
   }
@@ -136,6 +144,13 @@
 .c-figure__caption--bottom-right {
   bottom:0;
   right:0;
+}
+.c-figure__caption--bottom-centre {
+  bottom: 0;
+ 
+}
+.c-figure__caption--top-centre {
+  top: 0;
 }
 .c-figure__caption-icon {
   margin-right:$base-spacing/2;
@@ -210,6 +225,19 @@
   right:auto;
   bottom:auto;
   left:$base-spacing;
+}
+.c-figure__content--top-centre {
+  top:$base-spacing;
+  right:auto;
+  bottom:auto;
+  left:auto;
+}
+.c-figure__content--bottom-centre {
+  top:auto;
+  right:auto;
+  bottom:0!important;
+  left:auto;
+  position: absolute!important;
 }
 .c-figure__content--top-right {
   top:$base-spacing;
@@ -377,3 +405,4 @@
     }
   }
 }
+

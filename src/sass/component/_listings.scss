@@ -15,7 +15,6 @@ $thumbnail_size:100px;
 
   border-bottom: 1px dotted $blue;
   margin-bottom: $base-spacing;
-  padding-bottom: $base-spacing/4;
 
   &:last-of-type  {
     // Remove border of the very last list item
@@ -27,6 +26,7 @@ $thumbnail_size:100px;
     width:$thumbnail_size;
     img {
       max-width:$thumbnail_size;
+      display:block; // Gets rid of any extra spacing around it
     }
   }
 
@@ -82,6 +82,7 @@ $thumbnail_size:100px;
   &__link {
     display: block;
     text-decoration: none;
+    margin-bottom: $base-spacing;
   }
 
   // Modifiers
@@ -98,5 +99,11 @@ $thumbnail_size:100px;
 
       margin-bottom: 0; // This is added by the extended .c-alert class so let's remove it.
     }
+  }
+
+  // For instances where the label follows the title
+  // e.g. News/Events archive listing page
+  &__title + &__label {
+    margin-top: $base-spacing/3;
   }
 }

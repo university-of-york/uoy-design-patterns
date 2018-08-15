@@ -174,8 +174,10 @@
     position:relative;
     img {
       position:absolute;
+      @include mq(small, '+') {
       max-width:none;
       max-height:none;
+      }
       top:$top;
       left:$left;
       transform:$transform;
