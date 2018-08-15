@@ -256,7 +256,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
                     modalContent.append(modalBullets);
                 }
             }
-            modalContent.append('<h3>How to apply</h3>');
+            
             var numbers = trimAndAdd(thisCourse['Phone number(s)'].split(','));
               var modalBullets1 = $('<ul>');
               var modalBullets2 = $('<ul>');
