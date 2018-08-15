@@ -100,4 +100,10 @@ $thumbnail_size:100px;
       margin-bottom: 0; // This is added by the extended .c-alert class so let's remove it.
     }
   }
+
+  // For instances where the label follows the title
+  // e.g. News/Events archive listing page
+  &__title + &__label {
+    margin-top: $base-spacing/3;
+  }
 }
