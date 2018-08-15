@@ -1,3 +1,10 @@
+## [1.6.5](https://github.com/university-of-york/design-patterns/compare/v1.6.4...v1.6.5) (2018-08-15)
+
+
+### Bug Fixes
+
+* update clearing text and modal scrolling ([e2fdfe7](https://github.com/university-of-york/design-patterns/commit/e2fdfe7))
+
 ## [1.6.4](https://github.com/university-of-york/design-patterns/compare/v1.6.3...v1.6.4) (2018-08-15)
 
 
