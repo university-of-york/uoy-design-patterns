@@ -7,35 +7,25 @@
     margin-left: -50vw;
     margin-right: -50vw;
     overflow: hidden;
-   
-  
   }
   
   .c-hero-background {
-    height: 64vh;
-    @media only screen and (orientation: landscape) {
-      height: 80vh;
-      background-position: 60% 40%;
-    }
-    background-position: 100% 80%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    @include mq('medium', '+') {
-      height: 32vh;
+      height: 64vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
       @media only screen and (orientation: landscape) {
-        height: 70vh;
+        height: 80vh;
+        background-size: 60%;
       }
-      background-position: 60% 40%;
-      background-size: 80%;
-     }
-     @include mq('large', '+') {
-       height: 75vh;
-       background-size: 90%;
-       @media only screen and (orientation: landscape) {
-        height: 70vh;
+      @include mq('medium', '+') {
+        min-height: 700px;
+        height: 80vh;
+        background-size: 1906px 1200px;
       }
-     }
-  
+      @include mq('large', '+') {
+        min-height: 900px;
+      } 
   }
   
   .c-hero__content {
@@ -46,8 +36,7 @@
       margin-left: -50vw;
       margin-right: -50vw;
       bottom: 0;
-      padding: 0;
-         
+      padding: 0;      
   }
   
   
