@@ -20,6 +20,12 @@
         margin-left:-($cMargin + $cWidth);
         float:none;
       }
+      &.c-figure__content--centre,
+      &.c-figure__content--top-centre,
+      &.c-figure__content--bottom-centre {
+        margin-left:-($cWidth/2);
+        float:none;
+      }
       &.c-figure__content--right,
       &.c-figure__content--top-right,
       &.c-figure__content--bottom-right {
@@ -139,6 +145,13 @@
   bottom:0;
   right:0;
 }
+.c-figure__caption--bottom-centre {
+  bottom: 0;
+ 
+}
+.c-figure__caption--top-centre {
+  top: 0;
+}
 .c-figure__caption-icon {
   margin-right:$base-spacing/2;
 }
@@ -212,6 +225,19 @@
   right:auto;
   bottom:auto;
   left:$base-spacing;
+}
+.c-figure__content--top-centre {
+  top:$base-spacing;
+  right:auto;
+  bottom:auto;
+  left:auto;
+}
+.c-figure__content--bottom-centre {
+  top:auto;
+  right:auto;
+  bottom:0!important;
+  left:auto;
+  position: absolute!important;
 }
 .c-figure__content--top-right {
   top:$base-spacing;
@@ -379,3 +405,4 @@
     }
   }
 }
+

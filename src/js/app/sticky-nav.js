@@ -147,12 +147,14 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       var that = e.data.that;
       var scrollPos = $window.scrollTop();
       var navHeight = that.getNavHeight();
-      var paddingTop = parseInt($(location.hash).css('padding-top'), 10);
+      var $locationHash = $(location.hash);
+      var paddingTop = parseInt($locationHash.css('padding-top'), 10);
+      var hashOffset = $locationHash.offset();
 
-      // only update the scroll position if we're looking
-      // at a new URL/hash
-      if(e.originalEvent.oldURL === e.originalEvent.newURL) {
-          return;
+      if(hashOffset && hashOffset.top > 0) {
+          // let's get the document offset position of the selected heading (i.e. the location hash)
+          // and use that instead of scroll top position
+          scrollPos = parseInt(hashOffset.top, 10);
       }
 
       navHeight += (paddingTop > 0) ? 0 : 10 ;
@@ -178,13 +180,27 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   };
 
   STICKYNAV.prototype.handleLinkClick = function(e) {
-      var that = e.data.that;
+      var that = e.data.that,
+          $currentLink = $(this); // currentLink is the current, clicked LI item
 
-      that.resetLinkHighlight(e, $(this));
+      // we perform this check here before the highlight reset, which comes after
+      var inTargetNavSection = $currentLink.hasClass('is-current');
 
+      that.resetLinkHighlight(e, $currentLink);
+
+      // if we've clicked a heading but the target hash is the same the current
+      // i.e. it's not been updated
       if(that.currentURL === e.target.href) {
           e.preventDefault();
-          $(e.target).blur(); // remove the leftover highlight
+
+          if (inTargetNavSection) {
+              // remove the leftover highlight
+              $(e.target).blur();
+          } else {
+              // if we've scrolled away from the current hash's section
+              // update the scroll position to match
+              that.updateScrollPos(e);
+          }
       }
       that.currentURL = e.target.href;
   };

@@ -44,6 +44,7 @@ module.exports = function (grunt) {
         'clean:build',
         'makedocs:preview',
         'copy:build',
+        'copy:preview',
         'compass:build',
         'postcss:build',
         'scopedCSS',

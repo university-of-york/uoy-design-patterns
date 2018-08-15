@@ -73,5 +73,4 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   };
 
   return TARGETEDNAV;
-
 });

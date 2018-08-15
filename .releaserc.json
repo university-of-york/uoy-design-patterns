@@ -1,19 +1,41 @@
 {
   "branch": "master",
-  "verifyConditions": ["@semantic-release/github"],
-  "publish": ["@semantic-release/github"],
+  "tagFormat": "v${version}",
+  "verifyConditions": [
+    "@semantic-release/changelog",
+    "@semantic-release/npm",
+    "@semantic-release/git",
+    "@semantic-release/github"
+  ],
+  "prepare": [
+    {
+      "path": "@semantic-release/changelog",
+      "changelogFile": "CHANGELOG.md"
+    },
+    "@semantic-release/npm",
+    "@semantic-release/release-notes-generator",
+    {
+      "path": "@semantic-release/git",
+      "assets": ["CHANGELOG.md", "package.json", "package-lock.json"],
+      "message": "Release <%= nextRelease.version %> - <%= new Date().toLocaleDateString('en-US', {year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' }) %> [skip ci]\n\n<%= nextRelease.notes %> "
+    }
+  ],
+  "publish": [
+    "@semantic-release/npm",
+    "@semantic-release/github"
+  ],
   "npmPublish": false,
   "analyzeCommits": {
     "preset": "angular",
     "releaseRules": [
-      {"type": "fix", "release": "patch"},
-      {"type": "Fix", "release": "patch"},
-      {"type": "update", "release": "minor"},
-      {"type": "Update", "release": "minor"},
-      {"type": "feature", "release": "minor"},
-      {"type": "Feature", "release": "minor"},
-      {"type": "performance", "release": "minor"},
-      {"type": "Performance", "release": "minor"}
+      {"type": "fix", "scope":"Fixes", "release": "patch"},
+      {"type": "Fix", "scope":"Fixes", "release": "patch"},
+      {"type": "update", "scope":"Updates", "release": "minor"},
+      {"type": "Update", "scope":"Updates", "release": "minor"},
+      {"type": "feature", "scope":"Feature", "release": "minor"},
+      {"type": "Feature", "scope":"Feature", "release": "minor"},
+      {"type": "performance", "scope":"Performance", "release": "minor"},
+      {"type": "Performance", "scope":"Performance", "release": "minor"}
     ]
   }
 }
