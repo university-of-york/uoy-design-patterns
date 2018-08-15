@@ -69,6 +69,9 @@
     padding:1em 40px 1em 20px;
   }
 }
+.c-modal--scroll {
+  overflow-y: auto;
+}
 .c-modal--frameless {
   // border:0;
   // background-color:transparent;

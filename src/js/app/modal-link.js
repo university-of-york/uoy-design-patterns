@@ -29,6 +29,7 @@ define(['jquery', 'app/modal'], function ($, MODAL) {
     var modalTitle = $a.attr('data-title') || false;
     var modalCaption = $a.attr('data-caption') || false;
     var modalType = $a.hasClass('js-modal--frameless') ? 'frameless' : 'framed';
+    var modalScroll = $a.hasClass('js-modal--scroll') ? 'c-modal--scroll' : '';
     var prevItem = false ;
     var nextItem = false ;
     if ($a.hasClass('js-modal--gallery')) {
@@ -55,6 +56,7 @@ define(['jquery', 'app/modal'], function ($, MODAL) {
       title: modalTitle,
       caption: modalCaption,
       type: modalType,
+      scrollContent: modalScroll,
       prev: prevItem,
       next: nextItem
     });
