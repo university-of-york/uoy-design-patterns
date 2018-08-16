@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Sheets API</title>
+</head>
+<body>
+
+<h1>Welcome to the Sheets API test</h1>
+<p>Click the button below to load the data</p>
+<p><button id="btnLoadData">Load data</button></p>
+
+<table id="output"></table>
+
+
+
+
+<script>
+
+    let outputTable = document.getElementById('output');
+    let btnLoadData = document.getElementById('btnLoadData');
+
+
+    function makeTableRow(rowData) {
+        let row, cell;
+
+        row = outputTable.insertRow(-1);
+
+        for (let i = 0; i < rowData.length; i++) {
+            cell = row.insertCell(-1);
+            //cell.innerHTML = rowData[i];
+            // Append a text node to the cell
+            var newText  = document.createTextNode(rowData[i]);
+            cell.appendChild(newText);
+        }
+    }
+
+    function clickHandler() {
+        // do nothing - the path of least resistance
+    }
+
+    if (btnLoadData) {
+        btnLoadData.addEventListener('click', clickHandler);
+    }
+
+
+    window.addEventListener('window.js.ready', function() {
+
+        $(function() {
+            var firebaseModule = window.PL_DATA.dataFirebase;
+
+            firebaseModule.loadConfig(window.PL_DATA.firebaseConfigs.clearingTables);
+            firebaseModule.readData();
+
+            $(window).on(firebaseModule.getEventNames().dataLoaded, function(e, data){
+                console.log(data);
+                var rows = data;
+                /*
+                0: {
+                    Course: "Biology"
+                    Department: "Biology"
+                    "In clearing": "y"
+                    International: "y"
+                    grades: "AAA"
+                    }
+                 */
+                // update the table head row with the first object
+                makeTableRow(rows[0], true);
+
+                rows.forEach(function(row) {
+                    makeTableRow(row);
+                });
+            });
+
+
+            // test spreadsheet url
+            // https://docs.google.com/spreadsheets/d/1Vfqa37CInvrH3WsH4UkWpxKgUzoYqZ7Ij20fJBIfd08/edit?usp=sharing
+            spreadsheetId: '1Vfqa37CInvrH3WsH4UkWpxKgUzoYqZ7Ij20fJBIfd08',
+                range: 'Sheet1!A1:E',
+
+        });
+    }, false);
+
+</script>
+
+</body>
+</html>

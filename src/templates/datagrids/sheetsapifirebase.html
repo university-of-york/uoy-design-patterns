@@ -29,9 +29,6 @@
 
 <table id="output"></table>
 
-
-
-
 <script>
 
     let outputTable;
@@ -59,15 +56,6 @@
 
     function clickHandler() {
 
-        //var userId = firebase.auth().currentUser.uid;
-        // return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-        //     var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
-        //     // ...
-        // });
-
-        // Get a reference to the database service
-        var database = firebase.database();
-
         return firebase.database().ref().once('value').then(function(snapshot) {
             console.log(snapshot.val());
             var rows = snapshot.val();
@@ -91,7 +79,6 @@
 
     window.onload = initClient;
 </script>
-
 
 </body>
 </html>
