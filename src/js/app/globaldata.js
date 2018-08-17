@@ -29,5 +29,5 @@ define(['jquery'], function ($) {
             discoveryDocs: ["https://sheets.googleapis.com/$discovery/rest?version=v4"],
             scopes: "https://www.googleapis.com/auth/spreadsheets.readonly"
         }
-    }
+    };
 });

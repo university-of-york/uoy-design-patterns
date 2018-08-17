@@ -307,17 +307,18 @@ define(
       });
     }
 
+    // Load the Google Sheets Library
+    DATAFIREBASE.init();
+    window.PL_DATA.dataFirebase = DATAFIREBASE;
+
+    // Load the Google Sheets Library
+    DATAGSHEETS.init();
+    window.PL_DATA.dataGSheets = DATAGSHEETS;
+
+    var windowjsready = new Event('window.js.ready');
+    window.dispatchEvent(windowjsready);
+
     console.log('Javascript loaded');
-
-
-    // LOAD THE FIREBASE LIBRARY
-      DATAFIREBASE.init();
-      window.PL_DATA.dataFirebase = DATAFIREBASE;
-
-      DATAGSHEETS.init();
-
-      var windowjsready = new Event('window.js.ready');
-      window.dispatchEvent(windowjsready);
   });
 
 

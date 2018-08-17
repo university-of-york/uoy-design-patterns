@@ -7,13 +7,15 @@ category: Javascript
 ---
 
  */
-define(['jquery', 'app/utils'], function ($, UTILS) {
+define(['jquery', 'gsheetsApp'], function ($, gsheetsApp) {
 
     var DATA_GSHEETS = (function(){
 
         // Variables
         var $window = $(window);
+        var _gSheetsAPI;
         var _events = {
+            apiReady: 'ghseets.api.ready',
             dataLoaded: 'gsheets.data.loaded',
             dataReadError: 'gsheets.data.error'
         };
@@ -26,17 +28,50 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
             return _events;
         };
 
+        var init = function(onLoadCallback) {
+
+            // The following Google API script should be loaded already at this point
+            // https://apis.google.com/js/api.js
+
+            _gSheetsAPI = gsheetsApp || gapi;
+
+            // load the 'client' library from the Google API
+            if(_gSheetsAPI !== null && _gSheetsAPI !== undefined) {
+                _gSheetsAPI.load('client:auth2', {
+                    callback: function() {
+                        // trigger an 'API ready' event to notify waiting modules
+                        // they can start their work now
+                        $window.trigger(_events.apiReady);
+                    },
+                    onerror: function() {
+                        // Handle loading error.
+                        // TODO - implement some error handling here - Rollbar?
+                    },
+                    timeout: 5000, // 5 seconds.
+                    ontimeout: function() {
+                        // Handle timeout.
+                        // TODO - handle timeout error gracefully
+                    }
+                });
+            }
+        };
+
         var loadConfig = function(configObj, callback) {
+
+            var deferred;
 
             // if we don't have a valid configuration, reject
             if(!configObj) {
                 return;
             }
 
-            // Ensure that the script is loaded here
-            if(gapi !== null && gapi !== undefined) {
+            deferred = $.Deferred();
 
-                gapi.client.init({
+            // Ensure that the Google API script is loaded here
+            if(_gSheetsAPI !== null && _gSheetsAPI !== undefined) {
+
+                // call the 'client' script initialisation method
+                _gSheetsAPI.client.init({
                     apiKey: configObj.apiKey,
                     clientId: configObj.clientId,
                     discoveryDocs: configObj.discoveryDocs,
@@ -46,60 +81,48 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
                     if(typeof callback === 'function') {
                         callback();
                     }
+
+                    // complete the promise
+                    deferred.resolve();
+                }).catch(function(error) {
+
+                    // TODO - need to handle this error - Rollbar? something else?
+                   deferred.reject(error);
                 });
             }
-        };
 
-        var init = function(onLoadCallback) {
-
-            //<script async defer src="https://apis.google.com/js/api.js"
-            //         onload="this.onload=function(){};handleClientLoad()"
-            //         onreadystatechange="if (this.readyState === 'complete') this.onload()">
-            // </script>
-
-            $.getScript(window.PL_DATA.gSheetsAPISettings.gSheetsScript, function() {
-                gapi.load(
-                    'client:auth2',
-                    loadConfig(window.PL_DATA.gSheetsAPISettings, onLoadCallback)
-                );
-            });
+            return deferred.promise();
         };
 
         var readData = function(spreadsheetId, range, callback) {
 
-            if(gapi !== null && gapi !== undefined) {
+            // have to load the Sheets API config first
+            // we'll also grab the promise returned from the config method
+            var configLoading = loadConfig(window.PL_DATA.gSheetsAPISettings);
 
-                gapi.client.sheets.spreadsheets.values.get({
-                    spreadsheetId: spreadsheetId,
-                    range: range,
-                }).then(function (response) {
+            // fire the actual data reading method when we know the library is loaded
+            configLoading.done(function() {
 
-                    var data = response.result;
+                if(_gSheetsAPI !== null && _gSheetsAPI !== undefined) {
 
-                    $window.trigger(_events.dataLoaded, [data]);
+                    _gSheetsAPI.client.sheets.spreadsheets.values.get({
+                        spreadsheetId: spreadsheetId,
+                        range: range,
+                    }).then(function (response) {
 
-                    if (typeof callback === 'function') {
-                        callback(data);
-                    }
-                    var range = response.result;
-                    if (range.values.length > 0) {
-                        //appendPre('Name, Major:');
-                        for (i = 0; i < range.values.length; i++) {
-                            var row = range.values[i];
-                            // Print columns A and E, which correspond to indices 0 and 4.
-                            //appendPre(row[0] + ', ' + row[4]);
-                            console.log(row);
-                            makeTableRow(row);
-                            //outputTable.innerHTML += row;
+                        var data = response.result;
+
+                        // notify the waiting modules that the data is loaded
+                        $window.trigger(_events.dataLoaded, [data]);
+
+                        if (typeof callback === 'function') {
+                            callback(data);
                         }
-                    } else {
-                        makeTableRow('No data found.');
-                    }
-                }, function (response) {
-                    $window.trigger(_events.dataReadError)
-                    makeTableRow('Error: ' + response.result.error.message);
-                });
-            }
+                    }, function (error) {
+                        $window.trigger(_events.dataReadError, [error]);
+                    });
+                }
+            });
         };
 
         return {
@@ -109,7 +132,6 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
             getEventNames: getEventNames
         };
     }());
-
 
     return DATA_GSHEETS;
 });

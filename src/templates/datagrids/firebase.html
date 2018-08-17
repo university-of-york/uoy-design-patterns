@@ -13,13 +13,12 @@
 
 <h1>Welcome to the Firebase API test</h1>
 <p>Click the button below to load the data from Google Firebase</p>
-<p><button id="btnLoadData">Load data</button></p>
 
 <table id="output"></table>
 
 <script>
 
-    let outputTable;
+    let outputTable = document.getElementById('output');
 
     function makeTableRow(rowData, useKeys) {
         let row, cell;
@@ -32,22 +31,6 @@
         });
     }
 
-    function initClient() {
-        let btnLoadData = document.getElementById('btnLoadData');
-        if(btnLoadData) {
-            btnLoadData.addEventListener('click', clickHandler);
-        }
-        outputTable = document.getElementById('output');
-    }
-
-    function clickHandler() {
-        // do nothing - the path of least resistance
-    }
-
-    window.onload = function() {
-       initClient();
-    };
-
     window.addEventListener('window.js.ready', function() {
 
         $(function() {
@@ -57,7 +40,6 @@
             firebaseModule.readData();
 
             $(window).on(firebaseModule.getEventNames().dataLoaded, function(e, data){
-                console.log(data);
                 var rows = data;
                 /*
                 0: {

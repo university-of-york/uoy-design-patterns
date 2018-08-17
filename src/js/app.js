@@ -8,6 +8,7 @@ requirejs.config({
     iframeResizer: 'vendor/iframe-resizer/iframeResizer',
     fuse: 'vendor/fuse/dist/fuse.min',
     jquery: 'vendor/jquery/jquery',
+    gsheetsApp: '//apis.google.com/js/api',
     firebaseApp: '//www.gstatic.com/firebasejs/5.3.0/firebase'
   }
 });
