@@ -1,6 +1,6 @@
 {
   "name": "UoYDesignPatterns",
-  "version": "1.5.6",
+  "version": "1.6.4",
   "description": "This repository holds the design patterns used on the University of York's website (http://www.york.ac.uk).",
   "main": "gruntfile.js",
   "repository": "https://github.com/university-of-york/design-patterns",
@@ -31,7 +31,7 @@
     "@semantic-release/git": "7.0.1",
     "@semantic-release/github": "5.0.2",
     "@semantic-release/release-notes-generator": "7.0.1",
-    "autoprefixer": "9.1.1",
+    "autoprefixer": "9.1.2",
     "compass": "0.1.1",
     "css": "2.2.3",
     "es5-shim": "4.5.10",
@@ -65,9 +65,9 @@
     "modernizr": "3.6.0",
     "picturefill": "3.0.2",
     "requirejs": "2.3.5",
-    "semantic-release": "15.9.8",
+    "semantic-release": "15.9.9",
     "time-grunt": "1.4.0",
-    "webpack": "4.16.5"
+    "webpack": "4.17.0"
   },
   "scripts": {
     "backstop": "backstop",

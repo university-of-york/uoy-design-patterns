@@ -20,6 +20,7 @@ define(['jquery'], function ($) {
     this.title = options.title || this.defaults.title;
     this.caption = options.caption || this.defaults.caption;
     this.type = options.type || this.defaults.type;
+    this.scrollContent = options.scrollContent || this.defaults.scrollContent;
     this.prev = options.prev || false;
     this.next = options.next || false;
     // Use setTimout to get unique ID
@@ -29,14 +30,14 @@ define(['jquery'], function ($) {
     this.createModal();
 
     console.info(this);
-
   };
 
   MODAL.prototype.defaults = {
     content: false,
     title: false,
     caption: false,
-    type: 'framed'
+    type: 'framed',
+    scrollContent: ''
   };
 
   MODAL.prototype.open = function () {
@@ -147,7 +148,7 @@ define(['jquery'], function ($) {
 
     // Temporary this-holder
     var that = this;
-    this.modalContainer = $('<div>').addClass('c-modal c-modal--'+this.type+' is-hidden').attr('id', 'modal-'+this.id).on('click', function (e) {
+    this.modalContainer = $('<div>').addClass('c-modal c-modal--' + this.type + ' ' + that.scrollContent + ' is-hidden').attr('id', 'modal-'+this.id).on('click', function (e) {
       // Don't allow the click to get to the wrapper, or it will close
       e.stopPropagation();
     });
