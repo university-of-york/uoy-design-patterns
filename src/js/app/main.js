@@ -1,28 +1,18 @@
 
-// load the global data from a JSON config file
-// var xhttp = new XMLHttpRequest();
-// xhttp.onreadystatechange = function() {
-//     if (this.readyState == 4 && this.status == 200) {
-//         window.PL_DATA = JSON.parse(this.responseText);
-//     }
-// };
-// xhttp.open("GET", "https://www.york.ac.uk/static/stable/data/globaldata.json", true);
-// xhttp.send();
-
 define(
   ['jquery', 'es5shim', 'picturefill', 'iframeResizer',
    'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav',
    'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/prioritised-tables',
    'app/toggle', 'app/utility-toggle', 'app/wrapper-height', 'app/youtube-embed',
    'app/soundcloud-embed', 'app/searchables', 'app/filterable-tables', 'app/equal-height-row',
-   'app/google-map', 'app/show-more', 'app/autocomplete'],
+   'app/google-map', 'app/show-more', 'app/autocomplete', 'app/data-firebase', 'app/data-google-sheets'],
   function (
     $, ES5SHIM, PICTUREFILL, IFRAMERESIZER,
     UTILS, MODALLINK, ACCORDION, STICKYNAV,
     TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
     TOGGLE, UTILITYTOGGLE, WRAPPERHEIGHT, YOUTUBE,
     SOUNDCLOUD, SEARCHABLE, FILTERABLE, EQUALHEIGHT,
-    GOOGLEMAP, SHOWMORE, AUTOCOMPLETE, GLOBALDATA) {
+    GOOGLEMAP, SHOWMORE, AUTOCOMPLETE, DATAFIREBASE, DATAGSHEETS) {
 
   $(function(){
 
@@ -144,8 +134,8 @@ define(
       });
     });
 
-      // Add dismissable global notice action
-      UTILS.eachIfExists('.js-notice-close', function (i, button) {
+    // Add dismissable global notice action
+    UTILS.eachIfExists('.js-notice-close', function (i, button) {
           var $b = $(button);
           var $c = $($b.closest('.c-global-notice'));
           new TOGGLE({
@@ -216,12 +206,12 @@ define(
       });
     });
 
-      // Add targeted nav functionality to nav
-      UTILS.eachIfExists('.js-targeted-nav', function (i, a) {
-          new TARGETEDNAV({
-              container: $(a)
-          });
+    // Add targeted nav functionality to nav
+    UTILS.eachIfExists('.js-targeted-nav', function (i, a) {
+      new TARGETEDNAV({
+          container: $(a)
       });
+    });
 
     // Add sticky nav functionality to nav
     UTILS.eachIfExists('.js-sticky-nav', function (i, a) {
@@ -283,7 +273,6 @@ define(
       });
     });
 
-
     // Update 'More' text
     $window.on('toggle', function(e, options) {
       if (options.container.attr('id') === 'Main-Navigation') {
@@ -311,13 +300,23 @@ define(
       });
     });
 
-
     // Broadcast custom window events
     if (UTILS.isDev() === true) {
       $window.on('data.loaded fonts.active nav.new-targeted-current search.updated content.updated resized.height resized.width toggle', function(e) {
         console.info(e.type+'.'+e.namespace+' fired', e);
       });
     }
+
+    // Load the Google Sheets Library
+    DATAFIREBASE.init();
+    window.PL_DATA.dataFirebase = DATAFIREBASE;
+
+    // Load the Google Sheets Library
+    DATAGSHEETS.init();
+    window.PL_DATA.dataGSheets = DATAGSHEETS;
+
+    var windowjsready = new Event('window.js.ready');
+    window.dispatchEvent(windowjsready);
 
     console.log('Javascript loaded');
   });
@@ -327,7 +326,7 @@ define(
       // We have to put these outside the typical document.ready function because
       // Chrome doesn't register the height of the ShowMore container properly until
       // the window finishes loading
-      $(window).bind('load', function() {
+      $(window).on('load', function() {
           //console.log('Window loaded in Show More');
           UTILS.eachIfExists('.js-show-more', function (i, a) {
               var $a = $(a);
