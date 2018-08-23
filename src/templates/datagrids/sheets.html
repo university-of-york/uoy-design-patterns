@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Sheets API</title>
+</head>
+<body>
+
+<h1>Welcome to the Sheets API test</h1>
+<p>Click the button below to load the data</p>
+
+<table id="output"></table>
+
+<script async src="/js/vendor/modernizr/modernizr.js"></script>
+<script async src="/js/vendor/requirejs/require.js" data-main="/js/app"></script>
+<script>
+
+    let outputTable = document.getElementById('output');
+
+    function makeTableRow(rowData) {
+        let row, cell;
+
+        row = outputTable.insertRow(-1);
+
+        for (let i = 0; i < rowData.length; i++) {
+            cell = row.insertCell(-1);
+
+            // Append a text node to the cell
+            var newText  = document.createTextNode(rowData[i]);
+            cell.appendChild(newText);
+        }
+    }
+
+    function readData() {
+
+        var gSheetsModule = window.PL_DATA.dataGSheets;
+
+        gSheetsModule.readData(
+            '1Vfqa37CInvrH3WsH4UkWpxKgUzoYqZ7Ij20fJBIfd08',
+            'Sheet1!A1:E',
+            function(range) {
+                if (range.values.length > 0) {
+
+                    for (i = 0; i < range.values.length; i++) {
+                        var row = range.values[i];
+                        makeTableRow(row);
+                        //outputTable.innerHTML += row;
+                    }
+                } else {
+                    makeTableRow('No data found.');
+                }
+            }
+        );
+    }
+
+
+    window.addEventListener('window.js.ready', function() {
+
+        $(function() {
+            var gSheetsModule = window.PL_DATA.dataGSheets;
+
+            $(window).on(gSheetsModule.getEventNames().apiReady, function() {
+                readData();
+            });
+        });
+    }, false);
+
+</script>
+
+</body>
+</html>

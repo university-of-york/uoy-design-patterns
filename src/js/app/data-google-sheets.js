@@ -87,7 +87,7 @@ define(['jquery', 'gsheetsApp'], function ($, gsheetsApp) {
                 }).catch(function(error) {
 
                     // TODO - need to handle this error - Rollbar? something else?
-                    deferred.reject(error);
+                   deferred.reject(error);
                 });
             }
 
@@ -113,6 +113,7 @@ define(['jquery', 'gsheetsApp'], function ($, gsheetsApp) {
                         var data = response.result;
 
                         // notify the waiting modules that the data is loaded
+                        // can be consumed using $element.on('gsheets.data.loaded', function(e, data){} );
                         $window.trigger(_events.dataLoaded, [data]);
 
                         if (typeof callback === 'function') {

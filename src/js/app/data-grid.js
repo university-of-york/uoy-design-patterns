@@ -8,8 +8,8 @@ category: Javascript
 
  */
 
-define(['jquery', 'app/utils', 'app/google-sheets'],
-    function ($, UTILS, DATAGSHEETS) {
+define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
+    function ($, UTILS, DATAFIREBASE, DATAGSHEETS) {
 
         var DATAGRID = (function() {
 
@@ -38,6 +38,20 @@ define(['jquery', 'app/utils', 'app/google-sheets'],
             };
 
             // Private functions
+            var callHtmlMaker = function(htmlBuildFunction) {
+
+            };
+
+            var makeListItem = function(rowData, useKeys) {
+                var listItem = document.createElement('li');
+
+                Object.keys(rowData).forEach(function(key) {
+                    listItem.innerHTML += (useKeys ? key : rowData[key]) + ' ';
+                });
+
+                return listItem;
+            };
+
             var makeTableRow = function(table, rowData, useKeys, isHeaderRow) {
                 var row,
                     thead,
@@ -51,7 +65,7 @@ define(['jquery', 'app/utils', 'app/google-sheets'],
                 }
 
                 Object.keys(rowData).forEach(function(key) {
-                    var newText  = document.createTextNode(useKeys ? key : rowData[key]);
+                    var newText = document.createTextNode(useKeys ? key : rowData[key]);
 
                     if(isHeaderRow) {
                         cell = document.createElement("TH");
@@ -84,9 +98,9 @@ define(['jquery', 'app/utils', 'app/google-sheets'],
 
                 // Firebase uses an object, so let's build it a different way
                 // first, make a header row
-                makeTableRow(table, rows[0], true);
+                makeTableRow(table, data[0], true, includeHeaderRow);
                 // now, process the rest of the rows
-                rows.forEach(function(rowData) {
+                data.forEach(function(rowData) {
                     makeTableRow(table, rowData);
                 });
 
@@ -102,6 +116,20 @@ define(['jquery', 'app/utils', 'app/google-sheets'],
             var buildListHtml = function(data) {
                 var list = document.createElement('ul');
 
+                // Sheets uses a 'values' property, check for that here
+                if(data.values && data.values.length > 0) {
+                    for (var i = 0; i < data.values.length; i++) {
+                        list.appendChild(makeListItem(data.values[i], false));
+                    }
+
+                    return list;
+                }
+
+                // Firebase uses an object, so let's build it a different way
+                data.forEach(function(rowData) {
+                    list.appendChild(makeListItem(rowData, false));
+                });
+
                 return list;
             };
 
@@ -110,7 +138,8 @@ define(['jquery', 'app/utils', 'app/google-sheets'],
             };
 
             var fetchDataFromFirebase = function(configStr) {
-
+                DATAFIREBASE.loadConfig(configStr);
+                DATAFIREBASE.readData();
             };
 
             var loadData = function(datasource, options) {

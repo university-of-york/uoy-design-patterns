@@ -31,7 +31,10 @@ DATAGRID.init({
 
 **Note**: the Data Grid has to use an underlying datasource to load the required data. Currently, only Google Sheets or Firebase are supported, so you must ensure that you pass in both a Google Sheet Id (of a publicly accessible Sheet) _and_ the required Sheet Range. 
 
-For Firebase, all that's needed is the config string of the database in question, so long as the dataset lives under the University of York's Firebase account.
+For Firebase, you have a couple of options when supplying config data as it need more information to pull in the correct data:
+
+1. pass in the string name of the key in the global config option, e.g. `clearingTables` 
+2. or pass a JSON-style object such as `data-firebase-config="{'authDomain': 'york-ac-uk-api-project-139930501012.firebaseapp.com",'databaseURL': 'https://york-ac-uk-api-project-139930501012.firebaseio.com', etc.}"`
 
 
 ### Example using Google Sheets in the Table layout
@@ -56,20 +59,36 @@ data-sheet-id="1Vfqa37CInvrH3WsH4UkWpxKgUzoYqZ7Ij20fJBIfd08"
 data-sheet-range="Sheet1!A1:E"
 ></div>
 
-### Example using Firebase in the List layout
+### Example using Firebase in the Table layout
 
 ```markup
-<div class="js-data-grid-ex" 
+<div class="js-data-grid" 
 data-source="firebase"
-data-layout="list"
-data-firebase-config="[CONFIG IN HERE]"
+data-layout="table"
+data-firebase-config="clearingTables"
 ></div>
 ```
 
-<div class="js-data-grid-ex" 
+<div class="js-data-grid" 
+data-source="firebase"
+data-layout="table"
+data-firebase-config="clearingTables"
+></div>
+
+### Example using Firebase in the List layout
+
+```markup
+<div class="js-data-grid" 
 data-source="firebase"
 data-layout="list"
-data-firebase-config="[CONFIG IN HERE]"
+data-firebase-config="clearingTables"
+></div>
+```
+
+<div class="js-data-grid" 
+data-source="firebase"
+data-layout="list"
+data-firebase-config="clearingTables"
 ></div>
 
 
