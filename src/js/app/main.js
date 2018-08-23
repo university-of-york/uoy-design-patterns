@@ -1,28 +1,18 @@
 
-// load the global data from a JSON config file
-// var xhttp = new XMLHttpRequest();
-// xhttp.onreadystatechange = function() {
-//     if (this.readyState == 4 && this.status == 200) {
-//         window.PL_DATA = JSON.parse(this.responseText);
-//     }
-// };
-// xhttp.open("GET", "https://www.york.ac.uk/static/stable/data/globaldata.json", true);
-// xhttp.send();
-
 define(
   ['jquery', 'es5shim', 'picturefill', 'iframeResizer',
    'app/utils', 'app/modal-link', 'app/accordion', 'app/sticky-nav',
    'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/prioritised-tables',
    'app/toggle', 'app/utility-toggle', 'app/wrapper-height', 'app/youtube-embed',
    'app/soundcloud-embed', 'app/searchables', 'app/filterable-tables', 'app/equal-height-row',
-   'app/google-map', 'app/show-more', 'app/autocomplete'],
+   'app/google-map', 'app/show-more', 'app/data-grid', 'app/google-sheets'],
   function (
     $, ES5SHIM, PICTUREFILL, IFRAMERESIZER,
     UTILS, MODALLINK, ACCORDION, STICKYNAV,
     TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
     TOGGLE, UTILITYTOGGLE, WRAPPERHEIGHT, YOUTUBE,
     SOUNDCLOUD, SEARCHABLE, FILTERABLE, EQUALHEIGHT,
-    GOOGLEMAP, SHOWMORE, AUTOCOMPLETE, GLOBALDATA) {
+    GOOGLEMAP, SHOWMORE, DATAGRID, DATAGSHEETS) {
 
   $(function(){
 
@@ -309,6 +299,40 @@ define(
         $modeInput.val(mode);
         $a.attr('action', action);
       });
+    });
+
+
+
+    // Load the Google Sheets Library
+    DATAGSHEETS.init();
+    window.PL_DATA.dataGSheets = DATAGSHEETS;
+
+    UTILS.eachIfExists('.js-data-grid', function(i, a) {
+      //DATAGRID
+        var $a = $(a),
+            datasource = $a.attr('data-source'),
+            layout = $a.attr('data-layout'),
+            includeHeaderRow = $a.attr('data-include-header') || false,
+            cssClassList = $a.attr('data-css'),
+            sheetId = $a.attr('data-sheet-id'),
+            sheetRange = $a.attr('data-sheet-range'),
+            firebaseConfig = $a.attr('data-firebase-config');
+
+        // set up the loading message
+        $a.append('<p>loading...</p>');
+
+        $(window).on(DATAGSHEETS.getEventNames().apiReady, function() {
+            DATAGRID.init({
+                container: $a,
+                datasource: datasource,
+                layout: layout,
+                includeHeaderRow: includeHeaderRow,
+                cssClassList: cssClassList,
+                sheetId: sheetId,
+                sheetRange: sheetRange,
+                firebaseConfig: firebaseConfig
+            }, DATAGSHEETS.getEventNames().dataLoaded);
+        });
     });
 
 

@@ -33,7 +33,8 @@ requirejs.config({
     jscookie: 'vendor/js-cookie/js.cookie',
     iframeResizer: 'vendor/iframe-resizer/iframeResizer',
     fuse: 'vendor/fuse/dist/fuse.min',
-    jquery: 'vendor/jquery/jquery'
+    jquery: 'vendor/jquery/jquery',
+      gsheetsApp: '//apis.google.com/js/api',
   }
 });
 
