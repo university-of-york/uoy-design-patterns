@@ -25,7 +25,9 @@ DATAGRID.init({
     includeHeaderRow: true,
     cssClassList: 'some-class another-class__here',
     sheetId: '1Vfqa37CInvrH3WsH4UkWpxKgUzoYqZ7Ij20fJBIfd08',
-    sheetRange: 'Sheet1!A1:E'
+    sheetRange: 'Sheet1!A1:E',
+    filter: 'department:eq:biology;',
+    eventIdentifier: 'someuniquevalue'
 });
 ```
 
@@ -92,6 +94,31 @@ data-firebase-config="clearingTables"
 ></div>
 
 
+### Example using Google Sheets as a filtered table
+
+```markup
+<div class="js-data-grid" 
+data-source="sheets"
+data-layout="table"
+data-include-header="true"
+data-css=""
+data-sheet-id="1Vfqa37CInvrH3WsH4UkWpxKgUzoYqZ7Ij20fJBIfd08"
+data-sheet-range="Sheet1!A1:E"
+data-filter="department:eq:maths"
+></div>
+```
+
+<div class="js-data-grid" 
+data-source="sheets"
+data-layout="table"
+data-include-header="true"
+data-css=""
+data-sheet-id="1Vfqa37CInvrH3WsH4UkWpxKgUzoYqZ7Ij20fJBIfd08"
+data-sheet-range="Sheet1!A1:E"
+data-filter="department:eq:maths"
+></div>
+
+
 ### Options
 
   Pass an _options_ object with the following keys:
@@ -102,4 +129,10 @@ data-firebase-config="clearingTables"
   * **css** - a list of css classes that can be added to the 
   * **sheet-id** - the publicly accessible id of the Google Sheet you're using as the datasource.
   * **sheet-range** - the range of values within the Google Sheet you're using as the datasource
-  * **firebase-config** - the config string of the Firebase entity you're using as a datasource
+  * **firebase-config** - the config string of the Firebase entity you're using as a datasource, or a JSON object passed as a data attribute as described in the opening description
+  * **filter** - a filter string in the format `thing to filter:match type:value to filter;next item`. So, to look for 'biology' in the 'department' field(s), you would use `department:eq:biology`. The 'match type' would be one of the following values:
+    * `eq` for equal to
+    * `ne` for not equal to
+    * `gt` for greater than
+    * `lt` for less than
+* **eventIdentifier** - if using multiple data-grids on the page, it's useful to update each one separately and subscribe to unique events. You can pass one in here, such as a timestamp.

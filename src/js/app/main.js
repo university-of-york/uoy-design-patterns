@@ -318,8 +318,8 @@ define(
                 sheetId = $a.attr('data-sheet-id'),
                 sheetRange = $a.attr('data-sheet-range'),
                 firebaseConfig = $a.attr('data-firebase-config'),
-                eventAPIReady = DATAGSHEETS.getEventNames().apiReady,
-                eventDataLoaded = DATAGSHEETS.getEventNames().dataLoaded;
+                filter = $a.attr('data-filter'),
+                eventAPIReady = DATAGSHEETS.getEventNames().apiReady;
 
             var configObj = {
                 container: $a,
@@ -329,22 +329,26 @@ define(
                 cssClassList: cssClassList,
                 sheetId: sheetId,
                 sheetRange: sheetRange,
-                firebaseConfig: firebaseConfig
+                firebaseConfig: firebaseConfig,
+                filter: filter,
+                eventIdentifier: ('' + new Date().getTime())
             };
+            var dataGrid = new DATAGRID();
 
             // set up the loading message as a placeholder
             $a.append('<p>loading...</p>');
 
             // if we're using Firebase, look for a different set of events,
             // we can also fire the init() earlier as the API is ready now
-            if(datasource === DATAGRID.ENUM_DATASOURCE().firebase) {
-                DATAGRID.init(configObj, DATAFIREBASE.getEventNames().dataLoaded);
-            }
+            if(datasource === dataGrid.ENUM_DATASOURCE().firebase) {
+                dataGrid.init(configObj, DATAFIREBASE.getEventNames().dataLoaded);
+            } else {
 
-            // for GSheets, we need to wait for the API to load
-            $(window).on(eventAPIReady, function() {
-                DATAGRID.init(configObj, eventDataLoaded);
-            });
+                // for GSheets, we need to wait for the API to load
+                $(window).on(eventAPIReady, function () {
+                    dataGrid.init(configObj, DATAGSHEETS.getEventNames().dataLoaded);
+                });
+            }
         });
 
 

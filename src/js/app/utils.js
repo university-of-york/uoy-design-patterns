@@ -360,6 +360,11 @@ define(['jquery'], function ($) {
         } else {
             document.head.appendChild(script);
         }
+    },
+
+    doesObjExist: function(obj) {
+        return (typeof obj !== 'undefined' &&
+            obj !== null);
     }
   };
 

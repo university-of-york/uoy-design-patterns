@@ -11,7 +11,7 @@ category: Javascript
 define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
     function ($, UTILS, DATAFIREBASE, DATAGSHEETS) {
 
-        var DATAGRID = (function() {
+        var DATAGRID = function() {
 
             // Enums
             var DATASOURCE = {
@@ -34,7 +34,9 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 cssClassList: '',
                 sheetId: '',
                 sheetRange: '',
-                firebaseConfig: ''
+                firebaseConfig: '',
+                filter: '',
+                eventIdentifier: ''
             };
 
             // Private functions
@@ -133,22 +135,22 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 return list;
             };
 
-            var fetchDataFromSheets = function(sheetId, sheetRange) {
-                DATAGSHEETS.readData(sheetId, sheetRange);
+            var fetchDataFromSheets = function(sheetId, sheetRange, filter, eventIdentifier) {
+                DATAGSHEETS.readData(sheetId, sheetRange, null, filter, eventIdentifier);
             };
 
-            var fetchDataFromFirebase = function(configStr) {
+            var fetchDataFromFirebase = function(configStr, eventIdentifier) {
                 DATAFIREBASE.loadConfig(configStr);
-                DATAFIREBASE.readData();
+                DATAFIREBASE.readData('/', eventIdentifier);
             };
 
             var loadData = function(datasource, options) {
                 switch(datasource) {
                     case DATASOURCE.sheets:
-                        fetchDataFromSheets(options.sheetId, options.sheetRange);
+                        fetchDataFromSheets(options.sheetId, options.sheetRange, options.filter, options.eventIdentifier);
                         break;
                     case DATASOURCE.firebase:
-                        fetchDataFromFirebase(options.firebaseConfig);
+                        fetchDataFromFirebase(options.firebaseConfig, options.eventIdentifier);
                         break;
                     default:
                         break;
@@ -187,10 +189,11 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
 
             // Public functions
             var init = function(options, dataLoadedEvent) {
-                var data,
-                    outputHtml = '';
+                var outputHtml = '';
 
-                if (!options.container) return false;
+                if (!options.container) {
+                    return false;
+                }
 
                 // merge passed in options with defaults
                 options = $.extend({}, _defaultOptions, options);
@@ -198,15 +201,17 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 // load up the particular data source
                 loadData(options.datasource, options);
 
+                // use the passed in unique identifier for the data loaded event, if available
+                dataLoadedEvent = dataLoadedEvent + options.eventIdentifier;
+
                 // build the HTML once the data is available from the source
                 $window.on(dataLoadedEvent, function(e, data){
+
                     // build up the html ready to output
                     outputHtml = buildOutputHtml(data, options.layout, options.includeHeaderRow);
 
                     // add in the css classes passed in, if any
-                    if(options.cssClassList !== 'undefined') {
-                        outputHtml.className += ' ' + options.cssClassList;
-                    }
+                    outputHtml.className += ' ' + options.cssClassList;
 
                     // display the data after clearing the container
                     options.container.empty();
@@ -219,7 +224,7 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 ENUM_DATASOURCE: ENUM_DATASOURCE,
                 ENUM_LAYOUTTYPE: ENUM_LAYOUTTYPE
             };
-        }());
+        };
 
         return DATAGRID;
 });

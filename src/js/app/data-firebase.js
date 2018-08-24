@@ -12,34 +12,38 @@ define(['jquery', 'firebaseApp', 'app/globaldata'], function ($, firebaseApp, gl
     var DATA_FIREBASE = (function(){
 
         // Variables
-        var _database;
-        var _firebase;
-        var $window = $(window);
-        var _events = {
-            apiReady: 'firebase.api.ready',
-            dataLoaded: 'firebase.data.loaded'
-        };
+        var _database,
+            _firebase,
+            $window = $(window),
+            _events = {
+                apiReady: 'firebase.api.ready',
+                dataLoaded: 'firebase.data.loaded'
+            };
 
         // Private functions
-        var convertConfigObj = function(config) {
+        var filterData = function() {
+            // TODO: add filtering to Firebase, might be able to do it at the request level!
+        };
 
+        var convertConfigObj = function(config) {
             var convertedConfigObj;
+
             try {
                 convertedConfigObj = $.parseJSON(config.replace(/'/g, '"'));
             } catch(err) {
-                // load it from config
-                convertedConfigObj = globalData.firebaseConfigs[config];
+                // load it from config instead
+                return globalData.firebaseConfigs[config];
             }
 
             return convertedConfigObj;
         };
+
         var processConfigObj = function(configObj) {
 
             var processedConfigObj = convertConfigObj(configObj);
 
             // add in the API key here as it shouldn't be passed in plan text
             processedConfigObj.apiKey = globalData.firebaseAPISettings.apiKey;
-
             return processedConfigObj;
         };
 
@@ -68,6 +72,7 @@ define(['jquery', 'firebaseApp', 'app/globaldata'], function ($, firebaseApp, gl
                     _firebase.initializeApp(configObj);
                 }
                 // TODO: might need to adjust this to load different projects
+                // see: https://firebase.google.com/docs/web/setup?authuser=0
 
                 // store the database reference
                 _database = _firebase.database();
@@ -85,10 +90,11 @@ define(['jquery', 'firebaseApp', 'app/globaldata'], function ($, firebaseApp, gl
             $window.trigger(_events.apiReady);
         };
 
-        var readData = function(ref) {
+        var readData = function(ref, eventIdentifier) {
 
             // Get a reference to the database service
             if(_database) {
+                eventIdentifier = eventIdentifier || '';
 
                 // load the default root value, '/', if ref == undefined
                  _database.ref(ref || '/').once('value').then(function(snapshot) {
@@ -96,7 +102,7 @@ define(['jquery', 'firebaseApp', 'app/globaldata'], function ($, firebaseApp, gl
 
                      // notify the waiting modules that the data is loaded
                     // can be consumed using $element.on('firebase.data.loaded', function(e, data){} );
-                    $window.trigger(_events.dataLoaded, [data]);
+                     $window.trigger(_events.dataLoaded + eventIdentifier, [data]);
                 });
 
                 // successful action
