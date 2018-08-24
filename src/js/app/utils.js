@@ -365,6 +365,13 @@ define(['jquery'], function ($) {
     doesObjExist: function(obj) {
         return (typeof obj !== 'undefined' &&
             obj !== null);
+    },
+
+    getUrlParameter: function (name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
     }
   };
 

@@ -22,6 +22,11 @@ define(['jquery', 'gsheetsApp', 'app/globaldata', 'app/utils'], function ($, gsh
 
 
         // Private functions
+        var doesFilterExist = function(filter) {
+            return typeof (filter === 'string' &&
+                filter.length > 0)
+        };
+
         var checkFilterMatch = function(matchType, valueToMatch, filterValue) {
             var match = false;
 
@@ -90,15 +95,19 @@ define(['jquery', 'gsheetsApp', 'app/globaldata', 'app/utils'], function ($, gsh
 
             // Sheets data uses the 'ROW' listing by default
             var filteredData,
-                filterObj;
+                filterObj,
+                // in case the filter's empty, check the query string for one
+                querystringFilter = utils.getUrlParameter('dg-filter');
 
             if(!data.values ||
-                data.values.length <= 0 ||
-                typeof filter !== 'string' ||
-                filter === '') {
+                data.values.length < 1 ||
+                !doesFilterExist(filter) ||
+                !doesFilterExist(querystringFilter)) {
                 return data;
             }
 
+            filter = filter || querystringFilter;
+            
             // filterObj values now looks like this, e.g.
             // { filter0: { columnname: 'department', columnindex: 0, matchtype: 'eq', filtervalue: 'biology' }
             filterObj = buildFilterObj(filter, data.values[0]);
