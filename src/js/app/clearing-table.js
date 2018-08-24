@@ -203,7 +203,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
                 {
                     'href': '#modal-content-'+that.id,
                     'class': 'c-btn c-btn--medium js-modal--scroll'
-                }).text('Find out more');
+                }).text('See our clearing entry requirements');
 
 
             panelContent.append('<h3>Clearing and adjustment 2018</h3>');

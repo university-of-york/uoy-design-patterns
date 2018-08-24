@@ -29,12 +29,12 @@
     }
     // Really big screens
     @include mq('huge', '+') {
-      width:100%;
+      width:60%;
 
     }
     // Everything else
     @include mq('huge', '-') {
-      width:90%;
+      width:80%;
       min-width:0;
     }
     &.is-active {
@@ -88,7 +88,7 @@
 }
 .c-modal__image {
   display:block;
-  width:100%;
+  //width:100%;
 }
 .c-modal__caption {
   @include image-caption;
