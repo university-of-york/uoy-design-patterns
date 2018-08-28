@@ -187,6 +187,12 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 options.container.append(outputHtml);
             };
 
+            var handleErrors = function(error, options) {
+                // display the data after clearing the container
+                options.container.empty();
+                options.container.append(error);
+            };
+
             // Getters / Setters
             var ENUM_DATASOURCE = function() {
                 return DATASOURCE;
@@ -217,13 +223,18 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
 
                 // build the HTML once the data is available from the source
                 if(!UTILS.doesObjExist(dataLoadedEvent)) {
-                    dataLoading.done(function(data) {
-                        processData(data, options);
-                    });
+                    dataLoading
+                        .done(function(data) {
+                            processData(data, options);
+                        })
+                        .fail(function(error) {
+                            handleErrors(error, options);
+                        });
                 } else {
                     $window.on(dataLoadedEvent, function (e, data) {
                         processData(data, options);
                     });
+                    // TODO: add data-load specific error messaging/handling here, e.g. GSheets, Firebase
                 }
             };
 

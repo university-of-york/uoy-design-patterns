@@ -255,8 +255,12 @@ define(['jquery', 'gsheetsApp', 'app/globaldata', 'app/utils'], function ($, gsh
                             }
                         );
                 } else {
+                    $window.trigger(_events.dataReadError, ['The Sheets obj isn\'t available or did not load correctly']);
                     gettingData.reject('The Sheets obj isn\'t available or did not load correctly');
                 }
+            }).fail(function(error) {
+                $window.trigger(_events.dataReadError, [error]);
+                gettingData.reject('An error occurred: ' + error);
             });
 
             return gettingData.promise();
