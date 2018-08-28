@@ -17,7 +17,8 @@ define(['jquery', 'firebaseApp', 'app/globaldata', 'app/utils'], function ($, fi
             $window = $(window),
             _events = {
                 apiReady: 'firebase.api.ready',
-                dataLoaded: 'firebase.data.loaded'
+                dataLoaded: 'firebase.data.loaded',
+                dataReadError: 'gsheets.data.error'
             };
 
         // Private functions
@@ -99,11 +100,10 @@ define(['jquery', 'firebaseApp', 'app/globaldata', 'app/utils'], function ($, fi
             }
 
             gettingData = $.Deferred();
+            eventIdentifier = eventIdentifier || '';
 
             // Get a reference to the database service
             if(_database) {
-                eventIdentifier = eventIdentifier || '';
-
 
                 // load the default root value, '/', if ref == undefined
                  _database.ref(ref || '/').once('value').then(function(snapshot) {
@@ -116,12 +116,14 @@ define(['jquery', 'firebaseApp', 'app/globaldata', 'app/utils'], function ($, fi
                      // complete the promise for those waiting on that, rather than window event
                      gettingData.resolve(data);
                 }).catch(
-                    function(err){
-                        gettingData.reject(err);
+                    function(error){
+                        gettingData.reject(error);
+                        $window.trigger(_events.dataReadError + eventIdentifier, [error]);
                 });
 
             } else {
                 gettingData.reject('Database hasn\'t been loaded');
+                $window.trigger(_events.dataReadError + eventIdentifier, ['Database hasn\'t been loaded']);
             }
 
             return gettingData.promise();
