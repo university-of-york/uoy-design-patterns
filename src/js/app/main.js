@@ -341,12 +341,12 @@ define(
             // if we're using Firebase, look for a different set of events,
             // we can also fire the init() earlier as the API is ready now
             if(datasource === dataGrid.ENUM_DATASOURCE().firebase) {
-                dataGrid.init(configObj, DATAFIREBASE.getEventNames().dataLoaded);
+                dataGrid.init(configObj);
             } else {
 
                 // for GSheets, we need to wait for the API to load
                 $(window).on(eventAPIReady, function () {
-                    dataGrid.init(configObj, DATAGSHEETS.getEventNames().dataLoaded);
+                    dataGrid.init(configObj);
                 });
             }
         });

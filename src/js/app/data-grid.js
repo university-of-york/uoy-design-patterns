@@ -135,26 +135,32 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 return list;
             };
 
-            var fetchDataFromSheets = function(sheetId, sheetRange, filter, eventIdentifier) {
-                DATAGSHEETS.readData(sheetId, sheetRange, null, filter, eventIdentifier);
-            };
-
-            var fetchDataFromFirebase = function(configStr, eventIdentifier) {
-                DATAFIREBASE.loadConfig(configStr);
-                DATAFIREBASE.readData('/', eventIdentifier);
-            };
+            // var fetchDataFromSheets = function(sheetId, sheetRange, filter, eventIdentifier) {
+            //     DATAGSHEETS.readData(sheetId, sheetRange, null, filter, eventIdentifier);
+            // };
+            //
+            // var fetchDataFromFirebase = function(configStr, eventIdentifier) {
+            //     DATAFIREBASE.loadConfig(configStr);
+            //     DATAFIREBASE.readData('/', eventIdentifier);
+            // };
 
             var loadData = function(datasource, options) {
+                var dataLoadedPromise;
+
                 switch(datasource) {
                     case DATASOURCE.sheets:
-                        fetchDataFromSheets(options.sheetId, options.sheetRange, options.filter, options.eventIdentifier);
+                        //fetchDataFromSheets(options.sheetId, options.sheetRange, options.filter, options.eventIdentifier);
+                        dataLoadedPromise = DATAGSHEETS.readData(options.sheetId, options.sheetRange, null, options.filter, options.eventIdentifier);
                         break;
                     case DATASOURCE.firebase:
-                        fetchDataFromFirebase(options.firebaseConfig, options.eventIdentifier);
+                        //fetchDataFromFirebase(options.firebaseConfig, options.eventIdentifier);
+                        dataLoadedPromise =DATAFIREBASE.readData('/', options.eventIdentifier, options.firebaseConfig);
                         break;
                     default:
                         break;
                 }
+
+                return dataLoadedPromise;
             };
 
             var buildOutputHtml = function(data, displayType, includeHeaderRow) {
@@ -178,6 +184,20 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 return outputHtml;
             };
 
+            var processData = function(data, options) {
+                var outputHtml = '';
+
+                // build up the html ready to output
+                outputHtml = buildOutputHtml(data, options.layout, options.includeHeaderRow);
+
+                // add in the css classes passed in, if any
+                outputHtml.className += ' ' + options.cssClassList;
+
+                // display the data after clearing the container
+                options.container.empty();
+                options.container.append(outputHtml);
+            };
+
             // Getters / Setters
             var ENUM_DATASOURCE = function() {
                 return DATASOURCE;
@@ -189,7 +209,7 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
 
             // Public functions
             var init = function(options, dataLoadedEvent) {
-                var outputHtml = '';
+                var dataLoading;
 
                 if (!options.container) {
                     return false;
@@ -199,24 +219,23 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 options = $.extend({}, _defaultOptions, options);
 
                 // load up the particular data source
-                loadData(options.datasource, options);
+                dataLoading = loadData(options.datasource, options);
 
                 // use the passed in unique identifier for the data loaded event, if available
-                dataLoadedEvent = dataLoadedEvent + options.eventIdentifier;
+                if(UTILS.doesObjExist(dataLoadedEvent)) {
+                    dataLoadedEvent = dataLoadedEvent + options.eventIdentifier;
+                }
 
                 // build the HTML once the data is available from the source
-                $window.on(dataLoadedEvent, function(e, data){
-
-                    // build up the html ready to output
-                    outputHtml = buildOutputHtml(data, options.layout, options.includeHeaderRow);
-
-                    // add in the css classes passed in, if any
-                    outputHtml.className += ' ' + options.cssClassList;
-
-                    // display the data after clearing the container
-                    options.container.empty();
-                    options.container.append(outputHtml);
-                });
+                if(!UTILS.doesObjExist(dataLoadedEvent)) {
+                    dataLoading.done(function(data) {
+                        processData(data, options);
+                    });
+                } else {
+                    $window.on(dataLoadedEvent, function (e, data) {
+                        processData(data, options);
+                    });
+                }
             };
 
             return {

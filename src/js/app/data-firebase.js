@@ -7,7 +7,7 @@ category: Javascript
 ---
 
  */
-define(['jquery', 'firebaseApp', 'app/globaldata'], function ($, firebaseApp, globalData) {
+define(['jquery', 'firebaseApp', 'app/globaldata', 'app/utils'], function ($, firebaseApp, globalData, Utils) {
 
     var DATA_FIREBASE = (function(){
 
@@ -90,11 +90,20 @@ define(['jquery', 'firebaseApp', 'app/globaldata'], function ($, firebaseApp, gl
             $window.trigger(_events.apiReady);
         };
 
-        var readData = function(ref, eventIdentifier) {
+        var readData = function(ref, eventIdentifier, configStr) {
+
+            var gettingData;
+
+            if(!Utils.doesObjExist(_database) && Utils.doesObjExist(configStr)) {
+                loadConfig(configStr);
+            }
+
+            gettingData = $.Deferred();
 
             // Get a reference to the database service
             if(_database) {
                 eventIdentifier = eventIdentifier || '';
+
 
                 // load the default root value, '/', if ref == undefined
                  _database.ref(ref || '/').once('value').then(function(snapshot) {
@@ -103,13 +112,19 @@ define(['jquery', 'firebaseApp', 'app/globaldata'], function ($, firebaseApp, gl
                      // notify the waiting modules that the data is loaded
                     // can be consumed using $element.on('firebase.data.loaded', function(e, data){} );
                      $window.trigger(_events.dataLoaded + eventIdentifier, [data]);
+
+                     // complete the promise for those waiting on that, rather than window event
+                     gettingData.resolve(data);
+                }).catch(
+                    function(err){
+                        gettingData.reject(err);
                 });
 
-                // successful action
-                return true;
+            } else {
+                gettingData.reject('Database hasn\'t been loaded');
             }
 
-            return false;
+            return gettingData.promise();
         };
 
         return {

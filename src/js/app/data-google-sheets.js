@@ -24,7 +24,7 @@ define(['jquery', 'gsheetsApp', 'app/globaldata', 'app/utils'], function ($, gsh
         // Private functions
         var doesFilterExist = function(filter) {
             return typeof (filter === 'string' &&
-                filter.length > 0)
+                filter.length > 0);
         };
 
         var checkFilterMatch = function(matchType, valueToMatch, filterValue) {
@@ -215,7 +215,8 @@ define(['jquery', 'gsheetsApp', 'app/globaldata', 'app/utils'], function ($, gsh
 
             // have to load the Sheets API config first
             // we'll also grab the promise returned from the config method
-            var configLoading = loadConfig(globalData.gSheetsAPISettings);
+            var configLoading = loadConfig(globalData.gSheetsAPISettings),
+                gettingData = $.Deferred();
 
             eventIdentifier = eventIdentifier || '';
 
@@ -236,15 +237,23 @@ define(['jquery', 'gsheetsApp', 'app/globaldata', 'app/utils'], function ($, gsh
                                 // can be consumed using $element.on('gsheets.data.loaded', function(e, data){} );
                                 $window.trigger(_events.dataLoaded + eventIdentifier, [data]);
 
+                                // complete the promise for those waiting on that, rather than window event
+                                gettingData.resolve(data);
+
                                 if (typeof callback === 'function') {
                                     callback(data);
                                 }
                             }, function (error) {
                                 $window.trigger(_events.dataReadError, [error]);
+                                gettingData.reject(error);
                             }
                         );
+                } else {
+                    gettingData.reject('The Sheets obj isn\'t available or did not load correctly');
                 }
             });
+
+            return gettingData.promise();
         };
 
         return {
