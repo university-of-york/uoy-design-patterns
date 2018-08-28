@@ -21,6 +21,7 @@ define(['jquery', 'firebaseApp', 'app/globaldata', 'app/utils'], function ($, fi
                 dataReadError: 'gsheets.data.error'
             };
 
+
         // Private functions
         var filterData = function() {
             // TODO: add filtering to Firebase, might be able to do it at the request level!
@@ -46,6 +47,22 @@ define(['jquery', 'firebaseApp', 'app/globaldata', 'app/utils'], function ($, fi
             // add in the API key here as it shouldn't be passed in plan text
             processedConfigObj.apiKey = globalData.firebaseAPISettings.apiKey;
             return processedConfigObj;
+        };
+
+        var errorHandler = function(message, errorObj, promiseObj, eventIdentifier) {
+
+            eventIdentifier = eventIdentifier || '';
+
+            // first, trigger the error event on the Window
+            $window.trigger(_events.dataReadError + eventIdentifier, [errorObj]);
+
+            // next, reject the promise, if it exists
+            if(utils.doesObjExist(promiseObj)) {
+                promiseObj.reject([message, errorObj]);
+            }
+
+            // finally, log the error in the console
+            console.log('Sheets module error > ' + message + ': ' + errorObj);
         };
 
 
@@ -79,6 +96,7 @@ define(['jquery', 'firebaseApp', 'app/globaldata', 'app/utils'], function ($, fi
                 _database = _firebase.database();
             } else {
                 // TODO: need a better way to check for the firebase object being loaded (async? promises?)
+                errorHandler('Firebase library isn\'t loaded', {}, null, '');
             }
         };
 
@@ -115,15 +133,15 @@ define(['jquery', 'firebaseApp', 'app/globaldata', 'app/utils'], function ($, fi
 
                      // complete the promise for those waiting on that, rather than window event
                      gettingData.resolve(data);
-                }).catch(
-                    function(error){
-                        gettingData.reject(error);
-                        $window.trigger(_events.dataReadError + eventIdentifier, [error]);
-                });
+                })
+                .catch(
+                    function(error) {
+                        errorHandler('Firebase library isn\'t loaded', error, gettingData, eventIdentifier);
+                    }
+                );
 
             } else {
-                gettingData.reject('Database hasn\'t been loaded');
-                $window.trigger(_events.dataReadError + eventIdentifier, ['Database hasn\'t been loaded']);
+                errorHandler('Database hasn\'t been loaded', {}, gettingData, eventIdentifier);
             }
 
             return gettingData.promise();

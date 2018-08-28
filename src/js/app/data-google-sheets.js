@@ -142,6 +142,23 @@ define(['jquery', 'gsheetsApp', 'app/globaldata', 'app/utils'], function ($, gsh
             return data;
         };
 
+        var errorHandler = function(message, errorObj, promiseObj, eventIdentifier) {
+
+            eventIdentifier = eventIdentifier || '';
+
+            // first, trigger the error event on the Window
+            $window.trigger(_events.dataReadError + eventIdentifier, [errorObj]);
+
+            // next, reject the promise, if it exists
+            if(utils.doesObjExist(promiseObj)) {
+                promiseObj.reject([message, errorObj]);
+            }
+
+            // finally, log the error in the console
+            console.log('Sheets module error > ' + message + ': ' + errorObj);
+        };
+
+
         // Public functions
         var getEventNames = function() {
             return _events;
@@ -208,9 +225,7 @@ define(['jquery', 'gsheetsApp', 'app/globaldata', 'app/utils'], function ($, gsh
                         deferred.resolve();
                 }).catch(
                     function(error) {
-
-                        // TODO - need to handle this error - Rollbar? something else?
-                        deferred.reject(error);
+                        errorHandler('A GSheets init error occured: ', error, deferred);
                 });
             }
 
@@ -250,17 +265,14 @@ define(['jquery', 'gsheetsApp', 'app/globaldata', 'app/utils'], function ($, gsh
                                     callback(data);
                                 }
                             }, function (error) {
-                                $window.trigger(_events.dataReadError, [error]);
-                                gettingData.reject(error);
+                                errorHandler('A Sheets values call resulted in an error: ', {}, gettingData, eventIdentifier);
                             }
                         );
                 } else {
-                    $window.trigger(_events.dataReadError, ['The Sheets obj isn\'t available or did not load correctly']);
-                    gettingData.reject('The Sheets obj isn\'t available or did not load correctly');
+                    errorHandler('The Sheets obj isn\'t available or did not load correctly: ', {}, gettingData, eventIdentifier);
                 }
             }).fail(function(error) {
-                $window.trigger(_events.dataReadError, [error]);
-                gettingData.reject('An error occurred: ' + error);
+                errorHandler('An error occurred when loading the Sheets config option: ', error, gettingData, eventIdentifier);
             });
 
             return gettingData.promise();
