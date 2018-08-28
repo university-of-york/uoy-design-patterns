@@ -135,25 +135,14 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 return list;
             };
 
-            // var fetchDataFromSheets = function(sheetId, sheetRange, filter, eventIdentifier) {
-            //     DATAGSHEETS.readData(sheetId, sheetRange, null, filter, eventIdentifier);
-            // };
-            //
-            // var fetchDataFromFirebase = function(configStr, eventIdentifier) {
-            //     DATAFIREBASE.loadConfig(configStr);
-            //     DATAFIREBASE.readData('/', eventIdentifier);
-            // };
-
             var loadData = function(datasource, options) {
                 var dataLoadedPromise;
 
                 switch(datasource) {
                     case DATASOURCE.sheets:
-                        //fetchDataFromSheets(options.sheetId, options.sheetRange, options.filter, options.eventIdentifier);
                         dataLoadedPromise = DATAGSHEETS.readData(options.sheetId, options.sheetRange, null, options.filter, options.eventIdentifier);
                         break;
                     case DATASOURCE.firebase:
-                        //fetchDataFromFirebase(options.firebaseConfig, options.eventIdentifier);
                         dataLoadedPromise =DATAFIREBASE.readData('/', options.eventIdentifier, options.firebaseConfig);
                         break;
                     default:

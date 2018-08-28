@@ -23,7 +23,7 @@ define(['jquery', 'gsheetsApp', 'app/globaldata', 'app/utils'], function ($, gsh
 
         // Private functions
         var doesFilterExist = function(filter) {
-            return typeof (filter === 'string' &&
+            return (typeof filter === 'string' &&
                 filter.length > 0);
         };
 
@@ -96,13 +96,14 @@ define(['jquery', 'gsheetsApp', 'app/globaldata', 'app/utils'], function ($, gsh
             // Sheets data uses the 'ROW' listing by default
             var filteredData,
                 filterObj,
+                filterObjKeys,
                 // in case the filter's empty, check the query string for one
                 querystringFilter = utils.getUrlParameter('dg-filter');
 
             if(!data.values ||
                 data.values.length < 1 ||
-                !doesFilterExist(filter) ||
-                !doesFilterExist(querystringFilter)) {
+                (!doesFilterExist(filter) &&
+                !doesFilterExist(querystringFilter))) {
                 return data;
             }
 
@@ -111,6 +112,11 @@ define(['jquery', 'gsheetsApp', 'app/globaldata', 'app/utils'], function ($, gsh
             // filterObj values now looks like this, e.g.
             // { filter0: { columnname: 'department', columnindex: 0, matchtype: 'eq', filtervalue: 'biology' }
             filterObj = buildFilterObj(filter, data.values[0]);
+            filterObjKeys = Object.keys(filterObj);
+
+            if(filterObjKeys.length < 1) {
+                return data;
+            }
 
             // now we've built the filter, let's do some filtering
             filteredData = $.grep(data.values, function(row, index) {
@@ -120,7 +126,7 @@ define(['jquery', 'gsheetsApp', 'app/globaldata', 'app/utils'], function ($, gsh
                     return true; // skip the header row
                 }
 
-                Object.keys(filterObj).forEach(function(key) {
+                filterObjKeys.forEach(function(key) {
                     var thisFilter = filterObj[key],
                         cellValue = row[thisFilter.columnindex];
 
