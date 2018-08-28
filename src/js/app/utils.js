@@ -1,4 +1,4 @@
-  define(['jquery'], function ($) {
+define(['jquery'], function ($) {
 
   var $window = $(window);
 
@@ -332,9 +332,47 @@
         console.log('Sending event: ', category, action, label, value);
         ga(gaTracker+'.send', 'event', category, action, label, value);
       });
+    },
 
+    // Writes an external script to the browser
+    loadScriptFile: function(scriptURL, loadAsync, loadLocation, metaScriptName, metaScriptCallee, onloadFunction) {
+
+        var script = document.createElement("script");
+        var scriptLogMessage = "{0} script loaded by {1}";
+        script.src = scriptURL;
+        script.async = loadAsync || false;
+
+        script.onload = function() {
+            // log the script being called and from where
+            // to save us chasing the original call position
+            console.log(scriptLogMessage
+                .replace("{0}", metaScriptName || "external")
+                .replace("{1}", metaScriptCallee || "module"));
+
+            // call the passed in function on load
+            if(typeof onloadFunction === 'function') {
+                onloadFunction();
+            }
+        };
+
+        if(loadLocation === 'body') {
+            document.body.appendChild(script);
+        } else {
+            document.head.appendChild(script);
+        }
+    },
+
+    doesObjExist: function(obj) {
+        return (typeof obj !== 'undefined' &&
+            obj !== null);
+    },
+
+    getUrlParameter: function (name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
     }
-
   };
 
   return UTILS;
