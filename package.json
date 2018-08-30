@@ -26,6 +26,10 @@
       "email": "dave.hill@york.ac.uk"
     }
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "tag": "latest"
+  },
   "devDependencies": {
     "@semantic-release/changelog": "3.0.0",
     "@semantic-release/git": "7.0.3",

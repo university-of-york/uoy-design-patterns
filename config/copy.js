@@ -42,6 +42,13 @@ module.exports = {
       cwd: 'build/',
       src: ['css/**', 'fonts/**', 'img/**', 'js/**', 'opensearch.xml', 'data/**'],
       dest: 'release/'
-    }]
+    },
+        {
+            expand: true,
+            dot: true,
+            cwd: './',
+            src: ['package.json'],
+            dest: 'release/'
+        }]
   }
 };
