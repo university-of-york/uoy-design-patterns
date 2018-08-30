@@ -83,16 +83,22 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
             };
 
             var buildTableHtml = function(data, includeHeaderRow) {
-                var table = document.createElement('table');
+                var table = document.createElement('table'),
+                    startIndex = includeHeaderRow ? 1 : 0;
 
                 // Sheets uses a 'values' property, check for that here
                 if(data.values && data.values.length > 0) {
-                    for (var i = 0; i < data.values.length; i++) {
+                    for (var i = startIndex; i < data.values.length; i++) {
                         makeTableRow(
                             table,
                             data.values[i],
                             false,
-                            (i === 0) ? includeHeaderRow : false);
+                            false);
+                    }
+
+                    // add the header row last, otherwise all rows are added to it
+                    if(includeHeaderRow) {
+                        makeTableRow(table, data.values[0], false, true);
                     }
 
                     return table;
