@@ -101,6 +101,7 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 // Firebase uses an object, so let's build it a different way
                 // first, make a header row
                 makeTableRow(table, data[0], true, includeHeaderRow);
+
                 // now, process the rest of the rows
                 data.forEach(function(rowData) {
                     makeTableRow(table, rowData);
