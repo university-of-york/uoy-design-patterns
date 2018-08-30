@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCmiHfy-784LY-5Zpaow7Hp4TfUP4liJXU",
+            authDomain: "york-ac-uk-api-project-139930501012.firebaseapp.com",
+            databaseURL: "https://york-ac-uk-api-project-139930501012.firebaseio.com",
+            projectId: "york.ac.uk:api-project-139930501012",
+            storageBucket: "",
+            messagingSenderId: "139930501012"
+        };
+        firebase.initializeApp(config);
+    </script>
+</head>
+<body>
+
+
+<h1>Welcome to the Firebase API test</h1>
+<p>Click the button below to load the data from Google Firebase</p>
+<p><button id="btnLoadData">Load data</button></p>
+
+<table id="output"></table>
+
+<script>
+
+    let outputTable;
+
+    function makeTableRow(rowData, useKeys) {
+        let row, cell;
+        row = outputTable.insertRow(-1);
+
+        Object.keys(rowData).forEach(key => {
+            cell = row.insertCell(-1);
+            var newText  = document.createTextNode(useKeys ? key : rowData[key]);
+            cell.appendChild(newText);
+        });
+    }
+
+    function initClient() {
+
+        let btnLoadData = document.getElementById('btnLoadData');
+        if(btnLoadData) {
+            btnLoadData.addEventListener('click', clickHandler);
+        }
+        outputTable = document.getElementById('output');
+    }
+
+
+    function clickHandler() {
+
+        return firebase.database().ref().once('value').then(function(snapshot) {
+            console.log(snapshot.val());
+            var rows = snapshot.val();
+            /*
+            0: {
+                Course: "Biology"
+                Department: "Biology"
+                "In clearing": "y"
+                International: "y"
+                grades: "AAA"
+                }
+             */
+            // update the table head row with the first object
+            makeTableRow(rows[0], true);
+
+            rows.forEach(function(row) {
+                makeTableRow(row);
+            });
+        });
+    }
+
+    window.onload = initClient;
+</script>
+
+</body>
+</html>
