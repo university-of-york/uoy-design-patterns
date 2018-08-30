@@ -47,7 +47,7 @@ module.exports = {
             expand: true,
             dot: true,
             cwd: './',
-            src: ['package.json'],
+            src: ['package.json', 'readme.md'],
             dest: 'release/'
         }]
   }

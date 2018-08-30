@@ -4,7 +4,7 @@
   "description": "This repository holds the design patterns used on the University of York's website (http://www.york.ac.uk).",
   "main": "gruntfile.js",
   "repository": "https://github.com/university-of-york/design-patterns",
-  "license": "UNLICENSED",
+  "license": "MIT License",
   "author": "University of York Digital Team (https://university-of-york.github.io/)",
   "contributors": [
     {
