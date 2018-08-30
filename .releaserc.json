@@ -29,8 +29,8 @@
   "analyzeCommits": {
     "preset": "angular",
     "releaseRules": [
-      {"type": "fix", "scope":"Fixes", "release": "patch"},
-      {"type": "Fix", "scope":"Fixes", "release": "patch"},
+      {"type": "fix", "release": "patch"},
+      {"type": "Fix", "release": "patch"},
       {"type": "update", "scope":"Updates", "release": "minor"},
       {"type": "Update", "scope":"Updates", "release": "minor"},
       {"type": "feature", "scope":"Feature", "release": "minor"},
