@@ -1,3 +1,11 @@
+## [1.6.6](https://github.com/university-of-york/design-patterns/compare/v1.6.5...v1.6.6) (2018-08-30)
+
+
+### Bug Fixes
+
+* clearing cta button change ([8c6eba7](https://github.com/university-of-york/design-patterns/commit/8c6eba7))
+* remove scope from analyzecommits plugin config ([827d74a](https://github.com/university-of-york/design-patterns/commit/827d74a))
+
 ## [1.6.5](https://github.com/university-of-york/design-patterns/compare/v1.6.4...v1.6.5) (2018-08-15)
 
 
