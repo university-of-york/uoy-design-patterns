@@ -1,3 +1,10 @@
+## [1.6.8](https://github.com/university-of-york/design-patterns/compare/v1.6.7...v1.6.8) (2018-08-30)
+
+
+### Bug Fixes
+
+* update package licence info ([9177285](https://github.com/university-of-york/design-patterns/commit/9177285))
+
 ## [1.6.7](https://github.com/university-of-york/design-patterns/compare/v1.6.6...v1.6.7) (2018-08-30)
 
 
