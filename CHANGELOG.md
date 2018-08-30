@@ -1,3 +1,10 @@
+## [1.6.9](https://github.com/university-of-york/design-patterns/compare/v1.6.8...v1.6.9) (2018-08-30)
+
+
+### Bug Fixes
+
+* add autocomplete back into library ([dcd04f1](https://github.com/university-of-york/design-patterns/commit/dcd04f1))
+
 ## [1.6.8](https://github.com/university-of-york/design-patterns/compare/v1.6.7...v1.6.8) (2018-08-30)
 
 
