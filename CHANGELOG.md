@@ -1,3 +1,10 @@
+## [1.6.7](https://github.com/university-of-york/design-patterns/compare/v1.6.6...v1.6.7) (2018-08-30)
+
+
+### Bug Fixes
+
+* remove scopes and correct package name in npm ([765905a](https://github.com/university-of-york/design-patterns/commit/765905a))
+
 ## [1.6.6](https://github.com/university-of-york/design-patterns/compare/v1.6.5...v1.6.6) (2018-08-30)
 
 
