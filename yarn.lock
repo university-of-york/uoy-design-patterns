@@ -65,9 +65,9 @@
     micromatch "^3.1.4"
     p-reduce "^1.0.0"
 
-"@semantic-release/github@5.0.3":
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-5.0.3.tgz#aa81ce120236ffbcaa6e73f4ab4fc1b2af76bda5"
+"@semantic-release/github@5.0.4":
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-5.0.4.tgz#09a870e3fb7ccd1a3eedc4d72a7f0a33c1dce794"
   dependencies:
     "@octokit/rest" "^15.2.0"
     "@semantic-release/error" "^2.2.0"
@@ -79,7 +79,7 @@
     globby "^8.0.0"
     http-proxy-agent "^2.1.0"
     https-proxy-agent "^2.2.1"
-    issue-parser "^2.2.0"
+    issue-parser "^3.0.0"
     lodash "^4.17.4"
     mime "^2.0.3"
     p-filter "^1.0.0"
@@ -4191,6 +4191,16 @@ issue-parser@^2.2.0:
     lodash.isplainobject "^4.0.6"
     lodash.isstring "^4.0.1"
 
+issue-parser@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/issue-parser/-/issue-parser-3.0.0.tgz#729d3fd5d6b86379cb0f513acc33b62f47ebd681"
+  dependencies:
+    lodash.capitalize "^4.2.1"
+    lodash.escaperegexp "^4.1.2"
+    lodash.isplainobject "^4.0.6"
+    lodash.isstring "^4.0.1"
+    lodash.uniqby "^4.7.0"
+
 java-properties@^0.2.9:
   version "0.2.10"
   resolved "https://registry.yarnpkg.com/java-properties/-/java-properties-0.2.10.tgz#2551560c25fa1ad94d998218178f233ad9b18f60"
@@ -4677,6 +4687,10 @@ lodash.union@~4.6.0:
 lodash.uniq@~4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
+
+lodash.uniqby@^4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/lodash.uniqby/-/lodash.uniqby-4.7.0.tgz#d99c07a669e9e6d24e1362dfe266c67616af1302"
 
 lodash.without@~4.4.0:
   version "4.4.0"
