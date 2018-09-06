@@ -1,4 +1,4 @@
-// Hero 
+// Hero
 .c-hero {
     position: relative;
     left: 0;
@@ -8,12 +8,16 @@
     margin-right: -50vw;
     overflow: hidden;
   }
-  
+
 .c-hero-background {
     height: 64vh;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;   
+    background-size: cover;
+    background-color: #333;
+    @media only screen and (min-aspect-ratio: 16/9) {
+      min-height:400px;
+    }
   @include mq('small', '+') {
     @media only screen and (orientation: landscape) {
       height: 100vh;
@@ -31,6 +35,11 @@
     height: 74vh;
     background-size: 65%;
   }
+   @include mq('huge', '++') {
+    @media only screen and (min-aspect-ratio: 16/9) {
+      min-height:550px;
+    }
+   }
 }
 
 .c-hero__content {
@@ -41,7 +50,7 @@
     margin-left: -50vw;
     margin-right: -50vw;
     bottom: 0;
-    padding: 0;      
+    padding: 0;
 }
 
 .c-hero__caption {
@@ -68,6 +77,6 @@
 }
 
 .c-hero__caption p {
-  margin-top: $base-spacing/4; 
-  margin-bottom: $base-spacing/2; 
+  margin-top: $base-spacing/4;
+  margin-bottom: $base-spacing/2;
 }
