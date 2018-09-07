@@ -10,7 +10,7 @@
   }
 
 .c-hero-background {
-    height: 64vh;
+    height: 444px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -20,19 +20,19 @@
     }
   @include mq('small', '+') {
     @media only screen and (orientation: landscape) {
-      height: 100vh;
+      //height: 100vh;
       background-size: 80%;
     }
   }
   @include mq('medium', '+') {
-    height: 50vh;
+    height: 346px;
     background-size: 65%;
-    @media only screen and (orientation: landscape) {
-      height: 100vh;
-    }
+    // @media only screen and (orientation: landscape) {
+    //   height: 100vh;
+    // }
   }
   @include mq('large', '+') {
-    height: 74vh;
+    height: 514px;
     background-size: 65%;
   }
    @include mq('huge', '++') {
