@@ -20,16 +20,12 @@
     }
   @include mq('small', '+') {
     @media only screen and (orientation: landscape) {
-      //height: 100vh;
       background-size: 80%;
     }
   }
   @include mq('medium', '+') {
     height: 346px;
     background-size: 65%;
-    // @media only screen and (orientation: landscape) {
-    //   height: 100vh;
-    // }
   }
   @include mq('large', '+') {
     height: 514px;
