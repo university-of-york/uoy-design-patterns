@@ -1,3 +1,5 @@
+## [1.6.10](https://github.com/university-of-york/design-patterns/compare/v1.6.9...v1.6.10) (2018-09-11)
+
 ## [1.6.9](https://github.com/university-of-york/design-patterns/compare/v1.6.8...v1.6.9) (2018-08-30)
 
 
