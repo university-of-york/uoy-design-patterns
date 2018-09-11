@@ -24,18 +24,19 @@
     "@semantic-release/npm",
     "@semantic-release/github"
   ],
-  "npmPublish": false,
+  "npmPublish": true,
+  "pkgRoot": "release",
   "analyzeCommits": {
     "preset": "angular",
     "releaseRules": [
-      {"type": "fix", "scope":"Fixes", "release": "patch"},
-      {"type": "Fix", "scope":"Fixes", "release": "patch"},
-      {"type": "update", "scope":"Updates", "release": "minor"},
-      {"type": "Update", "scope":"Updates", "release": "minor"},
-      {"type": "feature", "scope":"Feature", "release": "minor"},
-      {"type": "Feature", "scope":"Feature", "release": "minor"},
-      {"type": "performance", "scope":"Performance", "release": "minor"},
-      {"type": "Performance", "scope":"Performance", "release": "minor"}
+      {"type": "fix", "release": "patch"},
+      {"type": "Fix", "release": "patch"},
+      {"type": "update", "release": "minor"},
+      {"type": "Update", "release": "minor"},
+      {"type": "feature", "release": "minor"},
+      {"type": "Feature", "release": "minor"},
+      {"type": "performance", "release": "minor"},
+      {"type": "Performance", "release": "minor"}
     ]
   }
 }

@@ -29,12 +29,12 @@
     }
     // Really big screens
     @include mq('huge', '+') {
-      width:100%;
+      width:60%;
 
     }
     // Everything else
     @include mq('huge', '-') {
-      width:90%;
+      width:80%;
       min-width:0;
     }
     &.is-active {
@@ -69,6 +69,9 @@
     padding:1em 40px 1em 20px;
   }
 }
+.c-modal--scroll {
+  overflow-y: auto;
+}
 .c-modal--frameless {
   // border:0;
   // background-color:transparent;
@@ -85,7 +88,7 @@
 }
 .c-modal__image {
   display:block;
-  width:100%;
+  //width:100%;
 }
 .c-modal__caption {
   @include image-caption;

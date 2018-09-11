@@ -202,12 +202,12 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
             that.modalLink = $('<a>').attr(
                 {
                     'href': '#modal-content-'+that.id,
-                    'class': 'c-btn c-btn--medium'
-                }).text('Find out more');
+                    'class': 'c-btn c-btn--medium js-modal--scroll'
+                }).text('See our clearing entry requirements');
 
 
             panelContent.append('<h3>Clearing and adjustment 2018</h3>');
-            panelContent.append('<p><strong>We expect to have places available on this course through clearing and adjustment</strong></p>');
+            panelContent.append('<p><strong>Places are available on this course through clearing and adjustment</strong></p>');
             panelContent.append($('<p>').append(that.modalLink));
 
             var modalContent = $('<div>').addClass('is-hidden').attr({'id':'modal-content-'+that.id});
@@ -259,16 +259,26 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
             
             var numbers = trimAndAdd(thisCourse['Phone number(s)'].split(','));
               var modalBullets1 = $('<ul>');
-              var modalBullets2 = $('<ul>');
+              var modalBullets2 = $('<ol>');
 
-              //Our course vacancies are subject to change and will be confirmed here from around 7pm on Wednesday 15 August. Our clearing hotline will then open at 8am on Thursday 16 August. Save the number 01904 234868.
-              //
-              // In the meantime you can sign up for alerts and we'll send you our latest vacancies on Thursday morning.
 
-            modalContent.append('<p>Our course vacancies are subject to change and will be confirmed here from around 7pm on Wednesday 15 August. Our clearing hotline will then open at 8am on Thursday 16 August. Save the number <a href="tel:+441904 234868">01904 234868</a></p>');
-            modalContent.append('<p>In the meantime you can sign up for alerts and we\'ll send you our latest vacancies on Thursday morning.</p>');
+              modalContent.append('<h3>Call our hotline</h3>');
+              modalContent.append('<p>To apply call <a href="tel:+441904 234868">01904 234868</a></p>');
+              modalContent.append('<p>Opening hours:</p>');
 
-            modalContent.append('<p><a class="c-btn c-btn--secondary c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/alert/">Sign up for vacancy alerts</a></p>');
+              modalBullets1.append('<li>16 - 17 August - 8am - 6pm</li>');
+              modalBullets1.append('<li>18 - 19 August - 10am - 2pm</li>');
+              modalBullets1.append('<li>20 - 24 August - Monday to Friday, 9am - 5pm</li>');
+              modalContent.append(modalBullets1);
+
+              modalContent.append('<p>Places fill up fast, so don\'t delay - give us a call and tell us why you want to apply.</p>');
+              modalContent.append('<p>Before you call us</p>');
+
+              modalBullets2.append('<li>Research the course(s) you\'re interested in and be ready to tell us why you want to apply.</li>');
+              modalBullets2.append('<li>Pick up your results and make sure you meet the entry requirements. We\'ll need the details of your results in order to make our decision.</li>');
+              modalBullets2.append('<li>Have your UCAS ID number to hand and a number we can call you back on.</li>');
+              modalBullets2.append('<li>If your first language is not English you must also provide evidence of your <a href="https://www.york.ac.uk/study/undergraduate/applying/entry/english-language/">English language ability.</a></li>');
+              modalContent.append(modalBullets2);
 
             that.panel.append(panelContent);
             that.panel.append(modalContent);
