@@ -209,14 +209,20 @@
       a {
         padding-left:0;
       }
+      .currentsection {
+        padding: 0.4rem 0;
+      }
     }
   }
   //Site Manager uses .currentsection span
   .currentsection {
+    @include tiny-padding;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+
     color:$c-nav__link-color;
     display: block;
     font-weight: bold;
-    padding:0.4rem 0;
   }
 }
 .c-nav__item--more {
