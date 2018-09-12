@@ -8,7 +8,7 @@
   }
 }
 .c-breadcrumb {
-  @include component;
+  margin:10px 0;
   width:100%;
   background-color: $c-breadcrumb-background-color;
   color:$c-breadcrumb-color;
