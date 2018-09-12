@@ -2,8 +2,8 @@
 // GALLERY
 //
 
-$c-gallery-item-size:140px;
-$c-gallery-item-border-width:1px;
+$c-gallery-item-size: 140px;
+$c-gallery-item-border-width: 1px;
 
 .c-gallery-item {
   @include component;
@@ -38,6 +38,7 @@ $c-gallery-item-border-width:1px;
   }
   @include mq(tiny, '~') {
     max-width:30%;
+    max-height: 105px;
     margin-right:$base-spacing/4
   }
 }
