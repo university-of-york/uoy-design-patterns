@@ -10,6 +10,7 @@ $c-alert-padding:$base-spacing*0.75;
   padding:$c-alert-padding;
   position:relative;
   overflow:hidden;
+  color: $charcoal;
 }
 .c-alert--dismissable {
   padding-right:40px;
