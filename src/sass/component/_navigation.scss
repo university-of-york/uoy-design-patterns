@@ -95,10 +95,15 @@
         padding-right:$base-spacing/2;
         padding-top:10px;
       }
+      @include mq(medium, '+') {
+        &:hover {
+          border-bottom: 5px solid $blue; // gets around a weird sticky hover issue on mobiles
+        }
+      }
+
       &:hover {
         background-color: $s3;
-        color:$charcoal;
-        border-bottom: 5px solid $blue;
+        color: $charcoal;
       }
     }
     &.is-current {

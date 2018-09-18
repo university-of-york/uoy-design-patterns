@@ -8,7 +8,7 @@
   }
 }
 .c-breadcrumb {
-  @include component;
+  margin:10px 0;
   width:100%;
   background-color: $c-breadcrumb-background-color;
   color:$c-breadcrumb-color;
@@ -24,16 +24,20 @@
       overflow:hidden;
       display:inline-block;
       white-space:nowrap;
+      text-overflow: ellipsis;
       &:first-of-type,
       &:nth-of-type(2),
       &:nth-last-of-type(2),
       &:last-of-type {
         width:auto;
+        display:inline;
+        white-space:normal;
       }
       // Make third link read '...'
       &:nth-of-type(3) {
         padding:0 0 0 20px;
         position:relative;
+        line-height:0.7;
         &:after {
           content:'...';
           width:20px;
@@ -48,7 +52,7 @@
     .c-breadcrumb__separator {
       width:0;
       padding:0;
-      overflow:hidden;
+      // overflow:hidden;
       display:inline-block;
       &:first-of-type,
       &:nth-of-type(2),
