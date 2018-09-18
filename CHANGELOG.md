@@ -1,3 +1,13 @@
+# [1.7.0](https://github.com/university-of-york/design-patterns/compare/v1.6.10...v1.7.0) (2018-09-18)
+
+
+### Bug Fixes
+
+* add margin to listings component where label follows title ([c4d8aed](https://github.com/university-of-york/design-patterns/commit/c4d8aed))
+* remove sticky hover class on mobile ([#211](https://github.com/university-of-york/design-patterns/issues/211)) ([1ea4a7e](https://github.com/university-of-york/design-patterns/commit/1ea4a7e))
+* stop rows being added to table as header rows ([3c52d2a](https://github.com/university-of-york/design-patterns/commit/3c52d2a))
+* update Rollbar version ([632634f](https://github.com/university-of-york/design-patterns/commit/632634f))
+
 ## [1.6.10](https://github.com/university-of-york/design-patterns/compare/v1.6.9...v1.6.10) (2018-09-11)
 
 ## [1.6.9](https://github.com/university-of-york/design-patterns/compare/v1.6.8...v1.6.9) (2018-08-30)
