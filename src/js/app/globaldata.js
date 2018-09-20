@@ -23,9 +23,9 @@ define(['jquery'], function ($) {
         },
         gSheetsAPISettings: {
             gSheetsScript: "https://apis.google.com/js/api.js",
-            clientId: '1011030023006-jn35sunpo99d215h3n9br56ob7kstai6.apps.googleusercontent.com',
-            clientSecret: 'wsXvwhiyFAsK8X__-iKD4yPA',
-            apiKey: 'AIzaSyC4yKgFkHO5iixq1BC81UU7UOl-MbEF_cE',
+            clientId: '907261842760-crettckqohk364k05hcnn1fjur22hdob.apps.googleusercontent.com',
+            clientSecret: 'lgMQTZmakbaVZQaCez1zq-Fo',
+            apiKey: 'AIzaSyBW_yFGEfY72EnuRUy6_aiVF65ux9UgKic',
             discoveryDocs: ["https://sheets.googleapis.com/$discovery/rest?version=v4"],
             scopes: "https://www.googleapis.com/auth/spreadsheets.readonly"
         }
