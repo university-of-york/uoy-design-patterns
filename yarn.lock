@@ -3248,13 +3248,13 @@ grunt-contrib-imagemin@2.0.1:
     imagemin-optipng "^5.1.0"
     imagemin-svgo "^5.1.0"
 
-grunt-contrib-jshint@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/grunt-contrib-jshint/-/grunt-contrib-jshint-1.1.0.tgz#369d909b2593c40e8be79940b21340850c7939ac"
+grunt-contrib-jshint@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/grunt-contrib-jshint/-/grunt-contrib-jshint-2.0.0.tgz#a2be576cdd2a21d87fa3b9e770de407a29563fd2"
   dependencies:
-    chalk "^1.1.1"
+    chalk "^2.4.1"
     hooker "^0.2.3"
-    jshint "~2.9.4"
+    jshint "~2.9.6"
 
 grunt-contrib-requirejs@1.0.0:
   version "1.0.0"
@@ -4274,7 +4274,7 @@ jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
 
-jshint@~2.9.4:
+jshint@~2.9.6:
   version "2.9.6"
   resolved "https://registry.yarnpkg.com/jshint/-/jshint-2.9.6.tgz#19b34e578095a34928fe006135a6cb70137b9c08"
   dependencies:
