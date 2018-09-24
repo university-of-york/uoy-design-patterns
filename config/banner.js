@@ -1,9 +1,0 @@
-module.exports = {
-  compact: '/*! <%= package.name %> v<%= package.version %> <%= grunt.template.today("dd-mm-yyyy HH:MM:ss") %> */',
-  full: '/*!\n' +
-        ' * <%= package.name %> v<%= package.version %>\n' +
-        ' * Copyright <%= grunt.template.today("yyyy") %> <%= package.author.name %>\n' +
-        ' *\n' +
-        ' * Developed and built by <%= _.pluck(package.contributors, "name").join(", ") %>\n' +
-        ' */'
-};

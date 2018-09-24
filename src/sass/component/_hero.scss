@@ -1,4 +1,4 @@
-// Hero 
+// Hero
 .c-hero {
     position: relative;
     left: 0;
@@ -7,74 +7,72 @@
     margin-left: -50vw;
     margin-right: -50vw;
     overflow: hidden;
-   
-  
   }
-  
-  .c-hero-background {
-    height: 64vh;
-    @media only screen and (orientation: landscape) {
-      height: 80vh;
-      background-position: 60% 40%;
-    }
-    background-position: 100% 80%;
-    background-size: cover;
+
+.c-hero-background {
+    height: 444px;
+    background-position: center;
     background-repeat: no-repeat;
-    @include mq('medium', '+') {
-      height: 32vh;
-      @media only screen and (orientation: landscape) {
-        height: 70vh;
-      }
-      background-position: 60% 40%;
+    background-size: cover;
+    background-color: #333;
+    @media only screen and (min-aspect-ratio: 16/9) {
+      min-height:400px;
+    }
+  @include mq('small', '+') {
+    @media only screen and (orientation: landscape) {
       background-size: 80%;
-     }
-     @include mq('large', '+') {
-       height: 75vh;
-       background-size: 90%;
-       @media only screen and (orientation: landscape) {
-        height: 70vh;
-      }
-     }
-  
+    }
   }
-  
-  .c-hero__content {
-      color: #fff;
-      position: absolute;
-      left: 50%;
-      right: 50%;
-      margin-left: -50vw;
-      margin-right: -50vw;
-      bottom: 0;
-      padding: 0;
-         
+  @include mq('medium', '+') {
+    height: 346px;
+    background-size: 65%;
   }
-  
-  
-  .c-hero__caption {
-    background:#000;
-    background:rgba(0,0,0,0.6)!important;
-    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5), rgba(0,0,0,0.7), #000)!important;
-    position:absolute;
-    padding-top: $base-spacing*2;
-    padding-bottom: $base-spacing/4;
-    padding-left: $base-spacing/2;
-    width: 100vw;
+  @include mq('large', '+') {
+    height: 514px;
+    background-size: 65%;
+  }
+   @include mq('huge', '++') {
+    @media only screen and (min-aspect-ratio: 16/9) {
+      min-height:550px;
+    }
+   }
+}
+
+.c-hero__content {
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    bottom: 0;
+    padding: 0;
+}
+
+.c-hero__caption {
+  background:#000;
+  background:rgba(0,0,0,0.6)!important;
+  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5), rgba(0,0,0,0.7), #000)!important;
+  position:absolute;
+  padding-top: $base-spacing*2;
+  padding-bottom: $base-spacing/4;
+  padding-left: $base-spacing/2;
+  width: 100vw;
+  h1 {
+    font-size: 32px;
+    font-size: 2rem;
+    margin: $base-spacing/4 0;
+  }
+  @include mq('small', '+') {
+    text-align: center;
     h1 {
-      font-size: 32px;
-      font-size: 2rem;
-      margin: $base-spacing/4 0;
-    }
-    @include mq('small', '+') {
-      text-align: center;
-      h1 {
-        font-size: 44px;
-        font-size: 2.75rem;
-      }
+      font-size: 44px;
+      font-size: 2.75rem;
     }
   }
-  
-  .c-hero__caption p {
-    margin-top: $base-spacing/4; 
-    margin-bottom: $base-spacing/2; 
-  }
+}
+
+.c-hero__caption p {
+  margin-top: $base-spacing/4;
+  margin-bottom: $base-spacing/2;
+}

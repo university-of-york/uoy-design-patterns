@@ -1,6 +1,9 @@
 module.exports = function (grunt) {
 
   var path = require('path');
+    //var appConfig = grunt.file.readJSON('./node_modules/uoydesignpatterns/package.json');
+
+  //var appConfig = grunt.file.readJSON( './release/package.json' ) || {};
 
   require('time-grunt')(grunt);
 
@@ -35,7 +38,7 @@ module.exports = function (grunt) {
       'newer:imagemin',
       'jshint:dev',
       'requirejs',
-      'header:build',
+      //'header:build',
       'clean:postbuild'
   ]);
 
@@ -54,10 +57,12 @@ module.exports = function (grunt) {
         'newer:imagemin',
         'jshint:dev',
         'requirejs',
-        'header:build',
+        //'header:build',
         'clean:postbuild'
     ]);
 
   // Release process - copies necessary files to a '/release' folder
     grunt.registerTask('release', ['build', 'copy:release', 'md5sum']);
+
+    grunt.registerTask('versioning', ['usebanner:version']);
 };

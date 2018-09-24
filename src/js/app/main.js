@@ -5,14 +5,16 @@ define(
    'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/prioritised-tables',
    'app/toggle', 'app/utility-toggle', 'app/wrapper-height', 'app/youtube-embed',
    'app/soundcloud-embed', 'app/searchables', 'app/filterable-tables', 'app/equal-height-row',
-   'app/google-map', 'app/show-more', 'app/data-firebase', 'app/data-google-sheets', 'app/data-grid'],
+   'app/google-map', 'app/show-more', 'app/autocomplete',
+  'app/data-firebase', 'app/data-google-sheets', 'app/data-grid'],
   function (
     $, ES5SHIM, PICTUREFILL, IFRAMERESIZER,
     UTILS, MODALLINK, ACCORDION, STICKYNAV,
     TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
     TOGGLE, UTILITYTOGGLE, WRAPPERHEIGHT, YOUTUBE,
     SOUNDCLOUD, SEARCHABLE, FILTERABLE, EQUALHEIGHT,
-    GOOGLEMAP, SHOWMORE, DATAFIREBASE, DATAGSHEETS, DATAGRID) {
+    GOOGLEMAP, SHOWMORE, AUTOCOMPLETE,
+    DATAFIREBASE, DATAGSHEETS, DATAGRID) {
 
       $(function(){
 

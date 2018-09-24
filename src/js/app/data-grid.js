@@ -83,22 +83,16 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
             };
 
             var buildTableHtml = function(data, includeHeaderRow) {
-                var table = document.createElement('table'),
-                    startIndex = includeHeaderRow ? 1 : 0;
+                var table = document.createElement('table');
 
                 // Sheets uses a 'values' property, check for that here
                 if(data.values && data.values.length > 0) {
-                    for (var i = startIndex; i < data.values.length; i++) {
+                    for (var i = 0; i < data.values.length; i++) {
                         makeTableRow(
                             table,
                             data.values[i],
                             false,
-                            false);
-                    }
-
-                    // add the header row last, otherwise all rows are added to it
-                    if(includeHeaderRow) {
-                        makeTableRow(table, data.values[0], false, true);
+                            (i === 0) ? includeHeaderRow : false);
                     }
 
                     return table;
@@ -107,6 +101,7 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 // Firebase uses an object, so let's build it a different way
                 // first, make a header row
                 makeTableRow(table, data[0], true, includeHeaderRow);
+
                 // now, process the rest of the rows
                 data.forEach(function(rowData) {
                     makeTableRow(table, rowData);

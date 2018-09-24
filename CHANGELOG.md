@@ -1,3 +1,44 @@
+# [1.7.0](https://github.com/university-of-york/design-patterns/compare/v1.6.10...v1.7.0) (2018-09-18)
+
+
+### Bug Fixes
+
+* add margin to listings component where label follows title ([c4d8aed](https://github.com/university-of-york/design-patterns/commit/c4d8aed))
+* remove sticky hover class on mobile ([#211](https://github.com/university-of-york/design-patterns/issues/211)) ([1ea4a7e](https://github.com/university-of-york/design-patterns/commit/1ea4a7e))
+* stop rows being added to table as header rows ([3c52d2a](https://github.com/university-of-york/design-patterns/commit/3c52d2a))
+* update Rollbar version ([632634f](https://github.com/university-of-york/design-patterns/commit/632634f))
+
+## [1.6.10](https://github.com/university-of-york/design-patterns/compare/v1.6.9...v1.6.10) (2018-09-11)
+
+## [1.6.9](https://github.com/university-of-york/design-patterns/compare/v1.6.8...v1.6.9) (2018-08-30)
+
+
+### Bug Fixes
+
+* add autocomplete back into library ([dcd04f1](https://github.com/university-of-york/design-patterns/commit/dcd04f1))
+
+## [1.6.8](https://github.com/university-of-york/design-patterns/compare/v1.6.7...v1.6.8) (2018-08-30)
+
+
+### Bug Fixes
+
+* update package licence info ([9177285](https://github.com/university-of-york/design-patterns/commit/9177285))
+
+## [1.6.7](https://github.com/university-of-york/design-patterns/compare/v1.6.6...v1.6.7) (2018-08-30)
+
+
+### Bug Fixes
+
+* remove scopes and correct package name in npm ([765905a](https://github.com/university-of-york/design-patterns/commit/765905a))
+
+## [1.6.6](https://github.com/university-of-york/design-patterns/compare/v1.6.5...v1.6.6) (2018-08-30)
+
+
+### Bug Fixes
+
+* clearing cta button change ([8c6eba7](https://github.com/university-of-york/design-patterns/commit/8c6eba7))
+* remove scope from analyzecommits plugin config ([827d74a](https://github.com/university-of-york/design-patterns/commit/827d74a))
+
 ## [1.6.5](https://github.com/university-of-york/design-patterns/compare/v1.6.4...v1.6.5) (2018-08-15)
 
 
