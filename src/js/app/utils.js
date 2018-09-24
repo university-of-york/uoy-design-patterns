@@ -372,6 +372,36 @@ define(['jquery'], function ($) {
         var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
         var results = regex.exec(location.search);
         return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    },
+
+    // Function from David Walsh: http://davidwalsh.name/css-animation-callback
+    // can be used as follows:
+    // var transitionEvent = whichTransitionEvent();
+    //
+    // $(".button").click(function(){
+    //   $(this).addClass("animate");
+    //   $(this).one(transitionEvent,
+    //               function(event) {
+    //     // Do something when the transition ends
+    //   });
+    // });
+    // from this blog post here: https://jonsuh.com/blog/detect-the-end-of-css-animations-and-transitions-with-javascript/
+    whichTransitionEvent: function(){
+      var t,
+          el = document.createElement("fakeelement");
+
+      var transitions = {
+          "transition"      : "transitionend",
+          "OTransition"     : "oTransitionEnd",
+          "MozTransition"   : "transitionend",
+          "WebkitTransition": "webkitTransitionEnd"
+      };
+
+      for (t in transitions){
+          if (el.style[t] !== undefined){
+              return transitions[t];
+          }
+      }
     }
   };
 
