@@ -3166,7 +3166,7 @@ graceful-fs@^4.0.0, graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.4,
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/graceful-readlink/-/graceful-readlink-1.0.1.tgz#4cafad76bc62f02fa039b2f94e9a3dd3a391a725"
 
-grunt-banner@^0.6.0:
+grunt-banner@0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/grunt-banner/-/grunt-banner-0.6.0.tgz#3f879021d123fa58a7ba5a0b6fb6be412b5885ac"
   dependencies:
@@ -3276,12 +3276,6 @@ grunt-contrib-watch@1.1.0:
     gaze "^1.1.0"
     lodash "^4.17.10"
     tiny-lr "^1.1.1"
-
-grunt-header@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/grunt-header/-/grunt-header-1.1.0.tgz#139383de100d98939ce16ca79c673696e375becb"
-  dependencies:
-    detect-newline "^2.1.0"
 
 grunt-known-options@~1.1.0:
   version "1.1.0"
