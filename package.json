@@ -33,7 +33,7 @@
   "devDependencies": {
     "@semantic-release/changelog": "3.0.0",
     "@semantic-release/git": "7.0.4",
-    "@semantic-release/github": "5.0.5",
+    "@semantic-release/github": "5.0.6",
     "@semantic-release/release-notes-generator": "7.0.2",
     "autoprefixer": "9.1.5",
     "compass": "0.1.1",
@@ -70,7 +70,7 @@
     "modernizr": "3.6.0",
     "picturefill": "3.0.2",
     "requirejs": "2.3.6",
-    "semantic-release": "15.9.16",
+    "semantic-release": "15.9.17",
     "time-grunt": "1.4.0",
     "webpack": "4.20.2"
   },
