@@ -18,7 +18,7 @@ define(['jquery', 'firebaseApp', 'app/globaldata', 'app/utils'], function ($, fi
             _events = {
                 apiReady: 'firebase.api.ready',
                 dataLoaded: 'firebase.data.loaded',
-                dataReadError: 'gsheets.data.error'
+                dataReadError: 'firebase.data.error'
             };
 
 
