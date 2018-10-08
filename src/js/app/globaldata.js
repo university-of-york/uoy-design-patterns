@@ -28,6 +28,10 @@ define(['jquery'], function ($) {
             apiKey: 'AIzaSyBW_yFGEfY72EnuRUy6_aiVF65ux9UgKic',
             discoveryDocs: ["https://sheets.googleapis.com/$discovery/rest?version=v4"],
             scopes: "https://www.googleapis.com/auth/spreadsheets.readonly"
+        },
+        pureAPISettings: {
+            apiKey: '08e0ca9b-ce5f-4941-8d9f-7b87863ad79f',
+            apiUrl: 'https://puredev.york.ac.uk/ws/api/510/'
         }
     };
 });
