@@ -6,7 +6,7 @@ define(
    'app/toggle', 'app/utility-toggle', 'app/wrapper-height', 'app/youtube-embed',
    'app/soundcloud-embed', 'app/searchables', 'app/filterable-tables', 'app/equal-height-row',
    'app/google-map', 'app/show-more', 'app/autocomplete',
-  'app/data-firebase', 'app/data-google-sheets', 'app/data-grid'],
+  'app/data-firebase', 'app/data-google-sheets', 'app/data-grid', 'app/user-profile'],
   function (
     $, ES5SHIM, PICTUREFILL, IFRAMERESIZER,
     UTILS, MODALLINK, ACCORDION, STICKYNAV,
@@ -14,7 +14,7 @@ define(
     TOGGLE, UTILITYTOGGLE, WRAPPERHEIGHT, YOUTUBE,
     SOUNDCLOUD, SEARCHABLE, FILTERABLE, EQUALHEIGHT,
     GOOGLEMAP, SHOWMORE, AUTOCOMPLETE,
-    DATAFIREBASE, DATAGSHEETS, DATAGRID) {
+    DATAFIREBASE, DATAGSHEETS, DATAGRID, USERPROFILE) {
 
       $(function(){
 
@@ -351,6 +351,38 @@ define(
                     dataGrid.init(configObj);
                 });
             }
+        });
+
+
+        // User profiles
+        UTILS.eachIfExists('.js-user-profile', function(i, a) {
+
+            var $a = $(a),
+                datasource = $a.attr('data-source'),
+                layout = $a.attr('data-layout'),
+                pureDataType = $a.attr('data-type-pure'),
+                pureIdValue = $a.attr('data-id-value'),
+                includeHeaderRow = $a.attr('data-include-header') || false,
+                cssClassList = $a.attr('data-css');
+
+
+            var configObj = {
+                container: $a,
+                datasource: datasource,
+                dataTypePure: pureDataType,
+                idValuePure: pureIdValue,
+                layout: layout,
+                includeHeaderRow: includeHeaderRow,
+                cssClassList: cssClassList,
+                eventIdentifier: ('' + new Date().getTime())
+            };
+            var userProfile = new USERPROFILE();
+
+            // set up the loading message as a placeholder
+            $a.append('<p>loading...</p>');
+
+            // start the magic...
+            userProfile.init(configObj);
         });
 
 

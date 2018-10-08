@@ -50,7 +50,7 @@ define(['jquery', 'app/globaldata', 'app/utils'],
 
             var apiPart = '';
 
-            apiPart = dataTypeString.replace('{0}', id);
+            apiPart = _pureDataTypes[dataTypeString].replace('{0}', id);
 
             return apiPart;
         };
