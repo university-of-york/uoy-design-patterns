@@ -96,5 +96,5 @@ component("tabbed-content", { "type": "vertical", "tabs": [
 
 * **tabbed-content**
   * **type**: either _horizontal_ or _vertical_
-  * **mode**:  _dark_
+  * **mode**:  _dark_ (horizontal tabs only)
   * **tabs**: an array of _tabs_
