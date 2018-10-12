@@ -112,3 +112,29 @@
     display:block;
   }
 }
+
+
+.c-tabs--dark {
+  .c-tabs__link {
+    background: lighten($teal,10);
+    border:1px solid lighten($teal,10);
+    border-bottom:1px solid $teal;
+    color:#fff;
+    cursor:default;
+  }
+  .c-tabs__container {
+    border:1px solid $teal;
+    background:$teal;
+    color:#fff;
+  }
+  .c-tabs__tab {
+    &.is-active {
+      .c-tabs__link {
+        background:$teal;
+        border:1px solid $teal;
+        color:#fff;
+        cursor:default;
+      }
+    }
+  }
+}
