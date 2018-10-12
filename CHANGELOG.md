@@ -1,3 +1,16 @@
+## [1.7.1](https://github.com/university-of-york/design-patterns/compare/v1.7.0...v1.7.1) (2018-09-24)
+
+
+### Bug Fixes
+
+* accordion triple click remains half open ([298c91a](https://github.com/university-of-york/design-patterns/commit/298c91a))
+* change version details to correct build ([52e862d](https://github.com/university-of-york/design-patterns/commit/52e862d))
+* correct build error with package.json version number ([51266e4](https://github.com/university-of-york/design-patterns/commit/51266e4))
+* correct main nav indentation ([0bf9041](https://github.com/university-of-york/design-patterns/commit/0bf9041))
+* gallery images stretched on mobile ([ebadfc7](https://github.com/university-of-york/design-patterns/commit/ebadfc7))
+* release version update to include version in asset files ([0a4d04d](https://github.com/university-of-york/design-patterns/commit/0a4d04d))
+* update Sheets API with new version ([ffba037](https://github.com/university-of-york/design-patterns/commit/ffba037))
+
 # [1.7.0](https://github.com/university-of-york/design-patterns/compare/v1.6.10...v1.7.0) (2018-09-18)
 
 
