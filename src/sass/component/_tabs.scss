@@ -120,12 +120,17 @@
     border:1px solid lighten($teal,10);
     border-bottom:1px solid $teal;
     color:#fff;
-    cursor:default;
   }
   .c-tabs__container {
     border:1px solid $teal;
     background:$teal;
     color:#fff;
+    & li a {
+      color: #fff;
+      &:hover {
+        color:$link-hover-color;
+      }
+    }
   }
   .c-tabs__tab {
     &.is-active {

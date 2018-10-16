@@ -42,17 +42,17 @@ component("tabbed-content", { "type": "horizontal", "tabs": [
 <script>
 component("tabbed-content", { "type": "horizontal", "mode": "dark", "tabs": [
   {
-    "id": "about/test",
+    "id": "about-2",
     "title": "About the university",
     "content": "<h3>Founded on principles of excellence</h3><p>Founded on principles of excellence, equality and opportunity for all, the University of York opened in 1963 with just 230 students.</p><p>Since then we have become one of the world's leading universities, carving out a reputation as an academic powerhouse where a clear focus on excellence has secured national and international recognition alongside longer established institutions.</p>"
   },
   {
-    "id": "excellence",
+    "id": "excellence-2",
     "title": "Academic excellence",
     "content": "<h3>A member of the elite Russell Group of universities</h3><p>We are a dynamic, research-intensive university committed to the development of life-saving discoveries and new technologies to tackle some of the most pressing global challenges.</p><p>There are now over 30 academic departments and research centres and the student body has expanded to nearly 16,000.</p><ul><li><a href=\"#\">Research at York</a></li><li><a href=\"#\">Studying at York</a></li><li><a href=\"#\">Mission and strategies: the University Plan 2009-19</a></li></ul>"
   },
   {
-    "id": "investing",
+    "id": "investing-2",
     "title": "Investing in our campus",
     "content": "<h3>Vision for a 21st-century campus</h3><p>The University is in the middle of an unprecedented period of expansion and renewal. Since 2000, we have invested in 20 new buildings on the original Heslington West campus and have completed the first and second phases of a £750m campus expansion at Heslington East.</p><p>Our investment in new colleges, teaching and learning space, laboratories, research facilities and a new sport village mean it has never been a better time to join our student body or research groups at York.</p>"
   }
@@ -66,17 +66,17 @@ You can also place tabs vertically, and just add `.c-tabs--vertical` to the tab 
 <script>
 component("tabbed-content", { "type": "vertical", "tabs": [
   {
-    "id": "about-2",
+    "id": "about-3",
     "title": "About the university",
     "content": "<h3>Founded on principles of excellence</h3><p>Founded on principles of excellence, equality and opportunity for all, the University of York opened in 1963 with just 230 students.</p><p>Since then we have become one of the world's leading universities, carving out a reputation as an academic powerhouse where a clear focus on excellence has secured national and international recognition alongside longer established institutions.</p>"
   },
   {
-    "id": "excellence-2",
+    "id": "excellence-3",
     "title": "Academic excellence",
     "content": "<h3>A member of the elite Russell Group of universities</h3><p>We are a dynamic, research-intensive university committed to the development of life-saving discoveries and new technologies to tackle some of the most pressing global challenges.</p><p>There are now over 30 academic departments and research centres and the student body has expanded to nearly 16,000.</p><ul><li><a href=\"#\">Research at York</a></li><li><a href=\"#\">Studying at York</a></li><li><a href=\"#\">Mission and strategies: the University Plan 2009-19</a></li></ul>"
   },
   {
-    "id": "investing-2",
+    "id": "investing-3",
     "title": "Investing in our campus",
     "content": "<h3>Vision for a 21st-century campus</h3><p>The University is in the middle of an unprecedented period of expansion and renewal. Since 2000, we have invested in 20 new buildings on the original Heslington West campus and have completed the first and second phases of a £750m campus expansion at Heslington East.</p><p>Our investment in new colleges, teaching and learning space, laboratories, research facilities and a new sport village mean it has never been a better time to join our student body or research groups at York.</p>"
   }
