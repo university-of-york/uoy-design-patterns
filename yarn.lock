@@ -35,7 +35,7 @@
     fs-extra "^7.0.0"
     lodash "^4.17.4"
 
-"@semantic-release/commit-analyzer@^6.1.0":
+"@semantic-release/commit-analyzer@6.1.0", "@semantic-release/commit-analyzer@^6.1.0":
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/@semantic-release/commit-analyzer/-/commit-analyzer-6.1.0.tgz#32bbe3c23da86e23edf072fbb276fa2f383fcb17"
   dependencies:
