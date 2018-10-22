@@ -5996,9 +5996,9 @@ phantomjs-prebuilt@^2.1.16, phantomjs-prebuilt@~2.1.7:
     request-progress "^2.0.1"
     which "^1.2.10"
 
-picturefill@3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/picturefill/-/picturefill-3.0.2.tgz#fa3d35fffbef5ab5300fe2ad9dca8f2e36cba27b"
+picturefill@3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/picturefill/-/picturefill-3.0.3.tgz#a5c38eeb02d74def38e1790ff61e166166b4f224"
 
 pify@^2.0.0:
   version "2.3.0"
