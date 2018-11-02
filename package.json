@@ -70,7 +70,7 @@
     "modernizr": "3.6.0",
     "picturefill": "3.0.3",
     "requirejs": "2.3.6",
-    "semantic-release": "15.10.6",
+    "semantic-release": "15.10.7",
     "time-grunt": "1.4.0",
     "webpack": "4.24.0"
   },
