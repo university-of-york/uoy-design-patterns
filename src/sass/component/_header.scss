@@ -13,7 +13,7 @@
 .c-main-header {
   @include clearfix;
   color:$charcoal;
-  background:#fff;
+  background:$c-main-header-background;
   position:relative;
 }
 .c-main-header__title {

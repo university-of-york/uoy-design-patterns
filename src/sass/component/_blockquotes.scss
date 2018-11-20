@@ -72,7 +72,7 @@ $c-blockquote__image-tiny-ratio:0.75;
     }
     .o-grid__row--alt1 &,
     .o-grid__row--alt2 & {
-      color:#fff;
+      color:$c-blockquote__content--alt-1-2-color
     }
   }
   .c-blockquote__cite {

@@ -37,9 +37,9 @@ $img_size:140px;
 .h-card--mini {
   @include demarginalise;
   display:inline-block;
-  border-top:0.8em solid $pink;
-  background-color: $light;
-  color:$charcoal;
+  border-top:0.8em solid $h-card--mini-border;
+  background-color: $h-card--mini-background;
+  color:$h-card--mini-color;
   border-radius:3px;
   padding:$base-spacing;
   .h-card__title {
@@ -61,7 +61,7 @@ $img_size:140px;
 }
 .h-card--byline {
   overflow:hidden;
-  border-bottom:2px solid darken($light, 10);
+  border-bottom:2px solid $h-card--byline-border;
   .h-card__name {
     @include font-size(20px);
     margin-top:$base-spacing/2;
@@ -78,9 +78,9 @@ $img_size:140px;
 }
 .h-card--article {
   @include demarginalise;
-  border-top:0.8em solid $c-panel-border-color;
-  background-color: $c-panel-background-color;
-  color:$charcoal;
+  border-top:0.8em solid $h-card--article-border;
+  background-color: $h-card--article-background;
+  color:$h-card--article-color;
   border-radius:3px;
   padding:$base-spacing;
   .h-card__title {
@@ -113,7 +113,7 @@ $img_size:140px;
   .h-card__bio {
     @include mq(small, '+') {
     margin-left:$img_size + $base-spacing;
-   
+
     }
 
   }

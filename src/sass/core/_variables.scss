@@ -20,6 +20,8 @@ $red:#b62d2d;
 $green:#54b62d;
 $grey:#666;
 $lightgrey:#ccc;
+$white:#fff;
+$black:#000;
 
 // Fonts
 $font-default: 'museo-sans', Helvetica, Arial, sans-serif;
@@ -110,6 +112,83 @@ $icons: (
 // Literal variable names
 //
 
+// COMPONENT COLOR VARIABLES
+
+// Accordion
+// component/_accordion.scss
+$c-accordion__item-border:       lighten($s1, 5);
+$c-accordion__title-hover-color: $blue;
+
+// Alerts
+// component/_alerts.scss
+$c-alert-border:              $charcoal;
+$c-alert-background:          darken($light, 5);
+$c-alert--success-border:     $green;
+$c-alert--success-background: lighten($green, 45);
+$c-alert--info-border:        $blue;
+$c-alert--info-background:    lighten($blue, 45);
+$c-alert--warning-border:     $gold;
+$c-alert--warning-background: lighten($gold, 35);
+$c-alert--danger-border:      $red;
+$c-alert--danger-background:  lighten($red, 45);
+
+// A to Z
+// component/_atoz.scss
+$c-atoz__nav-link-background:           $s2;
+$c-atoz__nav-link-border:               darken($s2,5);
+$c-atoz__nav-link-hover-background:     $blue;
+$c-atoz__nav-link-hover-border:         $blue;
+$c-atoz__nav-link-hover-color:          $light;
+$c-atoz__nav-link--inactive-background: $s3;
+$c-atoz__nav-link--inactive-border:     darken($s3,5);
+$c-atoz__nav-link--inactive-color:      darken($s3,25);
+$c-atoz__letter-border:                 $charcoal;
+$c-atoz__page-border:                   $charcoal;
+$c-atoz__page-background-odd:           darken($light, 5);
+
+// Audio
+// component/_audio.scss
+// None
+
+// Autocomplete
+// component/_autocomplete.scss
+$c-autocomplete__item-border:                               $lightgrey;
+$c-autocomplete__link-color:                                $charcoal;
+$c-autocomplete__link-background-color:                     $white;
+$c-autocomplete__link-hover-color:                          $blue;
+$c-autocomplete__link-hover-background-color:               $s3;
+$c-autocomplete__subtitle-color:                            $charcoal;
+$c-autocomplete--alt__link-color:                           darken($blue, 10);
+$c-autocomplete--alt__link-even-background-color:           lighten($s1, 19);
+$c-autocomplete--alt__link-hover-color:                     $white;
+$c-autocomplete--alt__link-hover-background-color:          darken($blue, 20);
+$c-autocomplete--alt__link-hover__subtitle-color:           $white;
+$c-autocomplete--alt__link-selected-color:                  $light;
+$c-autocomplete--alt__link-selected-background-color:       $charcoal;
+$c-autocomplete--alt__link-selected-hover-background-color: lighten($charcoal, 7);
+$c-autocomplete--alt__link-selected__subtitle-color:        darken($light, 11);
+$c-autocomplete--alt__subtitle-color:                       $charcoal;
+
+// Block links
+// component/_block-links.scss
+$c-block-link-background-color: $s2;
+$c-block-link-border-color:     lighten($s1,5);
+
+// Blockquotes
+// component/_blockquotes.scss
+$c-blockquote--image-quote-background-color: lighten($teal,10);
+$c-blockquote--image-quote-color:            $light;
+$c-blockquote--pull-quote-color:             $pink;
+$c-blockquote__content--alt-1-2-color:       $white;
+
+// Breadcrumb
+// component/_breadcrumb.scss
+$c-breadcrumb-color:$charcoal;
+$c-breadcrumb-background-color:transparent;
+$c-breadcrumb__link-color:$charcoal;
+
+// Buttons
+// component/_buttons.scss
 // Buttons
 $c-btn: (
   default: (
@@ -130,86 +209,119 @@ $c-btn: (
   )
 );
 
-// Grid colours
-$o-grid__row-background-color:transparent;
-$o-grid__row-border-color:$charcoal;
-$o-grid__row--alt1-background-color:$teal;
-$o-grid__row--alt1-border-color:$blue;
-$o-grid__row--alt1-color:$light;
-$o-grid__row--alt1-hr-color:$blue;
-$o-grid__row--alt1-link-color:lighten($blue,5);
-$o-grid__row--alt1-link-hover-color:lighten($blue,15);
-$o-grid__row--alt2-background-color:darken($teal,5);
-$o-grid__row--alt2-border-color:$teal;
-$o-grid__row--alt2-color:$light;
-$o-grid__row--alt2-hr-color:$blue;
-$o-grid__row--alt2-link-color:lighten($blue,5);
-$o-grid__row--alt2-link-hover-color:lighten($blue,15);
-$o-grid__row--alt3-background-color:$s2;
-$o-grid__row--alt3-border-color:$s1;
-$o-grid__row--divider-color:$lightgrey;
+// Clearing tables
+// component/_clearing-tables.scss
+// None
 
-// Skip link
-$o-skip-link-color:$light;
-$o-skip-link-background-color:$blue;
+// Course tables
+// component/_coursetables.scss
+// None
 
-// Blockquotes
-$c-blockquote--image-quote-background-color: lighten($teal,10);
-$c-blockquote--image-quote-color: $light;
-$c-blockquote--pull-quote-color: $pink;
+// Events
+// component/_events.scss
+$c-event-border:$charcoal;
+
+// Figures
+// component/_figures.scss
+$c-figure__caption-solid:       $blue;
+$c-figure__caption-transparent: transparentize($c-figure__caption-solid, 0.15);
+$c-figure__caption-color:       $light;
+
+// Footer
+// component/_footer.scss
+$c-footer-background-color:       $charcoal;
+$c-footer-color:                  darken($light,10);
+$c-footer-main__link-color:       darken($light,10);
+$c-footer-main__link-hover-color: $blue;
+$c-footer-main__link--edit-color: lighten($charcoal,10);
+
+// Forms
+// component/_forms.scss
+$c-form--bordered-border:                      $blue;
+$c-form--panel-color:                          $light;
+$c-form__input-border:                         lighten($charcoal,50);
+$c-form__input-color:                          $charcoal;
+$c-form__input-background-color:               $white;
+$c-form__input--select-after-color:            $light;
+$c-form__input--select-after-background-color: $charcoal;
+$c-form-invalid-color:                         $red;
+
+// Gallery
+// component/_gallery.scss
+$c-gallery-item-border-color: $charcoal;
+$c-gallery-item-color:        $charcoal;
+
+// Global notice
+// component/_global-notices.scss
+$c-global-notice-background:              $s1;
+$c-global-notice-border:                  $grey;
+$c-global-notice-color:                   $black;
+$c-global-notice--highlighted-background: $pink;
+$c-global-notice--highlighted-color:      $white;
+
+// hCard
+// component/_hcard.scss
+$h-card--mini-border:        $pink;
+$h-card--mini-background:    $light;
+$h-card--mini-color:         $charcoal;
+$h-card--byline-border:      darken($light, 10);
+$h-card--article-border:     $s1;
+$h-card--article-background: $s2;
+$h-card--article-color:      $charcoal;
+
+// Header
+// component/_header.scss
+$c-main-header-background: $white;
+
+// Hero
+// component/_hero.scss
+$c-hero-background:                   $charcoal;
+$c-hero__content-color:               $light;
+$c-hero__caption-background-solid:    $black;
+$c-hero__caption-background-alpha:    transparentize($c-hero__caption-background-solid, 0.4);
+$c-hero__caption-background-gradient: linear-gradient(
+                                        transparent,
+                                        transparentize($c-hero__caption-background-solid, 0.5),
+                                        transparentize($c-hero__caption-background-solid, 0.3),
+                                        $c-hero__caption-background-solid
+                                      );
+
+// Icons
+// component/_icons.scss
 
 // Mobile search
-$c-mobile-search-button-color:$charcoal;
-$c-mobile-search-button-hover-color:lighten($c-mobile-search-button-color,10);
-$c-mobile-search-button-background-color:#fff;
-$c-mobile-search-form-background-color:$teal;
+$c-mobile-search-button-color:            $charcoal;
+$c-mobile-search-button-hover-color:      lighten($c-mobile-search-button-color,10);
+$c-mobile-search-button-background-color: $white;
+$c-mobile-search-form-background-color:   $teal;
 
 // Page title
-$c-page-title__background-color:lighten($charcoal,5);
-$c-page-title__link-color:$light;
-
-// Breadcrumbs
-$c-breadcrumb-color:$charcoal;
-$c-breadcrumb-background-color:transparent;
-$c-breadcrumb__link-color:$charcoal;
+$c-page-title__background-color: lighten($charcoal,5);
+$c-page-title__link-color:       $light;
 
 // Navigation
-$c-nav-background-color:lighten($charcoal,5);
-$c-nav-border-color:$blue;
-$c-nav__item--more-background-color:$blue;
-$c-nav__header-color:$light;
-$c-nav__list-color:darken($light,10);
-$c-nav__link-color:$light;
-$c-nav__link-background-color:transparent;
-$c-nav__link-is-current-background-color:$blue;
-$c-nav__link-hover-color:darken($light, 5);
-$c-nav__link-hover-background-color:darken($blue, 20);
+$c-nav-background-color:                  lighten($charcoal,5);
+$c-nav-border-color:                      $blue;
+$c-nav__item--more-background-color:      $blue;
+$c-nav__header-color:                     $light;
+$c-nav__list-color:                       darken($light,10);
+$c-nav__link-color:                       $light;
+$c-nav__link-background-color:            transparent;
+$c-nav__link-is-current-background-color: $blue;
+$c-nav__link-hover-color:                 darken($light, 5);
+$c-nav__link-hover-background-color:      darken($blue, 20);
 
 // Subnavigation
-$c-subnav__link-color:lighten($charcoal,20);
+$c-subnav__link-color: lighten($charcoal,20);
 
 // Utility navigation
-$c-utility-nav__link-color:$charcoal;
-$c-utility-nav__link-hover-color:$blue;
-$c-utility-nav__link-is-open-color:$light;
-$c-utility-nav__link-is-open-background-color:lighten($teal,10);
-$c-utility-nav__subnav-background-color:lighten($teal,10);
-$c-utility-nav__sublink-color:$light;
-$c-utility-nav__sublink-hover-color:lighten($blue, 10);
-
-// Panels
-$c-panel-background-color:$s2;
-$c-panel-border-color:$s1;
-$c-panel--highlight-background-color:$teal;
-$c-panel--highlight-border-color:lighten($teal,10);
-
-// Modals
-$c-modal-background-color:$s2;
-$c-modal-border-color:$s1;
-$c-modal__close-background-color:$charcoal;
-$c-modal__close-color:$light;
-$c-modal__close-hover-background-color:lighten($charcoal, 10);
-$c-modal__close-hover-color:$blue;
+$c-utility-nav__link-color:                    $charcoal;
+$c-utility-nav__link-hover-color:              $blue;
+$c-utility-nav__link-is-open-color:            $light;
+$c-utility-nav__link-is-open-background-color: lighten($teal,10);
+$c-utility-nav__subnav-background-color:       lighten($teal,10);
+$c-utility-nav__sublink-color:                 $light;
+$c-utility-nav__sublink-hover-color:           lighten($blue, 10);
 
 // Key facts
 $c-key-fact-color:$teal;
@@ -225,33 +337,37 @@ $c-key-fact-alt-background-color:$teal;
 $c-key-fact-alt-background-hover-color:lighten($teal,5);
 $c-key-fact-alt__title-color:$light;
 
-// Alerts
-$c-alert-border:$charcoal;
-$c-alert-background:darken($light, 5);
-$c-alert--success-border:$green;
-$c-alert--success-background:lighten($green, 45);
-$c-alert--info-border:$blue;
-$c-alert--info-background:lighten($blue, 45);
-$c-alert--warning-border:$gold;
-$c-alert--warning-background:lighten($gold, 35);
-$c-alert--danger-border:$red;
-$c-alert--danger-background:lighten($red, 45);
-
-// Block links
-$c-block-link-background-color:$s2;
-$c-block-link-border-color:lighten($s1,5);
-
-// Footer
-$c-footer-background-color:$charcoal;
-$c-footer-color:darken($light,10);
-$c-footer-main__link-color:darken($light,10);
-$c-footer-main__link-hover-color:$blue;
-$c-footer-main__link--edit-color:lighten($charcoal,10);
+// Labels
+$c-label-color:$grey;
+$c-label-color-hover:lighten($c-label-color,10);
 
 // Links
 $link-color:darken($blue,10);
 $link-hover-color:$blue;
 $link-focus-outline-color:$blue;
+
+// Modals
+$c-modal-background-color:$s2;
+$c-modal-border-color:$s1;
+$c-modal__close-background-color:$charcoal;
+$c-modal__close-color:$light;
+$c-modal__close-hover-background-color:lighten($charcoal, 10);
+$c-modal__close-hover-color:$blue;
+
+// News
+$c-news--excerpt__title-color:$link-color;
+$c-news--excerpt__title-hover-color:$blue;
+$c-news--excerpt__category-color:lighten($charcoal, 10);
+$c-news--excerpt__meta-color:lighten($charcoal,30);
+$c-news--event__meta-color:$charcoal;
+$c-news--listing__title-color:$link-color;
+$c-news--listing__title-hover-color:$blue;
+
+// Panels
+$c-panel-background-color:$s2;
+$c-panel-border-color:$s1;
+$c-panel--highlight-background-color:$teal;
+$c-panel--highlight-border-color:lighten($teal,10);
 
 // Tags
 $c-tag-background-color:$pink;
@@ -263,15 +379,29 @@ $c-tag-background-color-alt2-hover:darken($pink,25);
 $c-tag-color:$light;
 $c-tag-color-hover:darken($light,5);
 
-// Labels
-$c-label-color:$grey;
-$c-label-color-hover:lighten($c-label-color,10);
+// OBJECT COLOR VARIABLES
 
-// News
-$c-news--excerpt__title-color:$link-color;
-$c-news--excerpt__title-hover-color:$blue;
-$c-news--excerpt__category-color:lighten($charcoal, 10);
-$c-news--excerpt__meta-color:lighten($charcoal,30);
-$c-news--event__meta-color:$charcoal;
-$c-news--listing__title-color:$link-color;
-$c-news--listing__title-hover-color:$blue;
+// Skip link
+// object/_accessibility.scss
+$o-skip-link-color:            $light;
+$o-skip-link-background-color: $blue;
+
+// Grid
+// object/_grids.scss
+$o-grid__row-background-color:       transparent;
+$o-grid__row-border-color:           $charcoal;
+$o-grid__row--alt1-background-color: $teal;
+$o-grid__row--alt1-border-color:     $blue;
+$o-grid__row--alt1-color:            $light;
+$o-grid__row--alt1-hr-color:         $blue;
+$o-grid__row--alt1-link-color:       lighten($blue,5);
+$o-grid__row--alt1-link-hover-color: lighten($blue,15);
+$o-grid__row--alt2-background-color: darken($teal,5);
+$o-grid__row--alt2-border-color:     $teal;
+$o-grid__row--alt2-color:            $light;
+$o-grid__row--alt2-hr-color:         $blue;
+$o-grid__row--alt2-link-color:       lighten($blue,5);
+$o-grid__row--alt2-link-hover-color: lighten($blue,15);
+$o-grid__row--alt3-background-color: $s2;
+$o-grid__row--alt3-border-color:     $s1;
+$o-grid__row--divider-color:         $lightgrey;

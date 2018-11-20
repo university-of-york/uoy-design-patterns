@@ -18,10 +18,10 @@
 
 .c-autocomplete__item {
   margin:0;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
+  border-left: 1px solid $c-autocomplete__item-border;
+  border-right: 1px solid $c-autocomplete__item-border;
   &:last-of-type {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid $c-autocomplete__item-border;
   }
 }
 
@@ -29,40 +29,27 @@
   display:block;
   line-height: 1.1;
   padding: 0.5em 10px;
-  color:#333;
-  background-color:#fff;
+  color:$c-autocomplete__link-color;
+  background-color:$c-autocomplete__link-background-color;
   text-decoration:none;
   cursor:pointer;
   &:hover {
-    color:#00b3eb;
-    background-color:#f0f1f4;
+    color:$c-autocomplete__link-hover-color;
+    background-color:$c-autocomplete__link-hover-background-color;
   }
   .c-autocomplete__item.is-selected & {
-    color:#00b3eb;
-    background-color:#f0f1f4;
-    &:hover {
-    }
+    color:$c-autocomplete__link-hover-color;
+    background-color:$c-autocomplete__link-hover-background-color;
   }
 }
 
 .c-autocomplete__title {
-  //color:#333;
 }
 
 .c-autocomplete__subtitle {
-  color:#333;
+  color:$c-autocomplete__subtitle-color;
   display:block;
-  .c-autocomplete__item.is-selected & {
-  }
-  .c-autocomplete__link:hover & {
-  }
 }
-
-// @media (max-width: 767px) and (orientation: portrait) {
-//      .c-autocomplete {
-//          width: 155%;
-//      }
-//  }
 
 .c-autocomplete--alt {
   .c-autocomplete__title {
@@ -70,33 +57,33 @@
   }
   .c-autocomplete__link {
     padding: 0.8em 10px;
-    color:#008cb8;
+    color:$c-autocomplete--alt__link-color;
   }
   .c-autocomplete__item {
     &:nth-of-type(even) .c-autocomplete__link {
-      background-color:#f4f6ef;
+      background-color:$c-autocomplete--alt__link-even-background-color;
     }
     & .c-autocomplete__link:hover {
-      color:#fff;
-      background-color:#006585;
+      color:$c-autocomplete--alt__link-hover-color;
+      background-color:$c-autocomplete--alt__link-hover-background-color;
       .c-autocomplete__subtitle {
-        color:#fff;
+        color:$c-autocomplete--alt__link-hover__subtitle-color;
       }
     }
     &.is-selected {
       .c-autocomplete__link {
-        background-color:#333;
-        color:#f9f9f9;
+        color:$c-autocomplete--alt__link-selected-color;
+        background-color:$c-autocomplete--alt__link-selected-background-color;
         &:hover {
-          background-color:#444;
+          background-color:$c-autocomplete--alt__link-selected-hover-background-color;
         }
       }
       .c-autocomplete__subtitle {
-        color:#ddd;
+        color:$c-autocomplete--alt__link-selected__subtitle-color;
       }
     }
   }
   .c-autocomplete__subtitle {
-    color:#333;
+    color:$c-autocomplete--alt__subtitle-color;
   }
 }
