@@ -13,19 +13,22 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.0.tgz#50c1e2260ac0ed9439a181de3725a0168d59c48a"
 
-"@octokit/rest@^15.13.1":
-  version "15.15.1"
-  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-15.15.1.tgz#7863f50f7c5753211ea3e29e10b84c93159e9e37"
+"@octokit/endpoint@^3.0.0":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@octokit/endpoint/-/endpoint-3.0.1.tgz#ac4503099e001d7536fb1992bc1ba551c9962bdc"
   dependencies:
-    before-after-hook "^1.1.0"
-    btoa-lite "^1.0.0"
-    debug "^3.1.0"
-    http-proxy-agent "^2.1.0"
-    https-proxy-agent "^2.2.0"
-    lodash "^4.17.4"
-    node-fetch "^2.1.1"
-    universal-user-agent "^2.0.0"
+    deepmerge "2.2.1"
+    is-plain-object "^2.0.4"
+    universal-user-agent "^2.0.1"
     url-template "^2.0.8"
+
+"@octokit/request@2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@octokit/request/-/request-2.1.1.tgz#2c6c6356f2bced33fb6352df8d44f9f50e076e76"
+  dependencies:
+    "@octokit/endpoint" "^3.0.0"
+    is-plain-object "^2.0.4"
+    universal-user-agent "^2.0.1"
 
 "@octokit/rest@^15.2.0":
   version "15.9.5"
@@ -38,6 +41,22 @@
     https-proxy-agent "^2.2.0"
     lodash "^4.17.4"
     node-fetch "^2.1.1"
+    url-template "^2.0.8"
+
+"@octokit/rest@^16.0.1":
+  version "16.0.1"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.0.1.tgz#053c1a80aca11c096ad6e09626ba5a18576c1aa0"
+  dependencies:
+    "@octokit/request" "2.1.1"
+    before-after-hook "^1.2.0"
+    btoa-lite "^1.0.0"
+    lodash.get "^4.4.2"
+    lodash.pick "^4.4.0"
+    lodash.set "^4.3.2"
+    lodash.uniq "^4.5.0"
+    node-fetch "^2.1.1"
+    octokit-pagination-methods "^1.1.0"
+    universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
 "@semantic-release/changelog@3.0.1":
@@ -79,11 +98,11 @@
     micromatch "^3.1.4"
     p-reduce "^1.0.0"
 
-"@semantic-release/github@5.2.1":
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-5.2.1.tgz#48a7cbd326471d7dc8d2fcea03580d2da58f4fc9"
+"@semantic-release/github@5.2.2":
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-5.2.2.tgz#8cc538ecc954e4e4c6c58104657c9a91b1eb53e5"
   dependencies:
-    "@octokit/rest" "^15.13.1"
+    "@octokit/rest" "^16.0.1"
     "@semantic-release/error" "^2.2.0"
     aggregate-error "^1.0.0"
     bottleneck "^2.0.1"
@@ -727,6 +746,10 @@ bcrypt-pbkdf@^1.0.0:
 before-after-hook@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/before-after-hook/-/before-after-hook-1.1.0.tgz#83165e15a59460d13702cb8febd6a1807896db5a"
+
+before-after-hook@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/before-after-hook/-/before-after-hook-1.2.0.tgz#1079c10312cd4d4ad0d1676d37951ef8bfc3a563"
 
 better-assert@~1.0.0:
   version "1.0.2"
@@ -1982,6 +2005,10 @@ deep-extend@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.6.0.tgz#c4fa7c95404a17a9c3e8ca7e1537312b736330ac"
 
+deepmerge@2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-2.2.1.tgz#5d3ff22a01c00f645405a2fbc17d0778a1801170"
+
 defaults@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/defaults/-/defaults-1.0.3.tgz#c656051e9817d9ff08ed881477f3fe4019f3ef7d"
@@ -2510,6 +2537,18 @@ execa@^0.1.1:
   dependencies:
     cross-spawn-async "^2.1.1"
     object-assign "^4.0.1"
+    strip-eof "^1.0.0"
+
+execa@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/execa/-/execa-0.10.0.tgz#ff456a8f53f90f8eccc71a96d11bdfc7f082cb50"
+  dependencies:
+    cross-spawn "^6.0.0"
+    get-stream "^3.0.0"
+    is-stream "^1.1.0"
+    npm-run-path "^2.0.0"
+    p-finally "^1.0.0"
+    signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
 execa@^0.7.0:
@@ -4622,6 +4661,10 @@ lodash.escaperegexp@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.escaperegexp/-/lodash.escaperegexp-4.1.2.tgz#64762c48618082518ac3df4ccf5d5886dae20347"
 
+lodash.get@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+
 lodash.isfinite@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/lodash.isfinite/-/lodash.isfinite-3.3.2.tgz#fb89b65a9a80281833f0b7478b3a5104f898ebb3"
@@ -4638,6 +4681,14 @@ lodash.merge@^4.0.1:
   version "4.6.1"
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.1.tgz#adc25d9cb99b9391c59624f379fbba60d7111d54"
 
+lodash.pick@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.pick/-/lodash.pick-4.4.0.tgz#52f05610fff9ded422611441ed1fc123a03001b3"
+
+lodash.set@^4.3.2:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/lodash.set/-/lodash.set-4.3.2.tgz#d8757b1da807dde24816b0d6a84bea1a76230b23"
+
 lodash.toarray@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.toarray/-/lodash.toarray-4.4.0.tgz#24c4bfcd6b2fba38bfd0594db1179d8e9b656561"
@@ -4646,7 +4697,7 @@ lodash.union@~4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.union/-/lodash.union-4.6.0.tgz#48bb5088409f16f1821666641c44dd1aaae3cd88"
 
-lodash.uniq@~4.5.0:
+lodash.uniq@^4.5.0, lodash.uniq@~4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
@@ -4725,6 +4776,10 @@ lru-cache@^4.0.0, lru-cache@^4.0.1, lru-cache@^4.1.1, lru-cache@^4.1.2, lru-cach
 macos-release@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/macos-release/-/macos-release-1.1.0.tgz#831945e29365b470aa8724b0ab36c8f8959d10fb"
+
+macos-release@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/macos-release/-/macos-release-2.0.0.tgz#7dddf4caf79001a851eb4fba7fb6034f251276ab"
 
 make-dir@^1.0.0, make-dir@^1.2.0:
   version "1.3.0"
@@ -5580,6 +5635,10 @@ object.values@^1.0.4:
     function-bind "^1.1.0"
     has "^1.0.1"
 
+octokit-pagination-methods@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/octokit-pagination-methods/-/octokit-pagination-methods-1.1.0.tgz#cf472edc9d551055f9ef73f6e42b4dbb4c80bea4"
+
 on-finished@~2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
@@ -5660,6 +5719,13 @@ os-name@^2.0.1:
   dependencies:
     macos-release "^1.0.0"
     win-release "^1.0.0"
+
+os-name@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/os-name/-/os-name-3.0.0.tgz#e1434dbfddb8e74b44c98b56797d951b7648a5d9"
+  dependencies:
+    macos-release "^2.0.0"
+    windows-release "^3.1.0"
 
 os-tmpdir@^1.0.0, os-tmpdir@~1.0.1:
   version "1.0.2"
@@ -6720,9 +6786,9 @@ seek-bzip@^1.0.5:
   dependencies:
     commander "~2.8.1"
 
-semantic-release@15.12.0:
-  version "15.12.0"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-15.12.0.tgz#061f390bbf999ae56ae52a71f0a986659bbe556d"
+semantic-release@15.12.1:
+  version "15.12.1"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-15.12.1.tgz#48939aaf8fd623769003f6bd76fdb974e24785b7"
   dependencies:
     "@semantic-release/commit-analyzer" "^6.1.0"
     "@semantic-release/error" "^2.2.0"
@@ -7785,6 +7851,12 @@ universal-user-agent@^2.0.0:
   dependencies:
     os-name "^2.0.1"
 
+universal-user-agent@^2.0.1:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/universal-user-agent/-/universal-user-agent-2.0.2.tgz#b0322da546100c658adcf4965110a56ed238aee6"
+  dependencies:
+    os-name "^3.0.0"
+
 universalify@^0.1.0:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/universalify/-/universalify-0.1.2.tgz#b646f69be3942dabcecc9d6639c80dc105efaa66"
@@ -8045,6 +8117,12 @@ window-size@0.1.0:
 window-size@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/window-size/-/window-size-0.2.0.tgz#b4315bb4214a3d7058ebeee892e13fa24d98b075"
+
+windows-release@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/windows-release/-/windows-release-3.1.0.tgz#8d4a7e266cbf5a233f6c717dac19ce00af36e12e"
+  dependencies:
+    execa "^0.10.0"
 
 winston@^2.4.0:
   version "2.4.3"
