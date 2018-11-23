@@ -15,10 +15,10 @@ define(['jquery', 'gsheetsApp', 'app/globaldata', 'app/utils'], function ($, gsh
         var $window = $(window),
             _gSheetsAPI,
             _events = {
-            apiReady: 'ghseets.api.ready',
-            dataLoaded: 'gsheets.data.loaded',
-            dataReadError: 'gsheets.data.error'
-        };
+                apiReady: 'ghseets.api.ready',
+                dataLoaded: 'gsheets.data.loaded',
+                dataReadError: 'gsheets.data.error'
+            };
 
 
         // Private functions

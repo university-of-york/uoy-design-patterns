@@ -39,6 +39,8 @@ requirejs.config({
   }
 });
 
+// set PL_DATA variable early to make sure it's available to modules
+window.PL_DATA = window.PL_DATA || {};
 
 requirejs(['app/globaldata'], function(data) {
     window.PL_DATA = data;
