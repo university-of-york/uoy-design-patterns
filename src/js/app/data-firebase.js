@@ -27,6 +27,10 @@ define(['jquery', 'firebaseApp', 'app/globaldata', 'app/utils'], function ($, fi
             // TODO: add filtering to Firebase, might be able to do it at the request level!
         };
 
+        /* Because our config object might be passed as a 'data-' variable on the HTML element
+         * it's likely not going to be valid, parsable JSON. We need to do a little correcting if that is the case
+         * Returns a suitable config JSON object or - if something goes wrong - the global config instead
+         * */
         var convertConfigObj = function(config) {
             var convertedConfigObj;
 
@@ -40,6 +44,9 @@ define(['jquery', 'firebaseApp', 'app/globaldata', 'app/utils'], function ($, fi
             return convertedConfigObj;
         };
 
+        /* This sanitises the supplied config object and then adds in the secret API key from the global config
+         * Returns the processed configuration object for Firebase to continue
+         * */
         var processConfigObj = function(configObj) {
 
             var processedConfigObj = convertConfigObj(configObj);
@@ -49,6 +56,11 @@ define(['jquery', 'firebaseApp', 'app/globaldata', 'app/utils'], function ($, fi
             return processedConfigObj;
         };
 
+        /* Called by a number of places across the module, if we encounter an error:
+         * - broadcast the error via window.trigger for potential wider error handling
+         * - reject the associated/passed in promise object
+         * - log a console error for nosey developers ;)
+         * */
         var errorHandler = function(message, errorObj, promiseObj, eventIdentifier) {
 
             eventIdentifier = eventIdentifier || '';
@@ -71,6 +83,7 @@ define(['jquery', 'firebaseApp', 'app/globaldata', 'app/utils'], function ($, fi
             return _events;
         };
 
+        /* Process out config object (if available) and then initialise the Firebase app using said config object */
         var loadConfig = function(configObj) {
 
             // if we don't have a valid configuration, reject
@@ -100,6 +113,10 @@ define(['jquery', 'firebaseApp', 'app/globaldata', 'app/utils'], function ($, fi
             }
         };
 
+        /* Our set up function that does 2 things:
+         *  - loads the firebaseApp library into out local private variable _firebase
+         *  - triggers the 'apiReady' method on the window
+         *  */
         var init = function() {
 
             // first thing is to load the firebase api script(s)
@@ -109,6 +126,12 @@ define(['jquery', 'firebaseApp', 'app/globaldata', 'app/utils'], function ($, fi
             $window.trigger(_events.apiReady);
         };
 
+        /* The function where the data loading from the API occurs:
+         * - create a promise object, gettingData
+         * - check that we've got the database (Firebase's database object) available so we can then load the physical data
+         * - when we have the data, trigger a window event and resolve the promise
+         * Returns a promise that fulfils with the returned, filtered data from the API
+         * */
         var readData = function(ref, eventIdentifier, configStr) {
 
             var gettingData;
