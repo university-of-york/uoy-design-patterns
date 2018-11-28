@@ -41,9 +41,12 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
 
             // Private functions
             var callHtmlMaker = function(htmlBuildFunction) {
-
+                // TODO: function implementation
             };
 
+            /* For a given data row, build a list item element and stuff it with relevant content
+             * Returns a list item element with values built from supplied row data
+             * */
             var makeListItem = function(rowData, useKeys) {
                 var listItem = document.createElement('li');
 
@@ -54,6 +57,9 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 return listItem;
             };
 
+            /* For a given data row, build a table row (tr) element and stuff it with relevant content
+             * Returns a table row (tr) element with values built from supplied row data
+             * */
             var makeTableRow = function(table, rowData, useKeys, isHeaderRow) {
                 var row,
                     thead,
@@ -82,6 +88,10 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 return row;
             };
 
+            /* From the supplied data, loop through each data row, building a table row
+             * that is added to an overall table element that is returned once complete
+             * Returns a table element with values built from supplied data source data
+             * */
             var buildTableHtml = function(data, includeHeaderRow) {
                 var table = document.createElement('table');
 
@@ -110,12 +120,18 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 return table;
             };
 
+            /* TBC */
             var buildFlexHtml = function(data) {
                 var html = '';
+
+                // TODO - implementation
 
                 return html;
             };
 
+            /* Disects the data and builds a standard unordered list of values to return
+             * Returns an unordered list
+             * */
             var buildListHtml = function(data) {
                 var list = document.createElement('ul');
 
@@ -136,6 +152,10 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 return list;
             };
 
+            /* An intermediary function that simply calls the data loading function, readData(), from the
+             * supplied data source.
+             * Returns a promise object that is fulfilled when the data source returns
+             * */
             var loadData = function(datasource, options) {
                 var dataLoadedPromise;
 
@@ -153,6 +173,9 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 return dataLoadedPromise;
             };
 
+            /* Depending on the supplied output type (e.g. table, list, etc.), call the appropriate HTML builder
+             * Returns the formatted HTML built by the appropriate method
+             * */
             var buildOutputHtml = function(data, displayType, includeHeaderRow) {
                 var outputHtml = '';
 
@@ -174,6 +197,11 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 return outputHtml;
             };
 
+            /* By now, we've successfully got some filtered data from our data source, so we can:
+             * - build some useful HTML content to display
+             * - add any optional/additional CSS classes to the output HTML
+             * - append the final HTML content to the supplied container
+             * */
             var processData = function(data, options) {
                 var outputHtml = '';
 
@@ -188,11 +216,13 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 options.container.append(outputHtml);
             };
 
+            /* Clear the holding content container and display the relevant error message to the user */
             var handleErrors = function(error, options) {
                 // display the data after clearing the container
                 options.container.empty();
                 options.container.append(error);
             };
+
 
             // Getters / Setters
             var ENUM_DATASOURCE = function() {
@@ -203,7 +233,14 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 return LAYOUTTYPE;
             };
 
+
             // Public functions
+
+            /* Our script setup function that performs a few things:
+             * - checks that the passed in options are all fine and dandy
+             * - fires the loadData function to fetch the data from the passed in datasource
+             * - finally, fires the processData function to do something meaningful with the data once it's loaded
+             * */
             var init = function(options, dataLoadedEvent) {
                 var dataLoading;
 
@@ -214,15 +251,16 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 // merge passed in options with defaults
                 options = $.extend({}, _defaultOptions, options);
 
-                // load up the particular data source
+                // load up the particular data source to fetch the data it provides
                 dataLoading = loadData(options.datasource, options);
 
-                // use the passed in unique identifier for the data loaded event, if available
+                // use the passed in unique identifier for the data loaded event (if available)
                 if(UTILS.doesObjExist(dataLoadedEvent)) {
                     dataLoadedEvent = dataLoadedEvent + options.eventIdentifier;
                 }
 
-                // build the HTML once the data is available from the source
+                // once we have the data (loadData returns a promise), do something
+                // meaningful, such as build the HTML to display on the page
                 if(!UTILS.doesObjExist(dataLoadedEvent)) {
                     dataLoading
                         .done(function(data) {

@@ -302,11 +302,11 @@ define(
           });
         });
 
-        // Load the Google Sheets Library
+        // Load the Google Sheets Library and assign it to global window object
         DATAGSHEETS.init();
         window.PL_DATA.dataGSheets = DATAGSHEETS;
 
-        // Load the Firebase Library
+        // Load the Firebase Library and assign it to global window object
         DATAFIREBASE.init();
         window.PL_DATA.dataFirebase = DATAFIREBASE;
 
@@ -346,7 +346,8 @@ define(
                 dataGrid.init(configObj);
             } else {
 
-                // for GSheets, we need to wait for the API to load
+                // for GSheets, we need to wait for the API to load before calling our
+                // datagrid init() function to access data
                 $(window).on(eventAPIReady, function () {
                     dataGrid.init(configObj);
                 });
