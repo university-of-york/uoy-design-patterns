@@ -6786,9 +6786,9 @@ seek-bzip@^1.0.5:
   dependencies:
     commander "~2.8.1"
 
-semantic-release@15.12.3:
-  version "15.12.3"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-15.12.3.tgz#9f7c5a8ac55624a6418e0bf95bf53c2030487c12"
+semantic-release@15.12.4:
+  version "15.12.4"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-15.12.4.tgz#d0f4c3649d01e2e29a9df5e4886bab869d75ef02"
   dependencies:
     "@semantic-release/commit-analyzer" "^6.1.0"
     "@semantic-release/error" "^2.2.0"
