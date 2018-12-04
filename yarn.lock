@@ -667,9 +667,9 @@ autolinker@~0.15.0:
   version "0.15.3"
   resolved "https://registry.yarnpkg.com/autolinker/-/autolinker-0.15.3.tgz#342417d8f2f3461b14cf09088d5edf8791dc9832"
 
-autoprefixer@9.4.1:
-  version "9.4.1"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.4.1.tgz#a3d7e9c5940ba85778ab780536f1cc51bd2dfbd6"
+autoprefixer@9.4.2:
+  version "9.4.2"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.4.2.tgz#0234d20900684fc4bfb67926493deb68384067f5"
   dependencies:
     browserslist "^4.3.5"
     caniuse-lite "^1.0.30000914"
