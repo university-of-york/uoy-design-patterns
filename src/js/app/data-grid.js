@@ -73,7 +73,6 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 }
 
                 Object.keys(rowData).forEach(function(key) {
-                    var newText = document.createTextNode(useKeys ? key : rowData[key]);
 
                     if(isHeaderRow) {
                         cell = document.createElement("TH");
@@ -81,8 +80,8 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                     } else {
                         cell = row.insertCell(-1);
                     }
-
-                    cell.appendChild(newText);
+                    
+                    cell.innerHTML = useKeys ? key : rowData[key];
                 });
 
                 return row;
