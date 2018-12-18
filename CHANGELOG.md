@@ -1,3 +1,12 @@
+## [1.7.3](https://github.com/university-of-york/design-patterns/compare/v1.7.2...v1.7.3) (2018-11-28)
+
+
+### Bug Fixes
+
+* add documentation around data-grid and GSheets method(s) ([8581d80](https://github.com/university-of-york/design-patterns/commit/8581d80))
+* correct code styling, check for global window object ([c17fac1](https://github.com/university-of-york/design-patterns/commit/c17fac1))
+* correct paragraph utility class application on non-block level elements ([7cb7fca](https://github.com/university-of-york/design-patterns/commit/7cb7fca))
+
 ## [1.7.2](https://github.com/university-of-york/design-patterns/compare/v1.7.1...v1.7.2) (2018-10-18)
 
 
