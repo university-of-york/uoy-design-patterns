@@ -31,10 +31,10 @@
     "tag": "latest"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "3.0.1",
+    "@semantic-release/changelog": "3.0.2",
     "@semantic-release/commit-analyzer": "6.1.0",
-    "@semantic-release/git": "7.0.6",
-    "@semantic-release/github": "5.2.7",
+    "@semantic-release/git": "7.0.7",
+    "@semantic-release/github": "5.2.8",
     "@semantic-release/release-notes-generator": "7.1.4",
     "autoprefixer": "9.4.3",
     "compass": "0.1.1",
@@ -70,7 +70,7 @@
     "modernizr": "3.6.0",
     "picturefill": "3.0.3",
     "requirejs": "2.3.6",
-    "semantic-release": "15.13.1",
+    "semantic-release": "15.13.2",
     "time-grunt": "1.4.0",
     "webpack": "4.28.3"
   },
