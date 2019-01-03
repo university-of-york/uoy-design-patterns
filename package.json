@@ -36,7 +36,7 @@
     "@semantic-release/git": "7.0.7",
     "@semantic-release/github": "5.2.8",
     "@semantic-release/release-notes-generator": "7.1.4",
-    "autoprefixer": "9.4.3",
+    "autoprefixer": "9.4.4",
     "compass": "0.1.1",
     "css": "2.2.4",
     "es5-shim": "4.5.12",
