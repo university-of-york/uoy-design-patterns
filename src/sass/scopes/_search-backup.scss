@@ -115,15 +115,23 @@ div.gs-result  {
     @extend .c-listings-item__link !optional;
     @extend .c-listings-item__title !optional;
 }
+
+.gs-webResult.gs-result a.gs-title b {
+    font-weight: 700!important;
+}
+
+
 .gs-webResult.gs-result a.gs-title:link, .gs-webResult.gs-result a.gs-title:link b, .gs-imageResult a.gs-title:link, .gs-imageResult a.gs-title:link b {
     font-family: $font-title!important;
     color: $c-news--excerpt__title-color!important;
 }
+
+
 .gs-result .gs-title, .gs-result .gs-title * {
     text-decoration: none!important;
 }
 .gs-webResult.gs-result a.gs-title:hover, .gs-webResult.gs-result a.gs-title:hover b, .gs-imageResult a.gs-title:hover, .gs-imageResult a.gs-title:link b,
-.gs-webResult.gs-result a.gs-title:visited:hover, .gs-webResult.gs-result a.gs-title:visited:hover, b, .gs-imageResult a.gs-title:visited:hover, .gs-imageResult a.gs-title:visited:hover, b {
+.gs-webResult.gs-result a.gs-title:visited:hover, .gs-webResult.gs-result a.gs-title:visited:hover b, .gs-imageResult a.gs-title:visited:hover, .gs-imageResult a.gs-title:visited:hover b {
     color: $blue!important;
 }
 .gsc-result .gs-title {
@@ -217,3 +225,8 @@ div.gs-promotion {
   div.gsc-expansionArea > div:nth-last-child(2) > div.gs-result   {
     border-bottom: 0!important;
  }
+
+ .gs-bidi-start-align b,
+  .gs-bidi-start-align b {
+    color: #000!important;
+}
