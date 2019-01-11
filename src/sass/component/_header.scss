@@ -12,7 +12,7 @@
 }
 .c-main-header {
   @include clearfix;
-  color:$charcoal;
+  color:$c-main-header-color;
   background:$c-main-header-background;
   position:relative;
 }
@@ -20,29 +20,29 @@
   @include font-size(24px, 41px);
   display:block;
   float:left;
-  margin:20px 0;
+  margin:$base-spacing 0;
   @include mq(tiny) {
     // Change size of logo on tiny screens
     @include font-size(18px, 20px);
-    margin:15px 0;
+    margin:$base-spacing*0.75 0;
   }
 }
 .c-main-header__link {
   display:inline-block;
   vertical-align:middle;
-  width:200px;
+  width:$c-main-header__logo-size;
   @include mq(tiny) {
     // Change size of logo on tiny screens
-    width:152px;
+    width:$c-main-header__logo-size--small;
   }
 }
 .c-main-header__logo {
   display:block;
-  width:200px;
+  width:$c-main-header__logo-size;
   //height:75px; // will naturally go to 75px
   @include mq(tiny) {
     // Change size of logo on tiny screens
-    width:152px;
+    width:$c-main-header__logo-size--small;
     //height:auto; // will naturally go to 57px - on really small screens it won't become squished
   }
 }

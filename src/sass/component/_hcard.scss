@@ -1,7 +1,6 @@
 //
 // HCARD
 //
-$img_size:140px;
 
 .h-card {
   @include component;
@@ -26,8 +25,8 @@ $img_size:140px;
 .h-card__figure {
     @include round;
     @include center-image;
-    width:$img_size;
-    height:$img_size;
+    width:$h-card__figure-size;
+    height:$h-card__figure-size;
     overflow:hidden;
     z-index:1; // Stops Chrome removing border-radius when other stuff aniamtes on the page
 }
@@ -70,8 +69,8 @@ $img_size:140px;
   .h-card__position {
   }
   .h-card__figure {
-    width:$img_size/2;
-    height:$img_size/2;
+    width:$h-card__figure-size/2;
+    height:$h-card__figure-size/2;
     float:left;
     margin:0 $base-spacing 0 0;
   }
@@ -112,7 +111,7 @@ $img_size:140px;
   .h-card__url,
   .h-card__bio {
     @include mq(small, '+') {
-    margin-left:$img_size + $base-spacing;
+    margin-left:$h-card__figure-size + $base-spacing;
 
     }
 

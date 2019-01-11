@@ -189,7 +189,6 @@ $c-breadcrumb__link-color:$charcoal;
 
 // Buttons
 // component/_buttons.scss
-// Buttons
 $c-btn: (
   default: (
     bg:$pink,
@@ -223,9 +222,27 @@ $c-event-border:$charcoal;
 
 // Figures
 // component/_figures.scss
-$c-figure__caption-solid:       $blue;
-$c-figure__caption-transparent: transparentize($c-figure__caption-solid, 0.15);
-$c-figure__caption-color:       $light;
+$c-figure__caption-solid:                 $blue;
+$c-figure__caption-transparent:           transparentize($c-figure__caption-solid, 0.15);
+$c-figure__caption-color:                 $light;
+$c-figure__caption--below-background:     transparent;
+$c-figure__caption--below-color:          lighten($charcoal,20);
+$c-figure__caption--below-alt-color:      darken($light,20);
+$c-figure__content-solid:                 $teal;
+$c-figure__content-transparent:           transparentize($teal, 0.15);
+$c-figure__content-color:                 $light;
+$c-figure__content-link-color:            lighten($blue,10);
+$c-figure__content-link-hover-color:      lighten($blue,25);
+$c-figure__content--blue-solid:           $blue;
+$c-figure__content--blue-transparent:     transparentize($blue, 0.25);
+$c-figure__content--pink-solid:           $pink;
+$c-figure__content--pink-transparent:     transparentize($pink, 0.25);
+$c-figure__content--teal-solid:           $teal;
+$c-figure__content--teal-transparent:     transparentize($teal, 0.25);
+$c-figure__content--gold-solid:           $gold;
+$c-figure__content--gold-transparent:     transparentize($gold, 0.25);
+$c-figure__content--charcoal-solid:       $charcoal;
+$c-figure__content--charcoal-transparent: transparentize($charcoal, 0.25);
 
 // Footer
 // component/_footer.scss
@@ -250,6 +267,8 @@ $c-form-invalid-color:                         $red;
 // component/_gallery.scss
 $c-gallery-item-border-color: $charcoal;
 $c-gallery-item-color:        $charcoal;
+$c-gallery-item-size:         140px;
+$c-gallery-item-border-width: 1px;
 
 // Global notice
 // component/_global-notices.scss
@@ -268,10 +287,14 @@ $h-card--byline-border:      darken($light, 10);
 $h-card--article-border:     $s1;
 $h-card--article-background: $s2;
 $h-card--article-color:      $charcoal;
+$h-card__figure-size:        140px;
 
 // Header
 // component/_header.scss
-$c-main-header-background: $white;
+$c-main-header-background:        $white;
+$c-main-header-color:             $charcoal;
+$c-main-header__logo-size:        200px;
+$c-main-header__logo-size--small: 152px;
 
 // Hero
 // component/_hero.scss

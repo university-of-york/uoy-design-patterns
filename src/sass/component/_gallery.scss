@@ -2,9 +2,6 @@
 // GALLERY
 //
 
-$c-gallery-item-size: 140px;
-$c-gallery-item-border-width: 1px;
-
 .c-gallery-item {
   @include component;
   border:$c-gallery-item-border-width solid $c-gallery-item-border-color;
