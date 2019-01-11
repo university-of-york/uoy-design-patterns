@@ -108,6 +108,11 @@ $icons: (
   5x: 80px
 );
 
+// Links
+$link-color:darken($blue,10);
+$link-hover-color:$blue;
+$link-focus-outline-color:$blue;
+
 //
 // Literal variable names
 //
@@ -177,8 +182,7 @@ $c-block-link-border-color:     lighten($s1,5);
 // Blockquotes
 // component/_blockquotes.scss
 $c-blockquote__image-size:                   120px;
-// How much should the image shrink?
-$c-blockquote__image-tiny-ratio:             0.75;
+$c-blockquote__image-tiny-ratio:             0.75; // How much should the image shrink on tiny screens?
 $c-blockquote--image-quote-background-color: lighten($teal,10);
 $c-blockquote--image-quote-color:            $light;
 $c-blockquote--pull-quote-color:             $pink;
@@ -316,6 +320,91 @@ $c-hero__caption-background-gradient: linear-gradient(
 
 // Icons
 // component/_icons.scss
+$c-icon--inverse-color: $light;
+
+// Key facts
+// component/_key-fact.scss
+$c-key-fact-color:                      $teal;
+$c-key-fact-hover-color:                lighten($teal,15);
+$c-key-fact__icon-color:                lighten($teal,15);
+$c-key-fact__icon-hover-color:          lighten($teal,25);
+$c-key-fact__title-color:               $teal;
+$c-key-fact__title-hover-color:         lighten($teal,15);
+$c-key-fact__title-highlight-color:     $blue;
+$c-key-fact-alt-color:                  darken($light,10);
+$c-key-fact-alt-hover-color:            darken($light,10);
+$c-key-fact-alt-background-color:       $teal;
+$c-key-fact-alt-background-hover-color: lighten($teal,5);
+$c-key-fact-alt__title-color:           $light;
+$c-key-fact__learnMoreLink:             $blue;
+
+// Labels
+// component/_label.scss
+$c-label-color:       $grey;
+$c-label-color-hover: lighten($c-label-color,10);
+
+// Listings
+// component/_listings.scss
+$c-listings__thumbnail-size:    100px;
+$c-listings-item-border-color:  $blue;
+$c-listings__title-color:       $link-color;
+$c-listings__title-hover-color: $blue;
+$c-listings__label-color:       $grey;
+$c-listings__date-color:        lighten($charcoal,4);
+$c-listings__description-color: $charcoal;
+$c-listings__url-color:         $grey;
+
+// Lists
+// component/_lists.scss
+// None
+
+// Map
+// component/_map.scss
+$c-map__fsbutton-color:            $charcoal;
+$c-map__fsbutton-background:       $s3;
+$c-map__fsbutton-hover-background: darken($s3, 5);
+
+// Modals
+// component/_modal.scss
+$c-modal-background-color:$s2;
+$c-modal-border-color:$s1;
+$c-modal__close-background-color:$charcoal;
+$c-modal__close-color:$light;
+$c-modal__close-hover-background-color:lighten($charcoal, 10);
+$c-modal__close-hover-color:$blue;
+$c-modal__caption-background-solid:$blue;
+$c-modal__caption-background-transparent:transparentize($blue, 0.15);
+$c-modal__caption-color:$light;
+$c-modal__nav-color:$light;
+$c-modal__nav__icon-background:$charcoal;
+
+// Navigation
+// component/_navigation.mobile.scss
+// component/_navigation.scss
+$c-nav-background-color:                  lighten($charcoal,5);
+$c-nav-border-color:                      $blue;
+$c-nav__item--more-background-color:      $blue;
+$c-nav__header-color:                     $light;
+$c-nav__list-color:                       darken($light,10);
+$c-nav__link-color:                       $light;
+$c-nav__link-background-color:            transparent;
+$c-nav__link-is-current-background-color: $blue;
+$c-nav__link-hover-color:                 darken($light, 5);
+$c-nav__link-hover-background-color:      darken($blue, 20);
+$c-nav__link-border:                      darken($s3,15);
+//$c-nav__link-clor:                        lighten($charcoal,10);
+$c-nav--sticky-background:                  $s3;
+$c-nav--sticky-border:                      $white;
+$c-nav--sticky-shadow:                      transparentize($s3, 0.15);
+$c-nav--sticky-is-sticky-border:            darken($s3,15);
+$c-nav--sticky__link-background:            $s3;
+$c-nav--sticky__link-color:                 $charcoal;
+$c-nav--sticky__link-border:                darken($s3,15);
+$c-nav--sticky__link-border-hover:          $blue;
+$c-nav--sticky__link-is-current-background: $s3;
+$c-nav--sticky__link-is-current-color:      $charcoal;
+$c-nav--sticky__link-is-current-border:     $teal;
+$c-subnav__link-color:                      $teal;
 
 // Mobile search
 $c-mobile-search-button-color:            $charcoal;
@@ -327,17 +416,6 @@ $c-mobile-search-form-background-color:   $teal;
 $c-page-title__background-color: lighten($charcoal,5);
 $c-page-title__link-color:       $light;
 
-// Navigation
-$c-nav-background-color:                  lighten($charcoal,5);
-$c-nav-border-color:                      $blue;
-$c-nav__item--more-background-color:      $blue;
-$c-nav__header-color:                     $light;
-$c-nav__list-color:                       darken($light,10);
-$c-nav__link-color:                       $light;
-$c-nav__link-background-color:            transparent;
-$c-nav__link-is-current-background-color: $blue;
-$c-nav__link-hover-color:                 darken($light, 5);
-$c-nav__link-hover-background-color:      darken($blue, 20);
 
 // Subnavigation
 $c-subnav__link-color: lighten($charcoal,20);
@@ -351,36 +429,9 @@ $c-utility-nav__subnav-background-color:       lighten($teal,10);
 $c-utility-nav__sublink-color:                 $light;
 $c-utility-nav__sublink-hover-color:           lighten($blue, 10);
 
-// Key facts
-$c-key-fact-color:$teal;
-$c-key-fact-hover-color:lighten($teal,15);
-$c-key-fact__icon-color:lighten($teal,15);
-$c-key-fact__icon-hover-color:lighten($teal,25);
-$c-key-fact__title-color:$teal;
-$c-key-fact__title-hover-color:lighten($teal,15);
-$c-key-fact__title-highlight-color:$blue;
-$c-key-fact-alt-color:darken($light,10);
-$c-key-fact-alt-hover-color:darken($light,10);
-$c-key-fact-alt-background-color:$teal;
-$c-key-fact-alt-background-hover-color:lighten($teal,5);
-$c-key-fact-alt__title-color:$light;
 
-// Labels
-$c-label-color:$grey;
-$c-label-color-hover:lighten($c-label-color,10);
 
-// Links
-$link-color:darken($blue,10);
-$link-hover-color:$blue;
-$link-focus-outline-color:$blue;
 
-// Modals
-$c-modal-background-color:$s2;
-$c-modal-border-color:$s1;
-$c-modal__close-background-color:$charcoal;
-$c-modal__close-color:$light;
-$c-modal__close-hover-background-color:lighten($charcoal, 10);
-$c-modal__close-hover-color:$blue;
 
 // News
 $c-news--excerpt__title-color:$link-color;

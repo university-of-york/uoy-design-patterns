@@ -5,7 +5,7 @@
 // Font-awesome variables
 $fa-font-size-base:   16px;
 $fa-css-prefix:       'c-icon-';
-$fa-inverse:          $light;
+$fa-inverse:          $c-icon--inverse-color;
 
 @import "icons/font-awesome";
 
