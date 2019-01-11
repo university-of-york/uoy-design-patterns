@@ -176,10 +176,15 @@ $c-block-link-border-color:     lighten($s1,5);
 
 // Blockquotes
 // component/_blockquotes.scss
+$c-blockquote__image-size:                   120px;
+// How much should the image shrink?
+$c-blockquote__image-tiny-ratio:             0.75;
 $c-blockquote--image-quote-background-color: lighten($teal,10);
 $c-blockquote--image-quote-color:            $light;
 $c-blockquote--pull-quote-color:             $pink;
 $c-blockquote__content--alt-1-2-color:       $white;
+$c-blockquote__cite-color:                   $charcoal;
+$c-blockquote__cite-color--alt:              $light;
 
 // Breadcrumb
 // component/_breadcrumb.scss
