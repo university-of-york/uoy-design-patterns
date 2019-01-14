@@ -381,18 +381,18 @@ $c-modal__nav__icon-background:$charcoal;
 // Navigation
 // component/_navigation.mobile.scss
 // component/_navigation.scss
-$c-nav-background-color:                  lighten($charcoal,5);
-$c-nav-border-color:                      $blue;
-$c-nav__item--more-background-color:      $blue;
-$c-nav__header-color:                     $light;
-$c-nav__list-color:                       darken($light,10);
-$c-nav__link-color:                       $light;
-$c-nav__link-background-color:            transparent;
-$c-nav__link-is-current-background-color: $blue;
-$c-nav__link-hover-color:                 darken($light, 5);
-$c-nav__link-hover-background-color:      darken($blue, 20);
-$c-nav__link-border:                      darken($s3,15);
-//$c-nav__link-clor:                        lighten($charcoal,10);
+$c-nav-background-color:                    lighten($charcoal,5);
+$c-nav-border-color:                        $blue;
+$c-nav__item--more-background-color:        $blue;
+$c-nav__header-color:                       $light;
+$c-nav__list-color:                         darken($light,10);
+$c-nav__link-color:                         $light;
+$c-nav__link-background-color:              transparent;
+$c-nav__link-is-current-background-color:   $blue;
+$c-nav__link-hover-color:                   darken($light, 5);
+$c-nav__link-hover-background-color:        darken($blue, 20);
+$c-nav__link-border:                        darken($s3,15);
+// Sticky nav
 $c-nav--sticky-background:                  $s3;
 $c-nav--sticky-border:                      $white;
 $c-nav--sticky-shadow:                      transparentize($s3, 0.15);
@@ -404,21 +404,65 @@ $c-nav--sticky__link-border-hover:          $blue;
 $c-nav--sticky__link-is-current-background: $s3;
 $c-nav--sticky__link-is-current-color:      $charcoal;
 $c-nav--sticky__link-is-current-border:     $teal;
-$c-subnav__link-color:                      $teal;
-
 // Mobile search
 $c-mobile-search-button-color:            $charcoal;
 $c-mobile-search-button-hover-color:      lighten($c-mobile-search-button-color,10);
 $c-mobile-search-button-background-color: $white;
 $c-mobile-search-form-background-color:   $teal;
 
+// News
+// component/_news.scss
+$c-news__thumbnail-size:              100px;
+$c-news-color:                        $charcoal;
+$c-news-color-alt:                    $light;
+$c-news--excerpt__title-color:        $link-color;
+$c-news--excerpt__title-hover-color:  $blue;
+$c-news--excerpt__category-color:     lighten($charcoal,10);
+$c-news--excerpt__meta-color:         lighten($charcoal,30);
+$c-news--excerpt__teaser-color:       lighten($charcoal,5);
+$c-news--event__meta-color:           $charcoal;
+$c-news--listing__title-color:        $link-color;
+$c-news--listing__title-hover-color:  $blue;
+$c-news--listing__date-color:         lighten($charcoal,30);
+$c-news--listing__date-color-alt:     darken($light,30);
+$c-news__license-border:              $s3;
+
 // Page title
+// component/_page-title.scss
 $c-page-title__background-color: lighten($charcoal,5);
 $c-page-title__link-color:       $light;
 
+// Pagination
+
+// Panels
+$c-panel-background-color:$s2;
+$c-panel-border-color:$s1;
+$c-panel--highlight-background-color:$teal;
+$c-panel--highlight-border-color:lighten($teal,10);
+
+// Show more
+
+// Signposts
+
+// Structural nav
 
 // Subnavigation
 $c-subnav__link-color: lighten($charcoal,20);
+$c-subnav__link-clor:  $teal; // Possibly not needed?
+
+// Tables
+
+// Tabs
+
+// Tag
+$c-tag-background-color:$pink;
+$c-tag-background-color-hover:darken($pink,5);
+$c-tag-background-color-alt1:darken($pink,10);
+$c-tag-background-color-alt1-hover:darken($pink,15);
+$c-tag-background-color-alt2:darken($pink,20);
+$c-tag-background-color-alt2-hover:darken($pink,25);
+$c-tag-color:$light;
+$c-tag-color-hover:darken($light,5);
 
 // Utility navigation
 $c-utility-nav__link-color:                    $charcoal;
@@ -429,34 +473,8 @@ $c-utility-nav__subnav-background-color:       lighten($teal,10);
 $c-utility-nav__sublink-color:                 $light;
 $c-utility-nav__sublink-hover-color:           lighten($blue, 10);
 
+// Video
 
-
-
-
-// News
-$c-news--excerpt__title-color:$link-color;
-$c-news--excerpt__title-hover-color:$blue;
-$c-news--excerpt__category-color:lighten($charcoal, 10);
-$c-news--excerpt__meta-color:lighten($charcoal,30);
-$c-news--event__meta-color:$charcoal;
-$c-news--listing__title-color:$link-color;
-$c-news--listing__title-hover-color:$blue;
-
-// Panels
-$c-panel-background-color:$s2;
-$c-panel-border-color:$s1;
-$c-panel--highlight-background-color:$teal;
-$c-panel--highlight-border-color:lighten($teal,10);
-
-// Tags
-$c-tag-background-color:$pink;
-$c-tag-background-color-hover:darken($pink,5);
-$c-tag-background-color-alt1:darken($pink,10);
-$c-tag-background-color-alt1-hover:darken($pink,15);
-$c-tag-background-color-alt2:darken($pink,20);
-$c-tag-background-color-alt2-hover:darken($pink,25);
-$c-tag-color:$light;
-$c-tag-color-hover:darken($light,5);
 
 // OBJECT COLOR VARIABLES
 
@@ -484,3 +502,7 @@ $o-grid__row--alt2-link-hover-color: lighten($blue,15);
 $o-grid__row--alt3-background-color: $s2;
 $o-grid__row--alt3-border-color:     $s1;
 $o-grid__row--divider-color:         $lightgrey;
+
+// Media
+
+// Structure

@@ -173,7 +173,7 @@
     margin-top:0;
   }
   .c-subnav__link, a {
-    color:$c-subnav__link-color;
+    color:$c-subnav__link-clor; // Why wuold there be a subnav__link inside a nav__title?
   }
   .c-nav.is-open & {
     display:block;
