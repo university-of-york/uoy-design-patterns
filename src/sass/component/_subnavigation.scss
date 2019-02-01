@@ -29,8 +29,8 @@
   }
   &.is-current {
     .c-subnav__link {
-      background-color:$blue;
-      color:$light;
+      background-color:$c-subnav__link-is-current-background;
+      color:$c-subnav__link-is-current-color;
     }
   }
   //Site Manager uses .currentsection span
@@ -50,7 +50,7 @@
   position:relative;
   text-decoration: none;
   &:hover {
-    color:$blue;
+    color:$c-subnav__link-hover-color;
   }
   .c-icon--after {
     position: absolute;
@@ -71,7 +71,7 @@
     margin:0;
   }
   .c-subnav__link, a {
-    color:$teal;
+    color:$c-subnav__title-link-color;
     padding-top:0;
   }
 }

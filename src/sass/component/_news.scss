@@ -104,7 +104,7 @@
   .c-news--excerpt & {
     @include demarginalise;
     @include font-size(14px);
-    color:$c-news--excerpt__teaser;
+    color:$c-news--excerpt__teaser-color;
     p {
       margin-bottom:$base-spacing/2;
     }
@@ -127,7 +127,7 @@
   @include component-margin;
   padding:$base-spacing 0;
   font-style: italic;
-  color:lighten($charcoal,25);
+  color:$c-news__license-color;
   border-top:1px solid $c-news__license-border;
   border-bottom:1px solid $c-news__license-border;
 }

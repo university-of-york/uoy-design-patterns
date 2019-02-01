@@ -425,6 +425,7 @@ $c-news--listing__title-color:        $link-color;
 $c-news--listing__title-hover-color:  $blue;
 $c-news--listing__date-color:         lighten($charcoal,30);
 $c-news--listing__date-color-alt:     darken($light,30);
+$c-news__license-color:               lighten($charcoal,25);
 $c-news__license-border:              $s3;
 
 // Page title
@@ -433,28 +434,81 @@ $c-page-title__background-color: lighten($charcoal,5);
 $c-page-title__link-color:       $light;
 
 // Pagination
+// component/_pagination.scss
+$c-pagination__page-border:                       darken($s2,5);
+$c-pagination__page-background:                   $s2;
+$c-pagination__page-hover-background:             $blue;
+$c-pagination__page-hover-border:                 $blue;
+$c-pagination__page-hover-color:                  $light;
+$c-pagination__page--type-break-background:       $white;
+$c-pagination__page--type-break-hover-background: $white;
+$c-pagination__page--type-break-hover-background: $blue;
+$c-pagination__page--current-background:          $blue;
+$c-pagination__page--current-border:              $blue;
+$c-pagination__page--current-color:               $white;
 
 // Panels
-$c-panel-background-color:$s2;
-$c-panel-border-color:$s1;
-$c-panel--highlight-background-color:$teal;
-$c-panel--highlight-border-color:lighten($teal,10);
+// component/_panels.scss
+$c-panel-background:            $s2;
+$c-panel-border:                $s1;
+$c-panel-color:                 $charcoal;
+$c-panel--highlight-background: $teal;
+$c-panel--highlight-border:     lighten($teal,10);
+$c-panel--highlight-color:      $light;
 
 // Show more
+// component/_showmore.scss
+// None
 
 // Signposts
+// component/_signposts.scss
+$c-signpost__icon-color: $pink;
 
 // Structural nav
+// component/_structural-nav.scss
+$c-structural-nav__item-border:           $charcoal;
+$c-structural-nav__item-hover-background: #eee;
 
 // Subnavigation
-$c-subnav__link-color: lighten($charcoal,20);
-$c-subnav__link-clor:  $teal; // Possibly not needed?
+// component/_subnavigation.scss
+$c-subnav__link-color:                  lighten($charcoal,20);
+$c-subnav__link-clor:                   $teal; // Possibly not needed?
+$c-subnav__link-is-current-background:  $blue;
+$c-subnav__link-is-current-color:       $light;
+$c-subnav__link-hover-color:            $blue;
+$c-subnav__title-link-color:            $teal;
 
 // Tables
+// component/_tables.scss
+$table-th-color:                  $teal;
+$table-th-border:                 $blue;
+$table-tbody-th-background:       $s3;
+$table-tbody-th-color:            lighten($teal,5);
+$table-td-border:                 lighten($blue,15);
+$c-table--striped-odd-background: lighten($s2,2);
 
 // Tabs
+// component/_tabs.scss
+$c-tabs--vertical__tab-active__link-background: $blue;
+$c-tabs--vertical__tab-active__link-color:      $light;
+$c-tabs-background:                             $white;
+$c-tabs-border:                                 $s1;
+$c-tabs-color:                                  $charcoal;
+$c-tabs__link-background:                       darken($light, 5);
+$c-tabs__link-color:                            $teal;
+$c-tabs__link-hover-background:                 darken($blue,20);
+$c-tabs__link-hover-color:                      $light;
+$c-tabs--dark-background:                       $teal;
+$c-tabs--dark-border:                           $teal;
+$c-tabs--dark-color:                            $white;
+$c-tabs--dark__link-background:                 lighten($teal,10);
+$c-tabs--dark__link-color:                      $white;
+$c-tabs--dark__link-hover-background:           lighten($teal,20);
+$c-tabs--dark__link-hover-color:                $white;
+
 
 // Tag
+// component/_tag.scss
 $c-tag-background-color:$pink;
 $c-tag-background-color-hover:darken($pink,5);
 $c-tag-background-color-alt1:darken($pink,10);
@@ -465,6 +519,7 @@ $c-tag-color:$light;
 $c-tag-color-hover:darken($light,5);
 
 // Utility navigation
+// component/_utility-nav.scss
 $c-utility-nav__link-color:                    $charcoal;
 $c-utility-nav__link-hover-color:              $blue;
 $c-utility-nav__link-is-open-color:            $light;
@@ -474,7 +529,7 @@ $c-utility-nav__sublink-color:                 $light;
 $c-utility-nav__sublink-hover-color:           lighten($blue, 10);
 
 // Video
-
+// component/_video.scss
 
 // OBJECT COLOR VARIABLES
 
