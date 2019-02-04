@@ -1,0 +1,110 @@
+//
+// SAMPLE THEME
+//
+
+// Colours
+// Panel background
+$t-main: #900;
+// Links, Panel border
+$t-main-highlight:#c00;
+// Dark (e.g. alt1 row)
+$t-alt1: #900;
+$t-alt1-highlight: #c00;
+// Darker (e.g. alt2 row)
+$t-alt2: #966;
+$t-alt2-highlight: #633;
+// Light (e.g. alt3 row)
+$t-alt3: #fee;
+$t-alt3-highlight: #c66;
+
+$t-btn: #333;
+$t-btn-color: $light;
+$t-btn-hover:lighten($t-btn, 5);
+$t-btn-active:lighten($t-btn, 10);
+$t-btn-focus:darken($t-btn, 10);
+
+// To set overall tone (e.g. to get light or dark version of logo)
+//$t-tone: 'dark'; // or 'light'
+/*
+.t-foi {
+  a {
+    color:darken($t-main-highlight, 10);
+    &:hover {
+      color:$t-main-highlight;
+    }
+  }
+  .c-panel--highlight {
+    background-color:$t-main;
+  }
+  .c-signpost__icon {
+    color:$t-main;
+  }
+  .c-nav__link,
+  .c-nav__item a {
+    // color:$c-nav__link-color;
+    &:hover {
+      background-color:$t-main;
+    }
+  }
+  .c-nav.is-open {
+    .c-nav__link,
+    .c-nav__item a {
+      &:hover {
+        color:lighten($t-main,10);
+      }
+    }
+  }
+  .c-nav__item--more .c-nav__link {
+    background-color:$t-main-highlight;
+  }
+  .c-panel--highlight {
+    border-color: $t-main-highlight;
+  }
+  .c-footer-main {
+    border-top-color: $t-main-highlight;
+  }
+  .c-nav {
+    border-bottom-color:$t-main-highlight;
+  }
+  // This feels very clunky
+  .c-figure__caption--blue {
+    background-color: $t-main-highlight;
+    background-color: transparentize($t-main-highlight, 0.25);
+  }
+  .o-grid__row--alt1,
+  .o-grid__row--alt1:before,
+  .o-grid__row--alt1:after {
+    background-color: $t-alt1;
+  }
+  .o-grid__row--alt2,
+  .o-grid__row--alt2:before,
+  .o-grid__row--alt2:after {
+    background-color: $t-alt2;
+  }
+  .o-grid__row--alt3,
+  .o-grid__row--alt3:before,
+  .o-grid__row--alt3:after {
+    background-color: $t-alt3;
+  }
+  .c-btn {
+    color:$t-btn-color;
+    background-color:$t-btn;
+    border-color:$t-btn;
+    &:hover {
+      color: $t-btn-color;
+      background-color: $t-btn-hover;
+    }
+    &:active {
+      color: $t-btn-color;
+      background-color: $t-btn-active;
+    }
+    &:focus {
+      color: $t-btn-color;
+      background-color: $t-btn-focus;
+    }
+    &:hover {
+
+    }
+  }
+}
+*/
