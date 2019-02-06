@@ -21,10 +21,10 @@
   <header class="c-main-header" role="banner">
     <div class="o-wrapper o-grid">
       <div class="o-grid__row">
-        <div class="o-grid__box o-grid__box--threequarters">
+        <div class="o-grid__box o-grid__box--threequarters o-grid__box--threequarters@medium o-grid__box--threequarters@small o-grid__box--threequarters@tiny">
           <h2 class="c-main-header__title"><img class="c-main-header__logo" src="/img/foi-logo.svg" alt="Festival of Ideas logo" width="264" height="41"></h2>
         </div>
-        <div class="o-grid__box o-grid__box--quarter is-hidden@medium-">
+        <div class="o-grid__box o-grid__box--quarter  o-grid__box--quarter@medium o-grid__box--quarter@small o-grid__box--quarter@tiny">
           <form action="http://yorkfestivalofideas.com/2019/search/" method="get" class="c-form c-form--joined c-form--header">
             <fieldset>
               <div class="c-form__element">
@@ -34,10 +34,10 @@
               </div>
             </fieldset>
           </form>
+          <!-- Mobile search -->
+          <a href="#" class="c-mobile-search-button js-toggle-button"><i class="c-icon c-icon--search"></i></a>
         </div>
       </div>
-      <!-- Mobile search -->
-      <a href="#" class="c-mobile-search-button js-toggle-button"><i class="c-icon c-icon--search"></i></a>
     </div>
   </header>
   <form action="http://yorkfestivalofideas.com/2019/search/" method="get" class="c-form c-form--joined c-form--mobile-search" id="Mobile-Search">
@@ -77,6 +77,7 @@
       <li class="c-nav__item"><a href="#">Exhibitions</a></li>
       <li class="c-nav__item"><a href="#">Calendar of events</a></li>
       <li class="c-nav__item"><a href="#">Venues</a></li>
+      <li class="c-nav__item c-nav__item--more"><a class="c-nav__link js-toggle-button" href="#Main-Navigation">More…</a></li>
     </ul>
   </nav>
   <!-- Breadcrumb -->
@@ -85,33 +86,35 @@
   </div>
   <div class="o-wrapper o-wrapper--main o-wrapper--wide o-grid">
     <div class="o-grid__row">
-      <h2 style="padding-left:40px;">Hero figure</h2>
-      <figure class="c-hero">
-          <div class="c-hero-background" style="background-image:url('https://unsplash.it/2400/1200/?image=395');">
-          <div class="c-hero__content c-figure__content--bottom-centre">
-            <div class="c-hero__caption  c-figure__caption--bottom-centre">
-              <div class="o-grid">
-                <div class="o-grid__row">
-                  <div class="o-grid__box o-grid__box--half">
-                    <h1>A World of Wonder</h1>
-                    <p>York Festival of Ideas 2019 will take place from 4 to 16 June under the banner of A World of Wonder.</p>
-                    <p><a href="#" class="c-btn c-btn--medium">Book your tickets <i class="c-icon c-icon--ticket c-icon-after"></i></a></p>
+      <div class="o-grid__box o-grid__box--full">
+        <h2 style="padding-left:40px;">Hero figure</h2>
+        <figure class="c-hero">
+            <div class="c-hero-background" style="background-image:url('https://unsplash.it/2400/1200/?image=395');">
+            <div class="c-hero__content c-figure__content--bottom-centre">
+              <div class="c-hero__caption  c-figure__caption--bottom-centre">
+                <div class="o-grid">
+                  <div class="o-grid__row">
+                    <div class="o-grid__box o-grid__box--half">
+                      <h1>A World of Wonder</h1>
+                      <p>York Festival of Ideas 2019 will take place from 4 to 16 June under the banner of A World of Wonder.</p>
+                      <p><a href="#" class="c-btn c-btn--medium">Book your tickets <i class="c-icon c-icon--ticket c-icon-after"></i></a></p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </figure>
-      <h2 style="padding-left:40px;">Full-width figure</h2>
-      <figure class="c-figure c-figure--banner c-figure--full-width">
-        <img class="c-figure__image" src="https://unsplash.it/1200/600/?image=909">
-        <div class="c-figure__content c-figure__content--left c-figure__content--half">
-          <h3>Here's some content</h3>
-          <p>Here is some content. The height of the banner will fit to the content size.</p>
-          <a class="c-btn c-btn--medium c-btn--block c-btn--primary" href="#">Click here for more</a></div>
-        </div>
-      </figure>
+        </figure>
+        <h2 style="padding-left:40px;">Full-width figure</h2>
+        <figure class="c-figure c-figure--banner c-figure--full-width">
+          <img class="c-figure__image" src="https://unsplash.it/1200/600/?image=909">
+          <div class="c-figure__content c-figure__content--left c-figure__content--half">
+            <h3>Here's some content</h3>
+            <p>Here is some content. The height of the banner will fit to the content size.</p>
+            <a class="c-btn c-btn--medium c-btn--block c-btn--primary" href="#">Click here for more</a></div>
+          </div>
+        </figure>
+      </div>
     </div>
   </div>
   <div class="o-wrapper o-wrapper--main o-grid js-wrapper--main">

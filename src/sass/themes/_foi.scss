@@ -2,9 +2,13 @@
 // SAMPLE THEME
 //
 
+// Font
+@import url('https://fonts.googleapis.com/css?family=Lora|Raleway');
+
 // Colours
 // Panel background
-$t-main: #900;
+$t-main: #9d187c;
+/*
 // Links, Panel border
 $t-main-highlight:#c00;
 // Dark (e.g. alt1 row)
@@ -22,11 +26,35 @@ $t-btn-color: $light;
 $t-btn-hover:lighten($t-btn, 5);
 $t-btn-active:lighten($t-btn, 10);
 $t-btn-focus:darken($t-btn, 10);
+*/
 
-// To set overall tone (e.g. to get light or dark version of logo)
-//$t-tone: 'dark'; // or 'light'
-/*
 .t-foi {
+
+  // Updated fonts
+  &,select,textarea,input {
+    font-family: 'Raleway', sans-serif;
+  }
+  h1,h2,h3,h4,h5,h6 {
+    font-family: 'Lora', serif;
+    text-transform: none;
+  }
+  caption,
+  .c-blockquote--pull-quote .c-blockquote__content,
+  .c-blockquote--image-quote .c-blockquote__content {
+    font-family: 'Lora', serif;
+  }
+
+  // Colours
+  .c-nav,
+  th,
+  td {
+    border-bottom-color:$t-main;
+  }
+  .c-nav__item--more .c-nav__link {
+    background-color: $t-main;
+  }
+}
+/*
   a {
     color:darken($t-main-highlight, 10);
     &:hover {
