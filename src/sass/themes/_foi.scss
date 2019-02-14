@@ -20,13 +20,10 @@ $t-dark-contrast: $teal;
 
 // Dark (e.g. alt1 row)
 $t-alt1: $t-dark-contrast;
-$t-alt1-highlight: #c00;
 // Darker (e.g. alt2 row)
 $t-alt2: $t-dark-neutral;
-$t-alt2-highlight: #633;
 // Light (e.g. alt3 row)
 $t-alt3: #dedede;
-$t-alt3-highlight: #c66;
 
 $t-btn: $t-main-highlight;
 $t-btn-color: $light;
@@ -34,10 +31,43 @@ $t-btn-hover:lighten($t-btn, 5);
 $t-btn-active:lighten($t-btn, 10);
 $t-btn-focus:darken($t-btn, 10);
 
-
 .t-foi {
 
-  // Colours
+  // Elements
+  a {
+    color:darken($t-main-highlight, 10);
+    &:hover {
+      color:$t-main-highlight;
+    }
+  }
+  th {
+    border-bottom-color: $t-main;
+    color:$charcoal;
+  }
+  td {
+    border-bottom-color: $t-main;
+  }
+
+  // Logo size
+  .c-main-header__logo {
+    width: 135px;
+    @include mq(tiny) {
+      width: 90px;
+    }
+  }
+  // Header search
+  .c-form--header {
+    margin-top: 57px;
+  }
+  .c-mobile-search-button {
+    margin-top:47px;
+    color:$t-main-highlight;
+    @include mq(tiny) {
+      margin-top:44px;
+    }
+  }
+
+  // Page title
   .c-page-title,
   .c-page-title__wrapper {
     background-color: $white;
@@ -48,12 +78,13 @@ $t-btn-focus:darken($t-btn, 10);
       color:$t-main;
     }
   }
-  .c-nav,
-  {
+
+  // Navigation
+  .c-nav {
     background-color: $white;
     border-top-color:$white;
+    border-bottom-color:$t-main-highlight;
   }
-
   .c-nav__item {
     border-width: 0;
     font-weight: bold;
@@ -90,36 +121,27 @@ $t-btn-focus:darken($t-btn, 10);
       background-color:$t-main-highlight;
     }
   }
-  .c-mobile-search-button {
-    color:$t-main-highlight;
-  }
-
-
-  a {
-    color:darken($t-main-highlight, 10);
+  .c-subnav__item a {
+    color:$charcoal;
     &:hover {
-      color:$t-main-highlight;
+      color: $t-main-highlight;
     }
   }
 
-  th {
-    border-bottom-color: $t-main;
-    color:$charcoal;
-  }
-  td {
-    border-bottom-color: $t-main;
-  }
-
+  // Signposts
   .c-signpost__icon {
     color:$t-main;
   }
 
+  // Breadcrumb
   .c-breadcrumb a {
     color:$charcoal;
     &:hover{
       color:$t-main-highlight;
     }
   }
+
+  // Panel
   .c-panel {
     background-color:$white;
     border-color:$t-main;
@@ -127,7 +149,6 @@ $t-btn-focus:darken($t-btn, 10);
     border-left-width:1px;
     border-right-width:1px;
     border-bottom-width:1px;
-
   }
   .c-panel__content {
     color:$t-dark-neutral;
@@ -146,6 +167,7 @@ $t-btn-focus:darken($t-btn, 10);
     }
   }
 
+  // Block links
   .c-block-link {
     background-color:$white;
     border-color:$pink;
@@ -155,38 +177,32 @@ $t-btn-focus:darken($t-btn, 10);
     border-bottom-width:1px;
   }
 
+  // Footer
   .c-footer-main {
     border-top-color: $t-main-highlight;
     a {
       color: $light;
     }
   }
-  .c-nav {
-    border-bottom-color:$t-main-highlight;
-  }
-  .c-subnav__item a {
-    color:$charcoal;
-    &:hover {
-      color: $t-main-highlight;
-    }
-  }
-  // This feels very clunky
-  .c-figure__caption--blue {
-    background-color: $t-main-highlight;
-    background-color: transparentize($t-main-highlight, 0.25);
-  }
-  .c-figure__caption {
-    background-color: $t-dark-neutral;
-    background-color: transparentize($t-dark-neutral, 0.25);
-  }
+
+  // Figures
+  .c-figure__caption--blue,
+  .c-figure__caption,
   .c-figure__content {
     background-color: $t-dark-neutral;
     background-color: transparentize($t-dark-neutral, 0.25);
+  }
+  @include mq(tiny, '~') {
+    .c-figure--link .c-figure__content {
+      background-color: $t-dark-neutral;
+    }
   }
   .c-figure--link:hover .c-figure__content {
     background-color: $t-main-highlight;
     background-color: transparentize($t-main-highlight, 0.25);
   }
+
+  // Grid rows
   .o-grid__row--alt1,
   .o-grid__row--alt1:before,
   .o-grid__row--alt1:after {
@@ -202,6 +218,8 @@ $t-btn-focus:darken($t-btn, 10);
   .o-grid__row--alt3:after {
     background-color: $t-alt3;
   }
+
+  // Buttons
   .c-btn {
     color:$t-btn-color;
     background-color:$t-btn;
@@ -222,12 +240,16 @@ $t-btn-focus:darken($t-btn, 10);
 
     }
   }
+
+  // Listings
   .c-listings-item {
     border-bottom-color: $t-main-highlight;
   }
   .c-listings-item__title {
     color:$t-main;
   }
+
+  // News
   .c-news--excerpt .c-news__title {
     color:$t-dark-neutral;
   }
@@ -235,6 +257,7 @@ $t-btn-focus:darken($t-btn, 10);
     color:$t-main-highlight;
   }
 
+  // Key facts
   .c-key-fact__icon {
     color:$t-main;
   }
@@ -272,7 +295,7 @@ $t-btn-focus:darken($t-btn, 10);
       .c-key-fact__title {
         color: $light;
         strong {
-            color: lighten($light,5);
+          color: lighten($light,5);
         }
       }
       .c-key-fact__icon {
@@ -285,25 +308,34 @@ $t-btn-focus:darken($t-btn, 10);
     }
   }
 
+  // Blockquotes
   .c-blockquote--image-quote .c-blockquote__content {
     background-color: $t-main;
   }
   .c-blockquote--image-quote .c-blockquote__image + .c-blockquote__content:after {
     border-top-color: $t-main;
+    @include mq(tiny, '~') {
+      // When the arrow goes to the top
+      border-color:$t-main transparent;
+    }
   }
   .c-blockquote--pull-quote .c-blockquote__content {
     color: $t-dark-neutral;
   }
 
+  // Accordions
   .c-accordion__item {
     border-color: $t-main;
   }
 
+  // A to Z/Pagination
   .c-atoz__nav-link:hover, .c-pagination__page:hover, .c-pagination__page--current {
     color: $white;
     background-color: $t-main-highlight;
     border-color: $t-main-highlight;
   }
+
+  // Tabs
   .c-tabs__link:hover {
     background-color: $t-main-highlight;
     color: $light;
@@ -311,6 +343,8 @@ $t-btn-focus:darken($t-btn, 10);
   .c-tabs--vertical .c-tabs__tab.is-active .c-tabs__link {
     background-color: $t-main;
   }
+
+  // Tags
   .c-tag, .c-tag-list a, .c-tag-list .u-link {
     color: $light;
   }

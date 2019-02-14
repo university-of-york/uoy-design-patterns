@@ -71,6 +71,7 @@
 .c-figure__image,
 .c-figure img {
   display:block;
+  z-index:10;
   @include mq(small, '+') {
     width:100%;
   }
@@ -101,6 +102,7 @@
   background:$c-figure__caption-transparent;
   color:$c-figure__caption-color;
   padding:$base-spacing/2 $base-spacing;
+  z-index:12;
   @include mq(small, '-') {
     // position:static;
     // max-width:100%;
@@ -178,6 +180,7 @@
   left:$base-spacing;
   display:inline-block;
   position:absolute;
+  z-index:14; // image = 10, caption = 12, content = 14
   background:$c-figure__content-solid;
   background:$c-figure__content-transparent;
   color:$c-figure__content-color;
@@ -326,7 +329,6 @@
     padding:0;
   }
   .c-figure__image {
-    z-index:10;
     width:auto;
     height:auto;
     min-width:100%;
@@ -347,7 +349,6 @@
   }
   .c-figure__content {
     position:relative;
-    z-index:12;
     max-width:50%;
     top:auto;
     right:auto;
@@ -356,9 +357,6 @@
     @include mq('small', '-') {
       max-width:none;
     }
-  }
-  .c-figure__caption {
-    z-index:12;
   }
   .c-figure__content--left,
   .c-figure__content--bottom-left,
