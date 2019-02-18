@@ -1,9 +1,7 @@
 //
 // BLOCKQUOTES
 //
-$c-blockquote__image-size:120px;
-// How much should the image shrink?
-$c-blockquote__image-tiny-ratio:0.75;
+
 @mixin quote-block() {
   content:'';
   display:block;
@@ -72,7 +70,7 @@ $c-blockquote__image-tiny-ratio:0.75;
     }
     .o-grid__row--alt1 &,
     .o-grid__row--alt2 & {
-      color:#fff;
+      color:$c-blockquote__content--alt-1-2-color
     }
   }
   .c-blockquote__cite {
@@ -158,10 +156,10 @@ $c-blockquote__image-tiny-ratio:0.75;
   font-style: normal;
   display:block;
   margin-top:$base-spacing/2;
-  color:$charcoal;
+  color:$c-blockquote__cite-color;
   .o-grid__row--alt1 &,
   .o-grid__row--alt2 & {
-    color:$light;
+    color:$c-blockquote__cite-color--alt;
   }
 }
 .c-blockquote__image--right ~ .c-blockquote__cite {

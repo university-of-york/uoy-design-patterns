@@ -71,6 +71,7 @@
 .c-figure__image,
 .c-figure img {
   display:block;
+  z-index:10;
   @include mq(small, '+') {
     width:100%;
   }
@@ -97,10 +98,11 @@
   @include image-caption;
   @include font-size(14px);
   max-width:50%;
-  background:$blue;
-  background:transparentize($blue, 0.15);
-  color:$light;
+  background:$c-figure__caption-solid;
+  background:$c-figure__caption-transparent;
+  color:$c-figure__caption-color;
   padding:$base-spacing/2 $base-spacing;
+  z-index:12;
   @include mq(small, '-') {
     // position:static;
     // max-width:100%;
@@ -112,15 +114,15 @@
 .c-figure__caption--below {
   display: block;
   position: static;
-  background: transparent;
-  color:lighten($charcoal,20);
+  background: $c-figure__caption--below-background;
+  color: $c-figure__caption--below-color;
   padding: $base-spacing/2 0;
   max-width: $container-width;
   margin-left: auto;
   margin-right: auto;
   .o-grid__row--alt1 &,
   .o-grid__row--alt2 & {
-    color:darken($light,20);
+    color:$c-figure__caption--below-alt-color;
   }
   .c-figure--full-width & {
     padding-left:$base-spacing/2;
@@ -147,7 +149,7 @@
 }
 .c-figure__caption--bottom-centre {
   bottom: 0;
- 
+
 }
 .c-figure__caption--top-centre {
   top: 0;
@@ -178,20 +180,21 @@
   left:$base-spacing;
   display:inline-block;
   position:absolute;
-  background:$teal;
-  background:transparentize($teal, 0.15);
-  color:$light;
+  z-index:14; // image = 10, caption = 12, content = 14
+  background:$c-figure__content-solid;
+  background:$c-figure__content-transparent;
+  color:$c-figure__content-color;
   h2, h3, h4, h5 {
     line-height:1;
   }
   a {
-    color:lighten($blue,10);
+    color:$c-figure__content-link-color;
     &:hover {
-      color:lighten($blue,25);
+      color:$c-figure__content-link-hover-color;
     }
   }
   @include mq('small', '-') {
-    background:$teal;
+    background:$c-figure__content-solid;
     .o-grid__box--half\@small &,
     .o-grid__box--third\@small & {
       h3 {
@@ -235,9 +238,7 @@
 .c-figure__content--bottom-centre {
   top:auto;
   right:auto;
-  bottom:0!important;
   left:auto;
-  position: absolute!important;
 }
 .c-figure__content--top-right {
   top:$base-spacing;
@@ -287,24 +288,24 @@
 }
 // Content colours
 .c-figure__content--blue {
-  background-color:$blue;
-  background-color:transparentize($blue, 0.25);
+  background-color:$c-figure__content--blue-solid;
+  background-color:$c-figure__content--blue-transparent;
 }
 .c-figure__content--pink {
-  background-color:$pink;
-  background-color:transparentize($pink, 0.25);
+  background-color:$c-figure__content--pink-solid;
+  background-color:$c-figure__content--pink-transparent;
 }
 .c-figure__content--teal {
-  background-color:$teal;
-  background-color:transparentize($teal, 0.25);
+  background-color:$c-figure__content--teal-solid;
+  background-color:$c-figure__content--teal-transparent;
 }
 .c-figure__content--gold {
-  background-color:$gold;
-  background-color:transparentize($gold, 0.25);
+  background-color:$c-figure__content--gold-solid;
+  background-color:$c-figure__content--gold-transparent;
 }
 .c-figure__content--charcoal {
-  background-color:$charcoal;
-  background-color:transparentize($charcoal, 0.25);
+  background-color:$c-figure__content--charcoal-solid;
+  background-color:$c-figure__content--charcoal-transparent;
 }
 
 // DEMARGINED FIGURE (SO STICKY NAV CAN BE CLOSER)
@@ -328,7 +329,6 @@
     padding:0;
   }
   .c-figure__image {
-    z-index:10;
     width:auto;
     height:auto;
     min-width:100%;
@@ -349,7 +349,6 @@
   }
   .c-figure__content {
     position:relative;
-    z-index:12;
     max-width:50%;
     top:auto;
     right:auto;
@@ -358,9 +357,6 @@
     @include mq('small', '-') {
       max-width:none;
     }
-  }
-  .c-figure__caption {
-    z-index:12;
   }
   .c-figure__content--left,
   .c-figure__content--bottom-left,
@@ -387,19 +383,19 @@
       position:static;
       display:block;
       &.c-figure__content--blue {
-        background-color:$blue;
+        background-color:$c-figure__content--blue-solid;
       }
       &.c-figure__content--pink {
-        background-color:$pink;
+        background-color:$c-figure__content--pink-solid;
       }
       &.c-figure__content--teal {
-        background-color:$teal;
+        background-color:$c-figure__content--teal-solid;
       }
       &.c-figure__content--gold {
-        background-color:$gold;
+        background-color:$c-figure__content--gold-solid;
       }
       &.c-figure__content--charcoal {
-        background-color:$charcoal;
+        background-color:$c-figure__content--charcoal-solid;
       }
 
     }

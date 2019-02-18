@@ -106,11 +106,9 @@
         top: 0;
         content: '';
         height: 100%;
-        //width: 0;
         width: 2px;
-        //box-shadow: 0 0 10px 8px rgba(64, 64, 64, 0.85);
-        box-shadow: -1px 0px 6px 12px rgba(232, 232, 232, 0.89);
-        background-color: #f0f1f4;
+        box-shadow: -1px 0px 6px 12px $c-nav--sticky-shadow;
+        background-color: $c-nav--sticky-background;
       }
 
     }

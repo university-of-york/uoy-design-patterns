@@ -3,22 +3,17 @@
 //
 .c-panel {
   @include component;
-  border-top:0.8em solid $c-panel-border-color;
-  background-color: $c-panel-background-color;
-  color:$charcoal;
+  border-top:0.8em solid $c-panel-border;
+  background-color: $c-panel-background;
+  color: $c-panel-color;
   border-radius:3px;
   display:block;
 }
 .c-panel__content {
   @include tiny-padding;
+  @include demarginalise;
   padding-top:$base-spacing;
   padding-bottom:$base-spacing;
-  :first-child {
-    margin-top:0;
-  }
-  :last-child {
-    margin-bottom:0;
-  }
   .c-panel__subheader + & {
     padding-top:0;
   }
@@ -27,9 +22,9 @@
 .c-panel__subheader,
 .c-panel__footer {
   @include demarginalise;
-  padding:0.4em 20px;
-  background:$s2;
-  color:$charcoal;
+  padding:0.4em $base-spacing;
+  background: $c-panel-background;
+  color: $c-panel-color;
 }
 .c-panel__image {
   img {
@@ -44,16 +39,16 @@
 }
 
 .c-panel--highlight {
-  background-color:$c-panel--highlight-background-color;
-  border-color:$c-panel--highlight-border-color;
-  color:$light;
+  background-color:$c-panel--highlight-background;
+  border-color:$c-panel--highlight-border;
+  color:$c-panel--highlight-color;
   & a {
-    color:$light;
+    color:$c-panel--highlight-color;
   }
 }
 
 .c-panel--link {
-  color:$charcoal;
+  color:$c-panel-color;
   text-decoration: none;
   .c-panel__more {
     color: $link-color;
@@ -61,19 +56,19 @@
     text-decoration:underline;
   }
   &:hover {
-    color:$charcoal;
+    color:$c-panel-color;
     .c-panel__more {
       color:$link-hover-color;
     }
   }
   &.c-panel--highlight {
-    color:$light;
+    color:$c-panel--highlight-color;
   }
   .o-grid__row--alt1 &,
   .o-grid__row--alt2 & {
-    color:$charcoal;
+    color:$c-panel-color;
     &:hover {
-      color:$charcoal;
+      color:$c-panel-color;
     }
   }
 }

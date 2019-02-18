@@ -10,7 +10,7 @@
 @function select_all_from($n, $selector) {
   $classes: ();
   @for $i from 1 through $n {
-    $className: if($i == 1, #{$selector}, #{"~ " + $selector});
+    $className: if($i == 1, unquote("#{$selector}"), unquote("#{"~ " + $selector}"));
     $classes: join($classes, unquote($className), space);
   }
   @return $classes;

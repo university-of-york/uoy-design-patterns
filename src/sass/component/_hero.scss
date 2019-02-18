@@ -14,7 +14,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #333;
+    background-color: $c-hero-background;
     @media only screen and (min-aspect-ratio: 16/9) {
       min-height:400px;
     }
@@ -39,7 +39,7 @@
 }
 
 .c-hero__content {
-    color: #fff;
+    color: $c-hero__content-color;
     position: absolute;
     left: 50%;
     right: 50%;
@@ -50,14 +50,14 @@
 }
 
 .c-hero__caption {
-  background:#000;
-  background:rgba(0,0,0,0.6)!important;
-  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5), rgba(0,0,0,0.7), #000)!important;
+  background:$c-hero__caption-background-solid;
+  background:$c-hero__caption-background-alpha !important;
+  background:$c-hero__caption-background-gradient !important;
   position:absolute;
   padding-top: $base-spacing*2;
+  padding-right: $base-spacing/2;
   padding-bottom: $base-spacing/4;
   padding-left: $base-spacing/2;
-  padding-right: $base-spacing/2;
   width: 100%;
   h1 {
     font-size: 32px;
