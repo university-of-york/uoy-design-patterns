@@ -11,7 +11,7 @@
   overflow:hidden;
   list-style:none;
   position:relative;
-  z-index:10;
+  z-index:8;
 }
 .c-tabs--horizontal {
   .c-tabs__nav {
@@ -27,7 +27,7 @@
     }
     &.is-active {
       .c-tabs__link {
-        border-bottom:1px solid #fff;
+        border-bottom:1px solid $c-tabs-background;
       }
     }
   }
@@ -47,8 +47,8 @@
     }
     &.is-active {
       .c-tabs__link {
-        background-color: $blue;
-        color:$light;
+        background-color: $c-tabs--vertical__tab-active__link-background;
+        color:$c-tabs--vertical__tab-active__link-color;
       }
     }
   }
@@ -72,17 +72,17 @@
 .c-tabs__tab {
   &.is-active {
     .c-tabs__link {
-      background:#fff;
-      color:$charcoal;
+      background:$c-tabs-background;
+      color:$c-tabs-color;
       cursor:default;
     }
   }
 }
 .c-tabs__link {
   @include transition('background-color');
-  border:1px solid $s1;
-  background:darken($light, 5);
-  color:$teal;
+  background:$c-tabs__link-background;
+  border:1px solid $c-tabs-border;
+  color:$c-tabs__link-color;
   display:block;
   font-weight: bold;
   padding: 0.75em 0;
@@ -90,20 +90,20 @@
   text-decoration: none;
   vertical-align: top;
   &:hover{
-    background-color:darken($blue,20);
-    color:$light;
+    background-color:$c-tabs__link-hover-background;
+    color:$c-tabs__link-hover-color;
   }
   @include mq('small', '-') {
     font-size:14px;
   }
 }
 .c-tabs__container {
-  background:#fff;
-  border:1px solid $s1;
+  background:$c-tabs-background;
+  border:1px solid $c-tabs-border;
   padding:$base-spacing;
   clear:both;
   position:relative;
-  z-index:5;
+  z-index:4;
 }
 .c-tabs__content {
   @include demarginalise;
@@ -116,28 +116,32 @@
 
 .c-tabs--dark {
   .c-tabs__link {
-    background: lighten($teal,10);
-    border:1px solid lighten($teal,10);
-    border-bottom:1px solid $teal;
-    color:#fff;
+    background: $c-tabs--dark__link-background;
+    border:1px solid $c-tabs--dark__link-background;
+    border-bottom:1px solid $c-tabs--dark-border;
+    color:$c-tabs--dark__link-color;
+    &:hover{
+      background-color:$c-tabs--dark__link-hover-background;
+      color:$c-tabs--dark__link-hover-color;
+    }
   }
   .c-tabs__container {
-    border:1px solid $teal;
-    background:$teal;
-    color:#fff;
+    border:1px solid $c-tabs--dark-border;
+    background:$c-tabs--dark-background;
+    color:$c-tabs--dark-color;
     & li a {
-      color: #fff;
+      color: $c-tabs--dark-color;
       &:hover {
-        color:$link-hover-color;
+        color: $link-hover-color;
       }
     }
   }
   .c-tabs__tab {
     &.is-active {
       .c-tabs__link {
-        background:$teal;
-        border:1px solid $teal;
-        color:#fff;
+        background:$c-tabs--dark-background;
+        border:1px solid $c-tabs--dark-border;
+        color:$c-tabs--dark-color;
         cursor:default;
       }
     }

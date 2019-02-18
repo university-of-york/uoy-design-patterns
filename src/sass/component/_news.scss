@@ -1,21 +1,20 @@
 //
 // NEWS
 //
-$thumbnail_size:100px;
 .c-news {
   @include component;
   display:block;
   width:100%;
   text-decoration:none;
-  color:$charcoal;
+  color:$c-news-color;
   &:hover {
-    color:$charcoal;
+    color:$c-news-color;
   }
   .o-grid__row--alt1 &,
   .o-grid__row--alt2 & {
-    color:$light;
+    color:$c-news-color-alt;
     &:hover {
-      color:$light;
+      color:$c-news-color-alt;
     }
   }
 }
@@ -31,11 +30,10 @@ $thumbnail_size:100px;
     padding-bottom:$base-spacing;
     background-color: #fff;
     @include mq(tiny, '-') {
-      padding-top:10px;
+      padding-top:$base-spacing/2;
     }
   }
 }
-
 .c-news__title {
   .c-news--excerpt & {
     @include font-size(22px, 1.1);
@@ -67,7 +65,6 @@ $thumbnail_size:100px;
 }
 .c-news__category {
   .c-news--excerpt & {
-    //color:$teal;
   }
 }
 .c-news__meta {
@@ -85,10 +82,10 @@ $thumbnail_size:100px;
     @include font-size(14px);
     display:block;
     margin-bottom:$base-spacing/4;
-    color:lighten($charcoal,30);
+    color:$c-news--listing__date-color;
     .o-grid__row--alt1 &,
     .o-grid__row--alt2 & {
-      color:darken($light,30);
+      color:$c-news--listing__date-color-alt;
     }
 
   }
@@ -99,7 +96,7 @@ $thumbnail_size:100px;
 }
 .c-news__event-date {
   @include font-size(14px);
-  margin-bottom:10px;
+  margin-bottom:$base-spacing/2;
   color:$c-news--event__meta-color;
   font-weight: bold;
 }
@@ -107,7 +104,7 @@ $thumbnail_size:100px;
   .c-news--excerpt & {
     @include demarginalise;
     @include font-size(14px);
-    color:lighten($charcoal,5);
+    color:$c-news--excerpt__teaser-color;
     p {
       margin-bottom:$base-spacing/2;
     }
@@ -130,15 +127,15 @@ $thumbnail_size:100px;
   @include component-margin;
   padding:$base-spacing 0;
   font-style: italic;
-  color:lighten($charcoal,25);
-  border-top:1px solid $s3;
-  border-bottom:1px solid $s3;
+  color:$c-news__license-color;
+  border-top:1px solid $c-news__license-border;
+  border-bottom:1px solid $c-news__license-border;
 }
 .c-news__thumbnail {
-  width:$thumbnail_size;
+  width:$c-news__thumbnail-size;
   img {
     @include round;
-    max-width:$thumbnail_size;
+    max-width:$c-news__thumbnail-size;
   }
 }
 .c-news__poster {
