@@ -4,22 +4,16 @@
   "description": "This repository holds the design patterns used on the University of York's website (http://www.york.ac.uk).",
   "main": "gruntfile.js",
   "repository": "https://github.com/university-of-york/design-patterns",
-  "license": "MIT License",
+  "license": "MIT",
   "author": "University of York Digital Team (https://university-of-york.github.io/)",
   "contributors": [
     {
       "name": "Chris Marsh",
-      "email": "chris.marsh@york.ac.uk",
-      "url": "http://www-users.york.ac.uk/~cm1438/"
+      "email": "chris.marsh@york.ac.uk"
     },
     {
       "name": "Paul Kelly",
       "email": "paul.kelly@york.ac.uk"
-    },
-    {
-      "name": "Rob Kendal",
-      "email": "rob.kendal@york.ac.uk",
-      "url": "https://robkendal.co.uk"
     },
     {
       "name": "Dave Hill",
