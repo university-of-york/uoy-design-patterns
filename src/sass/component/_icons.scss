@@ -3,19 +3,28 @@
 //
 
 // Font-awesome variables
+$fa-font-path:        "../fonts" !default;
 $fa-font-size-base:   16px;
 $fa-css-prefix:       'c-icon-';
 $fa-inverse:          $c-icon--inverse-color;
 
-@import "icons/font-awesome";
+@import "icons/fontawesome";
+@import 'icons/shims'; // v4 compatibility
+@import "icons/brands";
+@import "icons/regular";
+@import "icons/solid";
 
 .c-icon {
   @extend .c-icon-;
+  @extend .fa;
   &:before {
     // width:$fa-font-size-base;
     height:$fa-font-size-base;
   }
 }
+
+
+
 @each $name, $size in $icons {
   .c-btn--#{$name} .c-icon:before,
   .c-icon--#{$name}:before {
@@ -23,7 +32,9 @@ $fa-inverse:          $c-icon--inverse-color;
     height: $size;
   }
 }
-.c-icon--hf { font-size: 0.5em; }
+.c-icon--hf {
+  font-size: 0.5em;
+}
 
 .c-icon--before {
   margin-right:0.4em;
