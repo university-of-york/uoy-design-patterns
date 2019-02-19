@@ -73,18 +73,50 @@ See the [Font Awesome docs](http://fontawesome.io/accessibility/) for more detai
 
 ### List of icons
 
-Here's a comprehensive list of icons, taken from [FontAwesome's cheatsheet](https://fontawesome.com/cheatsheet).
+Here's a comprehensive list of icons, taken from [FontAwesome's GitHub repo](https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/css/all.min.css).
+
+(The ones which appear as a square are the ones which require a `.fab` class with them - we need to figure out a way to automatically pull the right class in.)
+
+<ul id="icon-list"></ul>
 
 <script>
-function checkVariable(){
-  if (window.jQuery) {
-    console.log($);
+var request = new XMLHttpRequest();
+request.open('GET', 'https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/css/all.min.css', true);
+
+request.onload = function() {
+  if (this.status >= 200 && this.status < 400) {
+    var resp = this.response;
+    //Get all instances of e.g .fa-align-left:before{content:"\f036"}
+    var re = /\.fa-([a-z0-9-]*):before{content:\"\\f[0-9a-z]{3}\"}/g;
+    var matches = resp.match(re);
+    var iconList = document.getElementById('icon-list');
+    matches.forEach(function(item, i) {
+      var r = /\.fa-([a-z0-9-]*):before{content:\"\\f[0-9a-z]{3}\"}/g;
+      var result = r.exec(item);
+      console.log(item, result);
+      if (!result) return;
+      var li = document.createElement('li');
+      // <i class="c-icon c-icon--xxxxxxxx"></i>
+      var i = document.createElement('i');
+      i.classList.add('c-icon', 'c-icon--'+result[1], 'c-icon--before');
+      var p = document.createElement('p');
+      var t = document.createTextNode(result[1]);
+      p.appendChild(i);
+      p.appendChild(t);
+      li.appendChild(p);
+      iconList.appendChild(li);
+    });
+    
   } else {
-    window.setTimeout("checkVariable();",500);
+    console.log("Error fetching page")
   }
-}
-checkVariable();
-</script>
+};
+
+request.onerror = function() {
+    console.log("Connection error")
+};
+
+request.send();</script>
 
 ### Options
 

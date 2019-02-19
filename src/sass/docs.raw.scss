@@ -26,10 +26,6 @@
 
 // Lay out the icons nicely
 #icons-page {
-  // Headers after icons
-  i + h3 {
-    margin-top:28px;
-  }
   .o-wrapper--main .c-icon {
     width:96%;
     width:calc(100% - 24px);
@@ -58,6 +54,29 @@
     &.c-icon--inverse {
       background-color:$charcoal;
       border-color:$charcoal
+    }
+  }
+  #icon-list {
+    display:flex;
+    padding:0;
+    flex-wrap:wrap;
+    li{
+      margin-bottom:0;
+      width:20%;
+      list-style:none;
+      text-align:center;
+      padding:0 5px 20px;
+    }
+    p {
+      margin-bottom:0;
+    }
+    .c-icon {
+      width:auto;
+      border:none;
+      display:block;
+      &:after {
+        content:'';
+      }
     }
   }
 }
