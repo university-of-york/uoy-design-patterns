@@ -10,9 +10,9 @@ $fa-inverse:          $c-icon--inverse-color;
 
 @import "icons/fontawesome";
 @import 'icons/shims'; // v4 compatibility
-@import "icons/brands";
-@import "icons/regular";
 @import "icons/solid";
+@import "icons/regular";
+@import "icons/brands";
 
 .c-icon {
   @extend .c-icon-;
@@ -23,7 +23,14 @@ $fa-inverse:          $c-icon--inverse-color;
   }
 }
 
+.c-icon--brand {
+  @extend .fab;
+  font-weight:400;
+}
 
+.c-icon--regular {
+  @extend .far;
+}
 
 @each $name, $size in $icons {
   .c-btn--#{$name} .c-icon:before,
