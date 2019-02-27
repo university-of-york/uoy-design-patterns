@@ -7,7 +7,8 @@
 
   &__item {
     position: relative;
-    border: 1px solid $c-accordion__item-border;
+    // border: 1px solid $c-accordion__item-border;
+    border: 2px solid red;
     border-left-width: 10px;
     margin-bottom: $base-spacing/2;
   }
