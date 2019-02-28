@@ -7,8 +7,8 @@
 
   &__item {
     position: relative;
-    // border: 1px solid $c-accordion__item-border;
-    border: 2px solid red;
+    border: 1px solid $c-accordion__item-border;
+    // border: 2px solid red;
     border-left-width: 10px;
     margin-bottom: $base-spacing/2;
   }
@@ -20,6 +20,7 @@
     display: block;
     font-weight: bold;
     padding: $base-spacing/2 $base-spacing*2 $base-spacing/2 $base-spacing;
+    // padding: $base-spacing $base-spacing*4 $base-spacing $base-spacing*2;
     position: relative;
     text-decoration: none;
 
