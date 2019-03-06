@@ -1,0 +1,35 @@
+.c-image-group {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center; 
+    margin: 2em  0;
+}
+
+.c-image-group__link {
+    transition: transform .08s  linear;
+}
+
+.c-image-group__link:hover .c-image-group__item {
+    filter: opacity(.9);
+}
+
+.c-image-group__item {
+    align-self: center;
+    border: 0;
+    display: block;
+    flex-shrink:  0;
+    margin: 1em;
+    width: 180px;
+}
+
+@media ( min-width: 500px ) {
+    .c-image-group {
+        flex-direction: row;
+        max-width: 800px;
+    }
+    .c-image-group__item {
+        width: 220px;
+    }
+}
