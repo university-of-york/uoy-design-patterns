@@ -7,7 +7,7 @@
 
   &__item {
     position: relative;
-    border: 1px solid lighten($s1, 5);
+    border: 1px solid $c-accordion__item-border;
     border-left-width: 10px;
     margin-bottom: $base-spacing/2;
   }
@@ -23,7 +23,7 @@
     text-decoration: none;
 
     &:hover {
-      color: $blue;
+      color: $c-accordion__title-hover-color;
     }
   }
 

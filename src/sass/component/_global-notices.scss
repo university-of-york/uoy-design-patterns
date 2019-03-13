@@ -1,23 +1,23 @@
-/* ========================================================================== */
-/* Global notification area (to be abstracted to pattern-library and deleted */
-/* ========================================================================== */
+//
+// GLOBAL NOTICES
+//
 
 .c-global-notice {
   @include font-size(16px, 1.2);
-  background-color: $s1;
-  border-bottom:1px solid $grey;
-  color: #000;
+  background-color: $c-global-notice-background;
+  border-bottom:1px solid $c-global-notice-border;
+  color: $c-global-notice-color;
   text-align: center;
   padding: 15px;
-  z-index: 999;
+  z-index: 512;
   position: relative;
 
   &--highlighted {
-    background-color: $pink;
-    color: #fff;
+    background-color: $c-global-notice--highlighted-background;
+    color: $c-global-notice--highlighted-color;
 
     a {
-      color: #fff;
+      color: $c-global-notice--highlighted-color;
     }
   }
 

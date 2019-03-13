@@ -1,6 +1,5 @@
 # UNIVERSITY OF YORK DESIGN PATTERNS
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a81559c3781241548c272e75eb603c9f)](https://www.codacy.com/app/university-of-york/design-patterns?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=university-of-york/design-patterns&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://semaphoreci.com/api/v1/university-of-york/design-patterns/branches/dev/shields_badge.svg)](https://semaphoreci.com/university-of-york/design-patterns)
 
 This repository holds the design patterns used on the [University of York's website](http://www.york.ac.uk).

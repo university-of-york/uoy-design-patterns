@@ -1,7 +1,6 @@
 //
 // Listings
 //
-$thumbnail_size:100px;
 
 .c-listings {
     @include component;
@@ -12,10 +11,8 @@ $thumbnail_size:100px;
 
 .c-listings-item {
   $listings-item-selector: &;
-
-  border-bottom: 1px dotted $blue;
+  border-bottom: 1px dotted $c-listings-item-border-color;
   margin-bottom: $base-spacing;
-
   &:last-of-type  {
     // Remove border of the very last list item
     border-bottom: 0;
@@ -23,9 +20,9 @@ $thumbnail_size:100px;
 
   // Elements
   &__thumbnail {
-    width:$thumbnail_size;
+    width:$c-listings__thumbnail-size;
     img {
-      max-width:$thumbnail_size;
+      max-width:$c-listings__thumbnail-size;
       display:block; // Gets rid of any extra spacing around it
     }
   }
@@ -33,12 +30,12 @@ $thumbnail_size:100px;
   &__title {
       font-weight: 400;
       @include font-size(24px, 1.2);
-      color:$c-news--excerpt__title-color;
+      color:$c-listings__title-color;
       margin-top:0;
       margin-bottom:0;
 
       &:hover {
-        color:$c-news--excerpt__title-hover-color;
+        color:$c-listings__title-hover-color;
       }
 
       @include mq(large, '-') {
@@ -48,7 +45,7 @@ $thumbnail_size:100px;
 
   &__label {
     @include font-size(12px, 1.1);
-    color: $grey;
+    color: $c-listings__label-color;
     text-transform: uppercase;
     margin-top:0;
     margin-bottom:$base-spacing/3;
@@ -56,7 +53,7 @@ $thumbnail_size:100px;
 
   &__date {
     @include font-size(14px, 1.2);
-    color: lighten($charcoal,4);
+    color: $c-listings__date-color;
     margin-top:0;
     margin-bottom: $base-spacing;
   }
@@ -64,7 +61,7 @@ $thumbnail_size:100px;
   &__description {
       @include demarginalise;
       @include font-size(16px, 1.2);
-      color: #000;
+      color: $c-listings__description-color;
       margin-top:$base-spacing/4;
       margin-bottom:$base-spacing/2;
 
@@ -75,7 +72,7 @@ $thumbnail_size:100px;
 
   &__url {
       @include font-size(14px, 1.1);
-      color: $grey;
+      color: $c-listings__url-color;
       text-decoration: none;
   }
 

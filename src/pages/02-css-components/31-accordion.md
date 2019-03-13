@@ -210,32 +210,32 @@ component("accordion", { "atoms": [
     "id": "accordion-4e",
     "content": "<p>Throttle the bandwidth in Chrome Dev Tools in order to make these images load slowly.</p>"+
                "<p><img src=\"../media/massive-image.jpg\" alt=\"\" /> "+
-               "<p><img src=\"https://unsplash.it/100/100/?image=200\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=201\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=202\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=203\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=204\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=206\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=208\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=209\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=210\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=211\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=212\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=213\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=214\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=215\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=216\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=217\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=218\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=219\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=220\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=221\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=222\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=223\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=225\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=227\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=228\" alt=\"\" /> "+
-               "<img src=\"https://unsplash.it/100/100/?image=229\" alt=\"\" /> </p>"
+               "<p><img src=\"https://picsum.photos/100/100/?image=200\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=201\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=202\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=203\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=204\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=206\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=208\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=209\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=210\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=211\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=212\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=213\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=214\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=215\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=216\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=217\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=218\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=219\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=220\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=221\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=222\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=223\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=225\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=227\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=228\" alt=\"\" /> "+
+               "<img src=\"https://picsum.photos/100/100/?image=229\" alt=\"\" /> </p>"
   } },
 ] } );
 </script>

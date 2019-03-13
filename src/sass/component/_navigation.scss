@@ -39,8 +39,8 @@
   @include transition;
   overflow:visible;
   // text-align:center;
-  background-color:$s3;
-  border-bottom-color: #fff;
+  background-color:$c-nav--sticky-background;
+  border-bottom-color: $c-nav--sticky-border;
   border-bottom-width:2px;
   border-top-width:0;
   height:70px; // this number is a guess
@@ -54,7 +54,7 @@
     left:0;
     z-index:64;
     width:100%;
-    border-bottom-color:darken($s3,15);
+    border-bottom-color:$c-nav--sticky-is-sticky-border;
   }
   &.is-centered {
     .c-nav__list {
@@ -78,8 +78,8 @@
     position:relative;
   }
   .c-nav__link {
-    border-bottom: 5px solid darken($s3,15);
-    color:lighten($charcoal,10);
+    border-bottom: 5px solid $c-nav--sticky__link-border;
+    color:$c-nav--sticky__link-color;
     font-weight:bold;
   }
   .c-nav__item {
@@ -97,22 +97,21 @@
       }
       @include mq(medium, '+') {
         &:hover {
-          border-bottom: 5px solid $blue; // gets around a weird sticky hover issue on mobiles
+          border-bottom: 5px solid $c-nav--sticky__link-border-hover; // gets around a weird sticky hover issue on mobiles
         }
       }
-
       &:hover {
-        background-color: $s3;
-        color: $charcoal;
+        background-color: $c-nav--sticky__link-background;
+        color: $c-nav--sticky__link-color;
       }
     }
     &.is-current {
       .c-nav__link,
       // We can't add classes to 'a' tags in Site Manager
       a {
-        background-color:$s3;
-        border-bottom: 5px solid $teal;
-        color:$charcoal;
+        background-color:$c-nav--sticky__link-is-current-background;
+        color:$c-nav--sticky__link-is-current-color;
+        border-bottom: 5px solid $c-nav--sticky__link-is-current-border;
       }
     }
   }
@@ -174,7 +173,7 @@
     margin-top:0;
   }
   .c-subnav__link, a {
-    color:$teal;
+    color:$c-subnav__link-clor; // Why wuold there be a subnav__link inside a nav__title?
   }
   .c-nav.is-open & {
     display:block;
