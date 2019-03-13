@@ -7,32 +7,32 @@
 }
 
 .c-utility-nav__list {
-  list-style:none;
-  margin:0 auto;
-  padding:0;
-  max-width:$container-width;
-  width:100%;
-  text-align:right;
-  position:relative;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: $container-width;
+  width: 100%;
+  text-align: right;
+  position: relative;
   @include mq(tiny, '-') {
-    text-align:left;
+    text-align: left;
   }
 }
 
 .c-utility-nav__item {
-  display:inline-block;
-  position:relative;
-  margin-top:0;
-  margin-bottom:0;
-  font-size:14px;
+  display: inline-block;
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 14px;
   @include mq(tiny, '-') {
     &:first-of-type {
       // So text lines up with edge of box
       .c-utility-nav__link {
-        margin-left:-$base-spacing/4;
+        margin-left: -$base-spacing/4;
       }
       .c-utility-nav__subnav {
-        left:-$base-spacing/4;
+        left: -$base-spacing/4;
       }
     }
   }
@@ -40,41 +40,41 @@
 
 .c-utility-nav__link {
   @include transition('color');
-  display:block;
-  position:relative;
-  padding:0.5em $base-spacing/2;
-  font-weight:bold;
-  text-decoration:none;
-  color:$c-utility-nav__link-color;
+  display: block;
+  position: relative;
+  padding: 0.5em $base-spacing/2;
+  font-weight: bold;
+  text-decoration: none;
+  color: $c-utility-nav__link-color;
   &:hover {
-    color:$c-utility-nav__link-hover-color;
+    color: $c-utility-nav__link-hover-color;
   }
   .c-utility-nav__item.is-open &,
   &:focus {
-    color:$c-utility-nav__link-is-open-color;
-    background-color:$c-utility-nav__link-is-open-background-color;
+    color: $c-utility-nav__link-is-open-color;
+    background-color: $c-utility-nav__link-is-open-background-color;
   }
   .c-utility-nav__item--parent & {
-    padding-right:1.5em;
+    padding-right: 1.5em;
     &:after {
       @extend .c-icon;
-      position:absolute;
-      right:0.5em;
-      top:50%;
-      margin-top:-6px;
+      position: absolute;
+      right: 0.5em;
+      top: 50%;
+      margin-top: -6px;
       // Down arrow
       content: "\f0d7";
     }
     @include mq(tiny, '-') {
-      padding-right:1.1em;
+      padding-right: 1.1em;
       &:after {
-        right:0.3em;
+        right: 0.3em;
       }
     }
   }
   @include mq(tiny, '-') {
-    padding-left:$base-spacing/4;
-    padding-right:$base-spacing/4;
+    padding-left: $base-spacing/4;
+    padding-right: $base-spacing/4;
   }
   .c-utility-nav__item--parent.c-utility-nav__item.is-open &,
   .c-utility-nav__item--parent &:focus {
@@ -94,7 +94,7 @@
   min-width:100%;
   padding:$base-spacing/2;
   background-color:$c-utility-nav__subnav-background-color;
-  z-index:12; // Above mobile search
+  z-index:16; // Above mobile search
   .c-utility-nav__item.is-open &,
   .c-utility-nav__link:focus ~ & {
     display:block;

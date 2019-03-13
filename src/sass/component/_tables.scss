@@ -16,22 +16,22 @@ caption {
 
 th {
   @include demarginalise;
-  font-weight:bold;
-  text-align:left;
-  padding:10px;
+  font-weight: bold;
+  text-align: left;
+  padding: 10px;
   @include mq(tiny, '~') {
     @include font-size(14px);
-    padding:5px;
+    padding: 5px;
   }
-  color:$teal;
-  border-bottom:2px solid $blue;
-  line-height:1.2;
+  color: $table-th-color;
+  border-bottom: 2px solid $table-th-border;
+  line-height: 1.2;
 }
 
 tbody th {
-  background-color: $s3;
-  color:lighten($teal,5);
-  border-bottom: 1px dotted lighten($blue,15);
+  background-color: $table-tbody-th-background;
+  border-bottom: 1px dotted $table-td-border;
+  color: $table-tbody-th-color;
 }
 
 tbody tr:last-child th {
@@ -41,7 +41,7 @@ tbody tr:last-child th {
 td {
   @include demarginalise;
   padding:10px;
-  border-bottom:1px dotted lighten($blue,15);
+  border-bottom:1px dotted $table-td-border;
   vertical-align:top;
   ul {
     margin:0;
@@ -63,7 +63,7 @@ tr:last-child td {
 
 .c-table--striped {
   tbody tr:nth-child(odd) {
-    background-color:lighten($s2,2);
+    background-color:$c-table--striped-odd-background;
   }
 }
 
@@ -79,7 +79,7 @@ tr:last-child td {
       border-bottom:none;
     }
     tr {
-      border-top:1px dotted lighten($blue,15);
+      border-top:1px dotted $table-td-border;
     }
   }
 }

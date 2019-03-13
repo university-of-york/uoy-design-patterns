@@ -28,35 +28,35 @@
   line-height: 2;
   display:block;
   padding: 0 .5em;
-  border:1px solid darken($s2,5);
+  border:1px solid $c-pagination__page-border;
   border-radius:3px;
   font-weight: bold;
   margin-right:0.25em;
   margin-bottom:4px;
   text-align:center;
-  background:$s2;
+  background:$c-pagination__page-background;
   text-decoration:none;
   cursor:pointer;
   &:hover {
-    background:$blue;
-    border-color:$blue;
-    color:$light;
+    background:$c-pagination__page-hover-background;
+    border-color:$c-pagination__page-hover-border;
+    color:$c-pagination__page-hover-color;
   }
   // Don't style ellipsis links, called 'break'
   &--type-break {
-    background-color:#fff;
+    background-color:$c-pagination__page--type-break-background;
     border:0;
     &:hover {
-      background-color:#fff;
+      background-color:$c-pagination__page--type-break-hover-background;
       border:0;
-      color:$blue;
+      color:$c-pagination__page--type-break-hover-background;
       cursor:default;
     }
   }
   &--current {
-    background-color:$blue;
-    border-color: $blue;
-    color: #fff;
+    background-color:$c-pagination__page--current-background;
+    border-color:$c-pagination__page--current-border;
+    color: $c-pagination__page--current-color;
     cursor: default;
   }
 }

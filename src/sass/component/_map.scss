@@ -11,7 +11,7 @@
 
 }
 .c-map__fsbutton-text {
-  margin-right: 10px;
+  margin-right: $base-spacing/2;
 }
 .c-map__fsbutton {
   @include transition;
@@ -20,14 +20,14 @@
   text-decoration: none;
   top:0;
   right:0;
-  color: $charcoal;
-  background-color:$s3;
+  color: $c-map__fsbutton-color;
+  background-color: $c-map__fsbutton-background;
   padding: 0 10px;
   line-height: 2em;
   height: 2em;
   width: auto;
   text-align: center;
   &:hover {
-    background-color:darken($s3, 5);
+    background-color:$c-map__fsbutton-hover-background;
   }
 }

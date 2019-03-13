@@ -3,12 +3,9 @@
 //
 
 // Font-awesome variables
-//$fa-font-path:        "https://www.york.ac.uk/static/stable/fonts";
 $fa-font-size-base:   16px;
 $fa-css-prefix:       'c-icon-';
-// $fa-border-color:     #eee !default;
-$fa-inverse:          $light;
-// $fa-li-width:         (30em / 14) !default;
+$fa-inverse:          $c-icon--inverse-color;
 
 @import "icons/font-awesome";
 
