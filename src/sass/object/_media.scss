@@ -35,4 +35,7 @@
   .o-media__title {
     margin-bottom:0;
   }
+  p + .o-media__title {
+    margin-top:0px;
+  }
 }
