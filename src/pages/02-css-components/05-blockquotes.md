@@ -58,7 +58,7 @@ component("blockquote", { "type": "image-quote", "content": "<p>Through being in
 component("blockquote", { "type": "pull-quote", "content": "<p>Through being involved with University of York cycling club I have discovered almost every village, every landmark, every hill, every Yorkshire oddity within a 30-mile radius of York.</p>", "cite":"<p>Madeline, PhD student.</p>", "size": "large"});
 </script>
 <script>
-component("blockquote", { "type": "image-quote", "content": "<p>Through being involved with University of York cycling club I have discovered almost every village, every landmark, every hill, every Yorkshire oddity within a 30-mile radius of York.</p><p>I’ve drunk tea by the riverside at Knaresborough, I’ve eaten chips on the Filey seafront, I’ve watched gliders take off Sutton Bank and I’ve seen the monks wondering the grounds of Ampleforth.</p>", "cite": "<p>Madeline, PhD student. <span class=\"u-link\">Read Madeline's guest blog post</span>.</p>", "image": "../media/madeline-250px.jpg", "imagefloat":"left", "size": "large"});
+component("blockquote", { "type": "image-quote", "content": "<p>Through being involved with University of York cycling club I have discovered almost every village, every landmark, every hill, every Yorkshire oddity within a 30-mile radius of York.</p>", "cite": "<p>Madeline, PhD student. <span class=\"u-link\">Read Madeline's guest blog post</span>.</p>", "image": "../media/madeline-250px.jpg", "imagefloat":"left", "size": "large"});
 </script>
 
 ### Linked blockquotes
