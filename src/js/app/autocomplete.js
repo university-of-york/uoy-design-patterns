@@ -67,7 +67,7 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
     this.form = this.input.closest('form');
     this.list = $('.c-autocomplete__list', this.form);
 
-    this.input.on('keyup', { that: this }, this.suggest);
+    this.input.on('keyup', { that: this }, UTILS.debounce( this.suggest , 200 ) );
     // Stop enter submitting form
     this.input.on('keypress keydown', function(e){
        if (e.keyCode === 13) { e.preventDefault(); }
