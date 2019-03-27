@@ -132,6 +132,10 @@
         height:$c-blockquote--large__image-size;
         width:$c-blockquote--large__image-size;
       }
+      .c-blockquote__image + .c-blockquote__content {
+        //so that the quote-block fits...
+        min-height:($c-blockquote--large__image-size/2) + ($base-spacing*2);
+      }
       .c-blockquote__image + .c-blockquote__content,
       .c-blockquote__image ~ .c-blockquote__cite {
         width:50%;
