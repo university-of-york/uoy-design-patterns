@@ -11,12 +11,12 @@ module.exports = function (grunt) {
         var target = grunt.task.current.files[0].dest;
         //var target = grunt.task.current.target; //grunt.task.current.files[0].dest;
         var taskOptions = grunt.task.current.options();
-        var dirPrefix = '/'; //!!taskOptions.build === true ? '/pattern-library/' : '/' ;
+        var dirPrefix = '/';
 
         if(taskOptions.build !== false) {
-            dirPrefix = taskOptions.build.preview ? '/preview/pattern-library/' : '/pattern-library/';
+            if( taskOptions.build.preview ) dirPrefix = '/preview/pattern-library/';
+            if( taskOptions.build.release ) dirPrefix = '/pattern-library/';
         }
-
 
         pages.forEach(function(page, i) {
             // Top level page
