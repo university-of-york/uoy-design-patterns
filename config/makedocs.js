@@ -13,14 +13,8 @@ module.exports = function (grunt) {
         var taskOptions = grunt.task.current.options();
         var dirPrefix = '/';
 
-        // Last update didn't work as expected - adding this in temporarily to see
-        // what is contains when the build is run on SemaphoreCI
-        console.log( taskOptions );
-
-        if(taskOptions.build !== false) {
-            if( taskOptions.build.preview ) dirPrefix = '/preview/pattern-library/';
-            if( taskOptions.build.release ) dirPrefix = '/pattern-library/';
-        }
+        if( taskOptions.build.preview === true ) dirPrefix = '/preview/pattern-library/';
+        if( taskOptions.build.release === true || taskOptions.build === true ) dirPrefix = '/pattern-library/';
 
         pages.forEach(function(page, i) {
             // Top level page
