@@ -6,7 +6,7 @@ define(
    'app/toggle', 'app/utility-toggle', 'app/wrapper-height', 'app/youtube-embed',
    'app/soundcloud-embed', 'app/searchables', 'app/filterable-tables', 'app/equal-height-row',
    'app/google-map', 'app/show-more', 'app/autocomplete',
-  'app/data-firebase', 'app/data-google-sheets', 'app/data-grid'],
+   'app/data-google-sheets', 'app/data-grid'],
   function (
     $, ES5SHIM, PICTUREFILL, IFRAMERESIZER,
     UTILS, MODALLINK, ACCORDION, STICKYNAV,
@@ -14,7 +14,7 @@ define(
     TOGGLE, UTILITYTOGGLE, WRAPPERHEIGHT, YOUTUBE,
     SOUNDCLOUD, SEARCHABLE, FILTERABLE, EQUALHEIGHT,
     GOOGLEMAP, SHOWMORE, AUTOCOMPLETE,
-    DATAFIREBASE, DATAGSHEETS, DATAGRID) {
+    DATAGSHEETS, DATAGRID) {
 
       $(function(){
 
@@ -306,10 +306,6 @@ define(
         DATAGSHEETS.init();
         window.PL_DATA.dataGSheets = DATAGSHEETS;
 
-        // Load the Firebase Library and assign it to global window object
-        DATAFIREBASE.init();
-        window.PL_DATA.dataFirebase = DATAFIREBASE;
-
         UTILS.eachIfExists('.js-data-grid', function(i, a) {
 
             var $a = $(a),
@@ -319,7 +315,6 @@ define(
                 cssClassList = $a.attr('data-css'),
                 sheetId = $a.attr('data-sheet-id'),
                 sheetRange = $a.attr('data-sheet-range'),
-                firebaseConfig = $a.attr('data-firebase-config'),
                 filter = $a.attr('data-filter'),
                 eventAPIReady = DATAGSHEETS.getEventNames().apiReady;
 
@@ -331,7 +326,6 @@ define(
                 cssClassList: cssClassList,
                 sheetId: sheetId,
                 sheetRange: sheetRange,
-                firebaseConfig: firebaseConfig,
                 filter: filter,
                 eventIdentifier: ('' + new Date().getTime())
             };
@@ -340,18 +334,11 @@ define(
             // set up the loading message as a placeholder
             $a.append('<p>loading...</p>');
 
-            // if we're using Firebase, look for a different set of events,
-            // we can also fire the init() earlier as the API is ready now
-            if(datasource === dataGrid.ENUM_DATASOURCE().firebase) {
+            // for GSheets, we need to wait for the API to load before calling our
+            // datagrid init() function to access data
+            $(window).on(eventAPIReady, function () {
                 dataGrid.init(configObj);
-            } else {
-
-                // for GSheets, we need to wait for the API to load before calling our
-                // datagrid init() function to access data
-                $(window).on(eventAPIReady, function () {
-                    dataGrid.init(configObj);
-                });
-            }
+            });
         });
 
 
