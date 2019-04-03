@@ -329,3 +329,26 @@ $htdiw:mapReverse($breakpoints);
     }
   }
 }
+
+// Offset Grids
+@include mq(large, '+') {
+  .o-grid__box {
+    &.o-grid__box--offset-threeeighths {
+      margin-left:37.5%;
+    }
+    &.o-grid__box--offset-third {
+      margin-left:33.333%;
+      margin-left:calc(100% / 3);
+    }
+    &.o-grid__box--offset-quarter {
+      margin-left:25%;
+    }
+    &.o-grid__box--offset-sixth {
+      margin-left:16.6667%;
+      margin-left:calc(100% / 6);
+    }
+    &.o-grid__box--offset-eighth {
+      margin-left:12.5%;
+    }
+  }
+}
