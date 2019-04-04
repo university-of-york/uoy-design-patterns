@@ -104,6 +104,10 @@ $t-btn-focus:darken($t-btn, 10);
         color:$t-main-highlight;
       }
     }
+    .c-nav__header,
+    .c-nav__header a {
+      color:$t-main-highlight;
+    }
     .c-nav__item--more .c-nav__link {
       color: $light;
       background-color:$t-main-highlight;
@@ -121,7 +125,9 @@ $t-btn-focus:darken($t-btn, 10);
       background-color:$t-main-highlight;
     }
   }
-  .c-subnav__item a {
+  .c-subnav__item a,
+  .c-subnav__title .c-subnav__link,
+  .c-subnav__title a {
     color:$charcoal;
     &:hover {
       color: $t-main-highlight;
@@ -182,6 +188,9 @@ $t-btn-focus:darken($t-btn, 10);
     border-top-color: $t-main-highlight;
     a {
       color: $light;
+      &:hover {
+        color:$t-main-highlight;
+      }
     }
   }
 
@@ -198,8 +207,8 @@ $t-btn-focus:darken($t-btn, 10);
     }
   }
   .c-figure--link:hover .c-figure__content {
-    background-color: $t-main-highlight;
-    background-color: transparentize($t-main-highlight, 0.25);
+    background-color: $t-dark-neutral;
+    background-color: transparentize($t-dark-neutral, 0.25);
   }
 
   // Grid rows
