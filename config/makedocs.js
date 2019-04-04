@@ -11,8 +11,8 @@ module.exports = function (grunt) {
         var target = grunt.task.current.files[0].dest;
         //var target = grunt.task.current.target; //grunt.task.current.files[0].dest;
         var taskOptions = grunt.task.current.options();
-        var dirPrefix = '/';
 
+        var dirPrefix = '/';
         if( taskOptions.build.preview === true ) dirPrefix = '/preview/pattern-library/';
         if( taskOptions.build.release === true || taskOptions.build === true ) dirPrefix = '/pattern-library/';
 
