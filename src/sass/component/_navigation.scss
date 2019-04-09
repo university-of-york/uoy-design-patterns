@@ -10,7 +10,7 @@
   background-color:$c-nav-background-color;
   border-bottom:3px solid $c-nav-border-color;
   border-top:1px solid lighten($c-nav-background-color,10);
-  overflow:hidden;
+  //overflow:hidden;
   position:relative;
   width:100%;
   &.is-open {
@@ -40,7 +40,7 @@
   overflow:visible;
   // text-align:center;
   background-color:$c-nav--sticky-background;
-  border-bottom-color: $c-nav--sticky-border;
+  border-bottom-color:$c-nav--sticky-border;
   border-bottom-width:2px;
   border-top-width:0;
   height:70px; // this number is a guess
@@ -78,7 +78,7 @@
     position:relative;
   }
   .c-nav__link {
-    border-bottom: 5px solid $c-nav--sticky__link-border;
+    border-bottom:5px solid $c-nav--sticky__link-border;
     color:$c-nav--sticky__link-color;
     font-weight:bold;
   }
@@ -97,12 +97,12 @@
       }
       @include mq(medium, '+') {
         &:hover {
-          border-bottom: 5px solid $c-nav--sticky__link-border-hover; // gets around a weird sticky hover issue on mobiles
+          border-bottom:5px solid $c-nav--sticky__link-border-hover; // gets around a weird sticky hover issue on mobiles
         }
       }
       &:hover {
-        background-color: $c-nav--sticky__link-background;
-        color: $c-nav--sticky__link-color;
+        background-color:$c-nav--sticky__link-background;
+        color:$c-nav--sticky__link-color;
       }
     }
     &.is-current {
@@ -111,20 +111,23 @@
       a {
         background-color:$c-nav--sticky__link-is-current-background;
         color:$c-nav--sticky__link-is-current-color;
-        border-bottom: 5px solid $c-nav--sticky__link-is-current-border;
+        border-bottom:5px solid $c-nav--sticky__link-is-current-border;
       }
     }
   }
 }
 .c-nav__list {
-  // @include transition;
-  max-width:$container-width;
   width:100%;
   margin:0 auto;
   padding:0;
   min-height:2.75em;
   list-style:none;
-  overflow:hidden;
+  @include mq(large, '+') {
+    position: absolute;
+    left: 50%;
+    margin-left: -600px;
+    clip-path: polygon(0 0, 1200px 0, 1200px 1200px, 0 1200px);
+  }
   // Hide if no nav items inside
   &:empty {
     display:none;
@@ -132,12 +135,15 @@
   .c-nav.is-open & {
     color:$c-nav__list-color;
     margin-bottom:$base-spacing/2;
+    columns:4;
     @include mq(large, '-') {
-      padding-right: 100px; // To make sure nothing goes off edge of page when open
-      //padding-right: calc(100px + 5rem); // To stop menu items going behind the "More" button
+      padding-right:100px; // To make sure nothing goes off edge of page when open
+      //padding-right:calc(100px + 5rem); // To stop menu items going behind the "More" button
+      columns:3;
     }
     @include mq(tiny, '-') {
       margin-bottom:$base-spacing/4;
+      columns:2;
     }
   }
   @include mq(large, '-') {
@@ -158,7 +164,7 @@
 .c-nav__list--structural {
   // Site Manager uses 'currentbranchN' classes
   span[class^="currentbranch"] {
-    font-weight: bold;
+    font-weight:bold;
     .c-nav.is-open & {
       display:none;
     }
@@ -167,7 +173,7 @@
 
 .c-nav__title {
   margin-top:$base-spacing;
-  font-family: $font-title;
+  font-family:$font-title;
   font-size:24px;
   &:first-child {
     margin-top:0;
@@ -187,12 +193,29 @@
   border-right:1px solid lighten($c-nav-background-color, 10);
   border-left:1px solid lighten($c-nav-background-color, 10);
   margin:0;
+  position:relative;
   + .c-nav__item {
     border-left:0;
   }
   &.is-current {
     .c-nav__link {
       background-color:$c-nav__link-is-current-background-color;
+    }
+  }
+  &.has-sublist > {
+    a,
+    .c-nav__link {
+      padding-right:$base-spacing*2;
+      &:after {
+        content:'\25bc';
+        display:block;
+        position:absolute;
+        right:$base-spacing/2;
+        top:$base-spacing/2;
+        height:$base-spacing;
+        width:$base-spacing;
+        text-align:center;
+      }
     }
   }
   .c-nav.is-open & {
@@ -209,19 +232,27 @@
         padding-left:0;
       }
       .currentsection {
-        padding: 0.4rem 0;
+        padding:0.4rem 0;
+      }
+    }
+    &.has-sublist > {
+      a,
+      .c-nav__link {
+        &:after {
+          display:none;
+        }
       }
     }
   }
   //Site Manager uses .currentsection span
   .currentsection {
     @include tiny-padding;
-    padding-top: 0.4rem;
-    padding-bottom: 0.4rem;
+    padding-top:0.4rem;
+    padding-bottom:0.4rem;
 
     color:$c-nav__link-color;
-    display: block;
-    font-weight: bold;
+    display:block;
+    font-weight:bold;
   }
 }
 .c-nav__item--more {
@@ -229,10 +260,21 @@
   right:0;
   top:0;
   border-right:0;
-  font-weight: bold;
+  font-weight:bold;
   .c-nav__link {
       background-color:$c-nav__item--more-background-color;
-      box-shadow: -4px 0px 5px 5px rgba(64,64,64,0.85); // Fade nav__items that go under
+      &:before {
+        content:'';
+        position:absolute;
+        height:100%;
+        width:10px;
+        top:0;
+        right:100%;
+        background:rgba(64,64,64,0.85);
+        background:linear-gradient(to right, rgba(64,64,64,0.05) 0%, rgba(64,64,64,0.85) 100%);
+      }
+      // box-shadow:-4px 0px 5px 5px rgba(64,64,64,0.85); // Fade nav__items that go under
+      // box-shadow:(horizontal + blur) 0px (blur) (-blur) rgba(64,64,64,0.85);
   }
   .c-nav.is-open & {
     list-style:none;
@@ -245,13 +287,15 @@
     }
   }
   @include mq(huge, '++') {
-    right:50%; // line it up with right-hand edge when >1200px
-    margin-right:-580px;
+    // line it up with right-hand edge when >1200px
+    margin-right:-1200px;
+    right:100%;
   }
 }
 .c-nav__link,
 // We can't add classes to 'a' tags in Site Manager
-.c-nav__item a {
+.c-nav__item > a,
+.c-nav__item > span > a { // When it's current, CMS wraps it in a <span>
   @include transition('background-color, color');
   @include tiny-padding;
   padding-top:$base-spacing/2;
@@ -267,12 +311,53 @@
     background-color:$c-nav__link-hover-background-color;
   }
   .c-nav.is-open & {
+    font-weight:700;
     &:hover {
       color:lighten($blue,10);
       background-color:transparent;
     }
   }
 }
+// Sub lists in main navigation
+.c-nav__sublist,
+.multilevel-linkul-0 {
+  //display:none;
+  position:absolute;
+  top:101%;
+  top:calc(100% + 3px);
+  left:0;
+  background:$c-nav-background-color;
+  margin:0;
+  padding:0;
+  min-width:240px;
+  list-style:none;
+  .c-nav.is-open & {
+    position:static;
+    list-style:disc;
+  }
+}
+.c-nav__subitem,
+.multilevel-linkul-0 > li {
+  margin:0;
+}
+.c-nav__subitem > a,
+.multilevel-linkul-0 > li > a,
+.c-nav__sublink {
+  padding:$base-spacing/2 $base-spacing;
+  border-bottom:1px solid lighten($c-nav-background-color, 10);
+  display:block;
+  color:$c-nav__list-color;
+  text-decoration:none;
+  .c-nav__subitem:last-child &,
+  .multilevel-linkul-0 > li > & {
+    border-bottom:none;
+  }
+  .c-nav.is-open & {
+    border:0;
+    padding:$base-spacing/4 $base-spacing/2;
+  }
+}
+
 .c-nav__header {
   @include tiny-padding;
   display:none;
@@ -283,7 +368,7 @@
     display:block;
     a {
       color:$c-nav__link-color;
-      text-decoration: none;
+      text-decoration:none;
       &:hover {
         color:$c-nav__link-hover-color;
       }

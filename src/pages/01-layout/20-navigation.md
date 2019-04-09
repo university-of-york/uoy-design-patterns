@@ -219,7 +219,7 @@ The selected level 2 title will appear in larger text (this will be something li
 </div>
 ```
 
-### Menu navigation
+### Main menu navigation
 
 Unopened, the main navigation shows the pages currently in this section. Open it up and you can see the "In this section" and "Other sections".
 
@@ -245,6 +245,208 @@ Unopened, the main navigation shows the pages currently in this section. Open it
   <ul class="c-nav__list c-nav__list--associative">
     <li class="c-nav__item"><span class="currentbranch0"><a href="#">Undergraduate study</a></span><ul class="multilevel-linkul-0">
 <li><a href="/study/undergraduate/applying/entry/english-language/">English language requirements</a></li><li><a href="/study/undergraduate/applying/entry/a-level-reforms/">Statement on qualifications reform</a></li><li><a href="/study/undergraduate/applying/entry/policies/">Admissions policy</a></li><li><a href="/study/undergraduate/applying/entry/prior-learning/">Credit transfer and recognition of prior learning</a></li></ul></li><li class="c-nav__item"><a href="#">Postgraduate study</a></li><li class="c-nav__item"><a href="#">International students</a></li><li class="c-nav__item"><a href="#">Accommodation</a></li><li class="c-nav__item"><a href="#">Student life</a></li><li class="c-nav__item"><a href="#">Careers and skills</a></li>
+  </ul>
+</nav>
+```
+
+### Main menu navigation (with sub-menus)
+
+If you give the `c-nav--main` menu an additional class of `c-nav--dropdown`, then any sub-menus will appear as dropdowns on hover (or tap on mobile). The "More" option will still be present but will display all sub-menus when activated. Sub menus need to be marked up as `c-nav__sublist`, with `c-nav__subitem`s and `c-nav__sublink`s.
+
+<nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation-3">
+  <ul class="c-nav__list c-nav__list--structural">
+    <li class="c-nav__item has-sublist">
+      <a href="#">Courses</a>
+      <ul class="multilevel-linkul-0">
+        <li><a href="#">All courses</a></li>
+        <li><a href="#">Teaching and learning</a></li>
+        <li><a href="#">International foundation programme</a></li>
+        <li><a href="#">Pre-sessional language courses</a></li>
+        <li><a href="#">Term dates</a></li>
+      </ul>
+    </li>
+    <li class="c-nav__item has-sublist">
+      <a href="#">Applying</a>
+      <ul class="multilevel-linkul-0">
+        <li><a href="#">Entry requirements</a></li>
+        <li><a href="#">How to apply</a></li>
+        <li><a href="#">After you apply</a></li>
+        <li><a href="#">Application timeline</a></li>
+        <li><a href="#">Aspiring students</a></li>
+        <li><a href="#">Results 2017</a></li>
+      </ul>
+    </li>
+    <li class="c-nav__item has-sublist">
+      <a href="#">Visit us</a>
+      <ul class="multilevel-linkul-0">
+        <li><a href="#">Open days</a></li>
+        <li><a href="#">Pre-application visit day</a></li>
+        <li><a href="#">Visit days for offer-holders</a></li>
+        <li><a href="#">Meet us around the UK</a></li>
+        <li><a href="#">Meet us in your country</a></li>
+      </ul>
+    </li>
+    <li class="c-nav__item has-sublist">
+      <a href="#">Fees and funding</a>
+      <ul class="multilevel-linkul-0">
+        <li><a href="#">UK/EU tuition fee rates and funding</a></li>
+        <li><a href="#">International (non-EU) tuition fee rates and funding</a></li>
+        <li><a href="#">Fee status</a></li>
+        <li><a href="#">Paying your tuition fees</a></li>
+        <li><a href="#">Living costs</a></li>
+        <li><a href="#">Funding for students with disabilities</a></li>
+      </ul>
+    </li>
+    <li class="c-nav__item">
+      <a href="#">Accommodation</a>
+    </li>
+    <li class="c-nav__item">
+      <a href="#">Student life</a>
+    </li>
+    <li class="c-nav__item has-sublist">
+      <a href="#">Careers and skills</a>
+      <ul class="multilevel-linkul-0">
+        <li><a href="#">Enterprise</a></li>
+        <li><a href="#">Volunteering</a></li>
+        <li><a href="#">Work while you study</a></li>
+        <li><a href="#">York Award</a></li>
+      </ul>
+    </li>
+    <li class="c-nav__item has-sublist">
+      <a href="#">Study abroad</a>
+      <ul class="multilevel-linkul-0">
+        <li><a href="#">Europe</a></li>
+        <li><a href="#">Worldwide</a></li>
+        <li><a href="#">Courses with a year abroad</a></li>
+        <li><a href="#">Summer schools and study centres</a></li>
+        <li><a href="#">Funding</a></li>
+        <li><a href="#">Eligibility and applying</a></li>
+      </ul>
+    </li>
+    <li class="c-nav__item">
+      <a href="#">International students</a>
+    </li>
+    <li class="c-nav__item">
+      <a href="#">Prospectus</a>
+    </li>
+    <li class="c-nav__item">
+      <a href="#">Schools and colleges</a>
+    </li>
+    <li class="c-nav__item c-nav__item--more">
+      <a class="c-nav__link js-toggle-button" href="#Main-Navigation-3">More&hellip;</a>
+    </li>
+  </ul>
+  <h4 class="c-nav__header">All sections</h4>
+  <ul class="c-nav__list c-nav__list--associative">
+    <li class="c-nav__item"><span class="currentbranch0"><a href="#">Undergraduate</a></span></li>
+    <li class="c-nav__item"><a href="#">Postgraduate taught</a></li>
+    <li class="c-nav__item"><a href="#">Postgraduate research</a></li>
+    <li class="c-nav__item"><a href="#">International students</a></li>
+    <li class="c-nav__item"><a href="#">Accommodation</a></li>
+    <li class="c-nav__item"><a href="#">Student life</a></li>
+    <li class="c-nav__item"><a href="#">Study abroad</a></li>
+    <li class="c-nav__item"><a href="#">Visit us</a></li>
+    <li class="c-nav__item"><a href="#">Free online courses</a></li>
+    <li class="c-nav__item"><a href="#">Get a prospectus</a></li>
+  </ul>
+</nav>
+
+```markup
+<nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation-3">
+  <ul class="c-nav__list c-nav__list--structural">
+    <li class="c-nav__item has-sublist">
+      <a href="#">Courses</a>
+      <ul class="multilevel-linkul-0">
+        <li><a href="#">All courses</a></li>
+        <li><a href="#">Teaching and learning</a></li>
+        <li><a href="#">International foundation programme</a></li>
+        <li><a href="#">Pre-sessional language courses</a></li>
+        <li><a href="#">Term dates</a></li>
+      </ul>
+    </li>
+    <li class="c-nav__item has-sublist">
+      <a href="#">Applying</a>
+      <ul class="multilevel-linkul-0">
+        <li><a href="#">Entry requirements</a></li>
+        <li><a href="#">How to apply</a></li>
+        <li><a href="#">After you apply</a></li>
+        <li><a href="#">Application timeline</a></li>
+        <li><a href="#">Aspiring students</a></li>
+        <li><a href="#">Results 2017</a></li>
+      </ul>
+    </li>
+    <li class="c-nav__item has-sublist">
+      <a href="#">Visit us</a>
+      <ul class="multilevel-linkul-0">
+        <li><a href="#">Open days</a></li>
+        <li><a href="#">Pre-application visit day</a></li>
+        <li><a href="#">Visit days for offer-holders</a></li>
+        <li><a href="#">Meet us around the UK</a></li>
+        <li><a href="#">Meet us in your country</a></li>
+      </ul>
+    </li>
+    <li class="c-nav__item has-sublist">
+      <a href="#">Fees and funding</a>
+      <ul class="multilevel-linkul-0">
+        <li><a href="#">UK/EU tuition fee rates and funding</a></li>
+        <li><a href="#">International (non-EU) tuition fee rates and funding</a></li>
+        <li><a href="#">Fee status</a></li>
+        <li><a href="#">Paying your tuition fees</a></li>
+        <li><a href="#">Living costs</a></li>
+        <li><a href="#">Funding for students with disabilities</a></li>
+      </ul>
+    </li>
+    <li class="c-nav__item">
+      <a href="#">Accommodation</a>
+    </li>
+    <li class="c-nav__item">
+      <a href="#">Student life</a>
+    </li>
+    <li class="c-nav__item has-sublist">
+      <a href="#">Careers and skills</a>
+      <ul class="multilevel-linkul-0">
+        <li><a href="#">Enterprise</a></li>
+        <li><a href="#">Volunteering</a></li>
+        <li><a href="#">Work while you study</a></li>
+        <li><a href="#">York Award</a></li>
+      </ul>
+    </li>
+    <li class="c-nav__item has-sublist">
+      <a href="#">Study abroad</a>
+      <ul class="multilevel-linkul-0">
+        <li><a href="#">Europe</a></li>
+        <li><a href="#">Worldwide</a></li>
+        <li><a href="#">Courses with a year abroad</a></li>
+        <li><a href="#">Summer schools and study centres</a></li>
+        <li><a href="#">Funding</a></li>
+        <li><a href="#">Eligibility and applying</a></li>
+      </ul>
+    </li>
+    <li class="c-nav__item">
+      <a href="#">International students</a>
+    </li>
+    <li class="c-nav__item">
+      <a href="#">Prospectus</a>
+    </li>
+    <li class="c-nav__item">
+      <a href="#">Schools and colleges</a>
+    </li>
+    <li class="c-nav__item c-nav__item--more">
+      <a class="c-nav__link js-toggle-button" href="#Main-Navigation-3">More&hellip;</a>
+    </li>
+  </ul>
+  <h4 class="c-nav__header">All sections</h4>
+  <ul class="c-nav__list c-nav__list--associative">
+    <li class="c-nav__item"><span class="currentbranch0"><a href="#">Undergraduate</a></span></li>
+    <li class="c-nav__item"><a href="#">Postgraduate taught</a></li>
+    <li class="c-nav__item"><a href="#">Postgraduate research</a></li>
+    <li class="c-nav__item"><a href="#">International students</a></li>
+    <li class="c-nav__item"><a href="#">Accommodation</a></li>
+    <li class="c-nav__item"><a href="#">Student life</a></li>
+    <li class="c-nav__item"><a href="#">Study abroad</a></li>
+    <li class="c-nav__item"><a href="#">Visit us</a></li>
+    <li class="c-nav__item"><a href="#">Free online courses</a></li>
+    <li class="c-nav__item"><a href="#">Get a prospectus</a></li>
   </ul>
 </nav>
 ```
