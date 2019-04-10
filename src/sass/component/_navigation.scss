@@ -120,13 +120,15 @@
   width:100%;
   margin:0 auto;
   padding:0;
-  min-height:2.75em;
+  min-height:2.5625em; // 41px
   list-style:none;
-  @include mq(large, '+') {
+  @include mq(huge, '++') {
     position: absolute;
     left: 50%;
     margin-left: -600px;
-    clip-path: polygon(0 0, 1200px 0, 1200px 1200px, 0 1200px);
+    // This hides the menu items that would otherwise overflow to the right of the "More button"
+    // It goes wide again after 2.5625em (41px) in order to include a dropdown menu on the very last item in the nav
+    clip-path: polygon(0 0, 1200px 0, 1200px 2.5625em, 1440px 2.5625em, 1440px 1200px, 0 1200px);
   }
   // Hide if no nav items inside
   &:empty {
