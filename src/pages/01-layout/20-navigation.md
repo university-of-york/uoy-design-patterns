@@ -99,14 +99,14 @@ The sticky nav stays in place on the page until it hits the top of the screen, a
 
 <div class="c-nav__wrapper">
   <nav class="c-nav c-nav--sticky js-sticky-nav js-targeted-nav">
-    <ul class="c-nav__list"><li class="c-nav__item"><a class="c-nav__link" href="#sticky-nav">Sticky nav</a></li><li class="c-nav__item"><a class="c-nav__link" href="#utility-navigation">Utility nav</a></li><li class="c-nav__item"><a class="c-nav__link" href="#page-title">Page title</a></li><li class="c-nav__item"><a class="c-nav__link" href="#menu-navigation">Menu nav</a></li><li class="c-nav__item"><a class="c-nav__link" href="#breadcrumb-navigation">Breadcrumb</a></li><li class="c-nav__item"><a class="c-nav__link" href="#putting-it-all-together">Putting it all together</a></li></ul>
+    <ul class="c-nav__list"><li class="c-nav__item"><a class="c-nav__link" href="#sticky-nav">Sticky nav</a></li><li class="c-nav__item"><a class="c-nav__link" href="#utility-navigation">Utility nav</a></li><li class="c-nav__item"><a class="c-nav__link" href="#page-title">Page title</a></li><li class="c-nav__item"><a class="c-nav__link" href="#main-menu-navigation">Menu nav</a></li><li class="c-nav__item"><a class="c-nav__link" href="#breadcrumb-navigation">Breadcrumb</a></li><li class="c-nav__item"><a class="c-nav__link" href="#putting-it-all-together">Putting it all together</a></li></ul>
   </nav>
 </div>
 
 ```markup
 <div class="c-nav__wrapper">
   <nav class="c-nav c-nav--sticky js-sticky-nav js-targeted-nav">
-    <ul class="c-nav__list"><li class="c-nav__item"><a class="c-nav__link" href="#sticky-navigation">Sticky nav</a></li><li class="c-nav__item"><a class="c-nav__link" href="#utility-navigation">Utility nav</a></li><li class="c-nav__item"><a class="c-nav__link" href="#page-title">Page title</a></li><li class="c-nav__item"><a class="c-nav__link" href="#menu-navigation">Menu nav</a></li><li class="c-nav__item"><a class="c-nav__link" href="#breadcrumb-navigation">Breadcrumb</a></li><li class="c-nav__item"><a class="c-nav__link" href="#putting-it-all-together">Putting it all together</a></li></ul>
+    <ul class="c-nav__list"><li class="c-nav__item"><a class="c-nav__link" href="#sticky-navigation">Sticky nav</a></li><li class="c-nav__item"><a class="c-nav__link" href="#utility-navigation">Utility nav</a></li><li class="c-nav__item"><a class="c-nav__link" href="#page-title">Page title</a></li><li class="c-nav__item"><a class="c-nav__link" href="#main-menu-navigation">Menu nav</a></li><li class="c-nav__item"><a class="c-nav__link" href="#breadcrumb-navigation">Breadcrumb</a></li><li class="c-nav__item"><a class="c-nav__link" href="#putting-it-all-together">Putting it all together</a></li></ul>
   </nav>
 </div>
 ```
@@ -254,10 +254,11 @@ Unopened, the main navigation shows the pages currently in this section. Open it
 If you give the `c-nav--main` menu an additional class of `c-nav--dropdown`, then any sub-menus will appear as dropdowns on hover (or tap on mobile). The "More" option will still be present but will display all sub-menus when activated. Sub menus need to be marked up as `c-nav__sublist`, with `c-nav__subitem`s and `c-nav__sublink`s.
 
 <nav class="c-nav c-nav--main" role="navigation" id="Main-Navigation-3">
+  <h4 class="c-nav__header">In this section</h4>
   <ul class="c-nav__list c-nav__list--structural">
     <li class="c-nav__item has-sublist">
-      <a href="#">Courses</a>
-      <ul class="multilevel-linkul-0">
+      <a class="js-toggle-button" href="#courses">Courses</a>
+      <ul class="multilevel-linkul-0" id="sub-courses">
         <li><a href="#">All courses</a></li>
         <li><a href="#">Teaching and learning</a></li>
         <li><a href="#">International foundation programme</a></li>
@@ -266,8 +267,8 @@ If you give the `c-nav--main` menu an additional class of `c-nav--dropdown`, the
       </ul>
     </li>
     <li class="c-nav__item has-sublist">
-      <a href="#">Applying</a>
-      <ul class="multilevel-linkul-0">
+      <a class="js-toggle-button" href="#sub-applying">Applying</a>
+      <ul class="multilevel-linkul-0" id="sub-applying">
         <li><a href="#">Entry requirements</a></li>
         <li><a href="#">How to apply</a></li>
         <li><a href="#">After you apply</a></li>
@@ -277,8 +278,8 @@ If you give the `c-nav--main` menu an additional class of `c-nav--dropdown`, the
       </ul>
     </li>
     <li class="c-nav__item has-sublist">
-      <a href="#">Visit us</a>
-      <ul class="multilevel-linkul-0">
+      <a class="js-toggle-button" href="#sub-visit">Visit us</a>
+      <ul class="multilevel-linkul-0" id="sub-visit">
         <li><a href="#">Open days</a></li>
         <li><a href="#">Pre-application visit day</a></li>
         <li><a href="#">Visit days for offer-holders</a></li>
@@ -287,8 +288,8 @@ If you give the `c-nav--main` menu an additional class of `c-nav--dropdown`, the
       </ul>
     </li>
     <li class="c-nav__item has-sublist">
-      <a href="#">Fees and funding</a>
-      <ul class="multilevel-linkul-0">
+      <a class="js-toggle-button" href="#sub-fees">Fees and funding</a>
+      <ul class="multilevel-linkul-0" id="sub-fees">
         <li><a href="#">UK/EU tuition fee rates and funding</a></li>
         <li><a href="#">International (non-EU) tuition fee rates and funding</a></li>
         <li><a href="#">Fee status</a></li>
@@ -304,8 +305,8 @@ If you give the `c-nav--main` menu an additional class of `c-nav--dropdown`, the
       <a href="#">Student life</a>
     </li>
     <li class="c-nav__item has-sublist">
-      <a href="#">Careers and skills</a>
-      <ul class="multilevel-linkul-0">
+      <a class="js-toggle-button" href="#sub-careers">Careers and skills</a>
+      <ul class="multilevel-linkul-0" id="sub-careers">
         <li><a href="#">Enterprise</a></li>
         <li><a href="#">Volunteering</a></li>
         <li><a href="#">Work while you study</a></li>
@@ -313,8 +314,8 @@ If you give the `c-nav--main` menu an additional class of `c-nav--dropdown`, the
       </ul>
     </li>
     <li class="c-nav__item has-sublist">
-      <a href="#">Study abroad</a>
-      <ul class="multilevel-linkul-0">
+      <a class="js-toggle-button" href="#sub-abroad">Study abroad</a>
+      <ul class="multilevel-linkul-0" id="sub-abroad">
         <li><a href="#">Europe</a></li>
         <li><a href="#">Worldwide</a></li>
         <li><a href="#">Courses with a year abroad</a></li>

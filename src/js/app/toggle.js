@@ -23,7 +23,7 @@ define(['jquery'], function ($) {
     this.button.on('click', function (e) {
       e.preventDefault();
       that.toggle();
-      return false;
+      // return false;
     });
 
     console.info(this);

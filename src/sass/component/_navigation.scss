@@ -117,7 +117,7 @@
   }
 }
 .c-nav__list {
-  width:100%;
+  width:1000%;
   margin:0 auto;
   padding:0;
   min-height:2.5625em; // 41px
@@ -129,6 +129,12 @@
     // This hides the menu items that would otherwise overflow to the right of the "More button"
     // It goes wide again after 2.5625em (41px) in order to include a dropdown menu on the very last item in the nav
     clip-path: polygon(0 0, 1200px 0, 1200px 2.5625em, 1440px 2.5625em, 1440px 1200px, 0 1200px);
+    .c-nav.is-open & {
+      position:static;
+      max-width:1200px;
+      margin:0 auto;
+      clip-path:none;
+    }
   }
   // Hide if no nav items inside
   &:empty {
@@ -136,8 +142,15 @@
   }
   .c-nav.is-open & {
     color:$c-nav__list-color;
-    margin-bottom:$base-spacing/2;
+    padding-bottom:$base-spacing;
+    margin-bottom:$base-spacing;
     columns:4;
+    width:100%;
+    border-bottom:1px solid lighten($c-nav-background-color, 10);
+    &:last-of-type {
+      border-bottom:0;
+      padding-bottom:0;
+    }
     @include mq(large, '-') {
       padding-right:100px; // To make sure nothing goes off edge of page when open
       //padding-right:calc(100px + 5rem); // To stop menu items going behind the "More" button
@@ -289,9 +302,23 @@
     }
   }
   @include mq(huge, '++') {
-    // line it up with right-hand edge when >1200px
-    margin-right:-1200px;
-    right:100%;
+    // line up with right hand adge when closed
+    margin-left:-92px; // Magic number - default width of "more" button - only used if no csstransforms
+    right:auto;
+    left:1200px;
+    .csstransforms & {
+      margin:0;
+      transform:translateX(-100%);
+    }
+    // line it up with right-hand edge when >1200px and open
+    .c-nav.is-open & {
+      margin-right:-600px;
+      right:50%;
+      left:auto;
+      .csstransforms & {
+        transform:translateX(0);
+      }
+    }
   }
 }
 .c-nav__link,
@@ -323,7 +350,7 @@
 // Sub lists in main navigation
 .c-nav__sublist,
 .multilevel-linkul-0 {
-  //display:none;
+  display:none;
   position:absolute;
   top:101%;
   top:calc(100% + 3px);
@@ -333,7 +360,11 @@
   padding:0;
   min-width:240px;
   list-style:none;
+  &.is-open {
+    display:block;
+  }
   .c-nav.is-open & {
+    display:block;
     position:static;
     list-style:disc;
   }
@@ -350,6 +381,9 @@
   display:block;
   color:$c-nav__list-color;
   text-decoration:none;
+  &:hover {
+    color:lighten($blue,10);
+  }
   .c-nav__subitem:last-child &,
   .multilevel-linkul-0 > li > & {
     border-bottom:none;
