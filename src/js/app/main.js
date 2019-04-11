@@ -6,7 +6,7 @@ define(
    'app/toggle', 'app/utility-toggle', 'app/wrapper-height', 'app/youtube-embed',
    'app/soundcloud-embed', 'app/searchables', 'app/filterable-tables', 'app/equal-height-row',
    'app/google-map', 'app/show-more', 'app/autocomplete',
-   'app/data-google-sheets', 'app/data-grid'],
+   'app/data-google-sheets', 'app/data-grid', 'app/cookie-banner'],
   function (
     $, ES5SHIM, PICTUREFILL, IFRAMERESIZER,
     UTILS, MODALLINK, ACCORDION, STICKYNAV,
@@ -14,7 +14,7 @@ define(
     TOGGLE, UTILITYTOGGLE, WRAPPERHEIGHT, YOUTUBE,
     SOUNDCLOUD, SEARCHABLE, FILTERABLE, EQUALHEIGHT,
     GOOGLEMAP, SHOWMORE, AUTOCOMPLETE,
-    DATAGSHEETS, DATAGRID) {
+    DATAGSHEETS, DATAGRID, COOKIEBANNER ) {
 
       $(function(){
 
@@ -341,6 +341,8 @@ define(
             });
         });
 
+        // Loads the cookie banner
+        var cookieBanner = new COOKIEBANNER();
 
         // Broadcast custom window events
         if (UTILS.isDev() === true) {
