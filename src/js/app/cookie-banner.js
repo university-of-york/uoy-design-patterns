@@ -87,7 +87,7 @@ define(['jquery', 'jscookie'], function ($, COOKIES) {
         $( 'body' ).removeClass( bodyClass );
 
         // Set our cookie to mark the banner as being dismissed
-        this.setCookie()
+        this.setCookie();
     };
 
     // --------------------------------------------------
