@@ -22,7 +22,7 @@
     }
 
     // Stick to the bottom of the viewport
-    z-index: 999;
+    z-index: 2147483001; // Thanks UniBuddy... 😒
     position: fixed;
     bottom: 0;
     left: 0;
