@@ -218,6 +218,11 @@ $c-btn: (
   )
 );
 
+// Cookie banner
+// component/_cookie-banner.scss
+$c-cookie-banner__background:       lighten($teal,10);
+$c-cookie-banner__color:            $white;
+
 // Clearing tables
 // component/_clearing-tables.scss
 // None
