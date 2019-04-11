@@ -26,7 +26,7 @@ define(['jquery', 'jscookie'], function ($, COOKIES) {
                 bannerText +
             "</div>" +
             "<div class=\"c-cookie-banner__controls\">" +
-                "<a class=\"c-cookie-banner__dismiss\" href=\"#\"><i class=\"c-icon c-icon--close\"></i></a>" +
+                "<a title=\"Dismiss this notification\" class=\"c-cookie-banner__dismiss\" href=\"#\"><i class=\"c-icon c-icon--close\"></i></a>" +
             "</div>" +
         "</div>";
 
