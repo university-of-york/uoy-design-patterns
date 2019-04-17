@@ -18,7 +18,7 @@ define(['jquery', 'jscookie'], function ($, COOKIES) {
     var bodyClass = 'has-c-cookie-banner';
 
     var cookiesPageURL = 'https://www.york.ac.uk/about/legal-statements/cookies/';
-    var bannerText = "<p>By continuing to use the site we assume you're happy with <a href=\""+cookiesPageURL+"\">how we use cookies</a>.</p>";
+    var bannerText = "<p>By continuing to use the site you confirm that you're happy with <a href=\""+cookiesPageURL+"\">our use of cookies</a>.</p>";
 
     var bannerHTML = "" +
         "<div class=\"c-cookie-banner\">" +

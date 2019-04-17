@@ -222,6 +222,8 @@ $c-btn: (
 // component/_cookie-banner.scss
 $c-cookie-banner__background:       lighten($teal,10);
 $c-cookie-banner__color:            $white;
+$c-cookie-banner__link-color:       $white;
+$c-cookie-banner__link-hover-color: $blue;
 
 // Clearing tables
 // component/_clearing-tables.scss
