@@ -21,12 +21,24 @@ module.exports = function (grunt) {
   grunt.registerTask('csstest', ['compass:dev', 'newer:postcss:dev', 'scopedCSS:test']);
 
   // Local development
-  grunt.registerTask('dev', ['makedocs:dev', 'copy:dev', 'copy:templates', 'jshint:dev', 'compass:dev', 'postcss:dev', 'browserSync:dev', 'watch', 'clean:dev']);
+  grunt.registerTask('dev', [
+      'makenav:dev',
+      'makedocs:dev',
+      'copy:dev',
+      'copy:templates',
+      'jshint:dev',
+      'compass:dev',
+      'postcss:dev',
+      'browserSync:dev',
+      'watch',
+      'clean:dev'
+  ]);
 
   // Build process - minified CSS and JS
 
   grunt.registerTask('build', [
       'clean:build',
+      'makenav:build',
       'makedocs:build',
       'copy:build',
       'compass:build',
@@ -45,6 +57,7 @@ module.exports = function (grunt) {
   // Build process for preview
     grunt.registerTask('preview', [
         'clean:build',
+        'makenav:preview',
         'makedocs:preview',
         'copy:build',
         'copy:preview',
