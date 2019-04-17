@@ -34,12 +34,13 @@
 
     // Child elements
 
-    &__content {
+    & &__content { // Extra specificity for themed branches
 
         @include demarginalise();
 
         a {
-            color: $c-cookie-banner__color;
+            color: $c-cookie-banner__link-color;
+            &:hover { color: $c-cookie-banner__link-hover-color; }
         }
     }
 
@@ -47,9 +48,11 @@
 
     }
 
-    &__dismiss {
+    & &__dismiss { // Extra specificity for themed branches
 
-        color: $c-cookie-banner__color;
+        color: $c-cookie-banner__link-color;
+        &:hover { color: $c-cookie-banner__link-hover-color; }
+
         text-decoration: none;
         cursor: pointer;
 
