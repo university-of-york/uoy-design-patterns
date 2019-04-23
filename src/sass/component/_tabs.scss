@@ -85,7 +85,7 @@
   color:$c-tabs__link-color;
   display:block;
   font-weight: bold;
-  padding: 0.75em 0;
+  padding: 0.75em 0.75em;
   line-height: 1.25em;
   text-decoration: none;
   vertical-align: top;
@@ -97,6 +97,22 @@
     font-size:14px;
   }
 }
+
+.c-tabs--horizontal {
+    .c-tabs__nav {
+        height:100%;
+    }
+    .c-tabs__tab {
+        height:100%;
+    }
+    .c-tabs__link {
+        height:100%;
+        display:flex;
+        flex-flow:column nowrap;
+        justify-content:center;
+    }
+}
+
 .c-tabs__container {
   background:$c-tabs-background;
   border:1px solid $c-tabs-border;
