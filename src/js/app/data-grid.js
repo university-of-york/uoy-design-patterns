@@ -8,15 +8,14 @@ category: Javascript
 
  */
 
-define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
-    function ($, UTILS, DATAFIREBASE, DATAGSHEETS) {
+define(['jquery', 'app/utils', 'app/data-google-sheets'],
+    function ($, UTILS, DATAGSHEETS) {
 
         var DATAGRID = function() {
 
             // Enums
             var DATASOURCE = {
                 sheets: 'sheets',
-                firebase: 'firebase'
             };
             var LAYOUTTYPE = {
                 table: 'table',
@@ -34,7 +33,6 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 cssClassList: '',
                 sheetId: '',
                 sheetRange: '',
-                firebaseConfig: '',
                 filter: '',
                 eventIdentifier: ''
             };
@@ -80,7 +78,7 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                     } else {
                         cell = row.insertCell(-1);
                     }
-                    
+
                     cell.innerHTML = useKeys ? key : rowData[key];
                 });
 
@@ -106,10 +104,6 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
 
                     return table;
                 }
-
-                // Firebase uses an object, so let's build it a different way
-                // first, make a header row
-                makeTableRow(table, data[0], true, includeHeaderRow);
 
                 // now, process the rest of the rows
                 data.forEach(function(rowData) {
@@ -143,11 +137,6 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                     return list;
                 }
 
-                // Firebase uses an object, so let's build it a different way
-                data.forEach(function(rowData) {
-                    list.appendChild(makeListItem(rowData, false));
-                });
-
                 return list;
             };
 
@@ -161,9 +150,6 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                 switch(datasource) {
                     case DATASOURCE.sheets:
                         dataLoadedPromise = DATAGSHEETS.readData(options.sheetId, options.sheetRange, null, options.filter, options.eventIdentifier);
-                        break;
-                    case DATASOURCE.firebase:
-                        dataLoadedPromise =DATAFIREBASE.readData('/', options.eventIdentifier, options.firebaseConfig);
                         break;
                     default:
                         break;
@@ -272,7 +258,7 @@ define(['jquery', 'app/utils', 'app/data-firebase', 'app/data-google-sheets'],
                     $window.on(dataLoadedEvent, function (e, data) {
                         processData(data, options);
                     });
-                    // TODO: add data-load specific error messaging/handling here, e.g. GSheets, Firebase
+                    // TODO: add data-load specific error messaging/handling here, e.g. GSheets
                 }
             };
 

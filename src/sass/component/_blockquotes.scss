@@ -36,68 +36,10 @@
   // To override underlining
   text-decoration:none;
 }
-.c-blockquote--image-quote {
-  .c-blockquote__content {
-    @include demarginalise;
-    background-color:$c-blockquote--image-quote-background-color;
-    padding:$base-spacing;
-    color:$c-blockquote--image-quote-color;
-    font-family: $font-title;
-  }
-}
-.c-blockquote--pull-quote {
-  overflow:visible;
-  padding-top:$base-spacing/2;
-  .c-blockquote__content {
-    @include font-size(22px, 1.13636364);
-    color:$c-blockquote--pull-quote-color;
-    font-family:$font-title;
-    padding:0 $base-spacing * 1.5;
-    :first-child:before {
-      @include font-size(48px);
-      content: open-quote;
-      position:absolute;
-      top:-$base-spacing/2;
-      left:0;
-    }
-    :last-child:after {
-      @include font-size(48px);
-      content: close-quote;
-      position:absolute;
-      bottom: -35px;
-      padding-left: $base-spacing/2;
-
-    }
-    .o-grid__row--alt1 &,
-    .o-grid__row--alt2 & {
-      color:$c-blockquote__content--alt-1-2-color
-    }
-  }
-  .c-blockquote__cite {
-    padding:0 $base-spacing * 1.5;
-  }
-}
-.c-blockquote--large {
-  .c-blockquote__content {
-    @include font-size(32px, 1.25);
-  }
-  &.c-blockquote--pull-quote {
-    .c-blockquote__content {
-      :before,
-      :after {
-        @include font-size(60px);
-      }
-    }
-  }
-  &.c-blockquote--image-quote {
-    .c-blockquote__content {
-      @include font-size(22px, 1.13636364);
-    }
-  }
-  .c-blockquote__cite {
-    @include font-size(16px, 1.5);
-  }
-
+.c-blockquote__content {
+  @include demarginalise;
+  @include font-size(22px, 1.181818182);
+  position:relative;
 }
 .c-blockquote__image {
   @include round;
@@ -128,9 +70,85 @@
     margin-right:$base-spacing/2;
   }
 }
-.c-blockquote__content {
-  @include demarginalise;
-  position:relative;
+.c-blockquote--image-quote {
+  .c-blockquote__content {
+    @include demarginalise;
+    background-color:$c-blockquote--image-quote-background-color;
+    padding:$base-spacing;
+    color:$c-blockquote--image-quote-color;
+    font-family: $font-title;
+  }
+}
+.c-blockquote--pull-quote {
+  overflow:visible;
+  padding-top:$base-spacing/2;
+  .c-blockquote__content {
+    color:$c-blockquote--pull-quote-color;
+    font-family:$font-title;
+    padding:0 $base-spacing * 1.5;
+    :first-child:before {
+      @include font-size(48px);
+      content: open-quote;
+      position:absolute;
+      top:-$base-spacing/2;
+      left:0;
+    }
+    :last-child:after {
+      @include font-size(48px);
+      content: close-quote;
+      position:absolute;
+      bottom: -35px;
+      padding-left: $base-spacing/2;
+
+    }
+    .o-grid__row--alt1 &,
+    .o-grid__row--alt2 & {
+      color:$c-blockquote__content--alt-1-2-color
+    }
+  }
+  .c-blockquote__cite {
+    padding:0 $base-spacing * 1.5;
+  }
+}
+// Large blockquotes only take effect on medium and larger,
+// otherwise they have default behaviour
+.c-blockquote--large {
+  @include mq(medium, '+') {
+    .c-blockquote__content {
+      @include font-size(32px, 1.25);
+    }
+    &.c-blockquote--pull-quote {
+      .c-blockquote__content {
+        :before,
+        :after {
+          @include font-size(60px);
+        }
+      }
+    }
+    &.c-blockquote--image-quote {
+      .c-blockquote__content {
+      }
+      .c-blockquote__image {
+        height:$c-blockquote--large__image-size;
+        width:$c-blockquote--large__image-size;
+      }
+      .c-blockquote__image + .c-blockquote__content {
+        //so that the quote-block fits...
+        min-height:($c-blockquote--large__image-size/2) + ($base-spacing*2);
+      }
+      .c-blockquote__image + .c-blockquote__content,
+      .c-blockquote__image ~ .c-blockquote__cite {
+        width:50%;
+        width:calc(100% - #{$c-blockquote--large__image-size + ($base-spacing*2.5)});
+      }
+      .c-blockquote__image + .c-blockquote__content:after {
+        top:$c-blockquote--large__image-size/2;
+      }
+    }
+    .c-blockquote__cite {
+      @include font-size(16px, 1.5);
+    }
+  }
 }
 // So that the background doesn't extend behind the image
 // And the citee doesn't float too far to the side

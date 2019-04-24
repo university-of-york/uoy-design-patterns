@@ -182,6 +182,7 @@ $c-block-link-border-color:     lighten($s1,5);
 // Blockquotes
 // component/_blockquotes.scss
 $c-blockquote__image-size:                   120px;
+$c-blockquote--large__image-size:            180px;
 $c-blockquote__image-tiny-ratio:             0.75; // How much should the image shrink on tiny screens?
 $c-blockquote--image-quote-background-color: lighten($teal,10);
 $c-blockquote--image-quote-color:            $light;
@@ -216,6 +217,13 @@ $c-btn: (
     text:$light
   )
 );
+
+// Cookie banner
+// component/_cookie-banner.scss
+$c-cookie-banner__background:       lighten($teal,10);
+$c-cookie-banner__color:            $white;
+$c-cookie-banner__link-color:       $white;
+$c-cookie-banner__link-hover-color: $blue;
 
 // Clearing tables
 // component/_clearing-tables.scss

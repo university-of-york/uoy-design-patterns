@@ -1,3 +1,10 @@
+## [1.7.4](https://github.com/university-of-york/design-patterns/compare/v1.7.3...v1.7.4) (2018-12-18)
+
+
+### Bug Fixes
+
+* allow data-grid table cells to use html from sheets instead of text ([d5bc657](https://github.com/university-of-york/design-patterns/commit/d5bc657))
+
 ## [1.7.3](https://github.com/university-of-york/design-patterns/compare/v1.7.2...v1.7.3) (2018-11-28)
 
 
