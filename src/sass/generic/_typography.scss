@@ -14,7 +14,7 @@
 .subtitle {
   @include font-size(18px, 1);
   display:block;
-  margin:0;
+  margin:10px 0 0 0;
   h4 &, h5 & {
     @include font-size(13px, 1);
   }
