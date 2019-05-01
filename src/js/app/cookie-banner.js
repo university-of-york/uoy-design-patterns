@@ -120,7 +120,23 @@ define(['jquery', 'jscookie'], function ($, COOKIES) {
     // Set our cookie banner cookie to indicate the banner has been dimissed
 
     COOKIEBANNER.prototype.setCookie = function() {
-        COOKIES.set( cookieName , true , { domain: '.york.ac.uk' } );
+        COOKIES.set( cookieName , true , { domain: this.getDomain() } );
+    };
+
+    // --------------------------------------------------
+    // Retrieves the domain for which the cookie should be set
+
+    COOKIEBANNER.prototype.getDomain = function() {
+
+        var hostname = document.location.hostname;
+
+        // Return all subdomains for york.ac.uk if on york.ac.uk...
+        if( hostname.indexOf( 'york.ac.uk' ) != -1 ) {
+            return '.york.ac.uk';
+        }
+
+        // ...else leave blank to apply to current domain only
+        return null;
     };
 
     // --------------------------------------------------
