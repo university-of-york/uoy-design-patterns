@@ -15,18 +15,7 @@
 }
 .c-pagination__item {
   float:left;
-
-  // Only show 5 page items on mobile
-  // Targets the item after the break and the last in the list
-  @include mq(small, "-") {
-      &--type-break + &--type-numeral + &--type-numeral + &--type-numeral + &--type-numeral + &--type-numeral,
-      &--type-break + &--type-numeral {
-          display: none;
-      }
-  }
-
 }
-
 .c-pagination__page {
   line-height: 2;
   display:block;
