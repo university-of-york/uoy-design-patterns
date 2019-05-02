@@ -15,14 +15,6 @@
 }
 .c-pagination__item {
   float:left;
-
-  // Only show 5 page items on mobile
-  // uses the .c-pagination__item--type-numeral selector
-  #{select_all_from(6, '&--type-numeral')} {
-    @include mq(small, "-") {
-      display: none;
-    }
-  }
 }
 .c-pagination__page {
   line-height: 2;
