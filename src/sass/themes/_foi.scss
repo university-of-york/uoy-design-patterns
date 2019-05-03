@@ -42,6 +42,12 @@ $t-btn-focus:darken($t-btn, 10);
       color:$t-main-highlight;
     }
   }
+  .o-grid__row--alt2 a {
+    color:$white;
+    &:hover {
+      color:lighten($pink, 10);
+    }
+  }
   th {
     border-bottom-color: $t-main;
     color:$charcoal;

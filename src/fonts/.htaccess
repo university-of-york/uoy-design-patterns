@@ -3,7 +3,11 @@
 # ----------------------------------------------------------------------
 <FilesMatch "\.(ttf|otf|eot|woff|woff2|svg)$">
   <IfModule mod_headers.c>
+<<<<<<< HEAD
     SetEnvIf Origin ^http(s)?:\/\/(.+\.)?(york.ac.uk|cmsmigrate.york.ac.uk|yorkfestivalofideas.com|uoy.staging.wpengine.com|uni_york.formstack.com|*.herokuapp.com|localhost(:[0-9]+))$ AccessControlAllowOrigin=$0
+=======
+    SetEnvIf Origin ^http(s)?:\/\/(.+\.)?(york.ac.uk|cmsmigrate.york.ac.uk|yorkfestivalofideas.com|uoy.staging.wpengine.com|uni_york.formstack.com|localhost(:[0-9]+))$ AccessControlAllowOrigin=$0
+>>>>>>> fix/foilinkcolour
     Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
   </IfModule>
 </FilesMatch>
