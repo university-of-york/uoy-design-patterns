@@ -5,7 +5,7 @@ define(
    'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/prioritised-tables',
    'app/toggle', 'app/utility-toggle', 'app/wrapper-height', 'app/youtube-embed',
    'app/soundcloud-embed', 'app/searchables', 'app/filterable-tables', 'app/equal-height-row',
-   'app/google-map', 'app/show-more', 'app/autocomplete',
+   'app/google-map', 'app/mapbox-map', 'app/show-more', 'app/autocomplete',
    'app/data-google-sheets', 'app/data-grid', 'app/cookie-banner'],
   function (
     $, ES5SHIM, PICTUREFILL, IFRAMERESIZER,
@@ -13,7 +13,7 @@ define(
     TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
     TOGGLE, UTILITYTOGGLE, WRAPPERHEIGHT, YOUTUBE,
     SOUNDCLOUD, SEARCHABLE, FILTERABLE, EQUALHEIGHT,
-    GOOGLEMAP, SHOWMORE, AUTOCOMPLETE,
+    GOOGLEMAP, MAPBOXMAP, SHOWMORE, AUTOCOMPLETE,
     DATAGSHEETS, DATAGRID, COOKIEBANNER ) {
 
       $(function(){
@@ -60,14 +60,10 @@ define(
         // Add Google map functionality
         UTILS.eachIfExists('.js-map', function (i, map) {
           var $map = $(map);
-          var m = new GOOGLEMAP({
+          var m = new MAPBOXMAP({
             container: map,
             location: $map.data('location'),
-            label: $map.data('label'),
-            zoom: $map.data('zoom'),
-            marker: $map.data('marker'),
-            type: $map.data('type'),
-            fullscreen: $map.data('fullscreen')
+            zoom: $map.data('zoom')
           });
         });
 
