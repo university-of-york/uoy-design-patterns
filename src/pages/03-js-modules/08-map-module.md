@@ -11,7 +11,7 @@ id: map-module-page
 
 <div class="lead"><p>It's easy to embed a map on a page. The map module takes a container element and a lat/long string.</p></div>
 
-YOu can specify most of the details of the map using `data-` attributes on a `div` with a `js-map` class.
+You can specify most of the details of the map using `data-` attributes on a `div` with a `js-map` class.
 
 ## Simple Map
 
