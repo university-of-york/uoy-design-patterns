@@ -11,6 +11,8 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
 
   var WRAPPERHEIGHT = function (options) {
 
+    var $window = $(window);
+
     this.wrapper = $('.js-wrapper--main');
 
     if (!this.wrapper) return false;
