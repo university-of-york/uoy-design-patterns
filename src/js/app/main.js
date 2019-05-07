@@ -5,7 +5,7 @@ define(
    'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/prioritised-tables',
    'app/toggle', 'app/utility-toggle', 'app/wrapper-height', 'app/youtube-embed',
    'app/soundcloud-embed', 'app/searchables', 'app/filterable-tables', 'app/equal-height-row',
-   'app/google-map', 'app/mapbox-map', 'app/show-more', 'app/autocomplete',
+   'app/mapbox-map', 'app/show-more', 'app/autocomplete',
    'app/data-google-sheets', 'app/data-grid', 'app/cookie-banner'],
   function (
     $, ES5SHIM, PICTUREFILL, IFRAMERESIZER,
@@ -13,7 +13,7 @@ define(
     TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
     TOGGLE, UTILITYTOGGLE, WRAPPERHEIGHT, YOUTUBE,
     SOUNDCLOUD, SEARCHABLE, FILTERABLE, EQUALHEIGHT,
-    GOOGLEMAP, MAPBOXMAP, SHOWMORE, AUTOCOMPLETE,
+    MAPBOXMAP, SHOWMORE, AUTOCOMPLETE,
     DATAGSHEETS, DATAGRID, COOKIEBANNER ) {
 
       $(function(){

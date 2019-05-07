@@ -26,41 +26,46 @@ define( [] , function() {
     // Load Mapbox's stylesheet
     this.loadStylesheet( mapStylesheet );
 
-    // Load Mapbox's scripts and add init to callback
-    this.loadScripts( mapScripts , this.init.bind( this ) );
+    // Include _this_ in callback's scope
+    var that = this;
+
+    // Load Mapbox's scripts and init on callback
+    require( [ 'mapbox' ] , function( mapboxgl ){
+
+        // Assign our access token
+        mapboxgl.accessToken = mapboxAccessToken;
+
+        // Create a new Mapbox-GL map object
+        var map = new mapboxgl.Map({
+          "container" : that.options.container,
+          "style" : mapboxStyle,
+          "zoom" : ( that.options.zoom || 15 ),
+          "maxBounds" : [
+              [ -1.1501312255859375 , 53.921324836434714 ],
+              [ -0.990142822265625 , 53.979108639593576 ]
+          ],
+          "center" : that.stringToCoordinates( that.options.location ),
+        });
+
+        // Add map controls
+        map.addControl( new mapboxgl.NavigationControl( { "showCompass": false } ) , "bottom-right" );
+
+        // Prevent scrolling over the map from zooming
+        map.scrollZoom.disable();
+
+        // Add marker
+        new mapboxgl
+          .Marker( { 'color':'#B53A87' } )
+          .setLngLat( that.stringToCoordinates( that.options.location ) )
+          .addTo( map );
+
+    } );
 
   };
 
   // --------------------------------------------------
 
   MAPBOXMAP.prototype.init = function() {
-
-    // Assign our access token
-    mapboxgl.accessToken = mapboxAccessToken;
-
-    // Create a new Mapbox-GL map object
-    var map = new mapboxgl.Map({
-      "container" : this.options.container,
-      "style" : mapboxStyle,
-      "zoom" : ( this.options.zoom || 16 ),
-      "maxBounds" : [
-          [ -1.1501312255859375 , 53.921324836434714 ],
-          [ -0.990142822265625 , 53.979108639593576 ]
-      ],
-      "center" : this.stringToCoordinates( this.options.location ),
-    });
-
-    // Add map controls
-    map.addControl( new mapboxgl.NavigationControl( { "showCompass": false } ) , "bottom-right" );
-
-    // Prevent scrolling over the map from zooming
-    map.scrollZoom.disable();
-
-    // Add marker
-    new mapboxgl
-    .Marker( { 'color':'#B53A87' } )
-    .setLngLat( this.stringToCoordinates( this.options.location ) )
-    .addTo( map );
 
   };
 
