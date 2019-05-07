@@ -11,7 +11,8 @@ define( [] , function() {
 
   // --------------------------------------------------
 
-  var mapScripts = "https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js";
+  // This script is now loaded via RequireJS (path is mapped in app.js)
+  // var mapScripts = "https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js";
   var mapStylesheet = "https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css";
 
   var mapboxStyle = "mapbox://styles/university-of-york/cjucik6l81fmc1fprt8764pvg";
@@ -65,12 +66,6 @@ define( [] , function() {
 
   // --------------------------------------------------
 
-  MAPBOXMAP.prototype.init = function() {
-
-  };
-
-  // --------------------------------------------------
-
   MAPBOXMAP.prototype.makeID = function( input ) {
       return input.toLowerCase().replace( /\s+/g , '-' ).replace( /[^a-z0-9_-]/g , '' );
   };
@@ -79,35 +74,6 @@ define( [] , function() {
 
   MAPBOXMAP.prototype.stringToCoordinates = function( input ) {
       return input.replace( " " , "" ).split( ',' ).reverse();
-  };
-
-  // --------------------------------------------------
-
-  MAPBOXMAP.prototype.loadScripts = function( scriptURL , callback ) {
-
-    var scriptID = this.makeID( scriptURL );
-
-    // Check that this script hasn't already been loaded
-    if( document.getElementById( scriptID ) )
-    {
-      console.log( 'Already loaded - going straight to callback' );
-      callback();
-      return;
-    }
-
-    // Create element
-    var script = document.createElement( "script" );
-
-    script.id = scriptID;
-    script.src = scriptURL;
-
-    // Insertion
-    var ref = document.getElementsByTagName( "script" )[ 0 ];
-    ref.parentNode.insertBefore( script, ref );
-
-    // Set up callback
-    if( callback && typeof( callback ) === "function" ) script.onload = callback;
-
   };
 
   // --------------------------------------------------
