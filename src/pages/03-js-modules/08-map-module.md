@@ -36,4 +36,4 @@ var t = new MAP({
 
  * **container** - (DOM node/jQuery object) the container element (required). All containers with a class of `js-map` will automatically be made into maps as long as they have a `data-location` attribute.
  * **location** - (string) the location to pinpoint on the map (required). Will be used as the centre for more complex maps with multiple locations.
- * **zoom** - (int) the zoom level (optional). 0 is fully zoomed out, 20 is fully zoomed in (default 13)
+ * **zoom** - (int) the zoom level (optional). 0 is fully zoomed out, 20 is fully zoomed in (default 15)
