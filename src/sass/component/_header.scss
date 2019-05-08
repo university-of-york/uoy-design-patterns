@@ -63,8 +63,16 @@
   }
   @include mq('medium', '+') {
     margin:15px 0;
+    justify-content:flex-end;
   }
 }
 .c-main-header__action-item {
-  margin:0;
+  margin-bottom:0;
+  margin-left:20px;
+  &:first-child {
+    margin-left:0;
+  }
+  @include mq('large', '+') {
+    margin-left:40px;
+  }
 }
