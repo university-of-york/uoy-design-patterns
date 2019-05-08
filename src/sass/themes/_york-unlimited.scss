@@ -251,7 +251,7 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   .c-figure__caption,
   .c-figure__content {
     background-color: $t-dark-main;
-    background-color: transparentize($t-dark-neutral, 0.25);
+    background-color: transparentize($t-dark-main, 0.25);
   }
   @include mq(tiny, '~') {
     .c-figure--link .c-figure__content {
@@ -459,6 +459,13 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
 
 
   // Blockquotes
+  .c-blockquote__cite {
+    color: lighten($t-main-highlight,5);
+  }
+  .o-grid__row--alt3 .c-blockquote__cite {
+    color: $t-dark-main;
+  }
+
   .c-blockquote--image-quote .c-blockquote__content {
     background-color: $t-dark-main;
 
@@ -470,11 +477,21 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
       border-color:$t-dark-main transparent;
     }
   }
+  .o-grid__row--alt2 .c-blockquote--image-quote .c-blockquote__content {
+    background-color: $t-main;
+  }
+  .o-grid__row--alt2 .c-blockquote--image-quote .c-blockquote__image + .c-blockquote__content:after {
+    border-top-color: $t-main;
+    @include mq(tiny, '~') {
+      // When the arrow goes to the top
+      border-color:$t-dark-main transparent;
+    }
+  }
   .c-blockquote--pull-quote .c-blockquote__content {
     color: $t-main;
   }
   .o-grid__row--alt1 .c-blockquote--pull-quote .c-blockquote__content, .o-grid__row--alt2 .c-blockquote--pull-quote .c-blockquote__content {
-    color: $t-main-highlight;
+    color: $white;
   }
   .o-grid__row--alt3 .c-blockquote--pull-quote .c-blockquote__content {
     color: $t-dark-neutral;
