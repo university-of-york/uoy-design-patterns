@@ -44,20 +44,34 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
 .t-york-unlimited {
 
   //logo
-  .york-unlimited-logo {
+  .c-main-header__logo--york-unlimited {
     width:340px;
   }
 
   .york-logo {
-    width:200px;
+    max-width:125px;
   }
 
-
-  //Donate buttons
-  .donate-button {
-    margin:20px 0 20px 0;
+  // Makes sure search box has not margin at bottom
+  .c-form--mobile-search {
+    top:0;
+    margin-bottom:0;
+    .c-form__fieldset {
+      margin:0;
+      &:after {
+        display:none;
+      }
+    }
+    &.is-open {
+      height:3.625em;
+      @include mq('huge', '++') {
+        height: 3.9375em;
+      }
+    }
+    @include mq('large', '+') {
+      display:block;
+    }
   }
-
 
   // links
   a {
@@ -100,10 +114,6 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   td {
     border-bottom-color: $t-main;
   }
-
-
-
-
 
   // Page title
   .c-page-title,
@@ -180,7 +190,6 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   }
 
   // Signposts
-
   .c-signpost {
     .c-signpost__icon {
       color:$t-main-highlight;
@@ -292,7 +301,6 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
 
     }
   }
-
 
   // Grid rows
   .o-grid__row--alt1,
