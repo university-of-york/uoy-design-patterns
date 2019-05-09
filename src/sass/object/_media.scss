@@ -25,6 +25,10 @@
       width:auto;
       max-width:none;
     }
+    // Image sizing
+    .c-figure__image--thumbnail {
+        max-width:80px;
+    }
   }
   .o-media__body {
     @include demarginalise;
