@@ -23,9 +23,9 @@ $t-mid-neutral: #666;
 $t-dark-neutral: $charcoal;
 
 // Dark (e.g. alt1 row)
-$t-alt1: $t-dark-neutral;
+$t-alt1: $t-dark-main;
 // Darker (e.g. alt2 row)
-$t-alt2: $t-dark-main;
+$t-alt2: $t-dark-neutral;
 // Light (e.g. alt3 row)
 $t-alt3: $t-light-neutral;
 
@@ -58,6 +58,7 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
     margin-bottom:0;
     .c-form__fieldset {
       margin:0;
+      background-color: $t-dark-main;
       &:after {
         display:none;
       }
@@ -117,7 +118,8 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
 
   // Page title
   .c-page-title,
-  .c-page-title__wrapper {
+  .c-page-title__wrapper,
+  .c-main-header--alt {
     background-color: $t-dark-main;
   }
   .c-page-title__link {
@@ -259,19 +261,19 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   .c-figure__caption--blue,
   .c-figure__caption,
   .c-figure__content {
-    background-color: $t-dark-main;
-    background-color: transparentize($t-dark-main, 0.25);
+    background-color: $t-main;
+    background-color: transparentize($t-main, 0.25);
   }
   @include mq(tiny, '~') {
     .c-figure--link .c-figure__content {
-      background-color: $t-dark-neutral;
+      background-color: $t-main;
     }
   }
   .c-figure--link {
     &:hover, &:focus, &:active {
       .c-figure__content {
-        background-color: $t-main;
-        background-color: transparentize($t-main, 0.25);
+        background-color: $t-main-highlight;
+        background-color: transparentize($t-main-highlight, 0.25);
       }
     }
   }
@@ -404,37 +406,6 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
     color:$t-dark-neutral;
   }
   .o-grid__row--alt1 .c-key-fact {
-    background-color: $t-dark-neutral;
-    .c-key-fact__title {
-      color: $light;
-      strong {
-        color: $t-main-highlight;
-      }
-    }
-    .c-key-fact__icon {
-      color:$t-main-highlight;
-    }
-    .c-key-fact__content {
-      color: darken($light,5);
-    }
-    &:hover {
-      background-color: $t-dark-neutral;
-      .c-key-fact__title {
-        color: $light;
-        strong {
-          color: lighten($t-main-highlight,5);
-        }
-      }
-      .c-key-fact__icon {
-        color: lighten($t-main-highlight,5);
-      }
-      .c-key-fact__content {
-        color: $light;
-      }
-    }
-  }
-
-  .o-grid__row--alt2 .c-key-fact {
     background-color: $t-dark-main;
     .c-key-fact__title {
       color: $light;
@@ -465,28 +436,71 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
     }
   }
 
+  .o-grid__row--alt2 .c-key-fact {
+    background-color: $t-dark-neutral;
+    .c-key-fact__title {
+      color: $light;
+      strong {
+        color: $t-main-highlight;
+      }
+    }
+    .c-key-fact__icon {
+      color:$t-main-highlight;
+    }
+    .c-key-fact__content {
+      color: darken($light,5);
+    }
+    &:hover {
+      background-color: $t-dark-neutral;
+      .c-key-fact__title {
+        color: $light;
+        strong {
+          color: lighten($t-main-highlight,5);
+        }
+      }
+      .c-key-fact__icon {
+        color: lighten($t-main-highlight,5);
+      }
+      .c-key-fact__content {
+        color: $light;
+      }
+    }
+  }
+
 
   // Blockquotes
-  .c-blockquote__cite {
-    color: lighten($t-main-highlight,5);
-  }
   .o-grid__row--alt3 .c-blockquote__cite {
     color: $t-dark-main;
   }
 
   .c-blockquote--image-quote .c-blockquote__content {
-    background-color: $t-dark-main;
+    background-color: $t-main;
 
   }
   .c-blockquote--image-quote .c-blockquote__image + .c-blockquote__content:after {
-    border-top-color: $t-dark-main;
+    border-top-color: $t-main;
     @include mq(tiny, '~') {
       // When the arrow goes to the top
-      border-color:$t-dark-main transparent;
+      border-color:$t-main transparent;
     }
   }
-  .o-grid__row--alt2 .c-blockquote--image-quote .c-blockquote__content {
-    background-color: $t-main;
+  .o-grid__row--alt1,
+  .o-grid__row--alt2 {
+    .c-blockquote__cite {
+      color: lighten($t-main-highlight,5);
+    }
+    .c-blockquote--image-quote {
+      .c-blockquote__content {
+        background-color: $t-main;
+      }
+      .c-blockquote__image + .c-blockquote__content:after {
+        border-top-color: $t-main;
+        @include mq(tiny, '~') {
+          // When the arrow goes to the top
+          border-color:$t-main transparent;
+        }
+      }
+    }
   }
   .o-grid__row--alt2 .c-blockquote--image-quote .c-blockquote__image + .c-blockquote__content:after {
     border-top-color: $t-main;
@@ -502,7 +516,7 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
     color: $white;
   }
   .o-grid__row--alt3 .c-blockquote--pull-quote .c-blockquote__content {
-    color: $t-dark-neutral;
+    color: $t-main;
   }
   // Accordions
   .c-accordion__item {
