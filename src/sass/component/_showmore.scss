@@ -11,33 +11,11 @@
   }
 }
 // Secondary buttons on alt1/2 rows disappear
-// Make them the same as default buttons
-$color: map-get($c-btn, 'default');
-$bgColor:map-get($color, bg);
-$bgHoverColor:lighten($bgColor, 5);
-$bgActiveColor:lighten($bgColor, 10);
-$bgFocusColor:darken($bgColor, 10);
-$borderColor:$bgColor;
-$textColor:map-get($color, text);
+// Give them a white border
 .o-grid__row--alt1,
 .o-grid__row--alt2 {
   .c-show-more .c-btn--secondary {
-    color: $textColor;
-    background-color: $bgColor;
-    border-color:$borderColor;
-    &:hover {
-      color: $textColor;
-      background-color: $bgHoverColor;
-    }
-    &:active {
-      color: $textColor;
-      background-color: $bgActiveColor;
-    }
-    &:focus {
-      color: $textColor;
-      background-color: $bgFocusColor;
-      outline-color: $bgFocusColor;
-    }
+    border-color:$light;
   }
 }
 .c-show-more__content {
