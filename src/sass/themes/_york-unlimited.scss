@@ -43,13 +43,22 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
 
 .t-york-unlimited {
 
-  //logo
+  //logos
   .c-main-header__logo--york-unlimited {
     width:340px;
   }
-
   .york-logo {
     max-width:125px;
+  }
+
+  // Centre logo on small screens
+  @include mq('small', '-') {
+    .c-main-header__title {
+      float:none;
+    }
+    .c-main-header__logo--york-unlimited {
+      margin:0 auto;
+    }
   }
 
   // Makes sure search box has not margin at bottom
