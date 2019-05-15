@@ -72,7 +72,7 @@ component("grid", { "atoms":[
     { "grid-box": { "offset": "quarter", "size": "quarter", "atoms": { "text": " .o-grid__box--quarter .o-grid__box--offset-quarter" } } }
   ] } },
   { "grid-row": { "atoms": [
-    { "grid-box": { "size": "quarter", "atoms": { "text": " .o-grid__box--quarter .o-grid__box--offset-quarter" } } },
+    { "grid-box": { "size": "quarter", "atoms": { "text": " .o-grid__box--quarter" } } },
     { "grid-box": { "offset": "quarter", "size": "quarter", "atoms": { "text": " .o-grid__box--quarter .o-grid__box--offset-quarter" } } }
   ] } },
   { "grid-row": { "atoms": [
