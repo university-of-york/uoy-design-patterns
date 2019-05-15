@@ -1,0 +1,69 @@
+//
+// COOKIE BANNER
+//
+
+.c-cookie-banner {
+
+    // Content positioning
+    display:flex;
+    flex-flow:row nowrap;
+    align-items:flex-start;
+    justify-content:space-between;
+
+    // Constrain content to container width
+    padding:0 calc( 50% - #{ $container-width * 1/2 } );
+
+    // Padding & gutter between children
+    & > * {
+        padding:$base-spacing/2;
+
+        // More padding on bigger viewports
+        @include mq( small , '+' ) { padding:$base-spacing; }
+    }
+
+    // Stick to the bottom of the viewport
+    z-index: 2147483001; // Thanks UniBuddy... 😒
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    // Decoration
+    background-color: $c-cookie-banner__background;
+    color: $c-cookie-banner__color;
+
+    // Child elements
+
+    & &__content { // Extra specificity for themed branches
+
+        @include demarginalise();
+
+        a {
+            color: $c-cookie-banner__link-color;
+            &:hover { color: $c-cookie-banner__link-hover-color; }
+        }
+    }
+
+    &__controls {
+
+    }
+
+    & &__dismiss { // Extra specificity for themed branches
+
+        color: $c-cookie-banner__link-color;
+        &:hover { color: $c-cookie-banner__link-hover-color; }
+
+        text-decoration: none;
+        cursor: pointer;
+
+    }
+
+}
+
+// Bump up the padding on the page footer to ensure the banner doesn't cover anything
+body.has-c-cookie-banner .c-footer-main {
+
+    // Aproximate height only - adjust if banner content changes
+    padding-bottom:5em;
+
+}

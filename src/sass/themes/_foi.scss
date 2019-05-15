@@ -15,6 +15,8 @@ $teal:#20716f;
 
 $t-main: $dark-pink;
 $t-main-highlight: $pink;
+$t-light-neutral: #dedede;
+$t-mid-neutral: #666;
 $t-dark-neutral: $charcoal;
 $t-dark-contrast: $teal;
 
@@ -23,7 +25,7 @@ $t-alt1: $t-dark-contrast;
 // Darker (e.g. alt2 row)
 $t-alt2: $t-dark-neutral;
 // Light (e.g. alt3 row)
-$t-alt3: #dedede;
+$t-alt3: $t-light-neutral;
 
 $t-btn: $t-main-highlight;
 $t-btn-color: $light;
@@ -38,6 +40,12 @@ $t-btn-focus:darken($t-btn, 10);
     color:darken($t-main-highlight, 10);
     &:hover {
       color:$t-main-highlight;
+    }
+  }
+  .o-grid__row--alt2 a {
+    color:$white;
+    &:hover {
+      color:lighten($pink, 10);
     }
   }
   th {
@@ -88,6 +96,9 @@ $t-btn-focus:darken($t-btn, 10);
   .c-nav__item {
     border-width: 0;
     font-weight: bold;
+    .currentsection {
+      color: $t-main;
+    }
   }
   .c-nav__link,
   .c-nav__item a {
@@ -103,6 +114,10 @@ $t-btn-focus:darken($t-btn, 10);
       &:hover {
         color:$t-main-highlight;
       }
+    }
+    .c-nav__header,
+    .c-nav__header a {
+      color:$t-main-highlight;
     }
     .c-nav__item--more .c-nav__link {
       color: $light;
@@ -121,10 +136,13 @@ $t-btn-focus:darken($t-btn, 10);
       background-color:$t-main-highlight;
     }
   }
-  .c-subnav__item a {
+  .c-subnav__item a,
+  .c-subnav__title .c-subnav__link,
+  .c-subnav__title a {
     color:$charcoal;
     &:hover {
       color: $t-main-highlight;
+      text-decoration:underline;
     }
   }
 
@@ -182,6 +200,9 @@ $t-btn-focus:darken($t-btn, 10);
     border-top-color: $t-main-highlight;
     a {
       color: $light;
+      &:hover {
+        color:$t-main-highlight;
+      }
     }
   }
 
@@ -198,8 +219,8 @@ $t-btn-focus:darken($t-btn, 10);
     }
   }
   .c-figure--link:hover .c-figure__content {
-    background-color: $t-main-highlight;
-    background-color: transparentize($t-main-highlight, 0.25);
+    background-color: $t-dark-neutral;
+    background-color: transparentize($t-dark-neutral, 0.25);
   }
 
   // Grid rows
@@ -251,10 +272,13 @@ $t-btn-focus:darken($t-btn, 10);
 
   // News
   .c-news--excerpt .c-news__title {
-    color:$t-dark-neutral;
+    color:$t-main-highlight;
   }
   .c-news--excerpt:hover .c-news__title {
-    color:$t-main-highlight;
+    color:$t-main;
+  }
+  .c-news__event-date {
+    color:$t-mid-neutral;
   }
 
   // Key facts

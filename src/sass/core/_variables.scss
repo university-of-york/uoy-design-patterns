@@ -218,6 +218,13 @@ $c-btn: (
   )
 );
 
+// Cookie banner
+// component/_cookie-banner.scss
+$c-cookie-banner__background:       lighten($teal,10);
+$c-cookie-banner__color:            $white;
+$c-cookie-banner__link-color:       $white;
+$c-cookie-banner__link-hover-color: $blue;
+
 // Clearing tables
 // component/_clearing-tables.scss
 // None
@@ -303,6 +310,8 @@ $h-card__figure-size:        140px;
 // component/_header.scss
 $c-main-header-background:        $white;
 $c-main-header-color:             $charcoal;
+$c-main-header--alt-background:   $charcoal;
+$c-main-header--alt-color:   $white;
 $c-main-header__logo-size:        200px;
 $c-main-header__logo-size--small: 152px;
 

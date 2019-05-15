@@ -16,6 +16,10 @@
   background:$c-main-header-background;
   position:relative;
 }
+.c-main-header--alt {
+  color:$c-main-header--alt-color;
+  background:$c-main-header--alt-background;
+}
 .c-main-header__title {
   @include font-size(24px, 41px);
   display:block;
@@ -44,5 +48,31 @@
     // Change size of logo on tiny screens
     width:$c-main-header__logo-size--small;
     //height:auto; // will naturally go to 57px - on really small screens it won't become squished
+  }
+}
+// Collection of actions in top right corner of e.g. York Unlimited (donate, search, home)
+.c-main-header__action-list {
+  margin:5px 0;
+  list-style:none;
+  padding:0;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  .c-icon {
+    color:$light;
+  }
+  @include mq('medium', '+') {
+    margin:15px 0;
+    justify-content:flex-end;
+  }
+}
+.c-main-header__action-item {
+  margin-bottom:0;
+  margin-left:20px;
+  &:first-child {
+    margin-left:0;
+  }
+  @include mq('large', '+') {
+    margin-left:40px;
   }
 }

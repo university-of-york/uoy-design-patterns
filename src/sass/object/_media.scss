@@ -8,6 +8,7 @@
     margin-bottom:20px;
   }
   .o-media__picture {
+    @include demarginalise;
     display:table-cell;
     padding-right:20px;
     .o-media--top & {
@@ -24,6 +25,10 @@
       width:auto;
       max-width:none;
     }
+    // Image sizing
+    .c-figure__image--thumbnail {
+        max-width:80px;
+    }
   }
   .o-media__body {
     @include demarginalise;
@@ -37,5 +42,31 @@
   }
   p + .o-media__title {
     margin-top:0px;
+  }
+}
+
+// Undoes the above for media objects in a sidebar
+// Eg: Contacts on country pages - https://www.york.ac.uk/study/international/your-country/china/
+@include mq( huge , '-' ) {
+  @include mq( medium , '+' ) {
+    .o-grid__box--third
+    {
+      .o-media {
+        display:block;
+        margin-bottom:0;
+      }
+      .o-media__picture {
+        display:block;
+        padding-right:0;
+        vertical-align:unset;
+        margin:10px 0;
+      }
+      .o-media__body {
+        display:block;
+        vertical-align:unset;
+        width:auto;
+        margin-bottom:10px;
+      }
+    }
   }
 }
