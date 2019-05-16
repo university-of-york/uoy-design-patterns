@@ -18,6 +18,7 @@ $green:#97D700;
 $t-dark-main: $dark-teal;
 $t-main: $mid-teal;
 $t-main-highlight: $light-teal;
+$t-light-highlight: lighten($t-main-highlight,10);
 $t-light-neutral: $light-grey;
 $t-mid-neutral: #666;
 $t-dark-neutral: $charcoal;
@@ -25,7 +26,7 @@ $t-dark-neutral: $charcoal;
 // Dark (e.g. alt1 row)
 $t-alt1: $t-dark-main;
 // Darker (e.g. alt2 row)
-$t-alt2: $t-dark-neutral;
+$t-alt2: $t-main-highlight;
 // Light (e.g. alt3 row)
 $t-alt3: $t-light-neutral;
 
@@ -49,6 +50,7 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   }
   .york-logo {
     max-width:125px;
+    display:block;
   }
 
   // Centre logo on small screens
@@ -72,6 +74,10 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
         display:none;
       }
     }
+    .c-form__element {
+      padding-left:0;
+      padding-right:0;
+    }
     &.is-open {
       height:3.625em;
       @include mq('huge', '++') {
@@ -90,17 +96,29 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
       color:$t-main-highlight;
     }
   }
-  .o-grid__row--alt1,.o-grid__row--alt2 {
+  .o-grid__row--alt1 {
     a {
-      color:lighten($t-main-highlight,5);
+      color:$t-light-highlight;
       &:hover{
-        color:lighten($t-main-highlight,10);
+        color:$t-main-highlight;
       }
       &.c-btn {
         color: $t-btn-color;
       }
     }
   }
+  .o-grid__row--alt2 {
+    a {
+      color:$t-dark-neutral;
+      &:hover{
+        color:$t-main;
+      }
+      &.c-btn {
+        color: $t-btn-color;
+      }
+    }
+  }
+
   .o-grid__row--alt3 {
     a {
       color:$t-dark-main;
@@ -137,8 +155,8 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
       color:$white;
     }
   }
-  .c-page-title__header {
-    padding-top:20px;
+  .c-main-header--alt {
+    padding:10px 0;
   }
 
   // Navigation
@@ -151,7 +169,7 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
     //border-width: 0;
     //font-weight: bold;
     .currentsection {
-      color: $t-main;
+      //color: $t-main;
     }
   }
   .c-nav__link,
@@ -221,14 +239,17 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   // Panel
   .c-panel {
     background-color:$t-light-neutral;
-    border-color:$t-light-neutral;
+    border-color:$t-main-highlight;
     border-style: solid;
-    border-left-width:1px;
-    border-right-width:1px;
-    border-bottom-width:1px;
+    border-left-width:0;
+    border-right-width:0;
+    border-bottom-width:0;
   }
   .c-panel__content {
     color:$t-dark-neutral;
+    h2, h3, h4 {
+      color:$t-main;
+    }
   }
   .c-panel--link .c-panel__more {
     color: $t-main;
@@ -241,6 +262,17 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
     border-color: $t-main-highlight;
     .c-panel__content {
       color: $white;
+      h2, h3, h4 {
+        color:$t-main-highlight;
+      }
+    }
+    &.c-panel--link {
+      .c-panel__more {
+        color:$t-light-highlight;
+      }
+      &:hover .c-panel__more {
+        color:$t-main-highlight;
+      }
     }
   }
 
@@ -278,6 +310,13 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
       background-color: $t-main;
     }
   }
+  .c-figure__caption--below {
+    background: transparent;
+    color: $t-dark-neutral;
+  }
+  .o-grid__row--alt1 .c-figure__caption--below {
+    color:$white !important;
+  }
   .c-figure--link {
     &:hover, &:focus, &:active {
       .c-figure__content {
@@ -287,6 +326,10 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
     }
   }
   a[href*="/york-unlimited/get-involved/donate/"].c-figure--link {
+    .c-figure__content {
+      background-color: darken($orange,12);
+      background-color: transparentize(darken($orange,12), 0.25);
+    }
     &:hover, &:focus, &:active {
       .c-figure__content {
         background-color: $orange;
@@ -295,21 +338,27 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
     }
   }
   a[href*="/york-unlimited/get-involved/volunteer/"].c-figure--link {
+    .c-figure__content {
+      background-color: darken($purple,10);
+      background-color: transparentize(darken($purple,10), 0.25);
+    }
     &:hover, &:focus, &:active {
       .c-figure__content {
         background-color: $purple;
         background-color: transparentize($purple, 0.25);
       }
-
     }
   }
-  a[href*="/york-unlimited/get-involved/insights/"].c-figure--link {
+  a[href*="/york-unlimited/get-involved/york-asks/"].c-figure--link {
+    .c-figure__content {
+      background-color: darken($green,18);
+      background-color: transparentize(darken($green,17), 0.2);
+    }
     &:hover, &:focus, &:active {
       .c-figure__content {
-        background-color: $green;
-        background-color: transparentize($green, 0.25);
+        background-color: darken($green,10);
+        background-color: transparentize(darken($green,10), 0.25);
       }
-
     }
   }
 
@@ -323,6 +372,7 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   .o-grid__row--alt2:before,
   .o-grid__row--alt2:after {
     background-color: $t-alt2;
+    color: $t-dark-neutral;
   }
   .o-grid__row--alt3,
   .o-grid__row--alt3:before,
@@ -352,6 +402,15 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
 
     }
   }
+  .o-grid__row--alt2 {
+    .c-btn {
+      border-color: $t-dark-neutral;
+      &:hover {
+        border-color: $t-main;
+      }
+    }
+  }
+
 
   .c-btn--secondary {
     background-color:$t-btn-secondary;
@@ -419,7 +478,7 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
     .c-key-fact__title {
       color: $light;
       strong {
-        color: $t-main-highlight;
+        color: lighten($t-main-highlight,5);
       }
     }
     .c-key-fact__icon {
@@ -446,32 +505,32 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   }
 
   .o-grid__row--alt2 .c-key-fact {
-    background-color: $t-dark-neutral;
+    background-color: $t-main-highlight;
     .c-key-fact__title {
-      color: $light;
+      color: $t-dark-neutral;
       strong {
-        color: $t-main-highlight;
+        color: $t-dark-neutral;
       }
     }
     .c-key-fact__icon {
-      color:$t-main-highlight;
+      color:$t-dark-main;
     }
     .c-key-fact__content {
-      color: darken($light,5);
+      color: $t-dark-neutral;
     }
     &:hover {
-      background-color: $t-dark-neutral;
+      background-color: $t-main-highlight;
       .c-key-fact__title {
-        color: $light;
+        color: $t-dark-neutral;
         strong {
-          color: lighten($t-main-highlight,5);
+          color: $t-dark-neutral;
         }
       }
       .c-key-fact__icon {
-        color: lighten($t-main-highlight,5);
+        color: lighten($t-dark-main,5);
       }
       .c-key-fact__content {
-        color: $light;
+        color: $t-dark-neutral;
       }
     }
   }
@@ -483,47 +542,38 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   }
 
   .c-blockquote--image-quote .c-blockquote__content {
-    background-color: $t-main;
+    background-color: $light;
+    color: $t-main;
 
   }
   .c-blockquote--image-quote .c-blockquote__image + .c-blockquote__content:after {
-    border-top-color: $t-main;
+    border-top-color: $light;
     @include mq(tiny, '~') {
       // When the arrow goes to the top
-      border-color:$t-main transparent;
+      border-color:$light transparent;
     }
   }
-  .o-grid__row--alt1,
-  .o-grid__row--alt2 {
+
+  .o-grid__row--alt1 {
     .c-blockquote__cite {
       color: lighten($t-main-highlight,5);
     }
-    .c-blockquote--image-quote {
-      .c-blockquote__content {
-        background-color: $t-main;
-      }
-      .c-blockquote__image + .c-blockquote__content:after {
-        border-top-color: $t-main;
-        @include mq(tiny, '~') {
-          // When the arrow goes to the top
-          border-color:$t-main transparent;
-        }
+
+  }
+  .o-grid__row--alt2 {
+    .c-blockquote__cite {
+      color:$t-dark-neutral;
+    }
+    .c-blockquote--pull-quote {
+      .c-blockquote__content  {
+        color:$t-dark-neutral;
       }
     }
+
   }
-  .o-grid__row--alt2 .c-blockquote--image-quote .c-blockquote__image + .c-blockquote__content:after {
-    border-top-color: $t-main;
-    @include mq(tiny, '~') {
-      // When the arrow goes to the top
-      border-color:$t-dark-main transparent;
-    }
-  }
-  .c-blockquote--pull-quote .c-blockquote__content {
-    color: $t-main;
-  }
-  .o-grid__row--alt1 .c-blockquote--pull-quote .c-blockquote__content, .o-grid__row--alt2 .c-blockquote--pull-quote .c-blockquote__content {
-    color: $white;
-  }
+
+
+
   .o-grid__row--alt3 .c-blockquote--pull-quote .c-blockquote__content {
     color: $t-main;
   }
@@ -574,6 +624,11 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   // Tags
   .c-tag, .c-tag-list a, .c-tag-list .u-link {
     color: $light;
+  }
+
+  // Modals
+  .c-modal__close {
+    color:$white;
   }
 
 }

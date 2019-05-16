@@ -65,10 +65,50 @@ component("grid-row", { "atoms": [
 
 </script>
 
-Facts in alt rows have a slightly different style:
+Facts in alt rows match the background colour that they are on:
 
 <script>
-component("grid-row", {"type": "alt2", "class":"js-equal-height-row", "atoms": [
+component("grid-row", {"type": "alt1", "class":"js-equal-height-row", "atoms": [
+  { "grid-box": { "size": "third", "atoms": { "key-fact": {
+    "title": "<strong>10th</strong> for research impact in the REF 2014",
+    "content": "<p>Research performance</p>",
+    "link": "http://www.york.ac.uk/research/performance/",
+    "icon": "book"
+  } } } },
+  { "grid-box": { "size": "third", "atoms": { "key-fact": {
+    "title": "<strong>&pound;500 million</strong> invested in facilities",
+    "content": "<p>World-class resources available to staff and partners</p>",
+    "link": "http://www.york.ac.uk/research/facilities/",
+    "icon": "money"
+  } } } },
+  { "grid-box": { "size": "third", "atoms": { "key-fact": {
+    "title": "A community of <strong>2,000+</strong> research students",
+    "content": "supported by the York Graduate Research School",
+    "link": "http://www.york.ac.uk/research/graduate-school/",
+    "icon": "graduation-cap"
+  } } } }
+] })
++component("grid-row", {"type": "alt2", "class":"js-equal-height-row", "atoms": [
+  { "grid-box": { "size": "third", "atoms": { "key-fact": {
+    "title": "<strong>10th</strong> for research impact in the REF 2014",
+    "content": "<p>Research performance</p>",
+    "link": "http://www.york.ac.uk/research/performance/",
+    "icon": "book"
+  } } } },
+  { "grid-box": { "size": "third", "atoms": { "key-fact": {
+    "title": "<strong>&pound;500 million</strong> invested in facilities",
+    "content": "<p>World-class resources available to staff and partners</p>",
+    "link": "http://www.york.ac.uk/research/facilities/",
+    "icon": "money"
+  } } } },
+  { "grid-box": { "size": "third", "atoms": { "key-fact": {
+    "title": "A community of <strong>2,000+</strong> research students",
+    "content": "supported by the York Graduate Research School",
+    "link": "http://www.york.ac.uk/research/graduate-school/",
+    "icon": "graduation-cap"
+  } } } }
+] })
++component("grid-row", {"type": "alt3", "class":"js-equal-height-row", "atoms": [
   { "grid-box": { "size": "third", "atoms": { "key-fact": {
     "title": "<strong>10th</strong> for research impact in the REF 2014",
     "content": "<p>Research performance</p>",
