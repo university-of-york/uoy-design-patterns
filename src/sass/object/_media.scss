@@ -47,13 +47,14 @@
 
 // Undoes the above for media objects in a sidebar
 // Eg: Contacts on country pages - https://www.york.ac.uk/study/international/your-country/china/
+// CM 16/5/2019 - removed margin-bottom:0, as this also negatively affects key facts
+// This needs replacing with a modifier (e.g. o-media--stacked)
 @include mq( huge , '-' ) {
   @include mq( medium , '+' ) {
     .o-grid__box--third
     {
       .o-media {
         display:block;
-        margin-bottom:0;
       }
       .o-media__picture {
         display:block;
