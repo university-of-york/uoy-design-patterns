@@ -18,6 +18,7 @@ $green:#97D700;
 $t-dark-main: $dark-teal;
 $t-main: $mid-teal;
 $t-main-highlight: $light-teal;
+$t-light-highlight: lighten($t-main-highlight,10);
 $t-light-neutral: $light-grey;
 $t-mid-neutral: #666;
 $t-dark-neutral: $charcoal;
@@ -97,7 +98,7 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   }
   .o-grid__row--alt1 {
     a {
-      color:lighten($t-main-highlight,10);
+      color:$t-light-highlight;
       &:hover{
         color:$t-main-highlight;
       }
@@ -262,6 +263,14 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
     .c-panel__content {
       color: $white;
       h2, h3, h4 {
+        color:$t-main-highlight;
+      }
+    }
+    &.c-panel--link {
+      .c-panel__more {
+        color:$t-light-highlight;
+      }
+      &:hover .c-panel__more {
         color:$t-main-highlight;
       }
     }
@@ -615,6 +624,11 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   // Tags
   .c-tag, .c-tag-list a, .c-tag-list .u-link {
     color: $light;
+  }
+
+  // Modals
+  .c-modal__close {
+    color:$white;
   }
 
 }
