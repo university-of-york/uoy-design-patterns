@@ -13,9 +13,7 @@
   }
   .o-grid__row--alt1 &,
   .o-grid__row--alt2 & {
-    background-color:$c-key-fact-alt-background-color;
     color:$c-key-fact-alt-color;
-    padding:$base-spacing;
   }
 }
 a.c-key-fact:hover{
