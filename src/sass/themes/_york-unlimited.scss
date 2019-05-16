@@ -73,6 +73,10 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
         display:none;
       }
     }
+    .c-form__element {
+      padding-left:0;
+      padding-right:0;
+    }
     &.is-open {
       height:3.625em;
       @include mq('huge', '++') {
