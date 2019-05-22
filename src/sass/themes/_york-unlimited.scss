@@ -317,7 +317,7 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   .o-grid__row--alt1 .c-figure__caption--below {
     color:$white !important;
   }
-  .c-figure--link {
+  a.c-figure--link {
     &:hover, &:focus, &:active {
       .c-figure__content {
         background-color: $t-main-highlight;
@@ -574,8 +574,15 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
 
 
 
-  .o-grid__row--alt3 .c-blockquote--pull-quote .c-blockquote__content {
-    color: $t-main;
+  .o-grid__row--alt3 {
+   .c-blockquote--pull-quote .c-blockquote__content {
+      color: darken($t-main-highlight,10);
+    }
+  }
+  .o-grid__row--default {
+   .c-blockquote--pull-quote .c-blockquote__content {
+      color: darken($t-main-highlight,5);
+    }
   }
   // Accordions
   .c-accordion__item {
@@ -629,6 +636,53 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   // Modals
   .c-modal__close {
     color:$white;
+  }
+
+  //Extra rules for colours on specific branches, using CMS section ID numbers
+  //Volunteering branch
+  &.section-id-192979 {
+    .c-panel,
+    .c-panel--highlight {
+      border-color: $purple;
+    }
+    .c-signpost__icon {
+      color:$purple;
+    }
+    .c-signpost .c-btn {
+      background-color: $purple;
+      border-color:$purple;
+      color:$light;
+    }
+  }
+  //York Asks branch
+  &.section-id-192980 {
+    .c-panel,
+    .c-panel--highlight {
+      border-color: $green;
+    }
+    .c-signpost__icon {
+      color:$green;
+    }
+    .c-signpost .c-btn {
+      background-color: $green;
+      border-color:$green;
+      color:$t-dark-main;
+    }
+  }
+  //Donate branch
+  &.section-id-192978 {
+    .c-panel,
+    .c-panel--highlight {
+      border-color: $orange;
+    }
+    .c-signpost__icon {
+      color:$orange;
+    }
+    .c-signpost .c-btn {
+      background-color: $orange;
+      border-color:$orange;
+      color:$t-dark-main;
+    }
   }
 
 }
