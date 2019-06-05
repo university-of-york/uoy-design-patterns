@@ -248,7 +248,7 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   .c-panel__content {
     color:$t-dark-neutral;
     h2, h3, h4 {
-      color:$t-main;
+      color:darken($t-main-highlight,8);
     }
   }
   .c-panel--link .c-panel__more {
@@ -290,26 +290,44 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   .c-footer-main {
     background-color: $t-dark-main;
     border-top-color: $t-main-highlight;
+    background-image: url(/img/york-unlimited-footer-background-left.png), url(/img/york-unlimited-footer-background-right.png);
+    background-position: left top, right bottom;
+    background-repeat:no-repeat;
     a {
       color: $light;
       &:hover {
-        color:$t-main-highlight;
+        color:$light;
+        text-decoration: underline;
       }
     }
   }
 
+  @include mq(small, '-') {
+    .c-footer-main {
+      background-image: url(/img/york-unlimited-footer-background-top-right.png), url(/img/york-unlimited-footer-background-right.png);
+      background-position: right top, right bottom;
+    }
+  }
+
   // Figures
+  .c-figure--banner {
+    .c-figure__content, .c-figure__caption {
+      background-color: $t-main;
+      background-color: transparentize($t-main, 0.25);
+    }
+  }
   .c-figure__caption--blue,
   .c-figure__caption,
   .c-figure__content {
-    background-color: $t-main;
-    background-color: transparentize($t-main, 0.25);
+    background-color: $t-main-highlight;
+    background-color: transparentize($t-main-highlight, 0.25);
   }
   @include mq(tiny, '~') {
     .c-figure--link .c-figure__content {
-      background-color: $t-main;
+      background-color: $t-main-highlight;
     }
   }
+
   .c-figure__caption--below {
     background: transparent;
     color: $t-dark-neutral;
@@ -317,12 +335,26 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   .o-grid__row--alt1 .c-figure__caption--below {
     color:$white !important;
   }
-  .c-figure--link {
+  a.c-figure--link {
+    .c-figure__content {
+      background-color: $t-main;
+      background-color: transparentize($t-main, 0.25);
+    }
     &:hover, &:focus, &:active {
       .c-figure__content {
         background-color: $t-main-highlight;
         background-color: transparentize($t-main-highlight, 0.25);
       }
+    }
+  }
+  @include mq(tiny, '~') {
+    .c-figure__content, a.c-figure--link .c-figure__content {
+      background-color: $t-main;
+    }
+  }
+  @include mq(small, '-') {
+    .c-figure--banner .c-figure__content {
+      background-color: $t-main;
     }
   }
   a[href*="/york-unlimited/get-involved/donate/"].c-figure--link {
@@ -412,7 +444,7 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   }
 
 
-  .c-btn--secondary {
+  .c-btn--secondary, p.cta a[href="/york-unlimited/get-involved/fundraise/yos/"] {
     background-color:$t-btn-secondary;
     border-color:$t-btn-secondary;
     color:$t-btn-secondary-color;
@@ -574,8 +606,15 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
 
 
 
-  .o-grid__row--alt3 .c-blockquote--pull-quote .c-blockquote__content {
-    color: $t-main;
+  .o-grid__row--alt3 {
+   .c-blockquote--pull-quote .c-blockquote__content {
+      color: darken($t-main-highlight,10);
+    }
+  }
+  .o-grid__row--default {
+   .c-blockquote--pull-quote .c-blockquote__content {
+      color: darken($t-main-highlight,5);
+    }
   }
   // Accordions
   .c-accordion__item {
@@ -629,6 +668,53 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   // Modals
   .c-modal__close {
     color:$white;
+  }
+
+  //Extra rules for colours on specific branches, using CMS section ID numbers
+  //Volunteering branch
+  &.section-id-192979 {
+    .c-panel,
+    .c-panel--highlight {
+      border-color: $purple;
+    }
+    .c-signpost__icon {
+      color:$purple;
+    }
+    .c-signpost .c-btn {
+      background-color: $purple;
+      border-color:$purple;
+      color:$light;
+    }
+  }
+  //York Asks branch
+  &.section-id-192980 {
+    .c-panel,
+    .c-panel--highlight {
+      border-color: $green;
+    }
+    .c-signpost__icon {
+      color:$green;
+    }
+    .c-signpost .c-btn {
+      background-color: $green;
+      border-color:$green;
+      color:$t-dark-main;
+    }
+  }
+  //Donate branch
+  &.section-id-192978 {
+    .c-panel,
+    .c-panel--highlight {
+      border-color: $orange;
+    }
+    .c-signpost__icon {
+      color:$orange;
+    }
+    .c-signpost .c-btn {
+      background-color: $orange;
+      border-color:$orange;
+      color:$t-dark-main;
+    }
   }
 
 }
