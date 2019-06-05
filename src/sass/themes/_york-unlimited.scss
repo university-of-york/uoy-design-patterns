@@ -290,7 +290,7 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   .c-footer-main {
     background-color: $t-dark-main;
     border-top-color: $t-main-highlight;
-    background-image: url(/img/york-unlimited-footer-background-left.png), url(/img/york-unlimited-footer-background-right.png);
+    background-image: url(https://www.york.ac.uk/static/stable/img/york-unlimited-footer-background-left.png), url(https://www.york.ac.uk/static/stable/img/york-unlimited-footer-background-right.png);
     background-position: left top, right bottom;
     background-repeat:no-repeat;
     a {
@@ -304,7 +304,7 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
 
   @include mq(small, '-') {
     .c-footer-main {
-      background-image: url(/img/york-unlimited-footer-background-top-right.png), url(/img/york-unlimited-footer-background-right.png);
+      background-image: url(https://www.york.ac.uk/static/stable/img/york-unlimited-footer-background-top-right.png), url(https://www.york.ac.uk/static/stable/img/york-unlimited-footer-background-right.png);
       background-position: right top, right bottom;
     }
   }
