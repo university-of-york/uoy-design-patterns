@@ -120,7 +120,7 @@ define(['jquery', 'jscookie'], function ($, COOKIES) {
     // Set our cookie banner cookie to indicate the banner has been dimissed
 
     COOKIEBANNER.prototype.setCookie = function() {
-        COOKIES.set( cookieName , true , { domain: this.getDomain() } );
+        COOKIES.set( cookieName , true , { domain: this.getDomain() , expires: 365 } );
     };
 
     // --------------------------------------------------
