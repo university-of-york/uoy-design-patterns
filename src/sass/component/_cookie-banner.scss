@@ -7,7 +7,7 @@
     // Content positioning
     display:flex;
     flex-flow:row nowrap;
-    align-items:flex-start;
+    align-items:center;
     justify-content:space-between;
 
     // Constrain content to container width
@@ -55,6 +55,13 @@
 
         text-decoration: none;
         cursor: pointer;
+
+        // Make the tap size bigger
+        padding:$base-spacing;
+        margin:0 0 0 $base-spacing*-1;
+
+        // More padding on bigger viewports
+        @include mq( small , '+' ) { margin:0 $base-spacing*-1; }
 
     }
 
