@@ -109,15 +109,75 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
       this.panel = $('<div>').addClass('c-panel c-panel--highlight').attr({'role':'alert'});
     }
 
-    var t = new GOOGLEDOC({
-      id: docID,
-      backup: backupDoc
-    });
+    // var t = new GOOGLEDOC({
+    //   id: docID,
+    //   backup: backupDoc
+    // });
 
     var that = this;
 
+    var sheetId = '1ZQkMdoIvAe2ZPM1Lg4biPx0B2Yp9w43g_-NuqxM5ugM';
+    $.getJSON( 'https://spreadsheets.google.com/feeds/list/' + sheetId + '/1/public/values?alt=json' , function( rawData ) {
+
+      // Field mappings from gsheet API source to our clearing course object
+      // source : destination
+      var fieldMap = {
+        gsx$adjustmentonlyhiy: "Adjustment only",
+        gsx$bullet1: "Bullet 1",
+        gsx$bullet2: "Bullet 2",
+        gsx$bullet3: "Bullet 3",
+        gsx$courselength: "Course length",
+        gsx$department: "Department",
+        gsx$entryrequirements: "Entry requirements",
+        gsx$inclearinghomeeu: "Home/EU",
+        gsx$inclearinginternational: "International",
+        gsx$linktocoursepage: "Link to course page",
+        gsx$mcrcode: "MCR_CODE",
+        gsx$nogrades: "No grades",
+        gsx$phonenumbers: "Phone number(s)",
+        gsx$qualificationearned: "Qualification earned",
+        gsx$sracheckx: "SRA check?\n✓ X",
+        gsx$subject: "Subject",
+        gsx$titleofcourse: "Title of course",
+        gsx$ucascode: "UCAS code"
+      };
+
+      var data = []; // The data object we'll be returning
+
+      var rows = rawData.feed.entry; // Get all data rows
+
+      var sourceKeys = Object.keys( fieldMap ); // Get fieldmap keys for later
+
+      // Process each row in the incoming data
+      for( var r = 0 ; r < rows.length ; r++ )
+      {
+        row = rows[ r ];
+        dataRow = {};
+
+        // Check each entry in our fieldmap
+        for( var k = 0 ; k < sourceKeys.length ; k++ )
+        {
+          var sourceKey = sourceKeys[ k ];
+          var destinationKey = fieldMap[ sourceKey ];
+
+          // Get the value for this field
+          if( row[ sourceKey ].$t !== undefined )
+          {
+            dataRow[ destinationKey ] = row[ sourceKey ].$t;
+          }
+        }
+
+        // Add row data to our return object
+        data.push( dataRow );
+      }
+
+      $(window).trigger('data.loaded', [sheetId, data]);
+
+    } );
+
     $window.on('data.loaded', function (e, id, data) {
-      if (id === docID && that.dataLoaded === false) {
+      if (id === sheetId && that.dataLoaded === false) {
+      // if (id === docID && that.dataLoaded === false) {
 
         // Only load it once, even if there's more than one table on a page!
         that.dataLoaded = true;
@@ -256,7 +316,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
                     modalContent.append(modalBullets);
                 }
             }
-            
+
             var numbers = trimAndAdd(thisCourse['Phone number(s)'].split(','));
               var modalBullets1 = $('<ul>');
               var modalBullets2 = $('<ol>');
