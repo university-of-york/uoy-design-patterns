@@ -52,9 +52,6 @@ The components can be used together in many different ways, which allows us to b
       <div class="c-panel__content">
         <h3> Web CMS users</h3>
         <p>The Digital Pattern Library Templates in the CMS are built using code from the pattern library, so you’ll be using the same components without needing to write any HTML yourself.</p>
-        <ul>
-          <li><a href="#">Using the Digital Pattern Library Templates in the CMS</a> (link to be added)</li>
-        </ul>
       </div>
     </div>
   </div>
