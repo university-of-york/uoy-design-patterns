@@ -110,6 +110,8 @@
     padding:$base-spacing/4 $base-spacing/2;
     background:$blue;
   }
+  // Set link colour to caption text colour
+  a,a:hover,a:active { color:inherit; }
 }
 .c-figure__caption--below {
   display: block;
