@@ -111,7 +111,7 @@
     background:$blue;
   }
   // Set link colour to caption text colour
-  a { color:inherit; }
+  a,a:hover,a:active { color:inherit; }
 }
 .c-figure__caption--below {
   display: block;
