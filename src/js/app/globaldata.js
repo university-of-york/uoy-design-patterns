@@ -3,7 +3,7 @@ define(['jquery'], function ($) {
         clearingData: {
             noCourseMessage: "<p>There are no vacancies in this department for September 2019. <a href=\"//www.york.ac.uk/study/undergraduate/courses/all\">Explore your options for 2020 entry.</a></p>",
             sheetId: "1ZQkMdoIvAe2ZPM1Lg4biPx0B2Yp9w43g_-NuqxM5ugM",
-            backupDoc: "http://www.york.ac.uk/static/data/clearing/2018.json",
+            backupDoc: "http://www.york.ac.uk/static/data/clearing/2019.json",
             callToApplyText: "Call Admissions on <a href='tel:+441904234000'>01904 234000</a>"
         },
         gSheetsAPISettings: {

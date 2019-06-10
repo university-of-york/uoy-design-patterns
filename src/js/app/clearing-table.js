@@ -16,12 +16,12 @@ category: Javascript
  * Then save it as a JSON file and upload to /static/data/clearing
  */
 
-define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-link'],
-  function ($, GOOGLEDOC, SEARCHABLE, UTILS, MODALLINK) {
+define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
+  function ($, SEARCHABLE, UTILS, MODALLINK) {
 
   var $window = $(window);
   var clearingData = window.PL_DATA.clearingData;
-  var docID = clearingData.docID;
+  var sheetId = clearingData.sheetId;
   var backupDoc = clearingData.backupDoc;
   var letterLimit = 5;
   var searchLimit = 20;
@@ -109,75 +109,13 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
       this.panel = $('<div>').addClass('c-panel c-panel--highlight').attr({'role':'alert'});
     }
 
-    // var t = new GOOGLEDOC({
-    //   id: docID,
-    //   backup: backupDoc
-    // });
+    // Get our clearing data (triggers data.loaded on success)
+    this.fetchData( 'https://spreadsheets.google.com/feeds/list/' + sheetId + '/1/public/values?alt=json' , backupDoc );
 
     var that = this;
 
-    var sheetId = '1ZQkMdoIvAe2ZPM1Lg4biPx0B2Yp9w43g_-NuqxM5ugM';
-    $.getJSON( 'https://spreadsheets.google.com/feeds/list/' + sheetId + '/1/public/values?alt=json' , function( rawData ) {
-
-      // Field mappings from gsheet API source to our clearing course object
-      // source : destination
-      var fieldMap = {
-        gsx$adjustmentonlyhiy: "Adjustment only",
-        gsx$bullet1: "Bullet 1",
-        gsx$bullet2: "Bullet 2",
-        gsx$bullet3: "Bullet 3",
-        gsx$courselength: "Course length",
-        gsx$department: "Department",
-        gsx$entryrequirements: "Entry requirements",
-        gsx$inclearinghomeeu: "Home/EU",
-        gsx$inclearinginternational: "International",
-        gsx$linktocoursepage: "Link to course page",
-        gsx$mcrcode: "MCR_CODE",
-        gsx$nogrades: "No grades",
-        gsx$phonenumbers: "Phone number(s)",
-        gsx$qualificationearned: "Qualification earned",
-        gsx$sracheckx: "SRA check?\n✓ X",
-        gsx$subject: "Subject",
-        gsx$titleofcourse: "Title of course",
-        gsx$ucascode: "UCAS code"
-      };
-
-      var data = []; // The data object we'll be returning
-
-      var rows = rawData.feed.entry; // Get all data rows
-
-      var sourceKeys = Object.keys( fieldMap ); // Get fieldmap keys for later
-
-      // Process each row in the incoming data
-      for( var r = 0 ; r < rows.length ; r++ )
-      {
-        row = rows[ r ];
-        dataRow = {};
-
-        // Check each entry in our fieldmap
-        for( var k = 0 ; k < sourceKeys.length ; k++ )
-        {
-          var sourceKey = sourceKeys[ k ];
-          var destinationKey = fieldMap[ sourceKey ];
-
-          // Get the value for this field
-          if( row[ sourceKey ].$t !== undefined )
-          {
-            dataRow[ destinationKey ] = row[ sourceKey ].$t;
-          }
-        }
-
-        // Add row data to our return object
-        data.push( dataRow );
-      }
-
-      $(window).trigger('data.loaded', [sheetId, data]);
-
-    } );
-
     $window.on('data.loaded', function (e, id, data) {
       if (id === sheetId && that.dataLoaded === false) {
-      // if (id === docID && that.dataLoaded === false) {
 
         // Only load it once, even if there's more than one table on a page!
         that.dataLoaded = true;
@@ -441,7 +379,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
         } else if (that.layout === "Course panel" && inClearing) {
 
           that.container.append(that.panel);
-          console.log(that.container, that.container.outerHeight());
+          // console.log(that.container, that.container.outerHeight());
           $(window).trigger('content.updated', ['clearing-table', that]);
 
           new MODALLINK({
@@ -464,7 +402,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
 
     });
 
-    console.info(this);
+    // console.info(this);
 
   };
 
@@ -656,6 +594,90 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
     var headerCell = $('<th>').text(letter.toUpperCase()).attr('id', rowId);
     var headerRow = $('<tr>').addClass('c-clearing-table__letter-header').append(headerCell);
     this.table.append(headerRow);
+  };
+
+  CLEARINGTABLE.prototype.fetchData = function(endpoint,fallback) {
+
+    var that = this;
+
+    $.ajax({
+      dataType: "json",
+      url: endpoint,
+      error: function( jqXHR, textStatus, errorThrown ) { // Error!
+
+        // Try our fallback URL
+        if( fallback != undefined ) {
+
+          console.warn( '⚠ Clearing data fetch failed, trying fallback...' );
+          that.fetchData( backupDoc );
+
+        } else {
+
+          console.error( '⚠ Clearing data fetch failed' );
+
+        }
+
+      },
+      success: function( rawData ) { // Success!
+
+        // Field mappings from gsheet API source to our clearing course object
+        // source : destination
+        var fieldMap = {
+          gsx$adjustmentonlyhiy: "Adjustment only",
+          gsx$bullet1: "Bullet 1",
+          gsx$bullet2: "Bullet 2",
+          gsx$bullet3: "Bullet 3",
+          gsx$courselength: "Course length",
+          gsx$department: "Department",
+          gsx$entryrequirements: "Entry requirements",
+          gsx$inclearinghomeeu: "Home/EU",
+          gsx$inclearinginternational: "International",
+          gsx$linktocoursepage: "Link to course page",
+          gsx$mcrcode: "MCR_CODE",
+          gsx$nogrades: "No grades",
+          gsx$phonenumbers: "Phone number(s)",
+          gsx$qualificationearned: "Qualification earned",
+          gsx$sracheckx: "SRA check?\n✓ X",
+          gsx$subject: "Subject",
+          gsx$titleofcourse: "Title of course",
+          gsx$ucascode: "UCAS code"
+        };
+
+        var data = []; // The data object we'll be returning
+
+        var rows = rawData.feed.entry; // Get all data rows
+
+        var sourceKeys = Object.keys( fieldMap ); // Get fieldmap keys for later
+
+        // Process each row in the incoming data
+        for( var r = 0 ; r < rows.length ; r++ )
+        {
+          row = rows[ r ];
+          dataRow = {};
+
+          // Check each entry in our fieldmap
+          for( var k = 0 ; k < sourceKeys.length ; k++ )
+          {
+            var sourceKey = sourceKeys[ k ];
+            var destinationKey = fieldMap[ sourceKey ];
+
+            // Get the value for this field
+            if( row[ sourceKey ].$t !== undefined )
+            {
+              dataRow[ destinationKey ] = row[ sourceKey ].$t;
+            }
+          }
+
+          // Add row data to our return object
+          data.push( dataRow );
+        }
+
+        $(window).trigger('data.loaded', [sheetId, data]);
+
+      }
+    });
+
+    $.getJSON( endpoint ,  );
   };
 
   return CLEARINGTABLE;
