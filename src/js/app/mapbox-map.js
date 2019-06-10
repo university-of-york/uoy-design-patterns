@@ -12,8 +12,8 @@ define( [] , function() {
   // --------------------------------------------------
 
   // This script is now loaded via RequireJS (path is mapped in app.js)
-  // var mapScripts = "https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js";
-  var mapStylesheet = "https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css";
+  // var mapScripts = "https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js";
+  var mapStylesheet = "https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css";
 
   var mapboxStyle = "mapbox://styles/university-of-york/cjucik6l81fmc1fprt8764pvg";
   var mapboxAccessToken = "pk.eyJ1IjoidW5pdmVyc2l0eS1vZi15b3JrIiwiYSI6ImNqdjg0ZTBibDBiY3U0M3A4amNtemRmMHIifQ.J49pc-vlhW-lEL63lBpIIg";
