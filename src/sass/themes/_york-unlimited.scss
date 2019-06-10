@@ -444,7 +444,10 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   }
 
 
-  .c-btn--secondary, p.cta a[href="/york-unlimited/get-involved/fundraise/yos/"] {
+  .c-btn--secondary,
+  p.cta a[href*="/york-unlimited/our-priorities/student-to-shine/yos/"],
+  p.cta a[href*="/york-unlimited/get-involved/donate/"], 
+  p.cta a[href*="https://www.yorkspace.net/donate-form"]  {
     background-color:$t-btn-secondary;
     border-color:$t-btn-secondary;
     color:$t-btn-secondary-color;
