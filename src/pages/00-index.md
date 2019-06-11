@@ -23,19 +23,19 @@ The components can be used together in many different ways, which allows us to b
 <div class="o-grid__row">
   <div class="o-grid__box o-grid__box--third">
     <figure class="c-figure">
-      <img alt="" class="c-figure__image" src="../media/pattern-library-example-course.png">
+      <img alt="" class="c-figure__image" src="media/pattern-library-example-course.png">
       <figcaption class="c-figure__caption c-figure__caption--below">Structured content such as course pages</figcaption>
     </figure>
   </div>
   <div class="o-grid__box o-grid__box--third o-grid__box--half@small">
     <figure class="c-figure">
-      <img  alt="" class="c-figure__image" src="../media/pattern-library-example-content.png">
+      <img  alt="" class="c-figure__image" src="media/pattern-library-example-content.png">
       <figcaption class="c-figure__caption c-figure__caption--below">Standard website content</figcaption>
     </figure>
   </div>
   <div class="o-grid__box o-grid__box--third o-grid__box--half@small">
     <figure class="c-figure">
-      <img  alt="" class="c-figure__image" src="../media/pattern-library-example-pg-application.png">
+      <img  alt="" class="c-figure__image" src="media/pattern-library-example-pg-application.png">
       <figcaption class="c-figure__caption c-figure__caption--below">Online systems such as postgraduate course applications</figcaption>
     </figure>
   </div>
