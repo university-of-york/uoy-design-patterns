@@ -414,9 +414,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
       var hideHeader = true;
       var courseRows = $row.nextUntil('.c-clearing-table__letter-header');
       var headerId = $row.children('th').attr('id');
-      var atozLink = $('.c-atoz__nav-link[href="#'+headerId+'"]').parent();
+      var atozLink = $('.c-atoz__nav-link[href="#'+headerId+'"]');
       $row.show();
-      atozLink.show();
+      atozLink.removeClass('c-atoz__nav-link--inactive');
       courseRows.each(function(j, courseRow) {
         if (hideHeader === false) return;
         var $courseRow = $(courseRow);
@@ -425,7 +425,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         }
         if (j === courseRows.length - 1 && hideHeader === true) {
           $row.hide();
-          atozLink.hide();
+          atozLink.addClass('c-atoz__nav-link--inactive');
         }
       });
     });
@@ -498,13 +498,18 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     });
     var ev = jQuery.Event('keyup', { data: { that: that } });
     that.updateAtoZ(ev);
+    courseRows.addClass( 'u-flash' );
   };
 
   CLEARINGTABLE.prototype.createLetterLinks = function() {
     var listId = 'clearing-table-'+this.id+'-atoz';
     var ul = $('<ul>').addClass('c-atoz__nav-list').attr('id', listId);
     var tableId = this.table.attr('id');
-    $.each(this.letters, function(i, letter) {
+
+    // Make sure we cover all of the alphabet
+    var alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+
+    $.each(alphabet, function(i, letter) {
       // Check target exists first
       var letterId = '#'+tableId+'-'+letter.toUpperCase();
       var headerRow = $(letterId);
@@ -518,6 +523,11 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
                               .attr('href', '#'+listId)
                               .text('Back to top');
         headerRow.append(topLink);
+      } else {
+        var li = $('<li>').addClass('c-atoz__nav-item');
+        var a = $('<a>').addClass('c-atoz__nav-link').addClass('c-atoz__nav-link--inactive').text(letter);
+        li.append(a);
+        ul.append(li);
       }
     });
     return ul;
@@ -677,7 +687,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
       }
     });
 
-    $.getJSON( endpoint ,  );
+    $.getJSON( endpoint );
   };
 
   return CLEARINGTABLE;
