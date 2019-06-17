@@ -67,18 +67,17 @@ ul.u-four-columns {
 
 // Add this class to something to draw attention
 // when it is updated or added to the page
-.u-flash {
-  animation:flash 750ms 1;
+.u-updated {
+  animation:scalein 750ms 1;
+  transform-origin:top center;
 }
-@keyframes flash {
+@keyframes scalein {
   0% {
     transform:scale(0.95);
-    opacity:0.25;
-    background-color:lighten( $gold , 33% );
+    opacity:0.1;
   }
   100% {
     transform:scale(1);
     opacity:1;
-    background-color:none;
   }
 }

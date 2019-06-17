@@ -497,8 +497,14 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
       $row.toggleClass('is-off', !$row.data(type));
     });
     var ev = jQuery.Event('keyup', { data: { that: that } });
-    that.updateAtoZ(ev);
-    courseRows.addClass( 'u-flash' );
+
+    thisTable.removeClass( 'u-updated' );
+
+    // Delay update by 2xRAF to ensure that the keyframe animation kicks in
+    requestAnimationFrame( function(){ requestAnimationFrame( function(){
+      that.updateAtoZ(ev);
+      thisTable.addClass( 'u-updated' );
+    } ); } );
   };
 
   CLEARINGTABLE.prototype.createLetterLinks = function() {
@@ -524,10 +530,10 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
                               .text('Back to top');
         headerRow.append(topLink);
       } else {
-        var li = $('<li>').addClass('c-atoz__nav-item');
-        var a = $('<a>').addClass('c-atoz__nav-link').addClass('c-atoz__nav-link--inactive').text(letter);
-        li.append(a);
-        ul.append(li);
+        var li_inactive = $('<li>').addClass('c-atoz__nav-item');
+        var a_inactive = $('<a>').addClass('c-atoz__nav-link').addClass('c-atoz__nav-link--inactive').text(letter);
+        li_inactive.append(a_inactive);
+        ul.append(li_inactive);
       }
     });
     return ul;
