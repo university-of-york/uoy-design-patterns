@@ -498,12 +498,12 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     });
     var ev = jQuery.Event('keyup', { data: { that: that } });
 
-    thisTable.removeClass( 'u-updated' );
+    thisTable.removeClass( 'u-flashin' );
 
     // Delay update by 2xRAF to ensure that the keyframe animation kicks in
     requestAnimationFrame( function(){ requestAnimationFrame( function(){
       that.updateAtoZ(ev);
-      thisTable.addClass( 'u-updated' );
+      thisTable.addClass( 'u-flashin' );
     } ); } );
   };
 

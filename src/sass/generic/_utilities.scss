@@ -65,13 +65,13 @@ ul.u-four-columns {
   }
 }
 
-// Add this class to something to draw attention
+// Flash-in: Add this class to something to draw attention
 // when it is updated or added to the page
-.u-updated {
-  animation:scalein 750ms 1;
+.u-flashin {
+  animation:flashin 750ms 1;
   transform-origin:top center;
 }
-@keyframes scalein {
+@keyframes flashin {
   0% {
     transform:scale(0.95);
     opacity:0.1;
