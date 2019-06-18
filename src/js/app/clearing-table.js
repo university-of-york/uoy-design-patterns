@@ -25,17 +25,6 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   var backupDoc = clearingData.backupDoc;
   var letterLimit = 5;
   var searchLimit = 20;
-  var trimAndAdd = function (numbers) {
-    var output = '';
-    $.each(numbers, function (i, v) {
-      var vt = v.trim();
-      var vl = vt.replace(' ', '').replace('(0)', '');
-      if (i == numbers.length - 1 && i !== 0) output+= ' or ';
-      output+= '<a class="c-clearing-table__phone-number" href="tel:'+vl+'">'+vt+'</a>';
-      if (i < numbers.length - 2) output+= ', ';
-    });
-    return output;
-  };
   var makeLink = function(dept, courseCount) {
     var link = './'+dept.Department.toLowerCase().replace(/:/g, '').replace(/,/g, '').replace(/\s/g, '-');
     var a;
@@ -111,6 +100,8 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
     // Get our clearing data (triggers data.loaded on success)
     this.fetchData( 'https://spreadsheets.google.com/feeds/list/' + sheetId + '/1/public/values?alt=json' , backupDoc );
+
+    // console.info( 'https://spreadsheets.google.com/feeds/list/' + sheetId + '/1/public/values?alt=json' );
 
     var that = this;
 
@@ -255,28 +246,26 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
                 }
             }
 
-            var numbers = trimAndAdd(thisCourse['Phone number(s)'].split(','));
-              var modalBullets1 = $('<ul>');
-              var modalBullets2 = $('<ol>');
+            var modalBullets1 = $('<ul>');
+            var modalBullets2 = $('<ol>');
 
+            modalContent.append('<h3>Call our hotline</h3>');
+            modalContent.append('<p>To apply call ' + clearingData.phoneNumber + '</p>');
+            modalContent.append('<p>Opening hours:</p>');
 
-              modalContent.append('<h3>Call our hotline</h3>');
-              modalContent.append('<p>To apply call <a href="tel:+441904 234868">01904 234868</a></p>');
-              modalContent.append('<p>Opening hours:</p>');
+            modalBullets1.append('<li>16 - 17 August - 8am - 6pm</li>');
+            modalBullets1.append('<li>18 - 19 August - 10am - 2pm</li>');
+            modalBullets1.append('<li>20 - 24 August - Monday to Friday, 9am - 5pm</li>');
+            modalContent.append(modalBullets1);
 
-              modalBullets1.append('<li>16 - 17 August - 8am - 6pm</li>');
-              modalBullets1.append('<li>18 - 19 August - 10am - 2pm</li>');
-              modalBullets1.append('<li>20 - 24 August - Monday to Friday, 9am - 5pm</li>');
-              modalContent.append(modalBullets1);
+            modalContent.append('<p>Places fill up fast, so don\'t delay - give us a call and tell us why you want to apply.</p>');
+            modalContent.append('<p>Before you call us</p>');
 
-              modalContent.append('<p>Places fill up fast, so don\'t delay - give us a call and tell us why you want to apply.</p>');
-              modalContent.append('<p>Before you call us</p>');
-
-              modalBullets2.append('<li>Research the course(s) you\'re interested in and be ready to tell us why you want to apply.</li>');
-              modalBullets2.append('<li>Pick up your results and make sure you meet the entry requirements. We\'ll need the details of your results in order to make our decision.</li>');
-              modalBullets2.append('<li>Have your UCAS ID number to hand and a number we can call you back on.</li>');
-              modalBullets2.append('<li>If your first language is not English you must also provide evidence of your <a href="https://www.york.ac.uk/study/undergraduate/applying/entry/english-language/">English language ability.</a></li>');
-              modalContent.append(modalBullets2);
+            modalBullets2.append('<li>Research the course(s) you\'re interested in and be ready to tell us why you want to apply.</li>');
+            modalBullets2.append('<li>Pick up your results and make sure you meet the entry requirements. We\'ll need the details of your results in order to make our decision.</li>');
+            modalBullets2.append('<li>Have your UCAS ID number to hand and a number we can call you back on.</li>');
+            modalBullets2.append('<li>If your first language is not English you must also provide evidence of your <a href="https://www.york.ac.uk/study/undergraduate/applying/entry/english-language/">English language ability.</a></li>');
+            modalContent.append(modalBullets2);
 
             that.panel.append(panelContent);
             that.panel.append(modalContent);
@@ -551,7 +540,6 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
   CLEARINGTABLE.prototype.addCourseRow = function(course) {
 
-    var numbers = trimAndAdd(course['Phone number(s)'].split(','));
     var isAdjustmentOnly = false;
     if (course['Adjustment only'].toLowerCase() === 'y') {
       isAdjustmentOnly = true;
@@ -590,7 +578,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
       courseCellContent+= '<li class="c-clearing-table__ucas-code">UCAS code '+course['UCAS code']+'</li>'+
       '<li class="c-clearing-table__course-length">'+course['Course length']+'</li>'+
-      '<li class="c-clearing-table__phone-numbers">' + clearingData.callToApplyText.replace('{0}', numbers) + '</li>';
+      '<li class="c-clearing-table__phone-numbers">Call Admissions on ' + clearingData.phoneNumber + '</li>';
     if (isAdjustmentOnly === true) courseCellContent+= '<li class="c-clearing-table__adjustment-only">Adjustment places only</li>';
     courseCellContent+= '</ul>';
     courseCell.html(courseCellContent);
@@ -651,7 +639,6 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           gsx$linktocoursepage: "Link to course page",
           gsx$mcrcode: "MCR_CODE",
           gsx$nogrades: "No grades",
-          gsx$phonenumbers: "Phone number(s)",
           gsx$qualificationearned: "Qualification earned",
           gsx$sracheckx: "SRA check?\n✓ X",
           gsx$subject: "Subject",
@@ -678,7 +665,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
             var destinationKey = fieldMap[ sourceKey ];
 
             // Get the value for this field
-            if( row[ sourceKey ].$t !== undefined )
+            if( row[ sourceKey ] !== undefined && row[ sourceKey ].$t !== undefined )
             {
               dataRow[ destinationKey ] = row[ sourceKey ].$t;
             }
