@@ -98,7 +98,7 @@ Any content wrapped in the `js-clearing-table` div will be overwritten if the co
 <div class="js-clearing-table" data-layout="Course panel" data-course="F3F8">
   <div class="c-panel c-panel--highlight">
     <div class="c-panel__content">
-      <h3>Results 2017</h3>
+      <h3>Results 2019</h3>
       <p>Whether you're looking for a late place or you've already got an offer, find out all you need to know about joining us in September.</p>
       <a class="c-btn c-btn--medium" href="https://www.york.ac.uk/clearing">Find out more</a>
     </div>
@@ -109,7 +109,7 @@ Any content wrapped in the `js-clearing-table` div will be overwritten if the co
 <div class="js-clearing-table" data-layout="Course panel" data-course="F3F8">
   <div class="c-panel c-panel--highlight">
     <div class="c-panel__content">
-      <h3>Results 2017</h3>
+      <h3>Results 2019</h3>
       <p>Whether you're looking for a late place or you've already got an offer, find out all you need to know about joining us in September.</p>
       <a class="c-btn c-btn--medium" href="https://www.york.ac.uk/clearing">Find out more</a>
     </div>

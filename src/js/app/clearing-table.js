@@ -195,7 +195,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
                 }).text('See our clearing entry requirements');
 
 
-            panelContent.append('<h3>Clearing and adjustment 2018</h3>');
+            panelContent.append('<h3>Clearing and adjustment 2019</h3>');
             panelContent.append('<p><strong>Places are available on this course through clearing and adjustment</strong></p>');
             panelContent.append($('<p>').append(that.modalLink));
 
