@@ -99,7 +99,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     }
 
     // Get our clearing data (triggers data.loaded on success)
-    this.fetchData( 'xxxxhttps://spreadsheets.google.com/feeds/list/' + sheetId + '/1/public/values?alt=json' , backupDoc );
+    this.fetchData( 'https://spreadsheets.google.com/feeds/list/' + sheetId + '/1/public/values?alt=json' , backupDoc );
 
     var that = this;
 
