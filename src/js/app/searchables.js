@@ -126,8 +126,15 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     that.container.trigger('search.updated');
 
     // Push searchables event to GA
-    if( that.analyticsAction !== false ) UTILS.addAnalyticsEvent( "searchables" , that.analyticsAction , inputContent , null );
+    if( that.analyticsAction !== false && inputContent ){
+      that.sendAnalyticsEvent( that.analyticsAction , inputContent );
+    }
+
   };
+
+  SEARCHABLE.prototype.sendAnalyticsEvent = UTILS.debounce( function( action , label ) {
+    UTILS.addAnalyticsEvent( "searchables" , action , label , null );
+  } , 1000 );
 
   return SEARCHABLE;
 
