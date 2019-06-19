@@ -101,8 +101,6 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     // Get our clearing data (triggers data.loaded on success)
     this.fetchData( 'https://spreadsheets.google.com/feeds/list/' + sheetId + '/1/public/values?alt=json' , backupDoc );
 
-    // console.info( 'https://spreadsheets.google.com/feeds/list/' + sheetId + '/1/public/values?alt=json' );
-
     var that = this;
 
     $window.on('data.loaded', function (e, id, data) {
