@@ -17,6 +17,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     this.label = options.label || this.Defaults.label;
     this.cols = options.cols || this.Defaults.cols;
     this.type = this.container.prop('nodeName').toLowerCase();
+    this.analyticsAction = options.analyticsAction || false;
 
     this.caseSensitive = options.caseSensitive || this.Defaults.caseSensitive;
     if (!this.container.attr('id')) {
@@ -24,8 +25,6 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       this.container.attr('id', 'searchable-'+this.type+'-'+id);
     }
     this.id = this.container.attr('id');
-
-    // console.log(this.container.height(), $(window).height());
 
     var rows = this.type === 'table' ? this.container.children('tbody').children('tr') : this.container.children('li');
 
@@ -125,8 +124,9 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       $row.toggleClass('is-hidden', hideIt);
     });
     that.container.trigger('search.updated');
-    // Push custom event to GTM
-    if (typeof dataLayer !== 'undefined') dataLayer.push({'event':'searchable-text', 'search-text': inputContent});
+
+    // Push searchables event to GA
+    if( that.analyticsAction !== false ) UTILS.addAnalyticsEvent( "searchables" , that.analyticsAction , inputContent , null );
   };
 
   return SEARCHABLE;

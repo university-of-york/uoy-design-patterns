@@ -532,7 +532,8 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
       container: this.table,
       header: '.c-clearing-table__letter-header',
       caseSensitive: false,
-      label: 'Enter course title, keywords or UCAS code'
+      label: 'Enter course title, keywords or UCAS code',
+      analyticsAction: 'Course refinement'
     });
   };
 
