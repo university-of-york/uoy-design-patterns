@@ -99,9 +99,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     }
 
     // Get our clearing data (triggers data.loaded on success)
-    this.fetchData( 'https://spreadsheets.google.com/feeds/list/' + sheetId + '/1/public/values?alt=json' , backupDoc );
-
-    // console.info( 'https://spreadsheets.google.com/feeds/list/' + sheetId + '/1/public/values?alt=json' );
+    this.fetchData( 'xxxxhttps://spreadsheets.google.com/feeds/list/' + sheetId + '/1/public/values?alt=json' , backupDoc );
 
     var that = this;
 
@@ -195,7 +193,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
                 }).text('See our clearing entry requirements');
 
 
-            panelContent.append('<h3>Clearing and adjustment 2018</h3>');
+            panelContent.append('<h3>Clearing and adjustment 2019</h3>');
             panelContent.append('<p><strong>Places are available on this course through clearing and adjustment</strong></p>');
             panelContent.append($('<p>').append(that.modalLink));
 
@@ -534,7 +532,8 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
       container: this.table,
       header: '.c-clearing-table__letter-header',
       caseSensitive: false,
-      label: 'Enter course title, keywords or UCAS code'
+      label: 'Enter course title, keywords or UCAS code',
+      analyticsAction: 'Course refinement'
     });
   };
 
@@ -613,7 +612,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         if( fallback != undefined ) {
 
           console.warn( '⚠ Clearing data fetch failed, trying fallback...' );
-          that.fetchData( backupDoc );
+          that.fetchData( fallback );
 
         } else {
 
