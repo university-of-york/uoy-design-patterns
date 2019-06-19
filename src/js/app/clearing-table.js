@@ -612,7 +612,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         if( fallback != undefined ) {
 
           console.warn( '⚠ Clearing data fetch failed, trying fallback...' );
-          that.fetchData( backupDoc );
+          that.fetchData( fallback );
 
         } else {
 
