@@ -134,7 +134,7 @@ define(['jquery'], function ($) {
             if ($f.hasClass('c-figure--banner')) {
               // Banners - check for images that don't fit
               var fih = $fi.outerHeight();
-              $fi.toggleClass('is-fitY', fh > fih);
+              $fi.toggleClass('is-fitY', fh >= fih);
             } else {
               // Figures - check for content that overflows
               var fch = $fc.outerHeight();
