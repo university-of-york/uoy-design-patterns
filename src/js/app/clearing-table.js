@@ -271,7 +271,6 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           // Department layout
           } else if (that.layout === "Departments") {
 
-
             // Set up subject counts
             if (typeof that.courseCount[thisCourse.Subject] === 'undefined') {
               that.courseCount[thisCourse.Subject] = {
