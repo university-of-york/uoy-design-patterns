@@ -78,7 +78,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
       // need to empty this only if we've NOT got a course panel layout.
       // this will prevent the default content being replaced
-      if(this.layout !== 'Course panel') {
+      if(this.layout !== 'Course panel' && this.layout !== 'Entry requirements'  ) {
           this.container.empty();
       }
 
@@ -194,7 +194,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
 
             panelContent.append('<h3>Clearing and adjustment 2019</h3>');
-            panelContent.append('<p><strong>Places are available on this course through clearing and adjustment</strong></p>');
+            panelContent.append('<p>Places are available on this course through clearing and adjustment</p>');
             panelContent.append($('<p>').append(that.modalLink));
 
             var modalContent = $('<div>').addClass('is-hidden').attr({'id':'modal-content-'+that.id});
@@ -381,6 +381,60 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
           //console.log(that.container, that.container.outerHeight());
           $(window).trigger('content.updated', ['clearing-table', that]);
+
+        // Entry requirements
+    } else if (that.layout === "Entry requirements" && that.course !== false && that.inClearing( that.data[0] ) ) {
+
+          // Main A level results required
+
+          var alevelsRendered = '<p><strong>'+that.data[0][ "Entry requirements" ]+'</strong></p>';
+
+          // Sort out extra bullet points
+
+          var bullets = [];
+
+          for( var k = 1 ; k <= 3 ; k++ ) {
+            if( that.data[0][ "Bullet "+k ] != '' ) {
+              bullets.push( that.data[0][ "Bullet "+k ] );
+            }
+          }
+
+          var bulletsRendered = '';
+
+          if( bullets.length == 1 ) {
+            bulletsRendered = '<p>'+bullets[ 0 ]+'</p>';
+          } else {
+            bulletsRendered += '<ul>';
+            for( var b = 0 ; b < bullets.length ; b++ ) {
+              bulletsRendered += '<li>'+bullets[ b ]+'</li>';
+            }
+            bulletsRendered += '</ul>';
+          }
+
+          // Construct our output
+
+          var requirements = '';
+
+          requirements += '<thead>';
+          requirements +=   '<tr>';
+          requirements +=     '<th>Qualification</th>';
+          requirements +=     '<th>Typical offer <span style="color:red;">(Should we mention this is a reduced offer?)</span></th>';
+          requirements +=   '</tr>';
+          requirements += '</thead>';
+          requirements += '<tbody>';
+          requirements +=   '<tr>';
+          requirements +=     '<th>A levels</th>';
+          requirements +=     '<td>';
+          requirements +=       alevelsRendered;
+          requirements +=       bulletsRendered;
+          requirements +=     '</td>';
+          requirements +=   '</tr>';
+          requirements += '</tbody>';
+
+          // Swap out the default content for the clearing version
+
+          that.container.empty();
+          that.container.append( requirements );
 
         }
 

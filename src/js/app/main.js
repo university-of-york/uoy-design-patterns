@@ -172,7 +172,7 @@ define(
               department = $a.attr('data-department') || false;
 
           // show requirements can be a "Yes" or "No" value when set in the CMS
-            // so we need to check for those here
+          // so we need to check for those here
           var showRequirements = true,
               dataRequirements = $a.attr('data-show-requirements') || "true";
 
@@ -185,7 +185,6 @@ define(
                   showRequirements = true;
                   break;
           }
-
 
           new CLEARINGTABLE({
             type: type,

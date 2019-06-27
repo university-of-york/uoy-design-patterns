@@ -126,6 +126,38 @@ This shows all available classes, with a toggle for UK/EU and International stud
 
 <div class="js-clearing-table"></div>
 
+### Example entry requirements
+
+When the `js-clearing-table` is applied to a table with the `Entry requirements` layout and a `data-course` attribute is set, the entry requirements table content will be swapped out with the reduced clearing requirements if the course is in clearing.
+
+```markup
+<table class="js-clearing-table" data-course="G400" data-layout="Entry requirements">
+  <thead>
+    <tr>
+      <th>Qualification</th>
+      <th>Typical offer</th>
+    </tr>
+  </thead>
+  <tbody>
+    (...)
+  </tbody>
+</table>
+```
+
+<table class="js-clearing-table" data-course="G400" data-layout="Entry requirements">
+  <thead>
+    <tr>
+      <th>Qualification</th>
+      <th>Typical offer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A levels</th>
+      <td><em>(Typical offer details would go here)</em></td>
+    </tr>
+  </tbody>
+</table>
 
 ### Options
 
