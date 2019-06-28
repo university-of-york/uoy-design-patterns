@@ -9,33 +9,22 @@ category: Javascript
  */
 
 /*
- * Downloading a backup Fusion Table JSON file
- * Essentially, you can visit the API url below using the data table ID and API key
- * https://www.googleapis.com/fusiontables/v2/query?sql=SELECT%20*%20FROM%20[TABLE ID]&key=[API KEY]
+ * Downloading a backup clearing data file
+ * Essentially, you can visit the API url below using the sheet ID
+ * https://spreadsheets.google.com/feeds/list/[sheetId]/1/public/values?alt=json
  *
- * Then save it as a JSON file and upload to /static/data/clearing
+ * Then save it as a JSON file and upload to /static/data/clearing/[yyyy].json
  */
 
-define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-link'],
-  function ($, GOOGLEDOC, SEARCHABLE, UTILS, MODALLINK) {
+define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
+  function ($, SEARCHABLE, UTILS, MODALLINK) {
 
   var $window = $(window);
   var clearingData = window.PL_DATA.clearingData;
-  var docID = clearingData.docID;
+  var sheetId = clearingData.sheetId;
   var backupDoc = clearingData.backupDoc;
   var letterLimit = 5;
   var searchLimit = 20;
-  var trimAndAdd = function (numbers) {
-    var output = '';
-    $.each(numbers, function (i, v) {
-      var vt = v.trim();
-      var vl = vt.replace(' ', '').replace('(0)', '');
-      if (i == numbers.length - 1 && i !== 0) output+= ' or ';
-      output+= '<a class="c-clearing-table__phone-number" href="tel:'+vl+'">'+vt+'</a>';
-      if (i < numbers.length - 2) output+= ', ';
-    });
-    return output;
-  };
   var makeLink = function(dept, courseCount) {
     var link = './'+dept.Department.toLowerCase().replace(/:/g, '').replace(/,/g, '').replace(/\s/g, '-');
     var a;
@@ -89,7 +78,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
 
       // need to empty this only if we've NOT got a course panel layout.
       // this will prevent the default content being replaced
-      if(this.layout !== 'Course panel') {
+      if(this.layout !== 'Course panel' && this.layout !== 'Entry requirements'  ) {
           this.container.empty();
       }
 
@@ -109,15 +98,13 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
       this.panel = $('<div>').addClass('c-panel c-panel--highlight').attr({'role':'alert'});
     }
 
-    var t = new GOOGLEDOC({
-      id: docID,
-      backup: backupDoc
-    });
+    // Get our clearing data (triggers data.loaded on success)
+    this.fetchData( 'https://spreadsheets.google.com/feeds/list/' + sheetId + '/1/public/values?alt=json' , backupDoc );
 
     var that = this;
 
     $window.on('data.loaded', function (e, id, data) {
-      if (id === docID && that.dataLoaded === false) {
+      if (id === sheetId && that.dataLoaded === false) {
 
         // Only load it once, even if there's more than one table on a page!
         that.dataLoaded = true;
@@ -206,8 +193,8 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
                 }).text('See our clearing entry requirements');
 
 
-            panelContent.append('<h3>Clearing and adjustment 2018</h3>');
-            panelContent.append('<p><strong>Places are available on this course through clearing and adjustment</strong></p>');
+            panelContent.append('<h3>Clearing and adjustment 2019</h3>');
+            panelContent.append('<p>Places are available on this course through clearing and adjustment</p>');
             panelContent.append($('<p>').append(that.modalLink));
 
             var modalContent = $('<div>').addClass('is-hidden').attr({'id':'modal-content-'+that.id});
@@ -256,36 +243,33 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
                     modalContent.append(modalBullets);
                 }
             }
-            
-            var numbers = trimAndAdd(thisCourse['Phone number(s)'].split(','));
-              var modalBullets1 = $('<ul>');
-              var modalBullets2 = $('<ol>');
 
+            var modalBullets1 = $('<ul>');
+            var modalBullets2 = $('<ol>');
 
-              modalContent.append('<h3>Call our hotline</h3>');
-              modalContent.append('<p>To apply call <a href="tel:+441904 234868">01904 234868</a></p>');
-              modalContent.append('<p>Opening hours:</p>');
+            modalContent.append('<h3>Call our hotline</h3>');
+            modalContent.append('<p>To apply call ' + clearingData.phoneNumber + '</p>');
+            modalContent.append('<p>Opening hours:</p>');
 
-              modalBullets1.append('<li>16 - 17 August - 8am - 6pm</li>');
-              modalBullets1.append('<li>18 - 19 August - 10am - 2pm</li>');
-              modalBullets1.append('<li>20 - 24 August - Monday to Friday, 9am - 5pm</li>');
-              modalContent.append(modalBullets1);
+            modalBullets1.append('<li>16 - 17 August - 8am - 6pm</li>');
+            modalBullets1.append('<li>18 - 19 August - 10am - 2pm</li>');
+            modalBullets1.append('<li>20 - 24 August - Monday to Friday, 9am - 5pm</li>');
+            modalContent.append(modalBullets1);
 
-              modalContent.append('<p>Places fill up fast, so don\'t delay - give us a call and tell us why you want to apply.</p>');
-              modalContent.append('<p>Before you call us</p>');
+            modalContent.append('<p>Places fill up fast, so don\'t delay - give us a call and tell us why you want to apply.</p>');
+            modalContent.append('<p>Before you call us</p>');
 
-              modalBullets2.append('<li>Research the course(s) you\'re interested in and be ready to tell us why you want to apply.</li>');
-              modalBullets2.append('<li>Pick up your results and make sure you meet the entry requirements. We\'ll need the details of your results in order to make our decision.</li>');
-              modalBullets2.append('<li>Have your UCAS ID number to hand and a number we can call you back on.</li>');
-              modalBullets2.append('<li>If your first language is not English you must also provide evidence of your <a href="https://www.york.ac.uk/study/undergraduate/applying/entry/english-language/">English language ability.</a></li>');
-              modalContent.append(modalBullets2);
+            modalBullets2.append('<li>Research the course(s) you\'re interested in and be ready to tell us why you want to apply.</li>');
+            modalBullets2.append('<li>Pick up your results and make sure you meet the entry requirements. We\'ll need the details of your results in order to make our decision.</li>');
+            modalBullets2.append('<li>Have your UCAS ID number to hand and a number we can call you back on.</li>');
+            modalBullets2.append('<li>If your first language is not English you must also provide evidence of your <a href="https://www.york.ac.uk/study/undergraduate/applying/entry/english-language/">English language ability.</a></li>');
+            modalContent.append(modalBullets2);
 
             that.panel.append(panelContent);
             that.panel.append(modalContent);
 
           // Department layout
           } else if (that.layout === "Departments") {
-
 
             // Set up subject counts
             if (typeof that.courseCount[thisCourse.Subject] === 'undefined') {
@@ -381,7 +365,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
         } else if (that.layout === "Course panel" && inClearing) {
 
           that.container.append(that.panel);
-          console.log(that.container, that.container.outerHeight());
+          // console.log(that.container, that.container.outerHeight());
           $(window).trigger('content.updated', ['clearing-table', that]);
 
           new MODALLINK({
@@ -398,13 +382,68 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
           //console.log(that.container, that.container.outerHeight());
           $(window).trigger('content.updated', ['clearing-table', that]);
 
+        // Entry requirements
+        } else if (that.layout === "Entry requirements" && that.course !== false && that.inClearing( that.data[0] ) ) {
+
+          // Main A level results required
+
+          var alevelsRendered = '<p><strong>'+that.data[0][ "Entry requirements" ]+'</strong></p>';
+
+          // Sort out extra bullet points
+
+          var bullets = [];
+
+          for( var k = 1 ; k <= 3 ; k++ ) {
+            if( that.data[0][ "Bullet "+k ] != '' ) {
+              bullets.push( that.data[0][ "Bullet "+k ] );
+            }
+          }
+
+          var bulletsRendered = '';
+
+          if( bullets.length == 1 ) {
+            bulletsRendered = '<p>'+bullets[ 0 ]+'</p>';
+          } else {
+            bulletsRendered += '<ul>';
+            for( var b = 0 ; b < bullets.length ; b++ ) {
+              bulletsRendered += '<li>'+bullets[ b ]+'</li>';
+            }
+            bulletsRendered += '</ul>';
+          }
+
+          // Construct our output
+
+          var requirements = '';
+
+          requirements += '<thead>';
+          requirements +=   '<tr>';
+          requirements +=     '<th>Qualification</th>';
+          requirements +=     '<th>Typical offer<sup>*</sup></span></th>';
+          requirements +=   '</tr>';
+          requirements += '</thead>';
+          requirements += '<tbody>';
+          requirements +=   '<tr>';
+          requirements +=     '<th>A levels</th>';
+          requirements +=     '<td>';
+          requirements +=       alevelsRendered;
+          requirements +=       bulletsRendered;
+          requirements +=     '</td>';
+          requirements +=   '</tr>';
+          requirements += '</tbody>';
+
+          // Swap out the default content for the clearing version
+
+          that.container.empty();
+          that.container.append( requirements );
+          that.container.after( "<p><small><sup>*</sup> This offer has been adjusted for clearing. Other qualifications of an equivalent value may also be considered.</small></p>" );
+
         }
 
       }
 
     });
 
-    console.info(this);
+    // console.info(this);
 
   };
 
@@ -416,9 +455,9 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
       var hideHeader = true;
       var courseRows = $row.nextUntil('.c-clearing-table__letter-header');
       var headerId = $row.children('th').attr('id');
-      var atozLink = $('.c-atoz__nav-link[href="#'+headerId+'"]').parent();
+      var atozLink = $('.c-atoz__nav-link[href="#'+headerId+'"]');
       $row.show();
-      atozLink.show();
+      atozLink.removeClass('c-atoz__nav-link--inactive');
       courseRows.each(function(j, courseRow) {
         if (hideHeader === false) return;
         var $courseRow = $(courseRow);
@@ -427,7 +466,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
         }
         if (j === courseRows.length - 1 && hideHeader === true) {
           $row.hide();
-          atozLink.hide();
+          atozLink.addClass('c-atoz__nav-link--inactive');
         }
       });
     });
@@ -499,14 +538,25 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
       $row.toggleClass('is-off', !$row.data(type));
     });
     var ev = jQuery.Event('keyup', { data: { that: that } });
-    that.updateAtoZ(ev);
+
+    thisTable.removeClass( 'u-flashin' );
+
+    // Delay update by 2xRAF to ensure that the keyframe animation kicks in
+    requestAnimationFrame( function(){ requestAnimationFrame( function(){
+      that.updateAtoZ(ev);
+      thisTable.addClass( 'u-flashin' );
+    } ); } );
   };
 
   CLEARINGTABLE.prototype.createLetterLinks = function() {
     var listId = 'clearing-table-'+this.id+'-atoz';
     var ul = $('<ul>').addClass('c-atoz__nav-list').attr('id', listId);
     var tableId = this.table.attr('id');
-    $.each(this.letters, function(i, letter) {
+
+    // Make sure we cover all of the alphabet
+    var alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+
+    $.each(alphabet, function(i, letter) {
       // Check target exists first
       var letterId = '#'+tableId+'-'+letter.toUpperCase();
       var headerRow = $(letterId);
@@ -520,6 +570,11 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
                               .attr('href', '#'+listId)
                               .text('Back to top');
         headerRow.append(topLink);
+      } else {
+        var li_inactive = $('<li>').addClass('c-atoz__nav-item');
+        var a_inactive = $('<a>').addClass('c-atoz__nav-link').addClass('c-atoz__nav-link--inactive').text(letter);
+        li_inactive.append(a_inactive);
+        ul.append(li_inactive);
       }
     });
     return ul;
@@ -531,13 +586,13 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
       container: this.table,
       header: '.c-clearing-table__letter-header',
       caseSensitive: false,
-      label: 'Enter course title, keywords or UCAS code'
+      label: 'Enter course title, keywords or UCAS code',
+      analyticsAction: 'Course refinement'
     });
   };
 
   CLEARINGTABLE.prototype.addCourseRow = function(course) {
 
-    var numbers = trimAndAdd(course['Phone number(s)'].split(','));
     var isAdjustmentOnly = false;
     if (course['Adjustment only'].toLowerCase() === 'y') {
       isAdjustmentOnly = true;
@@ -576,7 +631,7 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
 
       courseCellContent+= '<li class="c-clearing-table__ucas-code">UCAS code '+course['UCAS code']+'</li>'+
       '<li class="c-clearing-table__course-length">'+course['Course length']+'</li>'+
-      '<li class="c-clearing-table__phone-numbers">' + clearingData.callToApplyText.replace('{0}', numbers) + '</li>';
+      '<li class="c-clearing-table__phone-numbers">Call Admissions on ' + clearingData.phoneNumber + '</li>';
     if (isAdjustmentOnly === true) courseCellContent+= '<li class="c-clearing-table__adjustment-only">Adjustment places only</li>';
     courseCellContent+= '</ul>';
     courseCell.html(courseCellContent);
@@ -596,6 +651,89 @@ define(['jquery', 'app/google-docs', 'app/searchables', 'app/utils', 'app/modal-
     var headerCell = $('<th>').text(letter.toUpperCase()).attr('id', rowId);
     var headerRow = $('<tr>').addClass('c-clearing-table__letter-header').append(headerCell);
     this.table.append(headerRow);
+  };
+
+  CLEARINGTABLE.prototype.fetchData = function(endpoint,fallback) {
+
+    var that = this;
+
+    $.ajax({
+      dataType: "json",
+      url: endpoint,
+      error: function( jqXHR, textStatus, errorThrown ) { // Error!
+
+        // Try our fallback URL
+        if( fallback != undefined ) {
+
+          console.warn( '⚠ Clearing data fetch failed, trying fallback...' );
+          that.fetchData( fallback );
+
+        } else {
+
+          console.error( '⚠ Clearing data fetch failed' );
+
+        }
+
+      },
+      success: function( rawData ) { // Success!
+
+        // Field mappings from gsheet API source to our clearing course object
+        // source : destination
+        var fieldMap = {
+          gsx$adjustmentonlyhiy: "Adjustment only",
+          gsx$bullet1: "Bullet 1",
+          gsx$bullet2: "Bullet 2",
+          gsx$bullet3: "Bullet 3",
+          gsx$courselength: "Course length",
+          gsx$department: "Department",
+          gsx$entryrequirements: "Entry requirements",
+          gsx$inclearinghomeeu: "Home/EU",
+          gsx$inclearinginternational: "International",
+          gsx$linktocoursepage: "Link to course page",
+          gsx$mcrcode: "MCR_CODE",
+          gsx$nogrades: "No grades",
+          gsx$qualificationearned: "Qualification earned",
+          gsx$sracheckx: "SRA check?\n✓ X",
+          gsx$subject: "Subject",
+          gsx$titleofcourse: "Title of course",
+          gsx$ucascode: "UCAS code"
+        };
+
+        var data = []; // The data object we'll be returning
+
+        var rows = rawData.feed.entry; // Get all data rows
+
+        var sourceKeys = Object.keys( fieldMap ); // Get fieldmap keys for later
+
+        // Process each row in the incoming data
+        for( var r = 0 ; r < rows.length ; r++ )
+        {
+          row = rows[ r ];
+          dataRow = {};
+
+          // Check each entry in our fieldmap
+          for( var k = 0 ; k < sourceKeys.length ; k++ )
+          {
+            var sourceKey = sourceKeys[ k ];
+            var destinationKey = fieldMap[ sourceKey ];
+
+            // Get the value for this field
+            if( row[ sourceKey ] !== undefined && row[ sourceKey ].$t !== undefined )
+            {
+              dataRow[ destinationKey ] = row[ sourceKey ].$t;
+            }
+          }
+
+          // Add row data to our return object
+          data.push( dataRow );
+        }
+
+        $(window).trigger('data.loaded', [sheetId, data]);
+
+      }
+    });
+
+    $.getJSON( endpoint );
   };
 
   return CLEARINGTABLE;
