@@ -435,7 +435,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
           that.container.empty();
           that.container.append( requirements );
-          that.container.after( "<p><small><sup>*</sup> This offer has been adjusted for clearing. Other qualifications of an equivalent value may also be considered.</small></p>" );
+          that.container.after( "<p><small><sup>*</sup> This offer has been adjusted for clearing. See your <a href=\"https://www.york.ac.uk/study/undergraduate/applying/entry/\">entry requirements page</a> for information on other qualifications that we accept.</small></p>" );
 
         }
 
