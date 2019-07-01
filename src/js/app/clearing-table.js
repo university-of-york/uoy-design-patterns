@@ -9,11 +9,11 @@ category: Javascript
  */
 
 /*
- * Downloading a backup Fusion Table JSON file
- * Essentially, you can visit the API url below using the data table ID and API key
- * https://www.googleapis.com/fusiontables/v2/query?sql=SELECT%20*%20FROM%20[TABLE ID]&key=[API KEY]
+ * Downloading a backup clearing data file
+ * Essentially, you can visit the API url below using the sheet ID
+ * https://spreadsheets.google.com/feeds/list/[sheetId]/1/public/values?alt=json
  *
- * Then save it as a JSON file and upload to /static/data/clearing
+ * Then save it as a JSON file and upload to /static/data/clearing/[yyyy].json
  */
 
 define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
@@ -383,7 +383,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           $(window).trigger('content.updated', ['clearing-table', that]);
 
         // Entry requirements
-    } else if (that.layout === "Entry requirements" && that.course !== false && that.inClearing( that.data[0] ) ) {
+        } else if (that.layout === "Entry requirements" && that.course !== false && that.inClearing( that.data[0] ) ) {
 
           // Main A level results required
 
@@ -418,7 +418,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           requirements += '<thead>';
           requirements +=   '<tr>';
           requirements +=     '<th>Qualification</th>';
-          requirements +=     '<th>Typical offer <span style="color:red;">(Should we mention this is a reduced offer?)</span></th>';
+          requirements +=     '<th>Typical offer<sup>*</sup></span></th>';
           requirements +=   '</tr>';
           requirements += '</thead>';
           requirements += '<tbody>';
@@ -435,6 +435,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
           that.container.empty();
           that.container.append( requirements );
+          that.container.after( "<p><small><sup>*</sup> This offer has been adjusted for clearing. Other qualifications of an equivalent value may also be considered.</small></p>" );
 
         }
 
