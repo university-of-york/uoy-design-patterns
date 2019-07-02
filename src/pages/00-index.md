@@ -62,7 +62,7 @@ The components can be used together in many different ways, which allows us to b
         <h3> Web developers</h3>
         <p>The pattern library contains a variety of CSS components that can be used to create interfaces that are in line with the University’s visual identity.</p>
         <ul>
-          <li><a href="/css-components/">CSS components</a></li>
+          <li><a href="css-components/">CSS components</a></li>
         </ul>
       </div>
     </div>
