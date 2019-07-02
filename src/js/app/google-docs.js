@@ -7,7 +7,7 @@ category: Javascript
 ---
 
  */
-define(['jquery'], function ($) {
+define(['jquery','app/utils'], function ($,UTILS) {
 
   var makeURL = function (id) {
     var api_key = 'AIzaSyCDjI0iMdVB66iHUQVqWC_F9CbvDeaOm5Y';
@@ -16,6 +16,9 @@ define(['jquery'], function ($) {
 
   // Define your 'class'
   var GOOGLEDOC = function (options) {
+
+    // Module to be deprecated? Trigger a GA event to log usage.
+    UTILS.addAnalyticsEvent( 'Googledoc' , 'Module loaded' , 'Sheet ID' , options.id );
 
     if (!options.id) return false;
 

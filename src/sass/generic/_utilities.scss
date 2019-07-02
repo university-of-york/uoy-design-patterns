@@ -64,3 +64,20 @@ ul.u-four-columns {
     padding-bottom:$base-spacing/2;
   }
 }
+
+// Flash-in: Add this class to something to draw attention
+// when it is updated or added to the page
+.u-flashin {
+  animation:flashin 750ms 1;
+  transform-origin:top center;
+}
+@keyframes flashin {
+  0% {
+    transform:scale(0.95);
+    opacity:0.1;
+  }
+  100% {
+    transform:scale(1);
+    opacity:1;
+  }
+}
