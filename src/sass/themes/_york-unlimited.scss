@@ -248,7 +248,7 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   .c-panel__content {
     color:$t-dark-neutral;
     h2, h3, h4 {
-      color:$t-main;
+      color:darken($t-main-highlight,8);
     }
   }
   .c-panel--link .c-panel__more {
@@ -290,26 +290,44 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   .c-footer-main {
     background-color: $t-dark-main;
     border-top-color: $t-main-highlight;
+    background-image: url(https://www.york.ac.uk/static/stable/img/york-unlimited-footer-background-left.png), url(https://www.york.ac.uk/static/stable/img/york-unlimited-footer-background-right.png);
+    background-position: left top, right bottom;
+    background-repeat:no-repeat;
     a {
       color: $light;
       &:hover {
-        color:$t-main-highlight;
+        color:$light;
+        text-decoration: underline;
       }
     }
   }
 
+  @include mq(small, '-') {
+    .c-footer-main {
+      background-image: url(https://www.york.ac.uk/static/stable/img/york-unlimited-footer-background-top-right.png), url(https://www.york.ac.uk/static/stable/img/york-unlimited-footer-background-right.png);
+      background-position: right top, right bottom;
+    }
+  }
+
   // Figures
+  .c-figure--banner {
+    .c-figure__content, .c-figure__caption {
+      background-color: $t-main;
+      background-color: transparentize($t-main, 0.25);
+    }
+  }
   .c-figure__caption--blue,
   .c-figure__caption,
   .c-figure__content {
-    background-color: $t-main;
-    background-color: transparentize($t-main, 0.25);
+    background-color: $t-main-highlight;
+    background-color: transparentize($t-main-highlight, 0.25);
   }
   @include mq(tiny, '~') {
     .c-figure--link .c-figure__content {
-      background-color: $t-main;
+      background-color: $t-main-highlight;
     }
   }
+
   .c-figure__caption--below {
     background: transparent;
     color: $t-dark-neutral;
@@ -318,11 +336,25 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
     color:$white !important;
   }
   a.c-figure--link {
+    .c-figure__content {
+      background-color: $t-main;
+      background-color: transparentize($t-main, 0.25);
+    }
     &:hover, &:focus, &:active {
       .c-figure__content {
         background-color: $t-main-highlight;
         background-color: transparentize($t-main-highlight, 0.25);
       }
+    }
+  }
+  @include mq(tiny, '~') {
+    .c-figure__content, a.c-figure--link .c-figure__content {
+      background-color: $t-main;
+    }
+  }
+  @include mq(small, '-') {
+    .c-figure--banner .c-figure__content {
+      background-color: $t-main;
     }
   }
   a[href*="/york-unlimited/get-involved/donate/"].c-figure--link {
@@ -412,7 +444,10 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
   }
 
 
-  .c-btn--secondary {
+  .c-btn--secondary,
+  p.cta a[href*="/york-unlimited/our-priorities/student-to-shine/yos/"],
+  p.cta a[href*="/york-unlimited/get-involved/donate/"], 
+  p.cta a[href*="https://www.yorkspace.net/donate-form"]  {
     background-color:$t-btn-secondary;
     border-color:$t-btn-secondary;
     color:$t-btn-secondary-color;

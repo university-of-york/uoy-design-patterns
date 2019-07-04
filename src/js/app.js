@@ -9,7 +9,7 @@ requirejs.config({
     iframeResizer: 'vendor/iframe-resizer/iframeResizer',
     fuse: 'vendor/fuse/dist/fuse.min',
     jquery: 'vendor/jquery/jquery',
-    mapbox: 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl',
+    mapbox: 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl',
     gsheetsApp: '//apis.google.com/js/api'
   }
 });

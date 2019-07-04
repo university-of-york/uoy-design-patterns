@@ -169,7 +169,8 @@ define(
               type = $a.attr('data-type') || false,
               layout = $a.attr('data-layout') || false,
               course = $a.attr('data-course') || false,
-              department = $a.attr('data-department') || false;
+              department = $a.attr('data-department') || false,
+              subject = $a.attr('data-subject') || false;
 
           // show requirements can be a "Yes" or "No" value when set in the CMS
           // so we need to check for those here
@@ -191,6 +192,7 @@ define(
             layout: layout,
             course: course,
             department: department,
+            subject: subject,
             showRequirements: showRequirements,
             container: $a
           });
