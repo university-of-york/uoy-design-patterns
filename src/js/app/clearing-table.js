@@ -25,23 +25,13 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   var backupDoc = clearingData.backupDoc;
   var letterLimit = 5;
   var searchLimit = 20;
-  var makeLink = function(dept, courseCount) {
-    var link = './'+dept.Department.toLowerCase().replace(/:/g, '').replace(/,/g, '').replace(/\s/g, '-');
-    var a;
-    if (dept.Department === dept.Subject) {
-      // Link is Subject name
-      a = $('<a>').addClass('c-clearing-list__link')
+  var makeLink = function(course, courseCount) {
+    var link = './'+course.Department.toLowerCase().replace(/:/g, '').replace(/,/g, '').replace(/\s/g, '-');
+    var a = $('<a>').addClass('c-clearing-list__link')
                   .attr('href', link)
-                  .text(dept.Subject);
-    } else {
-      // Link is Department name
-      l = $('<a>').addClass('c-clearing-list__link')
-                  .attr('href', link)
-                  .text(dept.Department);
-      a = dept.Subject+' (see '+l.prop('outerHTML')+')';
-    }
+                  .text(course.Department);
     var li = $('<li>').addClass('c-clearing-list__item')
-                      .attr('data-department', dept.Subject)
+                      .attr('data-department', course.Department)
                       .append(a);
     // Add markers to UK/EU-only or International-only departments
     if (courseCount['UK/EU'] === 0) {
@@ -62,6 +52,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
     this.type = options.type || 'Both';
     this.department = options.department || 'All';
+    this.subject = options.subject || 'All';
     this.layout = options.layout || 'Courses';
     this.showRequirements = options.showRequirements;
     this.course = options.course || false;
@@ -109,20 +100,28 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         // Only load it once, even if there's more than one table on a page!
         that.dataLoaded = true;
 
-          var tempData = [];
-          $.grep(data, function(a) {
-              if(a['Home/EU'].toLowerCase() === 'y' ||
-                  a.International.toLowerCase() === 'y') {
-                  tempData.push(a);
-              }
-          });
+        // Filter out courses _not_ in clearing
+        var tempData = [];
+        $.grep(data, function(a) {
+          if(a['Home/EU'].toLowerCase() === 'y' ||
+              a.International.toLowerCase() === 'y') {
+              tempData.push(a);
+          }
+        });
+        data = tempData;
 
-          data = tempData;
+        // Filter by other options
 
         if (that.department !== 'All') {
           // Filter by department
           $.grep(data, function(a) {
             if (a.Department === that.department) that.data.push(a);
+          });
+        } else if (that.subject !== 'All') {
+          // Filter by subject
+          $.grep(data, function(a) {
+            var subjects = a.Subject.split( '|' );
+            if( subjects.indexOf( that.subject ) !== -1 ) that.data.push(a);
           });
         } else if (that.course !== false) {
           // Filter by course
@@ -141,13 +140,15 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
             }
             return (a['Title of course'] > b['Title of course']) ? 1 : -1 ;
           } else {
-            return (a.Subject > b.Subject) ? 1 : -1 ;
+            return (a.Department > b.Department) ? 1 : -1 ;
           }
         });
 
+        // console.log( that.data );
+
         var currentLetter = false;
         var currentCourse = false;
-          var inClearing = false;
+        var inClearing = false;
         for (var i = 0; i < that.data.length; i++) {
 
           var thisCourse = that.data[i];
@@ -271,29 +272,29 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           // Department layout
           } else if (that.layout === "Departments") {
 
-            // Set up subject counts
-            if (typeof that.courseCount[thisCourse.Subject] === 'undefined') {
-              that.courseCount[thisCourse.Subject] = {
+            // Set up department counts
+            if (typeof that.courseCount[thisCourse.Department] === 'undefined') {
+              that.courseCount[thisCourse.Department] = {
                 'UK/EU': 0,
                 'International': 0
               };
             }
             // Count UK/EU and Intl courses
-            if (thisCourse['Home/EU'].toLowerCase() === 'y') that.courseCount[thisCourse.Subject]['UK/EU']++;
-            if (thisCourse.International.toLowerCase() === 'y') that.courseCount[thisCourse.Subject].International++;
+            if (thisCourse['Home/EU'].toLowerCase() === 'y') that.courseCount[thisCourse.Department]['UK/EU']++;
+            if (thisCourse.International.toLowerCase() === 'y') that.courseCount[thisCourse.Department].International++;
 
-            if (thisCourse.Subject !== currentCourse.Subject) {
+            if (thisCourse.Department !== currentCourse.Department) {
 
               // Make link with previous course
-              if (currentCourse !== false && (that.courseCount[currentCourse.Subject]['UK/EU'] > 0 || that.courseCount[currentCourse.Subject].International > 0)) {
-                var li = makeLink(currentCourse, that.courseCount[currentCourse.Subject]);
+              if (currentCourse !== false && (that.courseCount[currentCourse.Department]['UK/EU'] > 0 || that.courseCount[currentCourse.Department].International > 0)) {
+                var li = makeLink(currentCourse, that.courseCount[currentCourse.Department]);
                 that.list.append(li);
               }
               currentCourse = thisCourse;
             }
             if (i === that.data.length - 1) {
-              if (currentCourse.Subject !== false && (that.courseCount[currentCourse.Subject]['UK/EU'] > 0 || that.courseCount[currentCourse.Subject].International > 0)) {
-                var lastLi = makeLink(thisCourse, that.courseCount[thisCourse.Subject]);
+              if (currentCourse.Department !== false && (that.courseCount[currentCourse.Department]['UK/EU'] > 0 || that.courseCount[currentCourse.Department].International > 0)) {
+                var lastLi = makeLink(thisCourse, that.courseCount[thisCourse.Department]);
                 that.list.append(lastLi);
               }
             }
