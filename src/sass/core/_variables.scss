@@ -23,6 +23,22 @@ $lightgrey:#ccc;
 $white:#fff;
 $black:#000;
 
+
+//Campus zones colours
+$zones: (
+	1: (#e86f01, #000, "Zone 1"),
+	2: (#f9da00, #000, "Zone 2"),
+	3: (#dd020e, #fff, "Zone 3"),
+	4: (#a00929, #fff, "Zone 4"),
+	5: (#e0007a, #fff, "Zone 5"),
+	6: (#009ade, #000, "Zone 6"),
+	7: (#005492, #fff, "Zone 7"),
+	8: (#7f1876, #fff, "Zone 8"),
+	9: (#b8c100, #000, "Zone 9"),
+	10: (#008735, #fff, "Zone 10"),
+	zm: (#505050, #fff, "King's Manor")
+);
+
 // Fonts
 $font-default: 'museo-sans', Helvetica, Arial, sans-serif;
 $font-title: 'chaparral-pro', 'Times New Roman', Times, serif;

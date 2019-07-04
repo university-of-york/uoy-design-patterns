@@ -1,0 +1,38 @@
+
+//Add darkbg '.campus-zone--darkbg' when the background is dark
+.campus-zone {
+	display: inline-block;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	padding: 5px 10px;
+	font-family: museo-sans, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	width: 55px;
+	text-align: center;
+	&--darkbg {
+		border: 1px solid;
+    }
+    
+}
+
+
+// .zone-1, zone-2, etc.
+.zone {
+	@each $name, $val in $zones {
+		$bgcolour: nth($val , 1);
+        $fgcolour: nth($val , 2);
+        $zonename: nth($val , 3);
+
+		&-#{$name} {
+			background-color: $bgcolour;
+			color: $fgcolour;
+            border-color: $fgcolour;
+            
+        
+        &::after {
+            content: $zonename;
+             }
+        }
+	}
+}
