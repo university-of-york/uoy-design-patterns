@@ -20,9 +20,9 @@
 // .zone-1, zone-2, etc.
 .zone {
 	@each $name, $val in $zones {
-		$bgcolour: nth($val , 1);
-        $fgcolour: nth($val , 2);
-        $zonename: nth($val , 3);
+		$bgcolour: map-get($val , bgcolour);
+        $fgcolour:  map-get($val , fgcolour);
+        $zonename:  map-get($val , label);
 
 		&-#{$name} {
 			background-color: $bgcolour;
