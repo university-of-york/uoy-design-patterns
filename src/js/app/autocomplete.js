@@ -144,6 +144,7 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
     if (featureBadge) {
       var badge = $(featureBadge).appendTo(featureLink);
     }
+
     if (featureSubtitle !== 'null') {
       var featureSmall = $('<small>').addClass("c-autocomplete__subtitle")
                                      .text(featureSubtitle)

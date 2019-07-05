@@ -110,17 +110,20 @@ require(['app/autocomplete'], function(AUTOCOMPLETE) {
         {
           title: "Alcuin College",
           subtitle: "Campus West",
-          link: "#alcuin-college"
+          link: "#alcuin-college",
+          badge: '<span style="float: right; color:tomato;">Test</span>'
         },
         {
           title: "Constantine College",
           subtitle: "Campus East",
-          link: "#constantine-college"
+          link: "#constantine-college",
+          badge: '<span style="float: right; color:tomato;">Test</span>'
         },
         {
           title: "Derwent College",
           subtitle: "Campus West",
-          link: "#derwent-college"
+          link: "#derwent-college",
+          badge: '<span style="float: right; color:tomato;">Test</span>'
         }
       ],
       category: 'College search',
