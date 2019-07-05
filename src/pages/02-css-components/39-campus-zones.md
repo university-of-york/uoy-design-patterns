@@ -1,6 +1,6 @@
 ---
 
-title: Campus zone badges
+title: Campus zones
 name: campus-zones
 category: components
 subcategory: Molecules
@@ -14,47 +14,47 @@ id: campus-zones
 ## Examples 
 
 <script>
-component("campus-zones", { "zone-number": "1"} );
+component("campus-zones", { "name": "1"} );
 </script>
 
 <script>
-component("campus-zones", { "zone-number": "2"} );
+component("campus-zones", { "name": "2"} );
 </script>
 
 <script>
-component("campus-zones", { "zone-number": "3"} );
+component("campus-zones", { "name": "3"} );
 </script>
 
 <script>
-component("campus-zones", { "zone-number": "4"} );
+component("campus-zones", { "name": "4"} );
 </script>
 
 <script>
-component("campus-zones", { "zone-number": "5"} );
+component("campus-zones", { "name": "5"} );
 </script>
 
 <script>
-component("campus-zones", { "zone-number": "6"} );
+component("campus-zones", { "name": "6"} );
 </script>
 
 <script>
-component("campus-zones", { "zone-number": "7"} );
+component("campus-zones", { "name": "7"} );
 </script>
 
 <script>
-component("campus-zones", { "zone-number": "8"} );
+component("campus-zones", { "name": "8"} );
 </script>
 
 <script>
-component("campus-zones", { "zone-number": "9"} );
+component("campus-zones", { "name": "9"} );
 </script>
 
 <script>
-component("campus-zones", { "zone-number": "10"} );
+component("campus-zones", { "name": "10"} );
 </script>
 
 <script>
-component("campus-zones", { "zone-number": "zm"} );
+component("campus-zones", { "name": "km"} );
 </script>
 
 
