@@ -142,7 +142,7 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
                                  .text(featureTitle)
                                  .appendTo(featureLink);
     if (featureBadge) {
-      var badge = $(featureBadge).appendTo(featureLink);
+      var badge = $(featureBadge).addClass("badge").appendTo(featureLink);
     }
 
     if (featureSubtitle !== 'null') {
