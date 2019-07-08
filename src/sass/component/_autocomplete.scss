@@ -41,6 +41,10 @@
     color:$c-autocomplete__link-hover-color;
     background-color:$c-autocomplete__link-hover-background-color;
   }
+  .c-autocomplete__badge {
+    float: right;
+    margin: 0;
+  }
 }
 
 .c-autocomplete__title {
