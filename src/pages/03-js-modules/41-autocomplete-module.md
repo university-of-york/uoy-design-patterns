@@ -111,19 +111,19 @@ require(['app/autocomplete'], function(AUTOCOMPLETE) {
           title: "Alcuin College",
           subtitle: "Campus West",
           link: "#alcuin-college",
-          badge: '<span class="zone-3"></span>'
+          badge: '<span class="campus-zone zone-3"></span>'
         },
         {
           title: "Constantine College",
           subtitle: "Campus East",
           link: "#constantine-college",
-          badge: '<span class="zone-9"></span>'
+          badge: '<span class="campus-zone zone-9"></span>'
         },
         {
           title: "Derwent College",
           subtitle: "Campus West",
           link: "#derwent-college",
-          badge: '<span class="zone-5"></span>'
+          badge: '<span class="campus-zone zone-5"></span>'
         }
       ],
       category: 'College search',
@@ -154,19 +154,19 @@ var a = new AUTOCOMPLETE({
       title: "Alcuin College",
       subtitle: "Campus West",
       link: "#alcuin-college",
-      badge: '<span class="zone-3"></span>'
+      badge: '<span class="campus-zone zone-3"></span>'
     },
     {
       title: "Constantine College",
       subtitle: "Campus East",
       link: "#constantine-college",
-      badge: '<span class="zone-9"></span>'
+      badge: '<span class="campus-zone zone-9"></span>'
     },
     {
       title: "Derwent College",
       subtitle: "Campus West",
       link: "#derwent-college",
-      badge: '<span class="zone-5"></span>'
+      badge: '<span class="campus-zone zone-5"></span>'
     }
   ],
   category: 'College search',
