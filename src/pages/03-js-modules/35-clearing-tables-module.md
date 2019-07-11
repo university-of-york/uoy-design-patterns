@@ -48,10 +48,10 @@ As you search or toggle between the two the A to Z listing and headers will (dis
 This example has a relatively small list of courses for only UK/EU students.
 
 ```markup
-<div class="js-clearing-table" data-department="Mathematics"></div>
+<div class="js-clearing-table" data-department="Computer Science"></div>
 ```
 
-<div class="js-clearing-table" data-department="Mathematics"></div>
+<div class="js-clearing-table" data-department="Computer Science"></div>
 
 ### Example using department name but hiding entry requirements
 
