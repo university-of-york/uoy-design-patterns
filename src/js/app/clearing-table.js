@@ -106,7 +106,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
       // need to empty this only if we've NOT got a course panel layout.
       // this will prevent the default content being replaced
-      if(this.layout !== 'Course panel' && this.layout !== 'Entry requirements'  ) {
+      if(this.layout !== 'Course panel' && this.layout !== 'Entry requirements' && this.layout !== 'Course search'  ) {
           this.container.empty();
       }
 
@@ -432,6 +432,42 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
           //console.log(that.container, that.container.outerHeight());
           $(window).trigger('content.updated', ['clearing-table', that]);
+
+        // Course search results
+        } else if (that.layout === "Course search" ) {
+
+          // Process each course row
+          that.container.find( "tr[data-courseid]" ).each( function() {
+
+            var courseRow = this;
+
+            // Get the course UCAS code
+            var ucasCode = $( this ).find( "td.code" ).html().trim();
+
+            // Skip if no UCAS code found
+            if( !ucasCode ) return;
+
+            // Get our course from the clearing data
+            $.grep( that.data , function( course ) {
+              if( course[ "UCAS code" ] == ucasCode ) {
+
+                // Check the clearing status of this course
+                if( that.inClearing( course ) ) {
+
+                  var note = makeAvailabilityNote( course );
+
+                  if( !note ) note = "Places available for 2019";
+
+                  var contentCell = $( courseRow ).find( "td.coursetitle" );
+
+                  contentCell.append( "<br><br><strong>"+note+"</strong>" );
+
+                }
+
+              }
+            });
+
+          });
 
         // Entry requirements
         } else if (that.layout === "Entry requirements" && that.course !== false && that.inClearing( that.data[0] ) ) {
