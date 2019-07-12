@@ -8,6 +8,8 @@
   top:100%;
   z-index:128;
   width:100%;
+  min-height:80vh;
+  overflow:hidden;
 }
 
 .c-autocomplete__list {
