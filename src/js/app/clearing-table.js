@@ -25,6 +25,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   var backupDoc = clearingData.backupDoc;
   var letterLimit = 5;
   var searchLimit = 20;
+
   var makeLink = function(course, courseCount) {
     var link = './'+course.Department.toLowerCase().replace(/:/g, '').replace(/,/g, '').replace(/\s/g, '-');
     var a = $('<a>').addClass('c-clearing-list__link')
@@ -33,18 +34,54 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     var li = $('<li>').addClass('c-clearing-list__item')
                       .attr('data-department', course.Department)
                       .append(a);
+
+    // Not sure if this does anything anymore?
     // Add markers to UK/EU-only or International-only departments
-    if (courseCount['UK/EU'] === 0) {
+    if (courseCount['UK/EU'] === 0 && courseCount['Adjustment UK/EU'] === 0) {
       // International courses only
       li.addClass('is-international-only');
-      li.append('&nbsp;<small class="c-clearing-list__comment">Places for international students only</small>');
-    } else if (courseCount.International === 0) {
+      // li.append('&nbsp;<small class="c-clearing-list__comment">Places for international students only</small>');
+    } else if (courseCount['International'] === 0 && courseCount['Adjustment International'] === 0) {
       // UK/EU courses only
       li.addClass('is-ukeu-only');
-      li.append('&nbsp;<small class="c-clearing-list__comment">Places for UK/EU students only</small>');
+      // li.append('&nbsp;<small class="c-clearing-list__comment">Places for UK/EU students only</small>');
     }
+
+    // Append an availability note?
+    var note = makeAvailabilityNote( {
+      'Home/EU': ( courseCount['UK/EU'] > 0 ? 'y' : 'n' ),
+      'International': ( courseCount['International'] > 0 ? 'y' : 'n' ),
+      'Adjustment only home/EU': ( courseCount['Adjustment UK/EU'] > 0 ? 'y' : 'n' ),
+      'Adjustment only international': ( courseCount['Adjustment International'] > 0 ? 'y' : 'n' ),
+    } );
+    if( note ) li.append('&nbsp;<small class="c-clearing-list__comment">'+note+'</small>');
+
     return li;
   };
+
+  var makeAvailabilityNote = function( course ) {
+
+    var clearing_home = ( course['Home/EU'].toLowerCase() == 'y' );
+    var clearing_intl = ( course['International'].toLowerCase() == 'y' );
+    var adjustment_home = ( course['Adjustment only home/EU'].toLowerCase() == 'y' );
+    var adjustment_intl = ( course['Adjustment only international'].toLowerCase() == 'y' );
+
+    // Clearing throughout
+    if( clearing_home && clearing_intl ) return false; // No label required
+    // Partial clearing
+    if( clearing_home && !adjustment_intl ) return "Places for UK/EU students only";
+    if( clearing_intl && !adjustment_home ) return "Places for international students only";
+    // Partial clearing + partial adjustment
+    if( clearing_home && adjustment_intl ) return "Places for UK/EU students, adjustment places only for international students";
+    if( clearing_intl && adjustment_home ) return "Places for international students, adjustment places only for UK/EU students";
+    // Adjustment only
+    if( adjustment_home && adjustment_intl ) return "Adjustment places only";
+    // Partial adjustment
+    if( adjustment_home && !adjustment_intl ) return "Adjustment places for UK/EU students only";
+    if( adjustment_intl && !adjustment_home ) return "Adjustment places for international students only";
+
+    return false; // This shouldn't happen
+  }
 
   var CLEARINGTABLE = function (options) {
 
@@ -69,13 +106,12 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
       // need to empty this only if we've NOT got a course panel layout.
       // this will prevent the default content being replaced
-      if(this.layout !== 'Course panel' && this.layout !== 'Entry requirements'  ) {
+      if(this.layout !== 'Course panel' && this.layout !== 'Entry requirements' && this.layout !== 'Course search'  ) {
           this.container.empty();
       }
 
     if (this.layout === 'Courses') {
-      this.courseCount['UK/EU'] = 0;
-      this.courseCount.International = 0;
+      this.courseCount = { 'UK/EU': 0 , 'International': 0 };
       this.letters = [];
       this.letterCount = 0;
       this.table = $('<table>').addClass('c-clearing-table');
@@ -102,12 +138,18 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
         // Filter out courses _not_ in clearing
         var tempData = [];
+
         $.grep(data, function(a) {
-          if(a['Home/EU'].toLowerCase() === 'y' ||
-              a.International.toLowerCase() === 'y') {
-              tempData.push(a);
+          if(
+            a[ 'Home/EU' ].toLowerCase() === 'y' ||
+            a[ 'International' ].toLowerCase() === 'y' ||
+            a[ 'Adjustment only home/EU' ].toLowerCase() === 'y' ||
+            a[ 'Adjustment only international' ].toLowerCase() === 'y'
+          ) {
+            tempData.push(a);
           }
         });
+
         data = tempData;
 
         // Filter by other options
@@ -144,8 +186,6 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           }
         });
 
-        // console.log( that.data );
-
         var currentLetter = false;
         var currentCourse = false;
         var inClearing = false;
@@ -157,14 +197,20 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           if (that.layout === 'Courses') {
 
             // Count UK/EU and Intl courses
-            if (thisCourse['Home/EU'].toLowerCase() === 'y') that.courseCount['UK/EU']++;
-            if (thisCourse.International.toLowerCase() === 'y') that.courseCount.International++;
+            if ( thisCourse['Home/EU'].toLowerCase() === 'y' || thisCourse['Adjustment only home/EU'].toLowerCase() === 'y' ) that.courseCount['UK/EU']++;
+            if ( thisCourse['International'].toLowerCase() === 'y' || thisCourse['Adjustment only international'].toLowerCase() === 'y' ) that.courseCount['International']++;
 
             // Add the row to the table?
             var addRow = false;
-            if (that.type === 'Both' && (thisCourse['Home/EU'].toLowerCase() === 'y' || thisCourse.International.toLowerCase() === 'y')) addRow = true;
-            if (that.type === 'UK/EU' && thisCourse['Home/EU'].toLowerCase() === 'y') addRow = true;
-            if (that.type === 'International' && thisCourse.International.toLowerCase() === 'y') addRow = true;
+
+            if(
+                ( that.type === 'Both' && ( thisCourse['Home/EU'].toLowerCase() === 'y' || thisCourse['International'].toLowerCase() === 'y' || thisCourse['Adjustment only home/EU'].toLowerCase() === 'y' || thisCourse['Adjustment only international'].toLowerCase() === 'y' ) )
+                ||
+                ( that.type === 'UK/EU' && ( thisCourse['Home/EU'].toLowerCase() === 'y' || thisCourse['Adjustment only home/EU'].toLowerCase() === 'y' ) )
+                ||
+                ( that.type === 'International' && ( thisCourse['International'].toLowerCase() === 'y' || thisCourse['Adjustment only international'].toLowerCase() === 'y' ) )
+            ) addRow = true;
+
             if (addRow === true) {
               // Add letter headers and update letter count
               var thisLetter = thisCourse['Title of course'].substr(0,1);
@@ -207,8 +253,8 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
             modalAvailabilityText = 'Clearing and adjustment places are available for <strong>';
 
             if (thisCourse['Home/EU'].toLowerCase() === 'y') modalAvailabilityText+= 'UK/EU students';
-            if (thisCourse['Home/EU'].toLowerCase() === 'y' && thisCourse.International.toLowerCase() === 'y') modalAvailabilityText+= ' and ';
-            if (thisCourse.International.toLowerCase() === 'y') modalAvailabilityText+= 'international students';
+            if (thisCourse['Home/EU'].toLowerCase() === 'y' && thisCourse['International'].toLowerCase() === 'y') modalAvailabilityText+= ' and ';
+            if (thisCourse['International'].toLowerCase() === 'y') modalAvailabilityText+= 'international students';
 
             modalAvailabilityText = '</strong>';
 
@@ -276,24 +322,28 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
             if (typeof that.courseCount[thisCourse.Department] === 'undefined') {
               that.courseCount[thisCourse.Department] = {
                 'UK/EU': 0,
-                'International': 0
+                'International': 0,
+                'Adjustment UK/EU': 0,
+                'Adjustment International': 0
               };
             }
             // Count UK/EU and Intl courses
             if (thisCourse['Home/EU'].toLowerCase() === 'y') that.courseCount[thisCourse.Department]['UK/EU']++;
-            if (thisCourse.International.toLowerCase() === 'y') that.courseCount[thisCourse.Department].International++;
+            if (thisCourse['International'].toLowerCase() === 'y') that.courseCount[thisCourse.Department]['International']++;
+            if (thisCourse['Adjustment only home/EU'].toLowerCase() === 'y') that.courseCount[thisCourse.Department]['Adjustment UK/EU']++;
+            if (thisCourse['Adjustment only international'].toLowerCase() === 'y') that.courseCount[thisCourse.Department]['Adjustment International']++;
 
             if (thisCourse.Department !== currentCourse.Department) {
 
               // Make link with previous course
-              if (currentCourse !== false && (that.courseCount[currentCourse.Department]['UK/EU'] > 0 || that.courseCount[currentCourse.Department].International > 0)) {
+              if (currentCourse !== false && (that.courseCount[currentCourse.Department]['UK/EU'] > 0 || that.courseCount[currentCourse.Department]['International'] > 0 || that.courseCount[currentCourse.Department]['Adjustment UK/EU'] > 0 || that.courseCount[currentCourse.Department]['Adjustment International'] > 0 )) {
                 var li = makeLink(currentCourse, that.courseCount[currentCourse.Department]);
                 that.list.append(li);
               }
               currentCourse = thisCourse;
             }
             if (i === that.data.length - 1) {
-              if (currentCourse.Department !== false && (that.courseCount[currentCourse.Department]['UK/EU'] > 0 || that.courseCount[currentCourse.Department].International > 0)) {
+              if (currentCourse.Department !== false && (that.courseCount[currentCourse.Department]['UK/EU'] > 0 || that.courseCount[currentCourse.Department]['International'] > 0 || that.courseCount[currentCourse.Department]['Adjustment UK/EU'] > 0 || that.courseCount[currentCourse.Department]['Adjustment International'] > 0)) {
                 var lastLi = makeLink(thisCourse, that.courseCount[thisCourse.Department]);
                 that.list.append(lastLi);
               }
@@ -307,7 +357,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           // Add table to container
           that.container.append(that.table);
 
-          if ((that.courseCount['UK/EU'] > searchLimit) || (that.courseCount.International > searchLimit)) {
+          if ((that.courseCount['UK/EU'] > searchLimit) || (that.courseCount['International'] > searchLimit)) {
             // Make table searchable
             that.makeSearchable();
           }
@@ -317,7 +367,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           var gr = $('<div>').addClass('o-grid__row').appendTo(g);
           that.container.prepend(g);
 
-          if ((that.courseCount['UK/EU'] === 0) && (that.courseCount.International === 0)) {
+          if ((that.courseCount['UK/EU'] === 0) && (that.courseCount['International'] === 0)) {
 
             var noCourseBox = $('<div>').addClass('o-grid__box o-grid__box--full');
             var noCourseBoxContent = that.createPanel(clearingData.noCourseMessage);
@@ -330,9 +380,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
             if (that.type === 'Both') {
               var gb1 = $('<div>').addClass('o-grid__box o-grid__box--half');
               var boxContent = '';
-              if (that.courseCount['UK/EU'] !== 0 && that.courseCount.International !== 0) {
+              if (that.courseCount['UK/EU'] !== 0 && that.courseCount['International'] !== 0) {
                 boxContent = that.createToggle();
-              } else if (that.courseCount.International > 0) {
+            } else if (that.courseCount['International'] > 0) {
                 boxContent = that.createPanel('<p>The following courses only have places available for International students.</p>');
               } else if (that.courseCount['UK/EU'] > 0) {
                 boxContent = that.createPanel('<p>The following courses only have places available for UK/EU students.</p>');
@@ -382,6 +432,42 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
           //console.log(that.container, that.container.outerHeight());
           $(window).trigger('content.updated', ['clearing-table', that]);
+
+        // Course search results
+        } else if (that.layout === "Course search" ) {
+
+          // Process each course row
+          that.container.find( "tr[data-courseid]" ).each( function() {
+
+            var courseRow = this;
+
+            // Get the course UCAS code
+            var ucasCode = $( this ).find( "td.code" ).html().trim();
+
+            // Skip if no UCAS code found
+            if( !ucasCode ) return;
+
+            // Get our course from the clearing data
+            $.grep( that.data , function( course ) {
+              if( course[ "UCAS code" ] == ucasCode ) {
+
+                // Check the clearing status of this course
+                if( that.inClearing( course ) ) {
+
+                  var note = makeAvailabilityNote( course );
+
+                  if( !note ) note = "Places available for 2019";
+
+                  var contentCell = $( courseRow ).find( "td.coursetitle" );
+
+                  contentCell.append( "<br><br><strong>"+note+"</strong>" );
+
+                }
+
+              }
+            });
+
+          });
 
         // Entry requirements
         } else if (that.layout === "Entry requirements" && that.course !== false && that.inClearing( that.data[0] ) ) {
@@ -474,8 +560,12 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   };
 
   CLEARINGTABLE.prototype.inClearing = function(courseToCheck) {
-      return (courseToCheck['Home/EU'].toLowerCase() === 'y' ||
-          courseToCheck.International.toLowerCase() === 'y');
+    return (
+      courseToCheck[ 'Home/EU' ].toLowerCase() === 'y' ||
+      courseToCheck[ 'International' ].toLowerCase() === 'y' ||
+      courseToCheck[ 'Adjustment only home/EU' ].toLowerCase() === 'y' ||
+      courseToCheck[ 'Adjustment only international' ].toLowerCase() === 'y'
+    );
   };
 
   CLEARINGTABLE.prototype.createToggle = function() {
@@ -594,55 +684,49 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
   CLEARINGTABLE.prototype.addCourseRow = function(course) {
 
-    var isAdjustmentOnly = false;
-    if (course['Adjustment only'].toLowerCase() === 'y') {
-      isAdjustmentOnly = true;
-    } else if (course['Adjustment only'].toLowerCase() === 'h' && (this.type === 'Home/EU' || this.type === 'Both')) {
-      isAdjustmentOnly = true;
-    } else if (course['Adjustment only'].toLowerCase() === 'i' && (this.type === 'International' || this.type === 'Both')) {
-      isAdjustmentOnly = true;
-    }
     var courseCell =$('<td>');
     var courseCellContent = '<p class="c-clearing-table__title"><a href="'+course['Link to course page']+'">'+course['Qualification earned']+' '+course['Title of course']+'</a></p>'+
       '<ul class="u-two-columns">';
 
-    //console.log(course['No grades']);
+    if(this.showRequirements) {
+      if (course['No grades'] !== '') {
 
-      if(this.showRequirements) {
-          if (course['No grades'] !== '') {
+          courseCellContent += '<li class="c-clearing-table__entry-requirements">' + course['No grades'] + '</li>';
 
-              courseCellContent += '<li class="c-clearing-table__entry-requirements">' + course['No grades'] + '</li>';
+      } else if (course['Entry requirements'] !== '') {
 
-          } else if (course['Entry requirements'] !== '') {
+          courseCellContent += '<li class="c-clearing-table__entry-requirements"><strong>' + course['Entry requirements'] + '</strong> or equivalent tariff points from three A levels. Other qualifications are also accepted.';
 
-              courseCellContent += '<li class="c-clearing-table__entry-requirements"><strong>' + course['Entry requirements'] + '</strong> or equivalent tariff points from three A levels. Other qualifications are also accepted.';
-
-              if (course['Bullet 1'] || course['Bullet 2'] || course['Bullet 3']) {
-                  courseCellContent += '    <br>';
-                  courseCellContent += '    <small class="c-clearing-table__bullets">Must include: ';
-              }
-              if (course['Bullet 1']) courseCellContent += course['Bullet 1'];
-              if (course['Bullet 2']) courseCellContent += '; ' + course['Bullet 2'];
-              if (course['Bullet 3']) courseCellContent += '; ' + course['Bullet 3'] + '';
-              if (course['Bullet 1'] || course['Bullet 2'] || course['Bullet 3']) courseCellContent += '</small>';
-
-              courseCellContent += '</li>';
+          if (course['Bullet 1'] || course['Bullet 2'] || course['Bullet 3']) {
+              courseCellContent += '    <br>';
+              courseCellContent += '    <small class="c-clearing-table__bullets">Must include: ';
           }
-      }
+          if (course['Bullet 1']) courseCellContent += course['Bullet 1'];
+          if (course['Bullet 2']) courseCellContent += '; ' + course['Bullet 2'];
+          if (course['Bullet 3']) courseCellContent += '; ' + course['Bullet 3'] + '';
+          if (course['Bullet 1'] || course['Bullet 2'] || course['Bullet 3']) courseCellContent += '</small>';
 
-      courseCellContent+= '<li class="c-clearing-table__ucas-code">UCAS code '+course['UCAS code']+'</li>'+
-      '<li class="c-clearing-table__course-length">'+course['Course length']+'</li>'+
-      '<li class="c-clearing-table__phone-numbers">Call Admissions on ' + clearingData.phoneNumber + '</li>';
-    if (isAdjustmentOnly === true) courseCellContent+= '<li class="c-clearing-table__adjustment-only">Adjustment places only</li>';
+          courseCellContent += '</li>';
+      }
+    }
+
+    courseCellContent+= '<li class="c-clearing-table__ucas-code">UCAS code '+course['UCAS code']+'</li>'+
+    '<li class="c-clearing-table__course-length">'+course['Course length']+'</li>'+
+    '<li class="c-clearing-table__phone-numbers">Call Admissions on ' + clearingData.phoneNumber + '</li>';
+
+    // Availability note
+    var availabilityNote = makeAvailabilityNote( course );
+    if( availabilityNote ) courseCellContent+= '<li class="c-clearing-table__adjustment-only">'+availabilityNote+'</li>';
+
     courseCellContent+= '</ul>';
     courseCell.html(courseCellContent);
     var courseRow = $('<tr>').addClass('c-clearing-table__course');
     courseRow.append(courseCell);
     if (this.type === 'UK/EU' || this.type === 'Both') {
-      courseRow.attr('data-ukeu', course['Home/EU'].toLowerCase() === 'y' ? 'true' : 'false');
+      courseRow.attr('data-ukeu', ( course['Home/EU'].toLowerCase() === 'y' || course['Adjustment only home/EU'].toLowerCase() === 'y' ) ? 'true' : 'false');
     }
     if (this.type === 'International' || this.type === 'Both') {
-      courseRow.attr('data-international', course.International.toLowerCase() === 'y' ? 'true' : 'false');
+      courseRow.attr('data-international', ( course['International'].toLowerCase() === 'y' || course['Adjustment only international'].toLowerCase() === 'y' ) ? 'true' : 'false');
     }
     this.table.append(courseRow);
   };
@@ -665,14 +749,10 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
         // Try our fallback URL
         if( fallback != undefined ) {
-
           console.warn( '⚠ Clearing data fetch failed, trying fallback...' );
           that.fetchData( fallback );
-
         } else {
-
           console.error( '⚠ Clearing data fetch failed' );
-
         }
 
       },
@@ -681,6 +761,8 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         // Field mappings from gsheet API source to our clearing course object
         // source : destination
         var fieldMap = {
+          gsx$adjustmentonlyhomeeu: "Adjustment only home/EU",
+          gsx$adjustmentonlyinternational: "Adjustment only international",
           gsx$adjustmentonlyhiy: "Adjustment only",
           gsx$bullet1: "Bullet 1",
           gsx$bullet2: "Bullet 2",
@@ -707,20 +789,18 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         var sourceKeys = Object.keys( fieldMap ); // Get fieldmap keys for later
 
         // Process each row in the incoming data
-        for( var r = 0 ; r < rows.length ; r++ )
-        {
+        for( var r = 0 ; r < rows.length ; r++ ) {
+
           row = rows[ r ];
           dataRow = {};
 
           // Check each entry in our fieldmap
-          for( var k = 0 ; k < sourceKeys.length ; k++ )
-          {
+          for( var k = 0 ; k < sourceKeys.length ; k++ ) {
             var sourceKey = sourceKeys[ k ];
             var destinationKey = fieldMap[ sourceKey ];
 
             // Get the value for this field
-            if( row[ sourceKey ] !== undefined && row[ sourceKey ].$t !== undefined )
-            {
+            if( row[ sourceKey ] !== undefined && row[ sourceKey ].$t !== undefined ) {
               dataRow[ destinationKey ] = row[ sourceKey ].$t;
             }
           }
