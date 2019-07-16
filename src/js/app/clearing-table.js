@@ -436,6 +436,33 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         // Course search results
         } else if (that.layout === "Course search" ) {
 
+          var clearingYear = "2019";
+
+          // --------------------------------------------------
+          // First add filtering option
+
+          var showAllCoursesButton = $( '#showAllCourses' );
+          var filterToggle = $( '<label style="display:inline-block; padding:0.45rem 0; white-space:nowrap;"><input type="checkbox"> Show courses in clearing only</label>' );
+
+          // Insert our toggle after the button
+          showAllCoursesButton.after( filterToggle );
+
+          filterToggle.on( 'change' , 'input' , function( e ) {
+
+            var checkbox = this;
+            that.container.removeClass( 'u-flashin' );
+
+            // Delay update by 2xRAF to ensure that the keyframe animation kicks in
+            requestAnimationFrame( function(){ requestAnimationFrame( function(){
+              that.container.find( 'tbody tr:not(.in-clearing)' ).toggle( !checkbox.checked );
+              that.container.addClass( 'u-flashin' );
+            } ); } );
+
+          } );
+
+          // --------------------------------------------------
+          // Add a clearing message to each row
+
           // Process each course row
           that.container.find( "tr[data-courseid]" ).each( function() {
 
@@ -448,54 +475,98 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
             if( !ucasCode ) return;
 
             // Get our course from the clearing data
+            var courseInClearing = false;
             $.grep( that.data , function( course ) {
               if( course[ "UCAS code" ] == ucasCode ) {
-
-                // Check the clearing status of this course
-                if( that.inClearing( course ) ) {
-
-                  var note = makeAvailabilityNote( course );
-
-                  if( !note ) note = "Places available for 2019";
-
-                  var contentCell = $( courseRow ).find( "td.coursetitle" );
-
-                  contentCell.append( "<br><br><strong>"+note+"</strong>" );
-
-                }
-
+                courseInClearing = course;
               }
             });
+
+            // Set up vars for the end result
+            var clearingStatus = '';
+            var clearingStatusIcon = '';
+
+            // Check the clearing status of this course
+            if( courseInClearing ) {
+
+              // Add a class for filtering purposes
+              $( courseRow ).addClass( 'in-clearing' );
+
+              // Build our course link
+              var courseLink = $( courseRow ).find( "td.coursetitle > a" );
+              var courseURL = courseLink.attr( 'href' );
+              var clearingCourseURL = courseURL.replace( '/courses/' , '/courses-'+clearingYear+'/' );
+
+              // Build our clearing message
+              clearingStatus = '<a href="'+clearingCourseURL+'">'+( makeAvailabilityNote( courseInClearing ) || "Places available" )+'</a>';
+              // clearingStatusIcon = '<span style="display:inline-block; width:0.8em; height:0.8em; border-radius:50%; background:limegreen;"></span>';
+              clearingStatusIcon = '<i style="color:limegreen;" class="c-icon c-icon--check"></i>';
+
+            } else {
+
+              // Build a "No places available" message
+              clearingStatus = 'No places available';
+              // clearingStatusIcon = '<span style="display:inline-block; width:0.8em; height:0.8em; border-radius:50%; background:tomato;"></span>';
+              clearingStatusIcon = '<i style="color:darkgray;" class="c-icon c-icon--remove"></i>';
+
+            }
+
+            // Inject our clearing message into the bottom of the cell
+            // var contentCell = $( courseRow ).find( "td.coursetitle" );
+            // contentCell.append( '<br><small>'+clearingStatusIcon+' <strong>Clearing and adjustment '+clearingYear+':</strong> '+clearingStatus+'</small>' );
+
+            // Inject our clearing message after the course title
+            var courseTitleLink = $( courseRow ).find( "td.coursetitle > a" );
+            courseTitleLink.after( '<br><small>'+clearingStatusIcon+' <strong>Clearing and adjustment '+clearingYear+':</strong> '+clearingStatus+'</small>' );
 
           });
 
         // Entry requirements
         } else if (that.layout === "Entry requirements" && that.course !== false && that.inClearing( that.data[0] ) ) {
 
-          // Main A level results required
+          var rows = [];
 
-          var alevelsRendered = '<p><strong>'+that.data[0][ "Entry requirements" ]+'</strong></p>';
+          if( that.data[0][ "Entry requirements" ] ) {
 
-          // Sort out extra bullet points
+            // Main A level results required
+            var alevelsRendered = '<p><strong>'+that.data[0][ "Entry requirements" ]+'</strong></p>';
 
-          var bullets = [];
+            // Sort out extra bullet points
 
-          for( var k = 1 ; k <= 3 ; k++ ) {
-            if( that.data[0][ "Bullet "+k ] != '' ) {
-              bullets.push( that.data[0][ "Bullet "+k ] );
+            var bullets = [];
+
+            for( var k = 1 ; k <= 3 ; k++ ) {
+                if( that.data[0][ "Bullet "+k ] != '' ) {
+                    bullets.push( that.data[0][ "Bullet "+k ] );
+                }
             }
+
+            var bulletsRendered = '';
+
+            if( bullets.length == 1 ) {
+                bulletsRendered = '<p>'+bullets[ 0 ]+'</p>';
+            } else {
+                bulletsRendered += '<ul>';
+                for( var b = 0 ; b < bullets.length ; b++ ) {
+                    bulletsRendered += '<li>'+bullets[ b ]+'</li>';
+                }
+                bulletsRendered += '</ul>';
+            }
+
+            // Add to our extra rows
+            rows.push( {
+              'qualification': 'A levels',
+              'offer': alevelsRendered+bulletsRendered
+            } );
+
           }
 
-          var bulletsRendered = '';
-
-          if( bullets.length == 1 ) {
-            bulletsRendered = '<p>'+bullets[ 0 ]+'</p>';
-          } else {
-            bulletsRendered += '<ul>';
-            for( var b = 0 ; b < bullets.length ; b++ ) {
-              bulletsRendered += '<li>'+bullets[ b ]+'</li>';
-            }
-            bulletsRendered += '</ul>';
+          // Anything in no grades?
+          if( that.data[0][ "No grades" ] ) {
+              rows.push( {
+                'qualification': 'n/a',
+                'offer': that.data[0][ "No grades" ]
+              } );
           }
 
           // Construct our output
@@ -509,13 +580,14 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           requirements +=   '</tr>';
           requirements += '</thead>';
           requirements += '<tbody>';
-          requirements +=   '<tr>';
-          requirements +=     '<th>A levels</th>';
-          requirements +=     '<td>';
-          requirements +=       alevelsRendered;
-          requirements +=       bulletsRendered;
-          requirements +=     '</td>';
-          requirements +=   '</tr>';
+
+          for( var r = 0 ; r < rows.length ; r++ ){
+            requirements +=   '<tr>';
+            requirements +=     '<th>'+rows[ r ].qualification+'</th>';
+            requirements +=     '<td>'+rows[ r ].offer+'</td>';
+            requirements +=   '</tr>';
+          }
+
           requirements += '</tbody>';
 
           // Swap out the default content for the clearing version

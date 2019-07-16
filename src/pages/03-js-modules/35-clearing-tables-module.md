@@ -131,7 +131,7 @@ This shows all available classes, with a toggle for UK/EU and International stud
 When the `js-clearing-table` is applied to a table with the `Entry requirements` layout and a `data-course` attribute is set, the entry requirements table content will be swapped out with the reduced clearing requirements if the course is in clearing.
 
 ```markup
-<table class="js-clearing-table" data-course="G400" data-layout="Entry requirements">
+<table class="js-clearing-table" data-course="F304" data-layout="Entry requirements">
   <thead>
     <tr>
       <th>Qualification</th>
@@ -144,7 +144,7 @@ When the `js-clearing-table` is applied to a table with the `Entry requirements`
 </table>
 ```
 
-<table class="js-clearing-table" data-course="G400" data-layout="Entry requirements">
+<table class="js-clearing-table" data-course="F304" data-layout="Entry requirements">
   <thead>
     <tr>
       <th>Qualification</th>
