@@ -526,32 +526,32 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
           var rows = [];
 
+          // Sort out extra bullet points
+
+          var bullets = [];
+
+          for( var k = 1 ; k <= 3 ; k++ ) {
+              if( that.data[0][ "Bullet "+k ] != '' ) {
+                  bullets.push( that.data[0][ "Bullet "+k ] );
+              }
+          }
+
+          var bulletsRendered = '';
+
+          if( bullets.length == 1 ) {
+              bulletsRendered = '<p>'+bullets[ 0 ]+'</p>';
+          } else {
+              bulletsRendered += '<ul>';
+              for( var b = 0 ; b < bullets.length ; b++ ) {
+                  bulletsRendered += '<li>'+bullets[ b ]+'</li>';
+              }
+              bulletsRendered += '</ul>';
+          }
+
           if( that.data[0][ "Entry requirements" ] ) {
 
             // Main A level results required
             var alevelsRendered = '<p><strong>'+that.data[0][ "Entry requirements" ]+'</strong></p>';
-
-            // Sort out extra bullet points
-
-            var bullets = [];
-
-            for( var k = 1 ; k <= 3 ; k++ ) {
-                if( that.data[0][ "Bullet "+k ] != '' ) {
-                    bullets.push( that.data[0][ "Bullet "+k ] );
-                }
-            }
-
-            var bulletsRendered = '';
-
-            if( bullets.length == 1 ) {
-                bulletsRendered = '<p>'+bullets[ 0 ]+'</p>';
-            } else {
-                bulletsRendered += '<ul>';
-                for( var b = 0 ; b < bullets.length ; b++ ) {
-                    bulletsRendered += '<li>'+bullets[ b ]+'</li>';
-                }
-                bulletsRendered += '</ul>';
-            }
 
             // Add to our extra rows
             rows.push( {
@@ -559,7 +559,16 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
               'offer': alevelsRendered+bulletsRendered
             } );
 
-          }
+        } else {
+
+            var altRendered = '<p><strong>'+that.data[0][ "Alternative requirement" ]+'</strong></p>';
+
+            rows.push( {
+              'qualification': that.data[0][ "Alternative qualification" ],
+              'offer': altRendered+bulletsRendered
+            } );
+
+        }
 
           // Anything in no grades?
           if( that.data[0][ "No grades" ] ) {
@@ -779,6 +788,21 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           if (course['Bullet 1'] || course['Bullet 2'] || course['Bullet 3']) courseCellContent += '</small>';
 
           courseCellContent += '</li>';
+      } else if ( course['Alternative qualification'] !== '' && course['Alternative requirement'] !== '' ) {
+
+          courseCellContent += '<li class="c-clearing-table__entry-requirements"><strong>' + course['Alternative qualification'] + '</strong> ' + course['Alternative requirement'];
+
+          if (course['Bullet 1'] || course['Bullet 2'] || course['Bullet 3']) {
+              courseCellContent += '    <br>';
+              courseCellContent += '    <small class="c-clearing-table__bullets">';
+          }
+          if (course['Bullet 1']) courseCellContent += course['Bullet 1'];
+          if (course['Bullet 2']) courseCellContent += '; ' + course['Bullet 2'];
+          if (course['Bullet 3']) courseCellContent += '; ' + course['Bullet 3'] + '';
+          if (course['Bullet 1'] || course['Bullet 2'] || course['Bullet 3']) courseCellContent += '</small>';
+
+          courseCellContent += '</li>';
+
       }
     }
 
@@ -851,7 +875,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           gsx$sracheckx: "SRA check?\n✓ X",
           gsx$subject: "Subject",
           gsx$titleofcourse: "Title of course",
-          gsx$ucascode: "UCAS code"
+          gsx$ucascode: "UCAS code",
+          gsx$alternativequalification: "Alternative qualification",
+          gsx$alternativerequirement: "Alternative requirement",
         };
 
         var data = []; // The data object we'll be returning
