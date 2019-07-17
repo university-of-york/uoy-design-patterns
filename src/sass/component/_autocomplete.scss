@@ -8,6 +8,8 @@
   top:100%;
   z-index:128;
   width:100%;
+  max-height:80vh;
+  overflow:auto;
 }
 
 .c-autocomplete__list {
@@ -40,6 +42,10 @@
   .c-autocomplete__item.is-selected & {
     color:$c-autocomplete__link-hover-color;
     background-color:$c-autocomplete__link-hover-background-color;
+  }
+  .c-autocomplete__badge {
+    float: right;
+    margin: 0 0 0.5em 1.5em;
   }
 }
 
