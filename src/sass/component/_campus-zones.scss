@@ -8,9 +8,9 @@
 	width: 1.5rem;
 	height: 1.5rem;
 	margin-right: .5em;
-	outline: 1px solid #caccb8;
+	outline: 1px solid $s1;
 	&__label {
-		vertical-align: center;
+		vertical-align: middle;
 		font-size: 14px;
 		font-weight: bold;
 	}
