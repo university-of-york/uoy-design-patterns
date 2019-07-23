@@ -41,7 +41,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
       // International courses only
       li.addClass('is-international-only');
       // li.append('&nbsp;<small class="c-clearing-list__comment">Places for international students only</small>');
-    } else if (courseCount['International'] === 0 && courseCount['Adjustment International'] === 0) {
+  } else if (courseCount.International === 0 && courseCount['Adjustment International'] === 0) {
       // UK/EU courses only
       li.addClass('is-ukeu-only');
       // li.append('&nbsp;<small class="c-clearing-list__comment">Places for UK/EU students only</small>');
@@ -50,7 +50,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     // Append an availability note?
     var note = makeAvailabilityNote( {
       'Home/EU': ( courseCount['UK/EU'] > 0 ? 'y' : 'n' ),
-      'International': ( courseCount['International'] > 0 ? 'y' : 'n' ),
+      'International': ( courseCount.International > 0 ? 'y' : 'n' ),
       'Adjustment only home/EU': ( courseCount['Adjustment UK/EU'] > 0 ? 'y' : 'n' ),
       'Adjustment only international': ( courseCount['Adjustment International'] > 0 ? 'y' : 'n' ),
     } );
@@ -62,7 +62,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   var makeAvailabilityNote = function( course ) {
 
     var clearing_home = ( course['Home/EU'].toLowerCase() == 'y' );
-    var clearing_intl = ( course['International'].toLowerCase() == 'y' );
+    var clearing_intl = ( course.International.toLowerCase() == 'y' );
     var adjustment_home = ( course['Adjustment only home/EU'].toLowerCase() == 'y' );
     var adjustment_intl = ( course['Adjustment only international'].toLowerCase() == 'y' );
 
@@ -81,7 +81,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     if( adjustment_intl && !adjustment_home ) return "Adjustment places for international students only";
 
     return false; // This shouldn't happen
-  }
+  };
 
   var CLEARINGTABLE = function (options) {
 
@@ -142,7 +142,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         $.grep(data, function(a) {
           if(
             a[ 'Home/EU' ].toLowerCase() === 'y' ||
-            a[ 'International' ].toLowerCase() === 'y' ||
+            a.International.toLowerCase() === 'y' ||
             a[ 'Adjustment only home/EU' ].toLowerCase() === 'y' ||
             a[ 'Adjustment only international' ].toLowerCase() === 'y'
           ) {
@@ -198,17 +198,15 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
             // Count UK/EU and Intl courses
             if ( thisCourse['Home/EU'].toLowerCase() === 'y' || thisCourse['Adjustment only home/EU'].toLowerCase() === 'y' ) that.courseCount['UK/EU']++;
-            if ( thisCourse['International'].toLowerCase() === 'y' || thisCourse['Adjustment only international'].toLowerCase() === 'y' ) that.courseCount['International']++;
+            if ( thisCourse.International.toLowerCase() === 'y' || thisCourse['Adjustment only international'].toLowerCase() === 'y' ) that.courseCount.International++;
 
             // Add the row to the table?
             var addRow = false;
 
             if(
-                ( that.type === 'Both' && ( thisCourse['Home/EU'].toLowerCase() === 'y' || thisCourse['International'].toLowerCase() === 'y' || thisCourse['Adjustment only home/EU'].toLowerCase() === 'y' || thisCourse['Adjustment only international'].toLowerCase() === 'y' ) )
-                ||
-                ( that.type === 'UK/EU' && ( thisCourse['Home/EU'].toLowerCase() === 'y' || thisCourse['Adjustment only home/EU'].toLowerCase() === 'y' ) )
-                ||
-                ( that.type === 'International' && ( thisCourse['International'].toLowerCase() === 'y' || thisCourse['Adjustment only international'].toLowerCase() === 'y' ) )
+                ( that.type === 'Both' && ( thisCourse['Home/EU'].toLowerCase() === 'y' || thisCourse.International.toLowerCase() === 'y' || thisCourse['Adjustment only home/EU'].toLowerCase() === 'y' || thisCourse['Adjustment only international'].toLowerCase() === 'y' ) ) ||
+                ( that.type === 'UK/EU' && ( thisCourse['Home/EU'].toLowerCase() === 'y' || thisCourse['Adjustment only home/EU'].toLowerCase() === 'y' ) ) ||
+                ( that.type === 'International' && ( thisCourse.International.toLowerCase() === 'y' || thisCourse['Adjustment only international'].toLowerCase() === 'y' ) )
             ) addRow = true;
 
             if (addRow === true) {
@@ -253,8 +251,8 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
             modalAvailabilityText = 'Clearing and adjustment places are available for <strong>';
 
             if (thisCourse['Home/EU'].toLowerCase() === 'y') modalAvailabilityText+= 'UK/EU students';
-            if (thisCourse['Home/EU'].toLowerCase() === 'y' && thisCourse['International'].toLowerCase() === 'y') modalAvailabilityText+= ' and ';
-            if (thisCourse['International'].toLowerCase() === 'y') modalAvailabilityText+= 'international students';
+            if (thisCourse['Home/EU'].toLowerCase() === 'y' && thisCourse.International.toLowerCase() === 'y') modalAvailabilityText+= ' and ';
+            if (thisCourse.International.toLowerCase() === 'y') modalAvailabilityText+= 'international students';
 
             modalAvailabilityText = '</strong>';
 
@@ -329,21 +327,21 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
             }
             // Count UK/EU and Intl courses
             if (thisCourse['Home/EU'].toLowerCase() === 'y') that.courseCount[thisCourse.Department]['UK/EU']++;
-            if (thisCourse['International'].toLowerCase() === 'y') that.courseCount[thisCourse.Department]['International']++;
+            if (thisCourse.International.toLowerCase() === 'y') that.courseCount[thisCourse.Department].International++;
             if (thisCourse['Adjustment only home/EU'].toLowerCase() === 'y') that.courseCount[thisCourse.Department]['Adjustment UK/EU']++;
             if (thisCourse['Adjustment only international'].toLowerCase() === 'y') that.courseCount[thisCourse.Department]['Adjustment International']++;
 
             if (thisCourse.Department !== currentCourse.Department) {
 
               // Make link with previous course
-              if (currentCourse !== false && (that.courseCount[currentCourse.Department]['UK/EU'] > 0 || that.courseCount[currentCourse.Department]['International'] > 0 || that.courseCount[currentCourse.Department]['Adjustment UK/EU'] > 0 || that.courseCount[currentCourse.Department]['Adjustment International'] > 0 )) {
+              if (currentCourse !== false && (that.courseCount[currentCourse.Department]['UK/EU'] > 0 || that.courseCount[currentCourse.Department].International > 0 || that.courseCount[currentCourse.Department]['Adjustment UK/EU'] > 0 || that.courseCount[currentCourse.Department]['Adjustment International'] > 0 )) {
                 var li = makeLink(currentCourse, that.courseCount[currentCourse.Department]);
                 that.list.append(li);
               }
               currentCourse = thisCourse;
             }
             if (i === that.data.length - 1) {
-              if (currentCourse.Department !== false && (that.courseCount[currentCourse.Department]['UK/EU'] > 0 || that.courseCount[currentCourse.Department]['International'] > 0 || that.courseCount[currentCourse.Department]['Adjustment UK/EU'] > 0 || that.courseCount[currentCourse.Department]['Adjustment International'] > 0)) {
+              if (currentCourse.Department !== false && (that.courseCount[currentCourse.Department]['UK/EU'] > 0 || that.courseCount[currentCourse.Department].International > 0 || that.courseCount[currentCourse.Department]['Adjustment UK/EU'] > 0 || that.courseCount[currentCourse.Department]['Adjustment International'] > 0)) {
                 var lastLi = makeLink(thisCourse, that.courseCount[thisCourse.Department]);
                 that.list.append(lastLi);
               }
@@ -357,7 +355,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           // Add table to container
           that.container.append(that.table);
 
-          if ((that.courseCount['UK/EU'] > searchLimit) || (that.courseCount['International'] > searchLimit)) {
+          if ((that.courseCount['UK/EU'] > searchLimit) || (that.courseCount.International > searchLimit)) {
             // Make table searchable
             that.makeSearchable();
           }
@@ -367,7 +365,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           var gr = $('<div>').addClass('o-grid__row').appendTo(g);
           that.container.prepend(g);
 
-          if ((that.courseCount['UK/EU'] === 0) && (that.courseCount['International'] === 0)) {
+          if ((that.courseCount['UK/EU'] === 0) && (that.courseCount.International === 0)) {
 
             var noCourseBox = $('<div>').addClass('o-grid__box o-grid__box--full');
             var noCourseBoxContent = that.createPanel(clearingData.noCourseMessage);
@@ -380,9 +378,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
             if (that.type === 'Both') {
               var gb1 = $('<div>').addClass('o-grid__box o-grid__box--half');
               var boxContent = '';
-              if (that.courseCount['UK/EU'] !== 0 && that.courseCount['International'] !== 0) {
+              if (that.courseCount['UK/EU'] !== 0 && that.courseCount.International !== 0) {
                 boxContent = that.createToggle();
-            } else if (that.courseCount['International'] > 0) {
+            } else if (that.courseCount.International > 0) {
                 boxContent = that.createPanel('<p>The following courses only have places available for International students.</p>');
               } else if (that.courseCount['UK/EU'] > 0) {
                 boxContent = that.createPanel('<p>The following courses only have places available for UK/EU students.</p>');
@@ -643,7 +641,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   CLEARINGTABLE.prototype.inClearing = function(courseToCheck) {
     return (
       courseToCheck[ 'Home/EU' ].toLowerCase() === 'y' ||
-      courseToCheck[ 'International' ].toLowerCase() === 'y' ||
+      courseToCheck.International.toLowerCase() === 'y' ||
       courseToCheck[ 'Adjustment only home/EU' ].toLowerCase() === 'y' ||
       courseToCheck[ 'Adjustment only international' ].toLowerCase() === 'y'
     );
@@ -822,7 +820,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
       courseRow.attr('data-ukeu', ( course['Home/EU'].toLowerCase() === 'y' || course['Adjustment only home/EU'].toLowerCase() === 'y' ) ? 'true' : 'false');
     }
     if (this.type === 'International' || this.type === 'Both') {
-      courseRow.attr('data-international', ( course['International'].toLowerCase() === 'y' || course['Adjustment only international'].toLowerCase() === 'y' ) ? 'true' : 'false');
+      courseRow.attr('data-international', ( course.International.toLowerCase() === 'y' || course['Adjustment only international'].toLowerCase() === 'y' ) ? 'true' : 'false');
     }
     this.table.append(courseRow);
   };
