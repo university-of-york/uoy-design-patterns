@@ -19,6 +19,8 @@ category: Javascript
 define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   function ($, SEARCHABLE, UTILS, MODALLINK) {
 
+  var courseSearchClearingFeatures = true;
+
   var $window = $(window);
   var clearingData = window.PL_DATA.clearingData;
   var sheetId = clearingData.sheetId;
@@ -432,7 +434,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           $(window).trigger('content.updated', ['clearing-table', that]);
 
         // Course search results
-        } else if (that.layout === "Course search" ) {
+    } else if (that.layout === "Course search" && courseSearchClearingFeatures ) {
 
           var clearingYear = "2019";
 
@@ -492,19 +494,20 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
               // Build our course link
               var courseLink = $( courseRow ).find( "td.coursetitle > a" );
+              var courseTitle = courseLink.text();
               var courseURL = courseLink.attr( 'href' );
               var clearingCourseURL = courseURL.replace( '/courses/' , '/courses-'+clearingYear+'/' );
 
+              var clearingStatusText = ( makeAvailabilityNote( courseInClearing ) || "Places available" );
+
               // Build our clearing message
-              clearingStatus = '<a href="'+clearingCourseURL+'">'+( makeAvailabilityNote( courseInClearing ) || "Places available" )+'</a>';
-              // clearingStatusIcon = '<span style="display:inline-block; width:0.8em; height:0.8em; border-radius:50%; background:limegreen;"></span>';
+              clearingStatus = '<a href="'+clearingCourseURL+'" aria-label="'+clearingStatusText+' for '+courseTitle+'">'+clearingStatusText+'</a>';
               clearingStatusIcon = '<i style="color:limegreen;" class="c-icon c-icon--check"></i>';
 
             } else {
 
               // Build a "No places available" message
               clearingStatus = 'No places available';
-              // clearingStatusIcon = '<span style="display:inline-block; width:0.8em; height:0.8em; border-radius:50%; background:tomato;"></span>';
               clearingStatusIcon = '<i style="color:darkgray;" class="c-icon c-icon--remove"></i>';
 
             }

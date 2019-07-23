@@ -198,6 +198,16 @@ define(
           });
         });
 
+        // Clearing info for course search
+        UTILS.eachIfExists('#results > .courses', function (i, a) {
+          var $a = $(a);
+
+          new CLEARINGTABLE({
+            layout: 'Course search',
+            container: $a
+          });
+        });
+
         // A link with class .js-modal will href modal content
         UTILS.eachIfExists('.js-modal', function (i, a) {
           new MODALLINK({
