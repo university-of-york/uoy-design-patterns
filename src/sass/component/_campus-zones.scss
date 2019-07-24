@@ -8,12 +8,15 @@
 	margin: .5em 0;
  }
 
+ .c-autocomplete__link:hover .c-campus-zone {
+	 outline: 1px solid $s1;
+ }
+
 .c-campus-zone {
 	float: left;
 	width: 1.5rem;
 	height: 1.5rem;
 	margin-right: .5em;
-	outline: 1px solid $s1;
 	&__label {
 		vertical-align: middle;
 		font-size: 14px;
