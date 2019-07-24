@@ -17,6 +17,7 @@
 	width: 1.5rem;
 	height: 1.5rem;
 	margin-right: .5em;
+	outline: 0;
 	&__label {
 		vertical-align: middle;
 		font-size: 14px;
@@ -32,8 +33,6 @@
         $zonename:  map-get($val , label);
 		&-#{$name} {
 			background-color: $bgcolour;
-			color: $fgcolour;
-            border-color: $fgcolour;
         }
 	}
 }
