@@ -90,6 +90,16 @@ And this example has a no courses available.
 
 <div class="js-clearing-table" data-department="Physics" data-type="UK/EU"></div>
 
+### Example using defaults
+
+This shows all available classes, with a toggle for UK/EU and International students, plus an A to Z and row headers (presuming there are still enough courses in the list).
+
+```markup
+<div class="js-clearing-table"></div>
+```
+
+<div class="js-clearing-table"></div>
+
 ### Example using course panel layout
 
 Any content wrapped in the `js-clearing-table` div will be overwritten if the course is in clearing.
@@ -115,16 +125,6 @@ Any content wrapped in the `js-clearing-table` div will be overwritten if the co
     </div>
   </div>
 </div>
-
-### Example using defaults
-
-This shows all available classes, with a toggle for UK/EU and International students, plus an A to Z and row headers (presuming there are still enough courses in the list).
-
-```markup
-<div class="js-clearing-table"></div>
-```
-
-<div class="js-clearing-table"></div>
 
 ### Example entry requirements
 
