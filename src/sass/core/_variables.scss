@@ -25,19 +25,52 @@ $black:#000;
 
 
 //Campus zones colours
+
+// Original choices
+// $zones: (
+// 	1: ("bgcolour": #e86f01, "fgcolour": #000, "label": "Zone 1"),
+// 	2: ("bgcolour": #f9da00, "fgcolour": #000,  "label": "Zone 2"),
+// 	3: ("bgcolour": #dd020e, "fgcolour": #fff,  "label": "Zone 3"),
+// 	4: ("bgcolour": #a00929, "fgcolour": #fff,  "label": "Zone 4"),
+// 	5: ("bgcolour": #e0007a, "fgcolour": #fff,  "label": "Zone 5"),
+// 	6: ("bgcolour": #009ade, "fgcolour": #000, "label":  "Zone 6"),
+// 	7: ("bgcolour": #005492, "fgcolour": #fff,  "label": "Zone 7"),
+// 	8: ("bgcolour": #7f1876, "fgcolour": #fff,  "label": "Zone 8"),
+// 	9: ("bgcolour": #b8c100, "fgcolour": #000,  "label": "Zone 9"),
+// 	10: ("bgcolour": #008735, "fgcolour": #fff,  "label": "Zone 10"),
+// 	km: ("bgcolour": #505050, "fgcolour": #fff,  "label": "King's Manor")
+// );
+
+
+//  From mapbox 
 $zones: (
-	1: ("bgcolour": #e86f01, "fgcolour": #000, "label": "Zone 1"),
-	2: ("bgcolour": #f9da00, "fgcolour": #000,  "label": "Zone 2"),
-	3: ("bgcolour": #dd020e, "fgcolour": #fff,  "label": "Zone 3"),
-	4: ("bgcolour": #a00929, "fgcolour": #fff,  "label": "Zone 4"),
-	5: ("bgcolour": #e0007a, "fgcolour": #fff,  "label": "Zone 5"),
-	6: ("bgcolour": #009ade, "fgcolour": #000, "label":  "Zone 6"),
-	7: ("bgcolour": #005492, "fgcolour": #fff,  "label": "Zone 7"),
-	8: ("bgcolour": #7f1876, "fgcolour": #fff,  "label": "Zone 8"),
-	9: ("bgcolour": #b8c100, "fgcolour": #000,  "label": "Zone 9"),
-	10: ("bgcolour": #008735, "fgcolour": #fff,  "label": "Zone 10"),
+	1: ("bgcolour": #f57200, "fgcolour": #000, "label": "Zone 1"),
+	2: ("bgcolour": #ffdf00, "fgcolour": #000,  "label": "Zone 2"),
+	3: ("bgcolour": #de1212, "fgcolour": #fff,  "label": "Zone 3"),
+	4: ("bgcolour": #700016, "fgcolour": #fff,  "label": "Zone 4"),
+	5: ("bgcolour": #ea2a91, "fgcolour": #000,  "label": "Zone 5"),
+	6: ("bgcolour": #00afef, "fgcolour": #000, "label":  "Zone 6"),
+	7: ("bgcolour": #003d66, "fgcolour": #fff,  "label": "Zone 7"),
+	8: ("bgcolour": #720b79, "fgcolour": #fff,  "label": "Zone 8"),
+	9: ("bgcolour": #a0d91c, "fgcolour": #000,  "label": "Zone 9"),
+	10: ("bgcolour": #009f4c, "fgcolour": #000,  "label": "Zone 10"),
 	km: ("bgcolour": #505050, "fgcolour": #fff,  "label": "King's Manor")
 );
+
+// As on map
+// $zones: (
+// 	1: ("bgcolour": #FC7908, "fgcolour": #000, "label": "Zone 1"),
+// 	2: ("bgcolour": #FFE608, "fgcolour": #000,  "label": "Zone 2"),
+// 	3: ("bgcolour": #FF2020, "fgcolour": #000,  "label": "Zone 3"),
+// 	4: ("bgcolour": #A70B29, "fgcolour": #fff,  "label": "Zone 4"),
+// 	5: ("bgcolour": #FF39AF, "fgcolour": #000,  "label": "Zone 5"),
+// 	6: ("bgcolour": #08B6F6, "fgcolour": #000, "label":  "Zone 6"),
+// 	7: ("bgcolour": #095181, "fgcolour": #fff,  "label": "Zone 7"),
+// 	8: ("bgcolour": #A319AC, "fgcolour": #fff,  "label": "Zone 8"),
+// 	9: ("bgcolour": #A7E024, "fgcolour": #000,  "label": "Zone 9"),
+// 	10: ("bgcolour": #08AC56, "fgcolour": #000,  "label": "Zone 10"),
+// 	km: ("bgcolour": #505050, "fgcolour": #fff,  "label": "King's Manor")
+// );
 
 // Fonts
 $font-default: 'museo-sans', Helvetica, Arial, sans-serif;

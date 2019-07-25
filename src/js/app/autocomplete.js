@@ -126,6 +126,7 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
   AUTOCOMPLETE.prototype.makeFeatureItem = function(feature) {
 
     var featureTitle = feature.item.title;
+    var featureBadge = feature.item.badge;
     var featureSubtitle = feature.item.subtitle;
     var featureItem = $('<li>').addClass("c-autocomplete__item");
     // Create div if link is not set (i.e. it's unclickable)
@@ -137,6 +138,9 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
     }
     featureLink.addClass("c-autocomplete__link")
                .appendTo(featureItem);
+    if (featureBadge) {
+      var badge = $(featureBadge).appendTo(featureLink);
+    }
     var featureSpan = $('<span>').addClass("c-autocomplete__title")
                                  .text(featureTitle)
                                  .appendTo(featureLink);
