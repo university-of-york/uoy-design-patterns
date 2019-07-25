@@ -1,17 +1,17 @@
-.c-badge {	
+.c-badge {
 	line-height: 1.4;
-  	margin: .5em 0 1.25em 0;
- } 
+	margin: .5em 0 1.25em 0;
+}
 
- .c-badge--autocomplete {	
+.c-badge--autocomplete {
 	float: right;
 	margin: .5em 0;
 	width: 5.625em;
- }
+}
 
- .c-autocomplete__link:hover .c-campus-zone {
-	 outline: 1px solid $s1;
- }
+.c-autocomplete__link:hover .c-campus-zone {
+	outline: 1px solid $s1;
+}
 
 .c-campus-zone {
 	float: left;
@@ -28,12 +28,12 @@
 
 // .zone-1, zone-2, etc.
 .zone {
-	@each $name, $val in $zones {
-		$bgcolour: map-get($val , bgcolour);
-        $fgcolour:  map-get($val , fgcolour);
-        $zonename:  map-get($val , label);
-		&-#{$name} {
-			background-color: $bgcolour;
-        }
-	}
+  @each $name, $val in $zones {
+    $bgcolour: map-get($val , bgcolour);
+    $fgcolour:  map-get($val , fgcolour);
+    $zonename:  map-get($val , label);
+    &-#{$name} {
+      background-color: $bgcolour;
+    }
+  }
 }
