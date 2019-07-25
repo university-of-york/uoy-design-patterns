@@ -139,7 +139,7 @@ define(['jquery', 'fuse', 'app/utils'], function ($, FUSE, UTILS) {
     featureLink.addClass("c-autocomplete__link")
                .appendTo(featureItem);
     if (featureBadge) {
-      var badge = $(featureBadge).appendTo(featureLink);
+      var badge = $(featureBadge).addClass("c-badge--autocomplete").appendTo(featureLink);
     }
     var featureSpan = $('<span>').addClass("c-autocomplete__title")
                                  .text(featureTitle)
