@@ -391,6 +391,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         } else if (that.layout === "Entry requirements" && that.course !== false && that.inClearing( that.data[0] ) ) {
 
           var rows = [];
+          var typicalOffer = false;
 
           // Sort out extra bullet points
 
@@ -425,7 +426,10 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
               'offer': alevelsRendered+bulletsRendered
             } );
 
-        } else {
+            // Add to typical offer
+            typicalOffer = that.data[0][ "Entry requirements" ];
+
+          } else {
 
             var altRendered = '<p><strong>'+that.data[0][ "Alternative requirement" ]+'</strong></p>';
 
@@ -434,14 +438,17 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
               'offer': altRendered+bulletsRendered
             } );
 
-        }
+            // Add to requirements typical offer
+            typicalOffer = that.data[0][ "Alternative qualification" ] + "; " + that.data[0][ "Alternative requirement" ];
+
+          }
 
           // Anything in no grades?
           if( that.data[0][ "No grades" ] ) {
-              rows.push( {
-                'qualification': 'n/a',
-                'offer': that.data[0][ "No grades" ]
-              } );
+            rows.push( {
+              'qualification': 'n/a',
+              'offer': that.data[0][ "No grades" ]
+            } );
           }
 
           // Construct our output
@@ -470,6 +477,20 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           that.container.empty();
           that.container.append( requirements );
           that.container.after( "<p><small><sup>*</sup> This offer has been adjusted for clearing. See our <a href=\"https://www.york.ac.uk/study/undergraduate/applying/entry/\">entry requirements page</a> for information on other qualifications that we accept.</small></p>" );
+
+          // Swap out "typical offer" in course overview
+
+          $typicalOffer = $( '#typical-offer' );
+
+          if( $typicalOffer.length > 0 && typicalOffer ) {
+
+            typicalOfferText = typicalOffer;
+            typicalOfferText +=  ' (<a href="#entry">full entry requirements</a>)';
+            typicalOfferText +=  '<br>';
+            typicalOfferText +=  '<small>This offer has been adjusted for clearing</small>';
+
+            $typicalOffer.html( typicalOfferText );
+          }
 
         }
 
@@ -859,23 +880,23 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     ];
 
     // Testing!
-    // contentVariants[0].start = false;
-    // contentVariants[0].end   = new Date( new Date( 2019 , 6 , 26 , 9 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    // contentVariants[1].start = new Date( new Date( 2019 , 6 , 26 , 9 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    // contentVariants[1].end   = new Date( new Date( 2019 , 6 , 26 , 10 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    // contentVariants[2].start = new Date( new Date( 2019 , 6 , 26 , 10 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    // contentVariants[2].end   = new Date( new Date( 2019 , 6 , 26 , 11 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    // contentVariants[3].start = new Date( new Date( 2019 , 6 , 26 , 11 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    // contentVariants[3].end   = false;
+    contentVariants[0].start = false;
+    contentVariants[0].end   = new Date( new Date( 2019 , 6 , 26 , 9 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    contentVariants[1].start = new Date( new Date( 2019 , 6 , 26 , 9 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    contentVariants[1].end   = new Date( new Date( 2019 , 6 , 26 , 10 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    contentVariants[2].start = new Date( new Date( 2019 , 6 , 26 , 10 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    contentVariants[2].end   = new Date( new Date( 2019 , 6 , 26 , 11 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    contentVariants[3].start = new Date( new Date( 2019 , 6 , 26 , 11 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    contentVariants[3].end   = false;
 
     // Work out what content to serve
 
     var now = Date.now();
-    var key = 0
+    var key = 0;
 
     for( key = 0 ; key < contentVariants.length ; key++ ) {
-      if( contentVariants[ key ].start && !( contentVariants[ key ].start <= now ) ) continue;
-      if( contentVariants[ key ].end && !( contentVariants[ key ].end > now ) ) continue;
+      if( contentVariants[ key ].start && ( contentVariants[ key ].start > now ) ) continue;
+      if( contentVariants[ key ].end && ( contentVariants[ key ].end <= now ) ) continue;
       break;
     }
 
