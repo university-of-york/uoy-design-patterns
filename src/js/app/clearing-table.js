@@ -506,7 +506,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   };
 
   CLEARINGTABLE.prototype.makeLink = function(course, courseCount) {
-    var link = './'+course.Department.toLowerCase().replace(/:/g, '').replace(/,/g, '').replace(/\s/g, '-');
+    var link = '../'+course.Department.toLowerCase().replace(/:/g, '').replace(/,/g, '').replace(/\s/g, '-');
     var a = $('<a>').addClass('c-clearing-list__link')
             .attr('href', link)
             .text(course.Department);
@@ -859,26 +859,30 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     ];
 
     // Testing!
-    contentVariants[0].start = false;
-    contentVariants[0].end   = new Date( new Date( 2019 , 6 , 25 , 13 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    contentVariants[1].start = new Date( new Date( 2019 , 6 , 25 , 14 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    contentVariants[1].end   = new Date( new Date( 2019 , 6 , 25 , 14 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    contentVariants[2].start = new Date( new Date( 2019 , 6 , 25 , 15 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    contentVariants[2].end   = new Date( new Date( 2019 , 6 , 25 , 15 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    contentVariants[3].start = new Date( new Date( 2019 , 6 , 25 , 16 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    contentVariants[3].end   = false;
+    // contentVariants[0].start = false;
+    // contentVariants[0].end   = new Date( new Date( 2019 , 6 , 26 , 9 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    // contentVariants[1].start = new Date( new Date( 2019 , 6 , 26 , 9 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    // contentVariants[1].end   = new Date( new Date( 2019 , 6 , 26 , 10 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    // contentVariants[2].start = new Date( new Date( 2019 , 6 , 26 , 10 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    // contentVariants[2].end   = new Date( new Date( 2019 , 6 , 26 , 11 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    // contentVariants[3].start = new Date( new Date( 2019 , 6 , 26 , 11 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    // contentVariants[3].end   = false;
 
     // Work out what content to serve
 
     var now = Date.now();
+    var key = 0
 
-    for( var i = 0 ; i < contentVariants.length ; i++ ) {
-      if( contentVariants[ i ].start && !( contentVariants[ i ].start <= now ) ) continue;
-      if( contentVariants[ i ].end && !( contentVariants[ i ].end > now ) ) continue;
+    for( key = 0 ; key < contentVariants.length ; key++ ) {
+      if( contentVariants[ key ].start && !( contentVariants[ key ].start <= now ) ) continue;
+      if( contentVariants[ key ].end && !( contentVariants[ key ].end > now ) ) continue;
       break;
     }
 
-    return contentVariants[ i ][ contentType ]+'<p>'+i+'</p>';
+    // Fall back to first if not found
+    if( key > contentVariants.length ) key = 0;
+
+    return contentVariants[ key ][ contentType ]+'<p>'+key+'</p>'+'<p>'+new Date( new Date( 2019 , 6 , 25 , 13 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf()+'</p>';
   };
 
   CLEARINGTABLE.prototype.coursePanelContent = function( course ) {
