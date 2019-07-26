@@ -1,0 +1,39 @@
+.c-badge {
+	line-height: 1.4;
+	margin: .5em 0 1.25em 0;
+}
+
+.c-badge--autocomplete {
+	float: right;
+	margin:0 0 0.5em 1em;
+	width: 5.625em;
+}
+
+.c-autocomplete__link:hover .c-campus-zone {
+	outline: 1px solid $s1;
+}
+
+.c-campus-zone {
+	float: left;
+	width: 1.5rem;
+	height: 1.5rem;
+	margin-right: .5em;
+	outline: 0;
+	&__label {
+		vertical-align: middle;
+		font-size: 14px;
+		font-weight: bold;
+	}
+}
+
+// .zone-1, zone-2, etc.
+.zone {
+  @each $name, $val in $zones {
+    $bgcolour: map-get($val , bgcolour);
+    $fgcolour:  map-get($val , fgcolour);
+    $zonename:  map-get($val , label);
+    &-#{$name} {
+      background-color: $bgcolour;
+    }
+  }
+}
