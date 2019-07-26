@@ -32,6 +32,14 @@ At the time of writing, YouTube video URLs usually come in three flavours:
 <div class="c-video"><iframe width="730" height="410.625" src="//www.youtube.com/embed/s67Nb0wpcbE?rel=0" frameborder="0" allowfullscreen=""></iframe></div>
 ```
 
+### Example with options
+
+<p><a class="youtube-video-embed" data-autoplay="1" data-mute="1" data-cc_load_policy="1" href="https://www.youtube.com/watch?v=s67Nb0wpcbE">Watch the video here</a></p>
+
+```markup
+<p><a class="youtube-video-embed" data-autoplay="1" data-mute="1" data-cc_load_policy="1" href="https://www.youtube.com/watch?v=s67Nb0wpcbE">Watch the video here</a></p>
+```
+
 ## Long form url example
 The following example uses the longer form URL type with more parameters added to the query string,
 

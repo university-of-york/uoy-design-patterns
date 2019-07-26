@@ -35,8 +35,15 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
             return false;
         }
 
+        // Get any additional options from link data attributes
+        var optionList = [ 'autoplay' , 'mute' , 'cc_load_policy' ];
+        var optionArgs = '';
+        for( var a = 0 ; a < optionList.length ; a++ ) {
+          if( $( this.link ).attr( 'data-'+optionList[ a ] ) ) optionArgs += '&'+optionList[ a ]+'='+$( this.link ).attr( 'data-'+optionList[ a ] );
+        }
+
         this.id = videoId;
-        this.url = '//www.youtube.com/embed/' + this.id + '?rel=0';
+        this.url = '//www.youtube.com/embed/' + this.id + '?rel=0' + optionArgs;
         this.container = $('<div>').addClass('c-video').attr({
             'data-video-id': this.id
         });
