@@ -131,7 +131,7 @@ Any content wrapped in the `js-clearing-table` div will be overwritten if the co
 When the `js-clearing-table` is applied to a table with the `Entry requirements` layout and a `data-course` attribute is set, the entry requirements table content will be swapped out with the reduced clearing requirements if the course is in clearing.
 
 ```markup
-<table class="js-clearing-table" data-course="M101" data-layout="Entry requirements">
+<table class="js-clearing-table" data-course="VV13" data-layout="Entry requirements">
   <thead>
     <tr>
       <th>Qualification</th>
@@ -144,7 +144,7 @@ When the `js-clearing-table` is applied to a table with the `Entry requirements`
 </table>
 ```
 
-<table class="js-clearing-table" data-course="M101" data-layout="Entry requirements">
+<table class="js-clearing-table" data-course="VV13" data-layout="Entry requirements">
   <thead>
     <tr>
       <th>Qualification</th>
@@ -161,7 +161,7 @@ When the `js-clearing-table` is applied to a table with the `Entry requirements`
 
 #### Typical offer in course page header
 
-When the entry requirements layout is triggered, this module will also search for a #typical-offer element on the page and replace its contents with the offer adjusted for clearing.
+When the entry requirements layout is triggered, this module will also search for a `#typical-offer` element on the page and replace its contents with the offer adjusted for clearing.
 
 ```markup
 <p id="typical-offer">(...)</p>
