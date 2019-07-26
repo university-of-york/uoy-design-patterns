@@ -20,7 +20,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   function ($, SEARCHABLE, UTILS, MODALLINK) {
 
   // Toggle this value to enable/disable clearing info on course search results pages
-  var courseSearchClearingFeatures = false;
+  var courseSearchClearingFeatures = true;
 
   var $window = $(window);
   var clearingData = window.PL_DATA.clearingData;
@@ -891,15 +891,6 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
       var panelContent = $('<div>').addClass('c-panel__content');
 
-      // that.modalLink = $('<a>').attr( {
-      //   'href': '#modal-content-'+that.id,
-      //   'class': 'c-btn c-btn--medium js-modal--scroll'
-      // }).text('See our clearing entry requirements');
-      //
-      // panelContent.append('<h3>Clearing and adjustment 2019</h3>');
-      // panelContent.append('<p>Places are available on this course through clearing and adjustment</p>');
-      // panelContent.append($('<p>').append(that.modalLink));
-
       panelContent.append( that.getPanelContent( 'panel' , course ) );
 
       return panelContent;
@@ -916,15 +907,6 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     // modalContent.append('<h2>'+course['Qualification earned']+' '+course['Title of course']+'</h2>');
 
     modalContent.append( that.getPanelContent( 'modal' , course ) );
-
-    // modalContent.append( '<p>We have limited places available through clearing and adjustment.</p>' );
-    // modalContent.append( '<p>You can apply through clearing now if:</p>' );
-    // modalContent.append( '<ul><li>you already have your results and have not yet applied to York, and have not formally accepted an offer through UCAS elsewhere</li><li>you\'re not currently holding any offers.</li></ul>' );
-    // modalContent.append( '<p>To apply call us on '+clearingData.phoneNumber+'.</p>' );
-    // modalContent.append( '<p>Make sure you check the entry requirement before you call, have your UCAS ID number to hand and a number we can call you back on.</p>' );
-    // modalContent.append( '<p><strong>Opening times:</strong></p>' );
-    // modalContent.append( '<ul><li>5 July - 8 August - Monday to Friday, 9am - 5pm</li><li>8 August - 14 August - Closed while we prepare for A level results day</li><li>15 - 16 August - 8am - 6pm</li></ul>' );
-    // modalContent.append( '<p><a href="https://www.york.ac.uk/study/undergraduate/applying/clearing/vacancies/">Find out more about clearing and adjustment</a></p>' );
 
     return modalContent;
   };
