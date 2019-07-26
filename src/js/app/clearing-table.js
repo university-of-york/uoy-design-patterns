@@ -20,7 +20,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   function ($, SEARCHABLE, UTILS, MODALLINK) {
 
   // Toggle this value to enable/disable clearing info on course search results pages
-  var courseSearchClearingFeatures = true;
+  var courseSearchClearingFeatures = false;
 
   var $window = $(window);
   var clearingData = window.PL_DATA.clearingData;
@@ -32,6 +32,10 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   var CLEARINGTABLE = function (options) {
 
     if (!options.container) return false;
+
+    // This will be used in various places
+    // ⚠ Requires updating each year!
+    this.clearingYear = "2019";
 
     this.type = options.type || 'Both';
     this.department = options.department || 'All';
@@ -301,8 +305,6 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         // Course search results
         } else if (that.layout === "Course search" && courseSearchClearingFeatures ) {
 
-          var clearingYear = "2019";
-
           // --------------------------------------------------
           // First add filtering option
 
@@ -361,7 +363,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
               var courseLink = $( courseRow ).find( "td.coursetitle > a" );
               var courseTitle = courseLink.text();
               var courseURL = courseLink.attr( 'href' );
-              var clearingCourseURL = courseURL.replace( '/courses/' , '/courses-'+clearingYear+'/' );
+              var clearingCourseURL = courseURL.replace( '/courses/' , '/courses-'+that.clearingYear+'/' );
 
               var clearingStatusText = ( that.makeAvailabilityNote( courseInClearing ) || "Places available" );
 
@@ -379,11 +381,11 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
             // Inject our clearing message into the bottom of the cell
             // var contentCell = $( courseRow ).find( "td.coursetitle" );
-            // contentCell.append( '<br><small>'+clearingStatusIcon+' <strong>Clearing and adjustment '+clearingYear+':</strong> '+clearingStatus+'</small>' );
+            // contentCell.append( '<br><small>'+clearingStatusIcon+' <strong>Clearing and adjustment '+that.clearingYear+':</strong> '+clearingStatus+'</small>' );
 
             // Inject our clearing message after the course title
             var courseTitleLink = $( courseRow ).find( "td.coursetitle > a" );
-            courseTitleLink.after( '<br><small>'+clearingStatusIcon+' <strong>Clearing and adjustment '+clearingYear+':</strong> '+clearingStatus+'</small>' );
+            courseTitleLink.after( '<br><small>'+clearingStatusIcon+' <strong>Clearing and adjustment '+that.clearingYear+':</strong> '+clearingStatus+'</small>' );
 
           });
 
@@ -790,8 +792,8 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         start: false,
         end: 1565132400000, // new Date( new Date( 2019 , 7 , 7 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         panel:
-          '<h3>Clearing and adjustment 2019</h3>' +
-          '<p>Seeking bright minds for 2019! Places are available on this course through clearing and adjustment.</p>' +
+          '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
+          '<p>Seeking bright minds for '+that.clearingYear+'! Places are available on this course through clearing and adjustment.</p>' +
           '<p><a href="#modal-content-'+that.id+'" class="c-btn c-btn--medium js-modal js-modal--scroll">Find out more</a></p>',
         modal:
           '<p>We have limited places available through clearing and adjustment.</p>' +
@@ -815,7 +817,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         start:1565132400000, // new Date( new Date( 2019 , 7 , 7 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         end:1565798400000, // new Date( new Date( 2019 , 7 , 14 , 17 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         panel:
-          '<h3>Clearing and adjustment 2019</h3>' +
+          '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
           '<p>We expect to have places available on this course through clearing and adjustment.</p>' +
           '<p><a href="#modal-content-'+that.id+'" class="c-btn c-btn--medium js-modal js-modal--scroll">Find out more</a></p>',
         modal:
@@ -830,7 +832,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         start:1565798400000, // new Date( new Date( 2019 , 7 , 14 , 17 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         end:1565852400000, // new Date( new Date( 2019 , 7 , 15 , 8 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         panel:
-          '<h3>Clearing and adjustment 2019</h3>' +
+          '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
           '<p>Places are available on this course through clearing and adjustment.</p>' +
           '<p><a href="#modal-content-'+that.id+'" class="c-btn c-btn--medium js-modal js-modal--scroll">Find out more</a></p>',
         modal:
@@ -856,7 +858,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         start:1565852400000, // new Date( new Date( 2019 , 7 , 15 , 8 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         end: false,
         panel:
-          '<h3>Clearing and adjustment 2019</h3>' +
+          '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
           '<p>Places are available on this course through clearing and adjustment.</p>' +
           '<p><a href="#modal-content-'+that.id+'" class="c-btn c-btn--medium js-modal js-modal--scroll">Find out more</a></p>',
         modal:
@@ -880,14 +882,14 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     ];
 
     // Testing!
-    contentVariants[0].start = false;
-    contentVariants[0].end   = new Date( new Date( 2019 , 6 , 26 , 9 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    contentVariants[1].start = new Date( new Date( 2019 , 6 , 26 , 9 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    contentVariants[1].end   = new Date( new Date( 2019 , 6 , 26 , 10 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    contentVariants[2].start = new Date( new Date( 2019 , 6 , 26 , 10 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    contentVariants[2].end   = new Date( new Date( 2019 , 6 , 26 , 11 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    contentVariants[3].start = new Date( new Date( 2019 , 6 , 26 , 11 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    contentVariants[3].end   = false;
+    // contentVariants[0].start = false;
+    // contentVariants[0].end   = new Date( new Date( 2019 , 6 , 26 , 9 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    // contentVariants[1].start = new Date( new Date( 2019 , 6 , 26 , 9 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    // contentVariants[1].end   = new Date( new Date( 2019 , 6 , 26 , 10 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    // contentVariants[2].start = new Date( new Date( 2019 , 6 , 26 , 10 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    // contentVariants[2].end   = new Date( new Date( 2019 , 6 , 26 , 11 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    // contentVariants[3].start = new Date( new Date( 2019 , 6 , 26 , 11 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    // contentVariants[3].end   = false;
 
     // Work out what content to serve
 

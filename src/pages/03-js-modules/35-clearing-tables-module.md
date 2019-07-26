@@ -126,6 +126,32 @@ Any content wrapped in the `js-clearing-table` div will be overwritten if the co
   </div>
 </div>
 
+#### When a different year is in clearing
+
+Add a `data-different-year` attribute to indicate that this course is in clearing for a different year. This will change the panel CTA to a link to the course year in clearing.
+
+```markup
+<div class="js-clearing-table" data-layout="Course panel" data-course="F3F8" data-different-year>
+  <div class="c-panel c-panel--highlight">
+    <div class="c-panel__content">
+      <h3>Results 2019</h3>
+      <p>Whether you're looking for a late place or you've already got an offer, find out all you need to know about joining us in September.</p>
+      <a class="c-btn c-btn--medium" href="https://www.york.ac.uk/clearing">Find out more</a>
+    </div>
+  </div>
+</div>
+```
+
+<div class="js-clearing-table" data-layout="Course panel" data-course="F3F8" data-different-year>
+  <div class="c-panel c-panel--highlight">
+    <div class="c-panel__content">
+      <h3>Results 2019</h3>
+      <p>Whether you're looking for a late place or you've already got an offer, find out all you need to know about joining us in September.</p>
+      <a class="c-btn c-btn--medium" href="https://www.york.ac.uk/clearing">Find out more</a>
+    </div>
+  </div>
+</div>
+
 ### Example entry requirements
 
 When the `js-clearing-table` is applied to a table with the `Entry requirements` layout and a `data-course` attribute is set, the entry requirements table content will be swapped out with the reduced clearing requirements if the course is in clearing.
