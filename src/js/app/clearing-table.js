@@ -882,7 +882,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     // Fall back to first if not found
     if( key > contentVariants.length ) key = 0;
 
-    return contentVariants[ key ][ contentType ]+'<p>'+key+'</p>'+'<p>'+new Date( new Date( 2019 , 6 , 25 , 13 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf()+'</p>';
+    return contentVariants[ key ][ contentType ];
   };
 
   CLEARINGTABLE.prototype.coursePanelContent = function( course ) {
