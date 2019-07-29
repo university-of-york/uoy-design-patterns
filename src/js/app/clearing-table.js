@@ -42,6 +42,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     this.subject = options.subject || 'All';
     this.layout = options.layout || 'Courses';
     this.showRequirements = options.showRequirements;
+    this.differentYear = options.differentYear;
     this.course = options.course || false;
     this.container = options.container;
     this.data = [];
@@ -177,7 +178,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
             // empty the container
             that.container.empty();
-            // set the 'inClearing' value so that the modal gets triggered later on
+
+            // set the 'inClearing' value so that the content gets swapped out
+            // and the modal gets triggered (if applicable) later on
             inClearing = true;
 
             that.panel.append( that.coursePanelContent( thisCourse ) );
@@ -287,10 +290,14 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           // console.log(that.container, that.container.outerHeight());
           $(window).trigger('content.updated', ['clearing-table', that]);
 
-          new MODALLINK({
-            // link: that.modalLink
-            link: that.container.find( '.js-modal' )
-          });
+          // Set up our modal link if present
+          // (it won't be if differentYear is true)
+          var modalLink = that.container.find( '.js-modal' );
+          if( modalLink.length > 0 ) {
+            new MODALLINK({
+              link: modalLink
+            });
+          }
 
         // Department layout
         } else if (that.layout === "Departments") {
@@ -793,8 +800,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         end: 1565132400000, // new Date( new Date( 2019 , 7 , 7 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         panel:
           '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
-          '<p>Seeking bright minds for '+that.clearingYear+'! Places are available on this course through clearing and adjustment.</p>' +
-          '<p><a href="#modal-content-'+that.id+'" class="c-btn c-btn--medium js-modal js-modal--scroll">Find out more</a></p>',
+          '<p>Seeking bright minds for '+that.clearingYear+'! Places are available on this course through clearing and adjustment.</p>',
         modal:
           '<p>We have limited places available through clearing and adjustment.</p>' +
           '<p>You can apply through clearing now if:</p>' +
@@ -818,8 +824,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         end:1565798400000, // new Date( new Date( 2019 , 7 , 14 , 17 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         panel:
           '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
-          '<p>We expect to have places available on this course through clearing and adjustment.</p>' +
-          '<p><a href="#modal-content-'+that.id+'" class="c-btn c-btn--medium js-modal js-modal--scroll">Find out more</a></p>',
+          '<p>We expect to have places available on this course through clearing and adjustment.</p>',
         modal:
           '<h2>Get ready to call us</h2>' +
           '<p>Our course vacancies are subject to change and will be confirmed here from around 7pm on Wednesday 14 August. Our clearing hotline will then open at 8am on Thursday 15 August.</p>' +
@@ -833,8 +838,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         end:1565852400000, // new Date( new Date( 2019 , 7 , 15 , 8 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         panel:
           '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
-          '<p>Places are available on this course through clearing and adjustment.</p>' +
-          '<p><a href="#modal-content-'+that.id+'" class="c-btn c-btn--medium js-modal js-modal--scroll">Find out more</a></p>',
+          '<p>Places are available on this course through clearing and adjustment.</p>',
         modal:
           '<h2>Call our hotline</h2>' +
           '<p>To apply call '+clearingData.phoneNumber+'.</p>' +
@@ -859,8 +863,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         end: false,
         panel:
           '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
-          '<p>Places are available on this course through clearing and adjustment.</p>' +
-          '<p><a href="#modal-content-'+that.id+'" class="c-btn c-btn--medium js-modal js-modal--scroll">Find out more</a></p>',
+          '<p>Places are available on this course through clearing and adjustment.</p>',
         modal:
           '<h2>Call our hotline</h2>' +
           '<p>To apply call '+clearingData.phoneNumber+'.</p>' +
@@ -914,7 +917,16 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
       var panelContent = $('<div>').addClass('c-panel__content');
 
-      panelContent.append( that.getPanelContent( 'panel' , course ) );
+      var contentBody = that.getPanelContent( 'panel' , course );
+      var contentCTA = '<p><a href="#modal-content-'+that.id+'" class="c-btn c-btn--medium js-modal js-modal--scroll">Find out more</a></p>';
+
+      if( that.differentYear ) {
+        contentCTA = '<p><a href="'+course['Link to course page']+'" class="c-btn c-btn--medium">See '+that.clearingYear+' entry</a></p>';
+      } else {
+        contentCTA = '<p><a href="#modal-content-'+that.id+'" class="c-btn c-btn--medium js-modal js-modal--scroll">Find out more</a></p>';
+      }
+
+      panelContent.append( contentBody + contentCTA );
 
       return panelContent;
 
