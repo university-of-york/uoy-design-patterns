@@ -170,6 +170,7 @@ define(
               layout = $a.attr('data-layout') || false,
               course = $a.attr('data-course') || false,
               department = $a.attr('data-department') || false,
+              differentYear = ( $a.attr('data-different-year') !== undefined )|| false,
               subject = $a.attr('data-subject') || false;
 
           // show requirements can be a "Yes" or "No" value when set in the CMS
@@ -194,6 +195,7 @@ define(
             department: department,
             subject: subject,
             showRequirements: showRequirements,
+            differentYear: differentYear,
             container: $a
           });
         });
