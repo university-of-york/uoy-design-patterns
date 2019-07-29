@@ -199,14 +199,17 @@ define(
         });
 
         // Clearing info for course search
-        UTILS.eachIfExists('#results > .courses', function (i, a) {
-          var $a = $(a);
+        // ⚠ Only apply this to UG searches
+        if( window.location.href.indexOf( '/undergraduate/' ) > -1 ) {
+          UTILS.eachIfExists('#results > .courses', function (i, a) {
+            var $a = $(a);
 
-          new CLEARINGTABLE({
-            layout: 'Course search',
-            container: $a
+            new CLEARINGTABLE({
+              layout: 'Course search',
+              container: $a
+            });
           });
-        });
+        }
 
         // A link with class .js-modal will href modal content
         UTILS.eachIfExists('.js-modal', function (i, a) {
