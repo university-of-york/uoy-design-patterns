@@ -76,7 +76,8 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     }
 
     // Get our clearing data (triggers data.loaded on success)
-    this.fetchData( 'https://spreadsheets.google.com/feeds/list/' + sheetId + '/1/public/values?alt=json' , backupDoc );
+    this.fetchData( 'https://spreadsheets.examplesdf.com/feeds/list/' + sheetId + '/1/public/values?alt=json' , backupDoc );
+    // this.fetchData( 'https://spreadsheets.google.com/feeds/list/' + sheetId + '/1/public/values?alt=json' , backupDoc );
 
     var that = this;
 
@@ -833,7 +834,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
       {
         // Until 7th August
         start: false,
-        end: 1565132400000, // new Date( new Date( 2019 , 7 , 7 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+        end: 1565218800000, // new Date( new Date( 2019 , 7 , 8 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         panel:
           '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
           '<p>Seeking bright minds for '+that.clearingYear+'! Places are available on this course through clearing and adjustment.</p>',
@@ -856,7 +857,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
       },
       {
         // 8th August - 14th August 5pm
-        start:1565132400000, // new Date( new Date( 2019 , 7 , 7 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+        start:1565218800000, // new Date( new Date( 2019 , 7 , 8 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         end:1565798400000, // new Date( new Date( 2019 , 7 , 14 , 17 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         panel:
           '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
@@ -925,8 +926,8 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     // contentVariants[0].end   = new Date( new Date( 2019 , 6 , 26 , 9 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
     // contentVariants[1].start = new Date( new Date( 2019 , 6 , 26 , 9 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
     // contentVariants[1].end   = new Date( new Date( 2019 , 6 , 26 , 10 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    // contentVariants[2].start = new Date( new Date( 2019 , 6 , 26 , 10 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    // contentVariants[2].end   = new Date( new Date( 2019 , 6 , 26 , 11 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    // contentVariants[2].start = new Date( new Date( 2019 , 6 , 26 , 14 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    // contentVariants[2].end   = new Date( new Date( 2019 , 6 , 26 , 15 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
     // contentVariants[3].start = new Date( new Date( 2019 , 6 , 26 , 11 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
     // contentVariants[3].end   = false;
 
@@ -994,13 +995,17 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         // Try our fallback URL
         if( fallback != undefined ) {
           console.warn( '⚠ Clearing data fetch failed, trying fallback...' );
+          UTILS.addAnalyticsEvent( 'Clearing' , 'Data fetch' , 'Error' , 'Request failed, trying fallback...' );
           that.fetchData( fallback );
         } else {
           console.error( '⚠ Clearing data fetch failed' );
+          UTILS.addAnalyticsEvent( 'Clearing' , 'Data fetch' , 'Error' , 'Fallback request failed' );
         }
 
       },
       success: function( rawData ) { // Success!
+
+        UTILS.addAnalyticsEvent( 'Clearing' , 'Data fetch' , 'Success' , '' );
 
         // Field mappings from gsheet API source to our clearing course object
         // source : destination
