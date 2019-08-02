@@ -76,8 +76,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     }
 
     // Get our clearing data (triggers data.loaded on success)
-    this.fetchData( 'https://spreadsheets.examplesdf.com/feeds/list/' + sheetId + '/1/public/values?alt=json' , backupDoc );
-    // this.fetchData( 'https://spreadsheets.google.com/feeds/list/' + sheetId + '/1/public/values?alt=json' , backupDoc );
+    this.fetchData( 'https://spreadsheets.google.com/feeds/list/' + sheetId + '/1/public/values?alt=json' , backupDoc );
 
     var that = this;
 
@@ -995,17 +994,17 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         // Try our fallback URL
         if( fallback != undefined ) {
           console.warn( '⚠ Clearing data fetch failed, trying fallback...' );
-          UTILS.addAnalyticsEvent( 'Clearing' , 'Data fetch' , 'Error' , 'Request failed, trying fallback...' );
+          UTILS.addAnalyticsEvent( 'Clearing data' , 'Error' , 'Trying fallback...' , '' );
           that.fetchData( fallback );
         } else {
           console.error( '⚠ Clearing data fetch failed' );
-          UTILS.addAnalyticsEvent( 'Clearing' , 'Data fetch' , 'Error' , 'Fallback request failed' );
+          UTILS.addAnalyticsEvent( 'Clearing data' , 'Error' , 'Fallback failed' , '' );
         }
 
       },
       success: function( rawData ) { // Success!
 
-        UTILS.addAnalyticsEvent( 'Clearing' , 'Data fetch' , 'Success' , '' );
+        UTILS.addAnalyticsEvent( 'Clearing data' , 'Success' , '' , '' );
 
         // Field mappings from gsheet API source to our clearing course object
         // source : destination
