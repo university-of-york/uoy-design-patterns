@@ -70,7 +70,6 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
       // Update A to Z when search updates
       this.table.on('search.updated', { that: this }, this.updateAtoZ);
     } else if (this.layout === 'Departments') {
-      this.list = $('<ul>').addClass('c-clearing-list');
       this.modalLink = false;
     } else if (this.layout === 'Course panel') {
       this.panel = $('<div>').addClass('c-panel c-panel--highlight').attr({'role':'alert'});
@@ -189,36 +188,53 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           // Department layout
           } else if (that.layout === "Departments") {
 
-            // Set up department counts
-            if (typeof that.courseCount[thisCourse.Department] === 'undefined') {
-              that.courseCount[thisCourse.Department] = {
-                'UK/EU': 0,
-                'International': 0,
-                'Adjustment UK/EU': 0,
-                'Adjustment International': 0
-              };
-            }
-            // Count UK/EU and Intl courses
-            if (thisCourse['Home/EU'].toLowerCase() === 'y') that.courseCount[thisCourse.Department]['UK/EU']++;
-            if (thisCourse.International.toLowerCase() === 'y') that.courseCount[thisCourse.Department].International++;
-            if (thisCourse['Adjustment only home/EU'].toLowerCase() === 'y') that.courseCount[thisCourse.Department]['Adjustment UK/EU']++;
-            if (thisCourse['Adjustment only international'].toLowerCase() === 'y') that.courseCount[thisCourse.Department]['Adjustment International']++;
+            // Extract our subjects
+            var subjects = thisCourse.Subject.split( "|" );
 
-            if (thisCourse.Department !== currentCourse.Department) {
+            // Add subject(s) to our global list if it doesn't already exist
+            for( var s = 0 ; s < subjects.length ; s++ ) {
 
-              // Make link with previous course
-              if (currentCourse !== false && (that.courseCount[currentCourse.Department]['UK/EU'] > 0 || that.courseCount[currentCourse.Department].International > 0 || that.courseCount[currentCourse.Department]['Adjustment UK/EU'] > 0 || that.courseCount[currentCourse.Department]['Adjustment International'] > 0 )) {
-                var li = that.makeLink(currentCourse, that.courseCount[currentCourse.Department]);
-                that.list.append(li);
+              var subject = subjects[ s ];
+
+              // Initialise subject course counters
+              if( that.courseCount[ subject ] == undefined ) {
+
+                that.courseCount[ subject ] = {
+                  'UK/EU': 0,
+                  'International': 0,
+                  'Adjustment UK/EU': 0,
+                  'Adjustment International': 0
+                };
               }
-              currentCourse = thisCourse;
+
+              // Count UK/EU and Intl courses
+              if (thisCourse['Home/EU'].toLowerCase() === 'y') that.courseCount[ subject ]['UK/EU']++;
+              if (thisCourse.International.toLowerCase() === 'y') that.courseCount[ subject ].International++;
+              if (thisCourse['Adjustment only home/EU'].toLowerCase() === 'y') that.courseCount[ subject ]['Adjustment UK/EU']++;
+              if (thisCourse['Adjustment only international'].toLowerCase() === 'y') that.courseCount[ subject ]['Adjustment International']++;
+
             }
-            if (i === that.data.length - 1) {
-              if (currentCourse.Department !== false && (that.courseCount[currentCourse.Department]['UK/EU'] > 0 || that.courseCount[currentCourse.Department].International > 0 || that.courseCount[currentCourse.Department]['Adjustment UK/EU'] > 0 || that.courseCount[currentCourse.Department]['Adjustment International'] > 0)) {
-                var lastLi = that.makeLink(thisCourse, that.courseCount[thisCourse.Department]);
-                that.list.append(lastLi);
-              }
-            }
+
+            // ----------------------------------------------------------------------------------------------------
+
+            // if (thisCourse.Department !== currentCourse.Department) {
+            //
+            //   // Make link with previous course
+            //   if (currentCourse !== false && (that.courseCount[currentCourse.Department]['UK/EU'] > 0 || that.courseCount[currentCourse.Department].International > 0 || that.courseCount[currentCourse.Department]['Adjustment UK/EU'] > 0 || that.courseCount[currentCourse.Department]['Adjustment International'] > 0 )) {
+            //     var li = that.makeLink(currentCourse, that.courseCount[currentCourse.Department]);
+            //     that.list.append(li);
+            //   }
+            //   currentCourse = thisCourse;
+            // }
+            //
+            // if (i === that.data.length - 1) {
+            //   if (currentCourse.Department !== false && (that.courseCount[currentCourse.Department]['UK/EU'] > 0 || that.courseCount[currentCourse.Department].International > 0 || that.courseCount[currentCourse.Department]['Adjustment UK/EU'] > 0 || that.courseCount[currentCourse.Department]['Adjustment International'] > 0)) {
+            //     var lastLi = that.makeLink(thisCourse, that.courseCount[thisCourse.Department]);
+            //     that.list.append(lastLi);
+            //   }
+            // }
+
+            // ----------------------------------------------------------------------------------------------------
           }
 
         }
@@ -301,6 +317,23 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
         // Department layout
         } else if (that.layout === "Departments") {
+
+          // Create our list
+          that.list = $('<ul>').addClass('c-clearing-list');
+
+          // Create each list item from subjects
+          var subjects = Object.keys( that.courseCount ).sort();
+
+          for( var s = 0 ; s < subjects.length ; s++ ) {
+
+            var subject = subjects[ s ];
+
+            // Make sure there's at least one course to show
+            if( parseInt( that.courseCount[ subject ]['UK/EU'] ) + parseInt( that.courseCount[ subject ].International ) + parseInt( that.courseCount[ subject ]['Adjustment UK/EU'] ) + parseInt( that.courseCount[ subject ]['Adjustment International'] ) > 0 ) {
+              that.list.append( that.makeLink( subject , that.courseCount[ subject ] ) );
+            }
+
+          }
 
           // Add list to container
           that.container.append($('<h3>').text('Vacancies by subject area'));
@@ -535,13 +568,16 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     return false; // This shouldn't happen
   };
 
-  CLEARINGTABLE.prototype.makeLink = function(course, courseCount) {
-    var link = '../'+course.Department.toLowerCase().replace(/:/g, '').replace(/,/g, '').replace(/\s/g, '-');
+  CLEARINGTABLE.prototype.makeLink = function( subject , courseCount) {
+
+    var link = '../'+subject.toLowerCase().replace(/:/g, '').replace(/,/g, '').replace(/\s/g, '-');
+
     var a = $('<a>').addClass('c-clearing-list__link')
             .attr('href', link)
-            .text(course.Department);
+            .text( subject );
+
     var li = $('<li>').addClass('c-clearing-list__item')
-             .attr('data-department', course.Department)
+             .attr('data-department', subject )
              .append(a);
 
     // Not sure if this does anything anymore?
