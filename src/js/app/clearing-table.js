@@ -215,26 +215,6 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
             }
 
-            // ----------------------------------------------------------------------------------------------------
-
-            // if (thisCourse.Department !== currentCourse.Department) {
-            //
-            //   // Make link with previous course
-            //   if (currentCourse !== false && (that.courseCount[currentCourse.Department]['UK/EU'] > 0 || that.courseCount[currentCourse.Department].International > 0 || that.courseCount[currentCourse.Department]['Adjustment UK/EU'] > 0 || that.courseCount[currentCourse.Department]['Adjustment International'] > 0 )) {
-            //     var li = that.makeLink(currentCourse, that.courseCount[currentCourse.Department]);
-            //     that.list.append(li);
-            //   }
-            //   currentCourse = thisCourse;
-            // }
-            //
-            // if (i === that.data.length - 1) {
-            //   if (currentCourse.Department !== false && (that.courseCount[currentCourse.Department]['UK/EU'] > 0 || that.courseCount[currentCourse.Department].International > 0 || that.courseCount[currentCourse.Department]['Adjustment UK/EU'] > 0 || that.courseCount[currentCourse.Department]['Adjustment International'] > 0)) {
-            //     var lastLi = that.makeLink(thisCourse, that.courseCount[thisCourse.Department]);
-            //     that.list.append(lastLi);
-            //   }
-            // }
-
-            // ----------------------------------------------------------------------------------------------------
           }
 
         }
@@ -315,25 +295,25 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
             });
           }
 
-        // Department layout
-        } else if (that.layout === "Departments") {
+          // Department layout
+          } else if (that.layout === "Departments") {
 
-          // Create our list
-          that.list = $('<ul>').addClass('c-clearing-list');
+            // Create our list
+            that.list = $('<ul>').addClass('c-clearing-list');
 
-          // Create each list item from subjects
-          var subjects = Object.keys( that.courseCount ).sort();
+            // Create each list item from subjects
+            var subjectKeys = Object.keys( that.courseCount ).sort();
 
-          for( var s = 0 ; s < subjects.length ; s++ ) {
+            for( var subjectKey = 0 ; subjectKey < subjectKeys.length ; subjectKey++ ) {
 
-            var subject = subjects[ s ];
+              var subjectName = subjectKeys[ subjectKey ];
 
-            // Make sure there's at least one course to show
-            if( parseInt( that.courseCount[ subject ]['UK/EU'] ) + parseInt( that.courseCount[ subject ].International ) + parseInt( that.courseCount[ subject ]['Adjustment UK/EU'] ) + parseInt( that.courseCount[ subject ]['Adjustment International'] ) > 0 ) {
-              that.list.append( that.makeLink( subject , that.courseCount[ subject ] ) );
+              // Make sure there's at least one course to show
+              if( parseInt( that.courseCount[ subjectName ]['UK/EU'] ) + parseInt( that.courseCount[ subjectName ].International ) + parseInt( that.courseCount[ subjectName ]['Adjustment UK/EU'] ) + parseInt( that.courseCount[ subjectName ]['Adjustment International'] ) > 0 ) {
+                that.list.append( that.makeLink( subjectName , that.courseCount[ subjectName ] ) );
+              }
+
             }
-
-          }
 
           // Add list to container
           that.container.append($('<h3>').text('Vacancies by subject area'));
