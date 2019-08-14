@@ -20,7 +20,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   function ($, SEARCHABLE, UTILS, MODALLINK) {
 
   // Toggle this value to enable/disable clearing info on course search results pages
-  var courseSearchClearingFeatures = false;
+  var courseSearchClearingFeatures = true;
 
   var $window = $(window);
   var clearingData = window.PL_DATA.clearingData;
@@ -777,12 +777,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
       }
     }
 
-    // courseCellContent+= '<li class="c-clearing-table__ucas-code">UCAS code '+course['UCAS code']+'</li>'+
-    // '<li class="c-clearing-table__course-length">'+course['Course length']+'</li>'+
-    // '<li class="c-clearing-table__phone-numbers">Call Admissions on ' + clearingData.phoneNumber + '</li>';
-
-     courseCellContent+= '<li class="c-clearing-table__ucas-code">UCAS code '+course['UCAS code']+'</li>'+
-    '<li class="c-clearing-table__course-length">'+course['Course length']+'</li>';
+    courseCellContent+= '<li class="c-clearing-table__ucas-code">UCAS code '+course['UCAS code']+'</li>'+
+    '<li class="c-clearing-table__course-length">'+course['Course length']+'</li>'+
+    '<li class="c-clearing-table__phone-numbers">Call Admissions on ' + clearingData.phoneNumber + '</li>';
 
     // Availability note
     var availabilityNote = this.makeAvailabilityNote( course );
