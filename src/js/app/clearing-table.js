@@ -1048,6 +1048,14 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     $.getJSON( endpoint );
   };
 
+ // Remove apply button from 2019 course overview
+ if (courseSearchClearingFeatures == true) {
+    if(window.location.href.indexOf("courses-2019") > -1)
+      {
+        $("#btnApplyForCourse").parent( "p" ).parent( "div" ).remove();
+      }
+}
+
   return CLEARINGTABLE;
 
 });
