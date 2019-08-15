@@ -1049,7 +1049,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   };
 
  // Remove apply button from 2019 course overview
- if(window.location.href.indexOf("courses") > -1)
+ if(window.location.href.indexOf("courses-2019") > -1)
 {
   $("#btnApplyForCourse").parent( "p" ).parent( "div" ).remove();
 }
