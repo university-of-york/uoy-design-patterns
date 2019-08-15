@@ -879,7 +879,8 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         end: false,
         panel:
           '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
-          '<p>Places are available on this course through clearing and adjustment.</p>',
+          '<p>Places are available on this course through clearing and adjustment.</p>' +
+          '<p>To apply call '+clearingData.phoneNumber+'.</p>',
         modal:
           '<h2>Call our hotline</h2>' +
           '<p>To apply call '+clearingData.phoneNumber+'.</p>' +
