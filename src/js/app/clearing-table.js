@@ -785,7 +785,12 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     var availabilityNote = this.makeAvailabilityNote( course );
     if( availabilityNote ) courseCellContent+= '<li class="c-clearing-table__adjustment-only">'+availabilityNote+'</li>';
 
+    if( course[ 'Hidden keywords' ] ) {
+      courseCellContent+= '<div hidden class="is-hidden">'+course[ 'Hidden keywords' ]+'</div>';
+    }
+
     courseCellContent+= '</ul>';
+
     courseCell.html(courseCellContent);
     var courseRow = $('<tr>').addClass('c-clearing-table__course');
     courseRow.append(courseCell);
@@ -879,7 +884,8 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         end: false,
         panel:
           '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
-          '<p>Places are available on this course through clearing and adjustment.</p>',
+          '<p>Places are available on this course through clearing and adjustment.</p>' +
+          '<p>To apply call '+clearingData.phoneNumber+'.</p>',
         modal:
           '<h2>Call our hotline</h2>' +
           '<p>To apply call '+clearingData.phoneNumber+'.</p>' +
@@ -1010,6 +1016,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           gsx$ucascode: "UCAS code",
           gsx$alternativequalification: "Alternative qualification",
           gsx$alternativerequirement: "Alternative requirement",
+          gsx$hiddenkeywords: "Hidden keywords",
         };
 
         var data = []; // The data object we'll be returning
@@ -1046,6 +1053,13 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
     $.getJSON( endpoint );
   };
+
+ // Remove apply button from 2019 course overview
+ if(window.location.href.indexOf("courses-2019") > -1)
+{
+  $("#btnApplyForCourse").parent( "p" ).parent( "div" ).remove();
+}
+
 
   return CLEARINGTABLE;
 
