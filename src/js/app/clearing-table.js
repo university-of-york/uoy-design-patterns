@@ -785,7 +785,12 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     var availabilityNote = this.makeAvailabilityNote( course );
     if( availabilityNote ) courseCellContent+= '<li class="c-clearing-table__adjustment-only">'+availabilityNote+'</li>';
 
+    if( course[ 'Hidden keywords' ] ) {
+      courseCellContent+= '<div hidden class="is-hidden">'+course[ 'Hidden keywords' ]+'</div>';
+    }
+
     courseCellContent+= '</ul>';
+
     courseCell.html(courseCellContent);
     var courseRow = $('<tr>').addClass('c-clearing-table__course');
     courseRow.append(courseCell);
@@ -1011,6 +1016,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           gsx$ucascode: "UCAS code",
           gsx$alternativequalification: "Alternative qualification",
           gsx$alternativerequirement: "Alternative requirement",
+          gsx$hiddenkeywords: "Hidden keywords",
         };
 
         var data = []; // The data object we'll be returning
