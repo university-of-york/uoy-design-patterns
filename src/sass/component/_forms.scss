@@ -151,20 +151,17 @@
 // Joined form/button
 .c-form--joined {
   .c-form__element {
-    display:table;
-    border-collapse: separate;
+    display:flex;
     width:100%;
   }
   .c-form__input {
-    display:table-cell;
+    flex-grow: 1;
     height: 2.4em;
     border-right: 0;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
    }
   .c-btn {
-    display:table-cell;
-    width: 1%;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     white-space: nowrap;
