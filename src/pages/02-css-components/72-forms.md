@@ -233,7 +233,7 @@ component("form", { "type":"joined", "method":"get", "legend": "A joined form an
 
   { "grid-row": { "atoms": { "grid-box": { "size": "full", "atoms":
     { "form-element": { "name": "ja", "atoms": [
-      { "input": { "type":"text", "placeholder": "Enter your search term here" } },
+      { "input": { "type":"text", "placeholder": "Enter your search term here", "aria-label": "Search" } },
       { "button": { "behaviour":"submit","text": "Search", "size": "medium", "icon-after": "search" } }
       ] } }
   } } } }
