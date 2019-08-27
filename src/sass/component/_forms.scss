@@ -153,6 +153,9 @@
   .c-form__element {
     display:flex;
     width:100%;
+    &--wrap {
+      flex-flow: wrap;
+    }
   }
   .c-form__input {
     flex-grow: 1;
