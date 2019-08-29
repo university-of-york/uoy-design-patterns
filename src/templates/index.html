@@ -104,29 +104,52 @@
 
 <div class="o-wrapper o-wrapper--main o-grid js-wrapper--main">
 <!-- /study-new/accesscontrol.cms--><div class="o-grid__row">
-      <div class="o-grid__box o-grid__box--twothirds">
+      <div class="o-grid__box o-grid__box--half">
 <h1>Study at York</h1>
 <p class="lead">You'll be taught by academics who are thought leaders in their field. You'll graduate with more than a qualification and be inspired to make a difference.</p><p class="lead"> Join us on a journey that will change your world.</p>
 </div>
- <div class="o-grid__box o-grid__box--third">
-<div class="c-panel c-panel--highlight">
-          <div class="c-panel__content">
-            <h3>Find a course</h3> [Needs UG/PG option]
-            <form method="get" action="https://wwwtest.york.ac.uk/study/undergraduate/courses/search" class="c-form">
-              <fieldset>
-                <!-- <legend class="c-form__legend">Search courses</legend> -->
-                <div class="c-form__element">
-                  <input class="c-form__input c-form__input--text" type="text" name="q" placeholder="Enter course title, keywords or UCAS code">
-
-                </div>
-                <div class="c-form__element">
-                  <input id="level" type="hidden" name="level" value="undergraduate"><button class="c-btn  c-btn--block c-btn--medium" type="submit">Search courses<i class="c-icon c-icon--after c-icon--search"></i></button>
-                </div>
-              </fieldset>
-            </form>
-
-          </div>
-        </div>
+ <div class="o-grid__box o-grid__box--half">
+  <div class="c-tabs c-tabs--horizontal c-tabs--dark js-tabs">
+    <ul role="tablist" class="c-tabs__nav">
+      <li class="c-tabs__tab is-active"><a role="tab" aria-controls="search-courses" class="c-tabs__link" href="#search-courses" aria-selected="true">Search for a course</a></li>
+      <li class="c-tabs__tab"><a role="tab" aria-controls="browse-courses" class="c-tabs__link" href="#browse-courses" aria-selected="false">Browse courses</a></li>
+    </ul>
+    <div class="c-tabs__container">
+      <div role="tabpanel" class="c-tabs__content is-active" aria-hidden="false" id="search-courses">
+        <form action="/study/undergraduate/courses/search/" method="get" id="Course-Search" class="c-form c-form--joined js-course-search" _lpchecked="1">
+          <fieldset>
+            <div class="c-form__element">
+              <input class="c-form__input c-form__input--hidden" id="mode" name="mode" value="" type="hidden">
+              <input class="c-form__input c-form__input--text" id="q" name="q" placeholder="Search by keywords or UCAS code" type="text" aria-label="Search courses">
+              <a class="c-btn c-btn--medium js-submit-form" href="#" role="button" aria-label="Search"><i class="c-icon c-icon--search c-icon--after"></i></a>
+            </div>
+            <div class="c-form__element c-form__element--wrap" >
+              <div class="c-form__radio-group">
+                <input class="c-form__radio" id="level-undergraduate" name="level" value="undergraduate" checked="checked" type="radio">
+                <label for="level-undergraduate" class="c-form__label">Undergraduate</label>
+              </div>
+              <div class="c-form__radio-group">
+                <input class="c-form__radio" id="level-postgraduate-taught" name="level" value="postgraduate" type="radio">
+                <label for="level-postgraduate-taught" class="c-form__label">Postgraduate taught</label>
+              </div>
+              <div class="c-form__radio-group">
+                <input class="c-form__radio" id="level-postgraduate-research" name="level" value="postgraduate" type="radio">
+                <label for="level-postgraduate-research" class="c-form__label">Research</label>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div role="tabpanel" class="c-tabs__content" aria-hidden="true" id="browse-courses">
+        <ul class="u-two-columns">
+          <li><a href="/study/undergraduate/courses/all">Undergraduate courses</a></li>
+          <li><a href="/study/postgraduate/courses/all?mode=taught&amp;q=&amp;level=postgraduate">Postgraduate taught courses </a></li>
+          <li><a href="/study/postgraduate/courses/all?mode=research&amp;q=&amp;level=postgraduate">Research degrees</a></li>
+          <li><a href="/distance-learning/courses">Online and distance learning courses</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 </div><div class="o-grid__row" style="margin-bottom:20px;">
   <div class="o-grid__box o-grid__box--third">
