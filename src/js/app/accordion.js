@@ -26,7 +26,19 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
 
     // Hide content
     this.item.addClass('is-closed');
+    this.itemTitle.attr('aria-expanded','false');
+    
+    // Make sure we have an ID for the item content...
+    var itemID = this.itemContent.attr('id');
+    if( itemID == undefined ){
+        // ...make an ID if not
+        itemID = this.itemTitle.text().toLowerCase().replace( /[^a-z0-9]/g , "" );
+        this.itemContent.attr('id',itemID);
+    }
 
+    // Add in our aria-controls attribute
+    this.itemTitle.attr('aria-controls',itemID);
+    
     // Enable transition
     var iC = this.itemContent;
     setTimeout(function() { iC.addClass('is-ready'); }, 400);
@@ -80,7 +92,8 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
     this.itemContent.removeClass('is-ready');
     this.itemContent.height('auto');
     this.item.removeClass('is-closed');
-
+    this.itemTitle.attr('aria-expanded','true');
+    
     // // Get content height
     var contentHeight = this.itemContent.outerHeight();
 
@@ -93,6 +106,7 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
     if (isClosed === true) {
       contentHeight = 0;
       this.item.addClass('is-closed');
+      this.itemTitle.attr('aria-expanded','false');
     }
 
     this.itemContent.css('height', contentHeight);
@@ -138,6 +152,7 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
 
     var $item = $(item);
     var itemContent = $item.children('.c-accordion__content');
+    var itemTitle = $item.children('.c-accordion__title');
     var contentHeight = itemContent.outerHeight();
     var newContentHeight = 0;
 
@@ -154,8 +169,10 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
 
       if (close === true) {
           $item.addClass('is-closed');
+          itemTitle.attr('aria-expanded','false');
       } else {
           $item.toggleClass('is-closed');
+          itemTitle.attr('aria-expanded',($item.hasClass('is-closed')?'false':'true'));
       }
 
 

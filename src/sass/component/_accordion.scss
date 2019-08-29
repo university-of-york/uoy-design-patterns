@@ -21,10 +21,25 @@
     padding: $base-spacing/2 $base-spacing*2 $base-spacing/2 $base-spacing;
     position: relative;
     text-decoration: none;
+    
+    // Button overrides
+    width:100%;
+    text-align:left;
+    border:none;
+    background:none;
+    -webkit-appearance:none;
+    
+    color:$c-accordion__title-color;
 
     &:hover {
       color: $c-accordion__title-hover-color;
     }
+    
+    &:focus {
+      outline:$link-focus-outline-color auto 5px;
+      outline-offset:-2px;
+    }
+
   }
 
   &__icon {
