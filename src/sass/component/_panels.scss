@@ -17,6 +17,11 @@
   .c-panel__subheader + & {
     padding-top:0;
   }
+  
+  a {
+    color:$c-panel-link-color;
+    &:hover { color:$c-panel-link-hover; }
+  }
 }
 .c-panel__header,
 .c-panel__subheader,
