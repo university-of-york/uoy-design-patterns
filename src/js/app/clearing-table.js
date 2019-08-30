@@ -383,7 +383,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
               var courseLink = $( courseRow ).find( "td.coursetitle > a" );
               var courseTitle = courseLink.text();
               var courseURL = courseLink.attr( 'href' );
-              var clearingCourseURL = courseURL.replace( '/courses/' , '/courses-'+that.clearingYear+'/' );
+              var clearingCourseURL = courseURL.replace( 'york.ac.uk/study/undergraduate/courses/' , 'york.ac.uk/study/undergraduate/courses-'+that.clearingYear+'/' );
 
               var clearingStatusText = ( that.makeAvailabilityNote( courseInClearing ) || "Places available" );
 
