@@ -511,6 +511,8 @@ $c-pagination__page--current-color:               $white;
 $c-panel-background:            $s2;
 $c-panel-border:                $s1;
 $c-panel-color:                 $charcoal;
+$c-panel-link-color:            darken( $blue , 16% );
+$c-panel-link-hover:            darken( $blue , 10% );
 $c-panel--highlight-background: $teal;
 $c-panel--highlight-border:     lighten($teal,10);
 $c-panel--highlight-color:      $light;
