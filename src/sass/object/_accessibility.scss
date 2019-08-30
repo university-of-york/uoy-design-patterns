@@ -3,7 +3,7 @@
  */
 
 .o-skip-link {
-  @include transition(height);
+  @include transition();
   display:block;
   text-align:center;
   color:$o-skip-link-color;
@@ -15,5 +15,9 @@
   overflow:hidden;
   &:focus {
     height:2em;
+  }
+  &:hover {
+    color:$o-skip-link-color;
+    background:$o-skip-link-background-hover;
   }
 }

@@ -596,7 +596,8 @@ $c-utility-nav__sublink-hover-color:           lighten($blue, 10);
 // Skip link
 // object/_accessibility.scss
 $o-skip-link-color:            $light;
-$o-skip-link-background-color: $blue;
+$o-skip-link-background-color: lighten($teal,10);
+$o-skip-link-background-hover: lighten($teal,5);
 
 // Grid
 // object/_grids.scss
