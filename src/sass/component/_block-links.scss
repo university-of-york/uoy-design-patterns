@@ -11,20 +11,25 @@
   border-left: 10px solid $c-block-link-border-color;
   text-decoration: none;
   font-weight: bold;
+
+  color:$c-block-link-color;
+
   &:hover {
     cursor:pointer;
+    color:$c-block-link-hover;
   }
-  color:$c-block-link-color;
 
   .o-grid__row--alt1 & {
     background-color:$o-grid__row--alt2-background-color;
     border-color: $o-grid__row--alt2-background-color;
     color:$o-grid__row--alt1-color;
+    &:hover { color:$o-grid__row--alt1-color; }
   }
   .o-grid__row--alt2 & {
     background-color:$o-grid__row--alt1-background-color;
     border-color: $o-grid__row--alt1-background-color;
     color:$o-grid__row--alt2-color;
+    &:hover { color:$o-grid__row--alt2-color; }
   }
   .o-grid__row--alt3 & {
     border:1px solid $c-block-link-border-color;
