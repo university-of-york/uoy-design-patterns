@@ -141,6 +141,14 @@ $box-padding:$base-spacing;
   }
 }
 .o-grid__row--alt3 {
+
+  a {
+    color:$o-grid__row--alt3-link-color;
+    &:hover {
+      color:$o-grid__row--alt3-link-hover-color;
+    }
+  }
+
   background-color:$o-grid__row--alt3-background-color;
   &:before,
   &:after {
