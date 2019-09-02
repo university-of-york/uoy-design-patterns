@@ -228,6 +228,7 @@ $c-autocomplete--alt__subtitle-color:                       $charcoal;
 $c-block-link-background-color: $s2;
 $c-block-link-border-color:     lighten($s1,5);
 $c-block-link-color:            darken( $blue , 16% );
+$c-block-link-hover:            darken( $blue , 10% );
 
 // Blockquotes
 // component/_blockquotes.scss
