@@ -516,6 +516,8 @@ $c-panel-link-hover:            darken( $blue , 10% );
 $c-panel--highlight-background: $teal;
 $c-panel--highlight-border:     lighten($teal,10);
 $c-panel--highlight-color:      $light;
+$c-panel--highlight-link:       lighten( $blue , 5% );
+$c-panel--highlight-hover:      lighten( $blue , 15% );
 
 // Show more
 // component/_showmore.scss

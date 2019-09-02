@@ -48,7 +48,10 @@
   border-color:$c-panel--highlight-border;
   color:$c-panel--highlight-color;
   & a {
-    color:$c-panel--highlight-color;
+    color:$c-panel--highlight-link;
+    &:hover {
+      color:$c-panel--highlight-hover;
+    }
   }
 }
 
@@ -68,6 +71,17 @@
   }
   &.c-panel--highlight {
     color:$c-panel--highlight-color;
+
+    .c-panel__more {
+      color:$c-panel--highlight-link;
+    }
+    &:hover {
+      .c-panel__more {
+        color:$c-panel--highlight-hover;
+      }
+    }
+
+
   }
   .o-grid__row--alt1 &,
   .o-grid__row--alt2 & {
