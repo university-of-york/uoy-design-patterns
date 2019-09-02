@@ -110,6 +110,22 @@ define(
           });
         });
 
+      // Add mobile search toggle functionality + input focus
+       UTILS.eachIfExists('.js-toggle-mobile-search', function (i, button) {
+        var $b = $(button);
+        var $c = $($b.attr('href'));
+        new TOGGLE({
+          container: $c,
+          button: $b,
+          className:'is-open',
+          onComplete:function( container, button ) {
+            if( container.hasClass( 'is-open' ) ) {
+              container.find( '#q-mobile' ).focus();
+            }
+          },
+        });
+      });
+
         // Add utility nav toggle functionality
         UTILS.eachIfExists('.c-utility-nav', function (i, nav) {
           var $n = $(nav);
