@@ -56,14 +56,14 @@
   color:$c-panel-color;
   text-decoration: none;
   .c-panel__more {
-    color: $link-color;
+    color: $c-panel-link-color;
     font-weight: bold;
     text-decoration:underline;
   }
   &:hover {
     color:$c-panel-color;
     .c-panel__more {
-      color:$link-hover-color;
+      color:$c-panel-link-hover;
     }
   }
   &.c-panel--highlight {
