@@ -15,7 +15,7 @@ The default panel is simply some content.
 
 <script>
 component("panel", {
-  "content": "<p>Atmospheric chemist Professor Alastair Lewis argues that clean air should be the engine of economic growth in China, rather than the brake.</p>"
+  "content": "<p>Atmospheric chemist Professor Alastair Lewis argues that clean air should be the engine of economic growth in <a href=\"https://en.wikipedia.org/wiki/China\">China</a>, rather than the brake.</p>"
 });
 </script>
 
@@ -23,7 +23,7 @@ A panel can have a highlight colour:
 
 <script>
 component("panel", {
-  "content": "<p>Atmospheric chemist Professor Alastair Lewis argues that clean air should be the engine of economic growth in China, rather than the brake.</p>",
+  "content": "<p>Atmospheric chemist Professor Alastair Lewis argues that clean air should be the engine of economic growth in <a href=\"https://en.wikipedia.org/wiki/China\">China</a>, rather than the brake.</p>",
   "type":"highlight"
 });
 </script>
