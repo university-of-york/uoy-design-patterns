@@ -158,8 +158,8 @@ $icons: (
 );
 
 // Links
-$link-color:darken($blue,10);
-$link-hover-color:$blue;
+$link-color:darken($blue, 16); // Was darken($blue,10)
+$link-hover-color:darken($blue, 10); // Was $blue
 $link-focus-outline-color:$blue;
 
 //
@@ -228,8 +228,8 @@ $c-autocomplete--alt__subtitle-color:                       $charcoal;
 // component/_block-links.scss
 $c-block-link-background-color: $s2;
 $c-block-link-border-color:     lighten($s1,5);
-$c-block-link-color:            darken( $blue , 16% );
-$c-block-link-hover:            darken( $blue , 10% );
+$c-block-link-color:            darken($blue,16%);
+$c-block-link-hover:            darken($blue,10%);
 
 // Blockquotes
 // component/_blockquotes.scss
@@ -478,13 +478,13 @@ $c-news__thumbnail-size:              100px;
 $c-news-color:                        $charcoal;
 $c-news-color-alt:                    $light;
 $c-news--excerpt__title-color:        $link-color;
-$c-news--excerpt__title-hover-color:  $blue;
+$c-news--excerpt__title-hover-color:  $link-hover-color;
 $c-news--excerpt__category-color:     lighten($charcoal,10);
 $c-news--excerpt__meta-color:         lighten($charcoal,30);
 $c-news--excerpt__teaser-color:       lighten($charcoal,5);
 $c-news--event__meta-color:           $charcoal;
 $c-news--listing__title-color:        $link-color;
-$c-news--listing__title-hover-color:  $blue;
+$c-news--listing__title-hover-color:  $link-hover-color;
 $c-news--listing__date-color:         lighten($charcoal,15);
 $c-news--listing__date-color-alt:     darken($light,30);
 $c-news__license-color:               lighten($charcoal,25);
@@ -514,13 +514,13 @@ $c-pagination__page--current-color:               $white;
 $c-panel-background:            $s2;
 $c-panel-border:                $s1;
 $c-panel-color:                 $charcoal;
-$c-panel-link-color:            darken( $blue , 16% );
-$c-panel-link-hover:            darken( $blue , 10% );
+$c-panel-link-color:            darken($blue,16%);
+$c-panel-link-hover:            darken($blue,10%);
 $c-panel--highlight-background: $teal;
 $c-panel--highlight-border:     lighten($teal,10);
 $c-panel--highlight-color:      $light;
-$c-panel--highlight-link:       lighten( $blue , 5% );
-$c-panel--highlight-hover:      lighten( $blue , 15% );
+$c-panel--highlight-link:       lighten($blue,5%);
+$c-panel--highlight-hover:      lighten($blue,15%);
 
 // Show more
 // component/_showmore.scss
@@ -560,7 +560,7 @@ $c-tabs--vertical__tab-active__link-color:      $light;
 $c-tabs-background:                             $white;
 $c-tabs-border:                                 $s1;
 $c-tabs-color:                                  $charcoal;
-$c-tabs__link-background:                       darken($light, 5);
+$c-tabs__link-background:                       darken($light,5);
 $c-tabs__link-color:                            $teal;
 $c-tabs__link-hover-background:                 darken($blue,20);
 $c-tabs__link-hover-color:                      $light;
@@ -623,8 +623,8 @@ $o-grid__row--alt2-link-color:       lighten($blue,5);
 $o-grid__row--alt2-link-hover-color: lighten($blue,15);
 $o-grid__row--alt3-background-color: $s2;
 $o-grid__row--alt3-border-color:     $s1;
-$o-grid__row--alt3-link-color:       darken( $blue , 16% );
-$o-grid__row--alt3-link-hover-color: darken( $blue , 10% );
+$o-grid__row--alt3-link-color:       darken($blue,16%);
+$o-grid__row--alt3-link-hover-color: darken($blue,10%);
 $o-grid__row--divider-color:         $lightgrey;
 
 // Media
