@@ -630,9 +630,6 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     var fs = $('<fieldset>');
     var fe = $('<div>').addClass('c-form__element');
     var inputName = 'clearing-table-'+this.id+'-toggle-input';
-    var fl = $('<label>').addClass('c-form__label')
-                         .attr('for', inputName)
-                         .text(this.label);
     var fg_ukeu = $('<div>').addClass('c-form__radio-group');
     var fi_ukeu = $('<input>').addClass('c-form__radio')
                               .attr({'type': 'radio', 'id': inputName+'-ukeu', 'name': inputName })
@@ -653,7 +650,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     // Join it all together
     fg_ukeu.append(fi_ukeu, '&nbsp;', fl_ukeu);
     fg_intl.append(fi_intl, '&nbsp;', fl_intl);
-    fe.append(fl, fg_ukeu, fg_intl);
+    fe.append(fg_ukeu, fg_intl);
     fs.append(fe);
     f.append(fs);
 
