@@ -2,6 +2,48 @@
 // VARIABLES
 //
 
+$colours:
+(
+  'grey'   : ( 100:#f9f9f9 , 200:#E2E2E2, 300:#CBCBCB , 400:#B3B3B3 , 500:#9C9C9C , 600:#868686 , 700:#6E6E6E , 800:#585858 , 900:#404040 ),
+  'blue'   : ( 100:#D2F4FF , 200:#9DE4FA, 300:#69D4F5 , 400:#34C3F0 , 500:#00B3EB , 600:#0495C3 , 700:#087396 , 800:#0C5A73 , 900:#0F3D4C ),
+  'pink'   : ( 100:#F3D8E9 , 200:#E5BCD6, 300:#D7A0C3 , 400:#CA86B1 , 500:#BE6C9F , 600:#AF4E8B , 700:#A23479 , 800:#8E2D6A , 900:#7B285C ),
+  'other'  : ( 100:#F0F2E9 , 200:#DCDED0, 300:#CACCB8 , 400:#B5B7A3 , 500:#9FA18D , 600:#8B8D79 , 700:#767864 , 800:#60624D , 900:#4B4D38 ),
+
+  'yellow' : ( 100:#FAF1D9 , 200:#F4E2B2, 300:#EFD38B , 400:#E9C463 , 500:#E4B53C , 600:#C39A2F , 700:#A48024 , 800:#836518 , 900:#634B0D ),
+  'red'    : ( 100:#F4D4D4 , 200:#E4A9A9, 300:#D58080 , 400:#C55656 , 500:#B62D2D , 600:#9F2626 , 700:#892121 , 800:#731B1B , 900:#5E1717 ),
+  'green'  : ( 100:#DDF4D4 , 200:#BAE4AA, 300:#99D581 , 400:#76C557 , 500:#54b62d , 600:#479A26 , 700:#3B7F1F , 800:#2E6318 , 900:#224912 ),
+
+);
+
+// --------------------------------------------------
+// Sets up classes for testing out the colour palette above
+// 
+
+@each $hue , $palette in $colours
+{
+  .colour-palette-#{ $hue }
+  {
+    $counter:0;
+    $strips:null;
+    $width:percentage( 1 / length( $palette ) );
+	$height:percentage( 1 / length( $palette ) );
+
+    @each $shade , $colour in $palette
+    {
+      $strips: #{$strips} , $colour #{ $width * $counter };
+      $counter: $counter + 1;
+      $strips: #{$strips} , $colour #{ $width * $counter };
+    }
+
+    background-image:linear-gradient( 90deg #{ $strips } );
+	padding-bottom:$height;
+    margin:1em 0;
+    border:2px solid grey;
+  }
+}
+
+// --------------------------------------------------
+
 // Primary colours
 $charcoal:#333;
 $light:#f9f9f9;
@@ -158,9 +200,9 @@ $icons: (
 );
 
 // Links
-$link-color:darken($blue, 16); // Was darken($blue,10)
-$link-hover-color:darken($blue, 10); // Was $blue
-$link-focus-outline-color:$blue;
+$link-color:colour( 'blue' , 700 );
+$link-hover-color:colour( 'blue' , 800 );
+$link-focus-outline-color:colour( 'blue' );
 
 //
 // Literal variable names
@@ -513,8 +555,9 @@ $c-pagination__page--current-color:               $white;
 $c-panel-background:            $s2;
 $c-panel-border:                $s1;
 $c-panel-color:                 $charcoal;
-$c-panel-link-color:            darken($blue,16%);
-$c-panel-link-hover:            darken($blue,10%);
+$c-panel-link-color:            colour( 'blue' , 700 );
+$c-panel-link-hover:            colour( 'blue' , 800 );
+
 $c-panel--highlight-background: $teal;
 $c-panel--highlight-border:     lighten($teal,10);
 $c-panel--highlight-color:      $light;
@@ -563,12 +606,12 @@ $c-tabs__link-background:                       darken($light,5);
 $c-tabs__link-color:                            $teal;
 $c-tabs__link-hover-background:                 darken($blue,20);
 $c-tabs__link-hover-color:                      $light;
-$c-tabs--dark-background:                       $teal;
-$c-tabs--dark-border:                           $teal;
+$c-tabs--dark-background:                       colour( 'blue' , 900 );
+$c-tabs--dark-border:                           colour( 'blue' , 900 );
 $c-tabs--dark-color:                            $white;
-$c-tabs--dark__link-background:                 lighten($teal,10);
+$c-tabs--dark__link-background:                 colour( 'blue' , 800 );
 $c-tabs--dark__link-color:                      $white;
-$c-tabs--dark__link-hover-background:           lighten($teal,20);
+$c-tabs--dark__link-hover-background:           colour( 'blue' , 700 );
 $c-tabs--dark__link-hover-color:                $white;
 
 // Tag

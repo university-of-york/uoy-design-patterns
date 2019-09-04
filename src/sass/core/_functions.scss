@@ -15,3 +15,26 @@
   }
   @return $classes;
 }
+
+//
+// Retrieves a colour by name and lightness
+//
+
+@function colour( $name , $lightness:500 )
+{
+  @if map-has-key( $colours , $name )
+  {
+    @if map-has-key( map-get( $colours , $name ) , $lightness )
+    {
+      @return #{ map-get( map-get( $colours , $name ) , $lightness ) };
+    }
+    @else
+    {
+      @error unquote( '[function:colour] Lightness not found for #{ $name }: #{ $lightness }' );
+    }
+  }
+  @else
+  {
+    @error unquote( '[function:colour] Colour not found: #{ $name }' );
+  }
+}
