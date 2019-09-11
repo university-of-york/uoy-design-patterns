@@ -101,7 +101,6 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
             width: videoDimensions.width,
             height: videoDimensions.height,
             src: this.url,
-            frameborder: 0,
             allowfullscreen: true
         });
         // add to container
