@@ -29,7 +29,7 @@ At the time of writing, YouTube video URLs usually come in three flavours:
 &hellip;becomes&hellip;
 
 ```markup
-<div class="c-video"><iframe width="730" height="410.625" src="//www.youtube.com/embed/s67Nb0wpcbE?rel=0" frameborder="0" allowfullscreen=""></iframe></div>
+<div class="c-video"><iframe width="730" height="410.625" src="//www.youtube.com/embed/s67Nb0wpcbE?rel=0" allowfullscreen=""></iframe></div>
 ```
 
 ### Example with options
