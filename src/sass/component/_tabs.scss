@@ -148,7 +148,7 @@
     & li a {
       color: $c-tabs--dark-color;
       &:hover {
-        color: $link-hover-color;
+        color: $c-tabs--dark__link-hover-color;
       }
     }
   }
