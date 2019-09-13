@@ -20,7 +20,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   function ($, SEARCHABLE, UTILS, MODALLINK) {
 
   // Toggle this value to enable/disable clearing info on course search results pages
-  var courseSearchClearingFeatures = true;
+  var courseSearchClearingFeatures = false;
 
   var $window = $(window);
   var clearingData = window.PL_DATA.clearingData;
