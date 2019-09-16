@@ -213,7 +213,8 @@ $link-focus-outline-color:colour( 'blue' );
 // Accordion
 // component/_accordion.scss
 $c-accordion__item-border:       lighten($s1, 5);
-$c-accordion__title-hover-color: $blue;
+$c-accordion__title-color:       $link-color;
+$c-accordion__title-hover-color: $link-hover-color;
 
 // Alerts
 // component/_alerts.scss
