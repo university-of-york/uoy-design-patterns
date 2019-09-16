@@ -30,7 +30,7 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
     
     // Make sure we have an ID for the item content...
     var itemID = this.itemContent.attr('id');
-    if( itemID == undefined ){
+    if( itemID == undefined || itemID == '' ){
         // ...make an ID if not
         itemID = this.itemTitle.text().toLowerCase().replace( /[^a-z0-9]/g , "" );
         this.itemContent.attr('id',itemID);

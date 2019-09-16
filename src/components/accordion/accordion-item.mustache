@@ -1,5 +1,5 @@
 <div class="c-accordion__item js-accordion__item">
-  <a href="#{{#id}}{{this}}{{/id}}" class="c-accordion__title">{{title}}<i class="c-accordion__icon c-icon c-icon--plus c-icon--after"></i></a>
+  <button aria-controls="{{#id}}{{this}}{{/id}}" class="c-accordion__title">{{title}}<i class="c-accordion__icon c-icon c-icon--plus c-icon--after"></i></button>
   <div class="c-accordion__content"{{#id}} id="{{this}}"{{/id}}>
     {{content}}
   </div>
