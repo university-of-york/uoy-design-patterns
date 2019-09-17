@@ -26,6 +26,7 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
 
     // Hide content
     this.item.addClass('is-closed');
+    this.itemContent.css('visibility', 'hidden');
     this.itemTitle.attr('aria-expanded','false');
     
     // Make sure we have an ID for the item content...
@@ -92,6 +93,7 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
     this.itemContent.removeClass('is-ready');
     this.itemContent.height('auto');
     this.item.removeClass('is-closed');
+    this.itemContent.css('visibility', 'visible');
     this.itemTitle.attr('aria-expanded','true');
     
     // // Get content height
@@ -106,6 +108,7 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
     if (isClosed === true) {
       contentHeight = 0;
       this.item.addClass('is-closed');
+      this.itemContent.css('visibility', 'hidden');
       this.itemTitle.attr('aria-expanded','false');
     }
 
@@ -120,8 +123,8 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
 
     e.preventDefault();
 
-      var thisContentOpen,
-          that = e.data && e.data.that ? e.data.that : this; // Temp this-holder
+    var thisContentOpen,
+        that = e.data && e.data.that ? e.data.that : this; // Temp this-holder
 
     // Things are still moving
     if (that.isToggling) {
@@ -156,7 +159,6 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
     var contentHeight = itemContent.outerHeight();
     var newContentHeight = 0;
 
-
     if ((contentHeight === 0 && close !== true) ||
         $item.hasClass('is-closed') && close !== true) {
       newContentHeight = itemContent.attr('data-height');
@@ -167,14 +169,15 @@ define(['jquery', 'app/utils', 'jscookie'], function ($, UTILS, COOKIES) {
 
     itemContent.css('height', newContentHeight);
 
-      if (close === true) {
-          $item.addClass('is-closed');
-          itemTitle.attr('aria-expanded','false');
-      } else {
-          $item.toggleClass('is-closed');
-          itemTitle.attr('aria-expanded',($item.hasClass('is-closed')?'false':'true'));
-      }
-
+    if (close === true) {
+      $item.addClass('is-closed');
+      itemContent.css('visibility', 'hidden');
+      itemTitle.attr('aria-expanded','false');
+    } else {
+      $item.toggleClass('is-closed');
+      itemContent.css('visibility', ($item.hasClass('is-closed')?'hidden':'visible'));
+      itemTitle.attr('aria-expanded',($item.hasClass('is-closed')?'false':'true'));
+    }
 
     // Returns true if open, false if closed
     return !$item.hasClass('is-closed');

@@ -86,12 +86,19 @@
 
   // 'is-ready' class added by JS after preparation
   .c-accordion__content.is-ready {
-    @include transition('height, padding-top, padding-bottom');
+    // @include transition('height, padding-top, padding-bottom');
+    transition:height 0.4s ease-out, padding-top 0.4s ease-out, padding-bottom 0.4s ease-out, visibility 0s;
   }
   .c-accordion__item.is-closed {
+
+    & > .c-accordion__content.is-ready {
+      transition:height 0.4s ease-out, padding-top 0.4s ease-out, padding-bottom 0.4s ease-out, visibility 0s 0.4s;
+    }
+
     .c-accordion__icon {
         transform:rotate(0deg);
         -webkit-transform:rotate(0deg);
     }
+
   }
 }
