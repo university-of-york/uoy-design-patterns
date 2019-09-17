@@ -334,13 +334,13 @@ $c-event-border:$charcoal;
 // Figures
 // component/_figures.scss
 $c-figure__caption-solid:                 $blue;
-$c-figure__caption-transparent:           transparentize($c-figure__caption-solid, 0.15);
+$c-figure__caption-transparent:           transparentize($c-figure__caption-solid, 0.10);
 $c-figure__caption-color:                 $light;
 $c-figure__caption--below-background:     transparent;
 $c-figure__caption--below-color:          lighten($charcoal,20);
 $c-figure__caption--below-alt-color:      darken($light,20);
 $c-figure__content-solid:                 $teal;
-$c-figure__content-transparent:           transparentize($teal, 0.15);
+$c-figure__content-transparent:           transparentize($teal, 0.10);
 $c-figure__content-color:                 $light;
 $c-figure__content-link-color:            lighten($blue,10);
 $c-figure__content-link-hover-color:      lighten($blue,25);
