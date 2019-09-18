@@ -486,15 +486,15 @@ $c-modal__nav__icon-background:$charcoal;
 // component/_navigation.mobile.scss
 // component/_navigation.scss
 $c-nav-background-color:                    lighten($charcoal,5);
-$c-nav-border-color:                        $blue;
-$c-nav__item--more-background-color:        $blue;
+$c-nav-border-color:                        colour( 'blue' , 700 );
+$c-nav__item--more-background-color:        colour( 'blue' , 700 );
 $c-nav__header-color:                       $light;
 $c-nav__list-color:                         darken($light,10);
 $c-nav__link-color:                         $light;
 $c-nav__link-background-color:              transparent;
 $c-nav__link-is-current-background-color:   $blue;
 $c-nav__link-hover-color:                   darken($light, 5);
-$c-nav__link-hover-background-color:        darken($blue, 20);
+$c-nav__link-hover-background-color:        colour( 'blue' , 800 );
 $c-nav__link-border:                        darken($s3,15);
 // Sticky nav
 $c-nav--sticky-background:                  $s3;
