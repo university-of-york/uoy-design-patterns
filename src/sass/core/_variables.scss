@@ -270,8 +270,8 @@ $c-autocomplete--alt__subtitle-color:                       $charcoal;
 // component/_block-links.scss
 $c-block-link-background-color: $s2;
 $c-block-link-border-color:     lighten($s1,5);
-$c-block-link-color:            darken($blue,16%);
-$c-block-link-hover:            darken($blue,10%);
+$c-block-link-color:            colour( "blue" , 700 );
+$c-block-link-hover:            colour( "blue" , 800 );
 
 // Blockquotes
 // component/_blockquotes.scss
