@@ -42,12 +42,14 @@
   overflow:hidden;
   position:relative;
   top:-10px;
+  visibility: hidden;
   // Double class for more specificity
   &.c-form {
     margin:0;
   }
   &.is-open {
     height:4.25em;
+    visibility: visible;
   }
   .c-form__fieldset {
     background-color:$c-mobile-search-form-background-color;
