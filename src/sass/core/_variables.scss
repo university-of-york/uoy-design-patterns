@@ -583,7 +583,7 @@ $c-subnav__link-color:                  lighten($charcoal,20);
 $c-subnav__link-clor:                   $teal; // Possibly not needed?
 $c-subnav__link-is-current-background:  $blue;
 $c-subnav__link-is-current-color:       $light;
-$c-subnav__link-hover-color:            $blue;
+$c-subnav__link-hover-color:            colour( "blue" , 700 );
 $c-subnav__title-link-color:            $teal;
 
 // Tables
