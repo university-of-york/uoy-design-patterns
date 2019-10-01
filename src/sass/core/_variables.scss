@@ -17,7 +17,6 @@ $colours:
 
 // --------------------------------------------------
 // Sets up classes for testing out the colour palette above
-// 
 
 @each $hue , $palette in $colours
 {
@@ -333,9 +332,9 @@ $c-event-border:$charcoal;
 
 // Figures
 // component/_figures.scss
-$c-figure__caption-solid:                 $blue;
-$c-figure__caption-transparent:           transparentize($c-figure__caption-solid, 0.10);
-$c-figure__caption-color:                 $light;
+$c-figure__caption-solid:                 colour( 'blue' , 400 );
+$c-figure__caption-transparent:           colour( 'blue' , 400 );
+$c-figure__caption-color:                 colour( 'grey' , 900 );
 $c-figure__caption--below-background:     transparent;
 $c-figure__caption--below-color:          lighten($charcoal,20);
 $c-figure__caption--below-alt-color:      darken($light,20);
@@ -584,7 +583,7 @@ $c-subnav__link-color:                  lighten($charcoal,20);
 $c-subnav__link-clor:                   $teal; // Possibly not needed?
 $c-subnav__link-is-current-background:  $blue;
 $c-subnav__link-is-current-color:       $light;
-$c-subnav__link-hover-color:            $blue;
+$c-subnav__link-hover-color:            colour( "blue" , 700 );
 $c-subnav__title-link-color:            $teal;
 
 // Tables
@@ -666,8 +665,8 @@ $o-grid__row--alt2-link-color:       lighten($blue,5);
 $o-grid__row--alt2-link-hover-color: lighten($blue,15);
 $o-grid__row--alt3-background-color: $s2;
 $o-grid__row--alt3-border-color:     $s1;
-$o-grid__row--alt3-link-color:       darken($blue,16%);
-$o-grid__row--alt3-link-hover-color: darken($blue,10%);
+$o-grid__row--alt3-link-color:       colour( "blue" , 700 );
+$o-grid__row--alt3-link-hover-color: colour( "blue" , 800 );
 $o-grid__row--divider-color:         $lightgrey;
 
 // Media
