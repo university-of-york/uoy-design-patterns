@@ -37,17 +37,21 @@
   @include mq(large, '+') {
     display:none;
   }
-  @include transition('height');
+  // @include transition('height');
+  transition:height 0.4s ease-out, visibility 0s 0.4s;
   height:0;
   overflow:hidden;
   position:relative;
   top:-10px;
+  visibility: hidden;
   // Double class for more specificity
   &.c-form {
     margin:0;
   }
   &.is-open {
+    transition:height 0.4s ease-out, visibility 0s;
     height:4.25em;
+    visibility: visible;
   }
   .c-form__fieldset {
     background-color:$c-mobile-search-form-background-color;
