@@ -332,9 +332,9 @@ $c-event-border:$charcoal;
 
 // Figures
 // component/_figures.scss
-$c-figure__caption-solid:                 colour( 'blue' , 400 );
-$c-figure__caption-transparent:           colour( 'blue' , 400 );
-$c-figure__caption-color:                 colour( 'grey' , 900 );
+$c-figure__caption-solid:                 colour( 'grey' , 900 );
+$c-figure__caption-transparent:           colour( 'grey' , 900 );
+$c-figure__caption-color:                 white;
 $c-figure__caption--below-background:     transparent;
 $c-figure__caption--below-color:          lighten($charcoal,20);
 $c-figure__caption--below-alt-color:      darken($light,20);
