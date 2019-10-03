@@ -76,6 +76,7 @@
       color:$c-panel--highlight-link;
     }
     &:hover {
+        color:$c-panel--highlight-color;
       .c-panel__more {
         color:$c-panel--highlight-hover;
       }
