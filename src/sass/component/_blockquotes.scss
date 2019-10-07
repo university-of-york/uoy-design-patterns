@@ -40,7 +40,12 @@
   @include demarginalise;
   @include font-size(22px, 1.181818182);
   position:relative;
+  a {
+    color:$c-blockquote-link-color;
+    &:hover { color:$c-blockquote-link-hover; }
+  }
 }
+
 .c-blockquote__image {
   @include round;
   width:$c-blockquote__image-size;
@@ -77,6 +82,10 @@
     padding:$base-spacing;
     color:$c-blockquote--image-quote-color;
     font-family: $font-title;
+  a {
+    color:$c-blockquote--image-quote-link-color;
+    &:hover { color:$c-blockquote--image-quote-link-hover; }
+  }
   }
 }
 .c-blockquote--pull-quote {
@@ -86,14 +95,14 @@
     color:$c-blockquote--pull-quote-color;
     font-family:$font-title;
     padding:0 $base-spacing * 1.5;
-    :first-child:before {
+    & > :first-child:before {
       @include font-size(48px);
       content: open-quote;
       position:absolute;
       top:-$base-spacing/2;
       left:0;
     }
-    :last-child:after {
+    & > :last-child:after {
       @include font-size(48px);
       content: close-quote;
       position:absolute;
@@ -105,10 +114,15 @@
     .o-grid__row--alt2 & {
       color:$c-blockquote__content--alt-1-2-color
     }
+  a {
+    color:$c-blockquote--pull-quote-link-color;
+    &:hover { color:$c-blockquote--pull-quote-link-hover; }
+  }
   }
   .c-blockquote__cite {
     padding:0 $base-spacing * 1.5;
   }
+  
 }
 // Large blockquotes only take effect on medium and larger,
 // otherwise they have default behaviour
