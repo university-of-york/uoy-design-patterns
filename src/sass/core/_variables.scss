@@ -277,12 +277,18 @@ $c-block-link-hover:            colour( "blue" , 800 );
 $c-blockquote__image-size:                   120px;
 $c-blockquote--large__image-size:            180px;
 $c-blockquote__image-tiny-ratio:             0.75; // How much should the image shrink on tiny screens?
-$c-blockquote--image-quote-background-color: lighten($teal,10);
+$c-blockquote--image-quote-background-color:  colour( "blue", 800 );
 $c-blockquote--image-quote-color:            $light;
 $c-blockquote--pull-quote-color:             $pink;
 $c-blockquote__content--alt-1-2-color:       $white;
 $c-blockquote__cite-color:                   $charcoal;
 $c-blockquote__cite-color--alt:              $light;
+$c-blockquote-link-color:  $link-color; 
+$c-blockquote-link-hover: $link-hover-color; 
+$c-blockquote--image-quote-link-color:  inherit; 
+$c-blockquote--image-quote-link-hover:           colour( "blue" , 300 ); 
+$c-blockquote--pull-quote-link-color:  colour( "pink", 700 ); 
+$c-blockquote--pull-quote-link-hover:           colour( "pink" , 800 ); 
 
 // Breadcrumb
 // component/_breadcrumb.scss
