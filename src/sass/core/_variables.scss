@@ -211,36 +211,36 @@ $link-focus-outline-color:colour( 'blue' );
 
 // Accordion
 // component/_accordion.scss
-$c-accordion__item-border:       lighten($s1, 5);
+$c-accordion__item-border:       colour( "beige", 200 );  //lighten($s1, 5)
 $c-accordion__title-color:       $link-color;
 $c-accordion__title-hover-color: $link-hover-color;
 
 // Alerts
 // component/_alerts.scss
 $c-alert-border:              $charcoal;
-$c-alert-background:          darken($light, 5);
+$c-alert-background:          colour( "grey", 200 );  //darken($light, 5)
 $c-alert--success-border:     $green;
-$c-alert--success-background: lighten($green, 45);
+$c-alert--success-background: colour( "green", 100 );  //lighten($green, 45)
 $c-alert--info-border:        $blue;
-$c-alert--info-background:    lighten($blue, 45);
+$c-alert--info-background:    colour( "blue", 100 );  //lighten($blue, 45)
 $c-alert--warning-border:     $gold;
-$c-alert--warning-background: lighten($gold, 35);
+$c-alert--warning-background: colour( "yellow", 100 );  //lighten($gold, 35)
 $c-alert--danger-border:      $red;
-$c-alert--danger-background:  lighten($red, 45);
+$c-alert--danger-background:  colour( "red", 100 );  //lighten($red, 45)
 
 // A to Z
 // component/_atoz.scss
-$c-atoz__nav-link-background:           $s2;
-$c-atoz__nav-link-border:               darken($s2,5);
-$c-atoz__nav-link-hover-background:     $blue;
-$c-atoz__nav-link-hover-border:         $blue;
-$c-atoz__nav-link-hover-color:          $light;
-$c-atoz__nav-link--inactive-background: $s3;
-$c-atoz__nav-link--inactive-border:     darken($s3,5);
-$c-atoz__nav-link--inactive-color:      darken($s3,25);
-$c-atoz__letter-border:                 $charcoal;
-$c-atoz__page-border:                   $charcoal;
-$c-atoz__page-background-odd:           darken($light, 5);
+$c-atoz__nav-link-background:          colour( "beige", 100 );  //$s2
+$c-atoz__nav-link-border:               colour( "beige", 200 );  //darken($s2,5)
+$c-atoz__nav-link-hover-background:      colour( "blue" ); //$blue
+$c-atoz__nav-link-hover-border:          colour( "blue" ); //$blue
+$c-atoz__nav-link-hover-color:          colour( "grey", 100 );  //$light
+$c-atoz__nav-link--inactive-background: colour( "grey", 100 );  //$s3
+$c-atoz__nav-link--inactive-border:     colour( "grey", 200 );  //darken($s3,5)
+$c-atoz__nav-link--inactive-color:      colour( "grey", 700 );  //darken($s3,25)
+$c-atoz__letter-border:                colour( "grey", 900 );  //$charcoal
+$c-atoz__page-border:                   colour( "grey", 900 );  //$charcoal
+$c-atoz__page-background-odd:           colour( "grey", 200 );  //darken($light, 5);
 
 // Audio
 // component/_audio.scss
@@ -249,26 +249,26 @@ $c-atoz__page-background-odd:           darken($light, 5);
 // Autocomplete
 // component/_autocomplete.scss
 $c-autocomplete__item-border:                               $lightgrey;
-$c-autocomplete__link-color:                                $charcoal;
+$c-autocomplete__link-color:                                colour( "grey", 900 );  //$charcoal
 $c-autocomplete__link-background-color:                     $white;
-$c-autocomplete__link-hover-color:                          $blue;
-$c-autocomplete__link-hover-background-color:               $s3;
-$c-autocomplete__subtitle-color:                            $charcoal;
-$c-autocomplete--alt__link-color:                           darken($blue, 10);
-$c-autocomplete--alt__link-even-background-color:           lighten($s1, 19);
+$c-autocomplete__link-hover-color:                          colour( "blue" ); //$blue
+$c-autocomplete__link-hover-background-color:               colour( "grey", 100 );  //$s3
+$c-autocomplete__subtitle-color:                            colour( "grey", 900 );  //$charcoal
+$c-autocomplete--alt__link-color:                          colour( "blue", 700 );  //darken($blue, 10)
+$c-autocomplete--alt__link-even-background-color:          colour( "beige", 100 );  //lighten($s1, 19)
 $c-autocomplete--alt__link-hover-color:                     $white;
-$c-autocomplete--alt__link-hover-background-color:          darken($blue, 20);
+$c-autocomplete--alt__link-hover-background-color:          colour( "blue", 800 );  //darken($blue, 20)
 $c-autocomplete--alt__link-hover__subtitle-color:           $white;
-$c-autocomplete--alt__link-selected-color:                  $light;
-$c-autocomplete--alt__link-selected-background-color:       $charcoal;
-$c-autocomplete--alt__link-selected-hover-background-color: lighten($charcoal, 7);
-$c-autocomplete--alt__link-selected__subtitle-color:        darken($light, 11);
-$c-autocomplete--alt__subtitle-color:                       $charcoal;
+$c-autocomplete--alt__link-selected-color:                   colour( "grey", 100 );  //$light
+$c-autocomplete--alt__link-selected-background-color:       colour( "grey", 900 );  //$charcoal
+$c-autocomplete--alt__link-selected-hover-background-color: colour( "grey", 900 );  //lighten($charcoal, 7)
+$c-autocomplete--alt__link-selected__subtitle-color:        colour( "grey", 200 );  //darken($light, 11)
+$c-autocomplete--alt__subtitle-color:                       colour( "grey", 900 );  //$charcoal
 
 // Block links
 // component/_block-links.scss
-$c-block-link-background-color: $s2;
-$c-block-link-border-color:     lighten($s1,5);
+$c-block-link-background-color: colour( "beige", 100 );  //$s2
+$c-block-link-border-color:     colour( "beige", 300 );  //lighten($s1,5)
 $c-block-link-color:            colour( "blue" , 700 );
 $c-block-link-hover:            colour( "blue" , 800 );
 
@@ -278,13 +278,13 @@ $c-blockquote__image-size:                   120px;
 $c-blockquote--large__image-size:            180px;
 $c-blockquote__image-tiny-ratio:             0.75; // How much should the image shrink on tiny screens?
 $c-blockquote--image-quote-background-color:  colour( "blue", 800 );
-$c-blockquote--image-quote-color:            $light;
-$c-blockquote--pull-quote-color:             $pink;
+$c-blockquote--image-quote-color:            colour( "grey", 100 );  //$light
+$c-blockquote--pull-quote-color:             colour( "pink", 700 );  //$pink
 $c-blockquote__content--alt-1-2-color:       $white;
-$c-blockquote__cite-color:                   $charcoal;
-$c-blockquote__cite-color--alt:              $light;
-$c-blockquote-link-color:  $link-color; 
-$c-blockquote-link-hover: $link-hover-color; 
+$c-blockquote__cite-color:                    colour( "grey", 900 );  //$charcoal
+$c-blockquote__cite-color--alt:              colour( "grey", 100 );  //$light
+$c-blockquote-link-color:  colour( "blue", 700 ); 
+$c-blockquote-link-hover: colour( "blue", 800);
 $c-blockquote--image-quote-link-color:  inherit; 
 $c-blockquote--image-quote-link-hover:           colour( "blue" , 300 ); 
 $c-blockquote--pull-quote-link-color:  colour( "pink", 700 ); 
@@ -292,37 +292,37 @@ $c-blockquote--pull-quote-link-hover:           colour( "pink" , 800 );
 
 // Breadcrumb
 // component/_breadcrumb.scss
-$c-breadcrumb-color:$charcoal;
+$c-breadcrumb-color:colour( "grey", 900 );  //$charcoal
 $c-breadcrumb-background-color:transparent;
-$c-breadcrumb__link-color:$charcoal;
+$c-breadcrumb__link-color:colour( "grey", 900 );  //$charcoal
 
 // Buttons
 // component/_buttons.scss
 $c-btn: (
   default: (
-    bg:$pink,
-    text:$light
+    bg: colour( "pink", 700 ),
+    text: colour( "grey", 100 )
   ),
   secondary: (
-    bg:$teal,
-    text:$light
+    bg:  colour( "blue" , 900 ),
+    text: colour( "grey", 100 )
   ),
   success: (
-    bg:$green,
-    text:$light
+    bg: colour( "green", 500 ),
+    text: colour( "grey", 100 )
   ),
   danger: (
-    bg:$red,
-    text:$light
+    bg: colour( "red", 500 ),
+    text: colour( "grey", 100 )
   )
 );
 
 // Cookie banner
 // component/_cookie-banner.scss
-$c-cookie-banner__background:       lighten($teal,10);
+$c-cookie-banner__background:      colour( "blue", 800 ); //lighten($teal,10)
 $c-cookie-banner__color:            $white;
 $c-cookie-banner__link-color:       $white;
-$c-cookie-banner__link-hover-color: $blue;
+$c-cookie-banner__link-hover-color: colour( "blue" );
 
 // Clearing tables
 // component/_clearing-tables.scss
@@ -334,7 +334,7 @@ $c-cookie-banner__link-hover-color: $blue;
 
 // Events
 // component/_events.scss
-$c-event-border:$charcoal;
+$c-event-border: colour( "grey", 900 ); //$charcoal
 
 // Figures
 // component/_figures.scss
