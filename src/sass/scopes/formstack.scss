@@ -57,7 +57,7 @@ div.fsError {
   @extend .c-alert--danger !optional;
   @include responsive-font-size($default-font-sizes);
   text-align:left;
-  color:$charcoal;
+  color: colour( "grey", 900 );  //$charcoal
 }
 .fsForm,
 .fsInput,
@@ -157,11 +157,11 @@ input[type=text] {
 .fsRequiredMarker {
   @include responsive-font-size($default-font-sizes);
   font-family:$font-default;
-  color:$charcoal;
+  color: colour( "grey", 900 );  //$charcoal
   font-weight:400;
 }
 .fsValidationError .fsRequiredMarker {
-  color:$red;
+  color:colour( "red", 500 );  //$red;
 }
 .fsValidationError {
   @extend .is-invalid !optional;

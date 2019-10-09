@@ -57,8 +57,8 @@
       }
     }
     &.c-icon--inverse {
-      background-color:$charcoal;
-      border-color:$charcoal
+      background-color:colour( "grey", 900 );  //$charcoal
+      border-color:colour( "grey", 900 );  //$charcoal
     }
   }
 }
@@ -99,40 +99,40 @@
     line-height:100px;
     margin:0 10px 10px 0;
     display:inline-block;
-    color:$light;
+    color:colour( "grey", 100 );  //$light
     text-align:center;
-    border:1px solid $charcoal;
+    border:1px solid colour( "grey", 900 );  //$charcoal
   }
   .c-swatch--charcoal {
-    background-color:$charcoal;
+    background-color:colour( "grey", 900 );  //$charcoal
   }
   .c-swatch--light {
-    background-color:$light;
-    color:$charcoal;
+    background-color:colour( "grey", 100 );  //$light
+    color:colour( "grey", 900 );  //$charcoal
   }
   .c-swatch--blue {
-    background-color:$blue;
+    background-color:colour( "blue", 500 );  //$blue
   }
   .c-swatch--pink {
-    background-color:$pink;
+    background-color:colour( "pink", 700 );  //$pink
   }
   .c-swatch--teal {
-    background-color:$teal;
+    background-color:colour( "blue", 900 ); //$teal
   }
   .c-swatch--gold {
-    background-color:$gold;
+    background-color:colour( "yellow", 500 );  //$gold
   }
   .c-swatch--s1 {
-    background-color:$s1;
-    color:$charcoal;
+    background-color:  colour( "beige", 300 );  //$s1
+    color:colour( "grey", 900 );  //$charcoal
   }
   .c-swatch--s2 {
-    background-color:$s2;
-    color:$charcoal;
+    background-color:colour( "beige", 100 );  //$s2
+    color:colour( "grey", 900 );  //$charcoal
   }
   .c-swatch--s3 {
-    background-color:$s3;
-    color:$charcoal;
+    background-color: colour( "grey", 100 );  //$s3
+    color:colour( "grey", 900 );  //$charcoal
   }
 }
 
