@@ -232,7 +232,7 @@ $c-alert--danger-background:  colour( "red", 100 );  //lighten($red, 45)
 // component/_atoz.scss
 $c-atoz__nav-link-background:          colour( "beige", 100 );  //$s2
 $c-atoz__nav-link-border:               colour( "beige", 200 );  //darken($s2,5)
-$c-atoz__nav-link-hover-background:      colour( "blue" ); //$blue
+$c-atoz__nav-link-hover-background:      colour( "blue", 500 ); //$blue
 $c-atoz__nav-link-hover-border:          colour( "blue" ); //$blue
 $c-atoz__nav-link-hover-color:          colour( "grey", 100 );  //$light
 $c-atoz__nav-link--inactive-background: colour( "grey", 100 );  //$s3
@@ -251,7 +251,7 @@ $c-atoz__page-background-odd:           colour( "grey", 200 );  //darken($light,
 $c-autocomplete__item-border:                               $lightgrey;
 $c-autocomplete__link-color:                                colour( "grey", 900 );  //$charcoal
 $c-autocomplete__link-background-color:                     $white;
-$c-autocomplete__link-hover-color:                          colour( "blue" ); //$blue
+$c-autocomplete__link-hover-color:                          colour( "blue", 500 ); //$blue
 $c-autocomplete__link-hover-background-color:               colour( "grey", 100 );  //$s3
 $c-autocomplete__subtitle-color:                            colour( "grey", 900 );  //$charcoal
 $c-autocomplete--alt__link-color:                          colour( "blue", 700 );  //darken($blue, 10)
@@ -284,7 +284,7 @@ $c-blockquote__content--alt-1-2-color:       $white;
 $c-blockquote__cite-color:                    colour( "grey", 900 );  //$charcoal
 $c-blockquote__cite-color--alt:              colour( "grey", 100 );  //$light
 $c-blockquote-link-color:  colour( "blue", 700 ); 
-$c-blockquote-link-hover: colour( "blue", 800);
+$c-blockquote-link-hover: colour( "blue", 800 );
 $c-blockquote--image-quote-link-color:  inherit; 
 $c-blockquote--image-quote-link-hover:           colour( "blue" , 300 ); 
 $c-blockquote--pull-quote-link-color:  colour( "pink", 700 ); 
@@ -322,7 +322,7 @@ $c-btn: (
 $c-cookie-banner__background:      colour( "blue", 800 ); //lighten($teal,10)
 $c-cookie-banner__color:            $white;
 $c-cookie-banner__link-color:       $white;
-$c-cookie-banner__link-hover-color: colour( "blue" );
+$c-cookie-banner__link-hover-color: colour( "blue", 500 ); //$blue
 
 // Clearing tables
 // component/_clearing-tables.scss
@@ -342,22 +342,22 @@ $c-figure__caption-solid:                 colour( 'grey' , 900 );
 $c-figure__caption-transparent:           colour( 'grey' , 900 );
 $c-figure__caption-color:                 white;
 $c-figure__caption--below-background:     transparent;
-$c-figure__caption--below-color:          lighten($charcoal,20);
-$c-figure__caption--below-alt-color:      darken($light,20);
-$c-figure__content-solid:                 $teal;
+$c-figure__caption--below-color:          colour( "grey", 700 ); //lighten($charcoal,20)
+$c-figure__caption--below-alt-color:     colour( 'grey' , 300 ); //darken($light,20)
+$c-figure__content-solid:                  colour( "blue", 900 ); //$teal
 $c-figure__content-transparent:           transparentize($teal, 0.10);
-$c-figure__content-color:                 $light;
+$c-figure__content-color:                  colour( "grey", 100 );  //$light
 $c-figure__content-link-color:            lighten($blue,10);
 $c-figure__content-link-hover-color:      lighten($blue,25);
-$c-figure__content--blue-solid:           $blue;
+$c-figure__content--blue-solid:           colour( "blue", 500 ); //$blue
 $c-figure__content--blue-transparent:     transparentize($blue, 0.25);
-$c-figure__content--pink-solid:           $pink;
+$c-figure__content--pink-solid:           colour( "pink", 700 ); //$pink
 $c-figure__content--pink-transparent:     transparentize($pink, 0.25);
-$c-figure__content--teal-solid:           $teal;
+$c-figure__content--teal-solid:           colour( "blue", 900 ); //$teal
 $c-figure__content--teal-transparent:     transparentize($teal, 0.25);
-$c-figure__content--gold-solid:           $gold;
+$c-figure__content--gold-solid:          colour("yellow", 500 ); //$gold
 $c-figure__content--gold-transparent:     transparentize($gold, 0.25);
-$c-figure__content--charcoal-solid:       $charcoal;
+$c-figure__content--charcoal-solid:       colour( "grey", 900 );  //$charcoal
 $c-figure__content--charcoal-transparent: transparentize($charcoal, 0.25);
 
 // Footer
