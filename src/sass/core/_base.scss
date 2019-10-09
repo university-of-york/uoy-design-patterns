@@ -11,8 +11,8 @@ body,select,textarea,input {
   font-display: swap;
 }
 body {
-  color:$charcoal;
-  background:#fff;
+  color:colour( "grey", 900 );  //$charcoal
+  background: white;
 }
 a {
   color:$link-color;
@@ -129,7 +129,7 @@ input:not([type='radio']):not([type='checkbox']):not([type='range']),
 select,
 textarea {
   &:focus {
-    outline:2px solid $blue;
+    outline:2px solid colour( "blue", 500 );  //$blue
     outline-offset:-2px;
   }
 }

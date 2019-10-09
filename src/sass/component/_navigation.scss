@@ -268,7 +268,7 @@
   }
   .c-nav.is-open & {
     &:hover {
-      color:lighten($blue,10);
+      color:  colour( "blue", 400 ); //lighten($blue,10)
       background-color:transparent;
     }
   }

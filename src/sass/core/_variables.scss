@@ -217,15 +217,15 @@ $c-accordion__title-hover-color: $link-hover-color;
 
 // Alerts
 // component/_alerts.scss
-$c-alert-border:              $charcoal;
+$c-alert-border:               colour( "grey", 900 );  //$charcoal
 $c-alert-background:          colour( "grey", 200 );  //darken($light, 5)
-$c-alert--success-border:     $green;
+$c-alert--success-border:     colour( "green", 500 );  //$green
 $c-alert--success-background: colour( "green", 100 );  //lighten($green, 45)
-$c-alert--info-border:        $blue;
+$c-alert--info-border:        colour( "blue", 500 );  //$blue
 $c-alert--info-background:    colour( "blue", 100 );  //lighten($blue, 45)
-$c-alert--warning-border:     $gold;
+$c-alert--warning-border:     colour( "yellow", 500 );  //$gold
 $c-alert--warning-background: colour( "yellow", 100 );  //lighten($gold, 35)
-$c-alert--danger-border:      $red;
+$c-alert--danger-border:      colour( "red", 500 );  //$red;
 $c-alert--danger-background:  colour( "red", 100 );  //lighten($red, 45)
 
 // A to Z
@@ -248,7 +248,7 @@ $c-atoz__page-background-odd:           colour( "grey", 200 );  //darken($light,
 
 // Autocomplete
 // component/_autocomplete.scss
-$c-autocomplete__item-border:                               $lightgrey;
+$c-autocomplete__item-border:                                colour( "grey", 300 );  //$lightgrey;
 $c-autocomplete__link-color:                                colour( "grey", 900 );  //$charcoal
 $c-autocomplete__link-background-color:                     white;
 $c-autocomplete__link-hover-color:                          colour( "blue", 500 ); //$blue
@@ -564,7 +564,7 @@ $c-panel-color:                 colour( "grey", 900 );  //$charcoal
 $c-panel-link-color:            colour( 'blue' , 700 );
 $c-panel-link-hover:            colour( 'blue' , 800 );
 
-$c-panel--highlight-background: $teal;
+$c-panel--highlight-background: colour( "blue", 900 ); //$teal
 $c-panel--highlight-border:     colour( "blue", 800 ); //lighten($teal,10)
 $c-panel--highlight-color:      colour( "grey", 100 );  //$light
 $c-panel--highlight-link:       colour( "blue", 500 ); //lighten($blue,5%)

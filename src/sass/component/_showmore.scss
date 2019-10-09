@@ -15,7 +15,7 @@
 .o-grid__row--alt1,
 .o-grid__row--alt2 {
   .c-show-more .c-btn--secondary {
-    border-color:$light;
+    border-color: colour( "grey", 100 );  //$light
   }
 }
 .c-show-more__content {
