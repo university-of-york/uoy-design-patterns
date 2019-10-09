@@ -250,15 +250,15 @@ $c-atoz__page-background-odd:           colour( "grey", 200 );  //darken($light,
 // component/_autocomplete.scss
 $c-autocomplete__item-border:                               $lightgrey;
 $c-autocomplete__link-color:                                colour( "grey", 900 );  //$charcoal
-$c-autocomplete__link-background-color:                     $white;
+$c-autocomplete__link-background-color:                     white;
 $c-autocomplete__link-hover-color:                          colour( "blue", 500 ); //$blue
 $c-autocomplete__link-hover-background-color:               colour( "grey", 100 );  //$s3
 $c-autocomplete__subtitle-color:                            colour( "grey", 900 );  //$charcoal
 $c-autocomplete--alt__link-color:                          colour( "blue", 700 );  //darken($blue, 10)
 $c-autocomplete--alt__link-even-background-color:          colour( "beige", 100 );  //lighten($s1, 19)
-$c-autocomplete--alt__link-hover-color:                     $white;
+$c-autocomplete--alt__link-hover-color:                     white;
 $c-autocomplete--alt__link-hover-background-color:          colour( "blue", 800 );  //darken($blue, 20)
-$c-autocomplete--alt__link-hover__subtitle-color:           $white;
+$c-autocomplete--alt__link-hover__subtitle-color:           white;
 $c-autocomplete--alt__link-selected-color:                   colour( "grey", 100 );  //$light
 $c-autocomplete--alt__link-selected-background-color:       colour( "grey", 900 );  //$charcoal
 $c-autocomplete--alt__link-selected-hover-background-color: colour( "grey", 900 );  //lighten($charcoal, 7)
@@ -280,7 +280,7 @@ $c-blockquote__image-tiny-ratio:             0.75; // How much should the image 
 $c-blockquote--image-quote-background-color:  colour( "blue", 800 );
 $c-blockquote--image-quote-color:            colour( "grey", 100 );  //$light
 $c-blockquote--pull-quote-color:             colour( "pink", 700 );  //$pink
-$c-blockquote__content--alt-1-2-color:       $white;
+$c-blockquote__content--alt-1-2-color:       white;
 $c-blockquote__cite-color:                    colour( "grey", 900 );  //$charcoal
 $c-blockquote__cite-color--alt:              colour( "grey", 100 );  //$light
 $c-blockquote-link-color:  colour( "blue", 700 ); 
@@ -320,8 +320,8 @@ $c-btn: (
 // Cookie banner
 // component/_cookie-banner.scss
 $c-cookie-banner__background:      colour( "blue", 800 ); //lighten($teal,10)
-$c-cookie-banner__color:            $white;
-$c-cookie-banner__link-color:       $white;
+$c-cookie-banner__color:            white;
+$c-cookie-banner__link-color:       white;
 $c-cookie-banner__link-hover-color: colour( "blue", 500 ); //$blue
 
 // Clearing tables
@@ -345,80 +345,80 @@ $c-figure__caption--below-background:     transparent;
 $c-figure__caption--below-color:          colour( "grey", 700 ); //lighten($charcoal,20)
 $c-figure__caption--below-alt-color:     colour( 'grey' , 300 ); //darken($light,20)
 $c-figure__content-solid:                  colour( "blue", 900 ); //$teal
-$c-figure__content-transparent:           transparentize($teal, 0.10);
+$c-figure__content-transparent:           transparentize(colour( "blue", 900 ), 0.10);
 $c-figure__content-color:                  colour( "grey", 100 );  //$light
-$c-figure__content-link-color:            lighten($blue,10);
-$c-figure__content-link-hover-color:      lighten($blue,25);
+$c-figure__content-link-color:            colour( "blue", 400 ); //lighten($blue,10)
+$c-figure__content-link-hover-color:      colour( "blue", 300 ); //lighten($blue,25)
 $c-figure__content--blue-solid:           colour( "blue", 500 ); //$blue
-$c-figure__content--blue-transparent:     transparentize($blue, 0.25);
+$c-figure__content--blue-transparent:     transparentize(colour( "blue", 500 ), 0.25);
 $c-figure__content--pink-solid:           colour( "pink", 700 ); //$pink
-$c-figure__content--pink-transparent:     transparentize($pink, 0.25);
+$c-figure__content--pink-transparent:     transparentize(colour( "pink", 700 ), 0.25);
 $c-figure__content--teal-solid:           colour( "blue", 900 ); //$teal
-$c-figure__content--teal-transparent:     transparentize($teal, 0.25);
+$c-figure__content--teal-transparent:     transparentize(colour( "blue", 900 ), 0.25);
 $c-figure__content--gold-solid:          colour("yellow", 500 ); //$gold
-$c-figure__content--gold-transparent:     transparentize($gold, 0.25);
+$c-figure__content--gold-transparent:     transparentize(colour("yellow", 500 ), 0.25);
 $c-figure__content--charcoal-solid:       colour( "grey", 900 );  //$charcoal
-$c-figure__content--charcoal-transparent: transparentize($charcoal, 0.25);
+$c-figure__content--charcoal-transparent: transparentize(colour( "grey", 900 ), 0.25);
 
 // Footer
 // component/_footer.scss
-$c-footer-background-color:       $charcoal;
-$c-footer-color:                  darken($light,10);
-$c-footer-main__link-color:       darken($light,10);
-$c-footer-main__link-hover-color: $blue;
+$c-footer-background-color:       colour( "grey", 900 );  //$charcoal
+$c-footer-color:                  colour( 'grey' , 200 ); //darken($light,10)
+$c-footer-main__link-color:        colour( 'grey' , 200 ); //darken($light,10)
+$c-footer-main__link-hover-color: colour( "blue", 500 ); //$blue
 $c-footer-main__link--edit-color: colour( 'grey' , 200 );
 
 // Forms
 // component/_forms.scss
-$c-form--bordered-border:                      $blue;
-$c-form--panel-color:                          $light;
-$c-form__input-border:                         lighten($charcoal,50);
-$c-form__input-color:                          $charcoal;
-$c-form__input-background-color:               $white;
-$c-form__input--select-after-color:            $light;
-$c-form__input--select-after-background-color: $charcoal;
-$c-form-invalid-color:                         $red;
+$c-form--bordered-border:                      colour( "blue", 500 ); //$blue
+$c-form--panel-color:                          colour( "grey", 100 );  //$light
+$c-form__input-border:                         colour( "grey", 400 );  //lighten($charcoal,50)
+$c-form__input-color:                          colour( "grey", 900 );  //$charcoal
+$c-form__input-background-color:               white;
+$c-form__input--select-after-color:            colour( "grey", 100 );  //$light
+$c-form__input--select-after-background-color: colour( "grey", 900 );  //$charcoal
+$c-form-invalid-color:                        colour( "red", 500 ); // $red
 
 // Gallery
 // component/_gallery.scss
-$c-gallery-item-border-color: $charcoal;
-$c-gallery-item-color:        $charcoal;
+$c-gallery-item-border-color: colour( "grey", 900 );  //$charcoal
+$c-gallery-item-color:        colour( "grey", 900 );  //$charcoal
 $c-gallery-item-size:         140px;
 $c-gallery-item-border-width: 1px;
 
 // Global notice
 // component/_global-notices.scss
-$c-global-notice-background:              $s1;
-$c-global-notice-border:                  $grey;
-$c-global-notice-color:                   $black;
-$c-global-notice--highlighted-background: $pink;
-$c-global-notice--highlighted-color:      $white;
+$c-global-notice-background:              colour( "beige", 300 );  //$s1
+$c-global-notice-border:                  colour( "grey", 800 );  //$grey
+$c-global-notice-color:                   colour( "grey", 900 ); //$black
+$c-global-notice--highlighted-background: colour( "pink", 700 ); //$pink
+$c-global-notice--highlighted-color:      white;
 
 // hCard
 // component/_hcard.scss
-$h-card--mini-border:        $pink;
-$h-card--mini-background:    $light;
-$h-card--mini-color:         $charcoal;
-$h-card--byline-border:      darken($light, 10);
-$h-card--article-border:     $s1;
-$h-card--article-background: $s2;
-$h-card--article-color:      $charcoal;
+$h-card--mini-border:        colour( "pink", 700 ); //$pink
+$h-card--mini-background:    colour( "grey", 100 );  //$light
+$h-card--mini-color:         colour( "grey", 900 );  //$charcoal
+$h-card--byline-border:      colour( 'grey' , 200 ); //darken($light,10)
+$h-card--article-border:      colour( "beige", 300 );  //$s1;
+$h-card--article-background: colour( "beige", 100 );  //$s2;
+$h-card--article-color:      colour( "grey", 900 );  //$charcoal
 $h-card__figure-size:        140px;
 
 // Header
 // component/_header.scss
-$c-main-header-background:        $white;
-$c-main-header-color:             $charcoal;
-$c-main-header--alt-background:   $charcoal;
-$c-main-header--alt-color:   $white;
+$c-main-header-background:        white;
+$c-main-header-color:             colour( "grey", 900 );  //$charcoal
+$c-main-header--alt-background:   colour( "grey", 900 );  //$charcoal
+$c-main-header--alt-color:   white;
 $c-main-header__logo-size:        200px;
 $c-main-header__logo-size--small: 152px;
 
 // Hero
 // component/_hero.scss
-$c-hero-background:                   $charcoal;
-$c-hero__content-color:               $light;
-$c-hero__caption-background-solid:    $black;
+$c-hero-background:                   colour( "grey", 900 );  //$charcoal
+$c-hero__content-color:                colour( "grey", 100 );  //$light;
+$c-hero__caption-background-solid:    colour( "grey", 900 );  //$black
 $c-hero__caption-background-alpha:    transparentize($c-hero__caption-background-solid, 0.4);
 $c-hero__caption-background-gradient: linear-gradient(
                                         transparent,
@@ -429,39 +429,39 @@ $c-hero__caption-background-gradient: linear-gradient(
 
 // Icons
 // component/_icons.scss
-$c-icon--inverse-color: $light;
+$c-icon--inverse-color: colour( "grey", 100 );  //$light;
 
 // Key facts
 // component/_key-fact.scss
-$c-key-fact-color:                      $teal;
-$c-key-fact-hover-color:                lighten($teal,15);
-$c-key-fact__icon-color:                lighten($teal,15);
-$c-key-fact__icon-hover-color:          lighten($teal,25);
-$c-key-fact__title-color:               $teal;
-$c-key-fact__title-hover-color:         lighten($teal,15);
-$c-key-fact__title-highlight-color:     $blue;
-$c-key-fact-alt-color:                  darken($light,10);
-$c-key-fact-alt-hover-color:            darken($light,10);
-$c-key-fact-alt-background-color:       $teal;
-$c-key-fact-alt-background-hover-color: lighten($teal,5);
-$c-key-fact-alt__title-color:           $light;
-$c-key-fact__learnMoreLink:             $blue;
+$c-key-fact-color:                      colour( "blue", 900 ); //$teal
+$c-key-fact-hover-color:               colour( "blue", 700 );  // lighten($teal,15)
+$c-key-fact__icon-color:                colour( "blue", 700 );  // lighten($teal,15)
+$c-key-fact__icon-hover-color:           colour( "blue", 600 );  // lighten($teal,25)
+$c-key-fact__title-color:              colour( "blue", 900 ); //$teal
+$c-key-fact__title-hover-color:          colour( "blue", 700 );  // lighten($teal,15)
+$c-key-fact__title-highlight-color:     colour( "blue", 500 );  //$blue
+$c-key-fact-alt-color:                  colour( 'grey' , 200 ); //darken($light,10)
+$c-key-fact-alt-hover-color:            colour( 'grey' , 200 ); //darken($light,10)
+$c-key-fact-alt-background-color:       colour( "blue", 900 ); //$teal
+$c-key-fact-alt-background-hover-color: colour( "blue", 800 );  //lighten($teal,5)
+$c-key-fact-alt__title-color:           colour( "grey", 100 );  //$light
+$c-key-fact__learnMoreLink:             colour( "blue", 500 );  //$blue
 
 // Labels
 // component/_label.scss
-$c-label-color:       $grey;
-$c-label-color-hover: lighten($c-label-color,10);
+$c-label-color:      colour( "grey", 800 );  //$grey
+$c-label-color-hover:  colour( "grey", 600 ); //lighten($c-label-color,10)
 
 // Listings
 // component/_listings.scss
 $c-listings__thumbnail-size:    100px;
-$c-listings-item-border-color:  $blue;
+$c-listings-item-border-color:  colour( "blue", 500 );  //$blue
 $c-listings__title-color:       $link-color;
-$c-listings__title-hover-color: $blue;
-$c-listings__label-color:       $grey;
-$c-listings__date-color:        lighten($charcoal,4);
-$c-listings__description-color: $charcoal;
-$c-listings__url-color:         $grey;
+$c-listings__title-hover-color: colour( "blue", 500 );  //$blue
+$c-listings__label-color:       colour( "grey", 800 );  //$grey
+$c-listings__date-color:        colour( "grey", 900 );  //lighten($charcoal,4)
+$c-listings__description-color: colour( "grey", 900 );  //$charcoal
+$c-listings__url-color:         colour( "grey", 800 );  //$grey
 
 // Lists
 // component/_lists.scss
@@ -469,55 +469,55 @@ $c-listings__url-color:         $grey;
 
 // Map
 // component/_map.scss
-$c-map__fsbutton-color:            $charcoal;
-$c-map__fsbutton-background:       $s3;
-$c-map__fsbutton-hover-background: darken($s3, 5);
+$c-map__fsbutton-color:           colour( "grey", 900 );  //$charcoal
+$c-map__fsbutton-background:       colour( "grey", 100 );  //$s3
+$c-map__fsbutton-hover-background:  colour( "grey", 200 );  //darken($s3, 5);
 
 // Modals
 // component/_modal.scss
-$c-modal-background-color:$s2;
-$c-modal-border-color:$s1;
-$c-modal__close-background-color:$charcoal;
-$c-modal__close-color:$light;
-$c-modal__close-hover-background-color:lighten($charcoal, 10);
-$c-modal__close-hover-color:$blue;
-$c-modal__caption-background-solid:$blue;
-$c-modal__caption-background-transparent:transparentize($blue, 0.15);
-$c-modal__caption-color:$light;
-$c-modal__nav-color:$light;
-$c-modal__nav__icon-background:$charcoal;
+$c-modal-background-color:colour( "beige", 100 );  //$s2;
+$c-modal-border-color:colour( "beige", 300 );  //$s1;
+$c-modal__close-background-color: colour( "grey", 900 );  //$charcoal
+$c-modal__close-color:  colour( "grey", 100 );  //$light
+$c-modal__close-hover-background-color: colour( "grey", 800 );  //lighten($charcoal, 10);
+$c-modal__close-hover-color: colour( "blue", 500 );  //$blue
+$c-modal__caption-background-solid: colour( "blue", 500 );  //$blue
+$c-modal__caption-background-transparent:transparentize(colour( "blue", 500 ), 0.15);
+$c-modal__caption-color:  colour( "grey", 100 );  //$light
+$c-modal__nav-color:  colour( "grey", 100 );  //$light
+$c-modal__nav__icon-background: colour( "grey", 900 );  //$charcoal
 
 // Navigation
 // component/_navigation.mobile.scss
 // component/_navigation.scss
-$c-nav-background-color:                    lighten($charcoal,5);
+$c-nav-background-color:                    colour( "grey", 900 );  //$charcoal
 $c-nav-border-color:                        colour( 'blue' , 700 );
 $c-nav__item--more-background-color:        colour( 'blue' , 700 );
-$c-nav__header-color:                       $light;
-$c-nav__list-color:                         darken($light,10);
-$c-nav__link-color:                         $light;
+$c-nav__header-color:                       colour( "grey", 100 );  //$light
+$c-nav__list-color:                         colour( "grey", 200 );  //darken($light,10)
+$c-nav__link-color:                         colour( "grey", 100 );  //$light
 $c-nav__link-background-color:              transparent;
-$c-nav__link-is-current-background-color:   $blue;
-$c-nav__link-hover-color:                   darken($light, 5);
+$c-nav__link-is-current-background-color:   colour( "blue", 500 );  //$blue
+$c-nav__link-hover-color:                  colour( "grey", 200 );  // darken($light, 5)
 $c-nav__link-hover-background-color:        colour( 'blue' , 800 );
 $c-nav__link-border:                        darken($s3,15);
 // Sticky nav
-$c-nav--sticky-background:                  $s3;
-$c-nav--sticky-border:                      $white;
-$c-nav--sticky-shadow:                      transparentize($s3, 0.15);
+$c-nav--sticky-background:                  colour( "grey", 100 );  //$s3
+$c-nav--sticky-border:                      white;
+$c-nav--sticky-shadow:                      transparentize(colour( "grey", 100 ), 0.15);
 $c-nav--sticky-is-sticky-border:            darken($s3,15);
-$c-nav--sticky__link-background:            $s3;
-$c-nav--sticky__link-color:                 $charcoal;
-$c-nav--sticky__link-border:                darken($s3,15);
-$c-nav--sticky__link-border-hover:          $blue;
-$c-nav--sticky__link-is-current-background: $s3;
-$c-nav--sticky__link-is-current-color:      $charcoal;
-$c-nav--sticky__link-is-current-border:     $teal;
+$c-nav--sticky__link-background:            colour( "grey", 100 );  //$s3
+$c-nav--sticky__link-color:                  colour( "grey", 900 );  //$charcoal
+$c-nav--sticky__link-border:                colour( "grey", 300 );  //darken($s3,15)
+$c-nav--sticky__link-border-hover:          colour( "blue", 500 );  //$blue
+$c-nav--sticky__link-is-current-background: colour( "grey", 100 );  //$s3
+$c-nav--sticky__link-is-current-color:       colour( "grey", 900 );  //$charcoal
+$c-nav--sticky__link-is-current-border:     colour( "blue", 900 ); //$teal
 // Mobile search
-$c-mobile-search-button-color:            $charcoal;
-$c-mobile-search-button-hover-color:      lighten($c-mobile-search-button-color,10);
-$c-mobile-search-button-background-color: $white;
-$c-mobile-search-form-background-color:   $teal;
+$c-mobile-search-button-color:             colour( "grey", 900 );  //$charcoal
+$c-mobile-search-button-hover-color:      colour( "grey", 600 );  //lighten($c-mobile-search-button-color,10)
+$c-mobile-search-button-background-color: white;
+$c-mobile-search-form-background-color:   colour( "blue", 900 ); //$teal
 
 // News
 // component/_news.scss
@@ -549,12 +549,12 @@ $c-pagination__page-background:                   $s2;
 $c-pagination__page-hover-background:             $blue;
 $c-pagination__page-hover-border:                 $blue;
 $c-pagination__page-hover-color:                  $light;
-$c-pagination__page--type-break-background:       $white;
-$c-pagination__page--type-break-hover-background: $white;
+$c-pagination__page--type-break-background:       white;
+$c-pagination__page--type-break-hover-background: white;
 $c-pagination__page--type-break-hover-background: $blue;
 $c-pagination__page--current-background:          $blue;
 $c-pagination__page--current-border:              $blue;
-$c-pagination__page--current-color:               $white;
+$c-pagination__page--current-color:               white;
 
 // Panels
 // component/_panels.scss
@@ -605,7 +605,7 @@ $c-table--striped-odd-background: lighten($s2,2);
 // component/_tabs.scss
 $c-tabs--vertical__tab-active__link-background: $blue;
 $c-tabs--vertical__tab-active__link-color:      $light;
-$c-tabs-background:                             $white;
+$c-tabs-background:                             white;
 $c-tabs-border:                                 $s1;
 $c-tabs-color:                                  $charcoal;
 $c-tabs__link-background:                       darken($light,5);
@@ -614,9 +614,9 @@ $c-tabs__link-hover-background:                 darken($blue,20);
 $c-tabs__link-hover-color:                      $light;
 $c-tabs--dark-background:                       colour( 'blue' , 900 );
 $c-tabs--dark-border:                           colour( 'blue' , 900 );
-$c-tabs--dark-color:                            $white;
+$c-tabs--dark-color:                            white;
 $c-tabs--dark__link-background:                 colour( 'blue' , 800 );
-$c-tabs--dark__link-color:                      $white;
+$c-tabs--dark__link-color:                      white;
 $c-tabs--dark__link-hover-background:           colour( 'blue' , 700 );
 $c-tabs--dark__link-hover-color:                 lighten($blue,15);
 
