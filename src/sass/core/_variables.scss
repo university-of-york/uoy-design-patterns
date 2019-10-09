@@ -591,11 +591,11 @@ $c-tabs--dark__link-hover-color:                colour( 'blue' , 400 ); //lighte
 // Tag
 // component/_tag.scss
 $c-tag-background-color:            colour( "pink", 700 ); //$pink;
-$c-tag-background-color-hover:      colour( "pink", 800 ); //darken($pink,5);
-$c-tag-background-color-alt1:       colour( "pink", 700 ); //darken($pink,10);
-$c-tag-background-color-alt1-hover: colour( "pink", 900 ); //darken($pink,15);
+$c-tag-background-color-hover:      colour( "pink", 600 ); //darken($pink,5);
+$c-tag-background-color-alt1:       colour( "pink", 800 ); //darken($pink,10);
+$c-tag-background-color-alt1-hover: colour( "pink", 600 ); //darken($pink,15);
 $c-tag-background-color-alt2:       colour( "pink", 900 ); //darken($pink,20);
-$c-tag-background-color-alt2-hover: colour( "pink", 900 ); //darken($pink,25);
+$c-tag-background-color-alt2-hover: colour( "pink", 600 ); //darken($pink,25);
 $c-tag-color:                       colour( "grey", 100 );  //$light
 $c-tag-color-hover:                 colour( "grey", 200 );  //darken($light,5)
 
