@@ -44,46 +44,29 @@ $colours:
 // --------------------------------------------------
 
 // Primary colours
-$charcoal:#333;
-$light:#f9f9f9;
-$blue:#00b3eb;
-$pink:#a23479;
-$teal:#0f3d4c;
-$gold:#e4b53c;
+// $charcoal:#333;
+// $light:#f9f9f9;
+// $blue:#00b3eb;
+// $pink:#a23479;
+// $teal:#0f3d4c;
+// $gold:#e4b53c;
 
 // Secondary colours
-$s1:#caccb8;
-$s2:#f0f2e9;
-$s3:#f0f1f4;
+// $s1:#caccb8;
+// $s2:#f0f2e9;
+// $s3:#f0f1f4;
 
 //Utility colours - for warnings, errors, etc
-$red:#b62d2d;
-$green:#54b62d;
-$grey:#666;
-$lightgrey:#ccc;
-$white:#fff;
-$black:#000;
+// $red:#b62d2d;
+// $green:#54b62d;
+// $grey:#666;
+// $lightgrey:#ccc;
+// $white:#fff;
+// $black:#000;
 
 
 //Campus zones colours
 
-// Original choices
-// $zones: (
-// 	1: ("bgcolour": #e86f01, "fgcolour": #000, "label": "Zone 1"),
-// 	2: ("bgcolour": #f9da00, "fgcolour": #000,  "label": "Zone 2"),
-// 	3: ("bgcolour": #dd020e, "fgcolour": #fff,  "label": "Zone 3"),
-// 	4: ("bgcolour": #a00929, "fgcolour": #fff,  "label": "Zone 4"),
-// 	5: ("bgcolour": #e0007a, "fgcolour": #fff,  "label": "Zone 5"),
-// 	6: ("bgcolour": #009ade, "fgcolour": #000, "label":  "Zone 6"),
-// 	7: ("bgcolour": #005492, "fgcolour": #fff,  "label": "Zone 7"),
-// 	8: ("bgcolour": #7f1876, "fgcolour": #fff,  "label": "Zone 8"),
-// 	9: ("bgcolour": #b8c100, "fgcolour": #000,  "label": "Zone 9"),
-// 	10: ("bgcolour": #008735, "fgcolour": #fff,  "label": "Zone 10"),
-// 	km: ("bgcolour": #505050, "fgcolour": #fff,  "label": "King's Manor")
-// );
-
-
-//  From mapbox 
 $zones: (
 	1: ("bgcolour": #f57200, "fgcolour": #000, "label": "Zone 1"),
 	2: ("bgcolour": #ffdf00, "fgcolour": #000,  "label": "Zone 2"),
@@ -97,21 +80,6 @@ $zones: (
 	10: ("bgcolour": #009f4c, "fgcolour": #000,  "label": "Zone 10"),
 	km: ("bgcolour": #505050, "fgcolour": #fff,  "label": "King's Manor")
 );
-
-// As on map
-// $zones: (
-// 	1: ("bgcolour": #FC7908, "fgcolour": #000, "label": "Zone 1"),
-// 	2: ("bgcolour": #FFE608, "fgcolour": #000,  "label": "Zone 2"),
-// 	3: ("bgcolour": #FF2020, "fgcolour": #000,  "label": "Zone 3"),
-// 	4: ("bgcolour": #A70B29, "fgcolour": #fff,  "label": "Zone 4"),
-// 	5: ("bgcolour": #FF39AF, "fgcolour": #000,  "label": "Zone 5"),
-// 	6: ("bgcolour": #08B6F6, "fgcolour": #000, "label":  "Zone 6"),
-// 	7: ("bgcolour": #095181, "fgcolour": #fff,  "label": "Zone 7"),
-// 	8: ("bgcolour": #A319AC, "fgcolour": #fff,  "label": "Zone 8"),
-// 	9: ("bgcolour": #A7E024, "fgcolour": #000,  "label": "Zone 9"),
-// 	10: ("bgcolour": #08AC56, "fgcolour": #000,  "label": "Zone 10"),
-// 	km: ("bgcolour": #505050, "fgcolour": #fff,  "label": "King's Manor")
-// );
 
 // Fonts
 $font-default: 'museo-sans', Helvetica, Arial, sans-serif;
@@ -211,36 +179,36 @@ $link-focus-outline-color:colour( 'blue' );
 
 // Accordion
 // component/_accordion.scss
-$c-accordion__item-border:       lighten($s1, 5);
+$c-accordion__item-border:       colour( "beige", 200 );  //lighten($s1, 5)
 $c-accordion__title-color:       $link-color;
 $c-accordion__title-hover-color: $link-hover-color;
 
 // Alerts
 // component/_alerts.scss
-$c-alert-border:              $charcoal;
-$c-alert-background:          darken($light, 5);
-$c-alert--success-border:     $green;
-$c-alert--success-background: lighten($green, 45);
-$c-alert--info-border:        $blue;
-$c-alert--info-background:    lighten($blue, 45);
-$c-alert--warning-border:     $gold;
-$c-alert--warning-background: lighten($gold, 35);
-$c-alert--danger-border:      $red;
-$c-alert--danger-background:  lighten($red, 45);
+$c-alert-border:               colour( "grey", 900 );  //$charcoal
+$c-alert-background:          colour( "grey", 200 );  //darken($light, 5)
+$c-alert--success-border:     colour( "green", 500 );  //$green
+$c-alert--success-background: colour( "green", 100 );  //lighten($green, 45)
+$c-alert--info-border:        colour( "blue", 500 );  //$blue
+$c-alert--info-background:    colour( "blue", 100 );  //lighten($blue, 45)
+$c-alert--warning-border:     colour( "yellow", 500 );  //$gold
+$c-alert--warning-background: colour( "yellow", 100 );  //lighten($gold, 35)
+$c-alert--danger-border:      colour( "red", 500 );  //$red;
+$c-alert--danger-background:  colour( "red", 100 );  //lighten($red, 45)
 
 // A to Z
 // component/_atoz.scss
-$c-atoz__nav-link-background:           $s2;
-$c-atoz__nav-link-border:               darken($s2,5);
-$c-atoz__nav-link-hover-background:     $blue;
-$c-atoz__nav-link-hover-border:         $blue;
-$c-atoz__nav-link-hover-color:          $light;
-$c-atoz__nav-link--inactive-background: $s3;
-$c-atoz__nav-link--inactive-border:     darken($s3,5);
-$c-atoz__nav-link--inactive-color:      darken($s3,25);
-$c-atoz__letter-border:                 $charcoal;
-$c-atoz__page-border:                   $charcoal;
-$c-atoz__page-background-odd:           darken($light, 5);
+$c-atoz__nav-link-background:          colour( "beige", 100 );  //$s2
+$c-atoz__nav-link-border:               colour( "beige", 200 );  //darken($s2,5) 
+$c-atoz__nav-link-hover-background:      colour( "blue", 500 ); //$blue
+$c-atoz__nav-link-hover-border:          colour( "blue" ); //$blue
+$c-atoz__nav-link-hover-color:          colour( "grey", 100 );  //$light
+$c-atoz__nav-link--inactive-background: colour( "grey", 100 );  //$s3
+$c-atoz__nav-link--inactive-border:     colour( "grey", 200 );  //darken($s3,5)
+$c-atoz__nav-link--inactive-color:      colour( "grey", 700 );  //darken($s3,25)
+$c-atoz__letter-border:                colour( "grey", 900 );  //$charcoal
+$c-atoz__page-border:                   colour( "grey", 900 );  //$charcoal
+$c-atoz__page-background-odd:           colour( "grey", 200 );  //darken($light, 5)
 
 // Audio
 // component/_audio.scss
@@ -248,27 +216,27 @@ $c-atoz__page-background-odd:           darken($light, 5);
 
 // Autocomplete
 // component/_autocomplete.scss
-$c-autocomplete__item-border:                               $lightgrey;
-$c-autocomplete__link-color:                                $charcoal;
-$c-autocomplete__link-background-color:                     $white;
-$c-autocomplete__link-hover-color:                          $blue;
-$c-autocomplete__link-hover-background-color:               $s3;
-$c-autocomplete__subtitle-color:                            $charcoal;
-$c-autocomplete--alt__link-color:                           darken($blue, 10);
-$c-autocomplete--alt__link-even-background-color:           lighten($s1, 19);
-$c-autocomplete--alt__link-hover-color:                     $white;
-$c-autocomplete--alt__link-hover-background-color:          darken($blue, 20);
-$c-autocomplete--alt__link-hover__subtitle-color:           $white;
-$c-autocomplete--alt__link-selected-color:                  $light;
-$c-autocomplete--alt__link-selected-background-color:       $charcoal;
-$c-autocomplete--alt__link-selected-hover-background-color: lighten($charcoal, 7);
-$c-autocomplete--alt__link-selected__subtitle-color:        darken($light, 11);
-$c-autocomplete--alt__subtitle-color:                       $charcoal;
+$c-autocomplete__item-border:                                colour( "grey", 300 );  //$lightgrey;
+$c-autocomplete__link-color:                                colour( "grey", 900 );  //$charcoal
+$c-autocomplete__link-background-color:                     white;
+$c-autocomplete__link-hover-color:                          colour( "blue", 500 ); //$blue
+$c-autocomplete__link-hover-background-color:               colour( "grey", 100 );  //$s3
+$c-autocomplete__subtitle-color:                            colour( "grey", 900 );  //$charcoal
+$c-autocomplete--alt__link-color:                          colour( "blue", 700 );  //darken($blue, 10)
+$c-autocomplete--alt__link-even-background-color:          colour( "beige", 100 );  //lighten($s1, 19)
+$c-autocomplete--alt__link-hover-color:                     white;
+$c-autocomplete--alt__link-hover-background-color:          colour( "blue", 800 );  //darken($blue, 20)
+$c-autocomplete--alt__link-hover__subtitle-color:           white;
+$c-autocomplete--alt__link-selected-color:                   colour( "grey", 100 );  //$light
+$c-autocomplete--alt__link-selected-background-color:       colour( "grey", 900 );  //$charcoal
+$c-autocomplete--alt__link-selected-hover-background-color: colour( "grey", 900 );  //lighten($charcoal, 7)
+$c-autocomplete--alt__link-selected__subtitle-color:        colour( "grey", 200 );  //darken($light, 11)
+$c-autocomplete--alt__subtitle-color:                       colour( "grey", 900 );  //$charcoal
 
 // Block links
 // component/_block-links.scss
-$c-block-link-background-color: $s2;
-$c-block-link-border-color:     lighten($s1,5);
+$c-block-link-background-color: colour( "beige", 100 );  //$s2
+$c-block-link-border-color:     colour( "beige", 300 );  //lighten($s1,5)
 $c-block-link-color:            colour( "blue" , 700 );
 $c-block-link-hover:            colour( "blue" , 800 );
 
@@ -278,13 +246,13 @@ $c-blockquote__image-size:                   120px;
 $c-blockquote--large__image-size:            180px;
 $c-blockquote__image-tiny-ratio:             0.75; // How much should the image shrink on tiny screens?
 $c-blockquote--image-quote-background-color:  colour( "blue", 800 );
-$c-blockquote--image-quote-color:            $light;
-$c-blockquote--pull-quote-color:             $pink;
-$c-blockquote__content--alt-1-2-color:       $white;
-$c-blockquote__cite-color:                   $charcoal;
-$c-blockquote__cite-color--alt:              $light;
-$c-blockquote-link-color:  $link-color; 
-$c-blockquote-link-hover: $link-hover-color; 
+$c-blockquote--image-quote-color:            colour( "grey", 100 );  //$light
+$c-blockquote--pull-quote-color:             colour( "pink", 700 );  //$pink
+$c-blockquote__content--alt-1-2-color:       white;
+$c-blockquote__cite-color:                    colour( "grey", 900 );  //$charcoal
+$c-blockquote__cite-color--alt:              colour( "grey", 100 );  //$light
+$c-blockquote-link-color:  colour( "blue", 700 ); 
+$c-blockquote-link-hover: colour( "blue", 800 );
 $c-blockquote--image-quote-link-color:  inherit; 
 $c-blockquote--image-quote-link-hover:           colour( "blue" , 300 ); 
 $c-blockquote--pull-quote-link-color:  colour( "pink", 700 ); 
@@ -292,37 +260,37 @@ $c-blockquote--pull-quote-link-hover:           colour( "pink" , 800 );
 
 // Breadcrumb
 // component/_breadcrumb.scss
-$c-breadcrumb-color:$charcoal;
+$c-breadcrumb-color:colour( "grey", 900 );  //$charcoal
 $c-breadcrumb-background-color:transparent;
-$c-breadcrumb__link-color:$charcoal;
+$c-breadcrumb__link-color:colour( "grey", 900 );  //$charcoal
 
 // Buttons
 // component/_buttons.scss
 $c-btn: (
   default: (
-    bg:$pink,
-    text:$light
+    bg: colour( "pink", 700 ),
+    text: colour( "grey", 100 )
   ),
   secondary: (
-    bg:$teal,
-    text:$light
+    bg:  colour( "blue" , 900 ),
+    text: colour( "grey", 100 )
   ),
   success: (
-    bg:$green,
-    text:$light
+    bg: colour( "green", 500 ),
+    text: colour( "grey", 100 )
   ),
   danger: (
-    bg:$red,
-    text:$light
+    bg: colour( "red", 500 ),
+    text: colour( "grey", 100 )
   )
 );
 
 // Cookie banner
 // component/_cookie-banner.scss
-$c-cookie-banner__background:       lighten($teal,10);
-$c-cookie-banner__color:            $white;
-$c-cookie-banner__link-color:       $white;
-$c-cookie-banner__link-hover-color: $blue;
+$c-cookie-banner__background:      colour( "blue", 800 ); //lighten($teal,10)
+$c-cookie-banner__color:            white;
+$c-cookie-banner__link-color:       white;
+$c-cookie-banner__link-hover-color: colour( "blue", 500 ); //$blue
 
 // Clearing tables
 // component/_clearing-tables.scss
@@ -334,7 +302,7 @@ $c-cookie-banner__link-hover-color: $blue;
 
 // Events
 // component/_events.scss
-$c-event-border:$charcoal;
+$c-event-border: colour( "grey", 900 ); //$charcoal
 
 // Figures
 // component/_figures.scss
@@ -342,83 +310,83 @@ $c-figure__caption-solid:                 colour( 'grey' , 900 );
 $c-figure__caption-transparent:           colour( 'grey' , 900 );
 $c-figure__caption-color:                 white;
 $c-figure__caption--below-background:     transparent;
-$c-figure__caption--below-color:          lighten($charcoal,20);
-$c-figure__caption--below-alt-color:      darken($light,20);
-$c-figure__content-solid:                 $teal;
-$c-figure__content-transparent:           transparentize($teal, 0.10);
-$c-figure__content-color:                 $light;
-$c-figure__content-link-color:            lighten($blue,10);
-$c-figure__content-link-hover-color:      lighten($blue,25);
-$c-figure__content--blue-solid:           $blue;
-$c-figure__content--blue-transparent:     transparentize($blue, 0.25);
-$c-figure__content--pink-solid:           $pink;
-$c-figure__content--pink-transparent:     transparentize($pink, 0.25);
-$c-figure__content--teal-solid:           $teal;
-$c-figure__content--teal-transparent:     transparentize($teal, 0.25);
-$c-figure__content--gold-solid:           $gold;
-$c-figure__content--gold-transparent:     transparentize($gold, 0.25);
-$c-figure__content--charcoal-solid:       $charcoal;
-$c-figure__content--charcoal-transparent: transparentize($charcoal, 0.25);
+$c-figure__caption--below-color:          colour( "grey", 700 ); //lighten($charcoal,20)
+$c-figure__caption--below-alt-color:     colour( 'grey' , 300 ); //darken($light,20)
+$c-figure__content-solid:                  colour( "blue", 900 ); //$teal
+$c-figure__content-transparent:           transparentize(colour( "blue", 900 ), 0.10);
+$c-figure__content-color:                  colour( "grey", 100 );  //$light
+$c-figure__content-link-color:            colour( "blue", 400 ); //lighten($blue,10)
+$c-figure__content-link-hover-color:      colour( "blue", 300 ); //lighten($blue,25)
+$c-figure__content--blue-solid:           colour( "blue", 500 ); //$blue
+$c-figure__content--blue-transparent:     transparentize(colour( "blue", 500 ), 0.25);
+$c-figure__content--pink-solid:           colour( "pink", 700 ); //$pink
+$c-figure__content--pink-transparent:     transparentize(colour( "pink", 700 ), 0.25);
+$c-figure__content--teal-solid:           colour( "blue", 900 ); //$teal
+$c-figure__content--teal-transparent:     transparentize(colour( "blue", 900 ), 0.25);
+$c-figure__content--gold-solid:          colour("yellow", 500 ); //$gold
+$c-figure__content--gold-transparent:     transparentize(colour("yellow", 500 ), 0.25);
+$c-figure__content--charcoal-solid:       colour( "grey", 900 );  //$charcoal
+$c-figure__content--charcoal-transparent: transparentize(colour( "grey", 900 ), 0.25);
 
 // Footer
 // component/_footer.scss
-$c-footer-background-color:       $charcoal;
-$c-footer-color:                  darken($light,10);
-$c-footer-main__link-color:       darken($light,10);
-$c-footer-main__link-hover-color: $blue;
+$c-footer-background-color:       colour( "grey", 900 );  //$charcoal
+$c-footer-color:                  colour( 'grey' , 200 ); //darken($light,10)
+$c-footer-main__link-color:        colour( 'grey' , 200 ); //darken($light,10)
+$c-footer-main__link-hover-color: colour( "blue", 500 ); //$blue
 $c-footer-main__link--edit-color: colour( 'grey' , 200 );
 
 // Forms
 // component/_forms.scss
-$c-form--bordered-border:                      $blue;
-$c-form--panel-color:                          $light;
-$c-form__input-border:                         lighten($charcoal,50);
-$c-form__input-color:                          $charcoal;
-$c-form__input-background-color:               $white;
-$c-form__input--select-after-color:            $light;
-$c-form__input--select-after-background-color: $charcoal;
-$c-form-invalid-color:                         $red;
+$c-form--bordered-border:                      colour( "blue", 500 ); //$blue
+$c-form--panel-color:                          colour( "grey", 100 );  //$light
+$c-form__input-border:                         colour( "grey", 400 );  //lighten($charcoal,50)
+$c-form__input-color:                          colour( "grey", 900 );  //$charcoal
+$c-form__input-background-color:               white;
+$c-form__input--select-after-color:            colour( "grey", 100 );  //$light
+$c-form__input--select-after-background-color: colour( "grey", 900 );  //$charcoal
+$c-form-invalid-color:                        colour( "red", 500 ); // $red
 
 // Gallery
 // component/_gallery.scss
-$c-gallery-item-border-color: $charcoal;
-$c-gallery-item-color:        $charcoal;
+$c-gallery-item-border-color: colour( "grey", 900 );  //$charcoal
+$c-gallery-item-color:        colour( "grey", 900 );  //$charcoal
 $c-gallery-item-size:         140px;
 $c-gallery-item-border-width: 1px;
 
 // Global notice
 // component/_global-notices.scss
-$c-global-notice-background:              $s1;
-$c-global-notice-border:                  $grey;
-$c-global-notice-color:                   $black;
-$c-global-notice--highlighted-background: $pink;
-$c-global-notice--highlighted-color:      $white;
+$c-global-notice-background:              colour( "beige", 300 );  //$s1
+$c-global-notice-border:                  colour( "grey", 800 );  //$grey
+$c-global-notice-color:                   colour( "grey", 900 ); //$black
+$c-global-notice--highlighted-background: colour( "pink", 700 ); //$pink
+$c-global-notice--highlighted-color:      white;
 
 // hCard
 // component/_hcard.scss
-$h-card--mini-border:        $pink;
-$h-card--mini-background:    $light;
-$h-card--mini-color:         $charcoal;
-$h-card--byline-border:      darken($light, 10);
-$h-card--article-border:     $s1;
-$h-card--article-background: $s2;
-$h-card--article-color:      $charcoal;
+$h-card--mini-border:        colour( "pink", 700 ); //$pink
+$h-card--mini-background:    colour( "grey", 100 );  //$light
+$h-card--mini-color:         colour( "grey", 900 );  //$charcoal
+$h-card--byline-border:      colour( 'grey' , 200 ); //darken($light,10)
+$h-card--article-border:      colour( "beige", 300 );  //$s1;
+$h-card--article-background: colour( "beige", 100 );  //$s2;
+$h-card--article-color:      colour( "grey", 900 );  //$charcoal
 $h-card__figure-size:        140px;
 
 // Header
 // component/_header.scss
-$c-main-header-background:        $white;
-$c-main-header-color:             $charcoal;
-$c-main-header--alt-background:   $charcoal;
-$c-main-header--alt-color:   $white;
+$c-main-header-background:        white;
+$c-main-header-color:             colour( "grey", 900 );  //$charcoal
+$c-main-header--alt-background:   colour( "grey", 900 );  //$charcoal
+$c-main-header--alt-color:   white;
 $c-main-header__logo-size:        200px;
 $c-main-header__logo-size--small: 152px;
 
 // Hero
 // component/_hero.scss
-$c-hero-background:                   $charcoal;
-$c-hero__content-color:               $light;
-$c-hero__caption-background-solid:    $black;
+$c-hero-background:                   colour( "grey", 900 );  //$charcoal
+$c-hero__content-color:                colour( "grey", 100 );  //$light;
+$c-hero__caption-background-solid:    colour( "grey", 900 );  //$black
 $c-hero__caption-background-alpha:    transparentize($c-hero__caption-background-solid, 0.4);
 $c-hero__caption-background-gradient: linear-gradient(
                                         transparent,
@@ -429,39 +397,39 @@ $c-hero__caption-background-gradient: linear-gradient(
 
 // Icons
 // component/_icons.scss
-$c-icon--inverse-color: $light;
+$c-icon--inverse-color: colour( "grey", 100 );  //$light;
 
 // Key facts
 // component/_key-fact.scss
-$c-key-fact-color:                      $teal;
-$c-key-fact-hover-color:                lighten($teal,15);
-$c-key-fact__icon-color:                lighten($teal,15);
-$c-key-fact__icon-hover-color:          lighten($teal,25);
-$c-key-fact__title-color:               $teal;
-$c-key-fact__title-hover-color:         lighten($teal,15);
-$c-key-fact__title-highlight-color:     $blue;
-$c-key-fact-alt-color:                  darken($light,10);
-$c-key-fact-alt-hover-color:            darken($light,10);
-$c-key-fact-alt-background-color:       $teal;
-$c-key-fact-alt-background-hover-color: lighten($teal,5);
-$c-key-fact-alt__title-color:           $light;
-$c-key-fact__learnMoreLink:             $blue;
+$c-key-fact-color:                      colour( "blue", 900 ); //$teal
+$c-key-fact-hover-color:               colour( "blue", 700 );  // lighten($teal,15)
+$c-key-fact__icon-color:                colour( "blue", 700 );  // lighten($teal,15)
+$c-key-fact__icon-hover-color:           colour( "blue", 600 );  // lighten($teal,25)
+$c-key-fact__title-color:              colour( "blue", 900 ); //$teal
+$c-key-fact__title-hover-color:          colour( "blue", 700 );  // lighten($teal,15)
+$c-key-fact__title-highlight-color:     colour( "blue", 500 );  //$blue
+$c-key-fact-alt-color:                  colour( 'grey' , 200 ); //darken($light,10)
+$c-key-fact-alt-hover-color:            colour( 'grey' , 200 ); //darken($light,10)
+$c-key-fact-alt-background-color:       colour( "blue", 900 ); //$teal
+$c-key-fact-alt-background-hover-color: colour( "blue", 800 );  //lighten($teal,5)
+$c-key-fact-alt__title-color:           colour( "grey", 100 );  //$light
+$c-key-fact__learnMoreLink:             colour( "blue", 500 );  //$blue
 
 // Labels
 // component/_label.scss
-$c-label-color:       $grey;
-$c-label-color-hover: lighten($c-label-color,10);
+$c-label-color:      colour( "grey", 800 );  //$grey
+$c-label-color-hover:  colour( "grey", 600 ); //lighten($c-label-color,10)
 
 // Listings
 // component/_listings.scss
 $c-listings__thumbnail-size:    100px;
-$c-listings-item-border-color:  $blue;
+$c-listings-item-border-color:  colour( "blue", 500 );  //$blue
 $c-listings__title-color:       $link-color;
-$c-listings__title-hover-color: $blue;
-$c-listings__label-color:       $grey;
-$c-listings__date-color:        lighten($charcoal,4);
-$c-listings__description-color: $charcoal;
-$c-listings__url-color:         $grey;
+$c-listings__title-hover-color: colour( "blue", 500 );  //$blue
+$c-listings__label-color:       colour( "grey", 800 );  //$grey
+$c-listings__date-color:        colour( "grey", 900 );  //lighten($charcoal,4)
+$c-listings__description-color: colour( "grey", 900 );  //$charcoal
+$c-listings__url-color:         colour( "grey", 800 );  //$grey
 
 // Lists
 // component/_lists.scss
@@ -469,106 +437,106 @@ $c-listings__url-color:         $grey;
 
 // Map
 // component/_map.scss
-$c-map__fsbutton-color:            $charcoal;
-$c-map__fsbutton-background:       $s3;
-$c-map__fsbutton-hover-background: darken($s3, 5);
+$c-map__fsbutton-color:           colour( "grey", 900 );  //$charcoal
+$c-map__fsbutton-background:       colour( "grey", 100 );  //$s3
+$c-map__fsbutton-hover-background:  colour( "grey", 200 );  //darken($s3, 5);
 
 // Modals
 // component/_modal.scss
-$c-modal-background-color:$s2;
-$c-modal-border-color:$s1;
-$c-modal__close-background-color:$charcoal;
-$c-modal__close-color:$light;
-$c-modal__close-hover-background-color:lighten($charcoal, 10);
-$c-modal__close-hover-color:$blue;
-$c-modal__caption-background-solid:$blue;
-$c-modal__caption-background-transparent:transparentize($blue, 0.15);
-$c-modal__caption-color:$light;
-$c-modal__nav-color:$light;
-$c-modal__nav__icon-background:$charcoal;
+$c-modal-background-color:colour( "beige", 100 );  //$s2;
+$c-modal-border-color:colour( "beige", 300 );  //$s1;
+$c-modal__close-background-color: colour( "grey", 900 );  //$charcoal
+$c-modal__close-color:  colour( "grey", 100 );  //$light
+$c-modal__close-hover-background-color: colour( "grey", 800 );  //lighten($charcoal, 10);
+$c-modal__close-hover-color: colour( "blue", 500 );  //$blue
+$c-modal__caption-background-solid: colour( "blue", 500 );  //$blue
+$c-modal__caption-background-transparent:transparentize(colour( "blue", 500 ), 0.15);
+$c-modal__caption-color:  colour( "grey", 100 );  //$light
+$c-modal__nav-color:  colour( "grey", 100 );  //$light
+$c-modal__nav__icon-background: colour( "grey", 900 );  //$charcoal
 
 // Navigation
 // component/_navigation.mobile.scss
 // component/_navigation.scss
-$c-nav-background-color:                    lighten($charcoal,5);
+$c-nav-background-color:                    colour( "grey", 900 );  //$charcoal
 $c-nav-border-color:                        colour( 'blue' , 700 );
 $c-nav__item--more-background-color:        colour( 'blue' , 700 );
-$c-nav__header-color:                       $light;
-$c-nav__list-color:                         darken($light,10);
-$c-nav__link-color:                         $light;
+$c-nav__header-color:                       colour( "grey", 100 );  //$light
+$c-nav__list-color:                         colour( "grey", 200 );  //darken($light,10)
+$c-nav__link-color:                         colour( "grey", 100 );  //$light
 $c-nav__link-background-color:              transparent;
-$c-nav__link-is-current-background-color:   $blue;
-$c-nav__link-hover-color:                   darken($light, 5);
+$c-nav__link-is-current-background-color:   colour( "blue", 500 );  //$blue
+$c-nav__link-hover-color:                  colour( "grey", 200 );  // darken($light, 5)
 $c-nav__link-hover-background-color:        colour( 'blue' , 800 );
-$c-nav__link-border:                        darken($s3,15);
+$c-nav__link-border:                        colour( "grey", 300 );  //darken($s3,15)
 // Sticky nav
-$c-nav--sticky-background:                  $s3;
-$c-nav--sticky-border:                      $white;
-$c-nav--sticky-shadow:                      transparentize($s3, 0.15);
-$c-nav--sticky-is-sticky-border:            darken($s3,15);
-$c-nav--sticky__link-background:            $s3;
-$c-nav--sticky__link-color:                 $charcoal;
-$c-nav--sticky__link-border:                darken($s3,15);
-$c-nav--sticky__link-border-hover:          $blue;
-$c-nav--sticky__link-is-current-background: $s3;
-$c-nav--sticky__link-is-current-color:      $charcoal;
-$c-nav--sticky__link-is-current-border:     $teal;
+$c-nav--sticky-background:                  colour( "grey", 100 );  //$s3
+$c-nav--sticky-border:                      white;
+$c-nav--sticky-shadow:                      transparentize(colour( "grey", 100 ), 0.15);
+$c-nav--sticky-is-sticky-border:            colour( "grey", 300 );  //darken($s3,15)
+$c-nav--sticky__link-background:            colour( "grey", 100 );  //$s3
+$c-nav--sticky__link-color:                  colour( "grey", 900 );  //$charcoal
+$c-nav--sticky__link-border:                colour( "grey", 300 );  //darken($s3,15)
+$c-nav--sticky__link-border-hover:          colour( "blue", 500 );  //$blue
+$c-nav--sticky__link-is-current-background: colour( "grey", 100 );  //$s3
+$c-nav--sticky__link-is-current-color:       colour( "grey", 900 );  //$charcoal
+$c-nav--sticky__link-is-current-border:     colour( "blue", 900 ); //$teal
 // Mobile search
-$c-mobile-search-button-color:            $charcoal;
-$c-mobile-search-button-hover-color:      lighten($c-mobile-search-button-color,10);
-$c-mobile-search-button-background-color: $white;
-$c-mobile-search-form-background-color:   $teal;
+$c-mobile-search-button-color:             colour( "grey", 900 );  //$charcoal
+$c-mobile-search-button-hover-color:      colour( "grey", 600 );  //lighten($c-mobile-search-button-color,10)
+$c-mobile-search-button-background-color: white;
+$c-mobile-search-form-background-color:   colour( "blue", 900 ); //$teal
 
 // News
 // component/_news.scss
 $c-news__thumbnail-size:              100px;
-$c-news-color:                        $charcoal;
-$c-news-color-alt:                    $light;
+$c-news-color:                         colour( "grey", 900 );  //$charcoal
+$c-news-color-alt:                    colour( "grey", 100 );  //$light
 $c-news--excerpt__title-color:        $link-color;
 $c-news--excerpt__title-hover-color:  $link-hover-color;
-$c-news--excerpt__category-color:     lighten($charcoal,10);
-$c-news--excerpt__meta-color:         lighten($charcoal,30);
-$c-news--excerpt__teaser-color:       lighten($charcoal,5);
-$c-news--event__meta-color:           $charcoal;
+$c-news--excerpt__category-color:     colour( "grey", 800 );  //lighten($charcoal,10)
+$c-news--excerpt__meta-color:         colour( "grey", 600 );  //lighten($charcoal,30)
+$c-news--excerpt__teaser-color:       colour( "grey", 900 );  //lighten($charcoal,5)
+$c-news--event__meta-color:           colour( "grey", 900 );  //$charcoal
 $c-news--listing__title-color:        $link-color;
 $c-news--listing__title-hover-color:  $link-hover-color;
-$c-news--listing__date-color:         lighten($charcoal,15);
-$c-news--listing__date-color-alt:     darken($light,30);
-$c-news__license-color:               lighten($charcoal,25);
-$c-news__license-border:              $s3;
+$c-news--listing__date-color:         colour( "grey", 800 );  //lighten($charcoal,15)
+$c-news--listing__date-color-alt:     colour( "grey", 400 );  //darken($light,30);
+$c-news__license-color:               colour( "grey", 700 );  //llighten($charcoal,25)
+$c-news__license-border:              colour( "grey", 100 );  //$s3
 
 // Page title
 // component/_page-title.scss
-$c-page-title__background-color: lighten($charcoal,5);
-$c-page-title__link-color:       $light;
+$c-page-title__background-color: colour( "grey", 900 );  //$charcoal
+$c-page-title__link-color:       colour( "grey", 100 );  //$light
 
 // Pagination
 // component/_pagination.scss
-$c-pagination__page-border:                       darken($s2,5);
-$c-pagination__page-background:                   $s2;
-$c-pagination__page-hover-background:             $blue;
-$c-pagination__page-hover-border:                 $blue;
-$c-pagination__page-hover-color:                  $light;
-$c-pagination__page--type-break-background:       $white;
-$c-pagination__page--type-break-hover-background: $white;
-$c-pagination__page--type-break-hover-background: $blue;
-$c-pagination__page--current-background:          $blue;
-$c-pagination__page--current-border:              $blue;
-$c-pagination__page--current-color:               $white;
+$c-pagination__page-border:                       colour( "beige", 200 );  //darken($s2,5)
+$c-pagination__page-background:                   colour( "beige", 100 );  //$s2;
+$c-pagination__page-hover-background:             colour( "blue", 500 );  //$blue
+$c-pagination__page-hover-border:                 colour( "blue", 500 );  //$blue
+$c-pagination__page-hover-color:                  colour( "grey", 100 );  //$light
+$c-pagination__page--type-break-background:       white;
+$c-pagination__page--type-break-hover-background: white;
+$c-pagination__page--type-break-hover-background: colour( "blue", 500 );  //$blue
+$c-pagination__page--current-background:          colour( "blue", 500 );  //$blue
+$c-pagination__page--current-border:              colour( "blue", 500 );  //$blue
+$c-pagination__page--current-color:               white;
 
 // Panels
 // component/_panels.scss
-$c-panel-background:            $s2;
-$c-panel-border:                $s1;
-$c-panel-color:                 $charcoal;
+$c-panel-background:            colour( "beige", 100 );  //$s2;
+$c-panel-border:               colour( "beige", 300 );  //$s1
+$c-panel-color:                 colour( "grey", 900 );  //$charcoal
 $c-panel-link-color:            colour( 'blue' , 700 );
 $c-panel-link-hover:            colour( 'blue' , 800 );
 
-$c-panel--highlight-background: $teal;
-$c-panel--highlight-border:     lighten($teal,10);
-$c-panel--highlight-color:      $light;
-$c-panel--highlight-link:       lighten($blue,5%);
-$c-panel--highlight-hover:      lighten($blue,15%);
+$c-panel--highlight-background: colour( "blue", 900 ); //$teal
+$c-panel--highlight-border:     colour( "blue", 800 ); //lighten($teal,10)
+$c-panel--highlight-color:      colour( "grey", 100 );  //$light
+$c-panel--highlight-link:       colour( "blue", 500 ); //lighten($blue,5%)
+$c-panel--highlight-hover:     colour( "blue", 400 ); // lighten($blue,15%);
 
 // Show more
 // component/_showmore.scss
@@ -576,70 +544,70 @@ $c-panel--highlight-hover:      lighten($blue,15%);
 
 // Signposts
 // component/_signposts.scss
-$c-signpost__icon-color: $pink;
+$c-signpost__icon-color: colour( "pink", 700 ); //$pink;
 
 // Structural nav
 // component/_structural-nav.scss
-$c-structural-nav__item-border:           $charcoal;
-$c-structural-nav__item-hover-background: #eee;
+$c-structural-nav__item-border:           colour( "grey", 900 );  //$charcoal
+$c-structural-nav__item-hover-background: colour( "grey", 200 );  // #eee;
 
 // Subnavigation
 // component/_subnavigation.scss
-$c-subnav__link-color:                  lighten($charcoal,20);
-$c-subnav__link-clor:                   $teal; // Possibly not needed?
-$c-subnav__link-is-current-background:  $blue;
-$c-subnav__link-is-current-color:       $light;
+$c-subnav__link-color:                  colour( "grey", 700 );  //lighten($charcoal,20)
+$c-subnav__link-color:                   colour( "blue", 900 ); //$teal - Possibly not needed?
+$c-subnav__link-is-current-background:  colour( "blue", 500 ); //$blue
+$c-subnav__link-is-current-color:       colour( "grey", 100 );  //$light
 $c-subnav__link-hover-color:            colour( "blue" , 700 );
-$c-subnav__title-link-color:            $teal;
+$c-subnav__title-link-color:            colour( "blue", 900 ); //$teal
 
 // Tables
 // component/_tables.scss
-$table-th-color:                  $teal;
-$table-th-border:                 $blue;
-$table-tbody-th-background:       $s3;
-$table-tbody-th-color:            lighten($teal,5);
-$table-td-border:                 lighten($blue,15);
-$c-table--striped-odd-background: lighten($s2,2);
+$table-th-color:                  colour( "blue", 900 ); //$teal
+$table-th-border:                 colour( "blue", 500 ); //$blue
+$table-tbody-th-background:       colour( "grey", 100 );  //$s3
+$table-tbody-th-color:           colour( "blue", 800 ); // lighten($teal,5)
+$table-td-border:                  colour( "blue", 700 ); //lighten($blue,15)
+$c-table--striped-odd-background: colour( "beige", 100 );//lighten($s2,2)
 
 // Tabs
 // component/_tabs.scss
-$c-tabs--vertical__tab-active__link-background: $blue;
-$c-tabs--vertical__tab-active__link-color:      $light;
-$c-tabs-background:                             $white;
-$c-tabs-border:                                 $s1;
-$c-tabs-color:                                  $charcoal;
-$c-tabs__link-background:                       darken($light,5);
-$c-tabs__link-color:                            $teal;
-$c-tabs__link-hover-background:                 darken($blue,20);
-$c-tabs__link-hover-color:                      $light;
+$c-tabs--vertical__tab-active__link-background: colour( "blue", 500 ); //$blue
+$c-tabs--vertical__tab-active__link-color:      colour( "grey", 100 );  //$light
+$c-tabs-background:                             white;
+$c-tabs-border:                                 colour( "beige", 300 );  //$s1
+$c-tabs-color:                                  colour( "grey", 900 );  //$charcoal
+$c-tabs__link-background:                       colour( "grey", 200 );  //darken($light,5)
+$c-tabs__link-color:                            colour( "blue", 900 ); //$teal
+$c-tabs__link-hover-background:                  colour( 'blue' , 700 ); //darken($blue,20)
+$c-tabs__link-hover-color:                      colour( "grey", 100 );  //$light
 $c-tabs--dark-background:                       colour( 'blue' , 900 );
 $c-tabs--dark-border:                           colour( 'blue' , 900 );
-$c-tabs--dark-color:                            $white;
+$c-tabs--dark-color:                            white;
 $c-tabs--dark__link-background:                 colour( 'blue' , 800 );
-$c-tabs--dark__link-color:                      $white;
+$c-tabs--dark__link-color:                      white;
 $c-tabs--dark__link-hover-background:           colour( 'blue' , 700 );
-$c-tabs--dark__link-hover-color:                 lighten($blue,15);
+$c-tabs--dark__link-hover-color:                colour( 'blue' , 400 ); //lighten($blue,15)
 
 // Tag
 // component/_tag.scss
-$c-tag-background-color:            $pink;
-$c-tag-background-color-hover:      darken($pink,5);
-$c-tag-background-color-alt1:       darken($pink,10);
-$c-tag-background-color-alt1-hover: darken($pink,15);
-$c-tag-background-color-alt2:       darken($pink,20);
-$c-tag-background-color-alt2-hover: darken($pink,25);
-$c-tag-color:                       $light;
-$c-tag-color-hover:                 darken($light,5);
+$c-tag-background-color:            colour( "pink", 700 ); //$pink;
+$c-tag-background-color-hover:      colour( "pink", 600 ); //darken($pink,5);
+$c-tag-background-color-alt1:       colour( "pink", 800 ); //darken($pink,10);
+$c-tag-background-color-alt1-hover: colour( "pink", 600 ); //darken($pink,15);
+$c-tag-background-color-alt2:       colour( "pink", 900 ); //darken($pink,20);
+$c-tag-background-color-alt2-hover: colour( "pink", 600 ); //darken($pink,25);
+$c-tag-color:                       colour( "grey", 100 );  //$light
+$c-tag-color-hover:                 colour( "grey", 200 );  //darken($light,5)
 
 // Utility navigation
 // component/_utility-nav.scss
-$c-utility-nav__link-color:                    $charcoal;
-$c-utility-nav__link-hover-color:              $blue;
-$c-utility-nav__link-is-open-color:            $light;
-$c-utility-nav__link-is-open-background-color: lighten($teal,10);
-$c-utility-nav__subnav-background-color:       lighten($teal,10);
-$c-utility-nav__sublink-color:                 $light;
-$c-utility-nav__sublink-hover-color:           lighten($blue, 10);
+$c-utility-nav__link-color:                    colour( "grey", 900 );  //$charcoal
+$c-utility-nav__link-hover-color:              colour( "blue", 500 ); //$blue
+$c-utility-nav__link-is-open-color:            colour( "grey", 100 );  //$light
+$c-utility-nav__link-is-open-background-color: colour( "blue", 800 ); //lighten($teal,10)
+$c-utility-nav__subnav-background-color:       colour( "blue", 800 ); //lighten($teal,10)
+$c-utility-nav__sublink-color:                 colour( "grey", 100 );  //$light
+$c-utility-nav__sublink-hover-color:           colour( "blue", 400 ); //lighten($blue, 10);
 
 // Video
 // component/_video.scss
@@ -649,31 +617,31 @@ $c-utility-nav__sublink-hover-color:           lighten($blue, 10);
 
 // Skip link
 // object/_accessibility.scss
-$o-skip-link-color:            $light;
-$o-skip-link-background-color: lighten($teal,10);
-$o-skip-link-background-hover: lighten($teal,5);
+$o-skip-link-color:           colour( "grey", 100 );  //$light
+$o-skip-link-background-color: colour( "blue", 800 ); //lighten($teal,10)
+$o-skip-link-background-hover: colour( "blue", 800 ); // lighten($teal,5)
 
 // Grid
 // object/_grids.scss
 $o-grid__row-background-color:       transparent;
-$o-grid__row-border-color:           $charcoal;
-$o-grid__row--alt1-background-color: $teal;
-$o-grid__row--alt1-border-color:     $blue;
-$o-grid__row--alt1-color:            $light;
-$o-grid__row--alt1-hr-color:         $blue;
-$o-grid__row--alt1-link-color:       lighten($blue,5);
-$o-grid__row--alt1-link-hover-color: lighten($blue,15);
-$o-grid__row--alt2-background-color: darken($teal,5);
-$o-grid__row--alt2-border-color:     $teal;
-$o-grid__row--alt2-color:            $light;
-$o-grid__row--alt2-hr-color:         $blue;
-$o-grid__row--alt2-link-color:       lighten($blue,5);
-$o-grid__row--alt2-link-hover-color: lighten($blue,15);
-$o-grid__row--alt3-background-color: $s2;
-$o-grid__row--alt3-border-color:     $s1;
+$o-grid__row-border-color:           colour( "grey", 900 );  //$charcoal
+$o-grid__row--alt1-background-color: colour( "blue", 900 ); //$teal
+$o-grid__row--alt1-border-color:      colour( "blue", 500 ); //$blue
+$o-grid__row--alt1-color:            colour( "grey", 100 );  //$light
+$o-grid__row--alt1-hr-color:          colour( "blue", 500 ); //$blue
+$o-grid__row--alt1-link-color:      colour( "blue", 500 ); //lighten($blue,5)
+$o-grid__row--alt1-link-hover-color: colour( 'blue' , 400 ); //lighten($blue,15)
+$o-grid__row--alt2-background-color: colour( "blue" , 900 ); //darken($teal,5)
+$o-grid__row--alt2-border-color:    colour( "blue", 900 ); //$teal
+$o-grid__row--alt2-color:            colour( "grey", 100 );  //$light
+$o-grid__row--alt2-hr-color:          colour( "blue", 500 ); //$blue
+$o-grid__row--alt2-link-color:       colour( "blue", 500 ); //lighten($blue,5)
+$o-grid__row--alt2-link-hover-color: colour( 'blue' , 400 ); //lighten($blue,15)
+$o-grid__row--alt3-background-color: colour( "beige", 100 );  //$s2
+$o-grid__row--alt3-border-color:     colour( "beige", 300 );  //$s1;
 $o-grid__row--alt3-link-color:       colour( "blue" , 700 );
 $o-grid__row--alt3-link-hover-color: colour( "blue" , 800 );
-$o-grid__row--divider-color:         $lightgrey;
+$o-grid__row--divider-color:         colour( "grey", 300 );  //$lightgrey;
 
 // Media
 

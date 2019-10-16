@@ -25,7 +25,7 @@
 .header--underline {
   padding-bottom:$base-spacing/2;
   margin-bottom:$base-spacing;
-  border-bottom:1px solid darken($light, 10);
+  border-bottom:1px solid colour( "grey", 200 );  //$darken($light, 10);
 }
 
 .right {
