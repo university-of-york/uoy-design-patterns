@@ -59,7 +59,7 @@
   justify-content: space-between;
   align-items: center;
   .c-icon {
-    color:$light;
+    color: colour( "grey", 100 );  //$light
   }
   @include mq('medium', '+') {
     margin:15px 0;

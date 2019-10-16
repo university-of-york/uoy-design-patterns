@@ -173,7 +173,7 @@
     margin-top:0;
   }
   .c-subnav__link, a {
-    color:$c-subnav__link-clor; // Why wuold there be a subnav__link inside a nav__title?
+    color:$c-subnav__link-color; // Why would there be a subnav__link inside a nav__title?
   }
   .c-nav.is-open & {
     display:block;
@@ -268,7 +268,7 @@
   }
   .c-nav.is-open & {
     &:hover {
-      color:lighten($blue,10);
+      color:  colour( "blue", 400 ); //lighten($blue,10)
       background-color:transparent;
     }
   }

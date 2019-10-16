@@ -4,7 +4,7 @@
 .c-footer-main {
   background-color:$c-footer-background-color;
   color:$c-footer-color;
-  border-top:2px solid $blue;
+  border-top:2px solid colour( "blue", 500 );  //$blue
   padding:$base-spacing 0;
   a {
     @include transition('color');

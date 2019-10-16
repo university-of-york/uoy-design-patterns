@@ -108,7 +108,7 @@
     // max-width:100%;
     // display:block;
     padding:$base-spacing/4 $base-spacing/2;
-    background:$blue;
+    background: colour( "blue", 500 ); //blue
   }
   // Set link colour to caption text colour
   a,a:hover,a:active { color:inherit; }
