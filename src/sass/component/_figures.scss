@@ -289,18 +289,15 @@
   }
 }
 // Content colours
-.c-figure__content--blue {
-  background-color:$c-figure__content--blue-solid;
-  background-color:$c-figure__content--blue-transparent;
-}
 .c-figure__content--pink {
   background-color:$c-figure__content--pink-solid;
   background-color:$c-figure__content--pink-transparent;
 }
-.c-figure__content--teal {
+.c-figure__content--teal,
+.c-figure__content--blue {
   background-color:$c-figure__content--teal-solid;
   background-color:$c-figure__content--teal-transparent;
-}
+} // --blue to be removed later
 .c-figure__content--gold {
   background-color:$c-figure__content--gold-solid;
   background-color:$c-figure__content--gold-transparent;
