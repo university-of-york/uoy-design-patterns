@@ -631,7 +631,7 @@ $o-grid__row--alt1-color:            colour( "grey", 100 );  //$light
 $o-grid__row--alt1-hr-color:          colour( "blue", 500 ); //$blue
 $o-grid__row--alt1-link-color:      colour( "blue", 500 ); //lighten($blue,5)
 $o-grid__row--alt1-link-hover-color: colour( 'blue' , 400 ); //lighten($blue,15)
-$o-grid__row--alt2-background-color: colour( "blue" , 900 ); //darken($teal,5)
+$o-grid__row--alt2-background-color: darken(colour( "blue" , 900 ), 5); //darken($teal,5)
 $o-grid__row--alt2-border-color:    colour( "blue", 900 ); //$teal
 $o-grid__row--alt2-color:            colour( "grey", 100 );  //$light
 $o-grid__row--alt2-hr-color:          colour( "blue", 500 ); //$blue
