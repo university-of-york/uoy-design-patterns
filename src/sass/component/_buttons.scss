@@ -2,7 +2,10 @@
 // BUTTONS
 //
 .c-btn {
-  @include transition;
+   &:not(:focus) {
+    @include transition;
+     transition: all 0.2s ease-out;
+   }
   font-family: $font-default;
   font-weight: bold;
   text-decoration: none;
@@ -11,7 +14,6 @@
   line-height: 1.8em;
   // min-height: 2.4em;
   cursor: pointer;
-  transition: all 0.2s ease-out;
   vertical-align: top;
   text-align:center;
   // Just some default colors
