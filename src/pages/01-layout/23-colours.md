@@ -173,11 +173,25 @@ See the [alerts component](../css-components/alerts.html) for some examples.
 	</tbody>
 </table>
 
-## Common colour combinations
+## Usage
+
+The website uses three background colours for most of its text-based content. For each of these we have selected and checked text and link colours to ensure that they meet accessibility guidelines:
+
+- [White background](#white-background)
+- [Beige background](#beige-background)
+- [Teal background](#teal-background)
+
+<div class="c-alert c-alert--info" role="alert">
+  <div class="c-alert__content">
+    Wherever possible, designers and developers should stick to these colour combinations.
+  </div>
+</div>
+  
+When combining colours, be sure to check that your combinations are accessible by using a colour contrast ratio checker tool. Lea Verou's [contrast-ratio.com](https://contrast-ratio.com/) is a popular option and Firefox's dev tools can now check your colour contrast ratios for WCAG compliance directly in the browser.
 
 ### White background
 
-- Background: `white`
+- Background: `white`, or `colour( "grey" , 100 )`
 - Text: `colour( "grey" , 900 )`
 - Link: `colour( "blue" , 700 )`
 - Link hover: `colour( "blue" , 800 )`
@@ -226,7 +240,3 @@ See the [alerts component](../css-components/alerts.html) for some examples.
 		</ul>
 	</div>
 </div>
-
-### Making your own
-
-When combining colours, be sure to check that your combinations are accessible by using a colour contrast ratio checker tool. Lea Verou's [contrast-ratio.com](https://contrast-ratio.com/) is a popular option and Firefox's dev tools can now check your contrast ratios directly in the browser.
