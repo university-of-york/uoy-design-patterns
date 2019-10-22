@@ -8,7 +8,8 @@
   margin:0 0 $base-spacing - 4px;
 }
 .c-pagination__list {
-  overflow:hidden;
+  // overflow:hidden;
+  display: flex; // to improve focus outline visibility
   margin:0;
   padding:0;
   list-style:none;

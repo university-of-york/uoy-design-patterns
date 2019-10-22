@@ -24,8 +24,8 @@ a {
     outline: 0px;
   }
   &:focus {
-    outline:$link-focus-outline-color auto 5px;
-    outline-offset:-2px;
+    outline:$link-focus-outline-color solid 2px;
+    outline-offset: 1px;
   }
   &:hover {
     color:$link-hover-color;
@@ -125,7 +125,7 @@ ol {
 }
 form {
 }
-input:not([type='radio']):not([type='checkbox']):not([type='range']),
+input:not([type='radio']):not([type='checkbox']):not([type='range']):not([type='reset']):not([type='submit']):not([type='button']),
 select,
 textarea {
   &:focus {

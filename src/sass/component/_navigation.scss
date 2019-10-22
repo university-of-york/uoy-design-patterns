@@ -266,6 +266,7 @@
     color:$c-nav__link-hover-color;
     background-color:$c-nav__link-hover-background-color;
   }
+  
   .c-nav.is-open & {
     &:hover {
       color:  colour( "blue", 400 ); //lighten($blue,10)
@@ -289,4 +290,14 @@
       }
     }
   }
+}
+
+
+// Focus
+// Couldn't get this to work in any nested scenarios above 
+// By putting it here it works in the 'more' menu too. Location in code needs revising when nav is revised.
+.c-nav__item .nav__link:focus,
+.c-nav__item a:focus {
+    outline: 1px solid colour('blue', 500);
+    outline-offset: -1px
 }
