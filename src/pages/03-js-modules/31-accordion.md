@@ -1,9 +1,9 @@
 ---
 
 title: Accordion
-name: accordion
-category: components
-subcategory: Molecules
+name: accordion-module
+category: modules
+subcategory: Component modules
 layout: q+tq
 id: accordion-page
 
