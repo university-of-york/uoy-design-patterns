@@ -116,6 +116,8 @@ This table represents the full spread of primary colours in our palette, with th
 
 The colours below represent our highlight colour variants. These have a more functional purpose than the primary colours and are usually used to represent warnings (yellow), errors (red), or successful actions (green).
 
+See the [alerts component](../css-components/alerts.html) for some examples.
+
 <table style="table-layout:fixed;">
 	<thead>
 		<tr>
