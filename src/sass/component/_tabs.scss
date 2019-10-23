@@ -8,7 +8,6 @@
   width:100%;
   margin:0;
   padding:0;
-  overflow:hidden;
   list-style:none;
   position:relative;
   z-index:8;
@@ -42,6 +41,7 @@
     float:left;
   }
   .c-tabs__tab {
+      margin: 0;
     + .c-tabs__tab {
       padding-top:8px;
     }
@@ -56,9 +56,14 @@
     border:none;
     padding-left:$base-spacing/2;
     padding-right:$base-spacing/2;
+    text-align: center;
     @include mq('small', '-') {
       padding:$base-spacing/2 $base-spacing/4;
     }
+    &:focus {
+      outline: 3px solid colour('blue', 500);
+      outline-offset: -3px
+  }
   }
   .c-tabs__container {
     width:75%;
@@ -93,6 +98,10 @@
     background-color:$c-tabs__link-hover-background;
     color:$c-tabs__link-hover-color;
   }
+  &:focus {
+    outline: 3px solid colour('blue', 500);
+    outline-offset: -1px
+}
   @include mq('small', '-') {
     font-size:14px;
   }

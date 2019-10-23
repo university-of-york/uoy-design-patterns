@@ -22,7 +22,10 @@
 .c-tag,
 // To get around CMS issues in nav objects
 .c-tag-list a {
-  @include transition;
+  &:not(:focus) {
+    @include transition;
+     transition: all 0.2s ease-out;
+   }
   display: inline-block;
   background-color: $c-tag-background-color;
   color: $c-tag-color;

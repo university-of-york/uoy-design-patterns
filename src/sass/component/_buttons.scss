@@ -2,7 +2,10 @@
 // BUTTONS
 //
 .c-btn {
-  @include transition;
+   &:not(:focus) {
+    @include transition;
+     transition: all 0.2s ease-out;
+   }
   font-family: $font-default;
   font-weight: bold;
   text-decoration: none;
@@ -11,7 +14,6 @@
   line-height: 1.8em;
   // min-height: 2.4em;
   cursor: pointer;
-  transition: all 0.2s ease-out;
   vertical-align: top;
   text-align:center;
   // Just some default colors
@@ -40,7 +42,7 @@
   $bgColor:map-get($color, bg);
   $bgHoverColor:lighten($bgColor, 5);
   $bgActiveColor:lighten($bgColor, 10);
-  $bgFocusColor:darken($bgColor, 10);
+  $bgFocusColor:colour('blue', 500);
   $borderColor:$bgColor;
   $textColor:map-get($color, text);
   // Duplicate classname to override specificity on alt-rows
@@ -58,8 +60,9 @@
     }
     &:focus {
       color: $textColor;
-      background-color: $bgFocusColor;
-      outline-color: $bgFocusColor;
+      background-color: $bgColor;
+      outline: 2px solid $bgFocusColor;
+      outline-offset: 1px;
     }
   }
   .c-btn--selectable:checked + .c-btn.c-btn--selectable__label.c-btn#{$name} {
@@ -181,6 +184,10 @@
         border-top-right-radius: 6px;
         border-bottom-right-radius: 6px;
       }
+    }
+    &.c-btn:focus {
+      position: relative;
+      z-index: 1;
     }
   }
 }

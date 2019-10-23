@@ -543,7 +543,7 @@ $c-table--striped-odd-background: colour( "beige", 100 );//lighten($s2,2)
 
 // Tabs
 // component/_tabs.scss
-$c-tabs--vertical__tab-active__link-background: colour( "blue", 500 ); //$blue
+$c-tabs--vertical__tab-active__link-background: colour( "blue", 900 ); //$blue
 $c-tabs--vertical__tab-active__link-color:      colour( "grey", 100 );  //$light
 $c-tabs-background:                             white;
 $c-tabs-border:                                 colour( "beige", 300 );  //$s1
@@ -558,7 +558,7 @@ $c-tabs--dark-color:                            white;
 $c-tabs--dark__link-background:                 colour( 'blue' , 800 );
 $c-tabs--dark__link-color:                      white;
 $c-tabs--dark__link-hover-background:           colour( 'blue' , 700 );
-$c-tabs--dark__link-hover-color:                colour( 'blue' , 400 ); //lighten($blue,15)
+$c-tabs--dark__link-hover-color:                white;
 
 // Tag
 // component/_tag.scss

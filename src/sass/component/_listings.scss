@@ -80,6 +80,10 @@
     display: block;
     text-decoration: none;
     margin-bottom: $base-spacing;
+    &:focus {
+      outline: 2px solid colour('blue', 500);
+      outline-offset: 3px;
+    }
   }
 
   // Modifiers

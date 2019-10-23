@@ -6,9 +6,9 @@
 .c-atoz__nav-list {
   margin:0 0 $base-spacing/2;
   display:table;
-  padding:0;
+  padding: 5px;  // To make focus work as intended
   list-style:none;
-  overflow:hidden;
+  overflow:hidden;  
 }
 .c-atoz__nav-item {
   display:table-cell;
@@ -33,6 +33,7 @@
     border-color:$c-atoz__nav-link-hover-border;
     color:$c-atoz__nav-link-hover-color;
   }
+  
 }
 .c-atoz__nav-link--inactive {
   &,&:hover{
