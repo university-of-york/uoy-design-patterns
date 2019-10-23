@@ -41,6 +41,7 @@
     float:left;
   }
   .c-tabs__tab {
+      margin: 0;
     + .c-tabs__tab {
       padding-top:8px;
     }
@@ -58,6 +59,10 @@
     @include mq('small', '-') {
       padding:$base-spacing/2 $base-spacing/4;
     }
+    &:focus {
+      outline: 3px solid colour('blue', 500);
+      outline-offset: -3px
+  }
   }
   .c-tabs__container {
     width:75%;
