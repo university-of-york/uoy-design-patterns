@@ -18,6 +18,10 @@
     cursor:pointer;
     color:$c-block-link-hover;
   }
+  &:focus {
+    outline: 2px solid colour('blue', 500);
+    outline-offset: -2px;
+  }
 
   .o-grid__row--alt1 & {
     background-color:$o-grid__row--alt2-background-color;
