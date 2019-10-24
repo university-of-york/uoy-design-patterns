@@ -304,9 +304,11 @@ define(
         });
 
         // Add filtering to PG course search results
-        UTILS.eachIfExists('div#results > table.courses', function (i, a) {
-          var pgs = new PGSEARCH();
-        });
+        if( window.location.href.indexOf( '/postgraduate/' ) > -1 ) {
+          UTILS.eachIfExists('div#results > table.courses', function (i, a) {
+            var pgs = new PGSEARCH();
+          });
+        }
 
         // Update 'More' text
         $window.on('toggle', function(e, options) {
