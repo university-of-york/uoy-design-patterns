@@ -298,6 +298,6 @@
 // By putting it here it works in the 'more' menu too. Location in code needs revising when nav is revised.
 .c-nav__item .nav__link:focus,
 .c-nav__item a:focus {
-    outline: 1px solid colour('blue', 500);
+    outline: 1px solid $focus-outline-colour;
     outline-offset: -1px
 }

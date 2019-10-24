@@ -36,7 +36,7 @@
     }
     
     &:focus {
-      outline:$link-focus-outline-color auto 5px;
+      outline:$focus-outline-colour solid 5px;
       outline-offset:-2px;
     }
 

@@ -19,7 +19,7 @@
     color:$c-block-link-hover;
   }
   &:focus {
-    outline: 2px solid colour('blue', 500);
+    outline: 2px solid $focus-outline-colour;
     outline-offset: -2px;
   }
 

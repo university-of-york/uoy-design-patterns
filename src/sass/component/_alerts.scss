@@ -45,7 +45,7 @@ $c-alert-padding:$base-spacing*0.75;
   text-align:center;
   cursor:pointer;
   &:focus {
-    outline:2px solid colour('blue', 500);
+    outline:2px solid $focus-outline-colour;
     outline-offset:  1px;
   }
 }
