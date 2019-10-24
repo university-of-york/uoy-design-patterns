@@ -17,6 +17,10 @@
       color:$c-news-color-alt;
     }
   }
+  &:focus {
+    outline: $focus-outline-colour solid 2px;
+    outline-offset: -2px;
+  }
 }
 .c-news--excerpt {
   @include demarginalise;
