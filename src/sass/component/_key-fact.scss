@@ -15,6 +15,10 @@
   .o-grid__row--alt2 & {
     color:$c-key-fact-alt-color;
   }
+  &:focus {
+    outline: 2px solid $focus-outline-colour;
+    outline-offset: -2px;
+  }
 }
 a.c-key-fact:hover{
   color:$c-key-fact-hover-color;
