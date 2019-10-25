@@ -42,7 +42,7 @@
   $bgColor:map-get($color, bg);
   $bgHoverColor:lighten($bgColor, 5);
   $bgActiveColor:lighten($bgColor, 10);
-  $bgFocusColor:colour('blue', 500);
+  $bgFocusColor:$focus-outline-colour;
   $borderColor:$bgColor;
   $textColor:map-get($color, text);
   // Duplicate classname to override specificity on alt-rows

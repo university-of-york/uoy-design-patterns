@@ -61,7 +61,7 @@
       padding:$base-spacing/2 $base-spacing/4;
     }
     &:focus {
-      outline: 3px solid colour('blue', 500);
+      outline: 3px solid $focus-outline-colour;
       outline-offset: -3px
   }
   }

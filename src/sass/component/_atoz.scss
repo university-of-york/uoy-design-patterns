@@ -6,9 +6,8 @@
 .c-atoz__nav-list {
   margin:0 0 $base-spacing/2;
   display:table;
-  padding: 5px;  // To make focus work as intended
+  padding: 0; 
   list-style:none;
-  overflow:hidden;  
 }
 .c-atoz__nav-item {
   display:table-cell;
