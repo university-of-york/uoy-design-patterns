@@ -138,10 +138,14 @@ $icons: (
   5x: 80px
 );
 
+//  Focus 
+$focus-outline-colour: colour( 'blue', 500 );
+
+
 // Links
 $link-color:colour( 'blue' , 700 );
 $link-hover-color:colour( 'blue' , 800 );
-$link-focus-outline-color:colour( 'blue' );
+$link-focus-outline-color:$focus-outline-colour;
 
 //
 // Literal variable names
