@@ -9,6 +9,11 @@
   border:2px solid $c-form--bordered-border;
   padding:$base-spacing;
 }
+.c-form--faint {
+  border: 1px solid $c-form--bordered-border;
+  background-color: $c-form--panel-light;
+  padding:$base-spacing;
+}
 .c-form--panel {
   border-top:0.8em solid $c-panel--highlight-border;
   background-color: $c-panel--highlight-background;

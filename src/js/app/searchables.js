@@ -62,7 +62,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     var f = $('<form>').attr({
       'action': '#'+this.id,
       'method': 'get'
-    }).addClass('c-form c-form--bordered').on('submit', function(e) {
+    }).addClass('c-form c-form--faint').on('submit', function(e) {
       e.preventDefault();
     });
     var fs = $('<fieldset>');
