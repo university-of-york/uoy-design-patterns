@@ -25,6 +25,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
       this.container.attr('id', 'searchable-'+this.type+'-'+id);
     }
     this.id = this.container.attr('id');
+    this.container.attr('aria-live', 'polite'); // adds aria-live="polite" to the container
 
     var rows = this.type === 'table' ? this.container.children('tbody').children('tr') : this.container.children('li');
 
@@ -58,11 +59,10 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   };
 
   SEARCHABLE.prototype.createForm = function () {
-
     var f = $('<form>').attr({
       'action': '#'+this.id,
       'method': 'get'
-    }).addClass('c-form c-form--bordered').on('submit', function(e) {
+    }).addClass('c-form c-form--faint').on('submit', function(e) {
       e.preventDefault();
     });
     var fs = $('<fieldset>');
