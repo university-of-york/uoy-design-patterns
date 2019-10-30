@@ -314,7 +314,8 @@ $c-footer-main__link--edit-color: colour( 'grey' , 200 );
 
 // Forms
 // component/_forms.scss
-$c-form--bordered-border:                      colour( "blue", 500 ); //$blue
+$c-form--bordered-border:                      colour( "grey", 200 ); //$blue
+$c-form--panel-light:                                 colour( "grey", 100 );  
 $c-form--panel-color:                          colour( "grey", 100 );  //$light
 $c-form__input-border:                         colour( "grey", 400 );  //lighten($charcoal,50)
 $c-form__input-color:                          colour( "grey", 900 );  //$charcoal
