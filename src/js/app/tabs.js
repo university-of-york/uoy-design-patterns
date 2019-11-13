@@ -16,38 +16,56 @@ define(["jquery"], function($) {
     this.container = $( options.container );
     var that = this;
 
+    // Create a unique ID
     var randomId = Math.ceil( Math.random() * 1000 );
 
-    // Add some attributes to our existing tabs enable better accessiblity
+    // Add tablist role to the ul
     var setTabList = context.querySelector(".c-tabs__nav");
     setTabList.setAttribute("role", "tablist");
 
+    //Add attritbutes to the tabs with initial values
     var tabLink = context.querySelectorAll(".c-tabs__link");
     for (var i = 0; i < tabLink.length; i++) {
+      // Add a unique href
       tabLink[i].setAttribute("href", "#panel-" + [i] + "-" + randomId);
+      // Add tab role
       tabLink[i].setAttribute("role", "tab");
+      // Add aria-controls for panels using a unique ID
       tabLink[i].setAttribute("aria-controls", "panel-" + [i] + "-" + randomId);
+      // Add a unique ID
       tabLink[i].setAttribute("id", "tab-" + [i] + "-" + randomId);
       if ([i] != 0) {
+        // Set aria-selected to false if [i] is not 0
         tabLink[i].setAttribute("aria-selected", "false");
+        // Set tabindex to -1 if
         tabLink[i].setAttribute("tabindex", "-1");
       } else {
+        // Set aria-selected to false if [i] is  0
         tabLink[i].setAttribute("aria-selected", "true");
+        // Set tabindex to -1  if [i] is 0
         tabLink[i].setAttribute("tabindex", "0");
       }
     }
 
+
+     //Add attritbutes to the panels with initial values
     var tabContent = context.querySelectorAll(".c-tabs__content");
-    for (var i = 0; i < tabContent.length; i++) {
-      tabContent[i].setAttribute("role", "tabpanel");
-      tabContent[i].setAttribute("id", "panel-" + [i] + "-" + randomId);
-      tabContent[i].setAttribute("tabindex", "0");
-      tabContent[i].setAttribute("aria-labelledby", "tab-" + [i] + "-" + randomId);
-      if ([i] != 0) {
-        tabContent[i].setAttribute("hidden", true);
+    for (var c = 0; c < tabContent.length; c++) {
+      // Add tabpanel role
+      tabContent[c].setAttribute("role", "tabpanel");
+       // Add a unique ID
+      tabContent[c].setAttribute("id", "panel-" + [c] + "-" + randomId);
+      // Set tabindex to 0
+      tabContent[c].setAttribute("tabindex", "0");
+       // Add aria-labelledby using a unique ID
+      tabContent[c].setAttribute("aria-labelledby", "tab-" + [c] + "-" + randomId);
+      if ([c] != 0) {
+        // Set hidden to true if [c] is not 0
+        tabContent[c].setAttribute("hidden", true);
       }
     }
 
+    // Get tabs and tablist based on role
     var tabs = context.querySelectorAll('[role="tab"]');
     var tabList = context.querySelector('[role="tablist"]');
 
@@ -60,7 +78,7 @@ define(["jquery"], function($) {
     var tabFocus = 0;
 
     tabList.addEventListener("keydown", function(e) {
-      // Move right
+      // Move right or down
       if (e.keyCode === 39 || e.keyCode === 37 || e.keyCode === 40 || e.keyCode === 38) {
         tabs[tabFocus].setAttribute("tabindex", -1);
         if (e.keyCode === 39 || e.keyCode === 40) {
@@ -69,7 +87,7 @@ define(["jquery"], function($) {
           if (tabFocus >= tabs.length) {
             tabFocus = 0;
           }
-          // Move left
+          // Move left or up
         } else if (e.keyCode === 37 || e.keyCode === 38) {
           tabFocus--;
           // If we're at the start, move to the end
@@ -81,6 +99,7 @@ define(["jquery"], function($) {
         tabs[tabFocus].setAttribute("tabindex", 0);
         tabs[tabFocus].focus();
 
+         // Prevent page scrolling
         e.preventDefault();
       }
     });
