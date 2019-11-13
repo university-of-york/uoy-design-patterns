@@ -81,12 +81,7 @@ define(["jquery"], function($) {
 
     tabList.addEventListener("keydown", function(e) {
       // Move right or down
-      if (
-        e.keyCode === 39 ||
-        e.keyCode === 37 ||
-        e.keyCode === 40 ||
-        e.keyCode === 38
-      ) {
+      if (e.keyCode === 39 || e.keyCode === 37 || e.keyCode === 40 || e.keyCode === 38) {
         tabs[tabFocus].setAttribute("tabindex", -1);
         if (e.keyCode === 39 || e.keyCode === 40) {
           tabFocus++;
