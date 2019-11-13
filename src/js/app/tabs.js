@@ -23,7 +23,7 @@ define(["jquery"], function($) {
     var setTabList = context.querySelector(".c-tabs__nav");
     setTabList.setAttribute("role", "tablist");
 
-    //Add attritbutes to the tabs with initial values
+    //Add attributes to the tabs with initial values
     var tabLink = context.querySelectorAll(".c-tabs__link");
     for (var i = 0; i < tabLink.length; i++) {
       // Add a unique href
@@ -47,7 +47,7 @@ define(["jquery"], function($) {
       }
     }
 
-    //Add attritbutes to the panels with initial values
+    //Add attributes to the panels with initial values
     var tabContent = context.querySelectorAll(".c-tabs__content");
     for (var c = 0; c < tabContent.length; c++) {
       // Add tabpanel role
