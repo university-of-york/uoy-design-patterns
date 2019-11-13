@@ -13,11 +13,11 @@ define(["jquery"], function($) {
   var TABS = function(options) {
 
     var context = options.container;
-    this.container = $( options.container );
+    this.container = $(options.container);
     var that = this;
 
     // Create a unique ID
-    var randomId = Math.ceil( Math.random() * 1000 );
+    var randomId = Math.ceil(Math.random() * 1000);
 
     // Add tablist role to the ul
     var setTabList = context.querySelector(".c-tabs__nav");
@@ -47,18 +47,20 @@ define(["jquery"], function($) {
       }
     }
 
-
-     //Add attritbutes to the panels with initial values
+    //Add attritbutes to the panels with initial values
     var tabContent = context.querySelectorAll(".c-tabs__content");
     for (var c = 0; c < tabContent.length; c++) {
       // Add tabpanel role
       tabContent[c].setAttribute("role", "tabpanel");
-       // Add a unique ID
+      // Add a unique ID
       tabContent[c].setAttribute("id", "panel-" + [c] + "-" + randomId);
       // Set tabindex to 0
       tabContent[c].setAttribute("tabindex", "0");
-       // Add aria-labelledby using a unique ID
-      tabContent[c].setAttribute("aria-labelledby", "tab-" + [c] + "-" + randomId);
+      // Add aria-labelledby using a unique ID
+      tabContent[c].setAttribute(
+        "aria-labelledby",
+        "tab-" + [c] + "-" + randomId
+      );
       if ([c] != 0) {
         // Set hidden to true if [c] is not 0
         tabContent[c].setAttribute("hidden", true);
@@ -70,7 +72,7 @@ define(["jquery"], function($) {
     var tabList = context.querySelector('[role="tablist"]');
 
     // Add a click event handler to each tab
-    for (var j = 0;  j <  tabs.length ; j++) {
+    for (var j = 0; j < tabs.length; j++) {
       tabs[j].addEventListener("click", changeTabs);
     }
 
@@ -79,7 +81,12 @@ define(["jquery"], function($) {
 
     tabList.addEventListener("keydown", function(e) {
       // Move right or down
-      if (e.keyCode === 39 || e.keyCode === 37 || e.keyCode === 40 || e.keyCode === 38) {
+      if (
+        e.keyCode === 39 ||
+        e.keyCode === 37 ||
+        e.keyCode === 40 ||
+        e.keyCode === 38
+      ) {
         tabs[tabFocus].setAttribute("tabindex", -1);
         if (e.keyCode === 39 || e.keyCode === 40) {
           tabFocus++;
@@ -99,7 +106,7 @@ define(["jquery"], function($) {
         tabs[tabFocus].setAttribute("tabindex", 0);
         tabs[tabFocus].focus();
 
-         // Prevent page scrolling
+        // Prevent page scrolling
         e.preventDefault();
       }
     });
@@ -112,15 +119,15 @@ define(["jquery"], function($) {
       e.preventDefault();
       e.target.focus({ preventScroll: true });
 
-     var tabTabs =  context.querySelectorAll(".c-tabs__tab");
-     for (var k = 0; k < tabTabs.length ; k++) {
-      $(tabTabs[k]).removeClass("is-active");    
-     }
+      var tabTabs = context.querySelectorAll(".c-tabs__tab");
+      for (var k = 0; k < tabTabs.length; k++) {
+        $(tabTabs[k]).removeClass("is-active");
+      }
 
       // Remove all current selected tabs
       var selectedTabs = context.querySelectorAll('[aria-selected="true"]');
-      for( var t = 0 ; t < selectedTabs.length ; t++ ) {
-        selectedTabs[ t ].setAttribute("aria-selected", false);
+      for (var t = 0; t < selectedTabs.length; t++) {
+        selectedTabs[t].setAttribute("aria-selected", false);
       }
 
       // Set this tab as selected
@@ -128,15 +135,17 @@ define(["jquery"], function($) {
       $(parent).addClass("is-active");
 
       // Hide all tab panels
-      var tabPanels =  context.querySelectorAll('[role="tabpanel"]');
-      for (var p = 0; p < tabPanels.length ; p++) {
+      var tabPanels = context.querySelectorAll('[role="tabpanel"]');
+      for (var p = 0; p < tabPanels.length; p++) {
         tabPanels[p].setAttribute("hidden", true);
         $(tabPanels[p]).removeClass("is-active"); // added by Dave
-      }      
+      }
 
       // Show the selected panel
-      context.querySelector('#'+target.getAttribute("aria-controls")).setAttribute("hidden", false);
-      $( context.querySelector('#'+target.getAttribute("aria-controls")) ).addClass("is-active"); 
+      context
+        .querySelector("#" + target.getAttribute("aria-controls"))
+        .setAttribute("hidden", false);
+      $(context.querySelector("#" + target.getAttribute("aria-controls")) ).addClass("is-active");
 
       // Fire update event
       $(window).trigger("content.updated", ["tabs", that, target]);
