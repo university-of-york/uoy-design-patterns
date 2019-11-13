@@ -48,8 +48,6 @@ define(["jquery"], function($) {
       }
     }
 
-    // The following is from the  MDN example (lightly mofified)
-
     var tabs = context.querySelectorAll('[role="tab"]');
     var tabList = context.querySelector('[role="tablist"]');
 
@@ -90,21 +88,18 @@ define(["jquery"], function($) {
     function changeTabs(e) {
       var target = e.target;
       var parent = target.parentNode;
-      var grandparent = parent.parentNode;
-      var greatgrandparent = grandparent.parentNode;
 
       // Prevent scroll
       e.preventDefault();
       e.target.focus({ preventScroll: true });
 
-     var tabTabs =  grandparent.querySelectorAll(".c-tabs__tab");
+     var tabTabs =  context.querySelectorAll(".c-tabs__tab");
      for (var k = 0; k < tabTabs.length ; k++) {
       $(tabTabs[k]).removeClass("is-active");    
      }
-    
 
       // Remove all current selected tabs
-      var selectedTabs = grandparent.querySelectorAll('[aria-selected="true"]');
+      var selectedTabs = context.querySelectorAll('[aria-selected="true"]');
       for( var t = 0 ; t < selectedTabs.length ; t++ ) {
         selectedTabs[ t ].setAttribute("aria-selected", false);
       }
@@ -114,19 +109,15 @@ define(["jquery"], function($) {
       $(parent).addClass("is-active");
 
       // Hide all tab panels
-      var tabPanels =  greatgrandparent.querySelectorAll('[role="tabpanel"]');
+      var tabPanels =  context.querySelectorAll('[role="tabpanel"]');
       for (var p = 0; p < tabPanels.length ; p++) {
         tabPanels[p].setAttribute("hidden", true);
         $(tabPanels[p]).removeClass("is-active"); // added by Dave
       }      
-       
 
       // Show the selected panel
-      greatgrandparent.parentNode
-        .querySelector('#'+target.getAttribute("aria-controls"))
-        .setAttribute("hidden", false);
-
-      $( greatgrandparent.parentNode.querySelector('#'+target.getAttribute("aria-controls")) ).addClass("is-active"); // added by Dave
+      context.querySelector('#'+target.getAttribute("aria-controls")).setAttribute("hidden", false);
+      $( context.querySelector('#'+target.getAttribute("aria-controls")) ).addClass("is-active"); 
 
       // Fire update event
       $(window).trigger("content.updated", ["tabs", that, target]);
