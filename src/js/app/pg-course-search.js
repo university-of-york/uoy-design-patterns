@@ -13,11 +13,7 @@ define(['jquery'], function ($) {
 
         var $results = $('div#results');
         var $resultsTable = $('table', $results);
-        
-        // Insert table for closed courses
-        $results.append('<div id="closed"><h3>The following courses are currently closed for applications.</h3> <p>If you have any questions please contact <a href="mailto:pg-admissions@york.ac.uk">pg-admissions@york.ac.uk</a>.</p><table class="courses c-table--striped c-table--stacked"><thead><tr><th style="width:65%;">Course</th><th style="width:20%;">Details</th><th style="width:10%;"></th></tr></thead><tbody></tbody></table></div>');
-        $('div#closed').hide();
-      
+
         $.urlParam = function(name) {
       	var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
           if (!results) return false;
@@ -49,13 +45,6 @@ define(['jquery'], function ($) {
           if ($.inArray(courseCode.substring(0,2), mode) === -1) {
             // Remove rows with wrong type of courses
             $(this).remove();
-          } else {
-            // Move closed courses to #closed
-            var button = $row.find('td.code a, td.code span.c-btn');
-            if (button.length === 0) {
-              var clone = $(this).closest('tr').remove().clone();
-              $(clone).appendTo('div#closed table tbody');
-            }
           }
         });
         
@@ -98,12 +87,6 @@ define(['jquery'], function ($) {
         if ($resultsTable.find('tr').length === 0) {
           //console.log('No rows in results table');
           $resultsTable.hide();
-        }
-        
-        // If some courses are closed, show the #closed table
-        if ($('div#closed').find('tbody tr').length > 0) {
-          //console.log('Some rows in closed table');
-          $('div#closed').show();
         }
 
   };
