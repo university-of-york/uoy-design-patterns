@@ -108,7 +108,6 @@
     // max-width:100%;
     // display:block;
     padding:$base-spacing/4 $base-spacing/2;
-    background: colour( "blue", 500 ); //blue
   }
   // Set link colour to caption text colour
   a,a:hover,a:active { color:inherit; }
@@ -382,7 +381,7 @@
       position:static;
       display:block;
       &.c-figure__content--blue {
-        background-color:$c-figure__content--blue-solid;
+        background-color:$c-figure__content--teal-solid;  //must be teal
       }
       &.c-figure__content--pink {
         background-color:$c-figure__content--pink-solid;
