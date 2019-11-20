@@ -24,45 +24,72 @@ define(["jquery"], function($) {
     setTabList.setAttribute("role", "tablist");
 
     //Add attributes to the tabs with initial values
+    // var tabLink = context.querySelectorAll(".c-tabs__link");
+    // for (var i = 0; i < tabLink.length; i++) {
+    //   // Add a unique href
+    //   tabLink[i].setAttribute("href", "#panel-" + [i] + "-" + randomId);
+    //   // Add tab role
+    //   tabLink[i].setAttribute("role", "tab");
+    //   // Add aria-controls for panels using a unique ID
+    //   tabLink[i].setAttribute("aria-controls", "panel-" + [i] + "-" + randomId);
+    //   // Add a unique ID
+    //   tabLink[i].setAttribute("id", "tab-" + [i] + "-" + randomId);
+    //   if ([i] != 0) {
+    //     // Set aria-selected to false if [i] is not 0
+    //     tabLink[i].setAttribute("aria-selected", "false");
+    //     // Set tabindex to -1 if
+    //     tabLink[i].setAttribute("tabindex", "-1");
+    //   } else {
+    //     // Set aria-selected to false if [i] is  0
+    //     tabLink[i].setAttribute("aria-selected", "true");
+    //     // Set tabindex to -1  if [i] is 0
+    //     tabLink[i].setAttribute("tabindex", "0");
+    //   }
+    // }
+
+    // //Add attributes to the panels with initial values
+    // var tabContent = context.querySelectorAll(".c-tabs__content");
+    // for (var c = 0; c < tabContent.length; c++) {
+    //   // Add tabpanel role
+    //   tabContent[c].setAttribute("role", "tabpanel");
+    //   // Add a unique ID
+    //   tabContent[c].setAttribute("id", "panel-" + [c] + "-" + randomId);
+    //   // Set tabindex to 0
+    //   tabContent[c].setAttribute("tabindex", "0");
+    //   // Add aria-labelledby using a unique ID
+    //   tabContent[c].setAttribute(
+    //     "aria-labelledby",
+    //     "tab-" + [c] + "-" + randomId
+    //   );
+    //   if ([c] != 0) {
+    //     // Set hidden to true if [c] is not 0
+    //     tabContent[c].setAttribute("hidden", true);
+    //   }
+    // }
+
     var tabLink = context.querySelectorAll(".c-tabs__link");
     for (var i = 0; i < tabLink.length; i++) {
-      // Add a unique href
-      tabLink[i].setAttribute("href", "#panel-" + [i] + "-" + randomId);
-      // Add tab role
+      // tabLink[i].setAttribute("href", "#panel-" + [i]);
       tabLink[i].setAttribute("role", "tab");
-      // Add aria-controls for panels using a unique ID
-      tabLink[i].setAttribute("aria-controls", "panel-" + [i] + "-" + randomId);
-      // Add a unique ID
-      tabLink[i].setAttribute("id", "tab-" + [i] + "-" + randomId);
+      var tabID = tabLink[i].getAttribute('href').replace('#','');
+      tabLink[i].setAttribute("aria-controls", tabID);
+      // tabLink[i].setAttribute("id", tabID);
       if ([i] != 0) {
-        // Set aria-selected to false if [i] is not 0
         tabLink[i].setAttribute("aria-selected", "false");
-        // Set tabindex to -1 if
         tabLink[i].setAttribute("tabindex", "-1");
       } else {
-        // Set aria-selected to false if [i] is  0
         tabLink[i].setAttribute("aria-selected", "true");
-        // Set tabindex to -1  if [i] is 0
         tabLink[i].setAttribute("tabindex", "0");
       }
     }
-
-    //Add attributes to the panels with initial values
+  
     var tabContent = context.querySelectorAll(".c-tabs__content");
     for (var c = 0; c < tabContent.length; c++) {
-      // Add tabpanel role
       tabContent[c].setAttribute("role", "tabpanel");
-      // Add a unique ID
-      tabContent[c].setAttribute("id", "panel-" + [c] + "-" + randomId);
-      // Set tabindex to 0
       tabContent[c].setAttribute("tabindex", "0");
-      // Add aria-labelledby using a unique ID
-      tabContent[c].setAttribute(
-        "aria-labelledby",
-        "tab-" + [c] + "-" + randomId
-      );
+      var panelID = tabContent[c].getAttribute('id');
+      tabContent[c].setAttribute("aria-labelledby", panelID);
       if ([c] != 0) {
-        // Set hidden to true if [c] is not 0
         tabContent[c].setAttribute("hidden", true);
       }
     }
@@ -134,6 +161,17 @@ define(["jquery"], function($) {
       for (var p = 0; p < tabPanels.length; p++) {
         tabPanels[p].setAttribute("hidden", true);
         $(tabPanels[p]).removeClass("is-active"); // added by Dave
+      }
+
+      if (Modernizr.hashchange === true) {
+        history.replaceState({}, "", target.hash);
+      } else {
+        // Provide a fallback
+        scrollV = document.body.scrollTop;
+        scrollH = document.body.scrollLeft;
+        location.hash = target.hash;
+        document.body.scrollTop = scrollV;
+        document.body.scrollLeft = scrollH;
       }
 
       // Show the selected panel
