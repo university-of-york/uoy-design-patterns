@@ -5,7 +5,7 @@ define(
    'app/targeted-nav', 'app/clearing-table', 'app/tabs', 'app/prioritised-tables',
    'app/toggle', 'app/utility-toggle', 'app/wrapper-height', 'app/youtube-embed',
    'app/soundcloud-embed', 'app/searchables', 'app/filterable-tables', 'app/equal-height-row',
-   'app/mapbox-map', 'app/show-more', 'app/autocomplete',
+   'app/mapbox-map', 'app/show-more', 'app/autocomplete', 'app/modal',
    'app/data-google-sheets', 'app/data-grid', 'app/cookie-banner', 'app/pg-course-search'],
   function (
     $, ES5SHIM, PICTUREFILL, IFRAMERESIZER,
@@ -13,7 +13,7 @@ define(
     TARGETEDNAV, CLEARINGTABLE, TABS, TABLE,
     TOGGLE, UTILITYTOGGLE, WRAPPERHEIGHT, YOUTUBE,
     SOUNDCLOUD, SEARCHABLE, FILTERABLE, EQUALHEIGHT,
-    MAPBOXMAP, SHOWMORE, AUTOCOMPLETE,
+    MAPBOXMAP, SHOWMORE, AUTOCOMPLETE, MODAL,
     DATAGSHEETS, DATAGRID, COOKIEBANNER, PGSEARCH ) {
 
       $(function(){
@@ -23,6 +23,9 @@ define(
           console.log = function(a) { /*alert(a);*/ };
           console.info = function(a) { /*alert(a);*/ };
         }
+        
+        // Adds MODAL to global scope so we can trigger modals via GTM
+        window.MODAL = MODAL;
 
         // Disable buttons
         $('.btn-disabled').click(function (e) {
