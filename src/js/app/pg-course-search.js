@@ -22,7 +22,7 @@ define(['jquery'], function ($) {
       
         var mode;
         var courseMode = $.urlParam('mode'); 
-        if (courseMode === false) return;
+        if (courseMode === false) courseMode = "taught";
         
         if (courseMode === "research") {
           mode = ["DR"];
