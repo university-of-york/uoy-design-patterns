@@ -426,8 +426,8 @@ $c-modal__close-background-color: colour( "grey", 900 );  //$charcoal
 $c-modal__close-color:  colour( "grey", 100 );  //$light
 $c-modal__close-hover-background-color: colour( "grey", 800 );  //lighten($charcoal, 10);
 $c-modal__close-hover-color: colour( "blue", 500 );  //$blue
-$c-modal__caption-background-solid: colour( "blue", 500 );  //$blue
-$c-modal__caption-background-transparent:transparentize(colour( "blue", 500 ), 0.15);
+$c-modal__caption-background-solid: colour( "blue", 900 );  //$teal
+$c-modal__caption-background-transparent:transparentize(colour( "blue", 900 ), 0.15);
 $c-modal__caption-color:  colour( "grey", 100 );  //$light
 $c-modal__nav-color:  colour( "grey", 100 );  //$light
 $c-modal__nav__icon-background: colour( "grey", 900 );  //$charcoal
