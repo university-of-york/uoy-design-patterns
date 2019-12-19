@@ -1,0 +1,23 @@
+//
+// York Maastricht Partnership theme
+//
+
+.t-ymp
+{
+	// Override the size of the logo (it's now two!)
+	.c-main-header__logo
+	{
+		width:550px;
+		max-width:100%; // Allow it to squish on smaller viewports
+	}
+	
+	// The reduced height of the logo leaves the search icon
+	// a bit low so this nudges it back up to the middle
+	.c-mobile-search-button
+	{
+		@include mq( 'small' , '-' )
+		{
+			margin-top:15px;
+		}
+	}
+}
