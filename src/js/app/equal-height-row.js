@@ -54,11 +54,16 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
   };
 
   EQUALHEIGHT.prototype.setMaxHeight = function() {
+    
     this.boxes.height('auto');
-    this.maxHeight = 0;
-    this.getMaxHeight(function() {
-      this.boxes.height(this.maxHeight);
-    });
+
+    // Only make equal when width of window is 640px or greater
+    if (window.matchMedia('(min-width: 640px)').matches) {
+        this.maxHeight = 0;
+        this.getMaxHeight(function() {
+        this.boxes.height(this.maxHeight);
+        });
+    }
   };
 
   return EQUALHEIGHT;
