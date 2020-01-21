@@ -22,7 +22,7 @@ module.exports = {
           expand: true,
           dot: true,
           cwd: 'src/',
-          src: ['templates/**', 'img/favicon/webmanifest.json', 'img/favicon/browserconfig.xml'],
+          src: ['templates/**', 'img/favicons/webmanifest.json', 'img/favicons/browserconfig.xml'],
           dest: 'build/'
       }]
   },
@@ -31,7 +31,7 @@ module.exports = {
       expand: true,
       dot: true,
       cwd: 'src/',
-      src: ['fonts/**', 'media/**', 'js/prism.js', 'js/iframeResizer.contentWindow.min.js', 'opensearch.xml', 'data/**', 'img/favicon/webmanifest.json', 'img/favicon/browserconfig.xml'],
+      src: ['fonts/**', 'media/**', 'js/prism.js', 'js/iframeResizer.contentWindow.min.js', 'opensearch.xml', 'data/**', 'img/favicons/webmanifest.json', 'img/favicons/browserconfig.xml'],
       dest: 'build/'
     }]
   },
