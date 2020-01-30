@@ -1,12 +1,10 @@
 ---
-
 title: Show More
 name: show-more
 category: components
 subcategory: Molecules
 layout: q+tq
 id: show-more-page
-
 ---
 
 <div class="lead"><p>A 'Show More' is used to show a large block of text that is part of a larger piece of content.</p></div>
@@ -32,10 +30,10 @@ component("show-more", { "content": "<h3>The York approach</h3>"+
 ### Example with a set height and button text
 
 <script>
-component("show-more", { "height": 120,
+component("show-more", { 
+                        "limit": 2,
                          "moreText": "I'd like to find out more please",
                          "lessText": "Hide",
-                         "id":"PLO",
                          "content": "<h3>The York approach</h3>"+
                                  "<p>EG. Every course at York has a set of learning outcomes. The learning outcomes tell you what you can expect to be able to do when you graduate and will help you to explain what you can offer to employers. </p>"+
                                  "<h4>Students who complete this course will be able to:</h4>"+
@@ -55,7 +53,7 @@ component("show-more", { "height": 120,
 
 #### Required
 
-* **content**: (required) the text or markup to go in the show more box
-* **height**: _(default 200)_ the height that the box should shrink to
-* **moreText**: _(default "Show more")_ the text that appears on the button before the content is expanded
-* **lessText**: _(default "Show less")_ the text that appears after the content is expanded
+- **content**: (required) the text or markup to go in the show more box
+- **height**: _(default 200)_ the height that the box should shrink to
+- **moreText**: _(default "Show more")_ the text that appears on the button before the content is expanded
+- **lessText**: _(default "Show less")_ the text that appears after the content is expanded

@@ -1,174 +1,155 @@
-/*
+  /*
 
 ---
-title: Sample Module
-name: sample-module
+title: Show more
+name: show-more
 category: Javascript
 ---
 
- */
-define(['jquery', 'app/utils'], function ($, UTILS) {
+*/
 
-  // "Private" variables (only available inside the module)
+define([], function () {
+// --------------------------------------------------
+// Contructor
 
-  // Define defaults for the class
-  var Default = {
-    height: 200,
-    buttonTextMore: 'Show more',
-    buttonTextLess: 'Show less'
+var SHOWMORE = function ( $context , options ) 
+{
+	// Set our options and defaults	
+	var defaultOptions = {
+		contentID: Math.random().toString(36).substr(2, 9),
+		elementsVisible: 2,
+		buttonTextMore: 'Show more',
+		buttonTextLess: 'Show less'
   };
 
-  // Define other variables for use throughout
-  var $window = $(window);
+	// Modify options, merge defaults
+	Object.keys(defaultOptions).forEach(function(key) {
+		if( options[key] === undefined || options[key] === null )
+			options[key] = defaultOptions[key];
+	});
+	
+	// Merged options and defaults
+	this.options = options;
+		
+	// The containing element for our show more
+	this.$context = $context;
+	
+	// The containing element for our content
+	this.content = this.$context.querySelector(".c-show-more__content");
 
-  // Define your 'class'
-  // Better to pass an options object instead of multiple arguments
-  var SHOWMORE = function (options) {
+	// Children of our content
+	this.numberOfElements = this.content.children.length;
+	
+	// Set the initial state on container
+	this.content.setAttribute("aria-expanded", "false");
+	this.isExpanded = false;
+	
+	// Make a list of elements inside the content div
+	this.elements = [];
+	for( var e = 0 ; e < this.content.children.length ; e ++ ) {
+		this.elements.push( this.content.children[ e ] );
+	}
 
-    // Return false if required options aren't passed
-    if (!options.container) return false;
-    this.container = options.container;
-    this.content = this.container.find('.c-show-more__content');
+	console.log( this.options );
 
-    // Get the options or their defaults
-    this.defaultHeight = options.defaultHeight || Default.height;
-    this.buttonTextMore = options.buttonTextMore || Default.buttonTextMore;
-    this.buttonTextLess = options.buttonTextLess || Default.buttonTextLess;
+	// Quit now if there are no elements to hide
+	if( this.numberOfElements <= this.options.elementsVisible ) return;
 
-    this.windowLoaded = false;
 
-    // Hide content
-    this.container.addClass('is-closed');
 
-    // Enable transition
-    var iC = this.content;
-    setTimeout(function() { iC.addClass('is-ready'); }, 400);
 
-    // Add button
-    this.addButton();
+	this.initialise();
+};
 
-    // On resize or content updated, reset height
-    var that = this;
-    $window.on('content.updated', function(e, type, obj, clickedTab) {
+// --------------------------------------------------
+// Initialisation
 
-      if (!obj.container || !clickedTab) return;
+SHOWMORE.prototype.initialise = function()
+{
+	// Initialise button
+	this.create_button();
+	
+	// Initialise wrapper
+	this.create_wrapper();
 
-      // Find the corresponding tab content whose tab link was clicked.
-      // if it matches the show-more content, update the height
-      var $shownTabContent = obj.container.find(clickedTab.attr('href'));
-      var $showMoreContainer = $shownTabContent.find('.c-show-more__content');
-      if($showMoreContainer.is(that.content) === true) {
-        that.setShowMoreHeight.apply(that, [type, obj]);
-      }
-    });
+	// Initialise content toggle and bind this to it
+	this.button.addEventListener('click' , this.toggle.bind(this));
 
-    $window.on('resized.width', UTILS.debounce(function(e) {
-      that.setShowMoreHeight.apply(that, ['resize']);
-    }, 250));
+};
 
-    // Fire content.updated on images within accordions
-    this.content.find('img').each(function(i, img) {
-      var $img = $(img);
-      $img.load(function(e) {
-        that.setShowMoreHeight.apply(that, ['imageload', $img]);
-      });
-    });
+// --------------------------------------------------
+// Create a button
 
-    // Initial load
-    this.setShowMoreHeight.apply(this, ['initial']);
+SHOWMORE.prototype.create_button = function(  )
+{ 
+	// Create a button
+	this.button = document.createElement( 'button' );
+	// Set initial button text
+	this.buttonText = ( this.button.innerHTML = this.options.buttonTextMore + '<i class="c-icon c-icon--chevron-down c-icon--after"></i>' );
+	// Set style
+	this.button.setAttribute('class', 'c-btn c-btn--medium c-btn--secondary');
+	// Set initial aria-label
+	this.button.setAttribute( 'aria-label', this.options.buttonTextMore );
+	// Set aria-controls
+	this.button.setAttribute( 'aria-controls', this.options.contentID );
+	// Place the button at the botton of the container
+	this.content.parentNode.appendChild(this.button);
+};
 
-    console.info(this);
+// --------------------------------------------------
+// Wrap hidden content in new container
 
-  };
+SHOWMORE.prototype.create_wrapper = function()
+{
+	// Move hidden elements in to div
+	var wrapper = document.createElement('div');
 
-  // Boolean to see if animation is still underway
-  SHOWMORE.prototype.isToggling = false;
+	// Set the wrapper ID 
+	wrapper.setAttribute('id', this.options.contentID);
+	
+	// Add class to reference and set initial is-closed state
+	wrapper.setAttribute('class', 'hidden-content is-closed');	
 
-  SHOWMORE.prototype.setShowMoreHeight = function (type, obj) {
+	// Gather up the elements that need to be placed in the wrapper
+	for (var i = this.options.elementsVisible; i < this.numberOfElements; i++) 
+	{
+		// Add each element to the wrapper
+  	wrapper.append( this.elements[i] );
+	}
 
-    console.log('Show More height set', type, obj);
+	// Add our wrapper + contents to the container
+	this.content.appendChild(wrapper);
 
-    // type is the type of thing triggering the update event
-    // obj is the object that triggers it (if needed)
+	// Get the name of the div containing the hidden content
+	this.hiddenElements = wrapper;
+	
+};
 
-    var isClosed = this.container.hasClass('is-closed');
+// --------------------------------------------------
+// Content toggle
 
-    // Reset the content
-    this.content.addClass('is-ghost');
-    this.content.removeClass('is-ready');
-    this.content.height('auto');
-    this.container.removeClass('is-closed');
+SHOWMORE.prototype.toggle = function()
+{
+	// Set classes based on aria-expanded true/false	
+	if (!this.isExpanded) {
+		this.hiddenElements.classList.remove('is-closed');
+		this.hiddenElements.classList.add('is-open');
+		this.buttonText = this.options.buttonTextLess + '<i class="c-icon c-icon--chevron-up c-icon--after"></i>';
+		this.isExpanded = true;		
+	} else {
+		this.hiddenElements.classList.remove('is-open');
+		this.hiddenElements.classList.add('is-closed');
+		this.buttonText =  this.options.buttonTextMore + '<i class="c-icon c-icon--chevron-down c-icon--after"></i>';
+		this.isExpanded = false;
 
-    // Get content height
-    var contentHeight = this.container.find('.c-show-more__content').outerHeight(true);
+	}
+	// Set the button state on toggle
+	this.content.setAttribute("aria-expanded", this.isExpanded);
+	this.button.innerHTML = this.buttonText;
+	this.button.setAttribute("aria-label", this.buttonText);
 
-    this.content.attr('data-original-height', contentHeight);
+};
 
-    if (isClosed === true) {
-      contentHeight = this.defaultHeight;
-      this.container.addClass('is-closed');
-    }
+return SHOWMORE;
 
-    this.content.css('height', contentHeight);
-    this.content.removeClass('is-ghost');
-    this.content.addClass('is-ready');
-  };
-
-  SHOWMORE.prototype.addButton = function () {
-
-    this.buttonIcon = $('<i>').addClass('c-icon c-icon--chevron-down c-icon--after');
-    this.button = $('<button>').addClass('c-btn c-btn--medium c-btn--secondary')
-                               .text(this.buttonTextMore).append(this.buttonIcon)
-                               .on('click', { that: this }, this.toggleState);
-
-    return this.container.append(this.button);
-  };
-
-  SHOWMORE.prototype.toggleState = function (e) {
-
-    e.preventDefault();
-
-    // Temp this-holder
-    var that = e.data && e.data.that ? e.data.that : this ;
-
-    // Things are still moving
-    if (that.isToggling) return false;
-
-    that.isToggling = true;
-
-    var contentHeight = that.content.outerHeight();
-    var newContentHeight = that.defaultHeight;
-
-    if (contentHeight === that.defaultHeight) {
-      newContentHeight = that.content.attr('data-original-height');
-    }
-
-    that.content.css('height', newContentHeight);
-    that.container.toggleClass('is-closed');
-
-    // Update button text
-    var isClosed = that.container.hasClass('is-closed');
-    var category = "Show More";
-    // Use ID as a label, or try the first heading, otherwise "unidentified"
-    var label = that.container.attr('id') || that.content.find("h1,h2,h3,h4,h5,h6").first().text() || "unidentified" ;
-    if (isClosed === true) {
-      that.buttonIcon.addClass('c-icon--chevron-down').removeClass('c-icon--chevron-up');
-      that.button.text(that.buttonTextMore).append(that.buttonIcon);
-      UTILS.addAnalyticsEvent(category, "Closed", label);
-    } else {
-      that.buttonIcon.addClass('c-icon--chevron-up').removeClass('c-icon--chevron-down');
-      that.button.text(that.buttonTextLess).append(that.buttonIcon);
-      UTILS.addAnalyticsEvent(category, "Opened", label);
-    }
-
-    // Remove focus state
-    that.button.blur();
-
-    that.isToggling = false;
-
-    // Returns true if open, false if closed
-    return !isClosed;
-  };
-
-  return SHOWMORE;
 });

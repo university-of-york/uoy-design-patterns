@@ -399,23 +399,24 @@ define(
 
       // Set up 'Show more' containers
       // We have to put these outside the typical document.ready function because
-      // Chrome doesn't register the height of the ShowMore container properly until
-      // the window finishes loading
+       // the window finishes loading
       $(window).on('load', function() {
-          //console.log('Window loaded in Show More');
-          UTILS.eachIfExists('.js-show-more', function (i, a) {
-              var $a = $(a);
-              var defaultHeight = parseInt($a.attr('data-default-height'), 10);
-              var buttonTextMore = $a.attr('data-more-text') || false;
-              var buttonTextLess = $a.attr('data-less-text') || false;
-              var e = new SHOWMORE({
-                  container: $a,
-                  defaultHeight: defaultHeight,
-                  buttonTextMore: buttonTextMore,
-                  buttonTextLess: buttonTextLess
-              });
-              // Wait till fonts are loaded
-              UTILS.fontsActive(e.setShowMoreHeight, e);
+     
+        UTILS.eachIfExists('.js-show-more', function(i, $container) {
+
+          var elementsVisible = parseInt($container.getAttribute('data-elements-visible')) || null;
+          var buttonTextMore = $container.getAttribute('data-more-text') || null;
+          var buttonTextLess = $container.getAttribute('data-less-text') || null;
+          
+          var showMore = new SHOWMORE ($container , {
+            elementsVisible: elementsVisible,
+            buttonTextMore: buttonTextMore,
+            buttonTextLess: buttonTextLess
           });
-      });
-});
+
+          return showMore;
+          
+        });
+      
+    });
+  });
