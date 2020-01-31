@@ -6,8 +6,8 @@
   @include component;
   // Make sure button is higher than content:after
   .c-btn {
-    position:relative;
-    z-index:8;
+    position: relative;
+    z-index: 8;
   }
 }
 // Secondary buttons on alt1/2 rows disappear
@@ -15,55 +15,84 @@
 .o-grid__row--alt1,
 .o-grid__row--alt2 {
   .c-show-more .c-btn--secondary {
-    border-color: colour( "grey", 100 );  //$light
+    border-color: colour("grey", 100); //$light
   }
 }
 .c-show-more__content {
-  @include transition('opacity');
-  overflow:hidden;
-  position:relative;
-  &:after {
-    content:'';
-    display:block;
-    width:100%;
-    height:50%;
-    max-height:100px;
-    background-image:linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 90%);
-    position:absolute;
-    bottom:0;
-    left:0;
-    opacity:0;
+  @include transition("opacity");
+  overflow: hidden;
+  position: relative;
+  // &:after {
+  //   content: "";
+  //   display: block;
+  //   width: 100%;
+  //   height: 50%;
+  //   max-height: 100px;
+  //   background-image: linear-gradient(
+  //     to bottom,
+  //     rgba(255, 255, 255, 0) 0%,
+  //     rgba(255, 255, 255, 1) 90%
+  //   );
+  //   position: absolute;
+  //   bottom: 0;
+  //   left: 0;
+  //   opacity: 0;
+  // }
+  // .c-show-more.is-closed &:after {
+  //   opacity: 1;
+  // }
+  .hidden-content {
+    transition: visibility 0.6s ease-out, opacity 0.5s linear;
   }
-  .c-show-more.is-closed &:after {
-    opacity:1;
+  .is-closed {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+  }
+  .is-open {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
   }
 }
 // Different colour gradients for use in alt rows
 .o-grid__row--alt1 {
   .c-show-more__content {
     &:after {
-      background-image:linear-gradient(to bottom, transparentize($o-grid__row--alt1-background-color, 1) 0%, $o-grid__row--alt1-background-color 90%);
+      background-image: linear-gradient(
+        to bottom,
+        transparentize($o-grid__row--alt1-background-color, 1) 0%,
+        $o-grid__row--alt1-background-color 90%
+      );
     }
   }
 }
 .o-grid__row--alt2 {
   .c-show-more__content {
     &:after {
-      background-image:linear-gradient(to bottom, transparentize($o-grid__row--alt2-background-color, 1) 0%, $o-grid__row--alt2-background-color 90%);
+      background-image: linear-gradient(
+        to bottom,
+        transparentize($o-grid__row--alt2-background-color, 1) 0%,
+        $o-grid__row--alt2-background-color 90%
+      );
     }
   }
 }
 .o-grid__row--alt3 {
   .c-show-more__content {
     &:after {
-      background-image:linear-gradient(to bottom, transparentize($o-grid__row--alt3-background-color, 1) 0%, $o-grid__row--alt3-background-color 90%);
+      background-image: linear-gradient(
+        to bottom,
+        transparentize($o-grid__row--alt3-background-color, 1) 0%,
+        $o-grid__row--alt3-background-color 90%
+      );
     }
   }
 }
 
-.csstransforms {
-  // 'is-ready' class added by JS after preparation
-  .c-show-more__content.is-ready {
-    @include transition('height');
-  }
-}
+// .csstransforms {
+//   // 'is-ready' class added by JS after preparation
+//   .c-show-more__content.is-ready {
+//     @include transition('height');
+//   }
+// }
