@@ -41,7 +41,7 @@ var SHOWMORE = function ( $context , options )
 	this.numberOfElements = this.content.children.length;
 	
 	// Set the initial state on container
-	this.content.setAttribute("aria-expanded", "false");
+	this.content.setAttribute("tabindex", 0);
 	this.isExpanded = false;
 	
 	// Make a list of elements inside the content div
@@ -75,7 +75,6 @@ SHOWMORE.prototype.initialise = function()
 	// Initialise content toggle and bind this to it
 	this.button.addEventListener('click' , this.toggle.bind(this));
 
-};
 
 // --------------------------------------------------
 // Create a button
@@ -121,8 +120,8 @@ SHOWMORE.prototype.create_wrapper = function()
 	this.content.appendChild(wrapper);
 
 	// Get the name of the div containing the hidden content
-	this.hiddenElements = wrapper;
-	
+	this.hiddenElements = wrapper
+	this.hiddenElements.setAttribute("aria-expanded", "false");
 };
 
 // --------------------------------------------------
@@ -144,10 +143,10 @@ SHOWMORE.prototype.toggle = function()
 
 	}
 	// Set the button state on toggle
-	this.content.setAttribute("aria-expanded", this.isExpanded);
+	this.hiddenElements.setAttribute("aria-expanded", this.isExpanded);
 	this.button.innerHTML = this.buttonText;
 	this.button.setAttribute("aria-label", this.buttonText);
-
+	
 };
 
 return SHOWMORE;
