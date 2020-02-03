@@ -17,12 +17,12 @@ component("show-more", { "content": "<h3>The York approach</h3>"+
                                  "<h4>Students who complete this course will be able to:</h4>"+
                                  "<ul class=\"u-two-columns\">"+
                                  "  <li>Engage critically in debates around scholarship that inform current archaeological and heritage issues applicable to multiple periods of human society, using evidence from the UK and elsewhere in the world</li>"+
-                                 "  <li>Design, execute and evaluate archaeological and heritage research projects to a standard informed by key theoretical, scientific, legal and professional principles and methodologies in an international context</li>"+
+                                 "  <li><a href=\"#\">Design</a>, execute and evaluate archaeological and heritage research projects to a standard informed by key theoretical, scientific, legal and professional principles and methodologies in an international context</li>"+
                                  "  <li>Generate, document and manage primary archaeological and heritage data from diverse sources of evidence and contexts and conduct analysis using a range of digitial technology</li>"+
                                  "  <li>Operate effectively as constructive and inclusive leaders and confident participants in teamwork in challenging environments and using data from  multi-disciplinary field projects.</li>"+
                                  "  <li>Apply critical and creative approaches to problem-solving in complex situations with diverse, fragmentary datasets that reflect biases in their generation, survival, identification and documentation</li>"+
                                  "  <li>Resolve challenges in interpretation and presentation from an interdisciplinary perspective with agility and awareness of ethical issues</li>"+
-                                 "  <li>Confidently explain, communicate and debate ideas through written, visual, and oral forms of presentation to a wide range of public and professional audiences using print and digital media          </li>"+
+                                 "  <li><a href=\"#\">Confidently</a> explain, communicate and debate ideas through written, visual, and oral forms of presentation to a wide range of public and professional audiences using print and digital media          </li>"+
                                  "  <li>Contribute as independent scholars in the field of archaeological heritage practice through rigorous and imaginative inquiry in multi-disciplinary contexts</li>"+
                                  "</ul>"});
 </script>
@@ -39,13 +39,13 @@ component("show-more", {
                                  "<h4>Students who complete this course will be able to:</h4>"+
                                  "<ul class=\"u-two-columns\">"+
                                  "  <li>Engage critically in debates around scholarship that inform current archaeological and heritage issues applicable to multiple periods of human society, using evidence from the UK and elsewhere in the world</li>"+
-                                 "  <li>Design, execute and evaluate archaeological and heritage research projects to a standard informed by key theoretical, scientific, legal and professional principles and methodologies in an international context</li>"+
+                                 "  <li><a href=\"#\">Design</a>, execute and evaluate archaeological and heritage research projects to a standard informed by key theoretical, scientific, legal and professional principles and methodologies in an international context</li>"+
                                  "  <li>Generate, document and manage primary archaeological and heritage data from diverse sources of evidence and contexts and conduct analysis using a range of digitial technology</li>"+
                                  "  <li>Operate effectively as constructive and inclusive leaders and confident participants in teamwork in challenging environments and using data from  multi-disciplinary field projects.</li>"+
                                  "  <li>Apply critical and creative approaches to problem-solving in complex situations with diverse, fragmentary datasets that reflect biases in their generation, survival, identification and documentation</li>"+
                                  "  <li>Resolve challenges in interpretation and presentation from an interdisciplinary perspective with agility and awareness of ethical issues</li>"+
-                                 "  <li>Confidently explain, communicate and debate ideas through written, visual, and oral forms of presentation to a wide range of public and professional audiences using print and digital media          </li>"+
-                                 "  <li>Contribute as independent scholars in the field of archaeological heritage practice through rigorous and imaginative inquiry in multi-disciplinary contexts</li>"+
+                                 "  <li>Confidently explain, communicate and debate ideas through written, visual, and oral forms of presentation to a wide range of public and professional audiences using print and digital media </li>"+
+                                 "  <li>Contribute as independent scholars in the field of <a href=\"#\">archaeological</a> heritage practice through rigorous and imaginative inquiry in multi-disciplinary contexts</li>"+
                                  "</ul>"});
 </script>
 
