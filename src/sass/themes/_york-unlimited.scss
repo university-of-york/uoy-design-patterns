@@ -63,6 +63,11 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
     }
   }
 
+  // Skip-to/a11y links
+  .o-skip-link {
+    &,&:hover { color:white; }
+  }
+
   // Makes sure search box has not margin at bottom
   .c-form--mobile-search {
     top:0;
