@@ -96,6 +96,7 @@ define(
           new TABS({
             container: tabs
           });
+          
         });
 
         // Go to tab if hash is set
