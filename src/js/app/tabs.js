@@ -7,6 +7,7 @@ category: Javascript
 ---
 
  */
+
 define(['jquery', 'app/utils'], function ($, UTILS) {
 
 var TABS = function ( settings ) 
