@@ -9,6 +9,10 @@ category: Javascript
  */
 define(['jquery', 'app/utils'], function ($, UTILS) {
 
+
+// --------------------------------------------------
+// Contructor
+
 var TABS = function ( settings ) 
 {
 	// Containing element 
@@ -31,11 +35,14 @@ var TABS = function ( settings )
 
 TABS.prototype.initialise = function (  )
 {
-	// What is the initial active tab? Is it from the url or is it the first element?
-	var initial_active_tab = this.get_initial_active_tab();
+	// Add tablist role to ul, in case it's not there
+	this.tabsList.setAttribute('role' , 'tablist');
 	
+	// What is the initial active tab? Is it from the url or is it the first element?
+  var initial_active_tab = this.get_initial_active_tab();
+
 	// Set the initial active tab
-	this.set_active_tab( initial_active_tab );
+	this.set_active_tab( initial_active_tab , true );
 	
 	// This is the click listener
 	this.tabsList.addEventListener("click", this.tab_click_handler.bind(this));
@@ -175,12 +182,12 @@ TABS.prototype.get_tab_hash_from_url = function ()
 // --------------------------------------------------
 // Active tab
 
-TABS.prototype.set_active_tab = function ( hash )
+TABS.prototype.set_active_tab = function ( hash , dontfocus )
 {
 	if ( hash )
 	{
 		// Set a tab as active
-		this.active_tab_attributes( hash );	
+		this.active_tab_attributes( hash , dontfocus );	
 		
 		// Set all others as inactive
 		this.inactive_tab_attributes( hash );
@@ -190,7 +197,7 @@ TABS.prototype.set_active_tab = function ( hash )
 // --------------------------------------------------
 // Active tab attributes
 
-TABS.prototype.active_tab_attributes = function ( hash )
+TABS.prototype.active_tab_attributes = function ( hash , dontfocus)
 {
 	// Remove the "#"
 	var contentID = hash.substring(1);
@@ -202,13 +209,21 @@ TABS.prototype.active_tab_attributes = function ( hash )
 
 	// Set tab elements to active 
 	tab.classList.add("is-active");
-	link.setAttribute('tabindex', '0');
+	link.setAttribute('tabindex' , '0');
+	link.setAttribute('aria-controls' , contentID);
+	link.setAttribute('aria-selected' , 'true');
+	link.setAttribute('aria-expanded' , 'true');
+	link.setAttribute('role' , 'tab');
 
 	// Set content elements to active 
 	content.classList.add("is-active");
-	content.setAttribute('aria-hidden', 'false');
-	content.setAttribute('tabindex', '0');
-	content.focus();	
+	content.setAttribute('aria-hidden' , 'false');
+	content.setAttribute('tabindex' , '0');
+	link.setAttribute('role' , 'tabpanel');
+  
+  // Check that the active tab focus is not 0
+  if (!dontfocus) content.focus();	
+
 };
 
 // --------------------------------------------------
@@ -225,21 +240,25 @@ TABS.prototype.inactive_tab_attributes = function ( hash )
 		
 		// Set a variable to the value of a links href - example: #about
 		var linkHash =  this.tabsListLinks[i].getAttribute('href');
+		// Remove the "#"
+		var contentID = linkHash.substring(1);
 
 		// Compare the href of links the tab ID
 		if ( linkHash != hash )
 		{
 			// Set tab elements to inactive 
 			tabs.classList.remove("is-active");
-			link.setAttribute('tabindex', '-1');
+			link.setAttribute('tabindex' , '-1');
+			link.setAttribute('aria-controls' , contentID);
+			link.setAttribute('aria-selected' , 'false');
+			link.setAttribute('aria-expanded' , 'false');
 			
 			// Set content elements to inactive 
 			content.classList.remove("is-active");
-			content.setAttribute('aria-hidden', 'true');
-			content.setAttribute('tabindex', '-1');
+			content.setAttribute('aria-hidden' , 'true');
+			content.setAttribute('tabindex' , '-1');
 		}
 	}
 };
-
   return TABS;
 });
