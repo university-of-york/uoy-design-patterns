@@ -9,10 +9,6 @@ category: Javascript
  */
 define(['jquery', 'app/utils'], function ($, UTILS) {
 
-
-// --------------------------------------------------
-// Contructor
-
 var TABS = function ( settings ) 
 {
 	// Containing element 
@@ -35,11 +31,11 @@ var TABS = function ( settings )
 
 TABS.prototype.initialise = function (  )
 {
-	// Add tablist role to ul, in case it's not there
-	this.tabsList.setAttribute('role' , 'tablist');
-	
 	// What is the initial active tab? Is it from the url or is it the first element?
-  var initial_active_tab = this.get_initial_active_tab();
+	var initial_active_tab = this.get_initial_active_tab();
+	
+	// Set the initial active tab
+	this.set_active_tab( initial_active_tab , true );
 
 	// Set the initial active tab
 	this.set_active_tab( initial_active_tab , true );
@@ -209,7 +205,7 @@ TABS.prototype.active_tab_attributes = function ( hash , dontfocus)
 
 	// Set tab elements to active 
 	tab.classList.add("is-active");
-	link.setAttribute('tabindex' , '0');
+	link.setAttribute('tabindex', '0');
 	link.setAttribute('aria-controls' , contentID);
 	link.setAttribute('aria-selected' , 'true');
 	link.setAttribute('aria-expanded' , 'true');
@@ -217,9 +213,9 @@ TABS.prototype.active_tab_attributes = function ( hash , dontfocus)
 
 	// Set content elements to active 
 	content.classList.add("is-active");
-	content.setAttribute('aria-hidden' , 'false');
-	content.setAttribute('tabindex' , '0');
-	link.setAttribute('role' , 'tabpanel');
+	content.setAttribute('aria-hidden', 'false');
+	content.setAttribute('tabindex', '0');
+	content.setAttribute('role' , 'tabpanel');
   
   // Check that the active tab focus is not 0
   if (!dontfocus) content.focus();	
@@ -240,25 +236,24 @@ TABS.prototype.inactive_tab_attributes = function ( hash )
 		
 		// Set a variable to the value of a links href - example: #about
 		var linkHash =  this.tabsListLinks[i].getAttribute('href');
-		// Remove the "#"
-		var contentID = linkHash.substring(1);
 
 		// Compare the href of links the tab ID
 		if ( linkHash != hash )
 		{
 			// Set tab elements to inactive 
 			tabs.classList.remove("is-active");
-			link.setAttribute('tabindex' , '-1');
+			link.setAttribute('tabindex', '-1');
 			link.setAttribute('aria-controls' , contentID);
 			link.setAttribute('aria-selected' , 'false');
 			link.setAttribute('aria-expanded' , 'false');
 			
 			// Set content elements to inactive 
 			content.classList.remove("is-active");
-			content.setAttribute('aria-hidden' , 'true');
-			content.setAttribute('tabindex' , '-1');
+			content.setAttribute('aria-hidden', 'true');
+			content.setAttribute('tabindex', '-1');
 		}
 	}
 };
+
   return TABS;
 });
