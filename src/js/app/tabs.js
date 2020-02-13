@@ -35,8 +35,8 @@ TABS.prototype.initialise = function (  )
 	// What is the initial active tab? Is it from the url or is it the first element?
 	var initial_active_tab = this.get_initial_active_tab();
 	
-	// Set the initial active tab
-	this.set_active_tab( initial_active_tab , true );
+	// Add tablist role to ul, in case it's not there
+	this.tabsList.setAttribute('role' , 'tablist');
 
 	// Set the initial active tab
 	this.set_active_tab( initial_active_tab , true );
@@ -244,7 +244,6 @@ TABS.prototype.inactive_tab_attributes = function ( hash )
 			// Set tab elements to inactive 
 			tabs.classList.remove("is-active");
 			link.setAttribute('tabindex', '-1');
-			link.setAttribute('aria-controls' , contentID);
 			link.setAttribute('aria-selected' , 'false');
 			link.setAttribute('aria-expanded' , 'false');
 			
