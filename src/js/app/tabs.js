@@ -124,6 +124,9 @@ TABS.prototype.get_focused_tab_index = function ()
 
 TABS.prototype.keystroke_handler = function ( e )
 {
+	// Stop the page from scrolling
+	e.preventDefault();
+
 	// Lets look at what keys were pressed and do stuff that appropriate
 	if ( e.keyCode >= 37 || e.keyCode <= 40) // Up, down, left or right arrow keys
 	{
