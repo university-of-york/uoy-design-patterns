@@ -91,8 +91,6 @@ TABS.prototype.get_active_index = function ()
 	{
 		if( this.tabsListItems[ i ].classList.contains( "is-active" ) ) return i;
 	}
-	
-	console.log( "No joy" );
 
 	// Fall back to first if not found
 	return 0;
@@ -124,11 +122,8 @@ TABS.prototype.get_focused_tab_index = function ()
 
 TABS.prototype.keystroke_handler = function ( e )
 {
-	// Stop the page from scrolling
-	e.preventDefault();
-
 	// Lets look at what keys were pressed and do stuff that appropriate
-	if ( e.keyCode >= 37 || e.keyCode <= 40) // Up, down, left or right arrow keys
+	if ( e.keyCode >= 37 && e.keyCode <= 40) // Up, down, left or right arrow keys
 	{
 		// Get the index of the tab with focus
 		var focusTabIndex = this.get_focused_tab_index();
@@ -149,9 +144,11 @@ TABS.prototype.keystroke_handler = function ( e )
 		}
 
 		// Apply the focus to the selected tab link
-		this.tabsListLinks[ focusTabIndex ].focus();		
-	}
+		this.tabsListLinks[ focusTabIndex ].focus();
 
+		// Stop the page from scrolling
+		e.preventDefault();
+	}
 };
 
 // --------------------------------------------------
@@ -218,11 +215,7 @@ TABS.prototype.active_tab_attributes = function ( hash , dontfocus)
 	// Set content elements to active 
 	content.classList.add("is-active");
 	content.setAttribute('aria-hidden', 'false');
-	content.setAttribute('tabindex', '0');
 	content.setAttribute('role' , 'tabpanel');
-  
-  // Check that the active tab focus is not 0
-  if (!dontfocus) content.focus();	
 
 };
 
@@ -253,7 +246,6 @@ TABS.prototype.inactive_tab_attributes = function ( hash )
 			// Set content elements to inactive 
 			content.classList.remove("is-active");
 			content.setAttribute('aria-hidden', 'true');
-			content.setAttribute('tabindex', '-1');
 		}
 	}
 };
