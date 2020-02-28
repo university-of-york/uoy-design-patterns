@@ -2132,17 +2132,17 @@ currently-unhandled@^0.4.1:
   dependencies:
     array-find-index "^1.0.1"
 
-customizr@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/customizr/-/customizr-1.4.0.tgz#c42ccabfa97b69e71ab5d5691b0a6b569cd586c6"
-  integrity sha512-R81kL5cy/Fw8KayehXNlPYFT1p+rpGsj+anFAE02F+MFxd60/CRyneeWoQZwFi2syxgx1nI5yTnP/6WVmEraeA==
+customizr@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/customizr/-/customizr-1.4.1.tgz#3b3b71d87e75a085274c11e869b4e51e9ee76c0d"
+  integrity sha512-rHryqmb0RpowLWcbyW40QejmfjcVHzMqyoE0GTYlvQTEbwLpTVQD7th5j5hQd4BH8YivAeLrSVCDt9Lxwpk4HA==
   dependencies:
     colors "^1.4.0"
     cross-spawn "^7.0.1"
-    fast-deep-equal "^2.0.1"
-    glob "^7.1.5"
+    fast-deep-equal "^3.1.1"
+    glob "^7.1.6"
     lodash "^4.17.15"
-    mkdirp "^0.5.1"
+    mkdirp "^1.0.3"
     modernizr "^3"
     nopt "^4.0.1"
     optimist "^0.6.1"
@@ -3109,6 +3109,11 @@ fast-deep-equal@^2.0.1:
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-2.0.1.tgz#7b05218ddf9667bf7f370bf7fdb2cb15fdd0aa49"
   integrity sha1-ewUhjd+WZ79/Nwv3/bLLFf3Qqkk=
 
+fast-deep-equal@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.1.tgz#545145077c501491e33b15ec408c294376e94ae4"
+  integrity sha512-8UEa58QDLauDNfpbrX55Q9jrGHThw2ZMdOky5Gl1CDtVeJDPVrG4Jxx1N8jw2gkWaff5UUuX1KJd+9zGe2B+ZA==
+
 fast-glob@^2.0.2, fast-glob@^2.2.6:
   version "2.2.7"
   resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-2.2.7.tgz#6953857c3afa475fff92ee6015d52da70a4cd39d"
@@ -3640,7 +3645,7 @@ glob@7.1.3:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-glob@^7.0.3, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@^7.1.5, glob@~7.1.1:
+glob@^7.0.3, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6, glob@~7.1.1:
   version "7.1.6"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.6.tgz#141f33b81a7c2492e125594307480c46679278a6"
   integrity sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
@@ -3982,12 +3987,12 @@ grunt-md5sum@2.0.1:
   resolved "https://registry.yarnpkg.com/grunt-md5sum/-/grunt-md5sum-2.0.1.tgz#1b7699fdabb904db8dcb9b13a3bbaa101ae3e0a8"
   integrity sha1-G3aZ/au5BNuNy5sTo7uqEBrj4Kg=
 
-grunt-modernizr@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/grunt-modernizr/-/grunt-modernizr-2.1.0.tgz#accb7042e87551641d803d8b772459a4b39b2b61"
-  integrity sha512-Yi2hgGqOcQhYBa2bkIkclCxzMWvr0juxtDkStYzZcWFPV1vfW3tlL31jaVJ9Frrm3s+Z8e/ZlKgtNzWlV/gK3A==
+grunt-modernizr@2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/grunt-modernizr/-/grunt-modernizr-2.1.1.tgz#80ab26910c2002526d30a2581885e913b7e96218"
+  integrity sha512-4jYKx73INKyZN8QpVEsdIJ4fOxGyB4oZRt2jsaFJxsjuThmwJUF39IuaNik4uQWnauvZSGtMFyncXWLp4ym1Dw==
   dependencies:
-    customizr "^1.4.0"
+    customizr "^1.4.1"
     lodash.merge "^4.6.2"
 
 grunt-newer@1.3.0:
@@ -5998,6 +6003,11 @@ mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@~0.5.1:
   integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
   dependencies:
     minimist "0.0.8"
+
+mkdirp@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.3.tgz#4cf2e30ad45959dddea53ad97d518b6c8205e1ea"
+  integrity sha512-6uCP4Qc0sWsgMLy1EOqqS/3rjDHOEnsStVr/4vtAIK2Y5i2kA7lFFejYrpIyiN9w0pYf4ckeCYT9f1r1P9KX5g==
 
 modernizr@3.7.0:
   version "3.7.0"
