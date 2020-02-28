@@ -23,7 +23,7 @@
     max-width: 90%;
     max-height: 90%;
     opacity: 0;
-    overflow: none;
+    // overflow: none;
     @include mq("small", "-") {
       overflow-y: auto;
     }
@@ -58,7 +58,7 @@
   @include component-margin;
   display: block;
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
 }
 .c-modal--framed {
   border-left: 0.8em solid $c-modal-border-color;
