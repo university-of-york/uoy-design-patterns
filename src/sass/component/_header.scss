@@ -30,6 +30,10 @@
     @include font-size(18px, 20px);
     margin:$base-spacing*0.75 0;
   }
+
+  // Chrome won't show the focus ring if an inline link wraps a block image
+  & > a { display:block; }
+  
 }
 .c-main-header__link {
   display:inline-block;
