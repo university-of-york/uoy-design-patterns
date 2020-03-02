@@ -29,7 +29,7 @@
     }
     // Really big screens
     @include mq("huge", "+") {
-      width: 60%;
+      width: 40%;
     }
     // Everything else
     @include mq("huge", "-") {
