@@ -366,7 +366,19 @@
   .c-figure__content--top-right {
     float:right;
   }
+
+  // Big banner variant (homepage)
+  &.c-figure--big-banner {
+      // Increase banner min-height
+      @media only screen and (min-width: 40em) { min-height:550px; }
+      
+      // Adjust heading size
+      @media only screen and (min-width: 52.5em) { h3 { font-size:3rem; } }
+      @media only screen and (min-width: 40em) and (max-width: 52.4375em) { h3 { font-size:2.5rem; } }
+      @media only screen and (max-width: 39.9375em) { h3 { font-size:2rem; } }
+  }
 }
+
 // LINK
 .c-figure--link {
   text-decoration:none;
