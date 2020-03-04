@@ -65,9 +65,9 @@ define(['jquery', 'app/focus-trap'], function ($, FOCUSTRAP) {
   MODAL.prototype.activate = function ($el) {
     if ( $el.hasClass('is-hidden')) {
     $el.removeClass('is-hidden');
-    setTimeout(function () {
+    // setTimeout(function () {
       $el.addClass('is-active'); 
-    }, 30); 
+    // }, 30); 
     return true;
   }   
   };
@@ -152,7 +152,10 @@ define(['jquery', 'app/focus-trap'], function ($, FOCUSTRAP) {
       if (e.keyCode == 27) { 
         currentModal.close();
       }
+      
     });
+
+    
 
     return modalWrapper;
 
