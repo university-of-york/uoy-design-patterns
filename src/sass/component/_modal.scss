@@ -124,27 +124,30 @@
   background-color: transparent;
   border: 0;
   position: absolute;
-  top: 0;
-  width: 72px;
-  height: 100%;
+  // top: 0;
+  top: 50%;
+  // width: 72px;
+  // height: 100%;
   cursor: pointer;
   opacity: 0;
   color: $c-modal__nav-color;
   z-index: 8;
   &.is-active {
-    opacity: 0.7;
+    opacity: 1;
+    outline-color: $focus-outline-colour;
     &:hover {
       opacity: 1;
     }
   }
   .c-icon {
     background-color: $c-modal__nav__icon-background;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -16px;
-    margin-left: -16px;
-    padding: $base-spacing/2 0;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // margin-top: -16px;
+    // margin-left: -16px;
+    opacity: 0.7;
+    padding: $base-spacing/2;
     @include mq("small", "-") {
       font-size: 2em;
     }
@@ -154,13 +157,19 @@
   }
 }
 .c-modal__nav--prev {
-  left: 0;
+  left: 20px;
+  @include mq("small", "-") {
+    left: 5px;
+  }
   .c-icon {
     padding-right: $base-spacing/2;
   }
 }
 .c-modal__nav--next {
-  right: 0;
+  right: 20px;
+  @include mq("small", "-") {
+    right: 5px;
+  }
   .c-icon {
     padding-left: $base-spacing/2;
   }
