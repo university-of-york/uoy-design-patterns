@@ -66,7 +66,8 @@ define(['jquery', 'app/modal'], function ($, MODAL) {
       m.open();
     });
 
-    // console.info(this);
+    
+    //console.info(this);
 
   };
 
