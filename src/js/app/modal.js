@@ -128,6 +128,7 @@ define(['jquery', 'app/focus-trap'], function ($, FOCUSTRAP) {
     modalWrapper = $('<div>').attr( 'tabindex' , 0 ).addClass('c-modal__wrapper is-hidden').on('click', function (e) {
       currentModal.close();
     });
+  
     modalPrev = $('<button>').addClass('c-modal__nav c-modal__nav--prev is-hidden')
                         .html('<i class="c-icon c-icon--3x c-icon--chevron-left c-icon--light"></i>')
                         .on('click', function (e) {
@@ -146,6 +147,12 @@ define(['jquery', 'app/focus-trap'], function ($, FOCUSTRAP) {
     $('body').append(modalWrapper);
 
     var focusTrap = new FOCUSTRAP(modalWrapper[0]);
+
+    modalWrapper.on('keydown', function (e) {
+      if (e.keyCode == 27) { 
+        currentModal.close();
+      }
+    });
 
     return modalWrapper;
 
