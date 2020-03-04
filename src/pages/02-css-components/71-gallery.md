@@ -15,8 +15,8 @@ If a collection of items on a page all have the `js-modal--gallery` class, then 
 <script>
 component("gallery-item", {
   "type": "landscape",
-  "link": "https://www.york.ac.uk/media/study-new/onlinecampustour/160607_HRC_JohnHoulihan_4144_4_0832.jpg",
-  "thumbnail": "https://www.york.ac.uk/media/study-new/onlinecampustour/160607_HRC_JohnHoulihan_4144_4_0832.jpg"
+  "link": "https://picsum.photos/1120/840/?image=992",
+  "thumbnail": "https://picsum.photos/374/280/?image=992"
 })+
 component("gallery-item", {
   "type": "landscape",
@@ -51,8 +51,8 @@ Galleries can also be created by using a grid layout, which gives you more contr
 <script>
 var g1 = {
   "gallery-item": {
-    "link": "https://www.york.ac.uk/media/study-new/onlinecampustour/160607_HRC_JohnHoulihan_4144_4_0832.jpg",
-    "thumbnail": "https://www.york.ac.uk/media/study-new/onlinecampustour/160607_HRC_JohnHoulihan_4144_4_0832.jpg",
+    "link": "https://picsum.photos/1280/1280/?image=997",
+    "thumbnail": "https://picsum.photos/280/280/?image=997",
     "caption": "<h3>Berrick Saul building </h3><p>Our £11m Berrick Saul building houses the Humanities Research Centre, interdisciplinary research centres, seminar rooms and the 150-seat Bowland Auditorium.</p>"
   }
 };
