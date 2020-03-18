@@ -41,7 +41,7 @@ define([], function () {
 		this.numberOfElements = this.content.children.length;
 		
 		// Set the initial state on container
-		this.content.setAttribute("tabindex", 0);
+		this.content.setAttribute("tabindex", "-1");
 		this.isExpanded = false;
 		
 		// Make a list of elements inside the content div
