@@ -16,10 +16,16 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
         if (!options.link) return false;
         this.link = options.link;
 
+        // Check if this is a <p> and fallback to a child <a> if exists
+        if ( this.link.is( "p" ) ) {
+            this.link = $( this.link.find( "a" )[ 0 ] );
+        }
+
         // remove wrapper paragraph, if any
         if (this.link.parent().is("p")) {
             this.link.unwrap();
         }
+
         // figure out the Youtube ID, which can be in the following 3 formats:
         // - [old style] https://www.youtube.com/watch?v=_8pUffDWFlM
         // - [old style extended] https://www.youtube.com/watch?v=_8pUffDWFlM&index=1&list=PLqL9vrHSa70NmzsSg36tnv0dqEueEbifj

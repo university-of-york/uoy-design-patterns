@@ -2,7 +2,7 @@
 <browserconfig>
     <msapplication>
         <tile>
-            <square150x150logo src="https://www.york.ac.uk/static/stable/img/favicons/mstile-150x150.png?v=m2Ro9y042Q"/>
+            <square150x150logo src="https://www.york.ac.uk/static/stable/img/favicons/mstile-150x150.png"/>
             <TileColor>#f0f2e9</TileColor>
         </tile>
     </msapplication>

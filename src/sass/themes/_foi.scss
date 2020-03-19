@@ -58,6 +58,11 @@ $t-btn-focus:darken($t-btn, 10);
     border-bottom-color: $t-main;
   }
 
+  // Skip-to/a11y links
+  .o-skip-link {
+    &,&:hover { color:white; }
+  }
+
   // Logo size
   .c-main-header__logo {
     width: 135px;
