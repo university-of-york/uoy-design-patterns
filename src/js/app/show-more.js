@@ -41,7 +41,6 @@ define([], function () {
 		this.numberOfElements = this.content.children.length;
 		
 		// Set the initial state on container
-		this.content.setAttribute("tabindex", "-1");
 		this.isExpanded = false;
 		
 		// Make a list of elements inside the content div
@@ -129,6 +128,7 @@ define([], function () {
 	
 	SHOWMORE.prototype.toggle = function()
 	{
+
 		// Set classes based on aria-expanded true/false	
 		if (!this.isExpanded) {
 			this.hiddenElements.classList.remove('is-closed');
@@ -146,7 +146,6 @@ define([], function () {
 		this.hiddenElements.setAttribute("aria-expanded", this.isExpanded);
 		this.button.innerHTML = this.buttonText;
 		this.button.setAttribute("aria-label", this.buttonText);
-		
 	};
 	
 	return SHOWMORE;
