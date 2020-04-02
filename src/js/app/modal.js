@@ -155,6 +155,22 @@ define(['jquery', 'app/focus-trap'], function ($, FOCUSTRAP) {
       
     });
 
+    modalWrapper.on('keydown', function (e) {
+      if (e.keyCode == 37) { 
+        currentModal.navigate('prev');
+        modalPrev.focus();
+        e.preventDefault();
+      }   
+    });
+
+    modalWrapper.on('keydown', function (e) {
+      if (e.keyCode == 39) { 
+        currentModal.navigate('next');
+        modalNext.focus();
+        e.preventDefault();
+      } 
+    });
+
     
 
     return modalWrapper;
