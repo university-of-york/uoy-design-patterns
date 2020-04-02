@@ -14,7 +14,7 @@ define(
     TOGGLE, UTILITYTOGGLE, WRAPPERHEIGHT, YOUTUBE,
     SOUNDCLOUD, SEARCHABLE, FILTERABLE, EQUALHEIGHT,
     MAPBOXMAP, SHOWMORE, AUTOCOMPLETE, MODAL,
-    DATAGSHEETS, DATAGRID, COOKIEBANNER, PGSEARCH ) {
+    DATAGSHEETS, DATAGRID, COOKIEBANNER, PGSEARCH) {
 
       $(function(){
 
@@ -23,6 +23,8 @@ define(
           console.log = function(a) { /*alert(a);*/ };
           console.info = function(a) { /*alert(a);*/ };
         }
+
+        
         
         // Adds MODAL to global scope so we can trigger modals via GTM
         window.MODAL = MODAL;
@@ -238,6 +240,7 @@ define(
           new MODALLINK({
             link: $(a)
           });
+          
         });
 
         // Add targeted nav functionality to nav

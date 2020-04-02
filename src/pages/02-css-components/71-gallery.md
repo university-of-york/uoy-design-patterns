@@ -6,10 +6,7 @@ category: components
 subcategory: Organisms
 layout: q+tq
 id: gallery-page
-
----
-
-<div class="lead"><p>A gallery is simply a row of square thumbnails whose modal popups are linked together. More complicated galleries can use a [grid layout](../css-components/grid.html) to create a two-, three- or four-column layout and add `c-gallery-item` components to each grid box.</p></div>
+---<div class="lead"><p>A gallery is simply a row of square thumbnails whose modal popups are linked together. More complicated galleries can use a [grid layout](../css-components/grid.html) to create a two-, three- or four-column layout and add `c-gallery-item` components to each grid box.</p></div>
 
 If a collection of items on a page all have the `js-modal--gallery` class, then they will automatically be scrollable when popped up in a modal window.
 
@@ -56,7 +53,7 @@ var g1 = {
   "gallery-item": {
     "link": "https://picsum.photos/1280/1280/?image=997",
     "thumbnail": "https://picsum.photos/280/280/?image=997",
-    "caption": "<p>The University is in the middle of an unprecedented period of expansion and renewal.</p>"
+    "caption": "<h3>Berrick Saul building </h3><p>Our £11m Berrick Saul building houses the Humanities Research Centre, interdisciplinary research centres, seminar rooms and the 150-seat Bowland Auditorium.</p>"
   }
 };
 var g2 = {
@@ -92,13 +89,11 @@ component("grid", { "atoms": [
 
 </script>
 
-
 ### Options
 
 #### Molecules
 
-
-* **gallery-item**
-  * **link**: the URL of the picture for the gallery
-  * **thumbnail**: the URL of the image thumbnail
-  * **caption**: the stuff that goes in the box under the picture. Should be an HTML string.
+- **gallery-item**
+  - **link**: the URL of the picture for the gallery
+  - **thumbnail**: the URL of the image thumbnail
+  - **caption**: the stuff that goes in the box under the picture. Should be an HTML string.
