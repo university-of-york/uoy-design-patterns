@@ -129,14 +129,14 @@ define(['jquery', 'app/focus-trap'], function ($, FOCUSTRAP) {
       currentModal.close();
     });
   
-    modalPrev = $('<button>').addClass('c-modal__nav c-modal__nav--prev is-hidden')
+    modalPrev = $('<a>').addClass('c-modal__nav c-modal__nav--prev is-hidden')
                         .html('<i class="c-icon c-icon--3x c-icon--chevron-left c-icon--light"></i>')
                         .on('click', function (e) {
                           e.stopPropagation();
                           currentModal.navigate('prev');
                         })
                         .appendTo(modalWrapper);
-    modalNext = $('<button>').addClass('c-modal__nav c-modal__nav--next is-hidden')
+    modalNext = $('<a>').addClass('c-modal__nav c-modal__nav--next is-hidden')
                         .html('<i class="c-icon c-icon--3x c-icon--chevron-right c-icon--light"></i>')
                         .on('click', function (e) {
                           e.stopPropagation();
