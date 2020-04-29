@@ -379,18 +379,18 @@ $c-icon--inverse-color: colour( "grey", 100 );  //$light;
 // Key facts
 // component/_key-fact.scss
 $c-key-fact-color:                      colour( "blue", 900 ); //$teal
-$c-key-fact-hover-color:               colour( "blue", 700 );  // lighten($teal,15)
+$c-key-fact-hover-color:                colour( "blue", 700 );  // lighten($teal,15)
 $c-key-fact__icon-color:                colour( "blue", 700 );  // lighten($teal,15)
-$c-key-fact__icon-hover-color:           colour( "blue", 600 );  // lighten($teal,25)
-$c-key-fact__title-color:              colour( "blue", 900 ); //$teal
-$c-key-fact__title-hover-color:          colour( "blue", 700 );  // lighten($teal,15)
-$c-key-fact__title-highlight-color:     colour( "blue", 500 );  //$blue
+$c-key-fact__icon-hover-color:          colour( "blue", 600 );  // lighten($teal,25)
+$c-key-fact-alt__icon-color:            colour( "blue", 400 );   
+$c-key-fact__title-color:               colour( "blue", 900 ); //$teal
+$c-key-fact__title-hover-color:         colour( "blue", 700 );  // lighten($teal,15)
+$c-key-fact__title-highlight-color:     colour( "blue", 600 );  //$blue
 $c-key-fact-alt-color:                  colour( 'grey' , 200 ); //darken($light,10)
 $c-key-fact-alt-hover-color:            colour( 'grey' , 200 ); //darken($light,10)
 $c-key-fact-alt-background-color:       colour( "blue", 900 ); //$teal
 $c-key-fact-alt-background-hover-color: colour( "blue", 800 );  //lighten($teal,5)
 $c-key-fact-alt__title-color:           colour( "grey", 100 );  //$light
-$c-key-fact__learnMoreLink:             colour( "blue", 500 );  //$blue
 
 // Labels
 // component/_label.scss
