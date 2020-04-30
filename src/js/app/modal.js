@@ -23,6 +23,7 @@ define(['jquery', 'app/focus-trap'], function ($, FOCUSTRAP) {
     this.scrollContent = options.scrollContent || this.defaults.scrollContent;
     this.prev = options.prev || false;
     this.next = options.next || false;
+    
     // Use setTimout to get unique ID
     this.id = setTimeout(function (){});
 
@@ -41,7 +42,10 @@ define(['jquery', 'app/focus-trap'], function ($, FOCUSTRAP) {
   };
 
   MODAL.prototype.open = function () {
-    
+
+    // Store the currently focussed element - we'll return focus to it on close
+    this.previouslyActiveElement = document.activeElement;
+
     // Show wrapper
     var thisModal = $('#modal-'+this.id);
     if( this.activate(modalWrapper) ) modalWrapper.focus();
@@ -77,6 +81,9 @@ define(['jquery', 'app/focus-trap'], function ($, FOCUSTRAP) {
     this.deactivate($('.c-modal'));
     this.deactivate($('.c-modal__wrapper'));
     this.deactivate($('.c-modal__nav'));
+
+    // Hand focus back to the element that had it before opening the modal
+    this.previouslyActiveElement.focus();
   };
 
   MODAL.prototype.deactivate = function ($el) {
@@ -158,7 +165,7 @@ define(['jquery', 'app/focus-trap'], function ($, FOCUSTRAP) {
     modalWrapper.on('keydown', function (e) {
       if (e.keyCode == 37) { 
         currentModal.navigate('prev');
-        modalPrev.focus();
+        // modalPrev.focus();
         e.preventDefault();
       }   
     });
@@ -166,7 +173,7 @@ define(['jquery', 'app/focus-trap'], function ($, FOCUSTRAP) {
     modalWrapper.on('keydown', function (e) {
       if (e.keyCode == 39) { 
         currentModal.navigate('next');
-        modalNext.focus();
+        // modalNext.focus();
         e.preventDefault();
       } 
     });
