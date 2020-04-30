@@ -391,6 +391,8 @@ $c-key-fact-alt-hover-color:            colour( 'grey' , 200 ); //darken($light,
 $c-key-fact-alt-background-color:       colour( "blue", 900 ); //$teal
 $c-key-fact-alt-background-hover-color: colour( "blue", 800 );  //lighten($teal,5)
 $c-key-fact-alt__title-color:           colour( "grey", 100 );  //$light
+$c-key-fact__learnMoreLink:             colour( "blue", 700 );  //$blue
+$c-key-fact-alt__learnMoreLink:         colour( "blue", 500 );  //$blue
 
 // Labels
 // component/_label.scss
