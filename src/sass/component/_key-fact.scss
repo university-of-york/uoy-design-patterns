@@ -47,11 +47,14 @@ a.c-key-fact:hover{
   font-family: $font-default;
   color:$c-key-fact__title-color;
   strong {
-    color:$c-key-fact__title-highlight-color;
+    color:$c-key-fact__icon-color;
   }
   .o-grid__row--alt1 &,
   .o-grid__row--alt2 & {
     color:$c-key-fact-alt__title-color;
+    strong {
+      color:$c-key-fact-alt__icon-color;
+    }
   }
 }
 
@@ -75,6 +78,3 @@ a.c-key-fact:hover{
     font-size:2em;
   }
 }
-// .c-key-fact__learnMoreLink {
-//   text-decoration:underline;
-// }
