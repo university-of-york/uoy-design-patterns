@@ -62,19 +62,21 @@ a.c-key-fact:hover{
 .c-key-fact__content {
   @include demarginalise;
   @include font-size(16px, 1.1);
-  .c-key-fact__learnMoreLink {
-    text-decoration:underline;
-    color: $c-key-fact__learnMoreLink;
-    .o-grid__row--alt1 &,
-    .o-grid__row--alt2 & {
-      color:$c-key-fact-alt__learnMoreLink;
-    }
-  }
+  
 }
 .c-key-fact__icon {
   color:$c-key-fact__icon-color;
   // Take up a lot of space in thirds in large with subnav
   @include mq(large) {
     font-size:2em;
+  }
+}
+
+.c-key-fact__learnMoreLink {
+  text-decoration:underline;
+  color: $c-key-fact__learnMoreLink;
+  .o-grid__row--alt1 &,
+  .o-grid__row--alt2 & {
+    color:$c-key-fact-alt__learnMoreLink;
   }
 }
