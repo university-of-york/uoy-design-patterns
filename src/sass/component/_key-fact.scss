@@ -36,6 +36,9 @@ a.c-key-fact:hover{
     color:$c-key-fact-alt-color;
     .c-key-fact__title {
       color:$c-key-fact-alt-color;
+      strong {
+        color:$c-key-fact-alt-color;
+      }
     }
   }
 }
