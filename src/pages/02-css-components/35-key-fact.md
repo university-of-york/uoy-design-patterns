@@ -57,7 +57,7 @@ component("grid-row", { "atoms": [
   } } } },
   { "grid-box": { "size": "third", "atoms": { "key-fact": {
     "title": "A community of <strong>2,000+</strong> research students",
-    "content": "supported by the York Graduate Research School",
+    "content": "<p>supported by the York Graduate Research School</p>",
     "link": "http://www.york.ac.uk/research/graduate-school/",
     "icon": "graduation-cap"
   } } } }
@@ -83,7 +83,7 @@ component("grid-row", {"type": "alt1", "class":"js-equal-height-row", "atoms": [
   } } } },
   { "grid-box": { "size": "third", "atoms": { "key-fact": {
     "title": "A community of <strong>2,000+</strong> research students",
-    "content": "supported by the York Graduate Research School",
+    "content": "<p>supported by the York Graduate Research School</p>",
     "link": "http://www.york.ac.uk/research/graduate-school/",
     "icon": "graduation-cap"
   } } } }
@@ -103,7 +103,7 @@ component("grid-row", {"type": "alt1", "class":"js-equal-height-row", "atoms": [
   } } } },
   { "grid-box": { "size": "third", "atoms": { "key-fact": {
     "title": "A community of <strong>2,000+</strong> research students",
-    "content": "supported by the York Graduate Research School",
+    "content": "<p>supported by the York Graduate Research School</p>",
     "link": "http://www.york.ac.uk/research/graduate-school/",
     "icon": "graduation-cap"
   } } } }
@@ -123,7 +123,7 @@ component("grid-row", {"type": "alt1", "class":"js-equal-height-row", "atoms": [
   } } } },
   { "grid-box": { "size": "third", "atoms": { "key-fact": {
     "title": "A community of <strong>2,000+</strong> research students",
-    "content": "supported by the York Graduate Research School",
+    "content": "<p>supported by the York Graduate Research School</p>",
     "link": "http://www.york.ac.uk/research/graduate-school/",
     "icon": "graduation-cap"
   } } } }
@@ -149,7 +149,7 @@ component("grid-row", {"type": "alt2", "class":"js-equal-height-row", "atoms": [
   } } } },
   { "grid-box": { "size": "third", "atoms": { "key-fact": {
     "title": "A community of <strong>2,000+</strong> research students",
-    "content": "supported by the York Graduate Research School",
+    "content": "<p>supported by the York Graduate Research School</p>",
     "icon": "graduation-cap"
   } } } }
 ] });
