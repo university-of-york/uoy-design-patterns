@@ -14,6 +14,9 @@
   .o-grid__row--alt1 &,
   .o-grid__row--alt2 & {
     color:$c-key-fact-alt-color;
+    .c-key-fact__icon {
+      color:$c-key-fact-alt__icon-color;
+    }
   }
   &:focus {
     outline: 2px solid $focus-outline-colour;
@@ -33,6 +36,9 @@ a.c-key-fact:hover{
     color:$c-key-fact-alt-color;
     .c-key-fact__title {
       color:$c-key-fact-alt-color;
+      strong {
+        color:$c-key-fact-alt-color;
+      }
     }
   }
 }
@@ -44,11 +50,14 @@ a.c-key-fact:hover{
   font-family: $font-default;
   color:$c-key-fact__title-color;
   strong {
-    color:$c-key-fact__title-highlight-color;
+    color:$c-key-fact__icon-color;
   }
   .o-grid__row--alt1 &,
   .o-grid__row--alt2 & {
     color:$c-key-fact-alt__title-color;
+    strong {
+      color:$c-key-fact-alt__icon-color;
+    }
   }
 }
 
@@ -56,6 +65,7 @@ a.c-key-fact:hover{
 .c-key-fact__content {
   @include demarginalise;
   @include font-size(16px, 1.1);
+  
 }
 .c-key-fact__icon {
   color:$c-key-fact__icon-color;
@@ -64,7 +74,12 @@ a.c-key-fact:hover{
     font-size:2em;
   }
 }
+
 .c-key-fact__learnMoreLink {
-  color:$c-key-fact__learnMoreLink;
   text-decoration:underline;
+  color: $c-key-fact__learnMoreLink;
+  .o-grid__row--alt1 &,
+  .o-grid__row--alt2 & {
+    color:$c-key-fact-alt__learnMoreLink;
+  }
 }
