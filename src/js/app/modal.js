@@ -7,7 +7,7 @@ category: Javascript
 ---
 
  */
-define(['jquery'], function ($) {
+define(['jquery', 'app/focus-trap'], function ($, FOCUSTRAP) {
 
   var currentModal = false;
   var modalWrapper = false;
@@ -23,6 +23,7 @@ define(['jquery'], function ($) {
     this.scrollContent = options.scrollContent || this.defaults.scrollContent;
     this.prev = options.prev || false;
     this.next = options.next || false;
+    
     // Use setTimout to get unique ID
     this.id = setTimeout(function (){});
 
@@ -41,9 +42,13 @@ define(['jquery'], function ($) {
   };
 
   MODAL.prototype.open = function () {
+
+    // Store the currently focussed element - we'll return focus to it on close
+    this.previouslyActiveElement = document.activeElement;
+
     // Show wrapper
     var thisModal = $('#modal-'+this.id);
-    this.activate(modalWrapper);
+    if( this.activate(modalWrapper) ) modalWrapper.focus();
     // Close existing modals
     var otherModals = $('.c-modal').not(thisModal).not('.is-hidden');
     if (otherModals.length > 0) this.deactivate(otherModals);
@@ -52,19 +57,23 @@ define(['jquery'], function ($) {
       this.loadContent();
     }
     // Add modal if needed - check if ID is in DOM
-    if (thisModal.length === 0) this.modalContainer.appendTo(modalWrapper);
+    if (thisModal.length === 0) this.modalContainer.insertAfter(modalPrev);
     this.activate(this.modalContainer);
+
     // Show/hide prev/next button
     if (this.prev === false) { this.deactivate(modalPrev); } else { this.activate(modalPrev); }
     if (this.next === false) { this.deactivate(modalNext); } else { this.activate(modalNext); }
     currentModal = this;
-  };
+};
 
   MODAL.prototype.activate = function ($el) {
+    if ( $el.hasClass('is-hidden')) {
     $el.removeClass('is-hidden');
-    setTimeout(function () {
-      $el.addClass('is-active');
-    }, 30);
+    // setTimeout(function () {
+      $el.addClass('is-active'); 
+    // }, 30); 
+    return true;
+  }   
   };
 
   MODAL.prototype.close = function () {
@@ -72,6 +81,9 @@ define(['jquery'], function ($) {
     this.deactivate($('.c-modal'));
     this.deactivate($('.c-modal__wrapper'));
     this.deactivate($('.c-modal__nav'));
+
+    // Hand focus back to the element that had it before opening the modal
+    this.previouslyActiveElement.focus();
   };
 
   MODAL.prototype.deactivate = function ($el) {
@@ -120,17 +132,18 @@ define(['jquery'], function ($) {
 
     if ($('.c-modal__wrapper').length > 0) return true;
 
-    modalWrapper = $('<div>').addClass('c-modal__wrapper is-hidden').on('click', function (e) {
+    modalWrapper = $('<div>').attr( 'tabindex' , 0 ).addClass('c-modal__wrapper is-hidden').on('click', function (e) {
       currentModal.close();
     });
-    modalPrev = $('<a>').addClass('c-modal__nav c-modal__nav--prev is-hidden')
+  
+    modalPrev = $('<button>').addClass('c-modal__nav c-modal__nav--prev is-hidden')
                         .html('<i class="c-icon c-icon--3x c-icon--chevron-left c-icon--light"></i>')
                         .on('click', function (e) {
                           e.stopPropagation();
                           currentModal.navigate('prev');
                         })
                         .appendTo(modalWrapper);
-    modalNext = $('<a>').addClass('c-modal__nav c-modal__nav--next is-hidden')
+    modalNext = $('<button>').addClass('c-modal__nav c-modal__nav--next is-hidden')
                         .html('<i class="c-icon c-icon--3x c-icon--chevron-right c-icon--light"></i>')
                         .on('click', function (e) {
                           e.stopPropagation();
@@ -139,6 +152,33 @@ define(['jquery'], function ($) {
                         .appendTo(modalWrapper);
 
     $('body').append(modalWrapper);
+
+    var focusTrap = new FOCUSTRAP(modalWrapper[0]);
+
+    modalWrapper.on('keydown', function (e) {
+      if (e.keyCode == 27) { 
+        currentModal.close();
+      }
+      
+    });
+
+    modalWrapper.on('keydown', function (e) {
+      if (e.keyCode == 37) { 
+        currentModal.navigate('prev');
+        // modalPrev.focus();
+        e.preventDefault();
+      }   
+    });
+
+    modalWrapper.on('keydown', function (e) {
+      if (e.keyCode == 39) { 
+        currentModal.navigate('next');
+        // modalNext.focus();
+        e.preventDefault();
+      } 
+    });
+
+    
 
     return modalWrapper;
 
@@ -154,13 +194,14 @@ define(['jquery'], function ($) {
     });
     this.modalTitle = this.title !== false ? $('<h4>').addClass('c-modal__title').text(this.title) : false;
     this.modalContent = this.content !== false ? $('<div>').addClass('c-modal__content') : false;
-    this.modalClose = $('<a>').addClass('c-modal__close').attr('title', 'Close this window').html('&times;').on('click', function (e) {
+    this.modalClose = $('<button>').addClass('c-modal__close').attr('title', 'Close this window').html('&times;').on('click', function (e) {
       that.close();
     });
 
     this.modalContainer.append([this.modalTitle, this.modalContent, this.modalClose]);
-
+    
   };
+  
 
   return MODAL;
 
