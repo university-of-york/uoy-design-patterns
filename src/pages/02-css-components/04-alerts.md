@@ -24,6 +24,14 @@ component("alert", { "type": "success", "content": "<strong>Congratulations!</st
 +component("alert", { "type": "danger", "content": "<p><strong>Danger! You have forgotten to do a thing.</strong></p><p>Danger! You have forgotten to do a thing.</p><p>Danger! You have forgotten to do a thing. Danger! You have forgotten to do a thing. Danger! You have forgotten to do a thing.</p>", "dismissable": true } );
 </script>
 
+### Accessibility notes
+
+## Using alert boxes dynamically
+
+If you are inserting alerts into the DOM dynamically and you want screen readers or other assisitive technology to bring them to your users' attention then you should include a `role="alert"` attribute on the `.c-alert` element.
+
+The alert component previously contained this attribute but was removed following an accessibility review as this is typically not the intended effect when an alert is included in a statically rendered page. 
+
 ### Options
 
 #### Atoms
