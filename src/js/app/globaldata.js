@@ -1,6 +1,7 @@
 define(['jquery'], function ($) {
     return {
         clearingData: {
+            year: 2020,
             noCourseMessage: "<p>There are no vacancies in this department for September 2020. <a href=\"//www.york.ac.uk/study/undergraduate/courses/all\">Explore your options for 2021 entry.</a></p>",
             sheetId: "1CdCBA-Ygmyi6JpLdu3H0MA2dlTfoSA1vniDdjXtGC3o",
             backupDoc: "https://www.york.ac.uk/static/data/clearing/2020.json",
