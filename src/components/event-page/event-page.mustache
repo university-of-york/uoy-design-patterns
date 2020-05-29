@@ -1,0 +1,26 @@
+{{#if image}}
+<div class="c-figure c-figure--link" style="height: auto;"> 
+
+    <img class="c-figure__image" alt="" src="{{image}}" width="800" height="400">
+        
+        <div class="c-figure__content c-figure__content--teal c-figure__content--left">  
+{{else}}<div style="padding: 10px;">{{/if}}    
+       
+        <h1>
+            {{title}} 
+            {{#if subtitle}}<small class="subtitle">{{subtitle}}</small>{{/if}}
+        </h1>
+        
+        {{#if type-text}}<div style="display:flex;margin-top:10px;">
+            
+            <div class="c-label" style="margin-right:2em;color:inherit;margin-bottom:0;">
+                
+                <i class="c-icon c-icon--before c-icon--{{type-icon}}"></i> {{type-text}}
+
+            </div>
+
+        </div>
+        {{/if}}
+
+    </div>
+{{#if image}}</div>{{/if}}   
