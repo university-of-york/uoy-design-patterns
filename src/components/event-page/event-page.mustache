@@ -4,23 +4,35 @@
     <img class="c-figure__image" alt="" src="{{image}}" width="800" height="400">
         
         <div class="c-figure__content c-figure__content--teal c-figure__content--left">  
-{{else}}<div style="padding: 10px;">{{/if}}    
+{{else}}<div class="c-event__nofigure">{{/if}}    
        
         <h1>
             {{title}} 
             {{#if subtitle}}<small class="subtitle">{{subtitle}}</small>{{/if}}
         </h1>
         
-        {{#if type-text}}<div style="display:flex;margin-top:10px;">
+        {{#if type-text}}
             
-            <div class="c-label" style="margin-right:2em;color:inherit;margin-bottom:0;">
+            <div class="c-label c-label--event-type">
                 
                 <i class="c-icon c-icon--before c-icon--{{type-icon}}"></i> {{type-text}}
 
             </div>
 
-        </div>
+  
         {{/if}}
 
     </div>
 {{#if image}}</div>{{/if}}   
+
+<div class="u-two-columns">
+    <ul class="c-icon--ul">
+
+        <li><i class="c-icon--li c-icon c-icon--clock-o" aria-hidden="true" title="Date and time"></i><span class="sr-only">Date and time: </span> {{datetime}}</li>
+        <li><i class="c-icon--li c-icon c-icon--map-marker" aria-hidden="true" title="Location"></i><span class="sr-only">Location: </span>{{location}}</li>
+        <li><i class="c-icon--li c-icon c-icon--users" aria-hidden="true" title="Audience"></i><span class="sr-only">Audience: </span>{{audience}}</li>
+        <li><i class="c-icon--li c-icon c-icon--ticket" aria-hidden="true" title="Admission"></i><span class="sr-only">Admission: </span>{{admission}}</li>
+        
+        
+    </ul>
+  </div>
