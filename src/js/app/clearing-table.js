@@ -35,7 +35,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
     // This will be used in various places
     // ⚠ Requires updating each year!
-    this.clearingYear = "2019";
+    this.clearingYear = clearingData.year;
 
     this.type = options.type || 'Both';
     this.department = options.department || 'All';

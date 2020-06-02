@@ -21,3 +21,8 @@ a.c-label {
 
 // Inside a figure's content 
 .c-figure__content > .c-label { color:inherit; }
+
+.c-event__nofigure > .c-label--event-type {
+  margin-right:2em;
+  margin-bottom:0;
+}

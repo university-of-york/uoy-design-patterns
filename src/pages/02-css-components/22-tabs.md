@@ -83,6 +83,14 @@ component("tabbed-content", { "type": "vertical", "tabs": [
 ]});
 </script>
 
+### Accessibility notes
+
+## Headings in tab content
+
+In a user testing session the UX team discovered that one participant using a screen magnifier couldn't see the full row of tab and therefore couldn't tell which tab they were currently looking at. 
+
+Takeaway: consider how your tabs will look if a user is using a screen reader or increasing the text size in their browser. Adding a heading in each content area matching its tab title will provide them, if not others too, with a clearer framing of the tab content.
+
 ### Options
 
 #### Atoms
