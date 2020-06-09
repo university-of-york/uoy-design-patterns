@@ -287,10 +287,10 @@ $c-figure__caption-transparent:           colour( 'grey' , 900 );
 $c-figure__caption-color:                 white;
 $c-figure__caption--below-background:     transparent;
 $c-figure__caption--below-color:          colour( "grey", 700 ); //lighten($charcoal,20)
-$c-figure__caption--below-alt-color:     colour( 'grey' , 300 ); //darken($light,20)
-$c-figure__content-solid:                  colour( "blue", 900 ); //$teal
-$c-figure__content-transparent:           transparentize(colour( "blue", 900 ), 0.10);
-$c-figure__content-color:                  colour( "grey", 100 );  //$light
+$c-figure__caption--below-alt-color:      colour( 'grey' , 300 ); //darken($light,20)
+$c-figure__content-solid:                 colour( "blue", 900 ); //$teal
+$c-figure__content-transparent:           colour( "blue", 900 ); 
+$c-figure__content-color:                 colour( "grey", 100 );  //$light
 $c-figure__content-link-color:            colour( "blue", 400 ); //lighten($blue,10)
 $c-figure__content-link-hover-color:      colour( "blue", 300 ); //lighten($blue,25)
 $c-figure__content--blue-solid:           colour( "blue", 500 ); //$blue
@@ -299,7 +299,7 @@ $c-figure__content--pink-solid:           colour( "pink", 700 ); //$pink
 $c-figure__content--pink-transparent:     transparentize(colour( "pink", 700 ), 0.25);
 $c-figure__content--teal-solid:           colour( "blue", 900 ); //$teal
 $c-figure__content--teal-transparent:     transparentize(colour( "blue", 900 ), 0.25);
-$c-figure__content--gold-solid:          colour("yellow", 500 ); //$gold
+$c-figure__content--gold-solid:           colour("yellow", 500 ); //$gold
 $c-figure__content--gold-transparent:     transparentize(colour("yellow", 500 ), 0.25);
 $c-figure__content--charcoal-solid:       colour( "grey", 900 );  //$charcoal
 $c-figure__content--charcoal-transparent: transparentize(colour( "grey", 900 ), 0.25);
