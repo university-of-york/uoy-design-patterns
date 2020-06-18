@@ -22,6 +22,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   // Toggle this value to enable/disable clearing info on course search results pages
   var courseSearchClearingFeatures_default = false;
 
+  // Override default with a query arg
   var queryArgs = new URLSearchParams( window.location.search );
   var clearingTest = queryArgs.get( 'clearingtest' );
 
@@ -62,7 +63,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
       // need to empty this only if we've NOT got a course panel layout.
       // this will prevent the default content being replaced
-      if(this.layout !== 'Course panel' && this.layout !== 'Entry requirements' && this.layout !== 'Course search'  ) {
+      if(this.layout !== 'Course panel' && this.layout !== 'Entry requirements' && this.layout !== 'Course search' && this.layout !== 'Apply button' ) {
           this.container.empty();
       }
 
@@ -413,6 +414,11 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
             courseTitleLink.after( '<br><small>'+clearingStatusIcon+' <strong>Clearing and adjustment '+that.clearingYear+':</strong> '+clearingStatus+'</small>' );
 
           });
+
+        // Apply button
+        } else if (that.layout === "Apply button" && that.course !== false && that.inClearing( that.data[0] ) ) {
+
+            $( that.container ).attr( 'href' , 'https://evision.york.ac.uk/urd/sits.urd/run/siw_sso.go?' + that.data[0][ 'SRA course application code' ] );
 
         // Entry requirements
         } else if (that.layout === "Entry requirements" && that.course !== false && that.inClearing( that.data[0] ) ) {
@@ -935,6 +941,13 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     return contentVariants[ key ][ contentType ];
   };
 
+  CLEARINGTABLE.prototype.courseApplicationURL = function( course ) {
+
+      console.log( course[ 'Course application code' ] );
+
+      $( '#btnApplyForCourse' ).attr( 'href' , 'https://evision.york.ac.uk/urd/sits.urd/run/siw_sso.go?' + course[ 'Course application code' ] );
+  };
+
   CLEARINGTABLE.prototype.coursePanelContent = function( course ) {
 
       var that = this;
@@ -1016,6 +1029,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           gsx$subject: "Subject",
           gsx$titleofcourse: "Title of course",
           gsx$ucascode: "UCAS code",
+          gsx$sracourseapplicationcode: "SRA course application code",
           gsx$alternativequalification: "Alternative qualification",
           gsx$alternativerequirement: "Alternative requirement",
           gsx$hiddenkeywords: "Hidden keywords",

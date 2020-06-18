@@ -195,6 +195,18 @@ When the entry requirements layout is triggered, this module will also search fo
 
 <p id="typical-offer">(...)</p>
 
+### Course page application button
+
+When the `js-clearing-table` is applied to a table with the `Apply button` layout and a `data-course` attribute is set, the URL of the application button will be updated to point at SRA's application form if the course is in clearing.
+
+```markup
+<p>
+   <a class="c-btn c-btn--medium js-clearing-table" href="http://example.com" data-layout="Apply button" data-course="F3F8">Apply now</a>
+</p>
+```
+
+<p><a class="c-btn c-btn--medium js-clearing-table" href="http://example.com" data-layout="Apply button" data-course="F3F8">Apply now</a></p>
+
 ### Options
 
   Pass an _options_ object with the following keys:
