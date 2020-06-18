@@ -416,7 +416,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           });
 
         // Apply button
-        } else if (that.layout === "Apply button" && that.course !== false && that.inClearing( that.data[0] ) ) {
+        } else if (that.layout === "Apply button" && that.course !== false && that.inClearing( that.data[0] ) && that.data[0][ 'SRA course application code' ] ) {
 
             $( that.container ).attr( 'href' , 'https://evision.york.ac.uk/urd/sits.urd/run/siw_sso.go?' + that.data[0][ 'SRA course application code' ] );
 
