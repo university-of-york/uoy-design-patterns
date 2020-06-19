@@ -22,11 +22,20 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   // Toggle this value to enable/disable clearing info on course search results pages
   var courseSearchClearingFeatures_default = false;
 
-  // Override default with a query arg
+  // We'll use this to check for things to override/test
   var queryArgs = new URLSearchParams( window.location.search );
+  
+  // Override default with a query arg
   var clearingTest = queryArgs.get( 'clearingtest' );
 
   var courseSearchClearingFeatures = ( clearingTest || courseSearchClearingFeatures_default );
+
+  // Overridable time to consider as now
+  var nowParts = queryArgs.get( 'now' );
+  // Nudges months back to 0-11 rather than 1-12
+  if( nowParts && nowParts[ 1 ] ) nowParts[ 1 ] = parseInt( nowParts[ 1 ] ) - 1;
+  // Get our current date/time
+  var now = ( nowParts && clearingTest ) ? new Date( new Date( ...nowParts.split( '-' ) ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf() : Date.now();
 
   var $window = $(window);
   var clearingData = window.PL_DATA.clearingData;
@@ -824,9 +833,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
     var contentVariants = [
       {
-        // Until 7th August
+        // Until 6th August
         start: false,
-        end: 1565218800000, // new Date( new Date( 2019 , 7 , 8 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+        end: 1596668400000, // new Date( new Date( 2020 , 7 , 6 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         panel:
           '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
           '<p>Seeking bright minds for '+that.clearingYear+'! Places are available on this course through clearing and adjustment.</p>',
@@ -848,9 +857,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           '<p><a class="c-btn c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/vacancies/">Find out more about clearing and adjustment</a></p>',
       },
       {
-        // 8th August - 14th August 5pm
-        start:1565218800000, // new Date( new Date( 2019 , 7 , 8 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-        end:1565798400000, // new Date( new Date( 2019 , 7 , 14 , 17 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+        // 6th August - 12th August 5pm
+        start:1596668400000, // new Date( new Date( 2020 , 7 , 6 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+        end:1597248000000, // new Date( new Date( 2020 , 7 , 12 , 17 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         panel:
           '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
           '<p>We expect to have places available on this course through clearing and adjustment.</p>',
@@ -862,9 +871,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           '<p><a class="c-btn c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/alert/">Sign up for vacancy alerts</a></p>',
       },
       {
-        // 14th August 5pm - 15th August 8am
-        start:1565798400000, // new Date( new Date( 2019 , 7 , 14 , 17 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-        end:1565852400000, // new Date( new Date( 2019 , 7 , 15 , 8 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+        // 12th August 5pm - 13th August 8am
+        start:1597248000000, // new Date( new Date( 2020 , 7 , 12 , 17 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+        end:1597302000000, // new Date( new Date( 2020 , 7 , 13 , 8 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         panel:
           '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
           '<p>Places are available on this course through clearing and adjustment.</p>',
@@ -887,8 +896,8 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           '</ol>',
       },
       {
-        // From 15th August 8am
-        start:1565852400000, // new Date( new Date( 2019 , 7 , 15 , 8 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+        // From 13th August 8am
+        start:1597302000000, // new Date( new Date( 2020 , 7 , 13 , 8 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         end: false,
         panel:
           '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
@@ -916,17 +925,16 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
     // Testing!
     // contentVariants[0].start = false;
-    // contentVariants[0].end   = new Date( new Date( 2019 , 6 , 26 , 9 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    // contentVariants[1].start = new Date( new Date( 2019 , 6 , 26 , 9 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    // contentVariants[1].end   = new Date( new Date( 2019 , 6 , 26 , 10 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    // contentVariants[2].start = new Date( new Date( 2019 , 6 , 26 , 14 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    // contentVariants[2].end   = new Date( new Date( 2019 , 6 , 26 , 15 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    // contentVariants[3].start = new Date( new Date( 2019 , 6 , 26 , 11 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    // contentVariants[0].end   = new Date( new Date( 2020 , 5 , 19 , 14 , 10 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    // contentVariants[1].start = new Date( new Date( 2020 , 5 , 19 , 14 , 10 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    // contentVariants[1].end   = new Date( new Date( 2020 , 5 , 19 , 14 , 10 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    // contentVariants[2].start = new Date( new Date( 2020 , 5 , 19 , 14 , 30 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    // contentVariants[2].end   = new Date( new Date( 2020 , 5 , 19 , 14 , 34 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+    // contentVariants[3].start = new Date( new Date( 2020 , 5 , 19 , 14 , 34 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
     // contentVariants[3].end   = false;
 
     // Work out what content to serve
 
-    var now = Date.now();
     var key = 0;
 
     for( key = 0 ; key < contentVariants.length ; key++ ) {
@@ -934,7 +942,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
       if( contentVariants[ key ].end && ( contentVariants[ key ].end <= now ) ) continue;
       break;
     }
-
+    
     // Fall back to first if not found
     if( key > contentVariants.length ) key = 0;
 
@@ -1071,11 +1079,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   };
 
  // Remove apply button from 2019 course overview
- if(window.location.href.indexOf("courses-2019") > -1)
-{
-  $("#btnApplyForCourse").parent( "p" ).parent( "div" ).remove();
-}
-
+ if(window.location.href.indexOf("courses-2019") > -1) {
+   $("#btnApplyForCourse").parent( "p" ).parent( "div" ).remove();
+ }
 
   return CLEARINGTABLE;
 
