@@ -427,7 +427,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         // Apply button
         } else if (that.layout === "Apply button" && that.course !== false && that.inClearing( that.data[0] ) && that.data[0][ 'SRA course application code' ] ) {
 
-            $( that.container ).attr( 'href' , 'https://evision.york.ac.uk/urd/sits.urd/run/siw_sso.go?' + that.data[0][ 'SRA course application code' ] );
+            $( that.container ).attr( 'href' , that.courseApplicationURL( that.data[0] ) );
 
         // Entry requirements
         } else if (that.layout === "Entry requirements" && that.course !== false && that.inClearing( that.data[0] ) ) {
@@ -837,38 +837,42 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         start: false,
         end: 1596668400000, // new Date( new Date( 2020 , 7 , 6 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         panel:
-          '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
-          '<p>Seeking bright minds for '+that.clearingYear+'! Places are available on this course through clearing and adjustment.</p>',
+          '<h3>Looking for a late place?</h3>' +
+          '<p>It’s not too late to apply for '+that.clearingYear+'. We have limited places available on this course through Clearing and Adjustment.</p>',
         modal:
-          '<p>We have limited places available through clearing and adjustment.</p>' +
-          '<p>You can apply through clearing now if:</p>' +
+          '<h2><strong>Join us in '+that.clearingYear+'</strong></h2>' +
+          '<p>We still have a limited number of places available on this course for well-qualified students through <a href="https://www.york.ac.uk/study/undergraduate/applying/clearing/">Clearing and Adjustment</a>.</p>' +
+          '<h3>Got your results?</h3>' +
+          '<p>You can apply now if:</p>' +
           '<ul>' +
-              '<li>you already have your results and have not yet applied to York, and have not formally accepted an offer through UCAS elsewhere</li>' +
-              '<li>you\'re not currently holding any offers.</li>' +
+              '<li>you have your exam results and</li>' +
+              '<li>you have not yet applied to York and</li>' +
+              '<li>you have not formally accepted an offer from another university through UCAS.</li>' +
           '</ul>' +
-          '<p>To apply call us on '+clearingData.phoneNumber+'.</p>' +
+          '<p><a class="c-btn c-btn--medium" href="'+that.courseApplicationURL( course )+'">Apply now</a></p>' +
           '<p>Make sure you check the entry requirement before you call, have your UCAS ID number to hand and a number we can call you back on.</p>' +
-          '<p><strong>Opening times:</strong></p>' +
-          '<ul>' +
-              '<li>5 July - 8 August - Monday to Friday, 9am - 5pm</li>' +
-              '<li>8 August - 14 August - Closed while we prepare for A level results day</li>' +
-              '<li>15 - 16 August - 8am - 6pm</li>' +
-          '</ul>' +
-          '<p><a class="c-btn c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/vacancies/">Find out more about clearing and adjustment</a></p>',
+          '<h3>Waiting for your results?</h3>' +
+          '<p>Sign up to receive vacancy notifications on A level results day (13 August).</p>' +
+          '<p><a class="c-btn c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/updates/">Get vacancy notifications</a></p>',
       },
       {
         // 6th August - 12th August 5pm
         start:1596668400000, // new Date( new Date( 2020 , 7 , 6 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         end:1597248000000, // new Date( new Date( 2020 , 7 , 12 , 17 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         panel:
-          '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
-          '<p>We expect to have places available on this course through clearing and adjustment.</p>',
+          '<h3>Looking for a late place?</h3>' +
+          '<p>We expect to have places available on this course through Clearing and Adjustment.</p>' +
+          '<p><em>Prepare for Clearing and Adjustment</em></p>',
         modal:
+          '<p>We expect to have places available on this course through <a href="https://www.york.ac.uk/study/undergraduate/applying/clearing/">Clearing and Adjustment</a>.</p>' +
           '<h2>Get ready to call us</h2>' +
-          '<p>Our course vacancies are subject to change and will be confirmed here from around 7pm on Wednesday 14 August. Our clearing hotline will then open at 8am on Thursday 15 August.</p>' +
-          '<p>Save the number: '+clearingData.phoneNumber+'.</p>' +
-          '<p>In the meantime you can sign up for vacancy alerts and we\'ll send you our latest vacancies on Thursday morning.</p>' +
-          '<p><a class="c-btn c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/alert/">Sign up for vacancy alerts</a></p>',
+          '<p>Our Clearing hotline will be open from <strong>8am on Thursday 13 August.</strong></p>' +
+          '<ol>' +
+              '<li>Save the hotline number: '+clearingData.phoneNumber+'</li>' +
+              '<li>Research the course(s) you’re interested in and be ready to tell us why you want to apply.</li>' +
+              '<li>Sign up for notifications and we’ll send you our latest vacancies on Thursday morning.</li>' +
+          '</ol>' +
+          '<p><a class="c-btn c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/updates/">Get vacancy notifications</a></p>',
       },
       {
         // 12th August 5pm - 13th August 8am
@@ -876,23 +880,23 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         end:1597302000000, // new Date( new Date( 2020 , 7 , 13 , 8 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         panel:
           '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
-          '<p>Places are available on this course through clearing and adjustment.</p>',
+          '<p>Places are available on this course through Clearing and Adjustment.</p>' + 
+          '<p>To apply call '+clearingData.phoneNumber+'.</p>',
         modal:
-          '<h2>Call our hotline</h2>' +
-          '<p>To apply call '+clearingData.phoneNumber+'.</p>' +
-          '<p><strong>Opening times:</strong></p>' +
+          '<h2>Call our hotline <br>'+clearingData.phoneNumber+'</h2>' +
+          '<p>Places fill up fast, so don’t delay - give us a call and tell us why you want to apply.</p>' +
+          '<p>Opening times:</p>' +
           '<ul>' +
-            '<li>15 - 16 August - 8am - 6pm</li>' +
-            '<li>17 - 18 August - 10am - 2pm</li>' +
-            '<li>19 - 23 August - Monday to Friday, 9am - 5pm</li>' +
+            '<li>13 &endash; 14 August: 8am &endash; 6pm BST</li>' +
+            '<li>15 &endash; 16 August: 10am &endash; 2pm BST</li>' +
+            '<li>17 &endash; 21 August: 9am &endash; 5pm BST</li>' +
           '</ul>' +
-          '<p>Places fill up fast, so don\'t delay - give us a call and tell us why you want to apply.</p>' +
-          '<p><strong>Before you call us</strong></p>' +
+          '<h3>Before you call us</h3>' +
           '<ol>' +
-            '<li>Research the course(s) you\'re interested in and be ready to tell us why you want to apply.</li>' +
-            '<li>Pick up your results and make sure you meet the entry requirements. We\'ll need the details of your results in order to make our decision.</li>' +
-            '<li>Have your UCAS ID number to hand and a number we can call you back on.</li>' +
-            '<li>If your first language is not English you must also provide evidence of your <a href="https://www.york.ac.uk/study/undergraduate/applying/entry/english-language/">English language ability</a>.</li>' +
+            '<li>Research the course(s) you’re interested in and be ready to tell us why you want to apply.</li>' +
+            '<li>Pick up your exam results and make sure you meet the entry requirements. We’ll need the details of your results in order to make our decision.</li>' +
+            '<li>Have your UCAS ID number to hand, and a phone number we can call you back on.</li>' +
+            '<li>If your first language is not English, you’ll need evidence of your <a href="https://www.york.ac.uk/study/undergraduate/applying/entry/english-language/">English language ability</a>.</li>' +
           '</ol>',
       },
       {
@@ -901,37 +905,26 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         end: false,
         panel:
           '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
-          '<p>Places are available on this course through clearing and adjustment.</p>' +
+          '<p>Places are available on this course through Clearing and Adjustment.</p>' + 
           '<p>To apply call '+clearingData.phoneNumber+'.</p>',
         modal:
-          '<h2>Call our hotline</h2>' +
-          '<p>To apply call '+clearingData.phoneNumber+'.</p>' +
-          '<p><strong>Opening times:</strong></p>' +
+          '<h2>Call our hotline <br>'+clearingData.phoneNumber+'</h2>' +
+          '<p>Places fill up fast, so don’t delay - give us a call and tell us why you want to apply.</p>' +
+          '<p>Opening times:</p>' +
           '<ul>' +
-            '<li>15 - 16 August - 8am - 6pm</li>' +
-            '<li>17 - 18 August - 10am - 2pm</li>' +
-            '<li>19 - 23 August - Monday to Friday, 9am - 5pm</li>' +
+            '<li>13 &endash; 14 August: 8am &endash; 6pm BST</li>' +
+            '<li>15 &endash; 16 August: 10am &endash; 2pm BST</li>' +
+            '<li>17 &endash; 21 August: 9am &endash; 5pm BST</li>' +
           '</ul>' +
-          '<p>Places fill up fast, so don\'t delay - give us a call and tell us why you want to apply.</p>' +
-          '<p><strong>Before you call us</strong></p>' +
+          '<h3>Before you call us</h3>' +
           '<ol>' +
-            '<li>Research the course(s) you\'re interested in and be ready to tell us why you want to apply. Make sure to check the entry requirements for each course.</li>' +
-            '<li>Pick up your results and make sure you meet the entry requirements. We\'ll need the details of your results in order to make our decision.</li>' +
-            '<li>Have your UCAS ID number to hand and a number we can call you back on.</li>' +
-            '<li>If your first language is not English you must also provide evidence of your <a href="https://www.york.ac.uk/study/undergraduate/applying/entry/english-language/">English language ability</a>.</li>' +
+            '<li>Research the course(s) you’re interested in and be ready to tell us why you want to apply. Make sure to check the entry requirements for each course.</li>' +
+            '<li>Pick up your exam results and make sure you meet the entry requirements. We’ll need the details of your results in order to make our decision.</li>' +
+            '<li>Have your UCAS ID number to hand, and a phone number we can call you back on.</li>' +
+            '<li>If your first language is not English, you’ll need evidence of your <a href="https://www.york.ac.uk/study/undergraduate/applying/entry/english-language/">English language ability</a>.</li>' +
           '</ol>',
       },
     ];
-
-    // Testing!
-    // contentVariants[0].start = false;
-    // contentVariants[0].end   = new Date( new Date( 2020 , 5 , 19 , 14 , 10 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    // contentVariants[1].start = new Date( new Date( 2020 , 5 , 19 , 14 , 10 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    // contentVariants[1].end   = new Date( new Date( 2020 , 5 , 19 , 14 , 10 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    // contentVariants[2].start = new Date( new Date( 2020 , 5 , 19 , 14 , 30 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    // contentVariants[2].end   = new Date( new Date( 2020 , 5 , 19 , 14 , 34 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    // contentVariants[3].start = new Date( new Date( 2020 , 5 , 19 , 14 , 34 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-    // contentVariants[3].end   = false;
 
     // Work out what content to serve
 
@@ -950,10 +943,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   };
 
   CLEARINGTABLE.prototype.courseApplicationURL = function( course ) {
-
-      console.log( course[ 'Course application code' ] );
-
-      $( '#btnApplyForCourse' ).attr( 'href' , 'https://evision.york.ac.uk/urd/sits.urd/run/siw_sso.go?' + course[ 'Course application code' ] );
+      return 'https://evision.york.ac.uk/urd/sits.urd/run/siw_sso.go?' + course[ 'SRA course application code' ];
   };
 
   CLEARINGTABLE.prototype.coursePanelContent = function( course ) {
