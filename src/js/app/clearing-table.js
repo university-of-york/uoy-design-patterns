@@ -943,7 +943,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   };
 
   CLEARINGTABLE.prototype.courseApplicationURL = function( course ) {
-      return 'https://evision.york.ac.uk/urd/sits.urd/run/siw_sso.go?' + course[ 'Course application code' ];
+      return 'https://evision.york.ac.uk/urd/sits.urd/run/siw_sso.go?' + course[ 'SRA course application code' ];
   };
 
   CLEARINGTABLE.prototype.coursePanelContent = function( course ) {
