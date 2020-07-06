@@ -849,8 +849,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
               '<li>you have not yet applied to York and</li>' +
               '<li>you have not formally accepted an offer from another university through UCAS.</li>' +
           '</ul>' +
-          //'<p><a class="c-btn c-btn--medium" href="'+that.courseApplicationURL( course )+'">Apply now</a></p>' + //Reactivate on Monday 6th July when advised to
-          '<p>To apply call '+clearingData.phoneNumber+'</p>' + // Remove on Monday 6th July when advised to
+          '<p><a class="c-btn c-btn--medium" href="'+that.courseApplicationURL( course )+'">Apply now</a></p>' + 
           '<p>Make sure you check the entry requirement before you call, have your UCAS ID number to hand and a number we can call you back on.</p>' +
           '<h3>Waiting for your results?</h3>' +
           '<p>Sign up to receive vacancy notifications on A level results day (13 August).</p>' +
