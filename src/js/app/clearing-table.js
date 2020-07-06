@@ -425,9 +425,10 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           });
 
         // Apply button
-        } else if (that.layout === "Apply button" && that.course !== false && that.inClearing( that.data[0] ) && that.data[0][ 'SRA course application code' ] ) {
-
-            $( that.container ).attr( 'href' , that.courseApplicationURL( that.data[0] ) );
+        } else if (that.layout === "Apply button" && that.course !== false && that.inClearing( that.data[0] ) ) {
+            
+            var courseApplicationURL = that.courseApplicationURL( that.data[0] );
+            if( courseApplicationURL ) $( that.container ).attr( 'href' , courseApplicationURL );
 
         // Entry requirements
         } else if (that.layout === "Entry requirements" && that.course !== false && that.inClearing( that.data[0] ) ) {
@@ -831,6 +832,8 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
     var that = this;
 
+    var courseApplicationURL = that.courseApplicationURL( course );
+
     var contentVariants = [
       {
         // Until 6th August
@@ -849,7 +852,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
               '<li>you have not yet applied to York and</li>' +
               '<li>you have not formally accepted an offer from another university through UCAS.</li>' +
           '</ul>' +
-          '<p><a class="c-btn c-btn--medium" href="'+that.courseApplicationURL( course )+'">Apply now</a></p>' + 
+          ( courseApplicationURL ? '<p><a class="c-btn c-btn--medium" href="'+courseApplicationURL+'">Apply now</a></p>' : '' ) + 
           '<p>Make sure you check the entry requirement before you call, have your UCAS ID number to hand and a number we can call you back on.</p>' +
           '<h3>Waiting for your results?</h3>' +
           '<p>Sign up to receive vacancy notifications on A level results day (13 August).</p>' +
@@ -943,6 +946,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   };
 
   CLEARINGTABLE.prototype.courseApplicationURL = function( course ) {
+      if( !course[ 'SRA course application code' ] ) return false;
       return 'https://evision.york.ac.uk/urd/sits.urd/run/siw_sso.go?' + course[ 'SRA course application code' ];
   };
 
