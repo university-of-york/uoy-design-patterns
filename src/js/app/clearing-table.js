@@ -845,14 +845,12 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         modal:
           '<h2><strong>Join us in '+that.clearingYear+'</strong></h2>' +
           '<p>We still have a limited number of places available on this course for well-qualified students through <a href="https://www.york.ac.uk/study/undergraduate/applying/clearing/">Clearing and Adjustment</a>.</p>' +
-          '<h3>Got your results?</h3>' +
-          '<p>You can apply now if:</p>' +
-          '<ul>' +
-              '<li>you have your exam results and</li>' +
-              '<li>you have not yet applied to York and</li>' +
-              '<li>you have not formally accepted an offer from another university through UCAS.</li>' +
-          '</ul>' +
-          ( courseApplicationURL ? '<p><a class="c-btn c-btn--medium" href="'+courseApplicationURL+'">Apply now</a></p>' : '' ) + 
+          '<h3>Apply now</h3>' +
+          '<p>Follow these steps to apply now:</p>' +
+          '<ol>' +
+              '<li>Read our <a href="https://www.york.ac.uk/study/undergraduate/applying/clearing/applying/">guide to applying through Clearing and Adjustment</a>.</li>' +
+              '<li>Apply - call us on '+clearingData.phoneNumber+( courseApplicationURL ? ' or <a href="'+courseApplicationURL+'">apply online</a>' : '' )+'.</li>' +
+          '</ol>' +
           '<p>Make sure you check the entry requirement before you call, have your UCAS ID number to hand and a number we can call you back on.</p>' +
           '<h3>Waiting for your results?</h3>' +
           '<p>Sign up to receive vacancy notifications on A level results day (13 August).</p>' +
