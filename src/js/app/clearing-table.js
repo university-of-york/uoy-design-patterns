@@ -887,9 +887,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           '<p>Places fill up fast, so don’t delay - give us a call and tell us why you want to apply.</p>' +
           '<p>Opening times:</p>' +
           '<ul>' +
-            '<li>13 &endash; 14 August: 8am &endash; 6pm BST</li>' +
-            '<li>15 &endash; 16 August: 10am &endash; 2pm BST</li>' +
-            '<li>17 &endash; 21 August: 9am &endash; 5pm BST</li>' +
+            '<li>13 - 14 August: 8am - 6pm BST</li>' +
+            '<li>15 - 16 August: 10am - 2pm BST</li>' +
+            '<li>17 - 21 August: 9am - 5pm BST</li>' +
           '</ul>' +
           '<h3>Before you call us</h3>' +
           '<ol>' +
@@ -912,9 +912,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           '<p>Places fill up fast, so don’t delay - give us a call and tell us why you want to apply.</p>' +
           '<p>Opening times:</p>' +
           '<ul>' +
-            '<li>13 &endash; 14 August: 8am &endash; 6pm BST</li>' +
-            '<li>15 &endash; 16 August: 10am &endash; 2pm BST</li>' +
-            '<li>17 &endash; 21 August: 9am &endash; 5pm BST</li>' +
+            '<li>13 - 14 August: 8am - 6pm BST</li>' +
+            '<li>15 - 16 August: 10am - 2pm BST</li>' +
+            '<li>17 - 21 August: 9am - 5pm BST</li>' +
           '</ul>' +
           '<h3>Before you call us</h3>' +
           '<ol>' +
