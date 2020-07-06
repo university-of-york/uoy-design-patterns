@@ -20,7 +20,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   function ($, SEARCHABLE, UTILS, MODALLINK) {
 
   // Toggle this value to enable/disable clearing info on course search results pages
-  var courseSearchClearingFeatures_default = false;
+  var courseSearchClearingFeatures_default = true;
 
   // We'll use this to check for things to override/test
   var queryArgs = new URLSearchParams( window.location.search );
