@@ -184,7 +184,17 @@ define(
             }
           });
         });
-
+        
+        // Hack to enable 
+        if( window.location.href.indexOf( "https://www.york.ac.uk/study/undergraduate/courses/" ) == 0 )
+        {
+            var $panel = $( '#overview + .o-grid__box--third > .c_panel' );
+            var ucascode = $( '#ucas-code' ).html();
+            var wrapper = '<div class="js-clearing-table" data-layout="Course panel" data-course="'+ucascode+'" data-show-requirements="false"></div>';
+            
+            $panel.wrap( wrapper );
+        }
+        
         // Clearing tables
         UTILS.eachIfExists('.js-clearing-table', function (i, a) {
           var $a = $(a),
