@@ -32,10 +32,8 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
   // Overridable time to consider as now
   var nowParts = queryArgs.get( 'now' );
-  // Nudges months back to 0-11 rather than 1-12
-  if( nowParts && nowParts[ 1 ] ) nowParts[ 1 ] = parseInt( nowParts[ 1 ] ) - 1;
   // Get our current date/time
-  var now = ( nowParts && clearingTest ) ? new Date( new Date( ...nowParts.split( '-' ) ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf() : Date.now();
+  var now = ( nowParts && clearingTest ) ? new Date( new Date( nowParts ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf() : Date.now();
 
   var $window = $(window);
   var clearingData = window.PL_DATA.clearingData;
