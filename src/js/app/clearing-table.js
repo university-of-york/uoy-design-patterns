@@ -85,7 +85,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     } else if (this.layout === 'Departments') {
       this.modalLink = false;
     } else if (this.layout === 'Course panel') {
-      this.panel = $('<div>').addClass('c-panel c-panel--highlight').attr({'role':'alert'});
+      this.panel = $('<div>').addClass('c-panel c-panel--highlight');
     }
 
     // Get our clearing data (triggers data.loaded on success)
