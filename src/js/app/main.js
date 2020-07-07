@@ -185,12 +185,15 @@ define(
           });
         });
         
-        // Hack to enable 
+        // Hack to enable different year before CMS publish cycle
         if( window.location.href.indexOf( "https://www.york.ac.uk/study/undergraduate/courses/" ) == 0 )
         {
-            var $panel = $( '#overview + .o-grid__box--third > .c_panel' );
+            var $panel = $( '#overview + .o-grid__box--third .c-panel--highlight' );
             var ucascode = $( '#ucas-code' ).html();
-            var wrapper = '<div class="js-clearing-table" data-layout="Course panel" data-course="'+ucascode+'" data-show-requirements="false"></div>';
+            var wrapper = '<div style="outline:3px dotted red;" class="js-clearing-table" data-layout="Course panel" data-different-year="true" data-course="'+ucascode+'" data-show-requirements="false"></div>';
+            
+            // Fix the extra apply button if present
+            $( '#overview > .o-grid:first-child > .o-grid__row:nth-child(2) > .o-grid__box:nth-child(2) > p > #btnApplyForCourse' ).remove();
             
             $panel.wrap( wrapper );
         }
