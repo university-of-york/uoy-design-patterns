@@ -199,8 +199,8 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
             that.panel.append( that.coursePanelModalContent( thisCourse ) );
             
             // Also replace the content of the entry requirements footer with
-            // the same content as the modal
-            $( '#entry-footer' ).html( that.getPanelContent( 'modal' , thisCourse ) );
+            // the same content as the modal (current year only!)
+            if( !that.differentYear ) $( '#entry-footer' ).html( that.getPanelContent( 'modal' , thisCourse ) );
 
           // Department layout
           } else if (that.layout === "Departments") {
