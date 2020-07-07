@@ -30,7 +30,6 @@ define(['jquery', 'app/focus-trap'], function ($, FOCUSTRAP) {
     this.checkModal();
     this.createModal();
 
-    console.info(this);
   };
 
   MODAL.prototype.defaults = {

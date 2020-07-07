@@ -32,10 +32,8 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
   // Overridable time to consider as now
   var nowParts = queryArgs.get( 'now' );
-  // Nudges months back to 0-11 rather than 1-12
-  if( nowParts && nowParts[ 1 ] ) nowParts[ 1 ] = parseInt( nowParts[ 1 ] ) - 1;
   // Get our current date/time
-  var now = ( nowParts && clearingTest ) ? new Date( new Date( ...nowParts.split( '-' ) ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf() : Date.now();
+  var now = ( nowParts && clearingTest ) ? new Date( new Date( nowParts ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf() : Date.now();
 
   var $window = $(window);
   var clearingData = window.PL_DATA.clearingData;
@@ -87,7 +85,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     } else if (this.layout === 'Departments') {
       this.modalLink = false;
     } else if (this.layout === 'Course panel') {
-      this.panel = $('<div>').addClass('c-panel c-panel--highlight').attr({'role':'alert'});
+      this.panel = $('<div>').addClass('c-panel c-panel--highlight');
     }
 
     // Get our clearing data (triggers data.loaded on success)
@@ -199,6 +197,10 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
             that.panel.append( that.coursePanelContent( thisCourse ) );
             that.panel.append( that.coursePanelModalContent( thisCourse ) );
+            
+            // Also replace the content of the entry requirements footer with
+            // the same content as the modal
+            $( '#entry-footer' ).html( that.getPanelContent( 'modal' , thisCourse ) );
 
           // Department layout
           } else if (that.layout === "Departments") {
@@ -425,9 +427,10 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           });
 
         // Apply button
-        } else if (that.layout === "Apply button" && that.course !== false && that.inClearing( that.data[0] ) && that.data[0][ 'SRA course application code' ] ) {
-
-            $( that.container ).attr( 'href' , that.courseApplicationURL( that.data[0] ) );
+        } else if (that.layout === "Apply button" && that.course !== false && that.inClearing( that.data[0] ) ) {
+            
+            var courseApplicationURL = that.courseApplicationURL( that.data[0] );
+            if( courseApplicationURL ) $( that.container ).attr( 'href' , courseApplicationURL );
 
         // Entry requirements
         } else if (that.layout === "Entry requirements" && that.course !== false && that.inClearing( that.data[0] ) ) {
@@ -831,6 +834,8 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
     var that = this;
 
+    var courseApplicationURL = that.courseApplicationURL( course );
+
     var contentVariants = [
       {
         // Until 6th August
@@ -842,14 +847,12 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         modal:
           '<h2><strong>Join us in '+that.clearingYear+'</strong></h2>' +
           '<p>We still have a limited number of places available on this course for well-qualified students through <a href="https://www.york.ac.uk/study/undergraduate/applying/clearing/">Clearing and Adjustment</a>.</p>' +
-          '<h3>Got your results?</h3>' +
-          '<p>You can apply now if:</p>' +
-          '<ul>' +
-              '<li>you have your exam results and</li>' +
-              '<li>you have not yet applied to York and</li>' +
-              '<li>you have not formally accepted an offer from another university through UCAS.</li>' +
-          '</ul>' +
-          '<p><a class="c-btn c-btn--medium" href="'+that.courseApplicationURL( course )+'">Apply now</a></p>' + 
+          '<h3>Apply now</h3>' +
+          '<p>Follow these steps to apply now:</p>' +
+          '<ol>' +
+              '<li>Read our <a href="https://www.york.ac.uk/study/undergraduate/applying/clearing/applying/">guide to applying through Clearing and Adjustment</a>.</li>' +
+              '<li>Apply - call us on '+clearingData.phoneNumber+( courseApplicationURL ? ' or <a href="'+courseApplicationURL+'">apply online</a>' : '' )+'.</li>' +
+          '</ol>' +
           '<p>Make sure you check the entry requirement before you call, have your UCAS ID number to hand and a number we can call you back on.</p>' +
           '<h3>Waiting for your results?</h3>' +
           '<p>Sign up to receive vacancy notifications on A level results day (13 August).</p>' +
@@ -864,12 +867,12 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           '<p>We expect to have places available on this course through Clearing and Adjustment.</p>' +
           '<p><em>Prepare for Clearing and Adjustment</em></p>',
         modal:
-          '<p>We expect to have places available on this course through <a href="https://www.york.ac.uk/study/undergraduate/applying/clearing/">Clearing and Adjustment</a>.</p>' +
           '<h2>Get ready to call us</h2>' +
           '<p>Our Clearing hotline will be open from <strong>8am on Thursday 13 August.</strong></p>' +
           '<ol>' +
               '<li>Save the hotline number: '+clearingData.phoneNumber+'</li>' +
               '<li>Research the course(s) you’re interested in and be ready to tell us why you want to apply.</li>' +
+              '<li>Read our <a href="https://www.york.ac.uk/study/undergraduate/applying/clearing/applying/">guide to applying through Clearing and Adjustment</a>.</li>' +
               '<li>Sign up for notifications and we’ll send you our latest vacancies on Thursday morning.</li>' +
           '</ol>' +
           '<p><a class="c-btn c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/updates/">Get vacancy notifications</a></p>',
@@ -895,6 +898,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           '<ol>' +
             '<li>Research the course(s) you’re interested in and be ready to tell us why you want to apply.</li>' +
             '<li>Pick up your exam results and make sure you meet the entry requirements. We’ll need the details of your results in order to make our decision.</li>' +
+            '<li>Read our <a href="https://www.york.ac.uk/study/undergraduate/applying/clearing/applying/">guide to applying through Clearing and Adjustment</a>.</li>' +
             '<li>Have your UCAS ID number to hand, and a phone number we can call you back on.</li>' +
             '<li>If your first language is not English, you’ll need evidence of your <a href="https://www.york.ac.uk/study/undergraduate/applying/entry/english-language/">English language ability</a>.</li>' +
           '</ol>',
@@ -920,6 +924,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           '<ol>' +
             '<li>Research the course(s) you’re interested in and be ready to tell us why you want to apply. Make sure to check the entry requirements for each course.</li>' +
             '<li>Pick up your exam results and make sure you meet the entry requirements. We’ll need the details of your results in order to make our decision.</li>' +
+            '<li>Read our <a href="https://www.york.ac.uk/study/undergraduate/applying/clearing/applying/">guide to applying through Clearing and Adjustment</a>.</li>' +
             '<li>Have your UCAS ID number to hand, and a phone number we can call you back on.</li>' +
             '<li>If your first language is not English, you’ll need evidence of your <a href="https://www.york.ac.uk/study/undergraduate/applying/entry/english-language/">English language ability</a>.</li>' +
           '</ol>',
@@ -943,6 +948,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   };
 
   CLEARINGTABLE.prototype.courseApplicationURL = function( course ) {
+      if( !course[ 'SRA course application code' ] ) return false;
       return 'https://evision.york.ac.uk/urd/sits.urd/run/siw_sso.go?' + course[ 'SRA course application code' ];
   };
 

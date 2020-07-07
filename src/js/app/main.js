@@ -184,7 +184,7 @@ define(
             }
           });
         });
-
+        
         // Clearing tables
         UTILS.eachIfExists('.js-clearing-table', function (i, a) {
           var $a = $(a),
