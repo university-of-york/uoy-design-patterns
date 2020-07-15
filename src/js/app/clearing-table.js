@@ -761,43 +761,58 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   CLEARINGTABLE.prototype.addCourseRow = function(course) {
 
     var courseCell =$('<td>');
-    var courseCellContent = '<p class="c-clearing-table__title"><a href="'+course['Link to course page']+'">'+course['Qualification earned']+' '+course['Title of course']+'</a></p>'+
-      '<ul class="u-two-columns">';
+    
+    if( course[ 'Hidden keywords' ] ) {
+      courseCellContent+= '<div hidden class="is-hidden">'+course[ 'Hidden keywords' ]+'</div>';
+    }
+
+    var courseCellContent = '<p class="c-clearing-table__title"><a href="'+course['Link to course page']+'">'+course['Qualification earned']+' '+course['Title of course']+'</a></p>';
+
+    // We'll collect any list items here
+    var listItems = [];
 
     if(this.showRequirements) {
       if (course['No grades'] !== '') {
 
-          courseCellContent += '<li class="c-clearing-table__entry-requirements">' + course['No grades'] + '</li>';
+          listItems.push( '<li class="c-clearing-table__entry-requirements">' + course['No grades'] + '</li>' );
 
       } else if (course['Entry requirements'] !== '') {
+          
+          var entryRequirementsItem = '';
 
-          courseCellContent += '<li class="c-clearing-table__entry-requirements"><strong>' + course['Entry requirements'] + '</strong> or equivalent tariff points from three A levels. Other qualifications are also accepted.';
+          entryRequirementsItem += '<li class="c-clearing-table__entry-requirements"><strong>' + course['Entry requirements'] + '</strong> or equivalent tariff points from three A levels. Other qualifications are also accepted.';
 
           if (course['Bullet 1'] || course['Bullet 2'] || course['Bullet 3']) {
-              courseCellContent += '    <br>';
-              courseCellContent += '    <small class="c-clearing-table__bullets">Must include: ';
+              entryRequirementsItem += '    <br>';
+              entryRequirementsItem += '    <small class="c-clearing-table__bullets">Must include: ';
           }
-          if (course['Bullet 1']) courseCellContent += course['Bullet 1'];
-          if (course['Bullet 2']) courseCellContent += '; ' + course['Bullet 2'];
-          if (course['Bullet 3']) courseCellContent += '; ' + course['Bullet 3'] + '';
-          if (course['Bullet 1'] || course['Bullet 2'] || course['Bullet 3']) courseCellContent += '</small>';
+          if (course['Bullet 1']) entryRequirementsItem += course['Bullet 1'];
+          if (course['Bullet 2']) entryRequirementsItem += '; ' + course['Bullet 2'];
+          if (course['Bullet 3']) entryRequirementsItem += '; ' + course['Bullet 3'] + '';
+          if (course['Bullet 1'] || course['Bullet 2'] || course['Bullet 3']) entryRequirementsItem += '</small>';
 
-          courseCellContent += '</li>';
+          entryRequirementsItem += '</li>';
+
+          listItems.push( entryRequirementsItem );
+
       } else if ( course['Alternative qualification'] !== '' && course['Alternative requirement'] !== '' ) {
 
-          courseCellContent += '<li class="c-clearing-table__entry-requirements"><strong>' + course['Alternative qualification'] + '</strong> ' + course['Alternative requirement'];
+          var alternativeItem = '';
+          
+          alternativeItem += '<li class="c-clearing-table__entry-requirements"><strong>' + course['Alternative qualification'] + '</strong> ' + course['Alternative requirement'];
 
           if (course['Bullet 1'] || course['Bullet 2'] || course['Bullet 3']) {
-              courseCellContent += '    <br>';
-              courseCellContent += '    <small class="c-clearing-table__bullets">';
+              alternativeItem += '    <br>';
+              alternativeItem += '    <small class="c-clearing-table__bullets">';
           }
-          if (course['Bullet 1']) courseCellContent += course['Bullet 1'];
-          if (course['Bullet 2']) courseCellContent += '; ' + course['Bullet 2'];
-          if (course['Bullet 3']) courseCellContent += '; ' + course['Bullet 3'] + '';
-          if (course['Bullet 1'] || course['Bullet 2'] || course['Bullet 3']) courseCellContent += '</small>';
+          if (course['Bullet 1']) alternativeItem += course['Bullet 1'];
+          if (course['Bullet 2']) alternativeItem += '; ' + course['Bullet 2'];
+          if (course['Bullet 3']) alternativeItem += '; ' + course['Bullet 3'] + '';
+          if (course['Bullet 1'] || course['Bullet 2'] || course['Bullet 3']) alternativeItem += '</small>';
 
-          courseCellContent += '</li>';
+          alternativeItem += '</li>';
 
+          listItems.push( alternativeItem );
       }
     }
 
@@ -807,13 +822,18 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
     // Availability note
     var availabilityNote = this.makeAvailabilityNote( course );
-    if( availabilityNote ) courseCellContent+= '<li class="c-clearing-table__adjustment-only">'+availabilityNote+'</li>';
-
-    if( course[ 'Hidden keywords' ] ) {
-      courseCellContent+= '<div hidden class="is-hidden">'+course[ 'Hidden keywords' ]+'</div>';
+    if( availabilityNote )
+    {
+        listItems.push( '<li class="c-clearing-table__adjustment-only">'+availabilityNote+'</li>' );
     }
 
-    courseCellContent+= '</ul>';
+    // If we have any list items to show add them now
+    if( listItems.length > 0 )
+    {
+        var list = '<ul class="u-two-columns">'+listItems.join('')+'</ul>';
+
+        courseCellContent+= list;
+    }
 
     courseCell.html(courseCellContent);
     var courseRow = $('<tr>').addClass('c-clearing-table__course');
