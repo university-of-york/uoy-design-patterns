@@ -54,7 +54,11 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     this.department = options.department || 'All';
     this.subject = options.subject || 'All';
     this.layout = options.layout || 'Courses';
-    this.showRequirements = options.showRequirements;
+    
+    // Forcing this to false to hide entry requirements (for now)
+    // this.showRequirements = options.showRequirements;
+    this.showRequirements = false;
+    
     this.differentYear = options.differentYear;
     this.course = options.course || false;
     this.container = options.container;
