@@ -8,40 +8,45 @@ category: Javascript
 
  */
 
-define(['jquery', 'app/utils'], function ($, UTILS) {
+define( [ 'jquery' , 'app/utils' ] , function( $ , UTILS )
+{
+    var FILTERABLE = function( options )
+    {
+        // Abandon if no table element supplied
+        if( !options.table ) return false;
 
-  var FILTERABLE = function (options) {
-    if (!options.table) return false;
-    this.table = options.table;
-    this.colgroup = this.table.children('colgroup');
-    this.cols = this.expandCols(this.colgroup.children('col'));
-    if (this.colgroup.length === 0 || this.cols.length === 0) return false;
-    this.header = options.header || this.Defaults.header;
-    if (!this.table.attr('id')) {
-      var id = setTimeout(function(){});
-      this.table.attr('id', 'filterable-table-'+id);
-    }
-    this.id = this.table.attr('id');
+        this.table = options.table;
 
-    var rows = this.table.children('tbody').children('tr');
+        this.colgroup = this.table.children( 'colgroup' );
+        this.cols = this.expandCols( this.colgroup.children( 'col' ) );
 
-    // Load filterable items and headings into memory
-    if (this.header === true) {
-      this.searchRows = rows.not('tr:first-of-type');
-      this.headings = this.table.children('tbody').children('tr:first-of-type').children();
-    } else {
-      this.searchRows = rows;
-      this.headings = this.table.children('thead').children('tr').children('th');
-    }
+        if (this.colgroup.length === 0 || this.cols.length === 0) return false;
+        this.header = options.header || this.Defaults.header;
+        if (!this.table.attr('id')) {
+          var id = setTimeout(function(){});
+          this.table.attr('id', 'filterable-table-'+id);
+        }
+        this.id = this.table.attr('id');
 
-    // Create table search form
-    var form = this.createForm();
-    // Add above table
-    this.table.before(form);
+        var rows = this.table.children('tbody').children('tr');
 
-    console.info(this);
+        // Load filterable items and headings into memory
+        if (this.header === true) {
+          this.searchRows = rows.not('tr:first-of-type');
+          this.headings = this.table.children('tbody').children('tr:first-of-type').children();
+        } else {
+          this.searchRows = rows;
+          this.headings = this.table.children('thead').children('tr').children('th');
+        }
 
-  };
+        // Create table search form
+        var form = this.createForm();
+        // Add above table
+        this.table.before(form);
+
+        console.info(this);
+
+    };
 
   FILTERABLE.prototype.Defaults = {
     header: false
