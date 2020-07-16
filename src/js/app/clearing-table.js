@@ -762,13 +762,13 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
     var courseCell =$('<td>');
     
-    courseCellContent = '';
+    var courseCellContent = '';
     
     if( course[ 'Hidden keywords' ] ) {
       courseCellContent += '<div hidden class="is-hidden">'+course[ 'Hidden keywords' ]+'</div>';
     }
 
-    var courseCellContent += '<p class="c-clearing-table__title"><a href="'+course['Link to course page']+'">'+course['Qualification earned']+' '+course['Title of course']+'</a></p>';
+    courseCellContent += '<p class="c-clearing-table__title"><a href="'+course['Link to course page']+'">'+course['Qualification earned']+' '+course['Title of course']+'</a></p>';
 
     // We'll collect any list items here
     var listItems = [];
