@@ -26,22 +26,20 @@ As with [searchable tables](../js-modules/searchable-tables-module.html), you ca
 
 ```javascript
 var m = new FILTERABLE({
-  table: $('#some-table')
+  $table: $('#some-table')
 });
 ```
 
 ### Example
 
 <table class="js-filterable-table">
-  <colgroup>
-    <col data-filter="text">
-    <col data-filter="option">
-    <col>
-    <col span="2" data-filter="range">
-  </colgroup>
   <thead>
     <tr>
-      <th>Course title</th><th>Qualification earned</th><th>Study mode</th><th>UK/EU</th><th>International</th>
+      <th data-filterable data-type="text">Course title</th>
+      <th data-filterable data-type="select" data-name="Qualification">Qualification earned</th>
+      <th data-filterable data-type="select" data-name="Mode">Study mode</th>
+      <th>UK/EU</th>
+      <th>International</th>
     </tr>
   </thead>
   <tbody>
@@ -231,10 +229,239 @@ var m = new FILTERABLE({
   </tbody>
 </table>
 
-### Example with `data-header="true"`
+### Example using accommodation tables
 
-### Example with `data-exclude-cols` and `data-include-cols`
-
+<table class="js-filterable-table">
+   <thead>
+		<tr>
+			<th data-filterable data-type="select">College</th>
+			<th data-filterable data-type="select">Price band</th>
+			<th data-filterable data-type="select">Bathroom</th>
+			<th data-filterable data-type="select">Catering</th>
+			<th data-filterable data-type="select">Let length (weeks)</th>
+			<th >Price per week</th>
+			<th >Price per year</th>
+		<tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Halifax</td>
+			<td>Band 1</td>
+			<td>Shared</td>
+			<td>Self-catered</td>
+			<td data-value="40">40 weeks</td>
+			<td data-value="99">&pound;99</td>
+			<td data-value="3960">&pound;3,960</td>
+		</tr>
+		<tr>
+			<td>Vanbrugh</td>
+			<td>Band 1</td>
+			<td>Shared</td>
+			<td>Catered</td>
+			<td data-value="40">40 weeks</td>
+			<td data-value="136">&pound;136</td>
+			<td data-value="5440">&pound;5,440</td>
+		</tr>
+		<tr>
+			<td>Derwent</td>
+			<td>Band 2</td>
+			<td>Shared</td>
+			<td>Catered</td>
+			<td data-value="40">40 weeks</td>
+			<td data-value="153">&pound;153</td>
+			<td data-value="6120">&pound;6,120</td>
+		</tr>
+		<tr>
+			<td>Vanbrugh</td>
+			<td>Band 2</td>
+			<td>Shared</td>
+			<td>Catered</td>
+			<td data-value="40">40 weeks</td>
+			<td data-value="153">&pound;153</td>
+			<td data-value="6120">&pound;6,120</td>
+		</tr>
+		<tr>
+			<td>James</td>
+			<td>Band 2</td>
+			<td>Shared</td>
+			<td>Catered</td>
+			<td data-value="40">40 weeks</td>
+			<td data-value="153">&pound;153</td>
+			<td data-value="6120">&pound;6,120</td>
+		</tr>
+		<tr>
+			<td>Derwent</td>
+			<td>Band 2</td>
+			<td>Ensuite</td>
+			<td>Catered</td>
+			<td data-value="40">40 weeks</td>
+			<td data-value="168">&pound;168</td>
+			<td data-value="6720">&pound;6,720</td>
+		</tr>
+		<tr>
+			<td>Derwent</td>
+			<td>Band 3</td>
+			<td>Shared</td>
+			<td>Self-catered</td>
+			<td data-value="40">40 weeks</td>
+			<td data-value="140">&pound;140</td>
+			<td data-value="5600">&pound;5,600</td>
+		</tr>
+		<tr>
+			<td>Halifax</td>
+			<td>Band 3</td>
+			<td>Shared</td>
+			<td>Self-catered</td>
+			<td data-value="40">40 weeks</td>
+			<td data-value="140">&pound;140</td>
+			<td data-value="5600">&pound;5,600</td>
+		</tr>
+		<tr>
+			<td>Goodricke</td>
+			<td>Band 3</td>
+			<td>Shared</td>
+			<td data-value="Self-catered">Self-catered (weekly college meal)</td>
+			<td data-value="40">40 weeks</td>
+			<td data-value="145">&pound;145</td>
+			<td data-value="5800">&pound;5,800</td>
+		</tr>
+		<tr>
+			<td>Vanbrugh</td>
+			<td>Band 3</td>
+			<td>Ensuite</td>
+			<td>Self-catered</td>
+			<td data-value="38">38 weeks</td>
+			<td data-value="155">&pound;155</td>
+			<td data-value="5890">&pound;5,890</td>
+		</tr>
+		<tr>
+			<td>Vanbrugh</td>
+			<td>Band 3</td>
+			<td>Ensuite</td>
+			<td>Self-catered</td>
+			<td data-value="40">40 weeks</td>
+			<td data-value="155">&pound;155</td>
+			<td data-value="6200">&pound;6,200</td>
+		</tr>
+		<tr>
+			<td>Alcuin</td>
+			<td>Band 3</td>
+			<td>Ensuite</td>
+			<td>Self-catered</td>
+			<td data-value="40">40 weeks</td>
+			<td data-value="155">&pound;155</td>
+			<td data-value="6200">&pound;6,200</td>
+		</tr>
+		<tr>
+			<td>Alcuin</td>
+			<td>Band 3</td>
+			<td>Ensuite</td>
+			<td>Self-catered</td>
+			<td data-value="44">44 weeks</td>
+			<td data-value="155">&pound;155</td>
+			<td data-value="6820">&pound;6,820</td>
+		</tr>
+		<tr>
+			<td>Alcuin</td>
+			<td>Band 3</td>
+			<td>Ensuite</td>
+			<td>Self-catered</td>
+			<td data-value="50">50 weeks</td>
+			<td data-value="155">&pound;155</td>
+			<td data-value="7750">&pound;7,750</td>
+		</tr>
+		<tr>
+			<td>Halifax</td>
+			<td>Band 3</td>
+			<td>Ensuite</td>
+			<td>Self-catered</td>
+			<td data-value="44">44 weeks</td>
+			<td data-value="155">&pound;155</td>
+			<td data-value="6820">&pound;6,820</td>
+		</tr>
+		<tr>
+			<td>Goodricke</td>
+			<td>Band 3</td>
+			<td>Ensuite</td>
+			<td data-value="Self-catered">Self-catered (weekly college meal)</td>
+			<td data-value="44">44 weeks</td>
+			<td data-value="160">&pound;160</td>
+			<td data-value="7040">&pound;7,040</td>
+		</tr>
+		<tr>
+			<td>James</td>
+			<td>Band 3</td>
+			<td>Shared</td>
+			<td>Catered</td>
+			<td data-value="40">40 weeks</td>
+			<td data-value="181">&pound;181</td>
+			<td data-value="7240">&pound;7,240</td>
+		</tr>
+		<tr>
+			<td>Halifax</td>
+			<td>Band 3</td>
+			<td>Ensuite</td>
+			<td>Self-catered</td>
+			<td data-value="44">44 weeks</td>
+			<td data-value="169">&pound;169</td>
+			<td data-value="7436">&pound;7,436</td>
+		</tr>
+		<tr>
+			<td>James</td>
+			<td>Band 3</td>
+			<td>Ensuite</td>
+			<td>Catered</td>
+			<td data-value="40">40 weeks</td>
+			<td data-value="196">&pound;196</td>
+			<td data-value="7840">&pound;7,840</td>
+		</tr>
+		<tr>
+			<td>Langwith</td>
+			<td>Band 4</td>
+			<td>Shared</td>
+			<td data-value="Self-catered">Self-catered (weekly college meal)</td>
+			<td data-value="40">40 weeks</td>
+			<td data-value="157">&pound;157</td>
+			<td data-value="6280">&pound;6,280</td>
+		</tr>
+		<tr>
+			<td>Langwith</td>
+			<td>Band 4</td>
+			<td>Shared</td>
+			<td data-value="Self-catered">Self-catered (weekly college meal)</td>
+			<td data-value="44">44 weeks</td>
+			<td data-value="157">&pound;157</td>
+			<td data-value="6908">&pound;6,908</td>
+		</tr>
+		<tr>
+			<td>Constantine</td>
+			<td>Band 4</td>
+			<td>Shared</td>
+			<td data-value="Self-catered">Self-catered (weekly college meal)</td>
+			<td data-value="44">44 weeks</td>
+			<td data-value="157">&pound;157</td>
+			<td data-value="6908">&pound;6,908</td>
+		</tr>
+		<tr>
+			<td>Langwith</td>
+			<td>Band 4</td>
+			<td>Ensuite</td>
+			<td data-value="Self-catered">Self-catered (weekly college meal)</td>
+			<td data-value="44">44 weeks</td>
+			<td data-value="174">&pound;174</td>
+			<td data-value="7656">&pound;7,656</td>
+		</tr>
+		<tr>
+			<td>Constantine</td>
+			<td>Band 4</td>
+			<td>Ensuite</td>
+			<td data-value="Self-catered">Self-catered (weekly college meal)</td>
+			<td data-value="44">44 weeks</td>
+			<td data-value="174">&pound;174</td>
+			<td data-value="7656">&pound;7,656</td>
+		</tr>
+	</tbody>
+</table>
 
 
 ### Options
