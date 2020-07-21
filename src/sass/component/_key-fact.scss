@@ -83,3 +83,21 @@ a.c-key-fact:hover{
     color:$c-key-fact-alt__learnMoreLink;
   }
 }
+
+
+.c-key-fact__text {
+  color:$c-key-fact__icon-color;
+  margin: 0;
+  .o-grid__row--alt1 &,
+  .o-grid__row--alt2 & {
+    color:$c-key-fact-alt__title-color;
+  }
+  font-family: chaparral-pro;
+  font-size: 3em;
+  font-weight: 700;
+  line-height: 1;
+  sup {
+    font-size: 1.85rem;
+    // top: -1.2em;
+  }
+}
