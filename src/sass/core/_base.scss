@@ -138,6 +138,17 @@ fieldset {
   border:0;
   margin:0;
   padding:0;
+  
+  &.fieldset_inline {
+	  display: flex;
+	  flex-flow: row wrap;
+      margin: -0.5em;
+	  
+	  & > * {
+		flex: 1 1 10em;
+        margin: 0.5em;
+	  }
+  }
 }
 code {
   font-family:monospace;

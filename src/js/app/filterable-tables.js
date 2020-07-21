@@ -129,6 +129,7 @@ define( [ 'app/utils' ] , function( UTILS )
 	
 		// Field wrapper
 		var $fieldset = document.createElement( 'fieldset' );
+		$fieldset.setAttribute( 'class' , 'fieldset_inline' );
 		$form.appendChild( $fieldset );
 	
 		// Individual controls
