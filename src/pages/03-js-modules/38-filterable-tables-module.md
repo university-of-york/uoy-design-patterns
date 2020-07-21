@@ -262,7 +262,7 @@ var m = new FILTERABLE({
 		<tr>
 			<td data-value="Constantine"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/constantine/">Constantine</a></td>
 			<td>Ensuite</td>
-			<td data-value="Self-catered">Self-catered (weekly college meal)</td>
+			<td data-value="Self-catered">Self-catered<br><small>(weekly college meal)</small></td>
 			<td data-value="44">44 weeks</td>
 			<td data-value="174">&pound;174</td>
 			<td data-value="7656">&pound;7,656</td>
@@ -270,7 +270,7 @@ var m = new FILTERABLE({
 		<tr>
 			<td data-value="Langwith"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/langwith/">Langwith</a></td>
 			<td>Ensuite</td>
-			<td data-value="Self-catered">Self-catered (weekly college meal)</td>
+			<td data-value="Self-catered">Self-catered<br><small>(weekly college meal)</small></td>
 			<td data-value="44">44 weeks</td>
 			<td data-value="174">&pound;174</td>
 			<td data-value="7656">&pound;7,656</td>
@@ -294,7 +294,7 @@ var m = new FILTERABLE({
 		<tr>
 			<td data-value="Goodricke"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/goodricke/">Goodricke</a></td>
 			<td>Ensuite</td>
-			<td data-value="Self-catered">Self-catered (weekly college meal)</td>
+			<td data-value="Self-catered">Self-catered<br><small>(weekly college meal)</small></td>
 			<td data-value="44">44 weeks</td>
 			<td data-value="160">&pound;160</td>
 			<td data-value="7040">&pound;7,040</td>
@@ -302,7 +302,7 @@ var m = new FILTERABLE({
 		<tr>
 			<td data-value="Constantine"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/constantine/">Constantine</a></td>
 			<td>Shared</td>
-			<td data-value="Self-catered">Self-catered (weekly college meal)</td>
+			<td data-value="Self-catered">Self-catered<br><small>(weekly college meal)</small></td>
 			<td data-value="44">44 weeks</td>
 			<td data-value="157">&pound;157</td>
 			<td data-value="6908">&pound;6,908</td>
@@ -310,7 +310,7 @@ var m = new FILTERABLE({
 		<tr>
 			<td data-value="Langwith"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/langwith/">Langwith</a></td>
 			<td>Shared</td>
-			<td data-value="Self-catered">Self-catered (weekly college meal)</td>
+			<td data-value="Self-catered">Self-catered<br><small>(weekly college meal)</small></td>
 			<td data-value="44">44 weeks</td>
 			<td data-value="157">&pound;157</td>
 			<td data-value="6908">&pound;6,908</td>
@@ -342,7 +342,7 @@ var m = new FILTERABLE({
 		<tr>
 			<td data-value="Langwith"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/langwith/">Langwith</a></td>
 			<td>Shared</td>
-			<td data-value="Self-catered">Self-catered (weekly college meal)</td>
+			<td data-value="Self-catered">Self-catered<br><small>(weekly college meal)</small></td>
 			<td data-value="40">40 weeks</td>
 			<td data-value="157">&pound;157</td>
 			<td data-value="6280">&pound;6,280</td>
@@ -398,7 +398,7 @@ var m = new FILTERABLE({
 		<tr>
 			<td data-value="Goodricke"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/goodricke/">Goodricke</a></td>
 			<td>Shared</td>
-			<td data-value="Self-catered">Self-catered (weekly college meal)</td>
+			<td data-value="Self-catered">Self-catered<br><small>(weekly college meal)</small></td>
 			<td data-value="40">40 weeks</td>
 			<td data-value="145">&pound;145</td>
 			<td data-value="5800">&pound;5,800</td>
