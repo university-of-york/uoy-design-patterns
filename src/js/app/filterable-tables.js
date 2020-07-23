@@ -193,7 +193,7 @@ define( [ 'app/utils' ] , function( UTILS )
 					// Add in the default option
 					var $default_option = document.createElement( 'option' );
 					$default_option.setAttribute( 'value' , '' );
-					$default_option.innerHTML = '<i>Any</i>';
+					$default_option.innerHTML = 'Any';
 					$select.appendChild( $default_option );
 
 					// console.log( 'Rendering field: ------------------------- ' , this.fields[ i ] );
