@@ -35,6 +35,9 @@ define( [ 'app/utils' ] , function( UTILS )
 		// Retrieve data from the table
 		this.data = this.read_data();
 
+		// console.log( 'Fields: ------------------------- ' , this.fields );
+		// console.log( 'Data: ------------------------- ' , this.data );
+
 		// Create/insert the filter form
 		this.$form = this.render_form();
 		
@@ -68,10 +71,14 @@ define( [ 'app/utils' ] , function( UTILS )
 				// Skip if not a filterable field index
 				if( typeof( this.fields[ c ] ) !== 'object' ) continue;
 				
-				var $cell = $cells[ c ];
+				// Get the this field's column index
+				var column_index = this.fields[ c ].id;
 				
-				// Get value as specified or fall back to cell content
-				row_data[ c ] = $cell.getAttribute( 'data-value' ) ? $cell.getAttribute( 'data-value' ) : $cell.innerHTML;
+				// Look up the right table cell
+				var $cell = $cells[ column_index ];
+				
+				// Get data-value attribute; fall back to cell content
+				row_data[ column_index ] = $cell.getAttribute( 'data-value' ) ? $cell.getAttribute( 'data-value' ) : $cell.innerHTML;
 			}
 			
 			data.push(
@@ -90,7 +97,7 @@ define( [ 'app/utils' ] , function( UTILS )
 	FILTERABLE.prototype.read_fields = function()
 	{
 		// Get the first bunch of <th> elements we find
-		var $header_cells = this.$table.querySelectorAll( 'thead > tr > th[ data-filterable ]' );
+		var $header_cells = this.$table.querySelectorAll( 'thead > tr > th' );
 
 		// Returnable
 		var fields = [];
@@ -98,10 +105,15 @@ define( [ 'app/utils' ] , function( UTILS )
 		// Process each <th>
 		for( i = 0 ; i < $header_cells.length ; i ++ )
 		{
+			// console.log( 'Header: ------------------------- ' , $header_cells[ i ] );
+
 			var $header_cell = $header_cells[ i ];
+			
+			// Skip if this is not a filterable column
+			if( !$header_cell.matches( '[ data-filterable ]' ) ) continue;
 
 			// Data cells in this column will have a matching index
-			fields[ i ] =
+			fields.push(
 			{
 				id: i,
 				$header: $header_cell,
@@ -111,7 +123,7 @@ define( [ 'app/utils' ] , function( UTILS )
 
 				// The type of filter control: [text|select]
 				type: $header_cell.getAttribute( 'data-type' ),
-			};
+			});
 		}
 		
 		return fields;
@@ -136,6 +148,13 @@ define( [ 'app/utils' ] , function( UTILS )
 		for( var i = 0 ; i < this.fields.length ; i ++ )
 		{
 			var control_id = this.$table.id + '__' + i;
+			var unique_values = this.unique_values( this.fields[ i ] );
+
+			// If we only have a single value then don't bother
+			if( unique_values.length < 2 )
+			{
+				continue;
+			}
 			
 			// Control wrapper
 			var $control = document.createElement( 'div' );
@@ -171,13 +190,14 @@ define( [ 'app/utils' ] , function( UTILS )
 					$default_option.innerHTML = '<i>Any</i>';
 					$select.appendChild( $default_option );
 
+					// console.log( 'Rendering field: ------------------------- ' , this.fields[ i ] );
+
 					// Add in the other options
-					var options = this.unique_values( this.fields[ i ] );
-					for( var o = 0 ; o < options.length ; o ++ )
+					for( var o = 0 ; o < unique_values.length ; o ++ )
 					{
 						var $option = document.createElement( 'option' );
-						$option.setAttribute( 'value' , options[ o ] );
-						$option.innerHTML = options[ o ];
+						$option.setAttribute( 'value' , unique_values[ o ] );
+						$option.innerHTML = unique_values[ o ];
 						$select.appendChild( $option );
 					}
 				
@@ -348,8 +368,10 @@ define( [ 'app/utils' ] , function( UTILS )
 	{
 		var unique_values = [];
 			
+		// Go over each row
 		for( var r = 0 ; r < this.data.length ; r ++ )
 		{
+			// Add the value if it's not already in our list of values
 			if( unique_values.indexOf( this.data[ r ].values[ field.id ] ) == -1 )
 			{
 				unique_values.push( this.data[ r ].values[ field.id ] );
@@ -357,6 +379,8 @@ define( [ 'app/utils' ] , function( UTILS )
 		}
 		
 		unique_values.sort();
+
+		// console.log( 'Unique values: ------------------------- ' , unique_values );
 		
 		return unique_values;
 	};
