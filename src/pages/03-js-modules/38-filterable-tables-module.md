@@ -236,11 +236,12 @@ var m = new FILTERABLE({
 		<tr>
 			<th data-filterable data-type="select">College</th>
 			<th data-filterable data-type="select">Bathroom</th>
-			<th data-filterable data-type="select">Catering</th>
 			<th >Let length</th>
 			<th >Price per week</th>
+            <th data-filterable data-type="select">Catering</th>
 			<th >Price per year</th>
-		<tr>
+            <th data-filterable data-type="select">Dummy</th>
+		</tr>
 	</thead>
 	<tbody>
 		<tr>
@@ -250,6 +251,7 @@ var m = new FILTERABLE({
 			<td data-value="40">40 weeks</td>
 			<td data-value="196">&pound;196</td>
 			<td data-value="7840">&pound;7,840</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="Alcuin"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/alcuin/">Alcuin</a></td>
@@ -258,6 +260,7 @@ var m = new FILTERABLE({
 			<td data-value="50">50 weeks</td>
 			<td data-value="155">&pound;155</td>
 			<td data-value="7750">&pound;7,750</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="Constantine"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/constantine/">Constantine</a></td>
@@ -266,6 +269,7 @@ var m = new FILTERABLE({
 			<td data-value="44">44 weeks</td>
 			<td data-value="174">&pound;174</td>
 			<td data-value="7656">&pound;7,656</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="Langwith"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/langwith/">Langwith</a></td>
@@ -274,6 +278,7 @@ var m = new FILTERABLE({
 			<td data-value="44">44 weeks</td>
 			<td data-value="174">&pound;174</td>
 			<td data-value="7656">&pound;7,656</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="Halifax"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/halifax/">Halifax</a></td>
@@ -282,6 +287,7 @@ var m = new FILTERABLE({
 			<td data-value="44">44 weeks</td>
 			<td data-value="169">&pound;169</td>
 			<td data-value="7436">&pound;7,436</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="James"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/james/">James</a></td>
@@ -290,6 +296,7 @@ var m = new FILTERABLE({
 			<td data-value="40">40 weeks</td>
 			<td data-value="181">&pound;181</td>
 			<td data-value="7240">&pound;7,240</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="Goodricke"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/goodricke/">Goodricke</a></td>
@@ -298,6 +305,7 @@ var m = new FILTERABLE({
 			<td data-value="44">44 weeks</td>
 			<td data-value="160">&pound;160</td>
 			<td data-value="7040">&pound;7,040</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="Constantine"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/constantine/">Constantine</a></td>
@@ -306,6 +314,7 @@ var m = new FILTERABLE({
 			<td data-value="44">44 weeks</td>
 			<td data-value="157">&pound;157</td>
 			<td data-value="6908">&pound;6,908</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="Langwith"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/langwith/">Langwith</a></td>
@@ -314,6 +323,7 @@ var m = new FILTERABLE({
 			<td data-value="44">44 weeks</td>
 			<td data-value="157">&pound;157</td>
 			<td data-value="6908">&pound;6,908</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="Alcuin"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/alcuin/">Alcuin</a></td>
@@ -322,6 +332,7 @@ var m = new FILTERABLE({
 			<td data-value="44">44 weeks</td>
 			<td data-value="155">&pound;155</td>
 			<td data-value="6820">&pound;6,820</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="Halifax"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/halifax/">Halifax</a></td>
@@ -330,6 +341,7 @@ var m = new FILTERABLE({
 			<td data-value="44">44 weeks</td>
 			<td data-value="155">&pound;155</td>
 			<td data-value="6820">&pound;6,820</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="Derwent"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/derwent/">Derwent</a></td>
@@ -338,6 +350,7 @@ var m = new FILTERABLE({
 			<td data-value="40">40 weeks</td>
 			<td data-value="168">&pound;168</td>
 			<td data-value="6720">&pound;6,720</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="Langwith"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/langwith/">Langwith</a></td>
@@ -346,6 +359,7 @@ var m = new FILTERABLE({
 			<td data-value="40">40 weeks</td>
 			<td data-value="157">&pound;157</td>
 			<td data-value="6280">&pound;6,280</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="Alcuin"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/alcuin/">Alcuin</a></td>
@@ -354,6 +368,7 @@ var m = new FILTERABLE({
 			<td data-value="40">40 weeks</td>
 			<td data-value="155">&pound;155</td>
 			<td data-value="6200">&pound;6,200</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="Vanbrugh"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/vanbrugh/">Vanbrugh</a></td>
@@ -362,6 +377,7 @@ var m = new FILTERABLE({
 			<td data-value="40">40 weeks</td>
 			<td data-value="155">&pound;155</td>
 			<td data-value="6200">&pound;6,200</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="Derwent"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/derwent/">Derwent</a></td>
@@ -370,6 +386,7 @@ var m = new FILTERABLE({
 			<td data-value="40">40 weeks</td>
 			<td data-value="153">&pound;153</td>
 			<td data-value="6120">&pound;6,120</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="James"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/james/">James</a></td>
@@ -378,6 +395,7 @@ var m = new FILTERABLE({
 			<td data-value="40">40 weeks</td>
 			<td data-value="153">&pound;153</td>
 			<td data-value="6120">&pound;6,120</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="Vanbrugh"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/vanbrugh/">Vanbrugh</a></td>
@@ -386,6 +404,7 @@ var m = new FILTERABLE({
 			<td data-value="40">40 weeks</td>
 			<td data-value="153">&pound;153</td>
 			<td data-value="6120">&pound;6,120</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="Vanbrugh"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/vanbrugh/">Vanbrugh</a></td>
@@ -394,6 +413,7 @@ var m = new FILTERABLE({
 			<td data-value="38">38 weeks</td>
 			<td data-value="155">&pound;155</td>
 			<td data-value="5890">&pound;5,890</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="Goodricke"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/goodricke/">Goodricke</a></td>
@@ -402,6 +422,7 @@ var m = new FILTERABLE({
 			<td data-value="40">40 weeks</td>
 			<td data-value="145">&pound;145</td>
 			<td data-value="5800">&pound;5,800</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="Derwent"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/derwent/">Derwent</a></td>
@@ -410,6 +431,7 @@ var m = new FILTERABLE({
 			<td data-value="40">40 weeks</td>
 			<td data-value="140">&pound;140</td>
 			<td data-value="5600">&pound;5,600</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="Halifax"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/halifax/">Halifax</a></td>
@@ -418,6 +440,7 @@ var m = new FILTERABLE({
 			<td data-value="40">40 weeks</td>
 			<td data-value="140">&pound;140</td>
 			<td data-value="5600">&pound;5,600</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="Vanbrugh"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/vanbrugh/">Vanbrugh</a></td>
@@ -426,6 +449,7 @@ var m = new FILTERABLE({
 			<td data-value="40">40 weeks</td>
 			<td data-value="136">&pound;136</td>
 			<td data-value="5440">&pound;5,440</td>
+			<td>xyz</td>
 		</tr>
 		<tr>
 			<td data-value="Halifax"><a href="https://www.york.ac.uk/study/accommodation/rooms-prices/halifax/">Halifax</a></td>
@@ -434,6 +458,7 @@ var m = new FILTERABLE({
 			<td data-value="40">40 weeks</td>
 			<td data-value="99">&pound;99</td>
 			<td data-3960="7656">&pound;3,960</td>
+			<td>xyz</td>
 		</tr>
 	</tbody>
 </table>
