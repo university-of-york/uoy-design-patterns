@@ -144,6 +144,12 @@ define( [ 'app/utils' ] , function( UTILS )
 		$fieldset.setAttribute( 'class' , 'fieldset_inline' );
 		$form.appendChild( $fieldset );
 	
+		// Fieldset text label
+		var $legend = document.createElement( 'legend' );
+		$legend.setAttribute( 'class' , 'sr-only' );
+		$legend.innerHTML = 'Filters';
+		$fieldset.appendChild( $legend );
+	
 		// Individual controls
 		for( var i = 0 ; i < this.fields.length ; i ++ )
 		{
