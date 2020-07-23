@@ -236,9 +236,9 @@ var m = new FILTERABLE({
 		<tr>
 			<th data-filterable data-type="select">College</th>
 			<th data-filterable data-type="select">Bathroom</th>
+            <th data-filterable data-type="select">Catering</th>
 			<th >Let length</th>
 			<th >Price per week</th>
-            <th data-filterable data-type="select">Catering</th>
 			<th >Price per year</th>
             <th data-filterable data-type="select">Dummy</th>
 		</tr>
