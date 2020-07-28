@@ -93,11 +93,11 @@ a.c-key-fact:hover{
     color:$c-key-fact-alt__title-color;
   }
   font-family: chaparral-pro;
-  font-size: 3em;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 1;
   sup {
-    font-size: 1.85rem;
-    // top: -1.2em;
+    font-size: 1.8rem;
+    top: -0.6em!important;
   }
 }
