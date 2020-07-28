@@ -286,7 +286,7 @@ define( [ 'app/utils' ] , function( UTILS )
 				// Clean up some key variables
 				var filter_value = this.filters[ filter_keys[ f ] ].toLowerCase().trim();
 				var field = this.fields[ filter_keys[ f ] ];
-				var field_value = row.values[ filter_keys[ f ] ].toLowerCase().trim();
+				var field_value = row.values[ field.id ].toLowerCase().trim();
 				
 				switch( field.type )
 				{
