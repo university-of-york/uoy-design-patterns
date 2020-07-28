@@ -294,12 +294,11 @@ define(
         });
 
         // Make a table filterable
-        UTILS.eachIfExists('.js-filterable-table', function (i, a) {
-          var $a = $(a),
-              hasHeader = $a.attr('data-header') == 'true' ? true : false ;
-          var f = new FILTERABLE({
-            table: $a,
-            header: hasHeader
+        UTILS.eachIfExists('.js-filterable-table', function (i, table) {
+          var $table = $( table );
+          var filterable = new FILTERABLE(
+          {
+              $table: $table[0],
           });
         });
 
