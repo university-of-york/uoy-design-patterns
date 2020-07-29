@@ -1,0 +1,23 @@
+//
+// Horizontal rule
+//
+
+.c-hr
+{
+	// Default to big spacing
+	margin:4em 0;
+
+	// Styling
+	background: colour( 'grey' , 300 );
+
+	// Variant with no line intended to pad out
+	// the extremities of hr-separated lists.
+	&--spacer
+	{
+		// Collapse the bottom margin
+		margin-bottom: 0;
+		
+		// Hide the horizontal line
+		background: transparent;
+	}
+}

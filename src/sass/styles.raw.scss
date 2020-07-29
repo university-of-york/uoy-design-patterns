@@ -40,6 +40,7 @@
  * Global Notices..........Notices added before the page header, cross-site
  * Buttons.................All button styles
  * Icons...................Iconography (imports FontAwesome files)
+ * Horizontal rules........Vertical separators
  * Pagination..............For navigating multiple pages
  * Blockquotes.............Blockquote styles
  * Breadcrumb..............Breadcrumb styles
@@ -129,6 +130,7 @@
 @import "component/global-notices";
 @import "component/buttons";
 @import "component/icons";
+@import "component/hr";
 @import "component/pagination";
 @import "component/blockquotes";
 @import "component/breadcrumb";
