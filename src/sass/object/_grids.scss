@@ -61,18 +61,36 @@ $box-padding:$base-spacing;
     background-position:calc(50% + #{$base-spacing}) 50%;
   }
 }
+
+.o-grid__row,
 .o-grid__row--alt1,
 .o-grid__row--alt2,
 .o-grid__row--alt3 {
   @include extend-rows;
   // Coloured rows need to have padding so components don't butt up against the top
-  padding-top:$box-padding;
+  padding-top:3rem;
+  padding-bottom:3rem;
   // Rows following coloured rows should also be padded at the top to separate the content...
   + .o-grid__row {
-    padding-top:$box-padding;
+    padding-top:3rem;
+    padding-bottom:3rem;
   }
 }
+
+// Less padding on unique header elements
+.c-main-header .o-grid__row,
+.c-page-title__wrapper .o-grid__row {
+    padding-top:0;
+    padding-bottom:0;
+}
+
+// Pad out any plain content following a row
+.o-grid + *:not( .o-grid ) {
+    margin-top:3rem;
+}
+
 // ...unless they are the same type.
+.o-grid__row:not( [class*='o-grid__row--alt'] ) + .o-grid__row:not( [class*='o-grid__row--alt'] ),
 .o-grid__row--alt1 + .o-grid__row--alt1,
 .o-grid__row--alt2 + .o-grid__row--alt2,
 .o-grid__row--alt3 + .o-grid__row--alt3 {
