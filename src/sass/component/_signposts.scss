@@ -5,10 +5,16 @@
 .c-signpost {
   @include component;
   text-align:center;
-  margin:$base-spacing 0;
+  margin:$base-spacing*2 0;
+  h3 {
+    margin-bottom: $base-spacing/4;
+  }
+  p {
+    margin-bottom: $base-spacing/2;
+  }
 }
 
 .c-signpost__icon {
   color:$c-signpost__icon-color;
-  margin-bottom: $base-spacing/2;
+  margin-bottom: $base-spacing/4;
 }
