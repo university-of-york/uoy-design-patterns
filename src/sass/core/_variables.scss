@@ -174,10 +174,11 @@ $c-alert--danger-background:  colour( "red", 100 );  //lighten($red, 45)
 
 // A to Z
 // component/_atoz.scss
-$c-atoz__nav-link-background:          colour( "beige", 100 );  //$s2
-$c-atoz__nav-link-border:               colour( "beige", 200 );  //darken($s2,5) 
-$c-atoz__nav-link-hover-background:      colour( "blue", 500 ); //$blue
-$c-atoz__nav-link-hover-border:          colour( "blue" ); //$blue
+$c-atoz__nav-link-background:          colour( "blue", 700 );  //$s2
+$c-atoz__nav-link-border:               colour( "blue", 900 );  //darken($s2,5) 
+$c-atoz__nav-link--color:          white;  //$light
+$c-atoz__nav-link-hover-background:      colour( "blue", 900 ); //$blue
+$c-atoz__nav-link-hover-border:           colour( "blue", 900 ); //$blue
 $c-atoz__nav-link-hover-color:          colour( "grey", 100 );  //$light
 $c-atoz__nav-link--inactive-background: colour( "grey", 100 );  //$s3
 $c-atoz__nav-link--inactive-border:     colour( "grey", 200 );  //darken($s3,5)
@@ -491,16 +492,16 @@ $c-page-title__link-color:       colour( "grey", 100 );  //$light
 
 // Pagination
 // component/_pagination.scss
-$c-pagination__page-border:                       colour( "beige", 200 );  //darken($s2,5)
-$c-pagination__page-background:                   colour( "beige", 100 );  //$s2;
-$c-pagination__page-hover-background:             colour( "blue", 500 );  //$blue
-$c-pagination__page-hover-border:                 colour( "blue", 500 );  //$blue
-$c-pagination__page-hover-color:                  colour( "grey", 100 );  //$light
+$c-pagination__page-border:                       colour( "grey", 200 );  //darken($s2,5)
+$c-pagination__page-background:                   colour( "grey", 100 );  //$s2;
+$c-pagination__page-hover-background:             colour( "blue", 800 );  //$blue
+$c-pagination__page-hover-border:                 colour( "blue", 900 );  //$blue
+$c-pagination__page-hover-color:                  white;  //$light
 $c-pagination__page--type-break-background:       white;
-$c-pagination__page--type-break-hover-background: white;
-$c-pagination__page--type-break-hover-background: colour( "blue", 500 );  //$blue
-$c-pagination__page--current-background:          colour( "blue", 500 );  //$blue
-$c-pagination__page--current-border:              colour( "blue", 500 );  //$blue
+$c-pagination__page--type-break-hover-color:       white;
+$c-pagination__page--type-break-hover-background: colour( "blue", 800 );  //$blue
+$c-pagination__page--current-background:          colour( "blue", 800 );  //$blue
+$c-pagination__page--current-border:              colour( "blue", 900 );  //$blue
 $c-pagination__page--current-color:               white;
 
 // Panels
