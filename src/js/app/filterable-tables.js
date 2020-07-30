@@ -135,7 +135,7 @@ define( [ 'app/utils' ] , function( UTILS )
 	{
 		// The form itself
 		var $form = document.createElement( 'form' );
-		$form.setAttribute( 'class' , 'c-form c-form--bordered' );
+		$form.setAttribute( 'class' , 'c-form' );
 		$form.setAttribute( 'action' , '#'+this.$table.id );
 		$form.setAttribute( 'method' , 'get' );
 	
