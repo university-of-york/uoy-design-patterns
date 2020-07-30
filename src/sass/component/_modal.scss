@@ -33,7 +33,7 @@
     }
     // Everything else
     @include mq("huge", "-") {
-      width: 60%;
+      width: 90%;
       min-width: 0;
     }
     &.is-active {
@@ -149,7 +149,7 @@
     opacity: 0.7;
     padding: $base-spacing/2;
     @include mq("small", "-") {
-      font-size: 2em;
+      font-size: 1.5em;
     }
   }
   @include mq("small", "-") {
@@ -159,7 +159,7 @@
 .c-modal__nav--prev {
   left: 20px;
   @include mq("small", "-") {
-    left: 5px;
+    left: -8px;
   }
   .c-icon {
     padding-right: $base-spacing/2;
@@ -168,7 +168,7 @@
 .c-modal__nav--next {
   right: 20px;
   @include mq("small", "-") {
-    right: 5px;
+    right: -8px;
   }
   .c-icon {
     padding-left: $base-spacing/2;
