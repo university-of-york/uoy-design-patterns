@@ -33,7 +33,7 @@
     }
     // Everything else
     @include mq("huge", "-") {
-      width: 60%;
+      width: 90%;
       min-width: 0;
     }
     &.is-active {
