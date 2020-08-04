@@ -5,12 +5,13 @@
 .c-signpost {
   @include component;
   text-align:center;
-  margin:$base-spacing*2 0;
+  margin:$base-spacing 0 $base-spacing*2;
   h3 {
     margin-bottom: $base-spacing/4;
   }
   p {
-    margin-bottom: $base-spacing/2;
+    @include font-size(14px);
+    margin-bottom: $base-spacing;
   }
 }
 
