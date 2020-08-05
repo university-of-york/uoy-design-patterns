@@ -21,6 +21,8 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
   // Toggle this value to enable/disable clearing info on course search results pages
   var courseSearchClearingFeatures_default = true;
+  
+  var disableOnlineApplication = true;
 
   // We'll use this to check for things to override/test
   var queryArgs = new URLSearchParams( window.location.search );
@@ -974,7 +976,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   };
 
   CLEARINGTABLE.prototype.courseApplicationURL = function( course ) {
-      if( !course[ 'SRA course application code' ] ) return false;
+      if( !course[ 'SRA course application code' ] || disableOnlineApplication ) return false;
       return 'https://evision.york.ac.uk/urd/sits.urd/run/siw_sso.go?' + course[ 'SRA course application code' ];
   };
 
