@@ -1102,10 +1102,12 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     $.getJSON( endpoint );
   };
 
- // Remove apply button from 2019 course overview
- if(window.location.href.indexOf("courses-2020") > -1) {
-   $("#btnApplyForCourse").parent( "p" ).parent( "div" ).remove();
- }
+  // Remove apply button from 2019 course overview
+  $( document ).ready( function() {
+    if(window.location.href.indexOf("courses-2020") > -1) {
+      $("#btnApplyForCourse").attr( "href" , "https://www.york.ac.uk/study/undergraduate/applying/clearing/applying/" );
+    }
+  });
 
   return CLEARINGTABLE;
 
