@@ -451,8 +451,8 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
 
   .c-btn--secondary,
   p.cta a[href*="/york-unlimited/our-priorities/student-to-shine/yos/"],
-  p.cta a[href*="/york-unlimited/get-involved/donate/"], 
-  p.cta a[href*="://unlimited.hubbub.net"], 
+  p.cta a[href*="/york-unlimited/get-involved/donate/"],
+  p.cta a[href*="://unlimited.hubbub.net"],
   p.cta a[href*="https://www.yorkspace.net/donate-form"]  {
     background-color:$t-btn-secondary;
     border-color:$t-btn-secondary;
@@ -689,7 +689,7 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
     .c-signpost__icon {
       color:$purple;
     }
-    .c-signpost .c-btn {
+    .c-btn {
       background-color: $purple;
       border-color:$purple;
       color:$light;
@@ -704,7 +704,7 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
     .c-signpost__icon {
       color:$green;
     }
-    .c-signpost .c-btn {
+    .c-btn {
       background-color: $green;
       border-color:$green;
       color:$t-dark-main;
@@ -719,7 +719,7 @@ $t-btn-secondary-focus:darken($t-btn-secondary, 10);
     .c-signpost__icon {
       color:$orange;
     }
-    .c-signpost .c-btn {
+    .c-btn {
       background-color: $orange;
       border-color:$orange;
       color:$t-dark-main;
