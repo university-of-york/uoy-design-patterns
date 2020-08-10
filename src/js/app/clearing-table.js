@@ -74,12 +74,6 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     }
     this.container.addClass('c-clearing-container');
 
-      // need to empty this only if we've NOT got a course panel layout.
-      // this will prevent the default content being replaced
-      if(this.layout !== 'Course panel' && this.layout !== 'Entry requirements' && this.layout !== 'Course search' && this.layout !== 'Apply button' ) {
-          this.container.empty();
-      }
-
     if (this.layout === 'Courses') {
       this.courseCount = { 'UK/EU': 0 , 'International': 0 };
       this.letters = [];
@@ -244,7 +238,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
         // Course layout
         if (that.layout === 'Courses') {
+
           // Add table to container
+          that.container.empty();
           that.container.append(that.table);
 
           if ((that.courseCount['UK/EU'] > searchLimit) || (that.courseCount.International > searchLimit)) {
