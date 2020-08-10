@@ -301,13 +301,13 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         // Original course panel if not in clearing
         } else if (that.layout === "Course panel" && !inClearing) {
             
-          that.container.show();
+          that.container.fadeIn().css( 'visibility' , 'visible' );
             
         // Course panel layout
         } else if (that.layout === "Course panel" && inClearing) {
 
           that.container.append(that.panel);
-          that.container.show();
+          that.container.fadeIn().css( 'visibility' , 'visible' );
 
           // console.log(that.container, that.container.outerHeight());
           $(window).trigger('content.updated', ['clearing-table', that]);
