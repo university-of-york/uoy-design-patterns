@@ -224,7 +224,8 @@ define(
 
         // Clearing info for course search
         // ⚠ Only apply this to UG searches
-        if( window.location.href.indexOf( '/undergraduate/' ) > -1 ) {
+        if( window.location.href.indexOf( '/undergraduate/' ) > -1 ||
+          window.location.href.indexOf( '//localhost:' ) > -1 ) {
           UTILS.eachIfExists('#results > .courses', function (i, a) {
             var $a = $(a);
 

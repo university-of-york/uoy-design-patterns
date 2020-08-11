@@ -357,7 +357,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           var checked = false;
 
           if( window.localStorage ) {
-              checked = ( localStorage.getItem( 'course-search-in-clearing-only' ) ? true : false );
+            checked = ( localStorage.getItem( 'course-search-in-clearing-only' ) !== 'false' );
           }
 
           var showAllCoursesButton = $( '#showAllCourses' );
@@ -370,7 +370,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
             var checkbox = this;
             that.container.removeClass( 'u-flashin' );
-            
+
             if( window.localStorage ) {
               localStorage.setItem( 'course-search-in-clearing-only' , checkbox.checked );
             }

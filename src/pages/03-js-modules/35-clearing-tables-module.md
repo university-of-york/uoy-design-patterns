@@ -207,6 +207,28 @@ When the `js-clearing-table` is applied to a table with the `Apply button` layou
 
 <p><a class="c-btn c-btn--medium js-clearing-table" href="http://example.com" data-layout="Apply button" data-course="F3F8">Apply now</a></p>
 
+### Course finder
+
+<div id="results">
+<div class="courses">
+</div>
+</div>
+
+<form action="/study/undergraduate/courses/search" method="get" name="courseSearch" class="c-form" id="courseSearch">
+<fieldset>
+    <div class="c-form__element">
+        <input id="courses" type="text" name="q" value="" class="c-form__input c-form__input--text" placeholder="Enter course title, keywords or UCAS code">
+        <input id="level" type="hidden" name="level" value="undergraduate">
+    </div>
+    <div class="c-form__element">
+        <button id="courseSearchSubmit" type="submit" class="c-btn c-btn--medium">
+            Search <span class="c-icon c-icon--after c-icon--search"></span>
+        </button>
+        <a id="showAllCourses" href="/study/undergraduate/courses/all" class="c-btn c-btn--medium c-btn--secondary">Show all</a>
+    </div>
+</fieldset>
+</form>
+
 ### Options
 
   Pass an _options_ object with the following keys:
