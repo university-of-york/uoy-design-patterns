@@ -354,8 +354,14 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           // --------------------------------------------------
           // First add filtering option
 
+          var checked = false;
+
+          if( window.localStorage ) {
+            checked = ( localStorage.getItem( 'course-search-in-clearing-only' ) !== 'false' );
+          }
+
           var showAllCoursesButton = $( '#showAllCourses' );
-          var filterToggle = $( '<label style="display:inline-block; padding:0.45rem 0; white-space:nowrap;"><input type="checkbox"> Show courses in clearing only</label>' );
+          var filterToggle = $( '<label style="display:inline-block; padding:0.45rem 0; white-space:nowrap;"><input type="checkbox"'+( checked ? ' checked' : '' )+'> Show courses in clearing only</label>' );
 
           // Insert our toggle after the button
           showAllCoursesButton.after( filterToggle );
@@ -364,6 +370,10 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
             var checkbox = this;
             that.container.removeClass( 'u-flashin' );
+
+            if( window.localStorage ) {
+              localStorage.setItem( 'course-search-in-clearing-only' , checkbox.checked );
+            }
 
             // Delay update by 2xRAF to ensure that the keyframe animation kicks in
             requestAnimationFrame( function(){ requestAnimationFrame( function(){
