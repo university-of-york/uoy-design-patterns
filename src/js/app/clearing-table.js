@@ -71,7 +71,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
     // Forcing this to false to hide entry requirements (for now)
     // this.showRequirements = options.showRequirements;
-    this.showRequirements = false;
+    this.showRequirements = true;
     
     this.differentYear = options.differentYear;
     this.course = options.course || false;
