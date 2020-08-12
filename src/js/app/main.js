@@ -224,7 +224,8 @@ define(
 
         // Clearing info for course search
         // ⚠ Only apply this to UG searches
-        if( window.location.href.indexOf( '/undergraduate/' ) > -1 ) {
+        if( window.location.href.indexOf( '/undergraduate/' ) > -1 ||
+          window.location.href.indexOf( '//localhost:' ) > -1 ) {
           UTILS.eachIfExists('#results > .courses', function (i, a) {
             var $a = $(a);
 
@@ -335,11 +336,15 @@ define(
               $modeInput = $a.find('#mode');
           inputs.change(function(e) {
             var parts = $(this).attr('id').split('-');
+            
+            // Update the form's action 
             var level = parts[1];
-            var mode = parts[2] || "";
             var action = '/study/'+level+'/courses/search/';
-            $modeInput.val(mode);
             $a.attr('action', action);
+
+            // Update the taught/research mode if applicable
+            var mode = parts[2] || "";
+            $modeInput.val(mode);
           });
         });
 

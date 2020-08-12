@@ -68,6 +68,7 @@ define(['jquery', 'app/focus-trap'], function ($, FOCUSTRAP) {
   MODAL.prototype.activate = function ($el) {
     if ( $el.hasClass('is-hidden')) {
     $el.removeClass('is-hidden');
+    $el.removeAttr('disabled');
     // setTimeout(function () {
       $el.addClass('is-active'); 
     // }, 30); 
@@ -96,6 +97,7 @@ define(['jquery', 'app/focus-trap'], function ($, FOCUSTRAP) {
         $el.off('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd');
         called = true;
         $el.addClass('is-hidden');
+        $el.attr('disabled');
       });
       // In case it doesn't fire
       setTimeout(function () {
@@ -135,14 +137,14 @@ define(['jquery', 'app/focus-trap'], function ($, FOCUSTRAP) {
       currentModal.close();
     });
   
-    modalPrev = $('<button>').addClass('c-modal__nav c-modal__nav--prev is-hidden')
+    modalPrev = $('<button disabled>').addClass('c-modal__nav c-modal__nav--prev is-hidden')
                         .html('<i class="c-icon c-icon--3x c-icon--chevron-left c-icon--light"></i>')
                         .on('click', function (e) {
                           e.stopPropagation();
                           currentModal.navigate('prev');
                         })
                         .appendTo(modalWrapper);
-    modalNext = $('<button>').addClass('c-modal__nav c-modal__nav--next is-hidden')
+    modalNext = $('<button disabled>').addClass('c-modal__nav c-modal__nav--next is-hidden')
                         .html('<i class="c-icon c-icon--3x c-icon--chevron-right c-icon--light"></i>')
                         .on('click', function (e) {
                           e.stopPropagation();

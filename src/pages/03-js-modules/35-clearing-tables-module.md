@@ -105,7 +105,7 @@ This shows all available classes, with a toggle for UK/EU and International stud
 Any content wrapped in the `js-clearing-table` div will be overwritten if the course is in clearing.
 
 ```markup
-<div class="js-clearing-table" data-layout="Course panel" data-course="F3F8">
+<div class="js-clearing-table" data-layout="Course panel" data-course="F3F8" style="visibility:hidden;">
   <div class="c-panel c-panel--highlight">
     <div class="c-panel__content">
       <h3>Results 2019</h3>
@@ -116,7 +116,7 @@ Any content wrapped in the `js-clearing-table` div will be overwritten if the co
 </div>
 ```
 
-<div class="js-clearing-table" data-layout="Course panel" data-course="F3F8">
+<div class="js-clearing-table" data-layout="Course panel" data-course="F3F8" style="visibility:hidden;">
   <div class="c-panel c-panel--highlight">
     <div class="c-panel__content">
       <h3>Results 2019</h3>
@@ -131,7 +131,7 @@ Any content wrapped in the `js-clearing-table` div will be overwritten if the co
 Add a `data-different-year` attribute to indicate that this course is in clearing for a different year. This will change the panel CTA to a link to the course year in clearing.
 
 ```markup
-<div class="js-clearing-table" data-layout="Course panel" data-course="F3F8" data-different-year>
+<div class="js-clearing-table" data-layout="Course panel" data-course="F3F8" data-different-year style="visibility:hidden;">
   <div class="c-panel c-panel--highlight">
     <div class="c-panel__content">
       <h3>Results 2019</h3>
@@ -142,7 +142,7 @@ Add a `data-different-year` attribute to indicate that this course is in clearin
 </div>
 ```
 
-<div class="js-clearing-table" data-layout="Course panel" data-course="F3F8" data-different-year>
+<div class="js-clearing-table" data-layout="Course panel" data-course="F3F8" data-different-year style="visibility:hidden;">
   <div class="c-panel c-panel--highlight">
     <div class="c-panel__content">
       <h3>Results 2019</h3>
@@ -206,6 +206,28 @@ When the `js-clearing-table` is applied to a table with the `Apply button` layou
 ```
 
 <p><a class="c-btn c-btn--medium js-clearing-table" href="http://example.com" data-layout="Apply button" data-course="F3F8">Apply now</a></p>
+
+### Course finder
+
+<div id="results">
+<div class="courses">
+</div>
+</div>
+
+<form action="/study/undergraduate/courses/search" method="get" name="courseSearch" class="c-form" id="courseSearch">
+<fieldset>
+    <div class="c-form__element">
+        <input id="courses" type="text" name="q" value="" class="c-form__input c-form__input--text" placeholder="Enter course title, keywords or UCAS code">
+        <input id="level" type="hidden" name="level" value="undergraduate">
+    </div>
+    <div class="c-form__element">
+        <button id="courseSearchSubmit" type="submit" class="c-btn c-btn--medium">
+            Search <span class="c-icon c-icon--after c-icon--search"></span>
+        </button>
+        <a id="showAllCourses" href="/study/undergraduate/courses/all" class="c-btn c-btn--medium c-btn--secondary">Show all</a>
+    </div>
+</fieldset>
+</form>
 
 ### Options
 

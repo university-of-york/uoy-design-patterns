@@ -138,7 +138,7 @@ $icons: (
   5x: 80px
 );
 
-//  Focus 
+//  Focus
 $focus-outline-colour: colour( 'blue', 500 );
 
 
@@ -174,10 +174,11 @@ $c-alert--danger-background:  colour( "red", 100 );  //lighten($red, 45)
 
 // A to Z
 // component/_atoz.scss
-$c-atoz__nav-link-background:          colour( "beige", 100 );  //$s2
-$c-atoz__nav-link-border:               colour( "beige", 200 );  //darken($s2,5) 
-$c-atoz__nav-link-hover-background:      colour( "blue", 500 ); //$blue
-$c-atoz__nav-link-hover-border:          colour( "blue" ); //$blue
+$c-atoz__nav-link-background:          colour( "blue", 700 );  //$s2
+$c-atoz__nav-link-border:               colour( "blue", 700 );  //darken($s2,5)
+$c-atoz__nav-link--color:          white;  //$light
+$c-atoz__nav-link-hover-background:      colour( "blue", 900 ); //$blue
+$c-atoz__nav-link-hover-border:           colour( "blue", 900 ); //$blue
 $c-atoz__nav-link-hover-color:          colour( "grey", 100 );  //$light
 $c-atoz__nav-link--inactive-background: colour( "grey", 100 );  //$s3
 $c-atoz__nav-link--inactive-border:     colour( "grey", 200 );  //darken($s3,5)
@@ -227,12 +228,12 @@ $c-blockquote--pull-quote-color:             colour( "pink", 700 );  //$pink
 $c-blockquote__content--alt-1-2-color:       white;
 $c-blockquote__cite-color:                    colour( "grey", 900 );  //$charcoal
 $c-blockquote__cite-color--alt:              colour( "grey", 100 );  //$light
-$c-blockquote-link-color:  colour( "blue", 700 ); 
+$c-blockquote-link-color:  colour( "blue", 700 );
 $c-blockquote-link-hover: colour( "blue", 800 );
-$c-blockquote--image-quote-link-color:  inherit; 
-$c-blockquote--image-quote-link-hover:           colour( "blue" , 300 ); 
-$c-blockquote--pull-quote-link-color:  colour( "pink", 700 ); 
-$c-blockquote--pull-quote-link-hover:           colour( "pink" , 800 ); 
+$c-blockquote--image-quote-link-color:  inherit;
+$c-blockquote--image-quote-link-hover:           colour( "blue" , 300 );
+$c-blockquote--pull-quote-link-color:  colour( "pink", 700 );
+$c-blockquote--pull-quote-link-hover:           colour( "pink" , 800 );
 
 // Breadcrumb
 // component/_breadcrumb.scss
@@ -289,7 +290,7 @@ $c-figure__caption--below-background:     transparent;
 $c-figure__caption--below-color:          colour( "grey", 700 ); //lighten($charcoal,20)
 $c-figure__caption--below-alt-color:      colour( 'grey' , 300 ); //darken($light,20)
 $c-figure__content-solid:                 colour( "blue", 900 ); //$teal
-$c-figure__content-transparent:           colour( "blue", 900 ); 
+$c-figure__content-transparent:           colour( "blue", 900 );
 $c-figure__content-color:                 colour( "grey", 100 );  //$light
 $c-figure__content-link-color:            colour( "blue", 400 ); //lighten($blue,10)
 $c-figure__content-link-hover-color:      colour( "blue", 300 ); //lighten($blue,25)
@@ -315,7 +316,7 @@ $c-footer-main__link--edit-color: colour( 'grey' , 200 );
 // Forms
 // component/_forms.scss
 $c-form--bordered-border:                      colour( "grey", 200 ); //$blue
-$c-form--panel-light:                                 colour( "grey", 100 );  
+$c-form--panel-light:                                 colour( "grey", 100 );
 $c-form--panel-color:                          colour( "grey", 100 );  //$light
 $c-form__input-border:                         colour( "grey", 400 );  //lighten($charcoal,50)
 $c-form__input-color:                          colour( "grey", 900 );  //$charcoal
@@ -382,7 +383,7 @@ $c-key-fact-color:                      colour( "blue", 900 ); //$teal
 $c-key-fact-hover-color:                colour( "blue", 700 );  // lighten($teal,15)
 $c-key-fact__icon-color:                colour( "blue", 700 );  // lighten($teal,15)
 $c-key-fact__icon-hover-color:          colour( "blue", 600 );  // lighten($teal,25)
-$c-key-fact-alt__icon-color:            colour( "blue", 400 );   
+$c-key-fact-alt__icon-color:            colour( "blue", 400 );
 $c-key-fact__title-color:               colour( "blue", 900 ); //$teal
 $c-key-fact__title-hover-color:         colour( "blue", 700 );  // lighten($teal,15)
 $c-key-fact__title-highlight-color:     colour( "blue", 600 );  //$blue
@@ -491,16 +492,16 @@ $c-page-title__link-color:       colour( "grey", 100 );  //$light
 
 // Pagination
 // component/_pagination.scss
-$c-pagination__page-border:                       colour( "beige", 200 );  //darken($s2,5)
-$c-pagination__page-background:                   colour( "beige", 100 );  //$s2;
-$c-pagination__page-hover-background:             colour( "blue", 500 );  //$blue
-$c-pagination__page-hover-border:                 colour( "blue", 500 );  //$blue
-$c-pagination__page-hover-color:                  colour( "grey", 100 );  //$light
+$c-pagination__page-border:                       colour( "grey", 200 );  //darken($s2,5)
+$c-pagination__page-background:                   colour( "grey", 100 );  //$s2;
+$c-pagination__page-hover-background:             colour( "blue", 900 );  //$blue
+$c-pagination__page-hover-border:                 colour( "blue", 900 );  //$blue
+$c-pagination__page-hover-color:                  white;  //$light
 $c-pagination__page--type-break-background:       white;
-$c-pagination__page--type-break-hover-background: white;
-$c-pagination__page--type-break-hover-background: colour( "blue", 500 );  //$blue
-$c-pagination__page--current-background:          colour( "blue", 500 );  //$blue
-$c-pagination__page--current-border:              colour( "blue", 500 );  //$blue
+$c-pagination__page--type-break-hover-color:       white;
+$c-pagination__page--type-break-hover-background: colour( "blue", 900 );  //$blue
+$c-pagination__page--current-background:          colour( "blue", 700 );  //$blue
+$c-pagination__page--current-border:              colour( "blue", 700 );  //$blue
 $c-pagination__page--current-color:               white;
 
 // Panels
