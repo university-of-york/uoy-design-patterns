@@ -23,22 +23,25 @@ FOCUSTRAP.prototype.keydown_handler = function( e )
     var focusables = this.element.querySelectorAll( 'a[href]:not([disabled]) , button:not([disabled]) , textarea:not([disabled]) , input[type="text"]:not([disabled]) , input[type="radio"]:not([disabled]) , input[type="checkbox"]:not([disabled]) , select:not([disabled])' );
     
     // Get the first and last of them
-    this.first_focusable = focusables[ 0 ];
-    this.last_focusable = focusables[ focusables.length - 1 ];
+    var first_focusable = focusables[ 0 ];
+    var last_focusable = focusables[ focusables.length - 1 ];
+
+    console.log( first_focusable );
+    console.log( last_focusable );
     
     if( e.shiftKey ) // Tabbing backwards?
     {
-        if( document.activeElement === this.first_focusable )
+        if( document.activeElement === first_focusable )
         {
-            this.last_focusable.focus();
+            last_focusable.focus();
             e.preventDefault();
         }
     }
     else // ...or tabbing forwards?
     {
-        if( document.activeElement === this.last_focusable )
+        if( document.activeElement === last_focusable )
         {
-            this.first_focusable.focus();
+            first_focusable.focus();
             e.preventDefault();
         }
     }
