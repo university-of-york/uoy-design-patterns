@@ -345,6 +345,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
             for( var subjectKey = 0 ; subjectKey < subjectKeys.length ; subjectKey++ ) {
 
               var subjectName = subjectKeys[ subjectKey ];
+              
+              // Skip if the subject field is blank
+              if( subjectName == '' ) continue;
 
               // Make sure there's at least one course to show
               if( parseInt( that.courseCount[ subjectName ]['UK/EU'] ) + parseInt( that.courseCount[ subjectName ].International ) + parseInt( that.courseCount[ subjectName ]['Adjustment UK/EU'] ) + parseInt( that.courseCount[ subjectName ]['Adjustment International'] ) > 0 ) {
