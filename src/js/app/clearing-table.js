@@ -864,13 +864,11 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     if( listItems.length > 1 )
     {
         var list = '<ul class="u-two-columns">'+listItems.join('')+'</ul>';
-
         courseCellContent+= list;
     }
-    else if( listItems.length > 0 )
+    else if( listItems.length == 1 )
     {
-        var list = '<p>'+listItems.join('')+'</p>';
-
+        var list = '<ul>'+listItems.join('')+'</ul>';
         courseCellContent+= list;
     }
 
