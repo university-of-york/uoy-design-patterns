@@ -336,11 +336,15 @@ define(
               $modeInput = $a.find('#mode');
           inputs.change(function(e) {
             var parts = $(this).attr('id').split('-');
+            
+            // Update the form's action 
             var level = parts[1];
-            var mode = parts[2] || "";
             var action = '/study/'+level+'/courses/search/';
-            $modeInput.val(mode);
             $a.attr('action', action);
+
+            // Update the taught/research mode if applicable
+            var mode = parts[2] || "";
+            $modeInput.val(mode);
           });
         });
 
