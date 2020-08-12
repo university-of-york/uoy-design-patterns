@@ -22,7 +22,14 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   // Toggle this value to enable/disable clearing info on course search results pages
   var courseSearchClearingFeatures_default = false;
   
-  var disableOnlineApplication = true;
+  // Toggle this to control whether or not the online application URLs should be shown on course pages
+  var disableApplyButton = true;
+
+  // Toggle this to control whether or not clearing-adjusted entry requirements will be shown on course pages
+  var disableEntryRequirements = true;
+
+  // Toggle this to control whether or not course page promo panels will be updated
+  var disablePromoPanel = true;
 
   // We'll use this to check for things to override/test
   var queryArgs = new URLSearchParams( window.location.search );
@@ -56,7 +63,12 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     this.department = options.department || 'All';
     this.subject = options.subject || 'All';
     this.layout = options.layout || 'Courses';
-    
+
+    // Skip out now if we've disabled this layout
+    if( disableEntryRequirements && this.layout == 'Entry requirements' ) return;
+    if( disablePromoPanel && this.layout == 'Course panel' ) return;
+    if( disableApplyButton && this.layout == 'Apply button' ) return;
+
     // Forcing this to false to hide entry requirements (for now)
     // this.showRequirements = options.showRequirements;
     this.showRequirements = false;
@@ -989,7 +1001,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   };
 
   CLEARINGTABLE.prototype.courseApplicationURL = function( course ) {
-      if( !course[ 'SRA course application code' ] || disableOnlineApplication ) return false;
+      if( !course[ 'SRA course application code' ] || disableApplyButton ) return false;
       return 'https://evision.york.ac.uk/urd/sits.urd/run/siw_sso.go?' + course[ 'SRA course application code' ];
   };
 
