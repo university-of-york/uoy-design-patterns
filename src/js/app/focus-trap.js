@@ -4,12 +4,7 @@ define(['jquery'], function ($) {
 
 var FOCUSTRAP = function( $element )
 {
-    // Elements that can be focussed
-    var focusables = $element.querySelectorAll( 'a[href]:not([disabled]) , button:not([disabled]) , textarea:not([disabled]) , input[type="text"]:not([disabled]) , input[type="radio"]:not([disabled]) , input[type="checkbox"]:not([disabled]) , select:not([disabled])' );
-    
-    // Get the first and last of them
-    this.first_focusable = focusables[ 0 ];
-    this.last_focusable = focusables[ focusables.length - 1 ];
+    this.element = $element;
 
     // Attach our keydown event listener
     $element.addEventListener( "keydown" , this.keydown_handler.bind( this ) );
@@ -23,6 +18,13 @@ FOCUSTRAP.prototype.keydown_handler = function( e )
     var tab_is_pressed = ( e.key === "Tab" || e.keyCode === 9 );
 
     if( !tab_is_pressed ) return; // If not abandon now
+
+    // Elements that can be focussed
+    var focusables = this.element.querySelectorAll( 'a[href]:not([disabled]) , button:not([disabled]) , textarea:not([disabled]) , input[type="text"]:not([disabled]) , input[type="radio"]:not([disabled]) , input[type="checkbox"]:not([disabled]) , select:not([disabled])' );
+    
+    // Get the first and last of them
+    this.first_focusable = focusables[ 0 ];
+    this.last_focusable = focusables[ focusables.length - 1 ];
     
     if( e.shiftKey ) // Tabbing backwards?
     {
@@ -40,6 +42,7 @@ FOCUSTRAP.prototype.keydown_handler = function( e )
             e.preventDefault();
         }
     }
+    
 };
 
 // --------------------------------------------------
