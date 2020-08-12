@@ -860,9 +860,15 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     }
 
     // If we have any list items to show add them now
-    if( listItems.length > 0 )
+    if( listItems.length > 1 )
     {
         var list = '<ul class="u-two-columns">'+listItems.join('')+'</ul>';
+
+        courseCellContent+= list;
+    }
+    else if( listItems.length > 0 )
+    {
+        var list = '<p>'+listItems.join('')+'</p>';
 
         courseCellContent+= list;
     }
