@@ -29,7 +29,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   var disableEntryRequirements = true;
 
   // Toggle this to control whether or not course page promo panels will be updated
-  var disablePromoPanel = true;
+  var disablePromoPanel = false;
 
   // We'll use this to check for things to override/test
   var queryArgs = new URLSearchParams( window.location.search );
