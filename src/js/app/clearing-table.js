@@ -357,6 +357,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
             }
 
           // Add list to container
+          that.container.empty();
           that.container.append($('<h3>').text('Vacancies by subject area'));
           that.container.append(that.list);
 
