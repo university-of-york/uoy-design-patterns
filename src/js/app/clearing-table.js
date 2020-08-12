@@ -20,13 +20,13 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   function ($, SEARCHABLE, UTILS, MODALLINK) {
 
   // Toggle this value to enable/disable clearing info on course search results pages
-  var courseSearchClearingFeatures_default = false;
+  var courseSearchClearingFeatures_default = true;
   
   // Toggle this to control whether or not the online application URLs should be shown on course pages
   var disableApplyButton = true;
 
   // Toggle this to control whether or not clearing-adjusted entry requirements will be shown on course pages
-  var disableEntryRequirements = true;
+  var disableEntryRequirements = false;
 
   // Toggle this to control whether or not course page promo panels will be updated
   var disablePromoPanel = false;
