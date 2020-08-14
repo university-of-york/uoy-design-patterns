@@ -863,13 +863,13 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     // If we have any list items to show add them now
     if( listItems.length > 1 )
     {
-        var list = '<ul class="not-searchable u-two-columns">'+listItems.join('')+'</ul>';
-        courseCellContent+= list;
+        var list_double = '<ul class="not-searchable u-two-columns">'+listItems.join('')+'</ul>';
+        courseCellContent+= list_double;
     }
     else if( listItems.length == 1 )
     {
-        var list = '<ul class="not-searchable">'+listItems.join('')+'</ul>';
-        courseCellContent+= list;
+        var list_single = '<ul class="not-searchable">'+listItems.join('')+'</ul>';
+        courseCellContent+= list_single;
     }
 
     courseCell.html(courseCellContent);

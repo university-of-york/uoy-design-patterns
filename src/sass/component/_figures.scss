@@ -68,6 +68,37 @@
   max-width:100%;
   text-decoration:none;
 }
+
+.c-figure__image__wrapper {
+  position: relative;
+}
+
+.c-figure__bullets {
+  padding: $base-spacing/4 $base-spacing/2;
+  
+  color: $c-figure__bullets;
+  
+  a:hover & { color: $c-figure__bullets-hover; }
+  
+  ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  li {
+    display: block;
+    margin: $base-spacing/2 0;
+    padding: 0;
+    
+    & > .c-icon:first-child {
+      width: 2em;
+      text-align: center;
+    }
+  }
+}
+
 .c-figure__image,
 .c-figure img {
   display:block;
