@@ -1,0 +1,383 @@
+//
+// York Concerts theme
+//
+// Unstyled elements: tabs,
+
+
+// Colours
+
+$white:#ffffff;
+$pink:#9D227C;
+$dark-pink:darken($pink,10);
+$charcoal: #333;
+$teal:#20716f;
+
+$light:#f9f9f9;  
+
+
+$t-main: $dark-pink;
+$t-main-highlight: $pink;
+$t-light-neutral: #dedede;
+$t-mid-neutral: #666;
+$t-dark-neutral: $charcoal;
+$t-dark-contrast: $teal;
+
+// Dark (e.g. alt1 row)
+$t-alt1: $t-dark-contrast;
+// Darker (e.g. alt2 row)
+$t-alt2: $t-dark-neutral;
+// Light (e.g. alt3 row)
+$t-alt3: $t-light-neutral;
+
+$t-btn: $t-main-highlight;
+$t-btn-color: $light;
+$t-btn-hover:lighten($t-btn, 5);
+$t-btn-active:lighten($t-btn, 10);
+$t-btn-focus:darken($t-btn, 10);
+
+.t-yorkconcerts {
+
+  // Elements
+  a {
+    color:darken($t-main-highlight, 10);
+    &:hover {
+      color:$t-main-highlight;
+    }
+  }
+  .o-grid__row--alt2 a {
+    color:$white;
+    &:hover {
+      color:lighten($pink, 10);
+    }
+  }
+  th {
+    border-bottom-color: $t-main;
+    color:$charcoal;
+  }
+  td {
+    border-bottom-color: $t-main;
+  }
+
+  // Skip-to/a11y links
+  .o-skip-link {
+    &,&:hover { color:white; }
+  }
+
+  // Logo size
+  .c-main-header__logo {
+    width: 135px;
+    @include mq(tiny) {
+      width: 90px;
+    }
+  }
+  // Header search
+  .c-form--header {
+    margin-top: 57px;
+  }
+  .c-mobile-search-button {
+    margin-top:47px;
+    color:$t-main-highlight;
+    @include mq(tiny) {
+      margin-top:44px;
+    }
+  }
+
+  // Page title
+  .c-page-title,
+  .c-page-title__wrapper {
+    background-color: $white;
+  }
+  .c-page-title__link {
+    color: $t-main;
+    &:hover {
+      color:$t-main;
+    }
+  }
+
+  // Navigation
+  .c-nav {
+    background-color: $white;
+    border-top-color:$white;
+    border-bottom-color:$t-main-highlight;
+  }
+  .c-nav__item {
+    border-width: 0;
+    font-weight: bold;
+    .currentsection {
+      color: $t-main;
+    }
+  }
+  .c-nav__link,
+  .c-nav__item a {
+    color:$t-dark-neutral;
+    &:hover {
+      background-color:$t-main-highlight;
+      color:$white;
+    }
+  }
+  .c-nav.is-open {
+    .c-nav__link,
+    .c-nav__item a {
+      &:hover {
+        color:$t-main-highlight;
+      }
+    }
+    .c-nav__header,
+    .c-nav__header a {
+      color:$t-main-highlight;
+    }
+    .c-nav__item--more .c-nav__link {
+      color: $light;
+      background-color:$t-main-highlight;
+      &:hover {
+        color: $light;
+        background-color:$t-main-highlight;
+      }
+    }
+  }
+  .c-nav__item--more .c-nav__link {
+    background-color:$t-main;
+    box-shadow: none;
+    color: $white;
+    &:hover {
+      background-color:$t-main-highlight;
+    }
+  }
+  .c-subnav__item a,
+  .c-subnav__title .c-subnav__link,
+  .c-subnav__title a {
+    color:$charcoal;
+    &:hover {
+      color: $t-main-highlight;
+      text-decoration:underline;
+    }
+  }
+
+  // Signposts
+  .c-signpost__icon {
+    color:$t-main;
+  }
+
+  // Breadcrumb
+  .c-breadcrumb a {
+    color:$charcoal;
+    &:hover{
+      color:$t-main-highlight;
+    }
+  }
+
+  // Panel
+  .c-panel {
+    background-color:$white;
+    border-color:$t-main;
+    border-style: solid;
+    border-left-width:1px;
+    border-right-width:1px;
+    border-bottom-width:1px;
+  }
+  .c-panel__content {
+    color:$t-dark-neutral;
+  }
+  .c-panel--link .c-panel__more {
+    color: $t-main;
+  }
+  .c-panel--link:hover .c-panel__more{
+    color:$t-main-highlight;
+  }
+  .c-panel--highlight {
+    background-color:$t-main;
+    border-color: $t-main-highlight;
+    .c-panel__content {
+      color: $white;
+    }
+  }
+
+  // Block links
+  .c-block-link {
+    background-color:$white;
+    border-color:$pink;
+    border-style: solid;
+    border-top-width:1px;
+    border-right-width:1px;
+    border-bottom-width:1px;
+  }
+
+  // Footer
+  .c-footer-main {
+    border-top-color: $t-main-highlight;
+    a {
+      color: $light;
+      &:hover {
+        color:$t-main-highlight;
+      }
+    }
+  }
+
+  // Figures
+  .c-figure__caption--blue,
+  .c-figure__caption,
+  .c-figure__content {
+    background-color: $t-dark-neutral;
+    background-color: transparentize($t-dark-neutral, 0.25);
+  }
+  @include mq(tiny, '~') {
+    .c-figure--link .c-figure__content {
+      background-color: $t-dark-neutral;
+    }
+  }
+  .c-figure--link:hover .c-figure__content {
+    background-color: $t-dark-neutral;
+    background-color: transparentize($t-dark-neutral, 0.25);
+  }
+
+  // Grid rows
+  .o-grid__row--alt1,
+  .o-grid__row--alt1:before,
+  .o-grid__row--alt1:after {
+    background-color: $t-alt1;
+  }
+  .o-grid__row--alt2,
+  .o-grid__row--alt2:before,
+  .o-grid__row--alt2:after {
+    background-color: $t-alt2;
+  }
+  .o-grid__row--alt3,
+  .o-grid__row--alt3:before,
+  .o-grid__row--alt3:after {
+    background-color: $t-alt3;
+  }
+
+  // Buttons
+  .c-btn {
+    color:$t-btn-color;
+    background-color:$t-btn;
+    border-color:$t-btn;
+    &:hover {
+      color: $t-btn-color;
+      background-color: $t-btn-hover;
+    }
+    &:active {
+      color: $t-btn-color;
+      background-color: $t-btn-active;
+    }
+    &:focus {
+      color: $t-btn-color;
+      background-color: $t-btn-focus;
+    }
+    &:hover {
+
+    }
+  }
+
+  // Listings
+  .c-listings-item {
+    border-bottom-color: $t-main-highlight;
+  }
+  .c-listings-item__title {
+    color:$t-main;
+  }
+
+  // News
+  .c-news--excerpt .c-news__title {
+    color:$t-main-highlight;
+  }
+  .c-news--excerpt:hover .c-news__title {
+    color:$t-main;
+  }
+  .c-news__event-date {
+    color:$t-mid-neutral;
+  }
+
+  // Key facts
+  .c-key-fact__icon {
+    color:$t-main;
+  }
+  a.c-key-fact:hover .c-key-fact__icon {
+    color: $t-main-highlight;
+  }
+  .c-key-fact__title {
+    color:$t-dark-neutral;
+  }
+  a.c-key-fact:hover .c-key-fact__title {
+    color: $t-main-highlight;
+  }
+  .c-key-fact__title strong {
+    color:$t-main-highlight;
+  }
+  .c-key-fact__content {
+    color:$t-dark-neutral;
+  }
+  .o-grid__row--alt2 .c-key-fact {
+    background-color: lighten($t-dark-neutral,5);
+    .c-key-fact__title {
+      color: darken($light,15);
+      strong {
+        color: $light;
+      }
+    }
+    .c-key-fact__icon {
+      color:$light;
+    }
+    .c-key-fact__content {
+      color: darken($light,5);
+    }
+    &:hover {
+      background-color: lighten($t-dark-neutral,10);
+      .c-key-fact__title {
+        color: $light;
+        strong {
+          color: lighten($light,5);
+        }
+      }
+      .c-key-fact__icon {
+        color:$light;
+      }
+      .c-key-fact__content {
+        color: $light;
+      }
+
+    }
+  }
+
+  // Blockquotes
+  .c-blockquote--image-quote .c-blockquote__content {
+    background-color: $t-main;
+  }
+  .c-blockquote--image-quote .c-blockquote__image + .c-blockquote__content:after {
+    border-top-color: $t-main;
+    @include mq(tiny, '~') {
+      // When the arrow goes to the top
+      border-color:$t-main transparent;
+    }
+  }
+  .c-blockquote--pull-quote .c-blockquote__content {
+    color: $t-dark-neutral;
+  }
+
+  // Accordions
+  .c-accordion__item {
+    border-color: $t-main;
+  }
+
+  // A to Z/Pagination
+  .c-atoz__nav-link:hover, .c-pagination__page:hover, .c-pagination__page--current {
+    color: $white;
+    background-color: $t-main-highlight;
+    border-color: $t-main-highlight;
+  }
+
+  // Tabs
+  .c-tabs__link:hover {
+    background-color: $t-main-highlight;
+    color: $light;
+  }
+  .c-tabs--vertical .c-tabs__tab.is-active .c-tabs__link {
+    background-color: $t-main;
+  }
+
+  // Tags
+  .c-tag, .c-tag-list a, .c-tag-list .u-link {
+    color: $light;
+  }
+
+}
