@@ -74,29 +74,21 @@
 }
 
 .c-figure__bullets {
-  padding: $base-spacing/4 $base-spacing/2;
+  padding: $base-spacing $base-spacing/2;
   
   color: $c-figure__bullets;
   
   a:hover & { color: $c-figure__bullets-hover; }
   
+  // Undo the default margins
   ul {
-    display: block;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
   }
-  
-  li {
-    display: block;
-    margin: $base-spacing/2 0;
-    padding: 0;
-    
-    & > .c-icon:first-child {
-      width: 2em;
-      text-align: center;
-    }
+  li:last-child {
+    margin-bottom: 0;
   }
+
 }
 
 .c-figure__image,
