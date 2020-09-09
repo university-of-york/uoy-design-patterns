@@ -75,8 +75,9 @@
 
 .c-figure__bullets {
   padding: $base-spacing $base-spacing/2;
-  
+    
   color: $c-figure__bullets;
+  background: $c-figure__bullets-background;
   
   a:hover & { color: $c-figure__bullets-hover; }
   
