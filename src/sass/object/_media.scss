@@ -1,16 +1,15 @@
 //
 // MEDIA OBJECT
 //
-@include mq(small, '+') {
   .o-media {
     clear:both;
     display:table;
-    margin-bottom:20px;
+    margin-bottom:$base-spacing;
   }
   .o-media__picture {
     @include demarginalise;
     display:table-cell;
-    padding-right:20px;
+    padding-right:$base-spacing;
     .o-media--top & {
       vertical-align:top;
     }
@@ -29,7 +28,7 @@
     .c-figure__image--thumbnail {
         max-width:80px;
     }
-  }
+   }
   .o-media__body {
     @include demarginalise;
     display:table-cell;
@@ -43,7 +42,6 @@
   p + .o-media__title {
     margin-top:0px;
   }
-}
 
 // Undoes the above for media objects in a sidebar
 // Eg: Contacts on country pages - https://www.york.ac.uk/study/international/your-country/china/
