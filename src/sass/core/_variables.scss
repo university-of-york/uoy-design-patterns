@@ -304,6 +304,9 @@ $c-figure__content--gold-solid:           colour("yellow", 500 ); //$gold
 $c-figure__content--gold-transparent:     transparentize(colour("yellow", 500 ), 0.25);
 $c-figure__content--charcoal-solid:       colour( "grey", 900 );  //$charcoal
 $c-figure__content--charcoal-transparent: transparentize(colour( "grey", 900 ), 0.25);
+$c-figure__bullets:                       colour( 'grey' , 900 );
+$c-figure__bullets-background:            colour( 'beige' , 100 );
+$c-figure__bullets-hover:                 colour( 'blue' , 700 );
 
 // Footer
 // component/_footer.scss

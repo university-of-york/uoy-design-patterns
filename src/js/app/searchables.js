@@ -89,13 +89,20 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
     var that = e.data.that;
     var inputContent = that.searchInput.val();
     if (that.caseSensitive !== true) inputContent = inputContent.toLowerCase();
+
     var testText = function($cell) {
       if (inputContent === '') return false;
-      var text = $cell.text();
+    
+      // Make a clone of the cell to exclude any hidden bits
+      var $cell_clone = $cell.clone();
+      $cell_clone.find( '.not-searchable' ).remove();
+      
+      var text = $cell_clone.text();
       if (that.caseSensitive !== true) text = text.toLowerCase();
       var searchIndex = text.indexOf(inputContent);
       return searchIndex === -1;
     };
+
     that.searchRows.each(function(i, row) {
       var hideIt = true;
       var $row = $(row);

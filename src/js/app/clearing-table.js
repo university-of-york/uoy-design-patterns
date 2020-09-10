@@ -20,13 +20,13 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   function ($, SEARCHABLE, UTILS, MODALLINK) {
 
   // Toggle this value to enable/disable clearing info on course search results pages
-  var courseSearchClearingFeatures_default = false;
+  var courseSearchClearingFeatures_default = true;
   
   // Toggle this to control whether or not the online application URLs should be shown on course pages
   var disableApplyButton = true;
 
   // Toggle this to control whether or not clearing-adjusted entry requirements will be shown on course pages
-  var disableEntryRequirements = true;
+  var disableEntryRequirements = false;
 
   // Toggle this to control whether or not course page promo panels will be updated
   var disablePromoPanel = false;
@@ -71,7 +71,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
     // Forcing this to false to hide entry requirements (for now)
     // this.showRequirements = options.showRequirements;
-    this.showRequirements = false;
+    this.showRequirements = true;
     
     this.differentYear = options.differentYear;
     this.course = options.course || false;
@@ -345,6 +345,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
             for( var subjectKey = 0 ; subjectKey < subjectKeys.length ; subjectKey++ ) {
 
               var subjectName = subjectKeys[ subjectKey ];
+              
+              // Skip if the subject field is blank
+              if( subjectName == '' ) continue;
 
               // Make sure there's at least one course to show
               if( parseInt( that.courseCount[ subjectName ]['UK/EU'] ) + parseInt( that.courseCount[ subjectName ].International ) + parseInt( that.courseCount[ subjectName ]['Adjustment UK/EU'] ) + parseInt( that.courseCount[ subjectName ]['Adjustment International'] ) > 0 ) {
@@ -354,6 +357,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
             }
 
           // Add list to container
+          that.container.empty();
           that.container.append($('<h3>').text('Vacancies by subject area'));
           that.container.append(that.list);
 
@@ -857,11 +861,15 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     }
 
     // If we have any list items to show add them now
-    if( listItems.length > 0 )
+    if( listItems.length > 1 )
     {
-        var list = '<ul class="u-two-columns">'+listItems.join('')+'</ul>';
-
-        courseCellContent+= list;
+        var list_double = '<ul class="not-searchable u-two-columns">'+listItems.join('')+'</ul>';
+        courseCellContent+= list_double;
+    }
+    else if( listItems.length == 1 )
+    {
+        var list_single = '<ul class="not-searchable">'+listItems.join('')+'</ul>';
+        courseCellContent+= list_single;
     }
 
     courseCell.html(courseCellContent);
