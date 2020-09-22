@@ -3,12 +3,19 @@
 //
   .o-media {
     clear:both;
+    @include mq( small , '+' ) {
     display:table;
+    }
     margin-bottom:$base-spacing;
   }
+
+
   .o-media__picture {
-    @include demarginalise;
+    
+    @include mq( small , '+' ) {
+      @include demarginalise;
     display:table-cell;
+    }
     padding-right:$base-spacing;
     .o-media--top & {
       vertical-align:top;
@@ -19,11 +26,15 @@
     .o-media--bottom & {
       vertical-align:bottom;
     }
+
+
     // Override these since they screw up the table-cell layout
     .c-figure__image {
       width:auto;
-      max-width:none;
+      max-width:none!important;
     }
+
+    
     // Image sizing
     .c-figure__image--thumbnail {
         max-width:80px;
@@ -31,7 +42,9 @@
    }
   .o-media__body {
     @include demarginalise;
+    @include mq( small , '+' ) {
     display:table-cell;
+    }
     vertical-align:top;
     // Ensures picture is as small as it can be even if content in body is minimal
     width: 100%;
