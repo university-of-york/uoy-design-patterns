@@ -20,10 +20,10 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   function ($, SEARCHABLE, UTILS, MODALLINK) {
 
   // Toggle this value to enable/disable clearing info on course search results pages
-  var courseSearchClearingFeatures_default = true;
+  var courseSearchClearingFeatures_default = false;
   
   // Toggle this to control whether or not the online application URLs should be shown on course pages
-  var disableApplyButton = true;
+  var disableApplyButton = false;
 
   // Toggle this to control whether or not clearing-adjusted entry requirements will be shown on course pages
   var disableEntryRequirements = false;
@@ -69,9 +69,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     if( disablePromoPanel && this.layout == 'Course panel' ) return;
     if( disableApplyButton && this.layout == 'Apply button' ) return;
 
-    // Forcing this to false to hide entry requirements (for now)
-    // this.showRequirements = options.showRequirements;
-    this.showRequirements = true;
+    this.showRequirements = options.showRequirements;
     
     this.differentYear = options.differentYear;
     this.course = options.course || false;
