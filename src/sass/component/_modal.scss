@@ -28,12 +28,16 @@
       overflow-y: auto;
     }
     // Really big screens
-    @include mq("huge", "+") {
-      width: 40%;
-    }
+    // @include mq("huge", "+") {
+    //   width: 40%;
+    // }
     // Everything else
+
+    @include mq("small", "-") {
+      width: 50%;
+    }
     @include mq("huge", "-") {
-      width: 90%;
+      width: 70%;
       min-width: 0;
     }
     &.is-active {
