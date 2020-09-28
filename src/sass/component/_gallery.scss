@@ -42,6 +42,7 @@
 .c-gallery-item__thumbnail-image {
   display:block;
   width:100%;
+  max-width:none;
 }
 .c-gallery-item--landscape {
   .c-gallery-item__thumbnail-image {
