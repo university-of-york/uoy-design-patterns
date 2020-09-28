@@ -2,171 +2,140 @@
 // MODAL
 //
 .c-modal__wrapper {
-  @include transition("opacity");
-  transition-delay: 200ms;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1024; // To be above everything
-  opacity: 0;
-  background-color: #999;
-  background-color: rgba(0, 0, 0, 0.8);
-  &.is-active {
-    opacity: 1;
-    transition-delay: 0ms;
-  }
-  .c-modal {
-    @include transition("opacity");
-    transition-delay: 0ms;
-    max-width: 90%;
+	@include transition("opacity");
+	transition-delay: 200ms;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1024; // To be above everything
+	opacity: 0;
+	background-color: #999;
+	background-color: rgba(0, 0, 0, 0.8);
+	&.is-active {
+		opacity: 1;
+		transition-delay: 0ms;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.c-modal {
+		@include transition("opacity");
+		@include component-margin;
+		max-width: 90%;
     max-height: 90%;
-    opacity: 0;
-    // overflow: none;
-    @include mq("small", "-") {
-      overflow-y: auto;
-    }
-    // Everything else
-    @include mq("huge", "-") {
-      width: 70%; //was 90%
-      min-width: 0;
-    }
-    &.is-active {
-      transition-delay: 200ms;
-      opacity: 1;
-    }
-    .csstransforms & {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      -webkit-transform: translate(-50%, -50%);
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-    .no-csstransforms & {
-      margin: $base-spacing auto;
-    }
-  }
+    // @include mq("huge", "+") {
+    //   max-width: 50%;
+    //   max-height: 50%;
+    // }
+		opacity: 0;
+		transition-delay: 0ms;
+		&.is-active {
+			transition-delay: 200ms;
+			opacity: 1;
+		}
+	}
 }
 .c-modal {
-  @include component-margin;
-  display: block;
-  position: relative;
-  // overflow: hidden;
+	@include component-margin;
+	display: block;
+	position: relative;
 }
 .c-modal--framed {
-  border-left: 0.8em solid $c-modal-border-color;
-  background-color: $c-modal-background-color;
-  border-radius: 3px;
-  .c-modal__content {
-    padding: 1em 40px 1em 20px;
-  }
+	border-left: 0.8em solid $c-modal-border-color;
+	background-color: $c-modal-background-color;
+	border-radius: 3px;
+	.c-modal__content {
+		padding: 1em 40px 1em 20px;
+	}
 }
 .c-modal--scroll {
-  overflow-y: auto;
-}
-.c-modal--frameless {
-  // border:0;
-  // background-color:transparent;
-  // border-radius:0;
+	overflow-y: auto;
 }
 .c-modal__title {
-  padding: 1em 40px 0.5em 20px;
-  margin: 0;
+	padding: 1em 40px 0.5em 20px;
+	margin: 0;
 }
 .c-modal__content {
-  @include demarginalise;
-  max-height: 100%;
-  max-width: 100%;
+	@include demarginalise;
+	max-height: 100%;
+	max-width: 100%;
 }
 .c-modal__image {
-  display: block;
-  //width:100%;
+	display: block;
 }
 .c-modal__caption {
-  background: $c-modal__caption-background-solid;
-  background: $c-modal__caption-background-transparent;
-  color: $c-modal__caption-color;
-  padding: $base-spacing/2 $base-spacing;
+	background: $c-modal__caption-background-solid;
+	background: $c-modal__caption-background-transparent;
+	color: $c-modal__caption-color;
+	padding: $base-spacing/2 $base-spacing;
 }
 .c-modal__close {
-  position: absolute;
-  top: $base-spacing/2;
-  right: $base-spacing/2;
-  width: 30px;
-  height: 30px;
-  line-height: 20px;
-  text-align: center;
-  color: $c-modal__close-color;
-  background-color: $c-modal__close-background-color;
-  border-radius: 50%;
-  font-weight: bold;
-  text-decoration: none;
-  border: 0;
-  cursor: pointer;
-  &:hover {
-    text-decoration: none;
-    background-color: $c-modal__close-hover-background-color;
-    color: $c-modal__close-hover-color;
-  }
-  @include mq("medium", "-") {
-    //display:none;
-  }
+	position: absolute;
+	top: $base-spacing/2;
+	right: $base-spacing/2;
+	width: 30px;
+	height: 30px;
+	line-height: 20px;
+	text-align: center;
+	color: $c-modal__close-color;
+	background-color: $c-modal__close-background-color;
+	border-radius: 50%;
+	font-weight: bold;
+	text-decoration: none;
+	border: 0;
+	cursor: pointer;
+	&:hover {
+		text-decoration: none;
+		background-color: $c-modal__close-hover-background-color;
+		color: $c-modal__close-hover-color;
+	}
 }
 .c-modal__nav {
-  @include transition("opacity");
-  background-color: transparent;
-  border: 0;
-  position: absolute;
-  // top: 0;
-  top: 50%;
-  // width: 72px;
-  // height: 100%;
-  cursor: pointer;
-  opacity: 0;
-  color: $c-modal__nav-color;
-  z-index: 8;
-  &.is-active {
-    opacity: 1;
-    outline-color: $focus-outline-colour;
-    &:hover {
-      opacity: 1;
-    }
-  }
-  .c-icon {
-    background-color: $c-modal__nav__icon-background;
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    // margin-top: -16px;
-    // margin-left: -16px;
-    opacity: 0.7;
-    padding: $base-spacing/2;
-    @include mq("small", "-") {
-      font-size: 1.5em;
-    }
-  }
-  @include mq("small", "-") {
-    width: 52px;
-  }
+	@include transition("opacity");
+	background-color: transparent;
+	border: 0;
+	position: absolute;
+	top: 50%;
+	cursor: pointer;
+	opacity: 0;
+	color: $c-modal__nav-color;
+	z-index: 8;
+	&.is-active {
+		opacity: 1;
+		outline-color: $focus-outline-colour;
+		&:hover {
+			opacity: 1;
+		}
+	}
+	.c-icon {
+		background-color: $c-modal__nav__icon-background;
+		opacity: 0.7;
+		padding: $base-spacing/2;
+		@include mq("small", "-") {
+			font-size: 1.5em;
+		}
+	}
+	@include mq("small", "-") {
+		width: 52px;
+	}
 }
 .c-modal__nav--prev {
-  left: 20px;
-  @include mq("small", "-") {
-    left: -8px;
-  }
-  .c-icon {
-    padding-right: $base-spacing/2;
-  }
+	left: 20px;
+	@include mq("small", "-") {
+		left: -8px;
+	}
+	.c-icon {
+		padding-right: $base-spacing/2;
+	}
 }
 .c-modal__nav--next {
-  right: 20px;
-  @include mq("small", "-") {
-    right: -8px;
-  }
-  .c-icon {
-    padding-left: $base-spacing/2;
-  }
+	right: 20px;
+	@include mq("small", "-") {
+		right: -8px;
+	}
+	.c-icon {
+		padding-left: $base-spacing/2;
+	}
 }
