@@ -27,9 +27,13 @@
     @include mq("small", "-") {
       overflow-y: auto;
     }
+    // Really big screens
+    @include mq("huge", "+") {
+      width: 40%;
+    }
     // Everything else
     @include mq("huge", "-") {
-      width: 70%; //was 90%
+      width: 90%;
       min-width: 0;
     }
     &.is-active {
