@@ -13,7 +13,6 @@
 	opacity: 0;
 	background-color: #999;
   	background-color: rgba(0, 0, 0, 0.8);
-	overflow: auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -22,6 +21,7 @@
 		transition-delay: 0ms;		
 	}
 	.c-modal {
+		overflow: auto;
 		position: absolute;
 		@include transition("opacity");
     	@include component-margin;
@@ -35,7 +35,6 @@
 			max-height: 90%;
 			@include mq("huge", "++") {
 				max-width: 50%;
-				max-height: 50%;
 			}
 		}
 	}
