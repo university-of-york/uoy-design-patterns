@@ -83,3 +83,25 @@ tr:last-child td {
     }
   }
 }
+
+// A table wrapping element that adds horizontal scrolling (with fancy shadows)
+.c-table-scrollingwrapper {
+
+  // This is to make sure that the table doesn't just squish down
+  // Not sure the concept is the solidest - to be revisted
+  th { white-space: nowrap; }
+
+  overflow: auto;
+
+  // Adapted from https://css-scroll-shadows.now.sh/
+  background: 
+    linear-gradient( 90deg , white 33% , rgba( 255,255,255 , 0 ) ),
+    linear-gradient( 90deg , rgba( 255,255,255 , 0 ), white 66% ) 100% 0,
+    radial-gradient( farthest-side at 0 50% , rgba( 0,0,0 , 0.5 ) , transparent ),
+    radial-gradient( farthest-side at 100% 50% , rgba( 0,0,0 , 0.5 ) , transparent ) 100% 0;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-attachment: local , local , scroll , scroll;
+  background-size: 3em 100% , 3em 100% , 1em 100% , 1em 100%;
+
+}
