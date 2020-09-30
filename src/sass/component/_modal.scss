@@ -63,10 +63,12 @@
 }
 
 .c-modal__caption {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
+	@include mq("medium", "+") {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
 	@include demarginalise;
 	background: $c-modal__caption-background-solid;
 	color: $c-modal__caption-color;
