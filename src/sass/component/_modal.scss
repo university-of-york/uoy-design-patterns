@@ -3,45 +3,40 @@
 //
 .c-modal__wrapper {
 	@include transition("opacity");
-	transition-delay: 200ms;
+	background-color: #999;
+	background-color: rgba(0, 0, 0, 0.8); 
+	opacity: 0;
 	position: fixed;
 	top: 0;
-	right: 0;
 	bottom: 0;
 	left: 0;
-	z-index: 1024; // To be above everything
-	opacity: 0;
-	background-color: #999;
-  	background-color: rgba(0, 0, 0, 0.8);
+	right: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	&.is-active {
-		opacity: 1;
-		transition-delay: 0ms;		
+		opacity: 1;	
 	}
 	.c-modal {
-		overflow: auto;
-		position: absolute;
 		@include transition("opacity");
-    	@include component-margin;
 		opacity: 0;
-		transition-delay: 0ms;
+		display: flex;
 		&.is-active {
-			transition-delay: 200ms;
+			position: absolute;
 			opacity: 1;
-			flex: 0 1 auto;
 			max-width: 90%;
-			max-height: 90%;
-			@include mq("huge", "++") {
-				max-width: 50%;
-			}
+			max-height: 90%;			
+			margin: $base-spacing/2;
+			overflow: hidden;
 		}
 	}
 }
-.c-modal {
-	@include component-margin;
+
+.c-modal__image {
+	max-width: 100%;
+	width: 100vh;
 }
+
 .c-modal--framed {
 	border-left: 0.8em solid $c-modal-border-color;
 	background-color: $c-modal-background-color;
@@ -53,24 +48,29 @@
 .c-modal--scroll {
 	overflow-y: auto;
 }
+
 .c-modal__title {
 	padding: 1em 40px 0.5em 20px;
 	margin: 0;
 }
+
+
+
 .c-modal__content {
 	display: flex;
 	flex-direction: column;
+	flex: 0 1 auto;
+}
 
-}
-.c-modal__image {
-	display: block;
-}
 .c-modal__caption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	@include demarginalise;
 	background: $c-modal__caption-background-solid;
-	background: $c-modal__caption-background-transparent;
 	color: $c-modal__caption-color;
-	padding: $base-spacing/2 $base-spacing;
+	padding: $base-spacing/2 $base-spacing $base-spacing;
 }
 
 // Modal close
@@ -97,6 +97,10 @@
 		color: $c-modal__close-hover-color;
 	}
 }
+
+
+
+
 
 // Modal Navigation 
 
