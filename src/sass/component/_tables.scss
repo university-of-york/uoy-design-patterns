@@ -93,6 +93,10 @@ tr:last-child td {
   $mask-size: 4em;
   $mask-feather-size: 7em;
 
+  // Move bottom margin to container
+  & > table { margin: 0; }
+  margin-bottom: $base-spacing;
+
   // This is to make sure that the table doesn't just squish down
   // Not sure the concept is the solidest - to be revisted
   th { white-space: nowrap; }
