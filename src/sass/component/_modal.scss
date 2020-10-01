@@ -26,7 +26,9 @@
 		opacity: 0;		
 		margin: $base-spacing/2;
 		position: absolute;
-		max-width: 60vh;
+		@include mq("small", "++") {
+			max-width: 80vh;
+		}
 		display: flex;
 		flex-direction: column;
 		&.is-active {
