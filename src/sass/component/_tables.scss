@@ -99,7 +99,7 @@ tr:last-child td {
 
   // This is to make sure that the table doesn't just squish down
   // Not sure the concept is the solidest - to be revisted
-  th { white-space: nowrap; }
+  th, td { white-space: nowrap; }
 
   // Allow the container to scroll
   overflow: auto;
