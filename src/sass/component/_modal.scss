@@ -28,6 +28,7 @@
 		position: absolute;
 		max-width: 60vh;
 		display: flex;
+		flex-direction: column;
 		&.is-active {
 			opacity: 1;
 			transition-delay: 0ms;
