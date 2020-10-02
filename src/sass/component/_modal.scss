@@ -39,12 +39,15 @@
 	max-width: 90vh;
 	@include mq("small", "++") {
 		top:4%;
-		max-width: 85vh;
+		max-width: 85vw;
 		margin: 0;
 	}
 }
 
-
+.c-modal__image {
+	max-height: 80vh;
+	height: inherit !important;
+}
 
 .c-modal--framed {
 	border-left: 0.8em solid $c-modal-border-color;
@@ -104,11 +107,7 @@
 }
 
 
-.c-modal__image {
-	max-height: 100vh;
-	height: inherit !important;
-	flex-grow: 0;
-}
+
 
 
 // Modal Navigation 
