@@ -19,24 +19,28 @@
 	&.is-active {
 		opacity: 1;	
 		transition-delay: 0ms;
+		overflow: auto;
 	}
 	.c-modal {
 		@include transition("opacity");
 		transition-delay: 200ms;
-		opacity: 0;		
-		margin: $base-spacing/2;
-		position: absolute;
-		@include mq("small", "++") {
-			max-width: 80vh;
-		}
-		display: flex;
-		flex-direction: column;
 		&.is-active {
 			opacity: 1;
 			transition-delay: 0ms;
-			// overflow: hidden;
 		}
 		
+	}
+}
+
+.c-modal {
+	opacity: 0;		
+	margin: $base-spacing/2;
+	position: absolute;
+	max-width: 90vh;
+	@include mq("small", "++") {
+		top:4%;
+		max-width: 80vh;
+		margin: 0;
 	}
 }
 
