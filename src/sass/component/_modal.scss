@@ -37,10 +37,8 @@
 	margin: $base-spacing/2;
 	position: absolute;
 	max-width: 90vh;
-	@include mq("small", "++") {
+	@include mq("medium", "+") {
 		top:4%;
-		max-width: 85vw;
-		margin: 0;
 	}
 }
 
