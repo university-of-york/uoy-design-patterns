@@ -12,9 +12,6 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	z-index: 16000010;
 	&.is-active {
 		opacity: 1;	
@@ -33,16 +30,18 @@
 }
 
 .c-modal {
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 	opacity: 0;		
 	margin: $base-spacing/2;
 	position: absolute;
 	max-width: 90vh;
-	@include mq("medium", "+") {
-		top:4%;
-	}
 }
 
 .c-modal__image {
+	@include transition("opacity");
+	transition-delay: 200ms;
 	max-height: 80vh;
 	height: inherit !important;
 }
@@ -65,14 +64,14 @@
 }
 
 .c-modal__content {
+	@include transition("opacity");
+	transition-delay: 200ms;
 	display: flex;
 	flex-direction: column;
 	flex: 0 1 auto;
 }
 
 .c-modal__caption {
-	@include transition("opacity");
-	transition-delay: 200ms;
 	@include demarginalise;
 	background: $c-modal__caption-background-solid;
 	color: $c-modal__caption-color;
