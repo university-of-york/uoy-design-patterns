@@ -9,7 +9,7 @@
 	opacity: 0;
 	display: flex;
 	justify-content: center;
-	// align-items: center;
+	align-items: center;
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -17,7 +17,11 @@
 	right: 0;
 	z-index: 16000010;
 	overflow-y: auto;
-	padding-top: 3%;
+	
+	@include mq("medium", "+") {
+		align-items: flex-start;
+		padding-top: 3%;
+	  }
 	&.is-active {
 		opacity: 1;	
 		transition-delay: 0ms;
