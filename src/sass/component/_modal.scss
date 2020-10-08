@@ -9,7 +9,7 @@
 	@include transition("opacity");
 	overflow: hidden;
 	display: flex;
-	align-items: center;
+	// align-items: center;
 	justify-content: center;
 	opacity: 0;
 	&.is-active {
@@ -21,9 +21,13 @@
 
 .c-modal {
 	position: absolute;
-	width: 60vw;
+	max-width: 80vw;
+	max-height: 70vh;
+
 	display: flex;
 	flex-flow: column nowrap;
+	
+	
 
 	margin: 2em;
 
