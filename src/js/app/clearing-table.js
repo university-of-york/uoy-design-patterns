@@ -20,7 +20,16 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   function ($, SEARCHABLE, UTILS, MODALLINK) {
 
   // Toggle this value to enable/disable clearing info on course search results pages
-  var courseSearchClearingFeatures_default = true;
+  var courseSearchClearingFeatures_default = false;
+  
+  // Toggle this to control whether or not the online application URLs should be shown on course pages
+  var disableApplyButton = false;
+
+  // Toggle this to control whether or not clearing-adjusted entry requirements will be shown on course pages
+  var disableEntryRequirements = false;
+
+  // Toggle this to control whether or not course page promo panels will be updated
+  var disablePromoPanel = false;
 
   // We'll use this to check for things to override/test
   var queryArgs = new URLSearchParams( window.location.search );
@@ -54,10 +63,13 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     this.department = options.department || 'All';
     this.subject = options.subject || 'All';
     this.layout = options.layout || 'Courses';
-    
-    // Forcing this to false to hide entry requirements (for now)
-    // this.showRequirements = options.showRequirements;
-    this.showRequirements = false;
+
+    // Skip out now if we've disabled this layout
+    if( disableEntryRequirements && this.layout == 'Entry requirements' ) return;
+    if( disablePromoPanel && this.layout == 'Course panel' ) return;
+    if( disableApplyButton && this.layout == 'Apply button' ) return;
+
+    this.showRequirements = options.showRequirements;
     
     this.differentYear = options.differentYear;
     this.course = options.course || false;
@@ -71,12 +83,6 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
       this.container.attr('id', 'clearing-container-'+this.id);
     }
     this.container.addClass('c-clearing-container');
-
-      // need to empty this only if we've NOT got a course panel layout.
-      // this will prevent the default content being replaced
-      if(this.layout !== 'Course panel' && this.layout !== 'Entry requirements' && this.layout !== 'Course search' && this.layout !== 'Apply button' ) {
-          this.container.empty();
-      }
 
     if (this.layout === 'Courses') {
       this.courseCount = { 'UK/EU': 0 , 'International': 0 };
@@ -242,7 +248,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
         // Course layout
         if (that.layout === 'Courses') {
+
           // Add table to container
+          that.container.empty();
           that.container.append(that.table);
 
           if ((that.courseCount['UK/EU'] > searchLimit) || (that.courseCount.International > searchLimit)) {
@@ -300,10 +308,17 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           //console.log(that.container, that.container.outerHeight());
           $(window).trigger('content.updated', ['clearing-table', that]);
 
+        // Original course panel if not in clearing
+        } else if (that.layout === "Course panel" && !inClearing) {
+            
+          that.container.fadeIn().css( 'visibility' , 'visible' );
+            
         // Course panel layout
         } else if (that.layout === "Course panel" && inClearing) {
 
           that.container.append(that.panel);
+          that.container.fadeIn().css( 'visibility' , 'visible' );
+
           // console.log(that.container, that.container.outerHeight());
           $(window).trigger('content.updated', ['clearing-table', that]);
 
@@ -328,6 +343,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
             for( var subjectKey = 0 ; subjectKey < subjectKeys.length ; subjectKey++ ) {
 
               var subjectName = subjectKeys[ subjectKey ];
+              
+              // Skip if the subject field is blank
+              if( subjectName == '' ) continue;
 
               // Make sure there's at least one course to show
               if( parseInt( that.courseCount[ subjectName ]['UK/EU'] ) + parseInt( that.courseCount[ subjectName ].International ) + parseInt( that.courseCount[ subjectName ]['Adjustment UK/EU'] ) + parseInt( that.courseCount[ subjectName ]['Adjustment International'] ) > 0 ) {
@@ -337,6 +355,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
             }
 
           // Add list to container
+          that.container.empty();
           that.container.append($('<h3>').text('Vacancies by subject area'));
           that.container.append(that.list);
 
@@ -349,8 +368,14 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           // --------------------------------------------------
           // First add filtering option
 
+          var checked = false;
+
+          if( window.localStorage ) {
+            checked = ( localStorage.getItem( 'course-search-in-clearing-only' ) !== 'false' );
+          }
+
           var showAllCoursesButton = $( '#showAllCourses' );
-          var filterToggle = $( '<label style="display:inline-block; padding:0.45rem 0; white-space:nowrap;"><input type="checkbox"> Show courses in clearing only</label>' );
+          var filterToggle = $( '<label style="display:inline-block; padding:0.45rem 0; white-space:nowrap;"><input type="checkbox"'+( checked ? ' checked' : '' )+'> Show courses in clearing only</label>' );
 
           // Insert our toggle after the button
           showAllCoursesButton.after( filterToggle );
@@ -359,6 +384,10 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
             var checkbox = this;
             that.container.removeClass( 'u-flashin' );
+
+            if( window.localStorage ) {
+              localStorage.setItem( 'course-search-in-clearing-only' , checkbox.checked );
+            }
 
             // Delay update by 2xRAF to ensure that the keyframe animation kicks in
             requestAnimationFrame( function(){ requestAnimationFrame( function(){
@@ -830,11 +859,15 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     }
 
     // If we have any list items to show add them now
-    if( listItems.length > 0 )
+    if( listItems.length > 1 )
     {
-        var list = '<ul class="u-two-columns">'+listItems.join('')+'</ul>';
-
-        courseCellContent+= list;
+        var list_double = '<ul class="not-searchable u-two-columns">'+listItems.join('')+'</ul>';
+        courseCellContent+= list_double;
+    }
+    else if( listItems.length == 1 )
+    {
+        var list_single = '<ul class="not-searchable">'+listItems.join('')+'</ul>';
+        courseCellContent+= list_single;
     }
 
     courseCell.html(courseCellContent);
@@ -974,7 +1007,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   };
 
   CLEARINGTABLE.prototype.courseApplicationURL = function( course ) {
-      if( !course[ 'SRA course application code' ] ) return false;
+      if( !course[ 'SRA course application code' ] || disableApplyButton ) return false;
       return 'https://evision.york.ac.uk/urd/sits.urd/run/siw_sso.go?' + course[ 'SRA course application code' ];
   };
 
@@ -1100,10 +1133,12 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     $.getJSON( endpoint );
   };
 
- // Remove apply button from 2019 course overview
- if(window.location.href.indexOf("courses-2019") > -1) {
-   $("#btnApplyForCourse").parent( "p" ).parent( "div" ).remove();
- }
+  // Remove apply button from 2019 course overview
+  $( document ).ready( function() {
+    if(window.location.href.indexOf("courses-2020") > -1) {
+      $("#btnApplyForCourse").attr( "href" , "https://www.york.ac.uk/study/undergraduate/applying/clearing/applying/" );
+    }
+  });
 
   return CLEARINGTABLE;
 

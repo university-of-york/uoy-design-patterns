@@ -7,7 +7,8 @@
   width:100%;
   color:$c-key-fact-color;
   text-decoration:none;
-  display: block;
+  display: flex;
+  margin-bottom:$base-spacing*2;
   .o-media__picture img {
     min-width:45px;
   }
@@ -65,7 +66,6 @@ a.c-key-fact:hover{
 .c-key-fact__content {
   @include demarginalise;
   @include font-size(16px, 1.1);
-  
 }
 .c-key-fact__icon {
   color:$c-key-fact__icon-color;
@@ -93,11 +93,11 @@ a.c-key-fact:hover{
     color:$c-key-fact-alt__title-color;
   }
   font-family: chaparral-pro;
-  font-size: 3em;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 1;
   sup {
-    font-size: 1.85rem;
-    // top: -1.2em;
+    font-size: 1.8rem;
+    top: -0.6em!important;
   }
 }

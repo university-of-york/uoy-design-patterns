@@ -81,3 +81,17 @@ ul.u-four-columns {
     opacity:1;
   }
 }
+
+// Spins something around, like a loading icon for example
+.u-spin {
+  animation:spin 600ms infinite;
+  transform-origin:center;
+}
+@keyframes spin {
+  0% {
+    transform:rotate(0deg);
+  }
+  100% {
+    transform:rotate(360deg);
+  }
+}
