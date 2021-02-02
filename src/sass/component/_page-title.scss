@@ -21,7 +21,6 @@
   // apply font to match h1
   font-family: $font-title;
   font-weight:600;
-  font-display: swap;
   @include font-size(24px, 1.25);
   @include tiny-padding;
   padding-top:$base-spacing/2;
