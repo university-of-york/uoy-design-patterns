@@ -19,7 +19,7 @@
   }
   &:focus {
     outline: $focus-outline-colour solid 2px;
-    outline-offset: -2px;
+    outline-offset: 2px;
   }
 }
 .c-news--excerpt {
@@ -143,6 +143,7 @@
   }
 
 }
+
 .c-news__poster {
   position: relative;
   overflow: hidden;
@@ -151,11 +152,13 @@
     width:100%;
     display:block;
   }
-  &--landscape {
-    img {
-      height: 9em;    
-      object-fit: cover;
-    }
+}
+
+.c-news__poster--landscape {
+  img {
+    // Make this a 3x2 aspect ratio
+    height: 9em;    
+    object-fit: cover;
   }
 }
 
