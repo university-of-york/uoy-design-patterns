@@ -144,6 +144,8 @@
 
 }
 .c-news__poster {
+  position: relative;
+  overflow: hidden;
   @include component-margin;
   img {
     width:100%;
@@ -156,6 +158,31 @@
     }
   }
 }
+
+.c-news__poster-overlay {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background: rgba( 0,0,0 , 0.4 );
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	
+  transition: transform 50ms ease-out;
+  transform: scale( 1 );
+}
+
+.c-news:hover .c-news__poster-overlay {
+	font-size: 1.2em;
+	transform: scale( 1.1 );
+}
+
 .c-news__banner {
   @include component-margin;
   img {
