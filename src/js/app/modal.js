@@ -7,7 +7,7 @@ category: Javascript
 ---
 
  */
-define(['jquery', 'app/focus-trap'], function ($, FOCUSTRAP) {
+define(['jquery', 'app/focus-trap', 'app/youtube-embed'], function ($, FOCUSTRAP, YOUTUBE) {
 
   var currentModal = false;
   var modalWrapper = false;
@@ -63,6 +63,14 @@ define(['jquery', 'app/focus-trap'], function ($, FOCUSTRAP) {
     if (this.prev === false) { this.deactivate(modalPrev); } else { this.activate(modalPrev); }
     if (this.next === false) { this.deactivate(modalNext); } else { this.activate(modalNext); }
     currentModal = this;
+
+    // Init YouTube embeds
+    UTILS.eachIfExists('.youtube-video-embed', function (i, a) {
+      new YOUTUBE({
+        link: $(a)
+      });
+    });
+
 };
 
   MODAL.prototype.activate = function ($el) {
