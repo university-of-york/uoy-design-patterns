@@ -171,6 +171,15 @@
   }
 }
 
+/*
+  Add some padding around single news items in a row
+*/
+@include mq(medium, '+') {
+  .o-grid__box--full:first-child:last-child .c-news {
+    padding: 0 10%;
+  }
+}
+
 .c-news__poster-overlay {
   position: absolute;
   z-index: 1;
