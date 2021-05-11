@@ -21,4 +21,10 @@
     height: 100%;
     border: 0;
   }
+
+  // Make sure it's nice and big in a modal
+  .c-modal__content & {
+    min-width: calc( 80vw - 60px - 0.8em );
+  }
+
 }
