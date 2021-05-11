@@ -122,6 +122,10 @@ define(['jquery', 'app/utils', 'app/focus-trap', 'app/youtube-embed'], function 
         $el.addClass('is-hidden');
       }
     }
+
+    // Pause any YouTube embeds
+    var youtube_embed_iframes = $el.find('.c-video iframe');
+    if( youtube_embed_iframes.length ) youtube_embed_iframes[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
   };
 
   MODAL.prototype.loadContent = function() {

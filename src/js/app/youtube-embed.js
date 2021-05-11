@@ -49,7 +49,7 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
         }
 
         this.id = videoId;
-        this.url = '//www.youtube.com/embed/' + this.id + '?rel=0' + optionArgs;
+        this.url = '//www.youtube.com/embed/' + this.id + '?enablejsapi=1&rel=0' + optionArgs;
         this.container = $('<div>').addClass('c-video').attr({
             'data-video-id': this.id
         });
