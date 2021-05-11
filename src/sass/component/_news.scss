@@ -182,7 +182,7 @@
   Add some padding around single news items in a row
 */
 @include mq(medium, '+') {
-  .o-grid__box--full:first-child:last-child > .c-news {
+  .c-news--standalone {
     padding-left: 10%;
     padding-right: 10%;
   }
