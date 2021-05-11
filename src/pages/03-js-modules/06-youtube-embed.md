@@ -63,31 +63,3 @@ Trying out a version inside a modal for the __mixed media rows__ content type.
 <div id="video_in_modal" class="is-hidden">
     <p><a class="youtube-video-embed" href="https://www.youtube.com/watch?v=e0BLUg7LtiE">Watch the video here</a></p>
 </div>
-
-<style>
-
-    .c-modal__content .c-video
-    {
-        min-width: calc( 80vw - 60px - 0.8em );
-    }
-
-    .c-video
-    {
-        position: relative;
-        height: 0;
-        width: 100%;
-        padding: 0 0 56.25% 0;
-    }
-
-    .c-video > iframe
-    {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-    }
-
-</style>
