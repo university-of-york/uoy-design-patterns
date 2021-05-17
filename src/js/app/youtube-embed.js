@@ -119,9 +119,6 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
             return response.json();
         })
         .then(function(data){
-            console.log( "----------------" );
-            console.log( data );
-            console.log( "----------------" );
             return iframe.attr({
                 title: data.items[0].snippet.title
             });
