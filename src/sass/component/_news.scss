@@ -189,27 +189,29 @@
 }
 
 .c-news__poster-overlay {
+  padding: 0.8em 1.8em;
+  font-size: 85%;
+
   position: absolute;
   z-index: 1;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  top: 50%;
+  left: 50%;
 
-  background: rgba( 0,0,0 , 0.2 );
+  background: colour( "pink", 700 );
   color: white;
+  border-radius: 3px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 	
   transition: transform 50ms ease-out;
-  transform: scale( 1 );
+  transform: translate( -50% , -50% ) scale( 1 );
 }
 
 .c-news:hover .c-news__poster-overlay {
-	font-size: 1.2em;
-	transform: scale( 1.1 );
+  background-color: lighten( colour( "pink", 700 ) , 5 );
+	transform: translate( -50% , -50% ) scale( 1.1 );
 }
 
 .c-news__banner {

@@ -121,6 +121,64 @@ component("news-article", {
 
 You can see this in action on a [research article](https://www.york.ac.uk/research/themes/business-social-responsible/)
 
+## Mixed media rows
+
+<div class="o-grid__row js-equal-height-row">
+<div class="o-grid__box o-grid__box--quarter o-grid__box--full@tiny" style="height: 386px;">
+    <a class="c-news c-news--excerpt js-modal" onclick="if( window.innerWidth < 500 ){ event.stopPropagation(); window.location.href = 'https://youtu.be/zfUAyDrq-aw'; }" data-title="Catered vs self-catered rooms" href="#media_youtube_embed_19457">
+        <figure class="c-news__poster c-news__poster--landscape">
+            <img src="../media/traffic-thumbnail.jpg" alt="" width="1220" height="656">
+            <div class="c-news__poster-overlay">
+                <i class="c-icon c-icon--2x c-icon--play"></i>
+            </div>
+        </figure>
+        <div class="c-label"><i class="c-icon c-icon--before c-icon--video-camera"></i>Video</div>
+        <h4 class="c-news__title">Catered vs self-catered rooms</h4>
+    </a>
+    <div id="media_youtube_embed_19457" class="is-hidden"><div class="c-video" data-video-id="zfUAyDrq-aw"><iframe src="//www.youtube.com/embed/zfUAyDrq-aw?enablejsapi=1&amp;rel=0" allowfullscreen="true" data-gtm-yt-inspected-1_25="true" id="650401868" title="Catered vs self-catered rooms at York"></iframe></div><p></p></div>
+</div>
+<div class="o-grid__box o-grid__box--quarter o-grid__box--full@tiny" style="height: 386px;">
+    <a class="c-news c-news--excerpt js-modal" onclick="if( window.innerWidth < 500 ){ event.stopPropagation(); window.location.href = 'https://youtu.be/YqliibMUc9A'; }" data-title="What to consider when applying for a room at York" href="#media_youtube_embed_84402">
+        <figure class="c-news__poster c-news__poster--landscape">
+            <img src="../media/traffic-thumbnail.jpg" alt="" width="1165" height="674">
+            <div class="c-news__poster-overlay">
+                <i class="c-icon c-icon--2x c-icon--play"></i>
+            </div>
+        </figure>
+        <div class="c-label"><i class="c-icon c-icon--before c-icon--video-camera"></i>Video</div>
+        <h4 class="c-news__title">What to consider when applying for a room at York</h4>
+    </a>
+    <div id="media_youtube_embed_84402" class="is-hidden"><div class="c-video" data-video-id="YqliibMUc9A"><iframe src="//www.youtube.com/embed/YqliibMUc9A?enablejsapi=1&amp;rel=0" allowfullscreen="true" data-gtm-yt-inspected-1_25="true" id="408667332" title="What to consider when applying for a room at York"></iframe></div><p></p></div>
+</div>
+<div class="o-grid__box o-grid__box--quarter o-grid__box--full@tiny" style="height: 386px;">
+    <a class="c-news c-news--excerpt" href="https://my.matterport.com/show/?m=SnVLk1fppQm">
+        <figure class="c-news__poster c-news__poster--landscape">
+            <img src="../media/traffic-thumbnail.jpg" alt="" width="1577" height="920">
+            <div class="c-news__poster-overlay">
+                <i class="c-icon c-icon--2x c-icon--street-view"></i>
+            </div>
+        </figure>
+        <div class="c-label"><i class="c-icon c-icon--before c-icon--eye"></i>Virtual tour</div>
+        <h4 class="c-news__title">Virtual tour of Langwith accommodation</h4>
+        <div class="c-news__teaser">
+            <p>Band 4, shared bathroom, self-catered accommodation</p>
+        </div>
+    </a>
+</div>
+<div class="o-grid__box o-grid__box--quarter o-grid__box--full@tiny" style="height: 386px;">
+    <a class="c-news c-news--excerpt" href="https://blogs.york.ac.uk/student-voices/2020/07/14/accommodation-international-student/">
+        <figure class="c-news__poster c-news__poster--landscape">
+            <img src="../media/traffic-thumbnail.jpg" alt="" width="2400" height="770">
+        </figure>
+        <div class="c-label"><i class="c-icon c-icon--before c-icon--comment-o"></i>Blog post</div>
+        <h4 class="c-news__title">Accommodation: settling in as an international student</h4>
+        <div class="c-news__teaser">
+            <p>Find out how Emily from Hong Kong settled into her new accommodation at York.</p>
+        </div>
+    </a>
+</div>
+</div>
+
 ### Options
 
 #### Atoms
