@@ -16,6 +16,9 @@ define(['jquery', 'app/utils'], function ($, UTILS) {
         if (!options.link) return false;
         this.link = options.link;
 
+        // Do not initialise inside a (hidden) mixed media row video modal content container
+        if( options.link.parents( '[id^=media_youtube_embed_]' ).length ) return false;
+
         // Check if this is a <p> and fallback to a child <a> if exists
         if ( this.link.is( "p" ) ) {
             this.link = $( this.link.find( "a" )[ 0 ] );
