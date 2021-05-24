@@ -137,7 +137,7 @@
   z-index:2;
 }
 
-@include mq( 'small' , '+' )
+@include mq( 'large' , '+' )
 {
   .c-hero__video__content {
     position: absolute;
