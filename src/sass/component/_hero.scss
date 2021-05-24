@@ -77,3 +77,117 @@
   margin-top: 0;
   margin-bottom: $base-spacing;
 }
+
+/* Inline version, does not cover the full viewport view */
+
+.c-hero--inline {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Hero controls, mandatory for video heros */
+
+.c-hero__controls {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+
+.c-hero__controls > button {
+  display: block;
+  margin: 0;
+  padding: 0;
+  
+  width: 1.75em;
+  line-height: 1.75em;
+  text-align: center;
+  font-size: 1.75em;
+  font-family: inherit;
+  
+  background: rgba( 255,255,255 , 0.8 );
+  border: none;
+  border-radius: 0;
+}
+
+/* The video container */
+
+.c-hero__video > video {
+  /* display: block; Removed - caused issues with .is-hidden/.is-visible */
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fallback for mobile */
+.c-hero__video > img {
+  position: absolute;
+  /* display: block; Removed - caused issues with .is-hidden/.is-visible */
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+/* Content for the video hero */
+
+.c-hero__video__content {
+  padding: 40px 20px 30px;
+  position:relative;
+  z-index:2;
+}
+
+@include mq( 'small' , '+' )
+{
+  .c-hero__video__content {
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    padding: 0 calc( 50% + 10px ) 0 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+}
+
+/* Fancy heading text treatment stuff */
+
+.c-hero__video__content h1 {
+  position: relative;
+  line-height: 1.5em;
+  overflow:hidden;
+  line-height:1.8;
+}
+
+.c-hero__video__content h1 > span {
+  color: white;
+  background: colour( 'blue' , 900 );
+  padding: .4rem .9rem;
+
+  /* Needs prefixing */
+  webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* To investigate for YVT theme...
+
+@supports(mix-blend-mode: lighten) {
+
+.c-hero__video__content h1::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  background: linear-gradient(60deg, #3629a2, #00ceff);
+  mix-blend-mode: lighten;
+}
+
+}
+
+*/
