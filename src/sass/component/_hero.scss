@@ -162,6 +162,13 @@
   line-height:1.8;
 }
 
+@include mq( 'large' , '+' )
+{
+  .c-hero__video__content h1 {
+    line-height:1.6;
+  }
+}
+
 .c-hero__video__content h1 > span {
   color: white;
   background: colour( 'blue' , 900 );
