@@ -132,24 +132,32 @@
 /* Content for the video hero */
 
 .c-hero__video__content {
-  padding: 40px 20px 30px;
+
+  // Make sure this appears above the video/image
   position:relative;
   z-index:2;
+
+  min-height: 30vh;
+  padding: 10px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
 }
 
 @include mq( 'medium' , '+' )
 {
   .c-hero__video__content {
+
     position: absolute;
     z-index: 1;
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-    padding: 0 calc( 50% + 10px ) 0 0;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    // Half-width max
+    padding: 20px calc( 50% + 30px ) 20px 20px;
   }
 }
 
