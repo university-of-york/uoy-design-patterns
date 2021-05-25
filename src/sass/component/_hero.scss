@@ -143,6 +143,8 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+
+  @include demarginalise;
 }
 
 @include mq( 'medium' , '+' )
