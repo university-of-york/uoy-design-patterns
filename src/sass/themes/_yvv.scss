@@ -1,0 +1,24 @@
+//
+// York Virtual Visit theme
+//
+
+// Todo: unwrap when CMS page layouts are ready
+// .t-foi {
+
+    // Video hero heading
+    
+    .c-hero__video__content h1 > span {
+      
+        /* Slice off the bottom right corner */
+        padding: 0.12em 0.75em 0.12em 0.5em;
+        clip-path: polygon( 0 0 , 100% 0 , calc( 100% - 0.25em ) 100% , 0 100% );
+        
+        /* Funky background gradient */
+        background: linear-gradient( -66.5deg , #2BDEDD 50% , colour( 'pink' , 700 ) 80% );
+        background-attachment: fixed; // Ensures all the spans "share" the same gradient
+    }
+
+// }
+
+  
+  
