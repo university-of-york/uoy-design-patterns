@@ -163,48 +163,31 @@
   }
 }
 
-/* Fancy heading text treatment stuff */
+/* Heading text treatment */
 
 .c-hero__video__content h1 {
-  position: relative;
-  line-height: 1.5em;
-  overflow:hidden;
-  line-height:1.8;
+  font-size: 3em;
+  line-height: 1;
+
+  /* Stacking layout for children */
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: start;
+  gap: 0.1em;
 }
 
 @include mq( 'large' , '+' )
 {
+  /* Nudge up the font-size */
   .c-hero__video__content h1 {
-    line-height:1.6;
+    font-size: 4.5em;
   }
 }
 
 .c-hero__video__content h1 > span {
+  display: block;
   color: white;
   background: colour( 'blue' , 900 );
-  padding: .4rem .9rem;
-
-  /* Needs prefixing */
-  webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
+  padding: 0.12em 0.5em;
 }
 
-/* To investigate for YVT theme...
-
-@supports(mix-blend-mode: lighten) {
-
-.c-hero__video__content h1::after {
-  position: absolute;
-  content: '';
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  pointer-events: none;
-  background: linear-gradient(60deg, #3629a2, #00ceff);
-  mix-blend-mode: lighten;
-}
-
-}
-
-*/
