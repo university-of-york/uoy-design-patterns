@@ -32,6 +32,8 @@
 		@include mq(small, '-') {
 			height:36px;
 		}
+
+		&.is-open { height: auto; }
 	}
 
 	.c-nav__item {
@@ -57,7 +59,7 @@
 
 		&:hover {
 			color: white;
-			background-color: colour( 'pink' , 700 );
+			background-color: colour( 'pink' , 600 );
 		}
 	}
 
@@ -70,28 +72,30 @@
 			color: white;
 
 			&:hover {
-				background-color: colour( 'pink' , 900 );
+				background-color: colour( 'pink' , 600 );
 				color: white;
 			}
 
 			box-shadow: -8px 0px 5px 5px rgba( white , 0.85 ); // Fade nav__items that go under
+
+			.c-nav.is-open & { box-shadow: none; }
 		}
 	}
 
 	// Open state
 	.c-nav.is-open
 	{
-		background: colour( 'pink' , 800 );
+		background: colour( 'pink' , 700 );
 
 		.c-nav__link,
 		.c-nav__item a {
 		
 			color: white;
-			background-color: transparent;
+			background-color: colour( 'pink' , 700 );
 	
 			&:hover {
 				color: white;
-				background-color: colour( 'pink' , 900 );
+				background-color: colour( 'pink' , 600 );
 			}
 		}
 	}
