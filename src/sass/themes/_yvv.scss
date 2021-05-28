@@ -2,23 +2,114 @@
 // York Virtual Visit theme
 //
 
-// Todo: unwrap when CMS page layouts are ready
-// .t-foi {
+.t-yvv {
 
-    // Video hero heading
-    
-    .c-hero__video__content h1 > span {
-      
-        /* Slice off the bottom right corner */
-        padding: 0.12em 0.75em 0.12em 0.5em;
-        clip-path: polygon( 0 0 , 100% 0 , calc( 100% - 0.25em ) 100% , 0 100% );
-        
-        /* Funky background gradient */
-        background: linear-gradient( -66.5deg , #2BDEDD 50% , colour( 'pink' , 700 ) 80% );
-        background-attachment: fixed; // Ensures all the spans "share" the same gradient
-    }
+	//
+	// Typefaces
+	//
 
-// }
+	h1,h2,h3,h4,h5,h6 {
+		font-family: 'museo',"Times New Roman",Times,serif;
+		font-weight: 900;
+	}
 
+	//
+	// NAVIGATION
+	//
+
+	.c-nav {
+		background-color: white;
+		border-bottom: 2px solid colour( 'pink' , 700 );
+		border-top: none;
+		
+		height:40px;
+		@include mq(small, '-') {
+			height:36px;
+		}
+	}
+
+	.c-nav__item {
+		font-weight: bold;
+		border-right: none;
+		border-left: 2px solid colour( 'pink' , 700 );
+
+		&:first-child { border-left: none; }
+
+		&.is-current {
+			.c-nav__link {
+				background-color: colour( 'pink' , 900 );
+				color: white;
+			}
+		}
+	}
+
+	.c-nav__link,
+	.c-nav__item a {
+	
+		color: colour( 'grey' , 900 );
+		background-color: white;
+
+		&:hover {
+			color: white;
+			background-color: colour( 'pink' , 700 );
+		}
+	}
+
+	.c-nav__item--more {
+		
+		border-right: none;
+		
+		.c-nav__link {
+			background-color: colour( 'pink' , 700 );
+			color: white;
+
+			&:hover {
+				background-color: colour( 'pink' , 900 );
+				color: white;
+			}
+
+			box-shadow: -8px 0px 5px 5px rgba( white , 0.85 ); // Fade nav__items that go under
+		}
+	}
+
+	// Open state
+	.c-nav.is-open
+	{
+		background: colour( 'pink' , 800 );
+
+		.c-nav__link,
+		.c-nav__item a {
+		
+			color: white;
+			background-color: transparent;
+	
+			&:hover {
+				color: white;
+				background-color: colour( 'pink' , 900 );
+			}
+		}
+	}
+
+	// Focus
+	.c-nav__item .nav__link:focus,
+	.c-nav__item a:focus {
+		outline: 2px solid $focus-outline-colour;
+		outline-offset: -1px
+	}
   
-  
+	//
+	// Video hero heading
+	//
+
+	.c-hero__video__content h1 > span {
+	  
+		/* Slice off the bottom right corner */
+		padding: 0.12em 0.75em 0.12em 0.5em; // Extra padding where we'll be slicing a corner off
+		clip-path: polygon( 0 0 , 100% 0 , calc( 100% - 0.25em ) 100% , 0 100% );
+		
+		/* Funky background gradient */
+		background: linear-gradient( -66.5deg , #2BDEDD 50% , colour( 'pink' , 700 ) 80% );
+		background-attachment: fixed; // Ensures all the spans "share" the same gradient
+	}
+
+}
