@@ -101,11 +101,12 @@
 
 		font-family: 'museo','Times New Roman',Times,serif;
 		font-weight: 900;
-	
+		
 		& i,
 		& em {
+			font-family: 'museo-sans','Times New Roman',Times,serif;
 			font-style: italic;
-			font-weight: 500;
+			font-weight: 600;
 		}
 	
 		& > span {
