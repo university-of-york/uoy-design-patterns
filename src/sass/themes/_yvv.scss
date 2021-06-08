@@ -54,6 +54,7 @@
 		}
 	}
 
+	// More button gets special treatment
 	.c-nav__item--more {
 		
 		border: none;
@@ -119,9 +120,9 @@
 	//
 	// Video hero heading
 	//
-
+	
 	.c-hero__video__content h1 {
-
+		
 		font-family: 'museo','Times New Roman',Times,serif;
 		font-weight: 900;
 		
@@ -131,17 +132,92 @@
 			font-style: italic;
 			font-weight: 700;
 		}
-	
+		
 		& > span {
-	  
+			
 			/* Slice off the bottom right corner */
 			padding: 0.12em 0.75em 0.12em 0.5em; // Extra padding where we'll be slicing a corner off
 			clip-path: polygon( 0 0 , 100% 0 , calc( 100% - 0.25em ) 100% , 0 100% );
-		
+			
 			/* Funky background gradient */
 			background: linear-gradient( -66.5deg , #2BDEDD 50% , colour( 'pink' , 700 ) 80% );
 			background-attachment: fixed; // Ensures all the spans "share" the same gradient
 		}
+	}
+
+	//
+	// Image link boxes
+	//
+
+	.c-figure--link {
+
+		// Funky strips over the images
+		.c-figure__image__wrapper {
+			position: relative;
+			
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				z-index: 20;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+
+				border-left: 1em solid #2BDEDD;
+				border-right: 1em solid #2BDEDD;
+				border-bottom: 1em solid #2BDEDD;
+				mix-blend-mode: color;
+			}
+		}
+
+		// Title styling
+		.c-figure__content
+		{
+			display: block;
+			width: auto;
+			position: relative;
+			z-index: 20;
+			top: auto;
+			left: auto;
+			right: auto;
+			bottom: auto;
+			
+			background: white;
+			color: colour( 'grey' , 900 );
+			
+			h3 {
+				font-size: 1.2em;
+				text-align: center;
+			}
+
+			// White tag/tab sticking up above the title
+			&::before {
+				content: '';
+				display:block;
+				background:white;
+				position: absolute;
+				top:-1em;
+				left:33%;
+				right:33%;
+				bottom:100%;
+			}
+		}
+		
+		// Hover state
+		&:hover {
+			.c-figure__content {
+				background: colour( 'pink' , 700 );
+				color: white;
+
+				// Colour the tab purple too
+				&::before {
+					background: colour( 'pink' , 700 );
+				}
+			}
+		}
+
 	}
 
 }
