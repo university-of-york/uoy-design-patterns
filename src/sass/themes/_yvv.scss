@@ -5,6 +5,12 @@
 .t-yvv {
 
 	//
+	// Remove the page title from above the main nav
+	//
+
+	.c-page-title__wrapper { display: none; }
+	
+	//
 	// NAVIGATION
 	//
 
@@ -50,7 +56,7 @@
 
 	.c-nav__item--more {
 		
-		border-right: none;
+		border: none;
 		
 		.c-nav__link {
 			background-color: colour( 'pink' , 700 );
@@ -72,15 +78,32 @@
 	{
 		background: colour( 'pink' , 700 );
 
+		// Remove separator borders
+		.c-nav__item { border: none; }
+
 		.c-nav__link,
 		.c-nav__item a {
 		
+			font-weight: normal;
+
 			color: white;
 			background-color: colour( 'pink' , 700 );
 	
 			&:hover {
 				color: white;
 				background-color: colour( 'pink' , 600 );
+			}
+		}
+
+		// More button
+		.c-nav__item--more .c-nav__link {
+			box-shadow: none;
+			background-color: colour( 'pink' , 800 );
+			color: white;
+
+			&:hover {
+				background-color: colour( 'pink' , 600 );
+				color: white;
 			}
 		}
 	}
