@@ -3,6 +3,14 @@
 //
 
 .t-yvv {
+	
+	//
+	// Variables
+	//
+
+	$cyan_bright: #2BDEDD;
+	$cyan_light: #80EBEB;
+
 
 	//
 	// Remove the page title from above the main nav
@@ -140,7 +148,7 @@
 			clip-path: polygon( 0 0 , 100% 0 , calc( 100% - 0.25em ) 100% , 0 100% );
 			
 			/* Funky background gradient */
-			background: linear-gradient( -66.5deg , #2BDEDD 50% , colour( 'pink' , 700 ) 80% );
+			background: linear-gradient( -66.5deg , $cyan_bright 50% , colour( 'pink' , 700 ) 80% );
 			background-attachment: fixed; // Ensures all the spans "share" the same gradient
 		}
 	}
@@ -148,9 +156,9 @@
 	//
 	// Image link boxes
 	//
-
+	
 	.c-figure--link {
-
+		
 		// Funky strips over the images
 		.c-figure__image__wrapper {
 			position: relative;
@@ -164,10 +172,10 @@
 				left: 0;
 				right: 0;
 				bottom: 0;
-
-				border-left: 1em solid #2BDEDD;
-				border-right: 1em solid #2BDEDD;
-				border-bottom: 1em solid #2BDEDD;
+				
+				border-left: 1em solid $cyan_bright;
+				border-right: 1em solid $cyan_bright;
+				border-bottom: 1em solid $cyan_bright;
 				mix-blend-mode: color;
 			}
 		}
@@ -191,7 +199,7 @@
 				font-size: 1.2em;
 				text-align: center;
 			}
-
+			
 			// White tag/tab sticking up above the title
 			&::before {
 				content: '';
@@ -219,5 +227,25 @@
 		}
 
 	}
+	
+	//
+	// Styled rows
+	//
+
+	.o-grid__row--alt1 {
+		&, &::before, &::after {
+			background: $cyan_light;
+		}
+	}
+
+	.o-grid__row--alt2 {
+		&, &::before, &::after {
+			background: linear-gradient( $cyan_light , colour( 'pink' , 700 ) );
+		}
+	}
+
+	//
+	// (...)
+	//
 
 }
