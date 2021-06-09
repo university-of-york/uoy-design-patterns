@@ -241,17 +241,14 @@
 	}
 	
 	//
-	// Styled rows - alt1 (cyan)
+	// Key facts and signposts
 	//
 
-	.o-grid__row--alt1 {
-
-		&, &::before, &::after {
-			background: $cyan_light;
-		}
+	.o-grid__row--alt1,
+	.o-grid__row--alt2 {
 
 		// Key facts
-		
+
 		.c-key-fact__content {
 			color: colour( 'blue' , 900 );
 		}
@@ -283,10 +280,28 @@
 	// Styled rows - alt2 (cyan/purple gradient, to follow an alt1)
 	//
 
+	
+	//
+	// Styled rows - alt1 (cyan)
+	//
+
+	.o-grid__row--alt1 {
+
+		&, &::before, &::after {
+			background: $cyan_light;
+		}
+	}
+
+	//
+	// Styled rows - alt2 (cyan/purple gradient, to follow an alt1)
+	//
+
 	.o-grid__row--alt2 {
+
 		&, &::before, &::after {
 			background: linear-gradient( $cyan_light , colour( 'pink' , 700 ) );
 		}
+
 	}
 
 	//
