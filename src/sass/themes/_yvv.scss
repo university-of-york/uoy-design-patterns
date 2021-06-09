@@ -194,7 +194,7 @@
 			
 			background: white;
 			color: colour( 'grey' , 900 );
-			transition: all 200ms ease-out !important;
+			transition: all 200ms ease-out;
 			
 			h3 {
 				font-size: 1.2em;
@@ -211,7 +211,7 @@
 				left:33%;
 				right:33%;
 				bottom:100%;
-				transition: all 200ms ease-out !important;
+				transition: all 200ms ease-out;
 			}
 		}
 		
@@ -221,12 +221,12 @@
 			.c-figure__content {
 				background: colour( 'pink' , 700 );
 				color: white;
-				transition: all 66ms ease-out !important;
+				transition: all 66ms ease-out;
 				
 				// Colour the tab purple too
 				&::before {
 					background: colour( 'pink' , 700 );
-					transition: all 66ms ease-out !important;
+					transition: all 66ms ease-out;
 				}
 			}
 		}
@@ -234,28 +234,47 @@
 	}
 	
 	//
-	// Styled rows
+	// Styled rows - alt1 (cyan)
 	//
 
 	.o-grid__row--alt1 {
+
 		&, &::before, &::after {
 			background: $cyan_light;
 		}
 
 		// Key facts
-
-		.c-key-fact__icon {
-			color: colour( 'pink' , 800 );
+		
+		.c-key-fact__content {
+			color: colour( 'blue' , 900 );
 		}
-
+		
 		.c-key-fact__title {
 			color: colour( 'blue' , 800 );
 		}	
 
-		.c-key-fact__content {
+		.c-key-fact__icon {
+			color: colour( 'pink' , 700 );
+		}
+		
+		// Signposts
+		
+		.c-signpost {
 			color: colour( 'blue' , 900 );
 		}
+
+		.c-signpost h3 {
+			color: colour( 'blue' , 800 );
+		}
+
+		.c-signpost__icon {
+			color: colour( 'pink' , 700 );
+		}
 	}
+
+	//
+	// Styled rows - alt2 (cyan/purple gradient, to follow an alt1)
+	//
 
 	.o-grid__row--alt2 {
 		&, &::before, &::after {
