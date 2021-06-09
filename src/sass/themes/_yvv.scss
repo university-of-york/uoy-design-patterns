@@ -194,7 +194,7 @@
 			
 			background: white;
 			color: colour( 'grey' , 900 );
-			transition: background,color 200ms ease-out;
+			transition: all 200ms ease-out !important;
 			
 			h3 {
 				font-size: 1.2em;
@@ -211,7 +211,7 @@
 				left:33%;
 				right:33%;
 				bottom:100%;
-				transition: background 200ms ease-out;
+				transition: all 200ms ease-out !important;
 			}
 		}
 		
@@ -221,12 +221,12 @@
 			.c-figure__content {
 				background: colour( 'pink' , 700 );
 				color: white;
-				transition: background,color 66ms ease-out;
+				transition: all 66ms ease-out !important;
 				
 				// Colour the tab purple too
 				&::before {
 					background: colour( 'pink' , 700 );
-					transition: background 66ms ease-out;
+					transition: all 66ms ease-out !important;
 				}
 			}
 		}
@@ -240,6 +240,20 @@
 	.o-grid__row--alt1 {
 		&, &::before, &::after {
 			background: $cyan_light;
+		}
+
+		// Key facts
+
+		.c-key-fact__icon {
+			color: colour( 'pink' , 800 );
+		}
+
+		.c-key-fact__title {
+			color: colour( 'blue' , 700 );
+		}	
+
+		.c-key-fact__content {
+			color: colour( 'blue' , 800 );
 		}
 	}
 
