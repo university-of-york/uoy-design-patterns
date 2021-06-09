@@ -194,6 +194,7 @@
 			
 			background: white;
 			color: colour( 'grey' , 900 );
+			transition: background,color 200ms ease-out;
 			
 			h3 {
 				font-size: 1.2em;
@@ -210,18 +211,22 @@
 				left:33%;
 				right:33%;
 				bottom:100%;
+				transition: background 200ms ease-out;
 			}
 		}
 		
 		// Hover state
+
 		&:hover {
 			.c-figure__content {
 				background: colour( 'pink' , 700 );
 				color: white;
-
+				transition: background,color 66ms ease-out;
+				
 				// Colour the tab purple too
 				&::before {
 					background: colour( 'pink' , 700 );
+					transition: background 66ms ease-out;
 				}
 			}
 		}
