@@ -11,12 +11,19 @@
 	$cyan_bright: #2BDEDD;
 	$cyan_light: #80EBEB;
 
-
 	//
 	// Remove the page title from above the main nav
 	//
 
 	.c-page-title__wrapper { display: none; }
+	
+	//
+	// Add a purple border to the footer
+	//
+
+	.c-footer-main {
+		border-top: 1em solid colour( 'pink' , 700 );
+	}
 	
 	//
 	// NAVIGATION
@@ -280,6 +287,18 @@
 		&, &::before, &::after {
 			background: linear-gradient( $cyan_light , colour( 'pink' , 700 ) );
 		}
+	}
+
+	//
+	// Styled rows - alt3 ()
+	//
+
+	.o-grid__row--alt3 {
+
+		&, &::before, &::after {
+			background: linear-gradient( $cyan_bright , colour( 'pink' , 700 ) );
+		}
+
 	}
 
 	//
