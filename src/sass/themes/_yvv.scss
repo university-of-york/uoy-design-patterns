@@ -241,6 +241,47 @@
 	}
 	
 	//
+	// News/card item headings
+	//
+
+	.c-news__title {
+		color: colour( 'pink' , 800 );
+	}
+	
+	.c-news--excerpt:hover .c-news__title {
+		color: colour( 'pink' , 700 );
+	}
+
+	//
+	// Blockquotes
+	//
+
+	.c-blockquote__content {
+		background-color: colour( 'pink' , 700 );
+		color: white;
+	}
+	
+	.c-blockquote--image-quote .c-blockquote__image + .c-blockquote__content::after {
+		border-top-color: colour( 'pink' , 700 );
+	}
+	
+	//
+	// Accordion/FAQ
+	//
+
+	.c-accordion__item {
+		border-color: $cyan_bright;
+	}
+	
+	.c-accordion__title {
+		color: colour( 'pink' , 700 );
+	}
+	
+	.c-accordion__icon {
+		color: colour( 'pink' , 800 );
+	}
+	
+	//
 	// Key facts and signposts
 	//
 
@@ -276,11 +317,6 @@
 		}
 	}
 
-	//
-	// Styled rows - alt2 (cyan/purple gradient, to follow an alt1)
-	//
-
-	
 	//
 	// Styled rows - alt1 (cyan)
 	//
