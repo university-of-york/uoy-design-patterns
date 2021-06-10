@@ -31,7 +31,7 @@
 
 	.c-nav {
 		background-color: white;
-		border-bottom: 2px solid colour( 'pink' , 700 );
+		border-bottom: 1px solid colour( 'pink' , 700 );
 		border-top: none;
 		
 		height:40px;
@@ -45,7 +45,7 @@
 	.c-nav__item {
 		font-weight: bold;
 		border-right: none;
-		border-left: 2px solid colour( 'pink' , 700 );
+		border-left: 1px solid colour( 'pink' , 700 );
 
 		&:first-child { border-left: none; }
 
@@ -238,6 +238,16 @@
 			}
 		}
 
+	}
+	
+	//
+	// Horizontal rules
+	//
+
+	hr {
+		color: colour( 'pink' , 800 );
+		border: none;
+		background: currentColor;
 	}
 	
 	//
