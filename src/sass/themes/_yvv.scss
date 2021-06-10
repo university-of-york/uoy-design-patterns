@@ -12,17 +12,44 @@
 	$cyan_light: #AAF2F1;
 
 	//
+	// Replace base link styling
+	//
+
+	a {
+		color: colour( 'pink' , 700 );
+
+		&:hover {
+			color: colour( 'pink' , 600 );
+		}
+	}
+	
+	.c-subnav__link, .c-subnav__item a {
+		color: colour( 'grey' , 900 );
+	}
+
+	//
 	// Remove the page title from above the main nav
 	//
 
 	.c-page-title__wrapper { display: none; }
 	
 	//
-	// Add a purple border to the footer
+	// Footer
 	//
 
 	.c-footer-main {
+		// Purple border
 		border-top: 1em solid colour( 'pink' , 700 );
+
+		// Reset sensible link colours
+		a {
+			color: colour( 'grey' , 100 );
+	
+			&:hover {
+				color: colour( 'pink' , 600 );
+			}
+		}
+	
 	}
 	
 	//
@@ -34,7 +61,7 @@
 		border-bottom: 1px solid colour( 'pink' , 700 );
 		border-top: none;
 		
-		height:40px;
+		height:39px;
 		@include mq(small, '-') {
 			height:36px;
 		}
@@ -101,11 +128,11 @@
 			font-weight: normal;
 
 			color: white;
-			background-color: colour( 'pink' , 700 );
+			background: none;
 	
 			&:hover {
 				color: white;
-				background-color: colour( 'pink' , 600 );
+				background: none;
 			}
 		}
 
@@ -220,6 +247,13 @@
 			}
 		}
 		
+		// Focus state
+
+		&:focus {
+			outline-offset: -3px;
+			outline-width: 3px;
+		}
+		
 		// Hover state
 
 		&:hover {
@@ -264,6 +298,15 @@
 	}
 
 	//
+	// Modals
+	//
+
+	.c-modal--framed {
+		border-color: $cyan_bright;
+		background-color: $cyan_light;
+	}
+
+	//
 	// Blockquotes
 	//
 
@@ -293,38 +336,34 @@
 	}
 	
 	//
-	// Key facts and signposts
+	// Key facts
 	//
 
-	.o-grid__row--alt1,
-	.o-grid__row--alt2 {
+	.c-key-fact__content {
+		color: colour( 'blue' , 900 );
+	}
+	
+	.c-key-fact__learnMoreLink,
+	.c-key-fact__title {
+		color: colour( 'blue' , 800 );
+	}	
 
-		// Key facts
+	.c-key-fact__icon {
+		color: colour( 'pink' , 700 );
+	}
 
+	.c-key-fact:hover {
 		.c-key-fact__content {
-			color: colour( 'blue' , 900 );
+			color: colour( 'blue' , 800 );
 		}
 		
+		.c-key-fact__learnMoreLink,
 		.c-key-fact__title {
-			color: colour( 'blue' , 800 );
+			color: colour( 'blue' , 700 );
 		}	
-
+	
 		.c-key-fact__icon {
-			color: colour( 'pink' , 700 );
-		}
-		
-		// Signposts
-		
-		.c-signpost {
-			color: colour( 'blue' , 900 );
-		}
-
-		.c-signpost h3 {
-			color: colour( 'blue' , 800 );
-		}
-
-		.c-signpost__icon {
-			color: colour( 'pink' , 700 );
+			color: colour( 'pink' , 600 );
 		}
 	}
 
