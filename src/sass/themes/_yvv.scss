@@ -83,9 +83,7 @@
 				color: white;
 			}
 
-			box-shadow: -8px 0px 5px 5px rgba( white , 0.85 ); // Fade nav__items that go under
-
-			.c-nav.is-open & { box-shadow: none; }
+			box-shadow: none;
 		}
 	}
 
@@ -245,9 +243,12 @@
 	//
 
 	hr {
-		color: colour( 'pink' , 800 );
+		display: block;
+		margin: 30px 0;
 		border: none;
-		background: currentColor;
+		background: $cyan_bright;
+		height: 1em;
+		width: 5em;
 	}
 	
 	//
