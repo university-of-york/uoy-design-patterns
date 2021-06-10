@@ -302,9 +302,10 @@
 	}
 
 	//
-	// Modals
+	// Beige backgrounds: panels, modals...
 	//
 
+	.c-panel,
 	.c-modal--framed {
 		border-color: $cyan_bright;
 		background-color: $cyan_light;
