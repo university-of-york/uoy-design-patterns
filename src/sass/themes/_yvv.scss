@@ -334,18 +334,18 @@
 	.o-grid__row--alt1 {
 
 		&, &::before, &::after {
-			background: $cyan_light;
+			background: $cyan_bright;
 		}
 	}
-
+	
 	//
 	// Styled rows - alt2 (cyan/purple gradient, to follow an alt1)
 	//
-
+	
 	.o-grid__row--alt2 {
 
 		&, &::before, &::after {
-			background: linear-gradient( $cyan_light , colour( 'pink' , 700 ) );
+			background: linear-gradient( $cyan_bright , colour( 'pink' , 700 ) );
 		}
 
 	}
@@ -357,7 +357,7 @@
 	.o-grid__row--alt3 {
 
 		&, &::before, &::after {
-
+			background: $cyan_light;
 		}
 
 	}
