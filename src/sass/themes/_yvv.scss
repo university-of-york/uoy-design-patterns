@@ -10,6 +10,7 @@
 
 	$cyan_bright: #2BDEDD;
 	$cyan_light: #AAF2F1;
+	$cyan_darkest: #25303b;
 
 	//
 	// Replace base link styling
@@ -38,8 +39,11 @@
 	//
 
 	.c-footer-main {
+
 		// Purple border
 		border-top: 1em solid colour( 'pink' , 700 );
+
+		background: $cyan_darkest;
 
 		// Reset sensible link colours
 		a {
@@ -376,6 +380,8 @@
 		&, &::before, &::after {
 			background: $cyan_bright;
 		}
+
+		color: colour( 'grey' , 900 );
 	}
 	
 	//
@@ -388,6 +394,7 @@
 			background: linear-gradient( $cyan_bright , colour( 'pink' , 700 ) );
 		}
 
+		color: colour( 'grey' , 900 );
 	}
 
 	//
