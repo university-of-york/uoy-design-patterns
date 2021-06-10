@@ -23,7 +23,13 @@
 			color: colour( 'pink' , 600 );
 		}
 	}
+
+	// Exceptions...
 	
+	.c-breadcrumb__items a {
+		color:inherit;
+	}
+
 	.c-subnav__link, .c-subnav__item a {
 		color: colour( 'grey' , 900 );
 	}
@@ -157,8 +163,8 @@
 	.c-nav__item .nav__link:focus,
 	.c-nav__item a:focus
 	{
-		outline: 2px solid $focus-outline-colour;
-		outline-offset: -2px
+		outline-width: 5px;
+		outline-offset: 0;
 	}
   
 	//
