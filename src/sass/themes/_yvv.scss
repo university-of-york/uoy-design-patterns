@@ -331,7 +331,7 @@
 		
 		background: url( 'https://www.york.ac.uk/static/stable/img/york-virtual-visit-logo.png' ) 40px 40px / 300px no-repeat;
 
-		@include mq( small , '-' ) {
+		@include mq( medium , '-' ) {
 			background-size: 240px;
 		}
 	}
