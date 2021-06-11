@@ -73,7 +73,7 @@
 		
 		height:39px;
 		@include mq(small, '-') {
-			height:36px;
+			height:35px;
 		}
 
 		&.is-open { height: auto; }
