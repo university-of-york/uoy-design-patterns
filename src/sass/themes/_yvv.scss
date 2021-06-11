@@ -386,8 +386,11 @@
 	
 	.c-blockquote--image-quote .c-blockquote__image + .c-blockquote__content::after {
 		border-top-color: colour( 'pink' , 700 );
+		@include mq( tiny , '~' ) {
+			border-color: colour( 'pink' , 700 ) transparent;
+		}
 	}
-	
+
 	//
 	// Accordion/FAQ
 	//
