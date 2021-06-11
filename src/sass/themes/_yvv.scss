@@ -440,6 +440,18 @@
 	}
 
 	//
+	// Video embeds
+	//
+
+	.c-figure > .c-video {
+		border: 40px solid $cyan_light;
+	}
+
+	.o-grid__row--alt3 .c-figure > .c-video {
+		border: 40px solid $cyan_bright;
+	}	
+
+	//
 	// Styled rows - alt1 (cyan)
 	//
 
