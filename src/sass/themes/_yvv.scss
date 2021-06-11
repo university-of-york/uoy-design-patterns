@@ -330,6 +330,10 @@
 		max-width: 100vw;
 		
 		background: url( 'https://www.york.ac.uk/static/stable/img/york-virtual-visit-logo.png' ) 40px center no-repeat;
+
+		@include mq( small , '-' ) {
+			background-size: 65%;
+		}
 	}
 
 	// Keep the branding under the gradient/heading
