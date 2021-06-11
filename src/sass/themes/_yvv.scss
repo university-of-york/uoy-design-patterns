@@ -420,10 +420,12 @@
 	//
 
 	.c-blockquote__content {
+		font-family: 'museo','Times New Roman',Times,serif;
+		font-weight: 500;
 		background-color: colour( 'pink' , 700 );
 		color: white;
 	}
-	
+
 	.c-blockquote--image-quote .c-blockquote__image + .c-blockquote__content::after {
 		border-top-color: colour( 'pink' , 700 );
 		@include mq( tiny , '~' ) {
