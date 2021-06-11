@@ -308,15 +308,28 @@
 	}
 	
 	//
-	// News/card item headings
+	// News/card items
 	//
 
 	.c-news__title {
 		color: colour( 'pink' , 800 );
 	}
 	
-	.c-news--excerpt:hover .c-news__title {
+	a.c-news--excerpt:hover .c-news__title {
 		color: colour( 'pink' , 700 );
+	}
+	
+	a.c-news--listing {
+		color: colour( 'grey' , 900 );
+		
+		&:hover {
+			color: colour( 'pink' , 800 );
+
+			.c-news__date,
+			.c-news__title {
+				color: colour( 'pink' , 800 );
+			}
+		}
 	}
 
 	//
