@@ -344,16 +344,15 @@
 			position: relative;
 
 			&::after {
-
+				// Overlay the whole container, not just the image.
+				// This should only be used with a plain white background.
 				content: '';
 				display: block;
 				position: absolute;
 				top: 0;
 				left: 0;
-				width: 100px;
-				height: 100px;
-
-				border-radius: 50%;
+				bottom: 0;
+				right: 0;
 
 				background: #2BDEDD;
 				mix-blend-mode: color;
