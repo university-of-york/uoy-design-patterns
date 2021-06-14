@@ -91,8 +91,8 @@
 .c-hero__controls {
   position: absolute;
   z-index: 2;
-  top: 0;
-  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .c-hero__controls > button {
@@ -100,15 +100,20 @@
   margin: 0;
   padding: 0;
   
-  width: 1.75em;
+  width: 2.5em;
   line-height: 1.75em;
   text-align: center;
   font-size: 1.75em;
   font-family: inherit;
   
-  background: rgba( 255,255,255 , 0.8 );
   border: none;
   border-radius: 0;
+
+  background: colour( 'pink' , 700 );
+  color: white;
+  border-radius: 3px;
+
+  &:hover { background: colour( 'pink' , 600 ); }
 }
 
 /* The video container */
