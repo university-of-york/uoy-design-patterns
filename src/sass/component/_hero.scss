@@ -100,10 +100,10 @@
   margin: 0;
   padding: 0;
   
-  width: 2.5em;
+  width: 1.75em;
   line-height: 1.75em;
   text-align: center;
-  font-size: 1.75em;
+  font-size: 1.5em;
   font-family: inherit;
   
   border: none;
@@ -111,7 +111,7 @@
 
   background: colour( 'pink' , 700 );
   color: white;
-  border-radius: 3px;
+  // border-radius: 3px;
 
   &:hover { background: colour( 'pink' , 600 ); }
 }
