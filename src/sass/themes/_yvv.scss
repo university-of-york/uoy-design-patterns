@@ -467,7 +467,7 @@
 	.c-key-fact__icon {
 		color: colour( 'pink' , 700 );
 	}
-
+	
 	.c-key-fact:hover {
 		.c-key-fact__content {
 			color: colour( 'blue' , 800 );
@@ -477,6 +477,10 @@
 		.c-key-fact__title {
 			color: colour( 'blue' , 700 );
 		}	
+
+		.c-key-fact__icon {
+			color: colour( 'pink' , 700 );
+		}
 	}
 
 	//
