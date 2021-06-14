@@ -505,7 +505,7 @@
 			background: $cyan_bright;
 		}
 
-		color: colour( 'grey' , 900 );
+		color: #1A1A1A;
 		
 		a { color: colour( 'pink' , 900 ); }
 		a:hover { color: colour( 'pink' , 800 ); }
@@ -521,12 +521,12 @@
 			background: linear-gradient( $cyan_bright , colour( 'pink' , 700 ) );
 		}
 		
-		color: colour( 'grey' , 900 );
-
+		color: #1A1A1A;
+		
 		a { color: colour( 'pink' , 900 ); }
 		a:hover { color: colour( 'pink' , 800 ); }
 	}
-
+	
 	//
 	// Styled rows - alt3 ()
 	//
@@ -536,7 +536,11 @@
 		&, &::before, &::after {
 			background: $cyan_light;
 		}
+		
+		color: #1A1A1A;
 
+		a { color: colour( 'pink' , 900 ); }
+		a:hover { color: colour( 'pink' , 800 ); }
 	}
 
 	//
