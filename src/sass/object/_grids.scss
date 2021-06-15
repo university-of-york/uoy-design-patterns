@@ -341,16 +341,15 @@ $htdiw:mapReverse($breakpoints);
 
 // 
 // Try to add some extra spacing between grid listing rows on a plain background.
-// ⚠ Improper use of `.js-equal-height-row` but it helps target rows designed to hold listings.
 // 
-.o-grid__row--default.js-equal-height-row {
 
-  // Target the second of any two consecutive rows
-  & + & {
-    // ⚠ Dodgy use of `.o-grid__box--full@tiny` to target "listing-like" things
-    & > .o-grid__box--full\@tiny {
-      padding-top: 20px;
-    }
+// Target the second of any two default consecutive rows
+// ⚠ Improper use of `.js-equal-height-row` but it helps target rows designed to hold listings.
+.o-grid__row--default + .o-grid__row--default.js-equal-height-row {
+
+  // ⚠ Dodgy use of `.o-grid__box--full@tiny` to target "listing-like" things
+  & > .o-grid__box--full\@tiny {
+    padding-top: 20px;
   }
 
 }
