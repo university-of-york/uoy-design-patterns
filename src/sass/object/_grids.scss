@@ -338,3 +338,17 @@ $htdiw:mapReverse($breakpoints);
     }
   }
 }
+
+// 
+// Try to add some extra spacing between grid listing rows on a plain background
+// ⚠ Improper use of `.js-equal-height-row` but it helps target listings
+// 
+.o-grid__row--default.js-equal-height-row {
+
+  & + & {
+    .grid__row {
+      padding-top: 20px;
+    }
+  }
+
+}
