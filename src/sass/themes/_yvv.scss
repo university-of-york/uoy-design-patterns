@@ -509,6 +509,9 @@
 		
 		a { color: colour( 'pink' , 900 ); }
 		a:hover { color: colour( 'pink' , 800 ); }
+
+		.c-btn,
+		.c-btn:hover { color: white; }
 	}
 	
 	//
@@ -525,10 +528,13 @@
 		
 		a { color: colour( 'pink' , 900 ); }
 		a:hover { color: colour( 'pink' , 800 ); }
+
+		.c-btn,
+		.c-btn:hover { color: white; }
 	}
 	
 	//
-	// Styled rows - alt3 ()
+	// Styled rows - alt3 (lighter cyan)
 	//
 
 	.o-grid__row--alt3 {
@@ -541,6 +547,10 @@
 
 		a { color: colour( 'pink' , 900 ); }
 		a:hover { color: colour( 'pink' , 800 ); }
+
+		.c-btn,
+		.c-btn:hover { color: white; }
+
 	}
 
 	//
