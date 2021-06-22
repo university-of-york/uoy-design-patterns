@@ -44,6 +44,19 @@
 	}
 
 	//
+	// Skip link colours
+	//
+
+	.o-skip-link {
+		background-color: colour( 'pink' , 800 );
+		color: white;
+		&:hover {
+			background-color: colour( 'pink' , 600 );
+			color: white;
+		}
+	}
+	  
+	//
 	// Remove the page title from above the main nav
 	//
 
