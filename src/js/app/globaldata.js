@@ -1,10 +1,10 @@
 define(['jquery'], function ($) {
     return {
         clearingData: {
-            year: 2020,
-            noCourseMessage: "<p>There are no vacancies in this department for September 2020. <a href=\"//www.york.ac.uk/study/undergraduate/courses/all\">Explore your options for 2021 entry.</a></p>",
-            sheetId: "1CdCBA-Ygmyi6JpLdu3H0MA2dlTfoSA1vniDdjXtGC3o",
-            backupDoc: "https://www.york.ac.uk/static/data/clearing/2020.json",
+            year: 2021,
+            noCourseMessage: "<p>There are no vacancies in this department for September 2021. <a href=\"//www.york.ac.uk/study/undergraduate/courses/all\">Explore your options for 2022 entry.</a></p>",
+            sheetId: "1zYX4tglXFHaPoEABaOUeORWHuuIp4ttiBOskEHlgrMc",
+            backupDoc: "https://www.york.ac.uk/static/data/clearing/2021.json",
             phoneNumber: "<a href=\"tel:+441904234868\">+44 (0)1904 234868</a>"
         },
         gSheetsAPISettings: {
