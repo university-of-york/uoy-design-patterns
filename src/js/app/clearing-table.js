@@ -113,10 +113,11 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         var tempData = [];
 
         $.grep(data, function(a) {
+
           if(
-            a[ 'Home/EU' ].toLowerCase() === 'y' ||
+            a.Home.toLowerCase() === 'y' ||
             a.International.toLowerCase() === 'y' ||
-            a[ 'Adjustment only home/EU' ].toLowerCase() === 'y' ||
+            a[ 'Adjustment only home' ].toLowerCase() === 'y' ||
             a[ 'Adjustment only international' ].toLowerCase() === 'y'
           ) {
             tempData.push(a);
@@ -170,15 +171,15 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           if (that.layout === 'Courses') {
 
             // Count UK/EU and Intl courses
-            if ( thisCourse['Home/EU'].toLowerCase() === 'y' || thisCourse['Adjustment only home/EU'].toLowerCase() === 'y' ) that.courseCount['UK/EU']++;
+            if ( thisCourse.Home.toLowerCase() === 'y' || thisCourse['Adjustment only home'].toLowerCase() === 'y' ) that.courseCount['UK/EU']++;
             if ( thisCourse.International.toLowerCase() === 'y' || thisCourse['Adjustment only international'].toLowerCase() === 'y' ) that.courseCount.International++;
 
             // Add the row to the table?
             var addRow = false;
 
             if(
-                ( that.type === 'Both' && ( thisCourse['Home/EU'].toLowerCase() === 'y' || thisCourse.International.toLowerCase() === 'y' || thisCourse['Adjustment only home/EU'].toLowerCase() === 'y' || thisCourse['Adjustment only international'].toLowerCase() === 'y' ) ) ||
-                ( that.type === 'UK/EU' && ( thisCourse['Home/EU'].toLowerCase() === 'y' || thisCourse['Adjustment only home/EU'].toLowerCase() === 'y' ) ) ||
+                ( that.type === 'Both' && ( thisCourse.Home.toLowerCase() === 'y' || thisCourse.International.toLowerCase() === 'y' || thisCourse['Adjustment only home'].toLowerCase() === 'y' || thisCourse['Adjustment only international'].toLowerCase() === 'y' ) ) ||
+                ( that.type === 'UK/EU' && ( thisCourse.Home.toLowerCase() === 'y' || thisCourse['Adjustment only home'].toLowerCase() === 'y' ) ) ||
                 ( that.type === 'International' && ( thisCourse.International.toLowerCase() === 'y' || thisCourse['Adjustment only international'].toLowerCase() === 'y' ) )
             ) addRow = true;
 
@@ -235,9 +236,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
               }
 
               // Count UK/EU and Intl courses
-              if (thisCourse['Home/EU'].toLowerCase() === 'y') that.courseCount[ subject ]['UK/EU']++;
+              if (thisCourse.Home.toLowerCase() === 'y') that.courseCount[ subject ]['UK/EU']++;
               if (thisCourse.International.toLowerCase() === 'y') that.courseCount[ subject ].International++;
-              if (thisCourse['Adjustment only home/EU'].toLowerCase() === 'y') that.courseCount[ subject ]['Adjustment UK/EU']++;
+              if (thisCourse['Adjustment only home'].toLowerCase() === 'y') that.courseCount[ subject ]['Adjustment UK/EU']++;
               if (thisCourse['Adjustment only international'].toLowerCase() === 'y') that.courseCount[ subject ]['Adjustment International']++;
 
             }
@@ -582,9 +583,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
   CLEARINGTABLE.prototype.makeAvailabilityNote = function( course ) {
 
-    var clearing_home = ( course['Home/EU'].toLowerCase() == 'y' );
+    var clearing_home = ( course.Home.toLowerCase() == 'y' );
     var clearing_intl = ( course.International.toLowerCase() == 'y' );
-    var adjustment_home = ( course['Adjustment only home/EU'].toLowerCase() == 'y' );
+    var adjustment_home = ( course['Adjustment only home'].toLowerCase() == 'y' );
     var adjustment_intl = ( course['Adjustment only international'].toLowerCase() == 'y' );
 
     // Clearing throughout
@@ -630,9 +631,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
     // Append an availability note?
     var note = this.makeAvailabilityNote( {
-      'Home/EU': ( courseCount['UK/EU'] > 0 ? 'y' : 'n' ),
+      'Home': ( courseCount['UK/EU'] > 0 ? 'y' : 'n' ),
       'International': ( courseCount.International > 0 ? 'y' : 'n' ),
-      'Adjustment only home/EU': ( courseCount['Adjustment UK/EU'] > 0 ? 'y' : 'n' ),
+      'Adjustment only home': ( courseCount['Adjustment UK/EU'] > 0 ? 'y' : 'n' ),
       'Adjustment only international': ( courseCount['Adjustment International'] > 0 ? 'y' : 'n' ),
     } );
 
@@ -669,9 +670,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
   CLEARINGTABLE.prototype.inClearing = function(courseToCheck) {
     return (
-      courseToCheck[ 'Home/EU' ].toLowerCase() === 'y' ||
+      courseToCheck.Home.toLowerCase() === 'y' ||
       courseToCheck.International.toLowerCase() === 'y' ||
-      courseToCheck[ 'Adjustment only home/EU' ].toLowerCase() === 'y' ||
+      courseToCheck[ 'Adjustment only home' ].toLowerCase() === 'y' ||
       courseToCheck[ 'Adjustment only international' ].toLowerCase() === 'y'
     );
   };
@@ -874,7 +875,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     var courseRow = $('<tr>').addClass('c-clearing-table__course');
     courseRow.append(courseCell);
     if (this.type === 'UK/EU' || this.type === 'Both') {
-      courseRow.attr('data-ukeu', ( course['Home/EU'].toLowerCase() === 'y' || course['Adjustment only home/EU'].toLowerCase() === 'y' ) ? 'true' : 'false');
+      courseRow.attr('data-ukeu', ( course.Home.toLowerCase() === 'y' || course['Adjustment only home'].toLowerCase() === 'y' ) ? 'true' : 'false');
     }
     if (this.type === 'International' || this.type === 'Both') {
       courseRow.attr('data-international', ( course.International.toLowerCase() === 'y' || course['Adjustment only international'].toLowerCase() === 'y' ) ? 'true' : 'false');
@@ -1073,7 +1074,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
         // Field mappings from gsheet API source to our clearing course object
         // source : destination
         var fieldMap = {
-          gsx$adjustmentonlyhomeeu: "Adjustment only home/EU",
+          gsx$adjustmentonlyhome: "Adjustment only home",
           gsx$adjustmentonlyinternational: "Adjustment only international",
           gsx$adjustmentonlyhiy: "Adjustment only",
           gsx$bullet1: "Bullet 1",
@@ -1082,7 +1083,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           gsx$courselength: "Course length",
           gsx$department: "Department",
           gsx$entryrequirements: "Entry requirements",
-          gsx$inclearinghomeeu: "Home/EU",
+          gsx$inclearinghome: "Home",
           gsx$inclearinginternational: "International",
           gsx$linktocoursepage: "Link to course page",
           gsx$mcrcode: "MCR_CODE",
