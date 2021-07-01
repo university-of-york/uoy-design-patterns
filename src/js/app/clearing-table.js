@@ -171,7 +171,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           if (that.layout === 'Courses') {
 
             // Count UK and Intl courses
-            if ( thisCourse.Home.toLowerCase() === 'y' || thisCourse['Adjustment only home'].toLowerCase() === 'y' ) that.courseCount['UK']++;
+            if ( thisCourse.Home.toLowerCase() === 'y' || thisCourse['Adjustment only home'].toLowerCase() === 'y' ) that.courseCount.UK++;
             if ( thisCourse.International.toLowerCase() === 'y' || thisCourse['Adjustment only international'].toLowerCase() === 'y' ) that.courseCount.International++;
 
             // Add the row to the table?
@@ -236,7 +236,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
               }
 
               // Count UK and Intl courses
-              if (thisCourse.Home.toLowerCase() === 'y') that.courseCount[ subject ]['UK']++;
+              if (thisCourse.Home.toLowerCase() === 'y') that.courseCount[ subject ].UK++;
               if (thisCourse.International.toLowerCase() === 'y') that.courseCount[ subject ].International++;
               if (thisCourse['Adjustment only home'].toLowerCase() === 'y') that.courseCount[ subject ]['Adjustment UK']++;
               if (thisCourse['Adjustment only international'].toLowerCase() === 'y') that.courseCount[ subject ]['Adjustment International']++;
@@ -254,7 +254,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           that.container.empty();
           that.container.append(that.table);
 
-          if ((that.courseCount['UK'] > searchLimit) || (that.courseCount.International > searchLimit)) {
+          if ((that.courseCount.UK > searchLimit) || (that.courseCount.International > searchLimit)) {
             // Make table searchable
             that.makeSearchable();
           }
@@ -264,7 +264,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           var gr = $('<div>').addClass('o-grid__row').appendTo(g);
           that.container.prepend(g);
 
-          if ((that.courseCount['UK'] === 0) && (that.courseCount.International === 0)) {
+          if ((that.courseCount.UK === 0) && (that.courseCount.International === 0)) {
 
             var noCourseBox = $('<div>').addClass('o-grid__box o-grid__box--full');
             var noCourseBoxContent = that.createPanel(clearingData.noCourseMessage);
@@ -277,11 +277,11 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
             if (that.type === 'Both') {
               var gb1 = $('<div>').addClass('o-grid__box o-grid__box--half');
               var boxContent = '';
-              if (that.courseCount['UK'] !== 0 && that.courseCount.International !== 0) {
+              if (that.courseCount.UK !== 0 && that.courseCount.International !== 0) {
                 boxContent = that.createToggle();
             } else if (that.courseCount.International > 0) {
                 boxContent = that.createPanel('<p>The following courses only have places available for International students.</p>');
-              } else if (that.courseCount['UK'] > 0) {
+              } else if (that.courseCount.UK > 0) {
                 boxContent = that.createPanel('<p>The following courses only have places available for UK students.</p>');
               }
               gb1.append(boxContent);
@@ -349,7 +349,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
               if( subjectName == '' ) continue;
 
               // Make sure there's at least one course to show
-              if( parseInt( that.courseCount[ subjectName ]['UK'] ) + parseInt( that.courseCount[ subjectName ].International ) + parseInt( that.courseCount[ subjectName ]['Adjustment UK'] ) + parseInt( that.courseCount[ subjectName ]['Adjustment International'] ) > 0 ) {
+              if( parseInt( that.courseCount[ subjectName ].UK ) + parseInt( that.courseCount[ subjectName ].International ) + parseInt( that.courseCount[ subjectName ]['Adjustment UK'] ) + parseInt( that.courseCount[ subjectName ]['Adjustment International'] ) > 0 ) {
                 that.list.append( that.makeLink( subjectName , that.courseCount[ subjectName ] ) );
               }
 
@@ -619,7 +619,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
     // Not sure if this does anything anymore?
     // Add markers to UK-only or International-only departments
-    if (courseCount['UK'] === 0 && courseCount['Adjustment UK'] === 0) {
+    if (courseCount.UK === 0 && courseCount['Adjustment UK'] === 0) {
       // International courses only
       li.addClass('is-international-only');
       // li.append('&nbsp;<small class="c-clearing-list__comment">Places for international students only</small>');
@@ -631,7 +631,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
     // Append an availability note?
     var note = this.makeAvailabilityNote( {
-      'Home': ( courseCount['UK'] > 0 ? 'y' : 'n' ),
+      'Home': ( courseCount.UK > 0 ? 'y' : 'n' ),
       'International': ( courseCount.International > 0 ? 'y' : 'n' ),
       'Adjustment only home': ( courseCount['Adjustment UK'] > 0 ? 'y' : 'n' ),
       'Adjustment only international': ( courseCount['Adjustment International'] > 0 ? 'y' : 'n' ),
@@ -898,49 +898,49 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
     var contentVariants = [
       {
-        // Until 6th August
+        // Until 3rd August
         start: false,
-        end: 1596668400000, // new Date( new Date( 2020 , 7 , 6 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+        end: 1630623600000, // new Date( new Date( 2021 , 8 , 3 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         panel:
           '<h3>Looking for a late place?</h3>' +
           '<p>It’s not too late to apply for '+that.clearingYear+'. We have limited places available on this course through Clearing and Adjustment.</p>',
         modal:
           '<h2><strong>Join us in '+that.clearingYear+'</strong></h2>' +
           '<p>We still have a limited number of places available on this course for well-qualified students through <a href="https://www.york.ac.uk/study/undergraduate/applying/clearing/">Clearing and Adjustment</a>.</p>' +
-          '<h3>Apply now</h3>' +
-          '<p>Follow these steps to apply now:</p>' +
+          '<h3>Got your results?</h3>' +
+          '<p>You can apply now if:</p>' +
           '<ol>' +
-              '<li>Read our <a href="https://www.york.ac.uk/study/undergraduate/applying/clearing/applying/">guide to applying through Clearing and Adjustment</a>.</li>' +
-              '<li>Apply - call us on '+clearingData.phoneNumber+( courseApplicationURL ? ' or <a href="'+courseApplicationURL+'">apply online</a>' : '' )+'.</li>' +
+            '<li>you have your exam results and</li>' +
+            '<li>you have not yet applied to York and</li>' +
+            '<li>you have not formally accepted an offer from another university through UCAS.</li>' +
           '</ol>' +
-          '<p>Make sure you check the entry requirement before you call, have your UCAS ID number to hand and a number we can call you back on.</p>' +
+          '<p><a href="'+courseApplicationURL+'">Apply now</a></p>' +
           '<h3>Waiting for your results?</h3>' +
-          '<p>Sign up to receive vacancy notifications on A level results day (13 August).</p>' +
+          '<p>Sign up to receive vacancy notifications on A level results day (10 August).</p>' +
           '<p><a class="c-btn c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/updates/">Get vacancy notifications</a></p>',
       },
       {
-        // 6th August - 12th August 5pm
-        start:1596668400000, // new Date( new Date( 2020 , 7 , 6 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-        end:1597248000000, // new Date( new Date( 2020 , 7 , 12 , 17 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+        // 3rd August - 9th August 5pm (UCAS embargo period)
+        start: 1630623600000, // new Date( new Date( 2021 , 8 , 3 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+        end: 1631203200000, // new Date( new Date( 2021 , 8 , 9 , 17 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         panel:
           '<h3>Looking for a late place?</h3>' +
           '<p>We expect to have places available on this course through Clearing and Adjustment.</p>' +
           '<p><em>Prepare for Clearing and Adjustment</em></p>',
         modal:
           '<h2>Get ready to call us</h2>' +
-          '<p>Our Clearing hotline will be open from <strong>8am on Thursday 13 August.</strong></p>' +
+          '<p>Our Clearing hotline will be open from <strong>8am on Tuesday 10 August.</strong></p>' +
           '<ol>' +
               '<li>Save the hotline number: '+clearingData.phoneNumber+'</li>' +
               '<li>Research the course(s) you’re interested in and be ready to tell us why you want to apply.</li>' +
-              '<li>Read our <a href="https://www.york.ac.uk/study/undergraduate/applying/clearing/applying/">guide to applying through Clearing and Adjustment</a>.</li>' +
-              '<li>Sign up for notifications and we’ll send you our latest vacancies on Thursday morning.</li>' +
+              '<li>Sign up for notifications and we’ll send you our latest vacancies on Tuesday morning.</li>' +
           '</ol>' +
           '<p><a class="c-btn c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/updates/">Get vacancy notifications</a></p>',
       },
       {
-        // 12th August 5pm - 13th August 8am
-        start:1597248000000, // new Date( new Date( 2020 , 7 , 12 , 17 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-        end:1597302000000, // new Date( new Date( 2020 , 7 , 13 , 8 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+        // 9th August 5pm - 10th August 8am
+        start: 1631203200000, // new Date( new Date( 2021 , 8 , 9 , 17 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+        end: 1631257200000, // new Date( new Date( 2021 , 8 , 10 , 8 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         panel:
           '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
           '<p>Places are available on this course through Clearing and Adjustment.</p>' + 
@@ -950,41 +950,13 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           '<p>Places fill up fast, so don’t delay - give us a call and tell us why you want to apply.</p>' +
           '<p>Opening times:</p>' +
           '<ul>' +
-            '<li>13 - 14 August: 8am - 6pm BST</li>' +
-            '<li>15 - 16 August: 10am - 2pm BST</li>' +
-            '<li>17 - 21 August: 9am - 5pm BST</li>' +
+            '<li>Tuesday 10 August: 8.30am - 6pm BST</li>' +
+            '<li>Wednesday 11 - Friday 13 August: 8am - 6pm BST</li>' +
           '</ul>' +
-          '<h3>Before you call us</h3>' +
+          '<h3>Before you call</h3>' +
           '<ol>' +
             '<li>Research the course(s) you’re interested in and be ready to tell us why you want to apply.</li>' +
             '<li>Pick up your exam results and make sure you meet the entry requirements. We’ll need the details of your results in order to make our decision.</li>' +
-            '<li>Read our <a href="https://www.york.ac.uk/study/undergraduate/applying/clearing/applying/">guide to applying through Clearing and Adjustment</a>.</li>' +
-            '<li>Have your UCAS ID number to hand, and a phone number we can call you back on.</li>' +
-            '<li>If your first language is not English, you’ll need evidence of your <a href="https://www.york.ac.uk/study/undergraduate/applying/entry/english-language/">English language ability</a>.</li>' +
-          '</ol>',
-      },
-      {
-        // From 13th August 8am
-        start:1597302000000, // new Date( new Date( 2020 , 7 , 13 , 8 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-        end: false,
-        panel:
-          '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
-          '<p>Places are available on this course through Clearing and Adjustment.</p>' + 
-          '<p>To apply call '+clearingData.phoneNumber+'.</p>',
-        modal:
-          '<h2>Call our hotline <br>'+clearingData.phoneNumber+'</h2>' +
-          '<p>Places fill up fast, so don’t delay - give us a call and tell us why you want to apply.</p>' +
-          '<p>Opening times:</p>' +
-          '<ul>' +
-            '<li>13 - 14 August: 8am - 6pm BST</li>' +
-            '<li>15 - 16 August: 10am - 2pm BST</li>' +
-            '<li>17 - 21 August: 9am - 5pm BST</li>' +
-          '</ul>' +
-          '<h3>Before you call us</h3>' +
-          '<ol>' +
-            '<li>Research the course(s) you’re interested in and be ready to tell us why you want to apply. Make sure to check the entry requirements for each course.</li>' +
-            '<li>Pick up your exam results and make sure you meet the entry requirements. We’ll need the details of your results in order to make our decision.</li>' +
-            '<li>Read our <a href="https://www.york.ac.uk/study/undergraduate/applying/clearing/applying/">guide to applying through Clearing and Adjustment</a>.</li>' +
             '<li>Have your UCAS ID number to hand, and a phone number we can call you back on.</li>' +
             '<li>If your first language is not English, you’ll need evidence of your <a href="https://www.york.ac.uk/study/undergraduate/applying/entry/english-language/">English language ability</a>.</li>' +
           '</ol>',
