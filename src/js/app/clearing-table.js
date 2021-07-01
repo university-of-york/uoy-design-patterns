@@ -64,10 +64,13 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
     this.subject = options.subject || 'All';
     this.layout = options.layout || 'Courses';
 
-    // Skip out now if we've disabled this layout
-    if( disableEntryRequirements && this.layout == 'Entry requirements' ) return;
-    if( disablePromoPanel && this.layout == 'Course panel' ) return;
-    if( disableApplyButton && this.layout == 'Apply button' ) return;
+    // Skip out now if we've disabled this layout, unless we're in test mode
+    if( !queryArgs.get( 'clearingtest' ) )
+    {
+      if( disableEntryRequirements && this.layout == 'Entry requirements' ) return;
+      if( disablePromoPanel && this.layout == 'Course panel' ) return;
+      if( disableApplyButton && this.layout == 'Apply button' ) return;
+    }
 
     this.showRequirements = options.showRequirements;
     
