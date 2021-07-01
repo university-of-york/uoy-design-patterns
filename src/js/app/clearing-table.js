@@ -23,13 +23,13 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
   var courseSearchClearingFeatures_default = false;
   
   // Toggle this to control whether or not the online application URLs should be shown on course pages
-  var disableApplyButton = false;
+  var disableApplyButton = true;
 
   // Toggle this to control whether or not clearing-adjusted entry requirements will be shown on course pages
-  var disableEntryRequirements = false;
+  var disableEntryRequirements = true;
 
   // Toggle this to control whether or not course page promo panels will be updated
-  var disablePromoPanel = false;
+  var disablePromoPanel = true;
 
   // We'll use this to check for things to override/test
   var queryArgs = new URLSearchParams( window.location.search );
