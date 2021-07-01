@@ -917,7 +917,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
             '<li>you have not yet applied to York and</li>' +
             '<li>you have not formally accepted an offer from another university through UCAS.</li>' +
           '</ol>' +
-          '<p><a href="'+courseApplicationURL+'">Apply now</a></p>' +
+          '<p><a class="c-btn c-btn--medium" href="'+courseApplicationURL+'">Apply now</a></p>' +
           '<h3>Waiting for your results?</h3>' +
           '<p>Sign up to receive vacancy notifications on A level results day (10 August).</p>' +
           '<p><a class="c-btn c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/updates/">Get vacancy notifications</a></p>',
@@ -925,7 +925,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
       {
         // 3rd August - 9th August 5pm (UCAS embargo period)
         start: 1630623600000, // new Date( new Date( 2021 , 8 , 3 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-        end: 1631203200000, // new Date( new Date( 2021 , 8 , 9 , 17 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+        end:   1631203200000, // new Date( new Date( 2021 , 8 , 9 , 17 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         panel:
           '<h3>Looking for a late place?</h3>' +
           '<p>We expect to have places available on this course through Clearing and Adjustment.</p>' +
@@ -943,7 +943,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
       {
         // 9th August 5pm - 10th August 8am
         start: 1631203200000, // new Date( new Date( 2021 , 8 , 9 , 17 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-        end: 1631257200000, // new Date( new Date( 2021 , 8 , 10 , 8 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+        end:   1631257200000, // new Date( new Date( 2021 , 8 , 10 , 8 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         panel:
           '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
           '<p>Places are available on this course through Clearing and Adjustment.</p>' + 
