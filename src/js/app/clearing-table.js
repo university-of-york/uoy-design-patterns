@@ -903,7 +903,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
       {
         // Until 3rd August
         start: false,
-        end: 1630623600000, // new Date( new Date( 2021 , 8 , 3 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+        end: 1630623600000, // new Date( new Date( 2021 , 7 , 3 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         panel:
           '<h3>Looking for a late place?</h3>' +
           '<p>It’s not too late to apply for '+that.clearingYear+'. We have limited places available on this course through Clearing and Adjustment.</p>',
@@ -924,8 +924,8 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
       },
       {
         // 3rd August - 9th August 5pm (UCAS embargo period)
-        start: 1630623600000, // new Date( new Date( 2021 , 8 , 3 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-        end:   1631203200000, // new Date( new Date( 2021 , 8 , 9 , 17 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+        start: 1630623600000, // new Date( new Date( 2021 , 7 , 3 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+        end:   1631203200000, // new Date( new Date( 2021 , 7 , 9 , 17 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
         panel:
           '<h3>Looking for a late place?</h3>' +
           '<p>We expect to have places available on this course through Clearing and Adjustment.</p>' +
@@ -941,9 +941,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           '<p><a class="c-btn c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/updates/">Get vacancy notifications</a></p>',
       },
       {
-        // 9th August 5pm - 10th August 8am
-        start: 1631203200000, // new Date( new Date( 2021 , 8 , 9 , 17 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
-        end:   1631257200000, // new Date( new Date( 2021 , 8 , 10 , 8 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+        // From 9th August 5pm - (10th August 8am)?
+        start: 1631203200000, // new Date( new Date( 2021 , 7 , 9 , 17 ).toLocaleString( "en-US" , { timeZone: "Europe/London" } ) ).valueOf();
+        end:   false, 
         panel:
           '<h3>Clearing and adjustment '+that.clearingYear+'</h3>' +
           '<p>Places are available on this course through Clearing and Adjustment.</p>' + 
