@@ -105,7 +105,7 @@ This shows all available classes, with a toggle for UK/EU and International stud
 Any content wrapped in the `js-clearing-table` div will be overwritten if the course is in clearing.
 
 ```markup
-<div class="js-clearing-table" data-layout="Course panel" data-course="F3F8" style="visibility:hidden;">
+<div class="js-clearing-table" data-layout="Course panel" data-course="F3F8" >
   <div class="c-panel c-panel--highlight">
     <div class="c-panel__content">
       <h3>Results 2019</h3>
@@ -116,7 +116,7 @@ Any content wrapped in the `js-clearing-table` div will be overwritten if the co
 </div>
 ```
 
-<div class="js-clearing-table" data-layout="Course panel" data-course="F3F8" style="visibility:hidden;">
+<div class="js-clearing-table" data-layout="Course panel" data-course="F3F8">
   <div class="c-panel c-panel--highlight">
     <div class="c-panel__content">
       <h3>Results 2019</h3>
@@ -131,7 +131,7 @@ Any content wrapped in the `js-clearing-table` div will be overwritten if the co
 Add a `data-different-year` attribute to indicate that this course is in clearing for a different year. This will change the panel CTA to a link to the course year in clearing.
 
 ```markup
-<div class="js-clearing-table" data-layout="Course panel" data-course="F3F8" data-different-year style="visibility:hidden;">
+<div class="js-clearing-table" data-layout="Course panel" data-course="F3F8" data-different-year >
   <div class="c-panel c-panel--highlight">
     <div class="c-panel__content">
       <h3>Results 2019</h3>
@@ -142,7 +142,7 @@ Add a `data-different-year` attribute to indicate that this course is in clearin
 </div>
 ```
 
-<div class="js-clearing-table" data-layout="Course panel" data-course="F3F8" data-different-year style="visibility:hidden;">
+<div class="js-clearing-table" data-layout="Course panel" data-course="F3F8" data-different-year >
   <div class="c-panel c-panel--highlight">
     <div class="c-panel__content">
       <h3>Results 2019</h3>
