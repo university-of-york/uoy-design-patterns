@@ -72,7 +72,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
       if( disableApplyButton && this.layout == 'Apply button' ) return;
     }
 
-    this.showRequirements = options.showRequirements;
+    this.showRequirements = ( options.showRequirements && !disableEntryRequirements );
     
     this.differentYear = options.differentYear;
     this.course = options.course || false;
