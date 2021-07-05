@@ -805,7 +805,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
     // We'll collect any list items here
     var listItems = [];
-
+/*
     if(this.showRequirements) {
       if (course['No grades'] !== '') {
 
@@ -850,7 +850,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           listItems.push( alternativeItem );
       }
     }
-
+*/
     // courseCellContent+= '<li class="c-clearing-table__ucas-code">UCAS code '+course['UCAS code']+'</li>'+
     // '<li class="c-clearing-table__course-length">'+course['Course length']+'</li>'+
     // '<li class="c-clearing-table__phone-numbers">Call Admissions on ' + clearingData.phoneNumber + '</li>';
