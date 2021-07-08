@@ -805,7 +805,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
     // We'll collect any list items here
     var listItems = [];
-/*
+
     if(this.showRequirements) {
       if (course['No grades'] !== '') {
 
@@ -850,7 +850,7 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           listItems.push( alternativeItem );
       }
     }
-*/
+
     // courseCellContent+= '<li class="c-clearing-table__ucas-code">UCAS code '+course['UCAS code']+'</li>'+
     // '<li class="c-clearing-table__course-length">'+course['Course length']+'</li>'+
     // '<li class="c-clearing-table__phone-numbers">Call Admissions on ' + clearingData.phoneNumber + '</li>';
@@ -901,9 +901,9 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
 
     var contentVariants = [
       {
-        // Until 3rd August
+        // Until 1st August 9pm
         start: false,
-        end: 1627945200000, 
+        end: 1627848000000, 
         panel:
           '<h3>Looking for a late place?</h3>' +
           '<p>It’s not too late to apply for '+that.clearingYear+'. We have limited places available on this course through Clearing and Adjustment.</p>',
@@ -923,8 +923,8 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
           '<p><a class="c-btn c-btn--medium" href="https://www.york.ac.uk/study/undergraduate/applying/clearing/updates/">Get vacancy notifications</a></p>',
       },
       {
-        // 3rd August - 9th August 5pm (UCAS embargo period)
-        start: 1627945200000, 
+        // 1st August 9pm - 9th August 5pm (UCAS embargo period + 2 days before)
+        start: 1627848000000, 
         end:   1628524800000, 
         panel:
           '<h3>Looking for a late place?</h3>' +
