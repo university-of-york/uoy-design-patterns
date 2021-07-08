@@ -437,7 +437,11 @@ define(['jquery', 'app/searchables', 'app/utils', 'app/modal-link'],
               var courseLink = $( courseRow ).find( "td.coursetitle > a" );
               var courseTitle = courseLink.text();
               var courseURL = courseLink.attr( 'href' );
-              var clearingCourseURL = courseURL.replace( 'york.ac.uk/study/undergraduate/courses/' , 'york.ac.uk/study/undergraduate/courses-'+that.clearingYear+'/' );
+
+              // Updated to work with unexpected URLs coming from the Course Finder
+              // Ie; courses with no previous year are coming through with things like `(...)/courses/courses-2021/(...)`
+              // var clearingCourseURL = courseURL.replace( 'york.ac.uk/study/undergraduate/courses/' , 'york.ac.uk/study/undergraduate/courses-'+that.clearingYear+'/' );
+              var clearingCourseURL = courseURL.replace( /york\.ac\.uk\/study\/undergraduate(\/courses(-[a-zA-Z0-9]+)?)+\// , 'york.ac.uk/study/undergraduate/courses-'+that.clearingYear+'/' );
 
               var clearingStatusText = ( that.makeAvailabilityNote( courseInClearing ) || "Places available" );
 
