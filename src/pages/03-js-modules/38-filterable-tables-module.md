@@ -36,8 +36,8 @@ var m = new FILTERABLE({
 <table class="js-filterable-table">
   <thead>
     <tr>
-      <th data-filterable data-type="text">Course title</th>
-      <th data-filterable data-type="select" data-name="Qualification">Qualification earned</th>
+      <th data-filterable data-type="text" data-modifier="large">Course title</th>
+      <th data-filterable data-type="select" data-modifier="small" data-name="Qualification">Qualification earned</th>
       <th data-filterable data-type="select" data-name="Mode">Study mode</th>
       <th>UK/EU</th>
       <th>International</th>
@@ -45,10 +45,10 @@ var m = new FILTERABLE({
   </thead>
   <tbody>
     <tr>
-      <td>Archaeological Information Systems</td><td>MSc</td><td>Part-time (36 months)</td><td>£2,580</td><td>£6,060</td>
+      <td>Archaeological Information Systems</td><td data-value="MSc|PG Dip">MSc</td><td>Part-time (36 months)</td><td>£2,580</td><td>£6,060</td>
     </tr>
     <tr>
-      <td>Archaeological Information Systems</td><td>PG Dip</td><td>Full-time</td><td>£4,830</td><td>£11,360</td>
+      <td>Archaeological Information Systems</td><td data-value="MSc|PG Dip">PG Dip</td><td>Full-time</td><td>£4,830</td><td>£11,360</td>
     </tr>
     <tr>
       <td>Archaeology of Buildings</td><td>MA</td><td>Part-time (36 months)</td><td>£2,580</td><td>£6,060</td>

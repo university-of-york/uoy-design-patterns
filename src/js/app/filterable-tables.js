@@ -81,7 +81,12 @@ define( [ 'app/utils' ] , function( UTILS )
 				var $cell = $cells[ column_index ];
 				
 				// Get data-value attribute; fall back to cell content
-				row_data[ column_index ] = $cell.getAttribute( 'data-value' ) ? $cell.getAttribute( 'data-value' ) : $cell.innerHTML;
+				var raw_value = $cell.getAttribute( 'data-value' ) ? $cell.getAttribute( 'data-value' ) : $cell.innerHTML;
+
+				// Split into multiple values
+				var values = raw_value.split( '|' );
+				
+				row_data[ column_index ] = values;
 			}
 			
 			data.push(
@@ -126,6 +131,9 @@ define( [ 'app/utils' ] , function( UTILS )
 
 				// The type of filter control: [text|select]
 				type: $header_cell.getAttribute( 'data-type' ),
+
+				// Modifier for the input: [default|large|small]
+				modifier: $header_cell.getAttribute( 'data-modifier' ) ? $header_cell.getAttribute( 'data-modifier' ) : 'default',
 			});
 		}
 		
@@ -167,7 +175,7 @@ define( [ 'app/utils' ] , function( UTILS )
 			
 			// Control wrapper
 			var $control = document.createElement( 'div' );
-			$control.setAttribute( 'class' , 'c-form__element' );
+			$control.setAttribute( 'class' , 'c-form__element fieldset_item--' + this.fields[ i ].modifier + '' );
 			$control.setAttribute( 'data-fieldindex' , i );
 			$fieldset.appendChild( $control );
 			
@@ -294,7 +302,9 @@ define( [ 'app/utils' ] , function( UTILS )
 		{
 			delete this.filters[ field_index ];
 		}
-		
+
+		// console.log( 'Filters: ------------------------- ' , this.filters );
+
 		// Keep a tally of how many rows are hidden
 		var hidden_tally = 0;
 		
@@ -303,7 +313,8 @@ define( [ 'app/utils' ] , function( UTILS )
 		{
 			var row = this.data[ r ];
 
-			var is_match = true;
+			// Defaults to true, if any of the filters don't match we'll set it to false
+			var row_matches = true;
 			
 			// Apply each filter in turn
 			var filter_keys = this.filters ? Object.keys( this.filters ) : {};
@@ -313,37 +324,49 @@ define( [ 'app/utils' ] , function( UTILS )
 				// Clean up some key variables
 				var filter_value = this.filters[ filter_keys[ f ] ].toLowerCase().trim();
 				var field = this.fields[ filter_keys[ f ] ];
-				var field_value = row.values[ field.id ].toLowerCase().trim();
-				
-				switch( field.type )
+				var field_values = row.values[ field.id ];
+
+				// Default to false, we'll set it to true if any of the filters match
+				var filter_matches = false;
+
+				// Check the filter against each value for the row
+				for( var v = 0 ; v < field_values.length ; v ++ )
 				{
-					case 'select' :
-
-						if( field_value != filter_value )
-						{
-							is_match = false;
-						}
-
-					break;
+					var field_value = field_values[ v ].toLowerCase().trim();
 					
-					default : // text
-						
-						// Split into separate filter terms
-						var filter_values = filter_value.split( ' ' );
-						
-						for( var v = 0 ; v < filter_values.length ; v ++ )
-						{
-							if( field_value.indexOf( filter_values[ v ] ) == -1 )
+					switch( field.type )
+					{
+						case 'select' :
+
+							if( field_value == filter_value )
 							{
-								is_match = false;
+								filter_matches = true;
 							}
-						}
-					break;
+							
+							break;
+							
+						default : // text
+						
+							// Split into separate filter terms
+							var filter_values = filter_value.split( ' ' );
+							
+							for( var i = 0 ; i < filter_values.length ; i ++ )
+							{
+								if( field_value.indexOf( filter_values[ i ] ) != -1 )
+								{
+									filter_matches = true;
+								}
+							}
+						break;
+					}
 				}
+				
+				// If none of our filters matched this will set row_matches to false
+				row_matches *= filter_matches;
 			}
-			
+
 			// Hide/unhide the row
-			if( is_match )
+			if( row_matches )
 			{
 				row.$row.removeAttribute( 'hidden' );
 			}
@@ -407,10 +430,19 @@ define( [ 'app/utils' ] , function( UTILS )
 		// Go over each row
 		for( var r = 0 ; r < this.data.length ; r ++ )
 		{
-			// Add the value if it's not already in our list of values
-			if( unique_values.indexOf( this.data[ r ].values[ field.id ] ) == -1 )
+			// Grab the values for this row
+			var row_values = this.data[ r ].values[ field.id ];
+
+			// Check each value
+			for( var v = 0 ; v < row_values.length ; v ++ )
 			{
-				unique_values.push( this.data[ r ].values[ field.id ] );
+				var row_value = row_values[ v ];
+
+				// Add the value if it's not already in our list of values
+				if( unique_values.indexOf( row_value ) == -1 )
+				{
+					unique_values.push( row_value );
+				}
 			}
 		}
 		
